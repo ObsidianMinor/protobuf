@@ -322,7 +322,7 @@ namespace Google.Protobuf
                 codec.WriteTagAndValue(output, value);
             }
 
-            internal  static int CalculateSize<T>(T value, FieldCodec<T> codec)
+            internal static int CalculateSize<T>(T value, FieldCodec<T> codec)
             {
                 int fieldLength = codec.CalculateSizeWithTag(value);
                 return CodedOutputStream.ComputeLengthSize(fieldLength) + fieldLength;

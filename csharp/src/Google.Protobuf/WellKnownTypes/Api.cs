@@ -93,7 +93,7 @@ namespace Google.Protobuf.WellKnownTypes {
       methods_ = other.methods_.Clone();
       options_ = other.options_.Clone();
       version_ = other.version_;
-      SourceContext = other.sourceContext_ != null ? other.SourceContext.Clone() : null;
+      SourceContext = other.HasSourceContext ? other.SourceContext.Clone() : null;
       mixins_ = other.mixins_.Clone();
       syntax_ = other.syntax_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -106,17 +106,27 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
-    private string name_ = "";
+    public const string NameDefaultValue = "";
+
+    private string name_;
     /// <summary>
     /// The fully qualified name of this interface, including package name
     /// followed by the interface's simple name.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_; }
+      get { return name_ ?? NameDefaultValue; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasName {
+      get { return name_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearName() {
+      name_ = null;
     }
 
     /// <summary>Field number for the "methods" field.</summary>
@@ -147,7 +157,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 4;
-    private string version_ = "";
+    public const string VersionDefaultValue = "";
+
+    private string version_;
     /// <summary>
     /// A version string for this interface. If specified, must have the form
     /// `major-version.minor-version`, as in `1.10`. If the minor version is
@@ -171,10 +183,18 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Version {
-      get { return version_; }
+      get { return version_ ?? VersionDefaultValue; }
       set {
         version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasVersion {
+      get { return version_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearVersion() {
+      version_ = null;
     }
 
     /// <summary>Field number for the "source_context" field.</summary>
@@ -190,6 +210,14 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         sourceContext_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasSourceContext {
+      get { return sourceContext_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSourceContext() {
+      sourceContext_ = null;
     }
 
     /// <summary>Field number for the "mixins" field.</summary>
@@ -207,16 +235,26 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "syntax" field.</summary>
     public const int SyntaxFieldNumber = 7;
-    private global::Google.Protobuf.WellKnownTypes.Syntax syntax_ = 0;
+    public const global::Google.Protobuf.WellKnownTypes.Syntax SyntaxDefaultValue = global::Google.Protobuf.WellKnownTypes.Syntax.Proto2;
+
+    private global::Google.Protobuf.WellKnownTypes.Syntax? syntax_;
     /// <summary>
     /// The source syntax of the service.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Syntax Syntax {
-      get { return syntax_; }
+      get { return syntax_ ?? SyntaxDefaultValue; }
       set {
         syntax_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasSyntax {
+      get { return syntax_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSyntax() {
+      syntax_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -245,13 +283,13 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (HasName) hash ^= Name.GetHashCode();
       hash ^= methods_.GetHashCode();
       hash ^= options_.GetHashCode();
-      if (Version.Length != 0) hash ^= Version.GetHashCode();
-      if (sourceContext_ != null) hash ^= SourceContext.GetHashCode();
+      if (HasVersion) hash ^= Version.GetHashCode();
+      if (HasSourceContext) hash ^= SourceContext.GetHashCode();
       hash ^= mixins_.GetHashCode();
-      if (Syntax != 0) hash ^= Syntax.GetHashCode();
+      if (HasSyntax) hash ^= Syntax.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -265,22 +303,22 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
+      if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
       methods_.WriteTo(output, _repeated_methods_codec);
       options_.WriteTo(output, _repeated_options_codec);
-      if (Version.Length != 0) {
+      if (HasVersion) {
         output.WriteRawTag(34);
         output.WriteString(Version);
       }
-      if (sourceContext_ != null) {
+      if (HasSourceContext) {
         output.WriteRawTag(42);
         output.WriteMessage(SourceContext);
       }
       mixins_.WriteTo(output, _repeated_mixins_codec);
-      if (Syntax != 0) {
+      if (HasSyntax) {
         output.WriteRawTag(56);
         output.WriteEnum((int) Syntax);
       }
@@ -292,19 +330,19 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
+      if (HasName) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       size += methods_.CalculateSize(_repeated_methods_codec);
       size += options_.CalculateSize(_repeated_options_codec);
-      if (Version.Length != 0) {
+      if (HasVersion) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
       }
-      if (sourceContext_ != null) {
+      if (HasSourceContext) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourceContext);
       }
       size += mixins_.CalculateSize(_repeated_mixins_codec);
-      if (Syntax != 0) {
+      if (HasSyntax) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Syntax);
       }
       if (_unknownFields != null) {
@@ -318,22 +356,22 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
+      if (other.HasName) {
         Name = other.Name;
       }
       methods_.Add(other.methods_);
       options_.Add(other.options_);
-      if (other.Version.Length != 0) {
+      if (other.HasVersion) {
         Version = other.Version;
       }
-      if (other.sourceContext_ != null) {
-        if (sourceContext_ == null) {
+      if (other.HasSourceContext) {
+        if (!HasSourceContext) {
           sourceContext_ = new global::Google.Protobuf.WellKnownTypes.SourceContext();
         }
         SourceContext.MergeFrom(other.SourceContext);
       }
       mixins_.Add(other.mixins_);
-      if (other.Syntax != 0) {
+      if (other.HasSyntax) {
         Syntax = other.Syntax;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -364,7 +402,7 @@ namespace Google.Protobuf.WellKnownTypes {
             break;
           }
           case 42: {
-            if (sourceContext_ == null) {
+            if (!HasSourceContext) {
               sourceContext_ = new global::Google.Protobuf.WellKnownTypes.SourceContext();
             }
             input.ReadMessage(sourceContext_);
@@ -429,72 +467,122 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
-    private string name_ = "";
+    public const string NameDefaultValue = "";
+
+    private string name_;
     /// <summary>
     /// The simple name of this method.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_; }
+      get { return name_ ?? NameDefaultValue; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasName {
+      get { return name_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearName() {
+      name_ = null;
+    }
 
     /// <summary>Field number for the "request_type_url" field.</summary>
     public const int RequestTypeUrlFieldNumber = 2;
-    private string requestTypeUrl_ = "";
+    public const string RequestTypeUrlDefaultValue = "";
+
+    private string requestTypeUrl_;
     /// <summary>
     /// A URL of the input message type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string RequestTypeUrl {
-      get { return requestTypeUrl_; }
+      get { return requestTypeUrl_ ?? RequestTypeUrlDefaultValue; }
       set {
         requestTypeUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasRequestTypeUrl {
+      get { return requestTypeUrl_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearRequestTypeUrl() {
+      requestTypeUrl_ = null;
+    }
 
     /// <summary>Field number for the "request_streaming" field.</summary>
     public const int RequestStreamingFieldNumber = 3;
-    private bool requestStreaming_;
+    public const bool RequestStreamingDefaultValue = false;
+
+    private bool? requestStreaming_;
     /// <summary>
     /// If true, the request is streamed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool RequestStreaming {
-      get { return requestStreaming_; }
+      get { return requestStreaming_ ?? RequestStreamingDefaultValue; }
       set {
         requestStreaming_ = value;
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasRequestStreaming {
+      get { return requestStreaming_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearRequestStreaming() {
+      requestStreaming_ = null;
+    }
 
     /// <summary>Field number for the "response_type_url" field.</summary>
     public const int ResponseTypeUrlFieldNumber = 4;
-    private string responseTypeUrl_ = "";
+    public const string ResponseTypeUrlDefaultValue = "";
+
+    private string responseTypeUrl_;
     /// <summary>
     /// The URL of the output message type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ResponseTypeUrl {
-      get { return responseTypeUrl_; }
+      get { return responseTypeUrl_ ?? ResponseTypeUrlDefaultValue; }
       set {
         responseTypeUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasResponseTypeUrl {
+      get { return responseTypeUrl_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearResponseTypeUrl() {
+      responseTypeUrl_ = null;
+    }
 
     /// <summary>Field number for the "response_streaming" field.</summary>
     public const int ResponseStreamingFieldNumber = 5;
-    private bool responseStreaming_;
+    public const bool ResponseStreamingDefaultValue = false;
+
+    private bool? responseStreaming_;
     /// <summary>
     /// If true, the response is streamed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool ResponseStreaming {
-      get { return responseStreaming_; }
+      get { return responseStreaming_ ?? ResponseStreamingDefaultValue; }
       set {
         responseStreaming_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasResponseStreaming {
+      get { return responseStreaming_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearResponseStreaming() {
+      responseStreaming_ = null;
     }
 
     /// <summary>Field number for the "options" field.</summary>
@@ -512,16 +600,26 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "syntax" field.</summary>
     public const int SyntaxFieldNumber = 7;
-    private global::Google.Protobuf.WellKnownTypes.Syntax syntax_ = 0;
+    public const global::Google.Protobuf.WellKnownTypes.Syntax SyntaxDefaultValue = global::Google.Protobuf.WellKnownTypes.Syntax.Proto2;
+
+    private global::Google.Protobuf.WellKnownTypes.Syntax? syntax_;
     /// <summary>
     /// The source syntax of this method.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Syntax Syntax {
-      get { return syntax_; }
+      get { return syntax_ ?? SyntaxDefaultValue; }
       set {
         syntax_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasSyntax {
+      get { return syntax_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSyntax() {
+      syntax_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -550,13 +648,13 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (RequestTypeUrl.Length != 0) hash ^= RequestTypeUrl.GetHashCode();
-      if (RequestStreaming != false) hash ^= RequestStreaming.GetHashCode();
-      if (ResponseTypeUrl.Length != 0) hash ^= ResponseTypeUrl.GetHashCode();
-      if (ResponseStreaming != false) hash ^= ResponseStreaming.GetHashCode();
+      if (HasName) hash ^= Name.GetHashCode();
+      if (HasRequestTypeUrl) hash ^= RequestTypeUrl.GetHashCode();
+      if (HasRequestStreaming) hash ^= RequestStreaming.GetHashCode();
+      if (HasResponseTypeUrl) hash ^= ResponseTypeUrl.GetHashCode();
+      if (HasResponseStreaming) hash ^= ResponseStreaming.GetHashCode();
       hash ^= options_.GetHashCode();
-      if (Syntax != 0) hash ^= Syntax.GetHashCode();
+      if (HasSyntax) hash ^= Syntax.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -570,28 +668,28 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
+      if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (RequestTypeUrl.Length != 0) {
+      if (HasRequestTypeUrl) {
         output.WriteRawTag(18);
         output.WriteString(RequestTypeUrl);
       }
-      if (RequestStreaming != false) {
+      if (HasRequestStreaming) {
         output.WriteRawTag(24);
         output.WriteBool(RequestStreaming);
       }
-      if (ResponseTypeUrl.Length != 0) {
+      if (HasResponseTypeUrl) {
         output.WriteRawTag(34);
         output.WriteString(ResponseTypeUrl);
       }
-      if (ResponseStreaming != false) {
+      if (HasResponseStreaming) {
         output.WriteRawTag(40);
         output.WriteBool(ResponseStreaming);
       }
       options_.WriteTo(output, _repeated_options_codec);
-      if (Syntax != 0) {
+      if (HasSyntax) {
         output.WriteRawTag(56);
         output.WriteEnum((int) Syntax);
       }
@@ -603,23 +701,23 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
+      if (HasName) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (RequestTypeUrl.Length != 0) {
+      if (HasRequestTypeUrl) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RequestTypeUrl);
       }
-      if (RequestStreaming != false) {
+      if (HasRequestStreaming) {
         size += 1 + 1;
       }
-      if (ResponseTypeUrl.Length != 0) {
+      if (HasResponseTypeUrl) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ResponseTypeUrl);
       }
-      if (ResponseStreaming != false) {
+      if (HasResponseStreaming) {
         size += 1 + 1;
       }
       size += options_.CalculateSize(_repeated_options_codec);
-      if (Syntax != 0) {
+      if (HasSyntax) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Syntax);
       }
       if (_unknownFields != null) {
@@ -633,23 +731,23 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
+      if (other.HasName) {
         Name = other.Name;
       }
-      if (other.RequestTypeUrl.Length != 0) {
+      if (other.HasRequestTypeUrl) {
         RequestTypeUrl = other.RequestTypeUrl;
       }
-      if (other.RequestStreaming != false) {
+      if (other.HasRequestStreaming) {
         RequestStreaming = other.RequestStreaming;
       }
-      if (other.ResponseTypeUrl.Length != 0) {
+      if (other.HasResponseTypeUrl) {
         ResponseTypeUrl = other.ResponseTypeUrl;
       }
-      if (other.ResponseStreaming != false) {
+      if (other.HasResponseStreaming) {
         ResponseStreaming = other.ResponseStreaming;
       }
       options_.Add(other.options_);
-      if (other.Syntax != 0) {
+      if (other.HasSyntax) {
         Syntax = other.Syntax;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -814,31 +912,51 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
-    private string name_ = "";
+    public const string NameDefaultValue = "";
+
+    private string name_;
     /// <summary>
     /// The fully qualified name of the interface which is included.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_; }
+      get { return name_ ?? NameDefaultValue; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasName {
+      get { return name_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearName() {
+      name_ = null;
+    }
 
     /// <summary>Field number for the "root" field.</summary>
     public const int RootFieldNumber = 2;
-    private string root_ = "";
+    public const string RootDefaultValue = "";
+
+    private string root_;
     /// <summary>
     /// If non-empty specifies a path under which inherited HTTP paths
     /// are rooted.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Root {
-      get { return root_; }
+      get { return root_ ?? RootDefaultValue; }
       set {
         root_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasRoot {
+      get { return root_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearRoot() {
+      root_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -862,8 +980,8 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Root.Length != 0) hash ^= Root.GetHashCode();
+      if (HasName) hash ^= Name.GetHashCode();
+      if (HasRoot) hash ^= Root.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -877,11 +995,11 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
+      if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Root.Length != 0) {
+      if (HasRoot) {
         output.WriteRawTag(18);
         output.WriteString(Root);
       }
@@ -893,10 +1011,10 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
+      if (HasName) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Root.Length != 0) {
+      if (HasRoot) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Root);
       }
       if (_unknownFields != null) {
@@ -910,10 +1028,10 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
+      if (other.HasName) {
         Name = other.Name;
       }
-      if (other.Root.Length != 0) {
+      if (other.HasRoot) {
         Root = other.Root;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

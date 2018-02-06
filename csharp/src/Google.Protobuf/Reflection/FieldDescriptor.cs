@@ -79,8 +79,7 @@ namespace Google.Protobuf.Reflection
                 throw new DescriptorValidationException(this, "Field numbers must be positive integers.");
             }
             ContainingType = parent;
-            // OneofIndex "defaults" to -1 due to a hack in FieldDescriptor.OnConstruction.
-            if (proto.OneofIndex != -1)
+            if (proto.HasOneofIndex)
             {
                 if (proto.OneofIndex < 0 || proto.OneofIndex >= parent.Proto.OneofDecl.Count)
                 {
@@ -251,9 +250,13 @@ namespace Google.Protobuf.Reflection
         }
 
         /// <summary>
-        /// The (possibly empty) set of custom options for this field.
+        /// Tries to get the specified custom extension option for this field
         /// </summary>
-        public CustomOptions CustomOptions => Proto.Options?.CustomOptions ?? CustomOptions.Empty;
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
+        public bool TryGetOption<T>(Extension<FieldOptions, T> extension, out T value) => throw new NotImplementedException();
 
         /// <summary>
         /// Look up and cross-link all field types etc.

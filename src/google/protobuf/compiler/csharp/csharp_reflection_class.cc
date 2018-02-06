@@ -69,7 +69,7 @@ void ReflectionClassGenerator::Generate(io::Printer* printer) {
   // Close the class declaration.
   printer->Outdent();
   printer->Print("}\n");
-
+  
   // write children: Enums
   if (file_->enum_type_count() > 0) {
     printer->Print("#region Enums\n");

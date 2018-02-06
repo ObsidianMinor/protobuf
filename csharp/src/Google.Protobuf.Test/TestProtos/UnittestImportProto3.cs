@@ -86,13 +86,23 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "d" field.</summary>
     public const int DFieldNumber = 1;
-    private int d_;
+    public const int DDefaultValue = 0;
+
+    private int? d_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int D {
-      get { return d_; }
+      get { return d_ ?? DDefaultValue; }
       set {
         d_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasD {
+      get { return d_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearD() {
+      d_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -115,7 +125,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (D != 0) hash ^= D.GetHashCode();
+      if (HasD) hash ^= D.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -129,7 +139,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (D != 0) {
+      if (HasD) {
         output.WriteRawTag(8);
         output.WriteInt32(D);
       }
@@ -141,7 +151,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (D != 0) {
+      if (HasD) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(D);
       }
       if (_unknownFields != null) {
@@ -155,7 +165,7 @@ namespace Google.Protobuf.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.D != 0) {
+      if (other.HasD) {
         D = other.D;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

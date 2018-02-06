@@ -110,9 +110,16 @@ void MessageGenerator::Generate(io::Printer* printer) {
   WriteMessageDocComment(printer, descriptor_);
   AddDeprecatedFlag(printer);
 
-  printer->Print(
-    vars,
-    "$access_level$ sealed partial class $class_name$ : pb::IMessage<$class_name$> {\n");
+  printer->Print(vars, "$access_level$ sealed partial class $class_name$ : ");
+
+  if (descriptor_->extension_range_count() > 0) {
+    printer->Print(vars,"pb::IExtensionMessage<$class_name$>");
+  }
+  else {
+    printer->Print(vars,"pb::IMessage<$class_name$>");
+  }
+
+  printer->Print(" {\n");
   printer->Indent();
 
   // All static fields and properties
@@ -122,6 +129,10 @@ void MessageGenerator::Generate(io::Printer* printer) {
 
   printer->Print(
       "private pb::UnknownFieldSet _unknownFields;\n");
+
+  if (descriptor_->extension_range_count() > 0) {
+    printer->Print(vars, "private pb::ExtensionSet<$class_name$> _extensions = new pb::ExtensionSet<$class_name$>();\n");
+  }
 
   WriteGeneratedCodeAttributes(printer);
 
@@ -152,11 +163,12 @@ void MessageGenerator::Generate(io::Printer* printer) {
     "  get { return Descriptor; }\n"
     "}\n"
     "\n");
-  // CustomOptions property, only for options messages
-  if (IsDescriptorOptionMessage(descriptor_)) {
-    printer->Print(
-      "internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;\n"
-       "\n");
+
+  if (descriptor_->extension_range_count() > 0) {
+    WriteGeneratedCodeAttributes(printer);
+    printer->Print(vars, "public ExtensionSet<$class_name$> Extensions { get { return _extensions; } }\n");
+    WriteGeneratedCodeAttributes(printer);
+    printer->Print("ExtensionSet IExtensionMessage.Extensions { get { return _extensions; } }\n");
   }
 
   // Parameterless constructor and partial OnConstruction method.
@@ -253,6 +265,23 @@ void MessageGenerator::Generate(io::Printer* printer) {
             descriptor_->nested_type(i), this->options());
         messageGenerator.Generate(printer);
       }
+    }
+    printer->Outdent();
+    printer->Print("}\n"
+                   "#endregion\n"
+                   "\n");
+  }
+
+  if (descriptor_->extension_count() > 0) {
+    printer->Print(
+      vars,
+      "#region Extensions\n"
+      "/// <summary>Container for extensions for other messages declared in the $class_name$ message type.</summary>\n");
+    WriteGeneratedCodeAttributes(printer);
+    printer->Print("public static partial class Extensions {\n");
+    printer->Indent();
+    for (int i = 0; i < descriptor_->extension_count(); i++) {
+      
     }
     printer->Outdent();
     printer->Print("}\n"
@@ -510,18 +539,10 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
     "  switch(tag) {\n");
   printer->Indent();
   printer->Indent();
-  // Option messages need to store unknown fields so that options can be parsed later.
-  if (IsDescriptorOptionMessage(descriptor_)) {
-    printer->Print(
-      "default:\n"
-      "  CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);\n"
-      "  break;\n");
-  } else {
-    printer->Print(
-      "default:\n"
-      "  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);\n"
-      "  break;\n");
-  }
+  printer->Print(
+    "default:\n"
+    "  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);\n"
+    "  break;\n");
   for (int i = 0; i < fields_by_number().size(); i++) {
     const FieldDescriptor* field = fields_by_number()[i];
     internal::WireFormatLite::WireType wt =

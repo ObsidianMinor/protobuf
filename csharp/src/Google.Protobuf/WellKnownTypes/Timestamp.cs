@@ -156,7 +156,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "seconds" field.</summary>
     public const int SecondsFieldNumber = 1;
-    private long seconds_;
+    public const long SecondsDefaultValue = 0L;
+
+    private long? seconds_;
     /// <summary>
     /// Represents seconds of UTC time since Unix epoch
     /// 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
@@ -164,15 +166,25 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Seconds {
-      get { return seconds_; }
+      get { return seconds_ ?? SecondsDefaultValue; }
       set {
         seconds_ = value;
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasSeconds {
+      get { return seconds_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSeconds() {
+      seconds_ = null;
+    }
 
     /// <summary>Field number for the "nanos" field.</summary>
     public const int NanosFieldNumber = 2;
-    private int nanos_;
+    public const int NanosDefaultValue = 0;
+
+    private int? nanos_;
     /// <summary>
     /// Non-negative fractions of a second at nanosecond resolution. Negative
     /// second values with fractions must still have non-negative nanos values
@@ -181,10 +193,18 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Nanos {
-      get { return nanos_; }
+      get { return nanos_ ?? NanosDefaultValue; }
       set {
         nanos_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasNanos {
+      get { return nanos_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearNanos() {
+      nanos_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -208,8 +228,8 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Seconds != 0L) hash ^= Seconds.GetHashCode();
-      if (Nanos != 0) hash ^= Nanos.GetHashCode();
+      if (HasSeconds) hash ^= Seconds.GetHashCode();
+      if (HasNanos) hash ^= Nanos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -223,11 +243,11 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Seconds != 0L) {
+      if (HasSeconds) {
         output.WriteRawTag(8);
         output.WriteInt64(Seconds);
       }
-      if (Nanos != 0) {
+      if (HasNanos) {
         output.WriteRawTag(16);
         output.WriteInt32(Nanos);
       }
@@ -239,10 +259,10 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Seconds != 0L) {
+      if (HasSeconds) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Seconds);
       }
-      if (Nanos != 0) {
+      if (HasNanos) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Nanos);
       }
       if (_unknownFields != null) {
@@ -256,10 +276,10 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.Seconds != 0L) {
+      if (other.HasSeconds) {
         Seconds = other.Seconds;
       }
-      if (other.Nanos != 0) {
+      if (other.HasNanos) {
         Nanos = other.Nanos;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

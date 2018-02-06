@@ -642,7 +642,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestMapSubmessage(TestMapSubmessage other) : this() {
-      TestMap = other.testMap_ != null ? other.TestMap.Clone() : null;
+      TestMap = other.HasTestMap ? other.TestMap.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -660,6 +660,14 @@ namespace Google.Protobuf.TestProtos {
       set {
         testMap_ = value;
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasTestMap {
+      get { return testMap_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTestMap() {
+      testMap_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -682,7 +690,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (testMap_ != null) hash ^= TestMap.GetHashCode();
+      if (HasTestMap) hash ^= TestMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -696,7 +704,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (testMap_ != null) {
+      if (HasTestMap) {
         output.WriteRawTag(10);
         output.WriteMessage(TestMap);
       }
@@ -708,7 +716,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (testMap_ != null) {
+      if (HasTestMap) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TestMap);
       }
       if (_unknownFields != null) {
@@ -722,8 +730,8 @@ namespace Google.Protobuf.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.testMap_ != null) {
-        if (testMap_ == null) {
+      if (other.HasTestMap) {
+        if (!HasTestMap) {
           testMap_ = new global::Google.Protobuf.TestProtos.TestMap();
         }
         TestMap.MergeFrom(other.TestMap);
@@ -740,7 +748,7 @@ namespace Google.Protobuf.TestProtos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (testMap_ == null) {
+            if (!HasTestMap) {
               testMap_ = new global::Google.Protobuf.TestProtos.TestMap();
             }
             input.ReadMessage(testMap_);

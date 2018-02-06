@@ -156,7 +156,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "type_url" field.</summary>
     public const int TypeUrlFieldNumber = 1;
-    private string typeUrl_ = "";
+    public const string TypeUrlDefaultValue = "";
+
+    private string typeUrl_;
     /// <summary>
     /// A URL/resource name that uniquely identifies the type of the serialized
     /// protocol buffer message. The last segment of the URL's path must represent
@@ -187,24 +189,42 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string TypeUrl {
-      get { return typeUrl_; }
+      get { return typeUrl_ ?? TypeUrlDefaultValue; }
       set {
         typeUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasTypeUrl {
+      get { return typeUrl_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTypeUrl() {
+      typeUrl_ = null;
+    }
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 2;
-    private pb::ByteString value_ = pb::ByteString.Empty;
+    public readonly static pb::ByteString ValueDefaultValue = pb::ByteString.Empty;
+
+    private pb::ByteString value_;
     /// <summary>
     /// Must be a valid serialized protocol buffer of the above specified type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Value {
-      get { return value_; }
+      get { return value_ ?? ValueDefaultValue; }
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasValue {
+      get { return value_ != null; }
+    }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -228,8 +248,8 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (TypeUrl.Length != 0) hash ^= TypeUrl.GetHashCode();
-      if (Value.Length != 0) hash ^= Value.GetHashCode();
+      if (HasTypeUrl) hash ^= TypeUrl.GetHashCode();
+      if (HasValue) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -243,11 +263,11 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (TypeUrl.Length != 0) {
+      if (HasTypeUrl) {
         output.WriteRawTag(10);
         output.WriteString(TypeUrl);
       }
-      if (Value.Length != 0) {
+      if (HasValue) {
         output.WriteRawTag(18);
         output.WriteBytes(Value);
       }
@@ -259,10 +279,10 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (TypeUrl.Length != 0) {
+      if (HasTypeUrl) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TypeUrl);
       }
-      if (Value.Length != 0) {
+      if (HasValue) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Value);
       }
       if (_unknownFields != null) {
@@ -276,10 +296,10 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.TypeUrl.Length != 0) {
+      if (other.HasTypeUrl) {
         TypeUrl = other.TypeUrl;
       }
-      if (other.Value.Length != 0) {
+      if (other.HasValue) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

@@ -52,8 +52,6 @@ MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
                                              int fieldOrdinal,
                                              const Options *options)
     : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
-  variables_["has_property_check"] = name() + "_ != null";
-  variables_["has_not_property_check"] = name() + "_ == null";
 }
 
 MessageFieldGenerator::~MessageFieldGenerator() {
@@ -73,6 +71,20 @@ void MessageFieldGenerator::GenerateMembers(io::Printer* printer) {
     "  set {\n"
     "    $name$_ = value;\n"
     "  }\n"
+    "}\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "/// <summary>Gets whether the $field_name$ field is set</summary>\n"
+    "$access_level$ bool Has$property_name$ {\n"
+    "  get { return $name$_ != null; }\n"
+    "}\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "/// <summary>Clears the value of the $field_name$ field</summary>\n"
+    "$access_level$ void Clear$property_name$() {\n"
+    "  $name$_ = null;\n"
     "}\n");
 }
 

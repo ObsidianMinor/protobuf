@@ -54,10 +54,6 @@ PrimitiveFieldGenerator::PrimitiveFieldGenerator(
   // TODO(jonskeet): Make this cleaner...
   is_value_type = descriptor->type() != FieldDescriptor::TYPE_STRING
       && descriptor->type() != FieldDescriptor::TYPE_BYTES;
-  if (!is_value_type) {
-    variables_["has_property_check"] = variables_["property_name"] + ".Length != 0";
-    variables_["other_has_property_check"] = "other." + variables_["property_name"] + ".Length != 0";
-  }
 }
 
 PrimitiveFieldGenerator::~PrimitiveFieldGenerator() {
@@ -67,15 +63,27 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   // TODO(jonskeet): Work out whether we want to prevent the fields from ever being
   // null, or whether we just handle it, in the cases of bytes and string.
   // (Basically, should null-handling code be in the getter or the setter?)
+
+  printer->Print(variables_, "$access_level$ ");
+  if (descriptor_->type() == FieldDescriptor::TYPE_BYTES) {
+    printer->Print("readonly static ");
+  }
+  else {
+    printer->Print("const ");
+  }
   printer->Print(
     variables_,
-    "private $type_name$ $name_def_message$;\n");
+    "/// <summary>Default value for the $field_name$ field</summary>\n"
+    "$type_name$ $property_name$DefaultValue = $default_value$;\n\n");
+  printer->Print(
+    variables_,
+    "private $nullable_type_name$ $name$_;\n");
   WritePropertyDocComment(printer, descriptor_);
   AddPublicMemberAttributes(printer);
   printer->Print(
     variables_,
     "$access_level$ $type_name$ $property_name$ {\n"
-    "  get { return $name$_; }\n"
+    "  get { return $name$_ ?? $property_name$DefaultValue; }\n"
     "  set {\n");
   if (is_value_type) {
     printer->Print(
@@ -88,6 +96,20 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   }
   printer->Print(
     "  }\n"
+    "}\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "/// <summary>Gets whether the $field_name$ field is set</summary>\n"
+    "$access_level$ bool Has$property_name$ {\n"
+    "  get { return $name$_ != null; }\n"
+    "}\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "/// <summary>Clears the value of the $field_name$ field</summary>\n"
+    "$access_level$ void Clear$property_name$() {\n"
+    "  $name$_ = null;\n"
     "}\n");
 }
 

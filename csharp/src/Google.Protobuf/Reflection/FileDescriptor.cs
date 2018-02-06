@@ -331,8 +331,12 @@ namespace Google.Protobuf.Reflection
         public static FileDescriptor DescriptorProtoFileDescriptor { get { return DescriptorReflection.Descriptor; } }
 
         /// <summary>
-        /// The (possibly empty) set of custom options for this file.
+        /// Tries to get the specified custom extension option for this file
         /// </summary>
-        public CustomOptions CustomOptions => Proto.Options?.CustomOptions ?? CustomOptions.Empty;
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
+        public bool TryGetOption<T>(Extension<FileOptions, T> extension, out T value) => throw new NotImplementedException();
     }
 }

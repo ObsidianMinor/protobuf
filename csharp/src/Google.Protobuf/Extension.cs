@@ -6,45 +6,38 @@ namespace Google.Protobuf
     /// <summary>
     /// Represents an non-generic extension definition
     /// </summary>
-    public abstract class Extension
+    public interface IExtension
     {
-        internal Extension(FieldType type, int number, object defaultValue)
-        {
-            Number = number;
-            FieldType = type;
-            DefaultValue = defaultValue;
-        }
-
         /// <summary>
         /// Gets the type this extension is for
         /// </summary>
-        internal abstract Type TargetType { get; }
+        Type TargetType { get; }
 
         /// <summary>
         /// Gets the type of value this extension represents
         /// </summary>
-        internal abstract Type ValueType { get; }
+        Type ValueType { get; }
 
         /// <summary>
         /// Gets the field number this extension uses
         /// </summary>
-        internal int Number { get; }
+        int FieldNumber { get; }
 
         /// <summary>
         /// Gets the default value of this extension
         /// </summary>
-        internal object DefaultValue { get; }
+        object DefaultValue { get; }
 
         /// <summary>
         /// Gets the field type of this extension field
         /// </summary>
-        internal FieldType FieldType { get; }
+        FieldType FieldType { get; }
     }
 
     /// <summary>
     /// An extension identifier which can be used to get an extension's value
     /// </summary>
-    public sealed class Extension<TTarget, TValue> : Extension where TTarget : IExtensionMessage<TTarget>
+    public sealed class Extension<TTarget, TValue> : IExtension where TTarget : IExtensionMessage<TTarget>
     {
         /// <summary>
         /// Creates a new extension identifier with the specified field type, number, and default value
@@ -52,14 +45,32 @@ namespace Google.Protobuf
         /// <param name="type"></param>
         /// <param name="number"></param>
         /// <param name="defaultValue"></param>
-        public Extension(FieldType type, int number, TValue defaultValue) : base(type, number, defaultValue)
+        public Extension(FieldType type, int number, TValue defaultValue)
         {
-            ValueType = typeof(TValue);
-            TargetType = typeof(TTarget);
+            FieldNumber = number;
+            FieldType = type;
+            DefaultValue = defaultValue;
         }
-        
-        internal override Type ValueType { get; }
 
-        internal override Type TargetType { get; }
+        /// <summary>
+        /// Gets the field number this extension uses
+        /// </summary>
+        public int FieldNumber { get; }
+
+        /// <summary>
+        /// Gets the field type of this extension field
+        /// </summary>
+        public FieldType FieldType { get; }
+
+        Type IExtension.ValueType => typeof(TValue);
+
+        Type IExtension.TargetType => typeof(TTarget);
+
+        object IExtension.DefaultValue => DefaultValue;
+
+        /// <summary>
+        /// Gets the default value of this extension
+        /// </summary>
+        public TValue DefaultValue { get; }
     }
 }

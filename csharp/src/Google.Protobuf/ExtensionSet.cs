@@ -7,7 +7,7 @@ namespace Google.Protobuf
     /// </summary>
     public abstract class ExtensionSet
     {
-        internal void RegisterInternal(Extension extension) => throw new NotImplementedException();
+        internal void RegisterInternal(IExtension extension) => throw new NotImplementedException();
     }
 
     /// <summary>

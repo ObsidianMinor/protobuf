@@ -440,6 +440,8 @@ libprotoc_la_SOURCES =                                         \
   google/protobuf/compiler/csharp/csharp_enum.h                \
   google/protobuf/compiler/csharp/csharp_enum_field.cc         \
   google/protobuf/compiler/csharp/csharp_enum_field.h          \
+  google/protobuf/compiler/csharp/csharp_extension.cc          \
+  google/protobuf/compiler/csharp/csharp_extension.h           \
   google/protobuf/compiler/csharp/csharp_field_base.cc         \
   google/protobuf/compiler/csharp/csharp_field_base.h          \
   google/protobuf/compiler/csharp/csharp_generator.cc          \

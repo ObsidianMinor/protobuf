@@ -18,6 +18,7 @@ set(libprotoc_files
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_doc_comment.cc
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_enum.cc
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_enum_field.cc
+  ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_extension.cc
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_field_base.cc
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_generator.cc
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_helpers.cc
@@ -103,6 +104,7 @@ set(libprotoc_headers
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_doc_comment.h
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_enum.h
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_enum_field.h
+  ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_extension.h
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_field_base.h
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_helpers.h
   ${protobuf_source_dir}/src/google/protobuf/compiler/csharp/csharp_map_field.h

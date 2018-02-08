@@ -403,10 +403,10 @@ std::string FieldGeneratorBase::default_value(const FieldDescriptor* descriptor)
     case FieldDescriptor::TYPE_STRING:
       return "\"" + descriptor->default_value_string() +  "\"";
     case FieldDescriptor::TYPE_BYTES:
-      if (text.empty())
+      if (descriptor->default_value_string().empty())
         return "pb::ByteString.Empty";
       else
-        return "pb::ByteString.FromBase64(\"" + StringToBase64(text) + "\")";
+        return "pb::ByteString.FromBase64(\"" + StringToBase64(descriptor->default_value_string()) + "\")";
     case FieldDescriptor::TYPE_UINT32:
       return SimpleItoa(descriptor->default_value_uint32());
     case FieldDescriptor::TYPE_SFIXED32:

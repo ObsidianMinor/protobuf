@@ -19,19 +19,14 @@ namespace Google.Protobuf
         Type ValueType { get; }
 
         /// <summary>
-        /// Gets the field number this extension uses
+        /// Gets the tag number of this field
         /// </summary>
-        int FieldNumber { get; }
+        int Tag { get; }
 
         /// <summary>
         /// Gets the default value of this extension
         /// </summary>
         object DefaultValue { get; }
-
-        /// <summary>
-        /// Gets the field type of this extension field
-        /// </summary>
-        FieldType FieldType { get; }
     }
 
     /// <summary>
@@ -40,27 +35,20 @@ namespace Google.Protobuf
     public sealed class Extension<TTarget, TValue> : IExtension where TTarget : IExtensionMessage<TTarget>
     {
         /// <summary>
-        /// Creates a new extension identifier with the specified field type, number, and default value
+        /// Creates a new extension identifier with the specified tag and default value
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="number"></param>
+        /// <param name="tag"></param>
         /// <param name="defaultValue"></param>
-        public Extension(FieldType type, int number, TValue defaultValue)
+        public Extension(int tag, TValue defaultValue)
         {
-            FieldNumber = number;
-            FieldType = type;
+            Tag = tag;
             DefaultValue = defaultValue;
         }
 
         /// <summary>
-        /// Gets the field number this extension uses
+        /// Gets the tag number of this field
         /// </summary>
-        public int FieldNumber { get; }
-
-        /// <summary>
-        /// Gets the field type of this extension field
-        /// </summary>
-        public FieldType FieldType { get; }
+        public int Tag { get; }
 
         Type IExtension.ValueType => typeof(TValue);
 

@@ -135,6 +135,12 @@ std::string GetReflectionClassUnqualifiedName(const FileDescriptor* descriptor) 
   return GetFileNameBase(descriptor) + "Reflection";
 }
 
+std::string GetExtensionClassUnqualifiedName(const FileDescriptor* descriptor) {
+  // TODO: Detect collisions with existing messages,
+  // and append an underscore if necessary.
+  return GetFileNameBase(descriptor) + "Extensions";
+}
+
 // TODO(jtattermusch): can we reuse a utility function?
 std::string UnderscoresToCamelCase(const std::string& input,
                                    bool cap_next_letter,
@@ -455,55 +461,50 @@ std::string FileDescriptorToBase64(const FileDescriptor* descriptor) {
 FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
                                          int fieldOrdinal,
                                          const Options* options) {
-  if (descriptor->is_extension()) {
-    return new ExtensionFieldGenerator(descriptor, fieldOrdinal, options);
-  }
-  else {
-    switch (descriptor->type()) {
-      case FieldDescriptor::TYPE_GROUP:
-      case FieldDescriptor::TYPE_MESSAGE:
-        if (descriptor->is_repeated()) {
-          if (descriptor->is_map()) {
-            return new MapFieldGenerator(descriptor, fieldOrdinal, options);
-          } else {
-            return new RepeatedMessageFieldGenerator(descriptor, fieldOrdinal, options);
-          }
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_GROUP:
+    case FieldDescriptor::TYPE_MESSAGE:
+      if (descriptor->is_repeated()) {
+        if (descriptor->is_map()) {
+          return new MapFieldGenerator(descriptor, fieldOrdinal, options);
         } else {
-          if (IsWrapperType(descriptor)) {
-            if (descriptor->containing_oneof()) {
-              return new WrapperOneofFieldGenerator(descriptor, fieldOrdinal, options);
-            } else {
-              return new WrapperFieldGenerator(descriptor, fieldOrdinal, options);
-            }
-          } else {
-            if (descriptor->containing_oneof()) {
-              return new MessageOneofFieldGenerator(descriptor, fieldOrdinal, options);
-            } else {
-              return new MessageFieldGenerator(descriptor, fieldOrdinal, options);
-            }
-          }
+          return new RepeatedMessageFieldGenerator(descriptor, fieldOrdinal, options);
         }
-      case FieldDescriptor::TYPE_ENUM:
-        if (descriptor->is_repeated()) {
-          return new RepeatedEnumFieldGenerator(descriptor, fieldOrdinal, options);
+      } else {
+        if (IsWrapperType(descriptor)) {
+          if (descriptor->containing_oneof()) {
+            return new WrapperOneofFieldGenerator(descriptor, fieldOrdinal, options);
+          } else {
+            return new WrapperFieldGenerator(descriptor, fieldOrdinal, options);
+          }
         } else {
           if (descriptor->containing_oneof()) {
-            return new EnumOneofFieldGenerator(descriptor, fieldOrdinal, options);
+            return new MessageOneofFieldGenerator(descriptor, fieldOrdinal, options);
           } else {
-            return new EnumFieldGenerator(descriptor, fieldOrdinal, options);
+            return new MessageFieldGenerator(descriptor, fieldOrdinal, options);
           }
         }
-      default:
-        if (descriptor->is_repeated()) {
-          return new RepeatedPrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+      }
+    case FieldDescriptor::TYPE_ENUM:
+      if (descriptor->is_repeated()) {
+        return new RepeatedEnumFieldGenerator(descriptor, fieldOrdinal, options);
+      } else {
+        if (descriptor->containing_oneof()) {
+          return new EnumOneofFieldGenerator(descriptor, fieldOrdinal, options);
         } else {
-          if (descriptor->containing_oneof()) {
-            return new PrimitiveOneofFieldGenerator(descriptor, fieldOrdinal, options);
-          } else {
-            return new PrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
-          }
+          return new EnumFieldGenerator(descriptor, fieldOrdinal, options);
         }
-    }
+      }
+    default:
+      if (descriptor->is_repeated()) {
+        return new RepeatedPrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+      } else {
+        if (descriptor->containing_oneof()) {
+          return new PrimitiveOneofFieldGenerator(descriptor, fieldOrdinal, options);
+        } else {
+          return new PrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+        }
+      }
   }
 }
 

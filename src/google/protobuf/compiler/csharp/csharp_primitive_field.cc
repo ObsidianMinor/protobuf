@@ -64,6 +64,7 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   // null, or whether we just handle it, in the cases of bytes and string.
   // (Basically, should null-handling code be in the getter or the setter?)
 
+  printer->Print(variables_, "/// <summary>Default value for the \"$descriptor_name$\" field</summary>\n");
   printer->Print(variables_, "$access_level$ ");
   if (descriptor_->type() == FieldDescriptor::TYPE_BYTES) {
     printer->Print("readonly static ");
@@ -73,7 +74,6 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   }
   printer->Print(
     variables_,
-    "/// <summary>Default value for the $field_name$ field</summary>\n"
     "$type_name$ $property_name$DefaultValue = $default_value$;\n\n");
   printer->Print(
     variables_,
@@ -97,17 +97,17 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   printer->Print(
     "  }\n"
     "}\n");
+  printer->Print(variables_, "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
   AddPublicMemberAttributes(printer);
   printer->Print(
     variables_,
-    "/// <summary>Gets whether the $field_name$ field is set</summary>\n"
     "$access_level$ bool Has$property_name$ {\n"
     "  get { return $name$_ != null; }\n"
     "}\n");
   AddPublicMemberAttributes(printer);
   printer->Print(
     variables_,
-    "/// <summary>Clears the value of the $field_name$ field</summary>\n"
+    "/// <summary>Clears the value of the \"$descriptor_name$\" field</summary>\n"
     "$access_level$ void Clear$property_name$() {\n"
     "  $name$_ = null;\n"
     "}\n");

@@ -41,15 +41,21 @@ namespace protobuf {
 namespace compiler {
 namespace csharp {
 
-class ExtensionFieldGenerator : public FieldGeneratorBase {
+class ExtensionGenerator : public SourceGeneratorBase {
  public:
-  ExtensionFieldGenerator(const FieldDescriptor* descriptor,
-                     int fieldOrdinal,
+  ExtensionGenerator(const FieldDescriptor* descriptor,
                      const Options* options);
-  ~ExtensionFieldGenerator();
+  ~ExtensionGenerator();
+  
+  void Generate(io::Printer* printer);
+
+ private:
+  const FieldDescriptor* descriptor_;
 
   std::string extendee_type_name();
   std::string extendee_type_name(const FieldDescriptor* descriptor);
+
+  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(ExtensionGenerator);
 };
 
 }  // namespace csharp

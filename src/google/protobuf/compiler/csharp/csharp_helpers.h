@@ -74,6 +74,9 @@ std::string StripDotProto(const std::string& proto_file);
 // Gets unqualified name of the reflection class
 std::string GetReflectionClassUnqualifiedName(const FileDescriptor* descriptor);
 
+// Gets unqualified name of the extensions class
+std::string GetExtensionClassUnqualifiedName(const FileDescriptor* descriptor);
+
 std::string GetClassName(const EnumDescriptor* descriptor);
 
 std::string GetFieldName(const FieldDescriptor* descriptor);

@@ -45,6 +45,8 @@
 #include <google/protobuf/compiler/csharp/csharp_names.h>
 #include <google/protobuf/compiler/csharp/csharp_options.h>
 #include <google/protobuf/compiler/csharp/csharp_reflection_class.h>
+#include <google/protobuf/compiler/csharp/csharp_field_base.h>
+#include <google/protobuf/compiler/csharp/csharp_extension.h>
 
 namespace google {
 namespace protobuf {
@@ -69,6 +71,24 @@ void ReflectionClassGenerator::Generate(io::Printer* printer) {
   // Close the class declaration.
   printer->Outdent();
   printer->Print("}\n");
+
+  if (file_->extension_count() > 0) {
+      printer->Print("#region Extensions\n");
+      printer->Print("$access_level$ partial static class $class_name$ {\n",
+      "access_level", class_access_level(),
+      "class_name", GetExtensionClassUnqualifiedName(file_));
+      printer->Indent();
+      for (int i = 0; i < file_->extension_count(); i++) {
+        ExtensionGenerator generator(file_->extension(i), this->options());
+        generator.Generate(printer);
+        printer->Print("\n");
+      }
+      printer->Outdent();
+      printer->Print(
+      "}\n"
+      "#endregion\n"
+      "\n");
+  }
   
   // write children: Enums
   if (file_->enum_type_count() > 0) {

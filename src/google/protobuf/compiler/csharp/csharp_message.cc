@@ -45,6 +45,7 @@
 #include <google/protobuf/compiler/csharp/csharp_doc_comment.h>
 #include <google/protobuf/compiler/csharp/csharp_enum.h>
 #include <google/protobuf/compiler/csharp/csharp_field_base.h>
+#include <google/protobuf/compiler/csharp/csharp_extension.h>
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_message.h>
 #include <google/protobuf/compiler/csharp/csharp_names.h>
@@ -63,7 +64,7 @@ MessageGenerator::MessageGenerator(const Descriptor* descriptor,
     : SourceGeneratorBase(descriptor->file(), options),
       descriptor_(descriptor) {
 
-  has_extension_ranges = descriptor_->extension_range_count() > 0;
+  has_extension_ranges_ = descriptor_->extension_range_count() > 0;
 
   // sorted field names
   for (int i = 0; i < descriptor_->field_count(); i++) {
@@ -114,7 +115,7 @@ void MessageGenerator::Generate(io::Printer* printer) {
 
   printer->Print(vars, "$access_level$ sealed partial class $class_name$ : ");
 
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print(vars,"pb::IExtensionMessage<$class_name$>");
   }
   else {
@@ -132,7 +133,7 @@ void MessageGenerator::Generate(io::Printer* printer) {
   printer->Print(
       "private pb::UnknownFieldSet _unknownFields;\n");
 
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print(vars, "private pb::ExtensionSet<$class_name$> _extensions = new pb::ExtensionSet<$class_name$>();\n");
   }
 
@@ -166,11 +167,11 @@ void MessageGenerator::Generate(io::Printer* printer) {
     "}\n"
     "\n");
 
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     WriteGeneratedCodeAttributes(printer);
     printer->Print(vars, "public ExtensionSet<$class_name$> Extensions { get { return _extensions; } }\n");
     WriteGeneratedCodeAttributes(printer);
-    printer->Print("ExtensionSet IExtensionMessage.Extensions { get { return _extensions; } }\n");
+    printer->Print("ExtensionSet IExtensionMessage.Extensions { get { return _extensions; } }\n\n");
   }
 
   // Parameterless constructor and partial OnConstruction method.
@@ -284,9 +285,8 @@ void MessageGenerator::Generate(io::Printer* printer) {
       "public static partial class Extensions {\n");
     printer->Indent();
     for (int i = 0; i < descriptor_->extension_count(); i++) {
-      scoped_ptr<ExtensionFieldGenerator> generator(
-        CreateFieldGeneratorInternal(descriptor_->extension[i]));
-      generator->GenerateMembers(printer);
+      ExtensionGenerator generator(descriptor_->extension(i), this->options());
+      generator.Generate(printer);
       printer->Print("\n");
     }
     printer->Outdent();
@@ -357,7 +357,7 @@ void MessageGenerator::GenerateCloningCode(io::Printer* printer) {
   // Clone unknown fields
   printer->Print(
       "_unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);\n");
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print("_extensions = other._extensions.Clone();\n");
   }
 
@@ -405,6 +405,10 @@ void MessageGenerator::GenerateFrameworkMethods(io::Printer* printer) {
     for (int i = 0; i < descriptor_->oneof_decl_count(); i++) {
         printer->Print("if ($property_name$Case != other.$property_name$Case) return false;\n",
             "property_name", UnderscoresToCamelCase(descriptor_->oneof_decl(i)->name(), true));
+    }
+    if (has_extension_ranges_) {
+      printer->Print("if (!Equals(_extensions, other._extensions))\n"
+                     "  return false;\n");
     }
     printer->Outdent();
     printer->Print(
@@ -460,7 +464,7 @@ void MessageGenerator::GenerateMessageSerializationMethods(io::Printer* printer)
     "if (_unknownFields != null) {\n"
     "  _unknownFields.WriteTo(output);\n"
     "}\n");
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print("_extensions.WriteTo(output);\n");
   }
 
@@ -484,7 +488,7 @@ void MessageGenerator::GenerateMessageSerializationMethods(io::Printer* printer)
     "if (_unknownFields != null) {\n"
     "  size += _unknownFields.CalculateSize();\n"
     "}\n");
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print("size += _extensions.CalculateSize();\n");
   }
 
@@ -542,7 +546,7 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Print(
       "_unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);\n");
   // Merge extensions
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print("_extensions.MergeFrom(other._extensions);\n");
   }
 
@@ -561,14 +565,14 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Indent();
   printer->Print(
     "default:\n");
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Print(
     "  if (!_extensions.TryMergeFieldFrom(input)) {\n");
     printer->Indent();
   }
   printer->Print(
     "  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);\n");
-  if (has_extension_ranges) {
+  if (has_extension_ranges_) {
     printer->Outdent();
     printer->Print("  }\n");
   }

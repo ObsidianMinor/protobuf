@@ -32,12 +32,39 @@
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/io/printer.h>
 
+#include <google/protobuf/compiler/csharp/csharp_names.h>
 #include <google/protobuf/compiler/csharp/csharp_extension.h>
 
 namespace google {
 namespace protobuf {
 namespace compiler {
 namespace csharp {
+
+ExtensionGenerator::ExtensionGenerator(const FieldDescriptor* descriptor,
+                                                 const Options* options)
+    : SourceGeneratorBase(descriptor->file(), options),
+      descriptor_(descriptor) {
+}
+
+ExtensionGenerator::~ExtensionGenerator() {
+
+}
+
+void ExtensionGenerator::Generate(io::Printer* printer) {
+  printer->Print(
+    "$access_level$ static readonly Extension<$extended_type$, $type$> $property_name$"
+    "= new Extension<$extended_type$, $type$>($tag$, $default_value$);\n",
+    "access_level", class_access_level(),
+    "extended_type", extendee_type_name());
+}
+
+std::string ExtensionGenerator::extendee_type_name() {
+  return extendee_type_name(descriptor_);
+}
+
+std::string ExtensionGenerator::extendee_type_name(const FieldDescriptor* descriptor) {
+  return GetClassName(descriptor->containing_type());
+}
 
 }  // namespace csharp
 }  // namespace compiler

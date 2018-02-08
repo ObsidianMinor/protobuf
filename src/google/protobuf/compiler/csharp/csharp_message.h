@@ -57,7 +57,7 @@ class MessageGenerator : public SourceGeneratorBase {
 
  private:
   const Descriptor* descriptor_;
-  bool has_extension_ranges;
+  bool has_extension_ranges_;
   std::vector<std::string> field_names_;
   std::vector<const FieldDescriptor*> fields_by_number_;
 

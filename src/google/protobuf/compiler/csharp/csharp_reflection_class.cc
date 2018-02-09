@@ -59,6 +59,7 @@ ReflectionClassGenerator::ReflectionClassGenerator(const FileDescriptor* file,
       file_(file) {
   namespace_ = GetFileNamespace(file);
   reflectionClassname_ = GetReflectionClassUnqualifiedName(file);
+  extensionClassname_ = GetExtensionClassUnqualifiedName(file);
 }
 
 ReflectionClassGenerator::~ReflectionClassGenerator() {
@@ -70,23 +71,20 @@ void ReflectionClassGenerator::Generate(io::Printer* printer) {
   WriteDescriptor(printer);
   // Close the class declaration.
   printer->Outdent();
-  printer->Print("}\n");
+  printer->Print("}\n\n");
 
   if (file_->extension_count() > 0) {
-      printer->Print("#region Extensions\n");
-      printer->Print("$access_level$ partial static class $class_name$ {\n",
+      printer->Print("$access_level$ static partial class $class_name$ {\n",
       "access_level", class_access_level(),
-      "class_name", GetExtensionClassUnqualifiedName(file_));
+      "class_name", extensionClassname_);
       printer->Indent();
       for (int i = 0; i < file_->extension_count(); i++) {
         ExtensionGenerator generator(file_->extension(i), this->options());
         generator.Generate(printer);
-        printer->Print("\n");
       }
       printer->Outdent();
       printer->Print(
       "}\n"
-      "#endregion\n"
       "\n");
   }
   

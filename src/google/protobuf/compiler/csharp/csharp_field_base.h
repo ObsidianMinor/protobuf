@@ -80,13 +80,10 @@ class FieldGeneratorBase : public SourceGeneratorBase {
   std::string property_name();
   std::string name();
   std::string type_name();
-  std::string type_name(const FieldDescriptor* descriptor);
   std::string nullable_type_name();
-  std::string nullable_type_name(const FieldDescriptor* descriptor);
   bool has_default_value();
   bool is_nullable_type();
   std::string default_value();
-  std::string default_value(const FieldDescriptor* descriptor);
   std::string number();
   std::string capitalized_type_name();
 

@@ -85,6 +85,12 @@ std::string GetFieldConstantName(const FieldDescriptor* field);
 
 std::string GetPropertyName(const FieldDescriptor* descriptor);
 
+std::string GetTypeName(const FieldDescriptor* descriptor);
+
+std::string GetNullableTypeName(const FieldDescriptor* descriptor);
+
+std::string GetDefaultValue(const FieldDescriptor* descriptor);
+
 int GetFixedSize(FieldDescriptor::Type type);
 
 std::string UnderscoresToCamelCase(const std::string& input,

@@ -75,16 +75,33 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   printer->Print(
     variables_,
     "$type_name$ $property_name$DefaultValue = $default_value$;\n\n");
-  printer->Print(
-    variables_,
-    "private $nullable_type_name$ $name$_;\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "private $nullable_type_name$ $name$_;\n");
+  }
+  else {
+    printer->Print(
+      variables_,
+      "private $type_name$ $name$_;\n");
+  }
   WritePropertyDocComment(printer, descriptor_);
   AddPublicMemberAttributes(printer);
-  printer->Print(
-    variables_,
-    "$access_level$ $type_name$ $property_name$ {\n"
-    "  get { return $name$_ ?? $property_name$DefaultValue; }\n"
-    "  set {\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "$access_level$ $type_name$ $property_name$ {\n"
+      "  get { return $name$_ ?? $property_name$DefaultValue; }\n"
+      "  set {\n");
+  }
+  else {
+    printer->Print(
+      variables_,
+      "$access_level$ $type_name$ $property_name$ {\n"
+      "  get { return $name$_; }\n"
+      "  set {\n");
+  }
+  
   if (is_value_type) {
     printer->Print(
       variables_,
@@ -99,18 +116,26 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
     "}\n");
   printer->Print(variables_, "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
   AddPublicMemberAttributes(printer);
-  printer->Print(
-    variables_,
-    "$access_level$ bool Has$property_name$ {\n"
-    "  get { return $name$_ != null; }\n"
-    "}\n");
+  printer->Print(variables_, "$access_level$ bool Has$property_name$ {\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+    printer->Print(variables_, "  get { return $name$_ != null; }\n");
+  }
+  else {
+    printer->Print(variables_, "  get { return $name$_ != $property_name$DefaultValue; }\n");
+  }
+  printer->Print("}\n");
+  printer->Print(variables_, "/// <summary>Clears the value of the \"$descriptor_name$\" field</summary>\n");
   AddPublicMemberAttributes(printer);
   printer->Print(
     variables_,
-    "/// <summary>Clears the value of the \"$descriptor_name$\" field</summary>\n"
-    "$access_level$ void Clear$property_name$() {\n"
-    "  $name$_ = null;\n"
-    "}\n");
+    "$access_level$ void Clear$property_name$() {\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+    printer->Print(variables_, "  $name$_ = null;\n");
+  }
+  else {
+    printer->Print(variables_, "  $name$_ = $property_name$DefaultValue;\n");
+  }
+  printer->Print("}\n");
 }
 
 void PrimitiveFieldGenerator::GenerateMergingCode(io::Printer* printer) {

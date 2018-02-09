@@ -56,7 +56,7 @@ WrapperFieldGenerator::WrapperFieldGenerator(const FieldDescriptor* descriptor,
   is_value_type = wrapped_field->type() != FieldDescriptor::TYPE_STRING &&
       wrapped_field->type() != FieldDescriptor::TYPE_BYTES;
   if (is_value_type) {
-    variables_["nonnullable_type_name"] = type_name(wrapped_field);
+    variables_["nonnullable_type_name"] = GetTypeName(wrapped_field);
   }
 }
 

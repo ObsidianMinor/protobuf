@@ -287,7 +287,6 @@ void MessageGenerator::Generate(io::Printer* printer) {
     for (int i = 0; i < descriptor_->extension_count(); i++) {
       ExtensionGenerator generator(descriptor_->extension(i), this->options());
       generator.Generate(printer);
-      printer->Print("\n");
     }
     printer->Outdent();
     printer->Print(

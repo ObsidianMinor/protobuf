@@ -31,7 +31,9 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/io/printer.h>
+#include <google/protobuf/wire_format.h>
 
+#include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_names.h>
 #include <google/protobuf/compiler/csharp/csharp_extension.h>
 
@@ -52,10 +54,14 @@ ExtensionGenerator::~ExtensionGenerator() {
 
 void ExtensionGenerator::Generate(io::Printer* printer) {
   printer->Print(
-    "$access_level$ static readonly Extension<$extended_type$, $type$> $property_name$"
-    "= new Extension<$extended_type$, $type$>($tag$, $default_value$);\n",
+    "$access_level$ static readonly pb::Extension<$extended_type$, $type$> $property_name$ =\n"
+    "  new pb::Extension<$extended_type$, $type$>($tag$, $default_value$);\n",
     "access_level", class_access_level(),
-    "extended_type", extendee_type_name());
+    "extended_type", extendee_type_name(),
+    "type", GetTypeName(descriptor_),
+    "tag", SimpleItoa(internal::WireFormat::MakeTag(descriptor_)),
+    "property_name", GetPropertyName(descriptor_),
+    "default_value", GetDefaultValue(descriptor_));
 }
 
 std::string ExtensionGenerator::extendee_type_name() {

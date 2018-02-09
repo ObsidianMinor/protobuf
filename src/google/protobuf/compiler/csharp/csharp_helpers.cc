@@ -36,12 +36,14 @@
 #include <google/protobuf/stubs/hash.h>
 #include <limits>
 #include <vector>
+#include <sstream>
 
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_names.h>
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/wire_format.h>
+#include <google/protobuf/stubs/mathlimits.h>
 #include <google/protobuf/stubs/strutil.h>
 #include <google/protobuf/stubs/substitute.h>
 
@@ -505,6 +507,192 @@ FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
           return new PrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
         }
       }
+  }
+}
+
+std::string GetDefaultValue(const FieldDescriptor* descriptor) {
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_ENUM:
+    return GetClassName(descriptor->default_value_enum()->type()) + "." + 
+      GetEnumValueName(descriptor->default_value_enum()->type()->name(), descriptor->default_value_enum()->name());
+    case FieldDescriptor::TYPE_MESSAGE:
+    case FieldDescriptor::TYPE_GROUP:
+      if (IsWrapperType(descriptor)) {
+        const FieldDescriptor* wrapped_field = descriptor->message_type()->field(0);
+        return GetDefaultValue(wrapped_field);
+      } else {
+        return "null";
+      }
+    case FieldDescriptor::TYPE_DOUBLE: {
+      double value = descriptor->default_value_double();
+      if (value == std::numeric_limits<double>::infinity()) {
+        return "double.PositiveInfinity";
+      } else if (value == -std::numeric_limits<double>::infinity()) {
+        return "double.NegativeInfinity";
+      } else if (MathLimits<double>::IsNaN(value)) {
+        return "double.NaN";
+      }
+      return SimpleDtoa(value) + "D";
+    }
+    case FieldDescriptor::TYPE_FLOAT: {
+      float value = descriptor->default_value_float();
+      if (value == std::numeric_limits<float>::infinity()) {
+        return "float.PositiveInfinity";
+      } else if (value == -std::numeric_limits<float>::infinity()) {
+        return "float.NegativeInfinity";
+      } else if (MathLimits<float>::IsNaN(value)) {
+        return "float.NaN";
+      }
+      return SimpleFtoa(value) + "F";
+    }
+    case FieldDescriptor::TYPE_INT64:
+      return SimpleItoa(descriptor->default_value_int64()) + "L";
+    case FieldDescriptor::TYPE_UINT64:
+      return SimpleItoa(descriptor->default_value_uint64()) + "UL";
+    case FieldDescriptor::TYPE_INT32:
+      return SimpleItoa(descriptor->default_value_int32());
+    case FieldDescriptor::TYPE_FIXED64:
+      return SimpleItoa(descriptor->default_value_uint64()) + "UL";
+    case FieldDescriptor::TYPE_FIXED32:
+      return SimpleItoa(descriptor->default_value_uint32());
+    case FieldDescriptor::TYPE_BOOL:
+      if (descriptor->default_value_bool()) {
+        return "true";
+      } else {
+        return "false";
+      }
+    case FieldDescriptor::TYPE_STRING:
+      return "\"" + descriptor->default_value_string() +  "\"";
+    case FieldDescriptor::TYPE_BYTES:
+      if (descriptor->default_value_string().empty())
+        return "pb::ByteString.Empty";
+      else
+        return "pb::ByteString.FromBase64(\"" + StringToBase64(descriptor->default_value_string()) + "\")";
+    case FieldDescriptor::TYPE_UINT32:
+      return SimpleItoa(descriptor->default_value_uint32());
+    case FieldDescriptor::TYPE_SFIXED32:
+      return SimpleItoa(descriptor->default_value_int32());
+    case FieldDescriptor::TYPE_SFIXED64:
+      return SimpleItoa(descriptor->default_value_int64()) + "L";
+    case FieldDescriptor::TYPE_SINT32:
+      return SimpleItoa(descriptor->default_value_int32());
+    case FieldDescriptor::TYPE_SINT64:
+      return SimpleItoa(descriptor->default_value_int64()) + "L";
+    default:
+      GOOGLE_LOG(FATAL)<< "Unknown field type.";
+      return "";
+  }
+}
+
+std::string GetTypeName(const FieldDescriptor* descriptor) {
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_ENUM:
+      return GetClassName(descriptor->enum_type());
+    case FieldDescriptor::TYPE_MESSAGE:
+    case FieldDescriptor::TYPE_GROUP:
+      if (IsWrapperType(descriptor)) {
+        const FieldDescriptor* wrapped_field =
+            descriptor->message_type()->field(0);
+        string wrapped_field_type_name = GetTypeName(wrapped_field);
+        // String and ByteString go to the same type; other wrapped types
+        // go to the nullable equivalent.
+        if (wrapped_field->type() == FieldDescriptor::TYPE_STRING ||
+            wrapped_field->type() == FieldDescriptor::TYPE_BYTES) {
+          return wrapped_field_type_name;
+        } else {
+          return wrapped_field_type_name + "?";
+        }
+      }
+      return GetClassName(descriptor->message_type());
+    case FieldDescriptor::TYPE_DOUBLE:
+      return "double";
+    case FieldDescriptor::TYPE_FLOAT:
+      return "float";
+    case FieldDescriptor::TYPE_INT64:
+      return "long";
+    case FieldDescriptor::TYPE_UINT64:
+      return "ulong";
+    case FieldDescriptor::TYPE_INT32:
+      return "int";
+    case FieldDescriptor::TYPE_FIXED64:
+      return "ulong";
+    case FieldDescriptor::TYPE_FIXED32:
+      return "uint";
+    case FieldDescriptor::TYPE_BOOL:
+      return "bool";
+    case FieldDescriptor::TYPE_STRING:
+      return "string";
+    case FieldDescriptor::TYPE_BYTES:
+      return "pb::ByteString";
+    case FieldDescriptor::TYPE_UINT32:
+      return "uint";
+    case FieldDescriptor::TYPE_SFIXED32:
+      return "int";
+    case FieldDescriptor::TYPE_SFIXED64:
+      return "long";
+    case FieldDescriptor::TYPE_SINT32:
+      return "int";
+    case FieldDescriptor::TYPE_SINT64:
+      return "long";
+    default:
+      GOOGLE_LOG(FATAL)<< "Unknown field type.";
+      return "";
+  }
+}
+
+std::string GetNullableTypeName(const FieldDescriptor* descriptor) {
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_ENUM:
+      return GetClassName(descriptor->enum_type()) + "?";
+    case FieldDescriptor::TYPE_MESSAGE:
+    case FieldDescriptor::TYPE_GROUP:
+      if (IsWrapperType(descriptor)) {
+        const FieldDescriptor* wrapped_field =
+            descriptor->message_type()->field(0);
+        string wrapped_field_type_name = GetTypeName(wrapped_field);
+        // String and ByteString go to the same type; other wrapped types
+        // go to the nullable equivalent.
+        if (wrapped_field->type() == FieldDescriptor::TYPE_STRING ||
+            wrapped_field->type() == FieldDescriptor::TYPE_BYTES) {
+          return wrapped_field_type_name;
+        } else {
+          return wrapped_field_type_name + "?";
+        }
+      }
+      return GetClassName(descriptor->message_type());
+    case FieldDescriptor::TYPE_DOUBLE:
+      return "double?";
+    case FieldDescriptor::TYPE_FLOAT:
+      return "float?";
+    case FieldDescriptor::TYPE_INT64:
+      return "long?";
+    case FieldDescriptor::TYPE_UINT64:
+      return "ulong?";
+    case FieldDescriptor::TYPE_INT32:
+      return "int?";
+    case FieldDescriptor::TYPE_FIXED64:
+      return "ulong?";
+    case FieldDescriptor::TYPE_FIXED32:
+      return "uint?";
+    case FieldDescriptor::TYPE_BOOL:
+      return "bool?";
+    case FieldDescriptor::TYPE_STRING:
+      return "string";
+    case FieldDescriptor::TYPE_BYTES:
+      return "pb::ByteString";
+    case FieldDescriptor::TYPE_UINT32:
+      return "uint?";
+    case FieldDescriptor::TYPE_SFIXED32:
+      return "int?";
+    case FieldDescriptor::TYPE_SFIXED64:
+      return "long?";
+    case FieldDescriptor::TYPE_SINT32:
+      return "int?";
+    case FieldDescriptor::TYPE_SINT64:
+      return "long?";
+    default:
+      GOOGLE_LOG(FATAL)<< "Unknown field type.";
+      return "";
   }
 }
 

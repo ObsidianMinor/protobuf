@@ -706,13 +706,13 @@ namespace Google.Protobuf.TestProtos {
         singleNestedMessage_ = value;
       }
     }
+    /// <summary>Gets whether the single_nested_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the singleNestedMessage field is set</summary>
     public bool HasSingleNestedMessage {
       get { return singleNestedMessage_ != null; }
     }
+    /// <summary>Clears the value of the single_nested_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the singleNestedMessage field</summary>
     public void ClearSingleNestedMessage() {
       singleNestedMessage_ = null;
     }
@@ -727,13 +727,13 @@ namespace Google.Protobuf.TestProtos {
         singleForeignMessage_ = value;
       }
     }
+    /// <summary>Gets whether the single_foreign_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the singleForeignMessage field is set</summary>
     public bool HasSingleForeignMessage {
       get { return singleForeignMessage_ != null; }
     }
+    /// <summary>Clears the value of the single_foreign_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the singleForeignMessage field</summary>
     public void ClearSingleForeignMessage() {
       singleForeignMessage_ = null;
     }
@@ -748,13 +748,13 @@ namespace Google.Protobuf.TestProtos {
         singleImportMessage_ = value;
       }
     }
+    /// <summary>Gets whether the single_import_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the singleImportMessage field is set</summary>
     public bool HasSingleImportMessage {
       get { return singleImportMessage_ != null; }
     }
+    /// <summary>Clears the value of the single_import_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the singleImportMessage field</summary>
     public void ClearSingleImportMessage() {
       singleImportMessage_ = null;
     }
@@ -844,13 +844,13 @@ namespace Google.Protobuf.TestProtos {
         singlePublicImportMessage_ = value;
       }
     }
+    /// <summary>Gets whether the single_public_import_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the singlePublicImportMessage field is set</summary>
     public bool HasSinglePublicImportMessage {
       get { return singlePublicImportMessage_ != null; }
     }
+    /// <summary>Clears the value of the single_public_import_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the singlePublicImportMessage field</summary>
     public void ClearSinglePublicImportMessage() {
       singlePublicImportMessage_ = null;
     }
@@ -2095,13 +2095,13 @@ namespace Google.Protobuf.TestProtos {
         child_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the child field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasChild {
       get { return child_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the child field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearChild() {
       child_ = null;
     }
@@ -2116,13 +2116,13 @@ namespace Google.Protobuf.TestProtos {
         payload_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the payload field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasPayload {
       get { return payload_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the payload field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearPayload() {
       payload_ = null;
     }
@@ -2697,13 +2697,13 @@ namespace Google.Protobuf.TestProtos {
         foreignNested_ = value;
       }
     }
+    /// <summary>Gets whether the foreign_nested field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the foreignNested field is set</summary>
     public bool HasForeignNested {
       get { return foreignNested_ != null; }
     }
+    /// <summary>Clears the value of the foreign_nested field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the foreignNested field</summary>
     public void ClearForeignNested() {
       foreignNested_ = null;
     }
@@ -3033,13 +3033,13 @@ namespace Google.Protobuf.TestProtos {
         a_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the a field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasA {
       get { return a_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the a field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearA() {
       a_ = null;
     }
@@ -3221,13 +3221,13 @@ namespace Google.Protobuf.TestProtos {
         bb_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the bb field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasBb {
       get { return bb_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the bb field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearBb() {
       bb_ = null;
     }
@@ -3367,13 +3367,13 @@ namespace Google.Protobuf.TestProtos {
         a_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the a field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasA {
       get { return a_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the a field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearA() {
       a_ = null;
     }
@@ -3777,13 +3777,13 @@ namespace Google.Protobuf.TestProtos {
         messageField_ = value;
       }
     }
+    /// <summary>Gets whether the MessageField field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the messageField field is set</summary>
     public bool HasMessageField {
       get { return messageField_ != null; }
     }
+    /// <summary>Clears the value of the MessageField field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the messageField field</summary>
     public void ClearMessageField() {
       messageField_ = null;
     }
@@ -4127,13 +4127,13 @@ namespace Google.Protobuf.TestProtos {
         singleNestedMessage_ = value;
       }
     }
+    /// <summary>Gets whether the single_nested_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the singleNestedMessage field is set</summary>
     public bool HasSingleNestedMessage {
       get { return singleNestedMessage_ != null; }
     }
+    /// <summary>Clears the value of the single_nested_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the singleNestedMessage field</summary>
     public void ClearSingleNestedMessage() {
       singleNestedMessage_ = null;
     }

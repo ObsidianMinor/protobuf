@@ -242,13 +242,13 @@ namespace Google.Protobuf.TestProtos {
         anyField_ = value;
       }
     }
+    /// <summary>Gets whether the any_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the anyField field is set</summary>
     public bool HasAnyField {
       get { return anyField_ != null; }
     }
+    /// <summary>Clears the value of the any_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the anyField field</summary>
     public void ClearAnyField() {
       anyField_ = null;
     }
@@ -263,13 +263,13 @@ namespace Google.Protobuf.TestProtos {
         apiField_ = value;
       }
     }
+    /// <summary>Gets whether the api_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the apiField field is set</summary>
     public bool HasApiField {
       get { return apiField_ != null; }
     }
+    /// <summary>Clears the value of the api_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the apiField field</summary>
     public void ClearApiField() {
       apiField_ = null;
     }
@@ -284,13 +284,13 @@ namespace Google.Protobuf.TestProtos {
         durationField_ = value;
       }
     }
+    /// <summary>Gets whether the duration_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the durationField field is set</summary>
     public bool HasDurationField {
       get { return durationField_ != null; }
     }
+    /// <summary>Clears the value of the duration_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the durationField field</summary>
     public void ClearDurationField() {
       durationField_ = null;
     }
@@ -305,13 +305,13 @@ namespace Google.Protobuf.TestProtos {
         emptyField_ = value;
       }
     }
+    /// <summary>Gets whether the empty_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the emptyField field is set</summary>
     public bool HasEmptyField {
       get { return emptyField_ != null; }
     }
+    /// <summary>Clears the value of the empty_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the emptyField field</summary>
     public void ClearEmptyField() {
       emptyField_ = null;
     }
@@ -326,13 +326,13 @@ namespace Google.Protobuf.TestProtos {
         fieldMaskField_ = value;
       }
     }
+    /// <summary>Gets whether the field_mask_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the fieldMaskField field is set</summary>
     public bool HasFieldMaskField {
       get { return fieldMaskField_ != null; }
     }
+    /// <summary>Clears the value of the field_mask_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the fieldMaskField field</summary>
     public void ClearFieldMaskField() {
       fieldMaskField_ = null;
     }
@@ -347,13 +347,13 @@ namespace Google.Protobuf.TestProtos {
         sourceContextField_ = value;
       }
     }
+    /// <summary>Gets whether the source_context_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the sourceContextField field is set</summary>
     public bool HasSourceContextField {
       get { return sourceContextField_ != null; }
     }
+    /// <summary>Clears the value of the source_context_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the sourceContextField field</summary>
     public void ClearSourceContextField() {
       sourceContextField_ = null;
     }
@@ -368,13 +368,13 @@ namespace Google.Protobuf.TestProtos {
         structField_ = value;
       }
     }
+    /// <summary>Gets whether the struct_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the structField field is set</summary>
     public bool HasStructField {
       get { return structField_ != null; }
     }
+    /// <summary>Clears the value of the struct_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the structField field</summary>
     public void ClearStructField() {
       structField_ = null;
     }
@@ -389,13 +389,13 @@ namespace Google.Protobuf.TestProtos {
         timestampField_ = value;
       }
     }
+    /// <summary>Gets whether the timestamp_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the timestampField field is set</summary>
     public bool HasTimestampField {
       get { return timestampField_ != null; }
     }
+    /// <summary>Clears the value of the timestamp_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the timestampField field</summary>
     public void ClearTimestampField() {
       timestampField_ = null;
     }
@@ -410,13 +410,13 @@ namespace Google.Protobuf.TestProtos {
         typeField_ = value;
       }
     }
+    /// <summary>Gets whether the type_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the typeField field is set</summary>
     public bool HasTypeField {
       get { return typeField_ != null; }
     }
+    /// <summary>Clears the value of the type_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the typeField field</summary>
     public void ClearTypeField() {
       typeField_ = null;
     }
@@ -542,13 +542,13 @@ namespace Google.Protobuf.TestProtos {
         valueField_ = value;
       }
     }
+    /// <summary>Gets whether the value_field field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the valueField field is set</summary>
     public bool HasValueField {
       get { return valueField_ != null; }
     }
+    /// <summary>Clears the value of the value_field field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the valueField field</summary>
     public void ClearValueField() {
       valueField_ = null;
     }

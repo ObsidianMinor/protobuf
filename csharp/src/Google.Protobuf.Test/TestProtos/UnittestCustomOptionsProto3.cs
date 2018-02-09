@@ -1888,13 +1888,13 @@ namespace UnitTest.Issues.TestProtos {
         bar_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the bar field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasBar {
       get { return bar_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the bar field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearBar() {
       bar_ = null;
     }
@@ -1933,13 +1933,13 @@ namespace UnitTest.Issues.TestProtos {
         fred_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the fred field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFred {
       get { return fred_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the fred field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFred() {
       fred_ = null;
     }
@@ -2595,13 +2595,13 @@ namespace UnitTest.Issues.TestProtos {
         sub_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the sub field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSub {
       get { return sub_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the sub field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSub() {
       sub_ = null;
     }

@@ -72,17 +72,21 @@ void MessageFieldGenerator::GenerateMembers(io::Printer* printer) {
     "    $name$_ = value;\n"
     "  }\n"
     "}\n");
+  printer->Print(
+    variables_,
+    "/// <summary>Gets whether the $descriptor_name$ field is set</summary>\n");
   AddPublicMemberAttributes(printer);
   printer->Print(
     variables_,
-    "/// <summary>Gets whether the $name$ field is set</summary>\n"
     "$access_level$ bool Has$property_name$ {\n"
     "  get { return $name$_ != null; }\n"
     "}\n");
+  printer->Print(
+    variables_,
+    "/// <summary>Clears the value of the $descriptor_name$ field</summary>\n");
   AddPublicMemberAttributes(printer);
   printer->Print(
     variables_,
-    "/// <summary>Clears the value of the $name$ field</summary>\n"
     "$access_level$ void Clear$property_name$() {\n"
     "  $name$_ = null;\n"
     "}\n");

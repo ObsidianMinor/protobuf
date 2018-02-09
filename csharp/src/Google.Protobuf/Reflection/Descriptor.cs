@@ -509,13 +509,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -536,13 +536,13 @@ namespace Google.Protobuf.Reflection {
         sourceCodeInfo_ = value;
       }
     }
+    /// <summary>Gets whether the source_code_info field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the sourceCodeInfo field is set</summary>
     public bool HasSourceCodeInfo {
       get { return sourceCodeInfo_ != null; }
     }
+    /// <summary>Clears the value of the source_code_info field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the sourceCodeInfo field</summary>
     public void ClearSourceCodeInfo() {
       sourceCodeInfo_ = null;
     }
@@ -940,13 +940,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -1249,13 +1249,13 @@ namespace Google.Protobuf.Reflection {
             options_ = value;
           }
         }
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         /// <summary>Gets whether the options field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasOptions {
           get { return options_ != null; }
         }
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         /// <summary>Clears the value of the options field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearOptions() {
           options_ = null;
         }
@@ -2023,13 +2023,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -2407,13 +2407,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -2609,13 +2609,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -3083,13 +3083,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -3299,13 +3299,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }
@@ -3553,13 +3553,13 @@ namespace Google.Protobuf.Reflection {
         options_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the options field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptions {
       get { return options_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the options field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptions() {
       options_ = null;
     }

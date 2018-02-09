@@ -183,13 +183,13 @@ namespace Google.Protobuf.Examples.AddressBook {
         lastUpdated_ = value;
       }
     }
+    /// <summary>Gets whether the last_updated field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the lastUpdated field is set</summary>
     public bool HasLastUpdated {
       get { return lastUpdated_ != null; }
     }
+    /// <summary>Clears the value of the last_updated field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the lastUpdated field</summary>
     public void ClearLastUpdated() {
       lastUpdated_ = null;
     }

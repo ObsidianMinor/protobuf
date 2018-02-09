@@ -779,15 +779,15 @@ namespace UnitTest.Issues.TestProtos {
         messageValue_ = value;
       }
     }
+    /// <summary>Gets whether the MessageValue field is set</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the messageValue field is set</summary>
     public bool HasMessageValue {
       get { return messageValue_ != null; }
     }
+    /// <summary>Clears the value of the MessageValue field</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the messageValue field</summary>
     public void ClearMessageValue() {
       messageValue_ = null;
     }

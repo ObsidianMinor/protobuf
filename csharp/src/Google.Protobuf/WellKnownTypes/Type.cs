@@ -213,13 +213,13 @@ namespace Google.Protobuf.WellKnownTypes {
         sourceContext_ = value;
       }
     }
+    /// <summary>Gets whether the source_context field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the sourceContext field is set</summary>
     public bool HasSourceContext {
       get { return sourceContext_ != null; }
     }
+    /// <summary>Clears the value of the source_context field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the sourceContext field</summary>
     public void ClearSourceContext() {
       sourceContext_ = null;
     }
@@ -1143,13 +1143,13 @@ namespace Google.Protobuf.WellKnownTypes {
         sourceContext_ = value;
       }
     }
+    /// <summary>Gets whether the source_context field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the sourceContext field is set</summary>
     public bool HasSourceContext {
       get { return sourceContext_ != null; }
     }
+    /// <summary>Clears the value of the source_context field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the sourceContext field</summary>
     public void ClearSourceContext() {
       sourceContext_ = null;
     }
@@ -1621,13 +1621,13 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Gets whether the value field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
       get { return value_ != null; }
     }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     /// <summary>Clears the value of the value field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
       value_ = null;
     }

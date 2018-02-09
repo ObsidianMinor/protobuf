@@ -780,13 +780,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalNestedMessage_ = value;
       }
     }
+    /// <summary>Gets whether the optional_nested_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalNestedMessage field is set</summary>
     public bool HasOptionalNestedMessage {
       get { return optionalNestedMessage_ != null; }
     }
+    /// <summary>Clears the value of the optional_nested_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalNestedMessage field</summary>
     public void ClearOptionalNestedMessage() {
       optionalNestedMessage_ = null;
     }
@@ -801,13 +801,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalForeignMessage_ = value;
       }
     }
+    /// <summary>Gets whether the optional_foreign_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalForeignMessage field is set</summary>
     public bool HasOptionalForeignMessage {
       get { return optionalForeignMessage_ != null; }
     }
+    /// <summary>Clears the value of the optional_foreign_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalForeignMessage field</summary>
     public void ClearOptionalForeignMessage() {
       optionalForeignMessage_ = null;
     }
@@ -918,13 +918,13 @@ namespace ProtobufTestMessages.Proto3 {
         recursiveMessage_ = value;
       }
     }
+    /// <summary>Gets whether the recursive_message field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the recursiveMessage field is set</summary>
     public bool HasRecursiveMessage {
       get { return recursiveMessage_ != null; }
     }
+    /// <summary>Clears the value of the recursive_message field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the recursiveMessage field</summary>
     public void ClearRecursiveMessage() {
       recursiveMessage_ = null;
     }
@@ -1645,13 +1645,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalDuration_ = value;
       }
     }
+    /// <summary>Gets whether the optional_duration field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalDuration field is set</summary>
     public bool HasOptionalDuration {
       get { return optionalDuration_ != null; }
     }
+    /// <summary>Clears the value of the optional_duration field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalDuration field</summary>
     public void ClearOptionalDuration() {
       optionalDuration_ = null;
     }
@@ -1666,13 +1666,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalTimestamp_ = value;
       }
     }
+    /// <summary>Gets whether the optional_timestamp field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalTimestamp field is set</summary>
     public bool HasOptionalTimestamp {
       get { return optionalTimestamp_ != null; }
     }
+    /// <summary>Clears the value of the optional_timestamp field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalTimestamp field</summary>
     public void ClearOptionalTimestamp() {
       optionalTimestamp_ = null;
     }
@@ -1687,13 +1687,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalFieldMask_ = value;
       }
     }
+    /// <summary>Gets whether the optional_field_mask field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalFieldMask field is set</summary>
     public bool HasOptionalFieldMask {
       get { return optionalFieldMask_ != null; }
     }
+    /// <summary>Clears the value of the optional_field_mask field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalFieldMask field</summary>
     public void ClearOptionalFieldMask() {
       optionalFieldMask_ = null;
     }
@@ -1708,13 +1708,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalStruct_ = value;
       }
     }
+    /// <summary>Gets whether the optional_struct field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalStruct field is set</summary>
     public bool HasOptionalStruct {
       get { return optionalStruct_ != null; }
     }
+    /// <summary>Clears the value of the optional_struct field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalStruct field</summary>
     public void ClearOptionalStruct() {
       optionalStruct_ = null;
     }
@@ -1729,13 +1729,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalAny_ = value;
       }
     }
+    /// <summary>Gets whether the optional_any field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalAny field is set</summary>
     public bool HasOptionalAny {
       get { return optionalAny_ != null; }
     }
+    /// <summary>Clears the value of the optional_any field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalAny field</summary>
     public void ClearOptionalAny() {
       optionalAny_ = null;
     }
@@ -1750,13 +1750,13 @@ namespace ProtobufTestMessages.Proto3 {
         optionalValue_ = value;
       }
     }
+    /// <summary>Gets whether the optional_value field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the optionalValue field is set</summary>
     public bool HasOptionalValue {
       get { return optionalValue_ != null; }
     }
+    /// <summary>Clears the value of the optional_value field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the optionalValue field</summary>
     public void ClearOptionalValue() {
       optionalValue_ = null;
     }
@@ -4070,13 +4070,13 @@ namespace ProtobufTestMessages.Proto3 {
             corecursive_ = value;
           }
         }
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         /// <summary>Gets whether the corecursive field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasCorecursive {
           get { return corecursive_ != null; }
         }
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         /// <summary>Clears the value of the corecursive field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearCorecursive() {
           corecursive_ = null;
         }

@@ -662,13 +662,13 @@ namespace Google.Protobuf.TestProtos {
         testMap_ = value;
       }
     }
+    /// <summary>Gets whether the test_map field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Gets whether the testMap field is set</summary>
     public bool HasTestMap {
       get { return testMap_ != null; }
     }
+    /// <summary>Clears the value of the test_map field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    /// <summary>Clears the value of the testMap field</summary>
     public void ClearTestMap() {
       testMap_ = null;
     }

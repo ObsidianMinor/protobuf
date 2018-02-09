@@ -39,6 +39,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// `FieldMask` represents a set of symbolic field paths, for example:

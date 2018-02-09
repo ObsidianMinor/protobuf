@@ -50,6 +50,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Enums
   /// <summary>
   /// `NullValue` is a singleton enumeration to represent the null value for the

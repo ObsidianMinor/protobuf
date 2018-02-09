@@ -196,6 +196,7 @@ namespace Google.Protobuf.TestProtos {
     #endregion
 
   }
+
   #region Enums
   public enum ForeignEnum {
     [pbr::OriginalName("FOREIGN_UNSPECIFIED")] ForeignUnspecified = 0,
@@ -334,320 +335,365 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "single_int32" field.</summary>
     public const int SingleInt32FieldNumber = 1;
+    /// <summary>Default value for the "single_int32" field</summary>
     public const int SingleInt32DefaultValue = 0;
 
-    private int? singleInt32_;
+    private int singleInt32_;
     /// <summary>
     /// Singular
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int SingleInt32 {
-      get { return singleInt32_ ?? SingleInt32DefaultValue; }
+      get { return singleInt32_; }
       set {
         singleInt32_ = value;
       }
     }
+    /// <summary>Gets whether the "single_int32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleInt32 {
-      get { return singleInt32_ != null; }
+      get { return singleInt32_ != SingleInt32DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_int32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleInt32() {
-      singleInt32_ = null;
+      singleInt32_ = SingleInt32DefaultValue;
     }
 
     /// <summary>Field number for the "single_int64" field.</summary>
     public const int SingleInt64FieldNumber = 2;
+    /// <summary>Default value for the "single_int64" field</summary>
     public const long SingleInt64DefaultValue = 0L;
 
-    private long? singleInt64_;
+    private long singleInt64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long SingleInt64 {
-      get { return singleInt64_ ?? SingleInt64DefaultValue; }
+      get { return singleInt64_; }
       set {
         singleInt64_ = value;
       }
     }
+    /// <summary>Gets whether the "single_int64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleInt64 {
-      get { return singleInt64_ != null; }
+      get { return singleInt64_ != SingleInt64DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_int64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleInt64() {
-      singleInt64_ = null;
+      singleInt64_ = SingleInt64DefaultValue;
     }
 
     /// <summary>Field number for the "single_uint32" field.</summary>
     public const int SingleUint32FieldNumber = 3;
+    /// <summary>Default value for the "single_uint32" field</summary>
     public const uint SingleUint32DefaultValue = 0;
 
-    private uint? singleUint32_;
+    private uint singleUint32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint SingleUint32 {
-      get { return singleUint32_ ?? SingleUint32DefaultValue; }
+      get { return singleUint32_; }
       set {
         singleUint32_ = value;
       }
     }
+    /// <summary>Gets whether the "single_uint32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleUint32 {
-      get { return singleUint32_ != null; }
+      get { return singleUint32_ != SingleUint32DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_uint32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleUint32() {
-      singleUint32_ = null;
+      singleUint32_ = SingleUint32DefaultValue;
     }
 
     /// <summary>Field number for the "single_uint64" field.</summary>
     public const int SingleUint64FieldNumber = 4;
+    /// <summary>Default value for the "single_uint64" field</summary>
     public const ulong SingleUint64DefaultValue = 0UL;
 
-    private ulong? singleUint64_;
+    private ulong singleUint64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong SingleUint64 {
-      get { return singleUint64_ ?? SingleUint64DefaultValue; }
+      get { return singleUint64_; }
       set {
         singleUint64_ = value;
       }
     }
+    /// <summary>Gets whether the "single_uint64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleUint64 {
-      get { return singleUint64_ != null; }
+      get { return singleUint64_ != SingleUint64DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_uint64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleUint64() {
-      singleUint64_ = null;
+      singleUint64_ = SingleUint64DefaultValue;
     }
 
     /// <summary>Field number for the "single_sint32" field.</summary>
     public const int SingleSint32FieldNumber = 5;
+    /// <summary>Default value for the "single_sint32" field</summary>
     public const int SingleSint32DefaultValue = 0;
 
-    private int? singleSint32_;
+    private int singleSint32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int SingleSint32 {
-      get { return singleSint32_ ?? SingleSint32DefaultValue; }
+      get { return singleSint32_; }
       set {
         singleSint32_ = value;
       }
     }
+    /// <summary>Gets whether the "single_sint32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleSint32 {
-      get { return singleSint32_ != null; }
+      get { return singleSint32_ != SingleSint32DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_sint32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleSint32() {
-      singleSint32_ = null;
+      singleSint32_ = SingleSint32DefaultValue;
     }
 
     /// <summary>Field number for the "single_sint64" field.</summary>
     public const int SingleSint64FieldNumber = 6;
+    /// <summary>Default value for the "single_sint64" field</summary>
     public const long SingleSint64DefaultValue = 0L;
 
-    private long? singleSint64_;
+    private long singleSint64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long SingleSint64 {
-      get { return singleSint64_ ?? SingleSint64DefaultValue; }
+      get { return singleSint64_; }
       set {
         singleSint64_ = value;
       }
     }
+    /// <summary>Gets whether the "single_sint64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleSint64 {
-      get { return singleSint64_ != null; }
+      get { return singleSint64_ != SingleSint64DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_sint64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleSint64() {
-      singleSint64_ = null;
+      singleSint64_ = SingleSint64DefaultValue;
     }
 
     /// <summary>Field number for the "single_fixed32" field.</summary>
     public const int SingleFixed32FieldNumber = 7;
+    /// <summary>Default value for the "single_fixed32" field</summary>
     public const uint SingleFixed32DefaultValue = 0;
 
-    private uint? singleFixed32_;
+    private uint singleFixed32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint SingleFixed32 {
-      get { return singleFixed32_ ?? SingleFixed32DefaultValue; }
+      get { return singleFixed32_; }
       set {
         singleFixed32_ = value;
       }
     }
+    /// <summary>Gets whether the "single_fixed32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleFixed32 {
-      get { return singleFixed32_ != null; }
+      get { return singleFixed32_ != SingleFixed32DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_fixed32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleFixed32() {
-      singleFixed32_ = null;
+      singleFixed32_ = SingleFixed32DefaultValue;
     }
 
     /// <summary>Field number for the "single_fixed64" field.</summary>
     public const int SingleFixed64FieldNumber = 8;
+    /// <summary>Default value for the "single_fixed64" field</summary>
     public const ulong SingleFixed64DefaultValue = 0UL;
 
-    private ulong? singleFixed64_;
+    private ulong singleFixed64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong SingleFixed64 {
-      get { return singleFixed64_ ?? SingleFixed64DefaultValue; }
+      get { return singleFixed64_; }
       set {
         singleFixed64_ = value;
       }
     }
+    /// <summary>Gets whether the "single_fixed64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleFixed64 {
-      get { return singleFixed64_ != null; }
+      get { return singleFixed64_ != SingleFixed64DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_fixed64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleFixed64() {
-      singleFixed64_ = null;
+      singleFixed64_ = SingleFixed64DefaultValue;
     }
 
     /// <summary>Field number for the "single_sfixed32" field.</summary>
     public const int SingleSfixed32FieldNumber = 9;
+    /// <summary>Default value for the "single_sfixed32" field</summary>
     public const int SingleSfixed32DefaultValue = 0;
 
-    private int? singleSfixed32_;
+    private int singleSfixed32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int SingleSfixed32 {
-      get { return singleSfixed32_ ?? SingleSfixed32DefaultValue; }
+      get { return singleSfixed32_; }
       set {
         singleSfixed32_ = value;
       }
     }
+    /// <summary>Gets whether the "single_sfixed32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleSfixed32 {
-      get { return singleSfixed32_ != null; }
+      get { return singleSfixed32_ != SingleSfixed32DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_sfixed32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleSfixed32() {
-      singleSfixed32_ = null;
+      singleSfixed32_ = SingleSfixed32DefaultValue;
     }
 
     /// <summary>Field number for the "single_sfixed64" field.</summary>
     public const int SingleSfixed64FieldNumber = 10;
+    /// <summary>Default value for the "single_sfixed64" field</summary>
     public const long SingleSfixed64DefaultValue = 0L;
 
-    private long? singleSfixed64_;
+    private long singleSfixed64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long SingleSfixed64 {
-      get { return singleSfixed64_ ?? SingleSfixed64DefaultValue; }
+      get { return singleSfixed64_; }
       set {
         singleSfixed64_ = value;
       }
     }
+    /// <summary>Gets whether the "single_sfixed64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleSfixed64 {
-      get { return singleSfixed64_ != null; }
+      get { return singleSfixed64_ != SingleSfixed64DefaultValue; }
     }
+    /// <summary>Clears the value of the "single_sfixed64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleSfixed64() {
-      singleSfixed64_ = null;
+      singleSfixed64_ = SingleSfixed64DefaultValue;
     }
 
     /// <summary>Field number for the "single_float" field.</summary>
     public const int SingleFloatFieldNumber = 11;
+    /// <summary>Default value for the "single_float" field</summary>
     public const float SingleFloatDefaultValue = 0F;
 
-    private float? singleFloat_;
+    private float singleFloat_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float SingleFloat {
-      get { return singleFloat_ ?? SingleFloatDefaultValue; }
+      get { return singleFloat_; }
       set {
         singleFloat_ = value;
       }
     }
+    /// <summary>Gets whether the "single_float" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleFloat {
-      get { return singleFloat_ != null; }
+      get { return singleFloat_ != SingleFloatDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_float" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleFloat() {
-      singleFloat_ = null;
+      singleFloat_ = SingleFloatDefaultValue;
     }
 
     /// <summary>Field number for the "single_double" field.</summary>
     public const int SingleDoubleFieldNumber = 12;
+    /// <summary>Default value for the "single_double" field</summary>
     public const double SingleDoubleDefaultValue = 0D;
 
-    private double? singleDouble_;
+    private double singleDouble_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double SingleDouble {
-      get { return singleDouble_ ?? SingleDoubleDefaultValue; }
+      get { return singleDouble_; }
       set {
         singleDouble_ = value;
       }
     }
+    /// <summary>Gets whether the "single_double" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleDouble {
-      get { return singleDouble_ != null; }
+      get { return singleDouble_ != SingleDoubleDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_double" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleDouble() {
-      singleDouble_ = null;
+      singleDouble_ = SingleDoubleDefaultValue;
     }
 
     /// <summary>Field number for the "single_bool" field.</summary>
     public const int SingleBoolFieldNumber = 13;
+    /// <summary>Default value for the "single_bool" field</summary>
     public const bool SingleBoolDefaultValue = false;
 
-    private bool? singleBool_;
+    private bool singleBool_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool SingleBool {
-      get { return singleBool_ ?? SingleBoolDefaultValue; }
+      get { return singleBool_; }
       set {
         singleBool_ = value;
       }
     }
+    /// <summary>Gets whether the "single_bool" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleBool {
-      get { return singleBool_ != null; }
+      get { return singleBool_ != SingleBoolDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_bool" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleBool() {
-      singleBool_ = null;
+      singleBool_ = SingleBoolDefaultValue;
     }
 
     /// <summary>Field number for the "single_string" field.</summary>
     public const int SingleStringFieldNumber = 14;
+    /// <summary>Default value for the "single_string" field</summary>
     public const string SingleStringDefaultValue = "";
 
     private string singleString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SingleString {
-      get { return singleString_ ?? SingleStringDefaultValue; }
+      get { return singleString_; }
       set {
         singleString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "single_string" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleString {
-      get { return singleString_ != null; }
+      get { return singleString_ != SingleStringDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_string" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleString() {
-      singleString_ = null;
+      singleString_ = SingleStringDefaultValue;
     }
 
     /// <summary>Field number for the "single_bytes" field.</summary>
     public const int SingleBytesFieldNumber = 15;
+    /// <summary>Default value for the "single_bytes" field</summary>
     public readonly static pb::ByteString SingleBytesDefaultValue = pb::ByteString.Empty;
 
     private pb::ByteString singleBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString SingleBytes {
-      get { return singleBytes_ ?? SingleBytesDefaultValue; }
+      get { return singleBytes_; }
       set {
         singleBytes_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "single_bytes" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleBytes {
-      get { return singleBytes_ != null; }
+      get { return singleBytes_ != SingleBytesDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_bytes" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleBytes() {
-      singleBytes_ = null;
+      singleBytes_ = SingleBytesDefaultValue;
     }
 
     /// <summary>Field number for the "single_nested_message" field.</summary>
@@ -661,10 +707,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the singleNestedMessage field is set</summary>
     public bool HasSingleNestedMessage {
       get { return singleNestedMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the singleNestedMessage field</summary>
     public void ClearSingleNestedMessage() {
       singleNestedMessage_ = null;
     }
@@ -680,10 +728,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the singleForeignMessage field is set</summary>
     public bool HasSingleForeignMessage {
       get { return singleForeignMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the singleForeignMessage field</summary>
     public void ClearSingleForeignMessage() {
       singleForeignMessage_ = null;
     }
@@ -699,75 +749,86 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the singleImportMessage field is set</summary>
     public bool HasSingleImportMessage {
       get { return singleImportMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the singleImportMessage field</summary>
     public void ClearSingleImportMessage() {
       singleImportMessage_ = null;
     }
 
     /// <summary>Field number for the "single_nested_enum" field.</summary>
     public const int SingleNestedEnumFieldNumber = 21;
+    /// <summary>Default value for the "single_nested_enum" field</summary>
     public const global::Google.Protobuf.TestProtos.TestAllTypes.Types.NestedEnum SingleNestedEnumDefaultValue = global::Google.Protobuf.TestProtos.TestAllTypes.Types.NestedEnum.Unspecified;
 
-    private global::Google.Protobuf.TestProtos.TestAllTypes.Types.NestedEnum? singleNestedEnum_;
+    private global::Google.Protobuf.TestProtos.TestAllTypes.Types.NestedEnum singleNestedEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.TestAllTypes.Types.NestedEnum SingleNestedEnum {
-      get { return singleNestedEnum_ ?? SingleNestedEnumDefaultValue; }
+      get { return singleNestedEnum_; }
       set {
         singleNestedEnum_ = value;
       }
     }
+    /// <summary>Gets whether the "single_nested_enum" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleNestedEnum {
-      get { return singleNestedEnum_ != null; }
+      get { return singleNestedEnum_ != SingleNestedEnumDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_nested_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleNestedEnum() {
-      singleNestedEnum_ = null;
+      singleNestedEnum_ = SingleNestedEnumDefaultValue;
     }
 
     /// <summary>Field number for the "single_foreign_enum" field.</summary>
     public const int SingleForeignEnumFieldNumber = 22;
+    /// <summary>Default value for the "single_foreign_enum" field</summary>
     public const global::Google.Protobuf.TestProtos.ForeignEnum SingleForeignEnumDefaultValue = global::Google.Protobuf.TestProtos.ForeignEnum.ForeignUnspecified;
 
-    private global::Google.Protobuf.TestProtos.ForeignEnum? singleForeignEnum_;
+    private global::Google.Protobuf.TestProtos.ForeignEnum singleForeignEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.ForeignEnum SingleForeignEnum {
-      get { return singleForeignEnum_ ?? SingleForeignEnumDefaultValue; }
+      get { return singleForeignEnum_; }
       set {
         singleForeignEnum_ = value;
       }
     }
+    /// <summary>Gets whether the "single_foreign_enum" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleForeignEnum {
-      get { return singleForeignEnum_ != null; }
+      get { return singleForeignEnum_ != SingleForeignEnumDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_foreign_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleForeignEnum() {
-      singleForeignEnum_ = null;
+      singleForeignEnum_ = SingleForeignEnumDefaultValue;
     }
 
     /// <summary>Field number for the "single_import_enum" field.</summary>
     public const int SingleImportEnumFieldNumber = 23;
+    /// <summary>Default value for the "single_import_enum" field</summary>
     public const global::Google.Protobuf.TestProtos.ImportEnum SingleImportEnumDefaultValue = global::Google.Protobuf.TestProtos.ImportEnum.Unspecified;
 
-    private global::Google.Protobuf.TestProtos.ImportEnum? singleImportEnum_;
+    private global::Google.Protobuf.TestProtos.ImportEnum singleImportEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.ImportEnum SingleImportEnum {
-      get { return singleImportEnum_ ?? SingleImportEnumDefaultValue; }
+      get { return singleImportEnum_; }
       set {
         singleImportEnum_ = value;
       }
     }
+    /// <summary>Gets whether the "single_import_enum" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSingleImportEnum {
-      get { return singleImportEnum_ != null; }
+      get { return singleImportEnum_ != SingleImportEnumDefaultValue; }
     }
+    /// <summary>Clears the value of the "single_import_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSingleImportEnum() {
-      singleImportEnum_ = null;
+      singleImportEnum_ = SingleImportEnumDefaultValue;
     }
 
     /// <summary>Field number for the "single_public_import_message" field.</summary>
@@ -784,10 +845,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the singlePublicImportMessage field is set</summary>
     public bool HasSinglePublicImportMessage {
       get { return singlePublicImportMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the singlePublicImportMessage field</summary>
     public void ClearSinglePublicImportMessage() {
       singlePublicImportMessage_ = null;
     }
@@ -1867,9 +1930,10 @@ namespace Google.Protobuf.TestProtos {
 
         /// <summary>Field number for the "bb" field.</summary>
         public const int BbFieldNumber = 1;
+        /// <summary>Default value for the "bb" field</summary>
         public const int BbDefaultValue = 0;
 
-        private int? bb_;
+        private int bb_;
         /// <summary>
         /// The field name "b" fails to compile in proto1 because it conflicts with
         /// a local variable named "b" in one of the generated methods.  Doh.
@@ -1877,18 +1941,20 @@ namespace Google.Protobuf.TestProtos {
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Bb {
-          get { return bb_ ?? BbDefaultValue; }
+          get { return bb_; }
           set {
             bb_ = value;
           }
         }
+        /// <summary>Gets whether the "bb" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasBb {
-          get { return bb_ != null; }
+          get { return bb_ != BbDefaultValue; }
         }
+        /// <summary>Clears the value of the "bb" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearBb() {
-          bb_ = null;
+          bb_ = BbDefaultValue;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2030,10 +2096,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the child field is set</summary>
     public bool HasChild {
       get { return child_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the child field</summary>
     public void ClearChild() {
       child_ = null;
     }
@@ -2049,10 +2117,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the payload field is set</summary>
     public bool HasPayload {
       get { return payload_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the payload field</summary>
     public void ClearPayload() {
       payload_ = null;
     }
@@ -2224,26 +2294,29 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "deprecated_int32" field.</summary>
     public const int DeprecatedInt32FieldNumber = 1;
+    /// <summary>Default value for the "deprecated_int32" field</summary>
     public const int DeprecatedInt32DefaultValue = 0;
 
-    private int? deprecatedInt32_;
+    private int deprecatedInt32_;
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int DeprecatedInt32 {
-      get { return deprecatedInt32_ ?? DeprecatedInt32DefaultValue; }
+      get { return deprecatedInt32_; }
       set {
         deprecatedInt32_ = value;
       }
     }
+    /// <summary>Gets whether the "deprecated_int32" field is set</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasDeprecatedInt32 {
-      get { return deprecatedInt32_ != null; }
+      get { return deprecatedInt32_ != DeprecatedInt32DefaultValue; }
     }
+    /// <summary>Clears the value of the "deprecated_int32" field</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearDeprecatedInt32() {
-      deprecatedInt32_ = null;
+      deprecatedInt32_ = DeprecatedInt32DefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2370,23 +2443,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "c" field.</summary>
     public const int CFieldNumber = 1;
+    /// <summary>Default value for the "c" field</summary>
     public const int CDefaultValue = 0;
 
-    private int? c_;
+    private int c_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int C {
-      get { return c_ ?? CDefaultValue; }
+      get { return c_; }
       set {
         c_ = value;
       }
     }
+    /// <summary>Gets whether the "c" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasC {
-      get { return c_ != null; }
+      get { return c_ != CDefaultValue; }
     }
+    /// <summary>Clears the value of the "c" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearC() {
-      c_ = null;
+      c_ = CDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2622,10 +2698,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the foreignNested field is set</summary>
     public bool HasForeignNested {
       get { return foreignNested_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the foreignNested field</summary>
     public void ClearForeignNested() {
       foreignNested_ = null;
     }
@@ -2760,48 +2838,54 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "a" field.</summary>
     public const int AFieldNumber = 1;
+    /// <summary>Default value for the "a" field</summary>
     public const int ADefaultValue = 0;
 
-    private int? a_;
+    private int a_;
     /// <summary>
     /// The largest possible tag number is 2^28 - 1, since the wire format uses
     /// three bits to communicate wire type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int A {
-      get { return a_ ?? ADefaultValue; }
+      get { return a_; }
       set {
         a_ = value;
       }
     }
+    /// <summary>Gets whether the "a" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasA {
-      get { return a_ != null; }
+      get { return a_ != ADefaultValue; }
     }
+    /// <summary>Clears the value of the "a" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearA() {
-      a_ = null;
+      a_ = ADefaultValue;
     }
 
     /// <summary>Field number for the "bb" field.</summary>
     public const int BbFieldNumber = 268435455;
+    /// <summary>Default value for the "bb" field</summary>
     public const int BbDefaultValue = 0;
 
-    private int? bb_;
+    private int bb_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Bb {
-      get { return bb_ ?? BbDefaultValue; }
+      get { return bb_; }
       set {
         bb_ = value;
       }
     }
+    /// <summary>Gets whether the "bb" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasBb {
-      get { return bb_ != null; }
+      get { return bb_ != BbDefaultValue; }
     }
+    /// <summary>Clears the value of the "bb" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearBb() {
-      bb_ = null;
+      bb_ = BbDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2950,33 +3034,38 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the a field is set</summary>
     public bool HasA {
       get { return a_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the a field</summary>
     public void ClearA() {
       a_ = null;
     }
 
     /// <summary>Field number for the "i" field.</summary>
     public const int IFieldNumber = 2;
+    /// <summary>Default value for the "i" field</summary>
     public const int IDefaultValue = 0;
 
-    private int? i_;
+    private int i_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int I {
-      get { return i_ ?? IDefaultValue; }
+      get { return i_; }
       set {
         i_ = value;
       }
     }
+    /// <summary>Gets whether the "i" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasI {
-      get { return i_ != null; }
+      get { return i_ != IDefaultValue; }
     }
+    /// <summary>Clears the value of the "i" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearI() {
-      i_ = null;
+      i_ = IDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3133,10 +3222,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the bb field is set</summary>
     public bool HasBb {
       get { return bb_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the bb field</summary>
     public void ClearBb() {
       bb_ = null;
     }
@@ -3277,33 +3368,38 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the a field is set</summary>
     public bool HasA {
       get { return a_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the a field</summary>
     public void ClearA() {
       a_ = null;
     }
 
     /// <summary>Field number for the "optional_int32" field.</summary>
     public const int OptionalInt32FieldNumber = 2;
+    /// <summary>Default value for the "optional_int32" field</summary>
     public const int OptionalInt32DefaultValue = 0;
 
-    private int? optionalInt32_;
+    private int optionalInt32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalInt32 {
-      get { return optionalInt32_ ?? OptionalInt32DefaultValue; }
+      get { return optionalInt32_; }
       set {
         optionalInt32_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_int32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalInt32 {
-      get { return optionalInt32_ != null; }
+      get { return optionalInt32_ != OptionalInt32DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_int32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalInt32() {
-      optionalInt32_ = null;
+      optionalInt32_ = OptionalInt32DefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3448,23 +3544,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const global::Google.Protobuf.TestProtos.TestEnumWithDupValue ValueDefaultValue = global::Google.Protobuf.TestProtos.TestEnumWithDupValue.Unspecified;
 
-    private global::Google.Protobuf.TestProtos.TestEnumWithDupValue? value_;
+    private global::Google.Protobuf.TestProtos.TestEnumWithDupValue value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.TestEnumWithDupValue Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3598,65 +3697,74 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "PrimitiveField" field.</summary>
     public const int PrimitiveFieldFieldNumber = 1;
+    /// <summary>Default value for the "PrimitiveField" field</summary>
     public const int PrimitiveFieldDefaultValue = 0;
 
-    private int? primitiveField_;
+    private int primitiveField_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PrimitiveField {
-      get { return primitiveField_ ?? PrimitiveFieldDefaultValue; }
+      get { return primitiveField_; }
       set {
         primitiveField_ = value;
       }
     }
+    /// <summary>Gets whether the "PrimitiveField" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasPrimitiveField {
-      get { return primitiveField_ != null; }
+      get { return primitiveField_ != PrimitiveFieldDefaultValue; }
     }
+    /// <summary>Clears the value of the "PrimitiveField" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearPrimitiveField() {
-      primitiveField_ = null;
+      primitiveField_ = PrimitiveFieldDefaultValue;
     }
 
     /// <summary>Field number for the "StringField" field.</summary>
     public const int StringFieldFieldNumber = 2;
+    /// <summary>Default value for the "StringField" field</summary>
     public const string StringFieldDefaultValue = "";
 
     private string stringField_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string StringField {
-      get { return stringField_ ?? StringFieldDefaultValue; }
+      get { return stringField_; }
       set {
         stringField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "StringField" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasStringField {
-      get { return stringField_ != null; }
+      get { return stringField_ != StringFieldDefaultValue; }
     }
+    /// <summary>Clears the value of the "StringField" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearStringField() {
-      stringField_ = null;
+      stringField_ = StringFieldDefaultValue;
     }
 
     /// <summary>Field number for the "EnumField" field.</summary>
     public const int EnumFieldFieldNumber = 3;
+    /// <summary>Default value for the "EnumField" field</summary>
     public const global::Google.Protobuf.TestProtos.ForeignEnum EnumFieldDefaultValue = global::Google.Protobuf.TestProtos.ForeignEnum.ForeignUnspecified;
 
-    private global::Google.Protobuf.TestProtos.ForeignEnum? enumField_;
+    private global::Google.Protobuf.TestProtos.ForeignEnum enumField_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.ForeignEnum EnumField {
-      get { return enumField_ ?? EnumFieldDefaultValue; }
+      get { return enumField_; }
       set {
         enumField_ = value;
       }
     }
+    /// <summary>Gets whether the "EnumField" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasEnumField {
-      get { return enumField_ != null; }
+      get { return enumField_ != EnumFieldDefaultValue; }
     }
+    /// <summary>Clears the value of the "EnumField" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearEnumField() {
-      enumField_ = null;
+      enumField_ = EnumFieldDefaultValue;
     }
 
     /// <summary>Field number for the "MessageField" field.</summary>
@@ -3670,10 +3778,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the messageField field is set</summary>
     public bool HasMessageField {
       get { return messageField_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the messageField field</summary>
     public void ClearMessageField() {
       messageField_ = null;
     }
@@ -3937,65 +4047,74 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "my_string" field.</summary>
     public const int MyStringFieldNumber = 11;
+    /// <summary>Default value for the "my_string" field</summary>
     public const string MyStringDefaultValue = "";
 
     private string myString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string MyString {
-      get { return myString_ ?? MyStringDefaultValue; }
+      get { return myString_; }
       set {
         myString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "my_string" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasMyString {
-      get { return myString_ != null; }
+      get { return myString_ != MyStringDefaultValue; }
     }
+    /// <summary>Clears the value of the "my_string" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearMyString() {
-      myString_ = null;
+      myString_ = MyStringDefaultValue;
     }
 
     /// <summary>Field number for the "my_int" field.</summary>
     public const int MyIntFieldNumber = 1;
+    /// <summary>Default value for the "my_int" field</summary>
     public const long MyIntDefaultValue = 0L;
 
-    private long? myInt_;
+    private long myInt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MyInt {
-      get { return myInt_ ?? MyIntDefaultValue; }
+      get { return myInt_; }
       set {
         myInt_ = value;
       }
     }
+    /// <summary>Gets whether the "my_int" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasMyInt {
-      get { return myInt_ != null; }
+      get { return myInt_ != MyIntDefaultValue; }
     }
+    /// <summary>Clears the value of the "my_int" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearMyInt() {
-      myInt_ = null;
+      myInt_ = MyIntDefaultValue;
     }
 
     /// <summary>Field number for the "my_float" field.</summary>
     public const int MyFloatFieldNumber = 101;
+    /// <summary>Default value for the "my_float" field</summary>
     public const float MyFloatDefaultValue = 0F;
 
-    private float? myFloat_;
+    private float myFloat_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float MyFloat {
-      get { return myFloat_ ?? MyFloatDefaultValue; }
+      get { return myFloat_; }
       set {
         myFloat_ = value;
       }
     }
+    /// <summary>Gets whether the "my_float" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasMyFloat {
-      get { return myFloat_ != null; }
+      get { return myFloat_ != MyFloatDefaultValue; }
     }
+    /// <summary>Clears the value of the "my_float" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearMyFloat() {
-      myFloat_ = null;
+      myFloat_ = MyFloatDefaultValue;
     }
 
     /// <summary>Field number for the "single_nested_message" field.</summary>
@@ -4009,10 +4128,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the singleNestedMessage field is set</summary>
     public bool HasSingleNestedMessage {
       get { return singleNestedMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the singleNestedMessage field</summary>
     public void ClearSingleNestedMessage() {
       singleNestedMessage_ = null;
     }
@@ -4194,30 +4315,34 @@ namespace Google.Protobuf.TestProtos {
 
         /// <summary>Field number for the "oo" field.</summary>
         public const int OoFieldNumber = 2;
+        /// <summary>Default value for the "oo" field</summary>
         public const long OoDefaultValue = 0L;
 
-        private long? oo_;
+        private long oo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public long Oo {
-          get { return oo_ ?? OoDefaultValue; }
+          get { return oo_; }
           set {
             oo_ = value;
           }
         }
+        /// <summary>Gets whether the "oo" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasOo {
-          get { return oo_ != null; }
+          get { return oo_ != OoDefaultValue; }
         }
+        /// <summary>Clears the value of the "oo" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearOo() {
-          oo_ = null;
+          oo_ = OoDefaultValue;
         }
 
         /// <summary>Field number for the "bb" field.</summary>
         public const int BbFieldNumber = 1;
+        /// <summary>Default value for the "bb" field</summary>
         public const int BbDefaultValue = 0;
 
-        private int? bb_;
+        private int bb_;
         /// <summary>
         /// The field name "b" fails to compile in proto1 because it conflicts with
         /// a local variable named "b" in one of the generated methods.  Doh.
@@ -4225,18 +4350,20 @@ namespace Google.Protobuf.TestProtos {
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Bb {
-          get { return bb_ ?? BbDefaultValue; }
+          get { return bb_; }
           set {
             bb_ = value;
           }
         }
+        /// <summary>Gets whether the "bb" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasBb {
-          get { return bb_ != null; }
+          get { return bb_ != BbDefaultValue; }
         }
+        /// <summary>Clears the value of the "bb" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearBb() {
-          bb_ = null;
+          bb_ = BbDefaultValue;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4380,23 +4507,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "sparse_enum" field.</summary>
     public const int SparseEnumFieldNumber = 1;
+    /// <summary>Default value for the "sparse_enum" field</summary>
     public const global::Google.Protobuf.TestProtos.TestSparseEnum SparseEnumDefaultValue = global::Google.Protobuf.TestProtos.TestSparseEnum.Unspecified;
 
-    private global::Google.Protobuf.TestProtos.TestSparseEnum? sparseEnum_;
+    private global::Google.Protobuf.TestProtos.TestSparseEnum sparseEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.TestSparseEnum SparseEnum {
-      get { return sparseEnum_ ?? SparseEnumDefaultValue; }
+      get { return sparseEnum_; }
       set {
         sparseEnum_ = value;
       }
     }
+    /// <summary>Gets whether the "sparse_enum" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSparseEnum {
-      get { return sparseEnum_ != null; }
+      get { return sparseEnum_ != SparseEnumDefaultValue; }
     }
+    /// <summary>Clears the value of the "sparse_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSparseEnum() {
-      sparseEnum_ = null;
+      sparseEnum_ = SparseEnumDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4522,23 +4652,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public const string DataDefaultValue = "";
 
     private string data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4782,23 +4915,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public readonly static pb::ByteString DataDefaultValue = pb::ByteString.Empty;
 
     private pb::ByteString data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4921,23 +5057,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public readonly static pb::ByteString DataDefaultValue = pb::ByteString.Empty;
 
     private pb::ByteString data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5063,23 +5202,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public const int DataDefaultValue = 0;
 
-    private int? data_;
+    private int data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = value;
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5202,23 +5344,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public const uint DataDefaultValue = 0;
 
-    private uint? data_;
+    private uint data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = value;
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5341,23 +5486,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public const long DataDefaultValue = 0L;
 
-    private long? data_;
+    private long data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = value;
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5480,23 +5628,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public const ulong DataDefaultValue = 0UL;
 
-    private ulong? data_;
+    private ulong data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = value;
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5619,23 +5770,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
+    /// <summary>Default value for the "data" field</summary>
     public const bool DataDefaultValue = false;
 
-    private bool? data_;
+    private bool data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Data {
-      get { return data_ ?? DataDefaultValue; }
+      get { return data_; }
       set {
         data_ = value;
       }
     }
+    /// <summary>Gets whether the "data" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasData {
-      get { return data_ != null; }
+      get { return data_ != DataDefaultValue; }
     }
+    /// <summary>Clears the value of the "data" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearData() {
-      data_ = null;
+      data_ = DataDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7023,6 +7177,7 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "a" field.</summary>
     public const int AFieldNumber = 1;
+    /// <summary>Default value for the "a" field</summary>
     public const string ADefaultValue = "";
 
     private string a_;
@@ -7031,18 +7186,20 @@ namespace Google.Protobuf.TestProtos {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string A {
-      get { return a_ ?? ADefaultValue; }
+      get { return a_; }
       set {
         a_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "a" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasA {
-      get { return a_ != null; }
+      get { return a_ != ADefaultValue; }
     }
+    /// <summary>Clears the value of the "a" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearA() {
-      a_ = null;
+      a_ = ADefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

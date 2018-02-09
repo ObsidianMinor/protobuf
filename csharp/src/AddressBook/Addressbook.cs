@@ -45,6 +45,7 @@ namespace Google.Protobuf.Examples.AddressBook {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// [START messages]
@@ -89,68 +90,77 @@ namespace Google.Protobuf.Examples.AddressBook {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_ ?? NameDefaultValue; }
+      get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "name" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasName {
-      get { return name_ != null; }
+      get { return name_ != NameDefaultValue; }
     }
+    /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearName() {
-      name_ = null;
+      name_ = NameDefaultValue;
     }
 
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 2;
+    /// <summary>Default value for the "id" field</summary>
     public const int IdDefaultValue = 0;
 
-    private int? id_;
+    private int id_;
     /// <summary>
     /// Unique ID number for this person.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Id {
-      get { return id_ ?? IdDefaultValue; }
+      get { return id_; }
       set {
         id_ = value;
       }
     }
+    /// <summary>Gets whether the "id" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasId {
-      get { return id_ != null; }
+      get { return id_ != IdDefaultValue; }
     }
+    /// <summary>Clears the value of the "id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearId() {
-      id_ = null;
+      id_ = IdDefaultValue;
     }
 
     /// <summary>Field number for the "email" field.</summary>
     public const int EmailFieldNumber = 3;
+    /// <summary>Default value for the "email" field</summary>
     public const string EmailDefaultValue = "";
 
     private string email_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Email {
-      get { return email_ ?? EmailDefaultValue; }
+      get { return email_; }
       set {
         email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "email" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasEmail {
-      get { return email_ != null; }
+      get { return email_ != EmailDefaultValue; }
     }
+    /// <summary>Clears the value of the "email" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearEmail() {
-      email_ = null;
+      email_ = EmailDefaultValue;
     }
 
     /// <summary>Field number for the "phones" field.</summary>
@@ -174,10 +184,12 @@ namespace Google.Protobuf.Examples.AddressBook {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the lastUpdated field is set</summary>
     public bool HasLastUpdated {
       get { return lastUpdated_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the lastUpdated field</summary>
     public void ClearLastUpdated() {
       lastUpdated_ = null;
     }
@@ -374,44 +386,50 @@ namespace Google.Protobuf.Examples.AddressBook {
 
         /// <summary>Field number for the "number" field.</summary>
         public const int NumberFieldNumber = 1;
+        /// <summary>Default value for the "number" field</summary>
         public const string NumberDefaultValue = "";
 
         private string number_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string Number {
-          get { return number_ ?? NumberDefaultValue; }
+          get { return number_; }
           set {
             number_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "number" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasNumber {
-          get { return number_ != null; }
+          get { return number_ != NumberDefaultValue; }
         }
+        /// <summary>Clears the value of the "number" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearNumber() {
-          number_ = null;
+          number_ = NumberDefaultValue;
         }
 
         /// <summary>Field number for the "type" field.</summary>
         public const int TypeFieldNumber = 2;
+        /// <summary>Default value for the "type" field</summary>
         public const global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType TypeDefaultValue = global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType.Mobile;
 
-        private global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType? type_;
+        private global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType type_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType Type {
-          get { return type_ ?? TypeDefaultValue; }
+          get { return type_; }
           set {
             type_ = value;
           }
         }
+        /// <summary>Gets whether the "type" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasType {
-          get { return type_ != null; }
+          get { return type_ != TypeDefaultValue; }
         }
+        /// <summary>Clears the value of the "type" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearType() {
-          type_ = null;
+          type_ = TypeDefaultValue;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

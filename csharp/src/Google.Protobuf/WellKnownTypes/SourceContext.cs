@@ -39,6 +39,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// `SourceContext` represents information about the source of a
@@ -80,6 +81,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "file_name" field.</summary>
     public const int FileNameFieldNumber = 1;
+    /// <summary>Default value for the "file_name" field</summary>
     public const string FileNameDefaultValue = "";
 
     private string fileName_;
@@ -89,18 +91,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FileName {
-      get { return fileName_ ?? FileNameDefaultValue; }
+      get { return fileName_; }
       set {
         fileName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "file_name" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFileName {
-      get { return fileName_ != null; }
+      get { return fileName_ != FileNameDefaultValue; }
     }
+    /// <summary>Clears the value of the "file_name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFileName() {
-      fileName_ = null;
+      fileName_ = FileNameDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

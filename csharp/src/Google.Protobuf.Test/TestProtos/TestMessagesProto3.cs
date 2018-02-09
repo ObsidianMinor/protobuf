@@ -214,6 +214,7 @@ namespace ProtobufTestMessages.Proto3 {
     #endregion
 
   }
+
   #region Enums
   public enum ForeignEnum {
     [pbr::OriginalName("FOREIGN_FOO")] ForeignFoo = 0,
@@ -408,320 +409,365 @@ namespace ProtobufTestMessages.Proto3 {
 
     /// <summary>Field number for the "optional_int32" field.</summary>
     public const int OptionalInt32FieldNumber = 1;
+    /// <summary>Default value for the "optional_int32" field</summary>
     public const int OptionalInt32DefaultValue = 0;
 
-    private int? optionalInt32_;
+    private int optionalInt32_;
     /// <summary>
     /// Singular
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalInt32 {
-      get { return optionalInt32_ ?? OptionalInt32DefaultValue; }
+      get { return optionalInt32_; }
       set {
         optionalInt32_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_int32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalInt32 {
-      get { return optionalInt32_ != null; }
+      get { return optionalInt32_ != OptionalInt32DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_int32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalInt32() {
-      optionalInt32_ = null;
+      optionalInt32_ = OptionalInt32DefaultValue;
     }
 
     /// <summary>Field number for the "optional_int64" field.</summary>
     public const int OptionalInt64FieldNumber = 2;
+    /// <summary>Default value for the "optional_int64" field</summary>
     public const long OptionalInt64DefaultValue = 0L;
 
-    private long? optionalInt64_;
+    private long optionalInt64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OptionalInt64 {
-      get { return optionalInt64_ ?? OptionalInt64DefaultValue; }
+      get { return optionalInt64_; }
       set {
         optionalInt64_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_int64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalInt64 {
-      get { return optionalInt64_ != null; }
+      get { return optionalInt64_ != OptionalInt64DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_int64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalInt64() {
-      optionalInt64_ = null;
+      optionalInt64_ = OptionalInt64DefaultValue;
     }
 
     /// <summary>Field number for the "optional_uint32" field.</summary>
     public const int OptionalUint32FieldNumber = 3;
+    /// <summary>Default value for the "optional_uint32" field</summary>
     public const uint OptionalUint32DefaultValue = 0;
 
-    private uint? optionalUint32_;
+    private uint optionalUint32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OptionalUint32 {
-      get { return optionalUint32_ ?? OptionalUint32DefaultValue; }
+      get { return optionalUint32_; }
       set {
         optionalUint32_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_uint32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalUint32 {
-      get { return optionalUint32_ != null; }
+      get { return optionalUint32_ != OptionalUint32DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_uint32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalUint32() {
-      optionalUint32_ = null;
+      optionalUint32_ = OptionalUint32DefaultValue;
     }
 
     /// <summary>Field number for the "optional_uint64" field.</summary>
     public const int OptionalUint64FieldNumber = 4;
+    /// <summary>Default value for the "optional_uint64" field</summary>
     public const ulong OptionalUint64DefaultValue = 0UL;
 
-    private ulong? optionalUint64_;
+    private ulong optionalUint64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong OptionalUint64 {
-      get { return optionalUint64_ ?? OptionalUint64DefaultValue; }
+      get { return optionalUint64_; }
       set {
         optionalUint64_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_uint64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalUint64 {
-      get { return optionalUint64_ != null; }
+      get { return optionalUint64_ != OptionalUint64DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_uint64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalUint64() {
-      optionalUint64_ = null;
+      optionalUint64_ = OptionalUint64DefaultValue;
     }
 
     /// <summary>Field number for the "optional_sint32" field.</summary>
     public const int OptionalSint32FieldNumber = 5;
+    /// <summary>Default value for the "optional_sint32" field</summary>
     public const int OptionalSint32DefaultValue = 0;
 
-    private int? optionalSint32_;
+    private int optionalSint32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalSint32 {
-      get { return optionalSint32_ ?? OptionalSint32DefaultValue; }
+      get { return optionalSint32_; }
       set {
         optionalSint32_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_sint32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalSint32 {
-      get { return optionalSint32_ != null; }
+      get { return optionalSint32_ != OptionalSint32DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_sint32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalSint32() {
-      optionalSint32_ = null;
+      optionalSint32_ = OptionalSint32DefaultValue;
     }
 
     /// <summary>Field number for the "optional_sint64" field.</summary>
     public const int OptionalSint64FieldNumber = 6;
+    /// <summary>Default value for the "optional_sint64" field</summary>
     public const long OptionalSint64DefaultValue = 0L;
 
-    private long? optionalSint64_;
+    private long optionalSint64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OptionalSint64 {
-      get { return optionalSint64_ ?? OptionalSint64DefaultValue; }
+      get { return optionalSint64_; }
       set {
         optionalSint64_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_sint64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalSint64 {
-      get { return optionalSint64_ != null; }
+      get { return optionalSint64_ != OptionalSint64DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_sint64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalSint64() {
-      optionalSint64_ = null;
+      optionalSint64_ = OptionalSint64DefaultValue;
     }
 
     /// <summary>Field number for the "optional_fixed32" field.</summary>
     public const int OptionalFixed32FieldNumber = 7;
+    /// <summary>Default value for the "optional_fixed32" field</summary>
     public const uint OptionalFixed32DefaultValue = 0;
 
-    private uint? optionalFixed32_;
+    private uint optionalFixed32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OptionalFixed32 {
-      get { return optionalFixed32_ ?? OptionalFixed32DefaultValue; }
+      get { return optionalFixed32_; }
       set {
         optionalFixed32_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_fixed32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalFixed32 {
-      get { return optionalFixed32_ != null; }
+      get { return optionalFixed32_ != OptionalFixed32DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_fixed32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalFixed32() {
-      optionalFixed32_ = null;
+      optionalFixed32_ = OptionalFixed32DefaultValue;
     }
 
     /// <summary>Field number for the "optional_fixed64" field.</summary>
     public const int OptionalFixed64FieldNumber = 8;
+    /// <summary>Default value for the "optional_fixed64" field</summary>
     public const ulong OptionalFixed64DefaultValue = 0UL;
 
-    private ulong? optionalFixed64_;
+    private ulong optionalFixed64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong OptionalFixed64 {
-      get { return optionalFixed64_ ?? OptionalFixed64DefaultValue; }
+      get { return optionalFixed64_; }
       set {
         optionalFixed64_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_fixed64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalFixed64 {
-      get { return optionalFixed64_ != null; }
+      get { return optionalFixed64_ != OptionalFixed64DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_fixed64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalFixed64() {
-      optionalFixed64_ = null;
+      optionalFixed64_ = OptionalFixed64DefaultValue;
     }
 
     /// <summary>Field number for the "optional_sfixed32" field.</summary>
     public const int OptionalSfixed32FieldNumber = 9;
+    /// <summary>Default value for the "optional_sfixed32" field</summary>
     public const int OptionalSfixed32DefaultValue = 0;
 
-    private int? optionalSfixed32_;
+    private int optionalSfixed32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalSfixed32 {
-      get { return optionalSfixed32_ ?? OptionalSfixed32DefaultValue; }
+      get { return optionalSfixed32_; }
       set {
         optionalSfixed32_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_sfixed32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalSfixed32 {
-      get { return optionalSfixed32_ != null; }
+      get { return optionalSfixed32_ != OptionalSfixed32DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_sfixed32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalSfixed32() {
-      optionalSfixed32_ = null;
+      optionalSfixed32_ = OptionalSfixed32DefaultValue;
     }
 
     /// <summary>Field number for the "optional_sfixed64" field.</summary>
     public const int OptionalSfixed64FieldNumber = 10;
+    /// <summary>Default value for the "optional_sfixed64" field</summary>
     public const long OptionalSfixed64DefaultValue = 0L;
 
-    private long? optionalSfixed64_;
+    private long optionalSfixed64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OptionalSfixed64 {
-      get { return optionalSfixed64_ ?? OptionalSfixed64DefaultValue; }
+      get { return optionalSfixed64_; }
       set {
         optionalSfixed64_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_sfixed64" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalSfixed64 {
-      get { return optionalSfixed64_ != null; }
+      get { return optionalSfixed64_ != OptionalSfixed64DefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_sfixed64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalSfixed64() {
-      optionalSfixed64_ = null;
+      optionalSfixed64_ = OptionalSfixed64DefaultValue;
     }
 
     /// <summary>Field number for the "optional_float" field.</summary>
     public const int OptionalFloatFieldNumber = 11;
+    /// <summary>Default value for the "optional_float" field</summary>
     public const float OptionalFloatDefaultValue = 0F;
 
-    private float? optionalFloat_;
+    private float optionalFloat_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float OptionalFloat {
-      get { return optionalFloat_ ?? OptionalFloatDefaultValue; }
+      get { return optionalFloat_; }
       set {
         optionalFloat_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_float" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalFloat {
-      get { return optionalFloat_ != null; }
+      get { return optionalFloat_ != OptionalFloatDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_float" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalFloat() {
-      optionalFloat_ = null;
+      optionalFloat_ = OptionalFloatDefaultValue;
     }
 
     /// <summary>Field number for the "optional_double" field.</summary>
     public const int OptionalDoubleFieldNumber = 12;
+    /// <summary>Default value for the "optional_double" field</summary>
     public const double OptionalDoubleDefaultValue = 0D;
 
-    private double? optionalDouble_;
+    private double optionalDouble_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double OptionalDouble {
-      get { return optionalDouble_ ?? OptionalDoubleDefaultValue; }
+      get { return optionalDouble_; }
       set {
         optionalDouble_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_double" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalDouble {
-      get { return optionalDouble_ != null; }
+      get { return optionalDouble_ != OptionalDoubleDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_double" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalDouble() {
-      optionalDouble_ = null;
+      optionalDouble_ = OptionalDoubleDefaultValue;
     }
 
     /// <summary>Field number for the "optional_bool" field.</summary>
     public const int OptionalBoolFieldNumber = 13;
+    /// <summary>Default value for the "optional_bool" field</summary>
     public const bool OptionalBoolDefaultValue = false;
 
-    private bool? optionalBool_;
+    private bool optionalBool_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool OptionalBool {
-      get { return optionalBool_ ?? OptionalBoolDefaultValue; }
+      get { return optionalBool_; }
       set {
         optionalBool_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_bool" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalBool {
-      get { return optionalBool_ != null; }
+      get { return optionalBool_ != OptionalBoolDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_bool" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalBool() {
-      optionalBool_ = null;
+      optionalBool_ = OptionalBoolDefaultValue;
     }
 
     /// <summary>Field number for the "optional_string" field.</summary>
     public const int OptionalStringFieldNumber = 14;
+    /// <summary>Default value for the "optional_string" field</summary>
     public const string OptionalStringDefaultValue = "";
 
     private string optionalString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OptionalString {
-      get { return optionalString_ ?? OptionalStringDefaultValue; }
+      get { return optionalString_; }
       set {
         optionalString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "optional_string" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalString {
-      get { return optionalString_ != null; }
+      get { return optionalString_ != OptionalStringDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_string" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalString() {
-      optionalString_ = null;
+      optionalString_ = OptionalStringDefaultValue;
     }
 
     /// <summary>Field number for the "optional_bytes" field.</summary>
     public const int OptionalBytesFieldNumber = 15;
+    /// <summary>Default value for the "optional_bytes" field</summary>
     public readonly static pb::ByteString OptionalBytesDefaultValue = pb::ByteString.Empty;
 
     private pb::ByteString optionalBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OptionalBytes {
-      get { return optionalBytes_ ?? OptionalBytesDefaultValue; }
+      get { return optionalBytes_; }
       set {
         optionalBytes_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "optional_bytes" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalBytes {
-      get { return optionalBytes_ != null; }
+      get { return optionalBytes_ != OptionalBytesDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_bytes" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalBytes() {
-      optionalBytes_ = null;
+      optionalBytes_ = OptionalBytesDefaultValue;
     }
 
     /// <summary>Field number for the "optional_nested_message" field.</summary>
@@ -735,10 +781,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalNestedMessage field is set</summary>
     public bool HasOptionalNestedMessage {
       get { return optionalNestedMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalNestedMessage field</summary>
     public void ClearOptionalNestedMessage() {
       optionalNestedMessage_ = null;
     }
@@ -754,96 +802,110 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalForeignMessage field is set</summary>
     public bool HasOptionalForeignMessage {
       get { return optionalForeignMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalForeignMessage field</summary>
     public void ClearOptionalForeignMessage() {
       optionalForeignMessage_ = null;
     }
 
     /// <summary>Field number for the "optional_nested_enum" field.</summary>
     public const int OptionalNestedEnumFieldNumber = 21;
+    /// <summary>Default value for the "optional_nested_enum" field</summary>
     public const global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum OptionalNestedEnumDefaultValue = global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum.Foo;
 
-    private global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum? optionalNestedEnum_;
+    private global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum optionalNestedEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum OptionalNestedEnum {
-      get { return optionalNestedEnum_ ?? OptionalNestedEnumDefaultValue; }
+      get { return optionalNestedEnum_; }
       set {
         optionalNestedEnum_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_nested_enum" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalNestedEnum {
-      get { return optionalNestedEnum_ != null; }
+      get { return optionalNestedEnum_ != OptionalNestedEnumDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_nested_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalNestedEnum() {
-      optionalNestedEnum_ = null;
+      optionalNestedEnum_ = OptionalNestedEnumDefaultValue;
     }
 
     /// <summary>Field number for the "optional_foreign_enum" field.</summary>
     public const int OptionalForeignEnumFieldNumber = 22;
+    /// <summary>Default value for the "optional_foreign_enum" field</summary>
     public const global::ProtobufTestMessages.Proto3.ForeignEnum OptionalForeignEnumDefaultValue = global::ProtobufTestMessages.Proto3.ForeignEnum.ForeignFoo;
 
-    private global::ProtobufTestMessages.Proto3.ForeignEnum? optionalForeignEnum_;
+    private global::ProtobufTestMessages.Proto3.ForeignEnum optionalForeignEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto3.ForeignEnum OptionalForeignEnum {
-      get { return optionalForeignEnum_ ?? OptionalForeignEnumDefaultValue; }
+      get { return optionalForeignEnum_; }
       set {
         optionalForeignEnum_ = value;
       }
     }
+    /// <summary>Gets whether the "optional_foreign_enum" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalForeignEnum {
-      get { return optionalForeignEnum_ != null; }
+      get { return optionalForeignEnum_ != OptionalForeignEnumDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_foreign_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalForeignEnum() {
-      optionalForeignEnum_ = null;
+      optionalForeignEnum_ = OptionalForeignEnumDefaultValue;
     }
 
     /// <summary>Field number for the "optional_string_piece" field.</summary>
     public const int OptionalStringPieceFieldNumber = 24;
+    /// <summary>Default value for the "optional_string_piece" field</summary>
     public const string OptionalStringPieceDefaultValue = "";
 
     private string optionalStringPiece_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OptionalStringPiece {
-      get { return optionalStringPiece_ ?? OptionalStringPieceDefaultValue; }
+      get { return optionalStringPiece_; }
       set {
         optionalStringPiece_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "optional_string_piece" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalStringPiece {
-      get { return optionalStringPiece_ != null; }
+      get { return optionalStringPiece_ != OptionalStringPieceDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_string_piece" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalStringPiece() {
-      optionalStringPiece_ = null;
+      optionalStringPiece_ = OptionalStringPieceDefaultValue;
     }
 
     /// <summary>Field number for the "optional_cord" field.</summary>
     public const int OptionalCordFieldNumber = 25;
+    /// <summary>Default value for the "optional_cord" field</summary>
     public const string OptionalCordDefaultValue = "";
 
     private string optionalCord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OptionalCord {
-      get { return optionalCord_ ?? OptionalCordDefaultValue; }
+      get { return optionalCord_; }
       set {
         optionalCord_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "optional_cord" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasOptionalCord {
-      get { return optionalCord_ != null; }
+      get { return optionalCord_ != OptionalCordDefaultValue; }
     }
+    /// <summary>Clears the value of the "optional_cord" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalCord() {
-      optionalCord_ = null;
+      optionalCord_ = OptionalCordDefaultValue;
     }
 
     /// <summary>Field number for the "recursive_message" field.</summary>
@@ -857,10 +919,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the recursiveMessage field is set</summary>
     public bool HasRecursiveMessage {
       get { return recursiveMessage_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the recursiveMessage field</summary>
     public void ClearRecursiveMessage() {
       recursiveMessage_ = null;
     }
@@ -1582,10 +1646,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalDuration field is set</summary>
     public bool HasOptionalDuration {
       get { return optionalDuration_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalDuration field</summary>
     public void ClearOptionalDuration() {
       optionalDuration_ = null;
     }
@@ -1601,10 +1667,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalTimestamp field is set</summary>
     public bool HasOptionalTimestamp {
       get { return optionalTimestamp_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalTimestamp field</summary>
     public void ClearOptionalTimestamp() {
       optionalTimestamp_ = null;
     }
@@ -1620,10 +1688,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalFieldMask field is set</summary>
     public bool HasOptionalFieldMask {
       get { return optionalFieldMask_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalFieldMask field</summary>
     public void ClearOptionalFieldMask() {
       optionalFieldMask_ = null;
     }
@@ -1639,10 +1709,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalStruct field is set</summary>
     public bool HasOptionalStruct {
       get { return optionalStruct_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalStruct field</summary>
     public void ClearOptionalStruct() {
       optionalStruct_ = null;
     }
@@ -1658,10 +1730,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalAny field is set</summary>
     public bool HasOptionalAny {
       get { return optionalAny_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalAny field</summary>
     public void ClearOptionalAny() {
       optionalAny_ = null;
     }
@@ -1677,10 +1751,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the optionalValue field is set</summary>
     public bool HasOptionalValue {
       get { return optionalValue_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the optionalValue field</summary>
     public void ClearOptionalValue() {
       optionalValue_ = null;
     }
@@ -1747,384 +1823,438 @@ namespace ProtobufTestMessages.Proto3 {
 
     /// <summary>Field number for the "fieldname1" field.</summary>
     public const int Fieldname1FieldNumber = 401;
+    /// <summary>Default value for the "fieldname1" field</summary>
     public const int Fieldname1DefaultValue = 0;
 
-    private int? fieldname1_;
+    private int fieldname1_;
     /// <summary>
     /// Test field-name-to-JSON-name convention.
     /// (protobuf says names can be any valid C/C++ identifier.)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Fieldname1 {
-      get { return fieldname1_ ?? Fieldname1DefaultValue; }
+      get { return fieldname1_; }
       set {
         fieldname1_ = value;
       }
     }
+    /// <summary>Gets whether the "fieldname1" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldname1 {
-      get { return fieldname1_ != null; }
+      get { return fieldname1_ != Fieldname1DefaultValue; }
     }
+    /// <summary>Clears the value of the "fieldname1" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldname1() {
-      fieldname1_ = null;
+      fieldname1_ = Fieldname1DefaultValue;
     }
 
     /// <summary>Field number for the "field_name2" field.</summary>
     public const int FieldName2FieldNumber = 402;
+    /// <summary>Default value for the "field_name2" field</summary>
     public const int FieldName2DefaultValue = 0;
 
-    private int? fieldName2_;
+    private int fieldName2_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName2 {
-      get { return fieldName2_ ?? FieldName2DefaultValue; }
+      get { return fieldName2_; }
       set {
         fieldName2_ = value;
       }
     }
+    /// <summary>Gets whether the "field_name2" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName2 {
-      get { return fieldName2_ != null; }
+      get { return fieldName2_ != FieldName2DefaultValue; }
     }
+    /// <summary>Clears the value of the "field_name2" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName2() {
-      fieldName2_ = null;
+      fieldName2_ = FieldName2DefaultValue;
     }
 
     /// <summary>Field number for the "_field_name3" field.</summary>
     public const int FieldName3FieldNumber = 403;
+    /// <summary>Default value for the "_field_name3" field</summary>
     public const int FieldName3DefaultValue = 0;
 
-    private int? FieldName3_;
+    private int FieldName3_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName3 {
-      get { return FieldName3_ ?? FieldName3DefaultValue; }
+      get { return FieldName3_; }
       set {
         FieldName3_ = value;
       }
     }
+    /// <summary>Gets whether the "_field_name3" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName3 {
-      get { return FieldName3_ != null; }
+      get { return FieldName3_ != FieldName3DefaultValue; }
     }
+    /// <summary>Clears the value of the "_field_name3" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName3() {
-      FieldName3_ = null;
+      FieldName3_ = FieldName3DefaultValue;
     }
 
     /// <summary>Field number for the "field__name4_" field.</summary>
     public const int FieldName4FieldNumber = 404;
+    /// <summary>Default value for the "field__name4_" field</summary>
     public const int FieldName4DefaultValue = 0;
 
-    private int? fieldName4_;
+    private int fieldName4_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName4 {
-      get { return fieldName4_ ?? FieldName4DefaultValue; }
+      get { return fieldName4_; }
       set {
         fieldName4_ = value;
       }
     }
+    /// <summary>Gets whether the "field__name4_" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName4 {
-      get { return fieldName4_ != null; }
+      get { return fieldName4_ != FieldName4DefaultValue; }
     }
+    /// <summary>Clears the value of the "field__name4_" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName4() {
-      fieldName4_ = null;
+      fieldName4_ = FieldName4DefaultValue;
     }
 
     /// <summary>Field number for the "field0name5" field.</summary>
     public const int Field0Name5FieldNumber = 405;
+    /// <summary>Default value for the "field0name5" field</summary>
     public const int Field0Name5DefaultValue = 0;
 
-    private int? field0Name5_;
+    private int field0Name5_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field0Name5 {
-      get { return field0Name5_ ?? Field0Name5DefaultValue; }
+      get { return field0Name5_; }
       set {
         field0Name5_ = value;
       }
     }
+    /// <summary>Gets whether the "field0name5" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasField0Name5 {
-      get { return field0Name5_ != null; }
+      get { return field0Name5_ != Field0Name5DefaultValue; }
     }
+    /// <summary>Clears the value of the "field0name5" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearField0Name5() {
-      field0Name5_ = null;
+      field0Name5_ = Field0Name5DefaultValue;
     }
 
     /// <summary>Field number for the "field_0_name6" field.</summary>
     public const int Field0Name6FieldNumber = 406;
+    /// <summary>Default value for the "field_0_name6" field</summary>
     public const int Field0Name6DefaultValue = 0;
 
-    private int? field0Name6_;
+    private int field0Name6_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field0Name6 {
-      get { return field0Name6_ ?? Field0Name6DefaultValue; }
+      get { return field0Name6_; }
       set {
         field0Name6_ = value;
       }
     }
+    /// <summary>Gets whether the "field_0_name6" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasField0Name6 {
-      get { return field0Name6_ != null; }
+      get { return field0Name6_ != Field0Name6DefaultValue; }
     }
+    /// <summary>Clears the value of the "field_0_name6" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearField0Name6() {
-      field0Name6_ = null;
+      field0Name6_ = Field0Name6DefaultValue;
     }
 
     /// <summary>Field number for the "fieldName7" field.</summary>
     public const int FieldName7FieldNumber = 407;
+    /// <summary>Default value for the "fieldName7" field</summary>
     public const int FieldName7DefaultValue = 0;
 
-    private int? fieldName7_;
+    private int fieldName7_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName7 {
-      get { return fieldName7_ ?? FieldName7DefaultValue; }
+      get { return fieldName7_; }
       set {
         fieldName7_ = value;
       }
     }
+    /// <summary>Gets whether the "fieldName7" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName7 {
-      get { return fieldName7_ != null; }
+      get { return fieldName7_ != FieldName7DefaultValue; }
     }
+    /// <summary>Clears the value of the "fieldName7" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName7() {
-      fieldName7_ = null;
+      fieldName7_ = FieldName7DefaultValue;
     }
 
     /// <summary>Field number for the "FieldName8" field.</summary>
     public const int FieldName8FieldNumber = 408;
+    /// <summary>Default value for the "FieldName8" field</summary>
     public const int FieldName8DefaultValue = 0;
 
-    private int? fieldName8_;
+    private int fieldName8_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName8 {
-      get { return fieldName8_ ?? FieldName8DefaultValue; }
+      get { return fieldName8_; }
       set {
         fieldName8_ = value;
       }
     }
+    /// <summary>Gets whether the "FieldName8" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName8 {
-      get { return fieldName8_ != null; }
+      get { return fieldName8_ != FieldName8DefaultValue; }
     }
+    /// <summary>Clears the value of the "FieldName8" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName8() {
-      fieldName8_ = null;
+      fieldName8_ = FieldName8DefaultValue;
     }
 
     /// <summary>Field number for the "field_Name9" field.</summary>
     public const int FieldName9FieldNumber = 409;
+    /// <summary>Default value for the "field_Name9" field</summary>
     public const int FieldName9DefaultValue = 0;
 
-    private int? fieldName9_;
+    private int fieldName9_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName9 {
-      get { return fieldName9_ ?? FieldName9DefaultValue; }
+      get { return fieldName9_; }
       set {
         fieldName9_ = value;
       }
     }
+    /// <summary>Gets whether the "field_Name9" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName9 {
-      get { return fieldName9_ != null; }
+      get { return fieldName9_ != FieldName9DefaultValue; }
     }
+    /// <summary>Clears the value of the "field_Name9" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName9() {
-      fieldName9_ = null;
+      fieldName9_ = FieldName9DefaultValue;
     }
 
     /// <summary>Field number for the "Field_Name10" field.</summary>
     public const int FieldName10FieldNumber = 410;
+    /// <summary>Default value for the "Field_Name10" field</summary>
     public const int FieldName10DefaultValue = 0;
 
-    private int? fieldName10_;
+    private int fieldName10_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName10 {
-      get { return fieldName10_ ?? FieldName10DefaultValue; }
+      get { return fieldName10_; }
       set {
         fieldName10_ = value;
       }
     }
+    /// <summary>Gets whether the "Field_Name10" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName10 {
-      get { return fieldName10_ != null; }
+      get { return fieldName10_ != FieldName10DefaultValue; }
     }
+    /// <summary>Clears the value of the "Field_Name10" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName10() {
-      fieldName10_ = null;
+      fieldName10_ = FieldName10DefaultValue;
     }
 
     /// <summary>Field number for the "FIELD_NAME11" field.</summary>
     public const int FIELDNAME11FieldNumber = 411;
+    /// <summary>Default value for the "FIELD_NAME11" field</summary>
     public const int FIELDNAME11DefaultValue = 0;
 
-    private int? fIELDNAME11_;
+    private int fIELDNAME11_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FIELDNAME11 {
-      get { return fIELDNAME11_ ?? FIELDNAME11DefaultValue; }
+      get { return fIELDNAME11_; }
       set {
         fIELDNAME11_ = value;
       }
     }
+    /// <summary>Gets whether the "FIELD_NAME11" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFIELDNAME11 {
-      get { return fIELDNAME11_ != null; }
+      get { return fIELDNAME11_ != FIELDNAME11DefaultValue; }
     }
+    /// <summary>Clears the value of the "FIELD_NAME11" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFIELDNAME11() {
-      fIELDNAME11_ = null;
+      fIELDNAME11_ = FIELDNAME11DefaultValue;
     }
 
     /// <summary>Field number for the "FIELD_name12" field.</summary>
     public const int FIELDName12FieldNumber = 412;
+    /// <summary>Default value for the "FIELD_name12" field</summary>
     public const int FIELDName12DefaultValue = 0;
 
-    private int? fIELDName12_;
+    private int fIELDName12_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FIELDName12 {
-      get { return fIELDName12_ ?? FIELDName12DefaultValue; }
+      get { return fIELDName12_; }
       set {
         fIELDName12_ = value;
       }
     }
+    /// <summary>Gets whether the "FIELD_name12" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFIELDName12 {
-      get { return fIELDName12_ != null; }
+      get { return fIELDName12_ != FIELDName12DefaultValue; }
     }
+    /// <summary>Clears the value of the "FIELD_name12" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFIELDName12() {
-      fIELDName12_ = null;
+      fIELDName12_ = FIELDName12DefaultValue;
     }
 
     /// <summary>Field number for the "__field_name13" field.</summary>
     public const int FieldName13FieldNumber = 413;
+    /// <summary>Default value for the "__field_name13" field</summary>
     public const int FieldName13DefaultValue = 0;
 
-    private int? FieldName13_;
+    private int FieldName13_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName13 {
-      get { return FieldName13_ ?? FieldName13DefaultValue; }
+      get { return FieldName13_; }
       set {
         FieldName13_ = value;
       }
     }
+    /// <summary>Gets whether the "__field_name13" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName13 {
-      get { return FieldName13_ != null; }
+      get { return FieldName13_ != FieldName13DefaultValue; }
     }
+    /// <summary>Clears the value of the "__field_name13" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName13() {
-      FieldName13_ = null;
+      FieldName13_ = FieldName13DefaultValue;
     }
 
     /// <summary>Field number for the "__Field_name14" field.</summary>
     public const int FieldName14FieldNumber = 414;
+    /// <summary>Default value for the "__Field_name14" field</summary>
     public const int FieldName14DefaultValue = 0;
 
-    private int? FieldName14_;
+    private int FieldName14_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName14 {
-      get { return FieldName14_ ?? FieldName14DefaultValue; }
+      get { return FieldName14_; }
       set {
         FieldName14_ = value;
       }
     }
+    /// <summary>Gets whether the "__Field_name14" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName14 {
-      get { return FieldName14_ != null; }
+      get { return FieldName14_ != FieldName14DefaultValue; }
     }
+    /// <summary>Clears the value of the "__Field_name14" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName14() {
-      FieldName14_ = null;
+      FieldName14_ = FieldName14DefaultValue;
     }
 
     /// <summary>Field number for the "field__name15" field.</summary>
     public const int FieldName15FieldNumber = 415;
+    /// <summary>Default value for the "field__name15" field</summary>
     public const int FieldName15DefaultValue = 0;
 
-    private int? fieldName15_;
+    private int fieldName15_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName15 {
-      get { return fieldName15_ ?? FieldName15DefaultValue; }
+      get { return fieldName15_; }
       set {
         fieldName15_ = value;
       }
     }
+    /// <summary>Gets whether the "field__name15" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName15 {
-      get { return fieldName15_ != null; }
+      get { return fieldName15_ != FieldName15DefaultValue; }
     }
+    /// <summary>Clears the value of the "field__name15" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName15() {
-      fieldName15_ = null;
+      fieldName15_ = FieldName15DefaultValue;
     }
 
     /// <summary>Field number for the "field__Name16" field.</summary>
     public const int FieldName16FieldNumber = 416;
+    /// <summary>Default value for the "field__Name16" field</summary>
     public const int FieldName16DefaultValue = 0;
 
-    private int? fieldName16_;
+    private int fieldName16_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName16 {
-      get { return fieldName16_ ?? FieldName16DefaultValue; }
+      get { return fieldName16_; }
       set {
         fieldName16_ = value;
       }
     }
+    /// <summary>Gets whether the "field__Name16" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName16 {
-      get { return fieldName16_ != null; }
+      get { return fieldName16_ != FieldName16DefaultValue; }
     }
+    /// <summary>Clears the value of the "field__Name16" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName16() {
-      fieldName16_ = null;
+      fieldName16_ = FieldName16DefaultValue;
     }
 
     /// <summary>Field number for the "field_name17__" field.</summary>
     public const int FieldName17FieldNumber = 417;
+    /// <summary>Default value for the "field_name17__" field</summary>
     public const int FieldName17DefaultValue = 0;
 
-    private int? fieldName17_;
+    private int fieldName17_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName17 {
-      get { return fieldName17_ ?? FieldName17DefaultValue; }
+      get { return fieldName17_; }
       set {
         fieldName17_ = value;
       }
     }
+    /// <summary>Gets whether the "field_name17__" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName17 {
-      get { return fieldName17_ != null; }
+      get { return fieldName17_ != FieldName17DefaultValue; }
     }
+    /// <summary>Clears the value of the "field_name17__" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName17() {
-      fieldName17_ = null;
+      fieldName17_ = FieldName17DefaultValue;
     }
 
     /// <summary>Field number for the "Field_name18__" field.</summary>
     public const int FieldName18FieldNumber = 418;
+    /// <summary>Default value for the "Field_name18__" field</summary>
     public const int FieldName18DefaultValue = 0;
 
-    private int? fieldName18_;
+    private int fieldName18_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName18 {
-      get { return fieldName18_ ?? FieldName18DefaultValue; }
+      get { return fieldName18_; }
       set {
         fieldName18_ = value;
       }
     }
+    /// <summary>Gets whether the "Field_name18__" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasFieldName18 {
-      get { return fieldName18_ != null; }
+      get { return fieldName18_ != FieldName18DefaultValue; }
     }
+    /// <summary>Clears the value of the "Field_name18__" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName18() {
-      fieldName18_ = null;
+      fieldName18_ = FieldName18DefaultValue;
     }
 
     private object oneofField_;
@@ -3908,23 +4038,26 @@ namespace ProtobufTestMessages.Proto3 {
 
         /// <summary>Field number for the "a" field.</summary>
         public const int AFieldNumber = 1;
+        /// <summary>Default value for the "a" field</summary>
         public const int ADefaultValue = 0;
 
-        private int? a_;
+        private int a_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int A {
-          get { return a_ ?? ADefaultValue; }
+          get { return a_; }
           set {
             a_ = value;
           }
         }
+        /// <summary>Gets whether the "a" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasA {
-          get { return a_ != null; }
+          get { return a_ != ADefaultValue; }
         }
+        /// <summary>Clears the value of the "a" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearA() {
-          a_ = null;
+          a_ = ADefaultValue;
         }
 
         /// <summary>Field number for the "corecursive" field.</summary>
@@ -3938,10 +4071,12 @@ namespace ProtobufTestMessages.Proto3 {
           }
         }
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        /// <summary>Gets whether the corecursive field is set</summary>
         public bool HasCorecursive {
           get { return corecursive_ != null; }
         }
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        /// <summary>Clears the value of the corecursive field</summary>
         public void ClearCorecursive() {
           corecursive_ = null;
         }
@@ -4093,23 +4228,26 @@ namespace ProtobufTestMessages.Proto3 {
 
     /// <summary>Field number for the "c" field.</summary>
     public const int CFieldNumber = 1;
+    /// <summary>Default value for the "c" field</summary>
     public const int CDefaultValue = 0;
 
-    private int? c_;
+    private int c_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int C {
-      get { return c_ ?? CDefaultValue; }
+      get { return c_; }
       set {
         c_ = value;
       }
     }
+    /// <summary>Gets whether the "c" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasC {
-      get { return c_ != null; }
+      get { return c_ != CDefaultValue; }
     }
+    /// <summary>Clears the value of the "c" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearC() {
-      c_ = null;
+      c_ = CDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

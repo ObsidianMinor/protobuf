@@ -38,6 +38,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// `Any` contains an arbitrary serialized protocol buffer message along with a
@@ -156,6 +157,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "type_url" field.</summary>
     public const int TypeUrlFieldNumber = 1;
+    /// <summary>Default value for the "type_url" field</summary>
     public const string TypeUrlDefaultValue = "";
 
     private string typeUrl_;
@@ -189,22 +191,25 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string TypeUrl {
-      get { return typeUrl_ ?? TypeUrlDefaultValue; }
+      get { return typeUrl_; }
       set {
         typeUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "type_url" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasTypeUrl {
-      get { return typeUrl_ != null; }
+      get { return typeUrl_ != TypeUrlDefaultValue; }
     }
+    /// <summary>Clears the value of the "type_url" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearTypeUrl() {
-      typeUrl_ = null;
+      typeUrl_ = TypeUrlDefaultValue;
     }
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 2;
+    /// <summary>Default value for the "value" field</summary>
     public readonly static pb::ByteString ValueDefaultValue = pb::ByteString.Empty;
 
     private pb::ByteString value_;
@@ -213,18 +218,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

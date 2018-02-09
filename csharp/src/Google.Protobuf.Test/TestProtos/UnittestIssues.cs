@@ -69,6 +69,7 @@ namespace UnitTest.Issues.TestProtos {
     #endregion
 
   }
+
   #region Enums
   public enum NegativeEnum {
     [pbr::OriginalName("NEGATIVE_ENUM_ZERO")] Zero = 0,
@@ -443,23 +444,26 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const global::UnitTest.Issues.TestProtos.NegativeEnum ValueDefaultValue = global::UnitTest.Issues.TestProtos.NegativeEnum.Zero;
 
-    private global::UnitTest.Issues.TestProtos.NegativeEnum? value_;
+    private global::UnitTest.Issues.TestProtos.NegativeEnum value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::UnitTest.Issues.TestProtos.NegativeEnum Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     /// <summary>Field number for the "values" field.</summary>
@@ -728,26 +732,29 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "PrimitiveValue" field.</summary>
     public const int PrimitiveValueFieldNumber = 1;
+    /// <summary>Default value for the "PrimitiveValue" field</summary>
     public const int PrimitiveValueDefaultValue = 0;
 
-    private int? primitiveValue_;
+    private int primitiveValue_;
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PrimitiveValue {
-      get { return primitiveValue_ ?? PrimitiveValueDefaultValue; }
+      get { return primitiveValue_; }
       set {
         primitiveValue_ = value;
       }
     }
+    /// <summary>Gets whether the "PrimitiveValue" field is set</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasPrimitiveValue {
-      get { return primitiveValue_ != null; }
+      get { return primitiveValue_ != PrimitiveValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "PrimitiveValue" field</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearPrimitiveValue() {
-      primitiveValue_ = null;
+      primitiveValue_ = PrimitiveValueDefaultValue;
     }
 
     /// <summary>Field number for the "PrimitiveArray" field.</summary>
@@ -774,11 +781,13 @@ namespace UnitTest.Issues.TestProtos {
     }
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the messageValue field is set</summary>
     public bool HasMessageValue {
       get { return messageValue_ != null; }
     }
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the messageValue field</summary>
     public void ClearMessageValue() {
       messageValue_ = null;
     }
@@ -796,26 +805,29 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "EnumValue" field.</summary>
     public const int EnumValueFieldNumber = 5;
+    /// <summary>Default value for the "EnumValue" field</summary>
     public const global::UnitTest.Issues.TestProtos.DeprecatedEnum EnumValueDefaultValue = global::UnitTest.Issues.TestProtos.DeprecatedEnum.DeprecatedZero;
 
-    private global::UnitTest.Issues.TestProtos.DeprecatedEnum? enumValue_;
+    private global::UnitTest.Issues.TestProtos.DeprecatedEnum enumValue_;
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::UnitTest.Issues.TestProtos.DeprecatedEnum EnumValue {
-      get { return enumValue_ ?? EnumValueDefaultValue; }
+      get { return enumValue_; }
       set {
         enumValue_ = value;
       }
     }
+    /// <summary>Gets whether the "EnumValue" field is set</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasEnumValue {
-      get { return enumValue_ != null; }
+      get { return enumValue_ != EnumValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "EnumValue" field</summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearEnumValue() {
-      enumValue_ = null;
+      enumValue_ = EnumValueDefaultValue;
     }
 
     /// <summary>Field number for the "EnumArray" field.</summary>
@@ -1019,23 +1031,26 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
+    /// <summary>Default value for the "item" field</summary>
     public const int ItemDefaultValue = 0;
 
-    private int? item_;
+    private int item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Item {
-      get { return item_ ?? ItemDefaultValue; }
+      get { return item_; }
       set {
         item_ = value;
       }
     }
+    /// <summary>Gets whether the "item" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasItem {
-      get { return item_ != null; }
+      get { return item_ != ItemDefaultValue; }
     }
+    /// <summary>Clears the value of the "item" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearItem() {
-      item_ = null;
+      item_ = ItemDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1159,44 +1174,50 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "types" field.</summary>
     public const int Types_FieldNumber = 1;
+    /// <summary>Default value for the "types" field</summary>
     public const int Types_DefaultValue = 0;
 
-    private int? types_;
+    private int types_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Types_ {
-      get { return types_ ?? Types_DefaultValue; }
+      get { return types_; }
       set {
         types_ = value;
       }
     }
+    /// <summary>Gets whether the "types" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasTypes_ {
-      get { return types_ != null; }
+      get { return types_ != Types_DefaultValue; }
     }
+    /// <summary>Clears the value of the "types" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearTypes_() {
-      types_ = null;
+      types_ = Types_DefaultValue;
     }
 
     /// <summary>Field number for the "descriptor" field.</summary>
     public const int Descriptor_FieldNumber = 2;
+    /// <summary>Default value for the "descriptor" field</summary>
     public const int Descriptor_DefaultValue = 0;
 
-    private int? descriptor_;
+    private int descriptor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Descriptor_ {
-      get { return descriptor_ ?? Descriptor_DefaultValue; }
+      get { return descriptor_; }
       set {
         descriptor_ = value;
       }
     }
+    /// <summary>Gets whether the "descriptor" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasDescriptor_ {
-      get { return descriptor_ != null; }
+      get { return descriptor_ != Descriptor_DefaultValue; }
     }
+    /// <summary>Clears the value of the "descriptor" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearDescriptor_() {
-      descriptor_ = null;
+      descriptor_ = Descriptor_DefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1477,23 +1498,26 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "plain_int32" field.</summary>
     public const int PlainInt32FieldNumber = 4;
+    /// <summary>Default value for the "plain_int32" field</summary>
     public const int PlainInt32DefaultValue = 0;
 
-    private int? plainInt32_;
+    private int plainInt32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PlainInt32 {
-      get { return plainInt32_ ?? PlainInt32DefaultValue; }
+      get { return plainInt32_; }
       set {
         plainInt32_ = value;
       }
     }
+    /// <summary>Gets whether the "plain_int32" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasPlainInt32 {
-      get { return plainInt32_ != null; }
+      get { return plainInt32_ != PlainInt32DefaultValue; }
     }
+    /// <summary>Clears the value of the "plain_int32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearPlainInt32() {
-      plainInt32_ = null;
+      plainInt32_ = PlainInt32DefaultValue;
     }
 
     /// <summary>Field number for the "o1_string" field.</summary>
@@ -1520,23 +1544,26 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "plain_string" field.</summary>
     public const int PlainStringFieldNumber = 1;
+    /// <summary>Default value for the "plain_string" field</summary>
     public const string PlainStringDefaultValue = "";
 
     private string plainString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PlainString {
-      get { return plainString_ ?? PlainStringDefaultValue; }
+      get { return plainString_; }
       set {
         plainString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "plain_string" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasPlainString {
-      get { return plainString_ != null; }
+      get { return plainString_ != PlainStringDefaultValue; }
     }
+    /// <summary>Clears the value of the "plain_string" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearPlainString() {
-      plainString_ = null;
+      plainString_ = PlainStringDefaultValue;
     }
 
     /// <summary>Field number for the "o2_int32" field.</summary>
@@ -1811,6 +1838,7 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
     private string name_;
@@ -1819,60 +1847,68 @@ namespace UnitTest.Issues.TestProtos {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_ ?? NameDefaultValue; }
+      get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "name" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasName {
-      get { return name_ != null; }
+      get { return name_ != NameDefaultValue; }
     }
+    /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearName() {
-      name_ = null;
+      name_ = NameDefaultValue;
     }
 
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 2;
+    /// <summary>Default value for the "description" field</summary>
     public const string DescriptionDefaultValue = "";
 
     private string description_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
-      get { return description_ ?? DescriptionDefaultValue; }
+      get { return description_; }
       set {
         description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "description" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasDescription {
-      get { return description_ != null; }
+      get { return description_ != DescriptionDefaultValue; }
     }
+    /// <summary>Clears the value of the "description" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearDescription() {
-      description_ = null;
+      description_ = DescriptionDefaultValue;
     }
 
     /// <summary>Field number for the "guid" field.</summary>
     public const int GuidFieldNumber = 3;
+    /// <summary>Default value for the "guid" field</summary>
     public const string GuidDefaultValue = "";
 
     private string guid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Guid {
-      get { return guid_ ?? GuidDefaultValue; }
+      get { return guid_; }
       set {
         guid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "guid" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasGuid {
-      get { return guid_ != null; }
+      get { return guid_ != GuidDefaultValue; }
     }
+    /// <summary>Clears the value of the "guid" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearGuid() {
-      guid_ = null;
+      guid_ = GuidDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2231,44 +2267,50 @@ namespace UnitTest.Issues.TestProtos {
 
         /// <summary>Field number for the "x" field.</summary>
         public const int XFieldNumber = 1;
+        /// <summary>Default value for the "x" field</summary>
         public const int XDefaultValue = 0;
 
-        private int? x_;
+        private int x_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int X {
-          get { return x_ ?? XDefaultValue; }
+          get { return x_; }
           set {
             x_ = value;
           }
         }
+        /// <summary>Gets whether the "x" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasX {
-          get { return x_ != null; }
+          get { return x_ != XDefaultValue; }
         }
+        /// <summary>Clears the value of the "x" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearX() {
-          x_ = null;
+          x_ = XDefaultValue;
         }
 
         /// <summary>Field number for the "y" field.</summary>
         public const int YFieldNumber = 2;
+        /// <summary>Default value for the "y" field</summary>
         public const int YDefaultValue = 0;
 
-        private int? y_;
+        private int y_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Y {
-          get { return y_ ?? YDefaultValue; }
+          get { return y_; }
           set {
             y_ = value;
           }
         }
+        /// <summary>Gets whether the "y" field is set</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool HasY {
-          get { return y_ != null; }
+          get { return y_ != YDefaultValue; }
         }
+        /// <summary>Clears the value of the "y" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearY() {
-          y_ = null;
+          y_ = YDefaultValue;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

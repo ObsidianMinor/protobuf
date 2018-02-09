@@ -37,6 +37,7 @@ namespace Google.Protobuf.TestProtos {
     #endregion
 
   }
+
   #region Messages
   public sealed partial class PublicImportMessage : pb::IMessage<PublicImportMessage> {
     private static readonly pb::MessageParser<PublicImportMessage> _parser = new pb::MessageParser<PublicImportMessage>(() => new PublicImportMessage());
@@ -74,23 +75,26 @@ namespace Google.Protobuf.TestProtos {
 
     /// <summary>Field number for the "e" field.</summary>
     public const int EFieldNumber = 1;
+    /// <summary>Default value for the "e" field</summary>
     public const int EDefaultValue = 0;
 
-    private int? e_;
+    private int e_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int E {
-      get { return e_ ?? EDefaultValue; }
+      get { return e_; }
       set {
         e_ = value;
       }
     }
+    /// <summary>Gets whether the "e" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasE {
-      get { return e_ != null; }
+      get { return e_ != EDefaultValue; }
     }
+    /// <summary>Clears the value of the "e" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearE() {
-      e_ = null;
+      e_ = EDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

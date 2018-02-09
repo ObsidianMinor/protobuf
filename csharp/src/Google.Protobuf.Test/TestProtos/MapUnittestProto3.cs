@@ -163,6 +163,7 @@ namespace Google.Protobuf.TestProtos {
     #endregion
 
   }
+
   #region Enums
   public enum MapEnum {
     [pbr::OriginalName("MAP_ENUM_FOO")] Foo = 0,
@@ -662,10 +663,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the testMap field is set</summary>
     public bool HasTestMap {
       get { return testMap_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the testMap field</summary>
     public void ClearTestMap() {
       testMap_ = null;
     }

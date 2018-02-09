@@ -51,6 +51,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// Wrapper message for `double`.
@@ -93,26 +94,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const double ValueDefaultValue = 0D;
 
-    private double? value_;
+    private double value_;
     /// <summary>
     /// The double value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -240,26 +244,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const float ValueDefaultValue = 0F;
 
-    private float? value_;
+    private float value_;
     /// <summary>
     /// The float value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -387,26 +394,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const long ValueDefaultValue = 0L;
 
-    private long? value_;
+    private long value_;
     /// <summary>
     /// The int64 value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -534,26 +544,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const ulong ValueDefaultValue = 0UL;
 
-    private ulong? value_;
+    private ulong value_;
     /// <summary>
     /// The uint64 value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -681,26 +694,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const int ValueDefaultValue = 0;
 
-    private int? value_;
+    private int value_;
     /// <summary>
     /// The int32 value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -828,26 +844,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const uint ValueDefaultValue = 0;
 
-    private uint? value_;
+    private uint value_;
     /// <summary>
     /// The uint32 value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -975,26 +994,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const bool ValueDefaultValue = false;
 
-    private bool? value_;
+    private bool value_;
     /// <summary>
     /// The bool value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = value;
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1122,6 +1144,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public const string ValueDefaultValue = "";
 
     private string value_;
@@ -1130,18 +1153,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1269,6 +1294,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
     public readonly static pb::ByteString ValueDefaultValue = pb::ByteString.Empty;
 
     private pb::ByteString value_;
@@ -1277,18 +1303,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Value {
-      get { return value_ ?? ValueDefaultValue; }
+      get { return value_; }
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "value" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasValue {
-      get { return value_ != null; }
+      get { return value_ != ValueDefaultValue; }
     }
+    /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
-      value_ = null;
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -45,6 +45,7 @@ namespace Conformance {
     #endregion
 
   }
+
   #region Enums
   public enum WireFormat {
     [pbr::OriginalName("UNSPECIFIED")] Unspecified = 0,
@@ -130,30 +131,34 @@ namespace Conformance {
 
     /// <summary>Field number for the "requested_output_format" field.</summary>
     public const int RequestedOutputFormatFieldNumber = 3;
+    /// <summary>Default value for the "requested_output_format" field</summary>
     public const global::Conformance.WireFormat RequestedOutputFormatDefaultValue = global::Conformance.WireFormat.Unspecified;
 
-    private global::Conformance.WireFormat? requestedOutputFormat_;
+    private global::Conformance.WireFormat requestedOutputFormat_;
     /// <summary>
     /// Which format should the testee serialize its message to?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Conformance.WireFormat RequestedOutputFormat {
-      get { return requestedOutputFormat_ ?? RequestedOutputFormatDefaultValue; }
+      get { return requestedOutputFormat_; }
       set {
         requestedOutputFormat_ = value;
       }
     }
+    /// <summary>Gets whether the "requested_output_format" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasRequestedOutputFormat {
-      get { return requestedOutputFormat_ != null; }
+      get { return requestedOutputFormat_ != RequestedOutputFormatDefaultValue; }
     }
+    /// <summary>Clears the value of the "requested_output_format" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearRequestedOutputFormat() {
-      requestedOutputFormat_ = null;
+      requestedOutputFormat_ = RequestedOutputFormatDefaultValue;
     }
 
     /// <summary>Field number for the "message_type" field.</summary>
     public const int MessageTypeFieldNumber = 4;
+    /// <summary>Default value for the "message_type" field</summary>
     public const string MessageTypeDefaultValue = "";
 
     private string messageType_;
@@ -164,18 +169,20 @@ namespace Conformance {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string MessageType {
-      get { return messageType_ ?? MessageTypeDefaultValue; }
+      get { return messageType_; }
       set {
         messageType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "message_type" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasMessageType {
-      get { return messageType_ != null; }
+      get { return messageType_ != MessageTypeDefaultValue; }
     }
+    /// <summary>Clears the value of the "message_type" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearMessageType() {
-      messageType_ = null;
+      messageType_ = MessageTypeDefaultValue;
     }
 
     private object payload_;

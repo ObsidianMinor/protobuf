@@ -39,6 +39,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// A Timestamp represents a point in time independent of any time zone
@@ -156,9 +157,10 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "seconds" field.</summary>
     public const int SecondsFieldNumber = 1;
+    /// <summary>Default value for the "seconds" field</summary>
     public const long SecondsDefaultValue = 0L;
 
-    private long? seconds_;
+    private long seconds_;
     /// <summary>
     /// Represents seconds of UTC time since Unix epoch
     /// 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
@@ -166,25 +168,28 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Seconds {
-      get { return seconds_ ?? SecondsDefaultValue; }
+      get { return seconds_; }
       set {
         seconds_ = value;
       }
     }
+    /// <summary>Gets whether the "seconds" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSeconds {
-      get { return seconds_ != null; }
+      get { return seconds_ != SecondsDefaultValue; }
     }
+    /// <summary>Clears the value of the "seconds" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSeconds() {
-      seconds_ = null;
+      seconds_ = SecondsDefaultValue;
     }
 
     /// <summary>Field number for the "nanos" field.</summary>
     public const int NanosFieldNumber = 2;
+    /// <summary>Default value for the "nanos" field</summary>
     public const int NanosDefaultValue = 0;
 
-    private int? nanos_;
+    private int nanos_;
     /// <summary>
     /// Non-negative fractions of a second at nanosecond resolution. Negative
     /// second values with fractions must still have non-negative nanos values
@@ -193,18 +198,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Nanos {
-      get { return nanos_ ?? NanosDefaultValue; }
+      get { return nanos_; }
       set {
         nanos_ = value;
       }
     }
+    /// <summary>Gets whether the "nanos" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasNanos {
-      get { return nanos_ != null; }
+      get { return nanos_ != NanosDefaultValue; }
     }
+    /// <summary>Clears the value of the "nanos" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearNanos() {
-      nanos_ = null;
+      nanos_ = NanosDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

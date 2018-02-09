@@ -52,6 +52,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// Api is a light-weight descriptor for an API Interface.
@@ -106,6 +107,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
     private string name_;
@@ -115,18 +117,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_ ?? NameDefaultValue; }
+      get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "name" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasName {
-      get { return name_ != null; }
+      get { return name_ != NameDefaultValue; }
     }
+    /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearName() {
-      name_ = null;
+      name_ = NameDefaultValue;
     }
 
     /// <summary>Field number for the "methods" field.</summary>
@@ -157,6 +161,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 4;
+    /// <summary>Default value for the "version" field</summary>
     public const string VersionDefaultValue = "";
 
     private string version_;
@@ -183,18 +188,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Version {
-      get { return version_ ?? VersionDefaultValue; }
+      get { return version_; }
       set {
         version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "version" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasVersion {
-      get { return version_ != null; }
+      get { return version_ != VersionDefaultValue; }
     }
+    /// <summary>Clears the value of the "version" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearVersion() {
-      version_ = null;
+      version_ = VersionDefaultValue;
     }
 
     /// <summary>Field number for the "source_context" field.</summary>
@@ -212,10 +219,12 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Gets whether the sourceContext field is set</summary>
     public bool HasSourceContext {
       get { return sourceContext_ != null; }
     }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    /// <summary>Clears the value of the sourceContext field</summary>
     public void ClearSourceContext() {
       sourceContext_ = null;
     }
@@ -235,26 +244,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "syntax" field.</summary>
     public const int SyntaxFieldNumber = 7;
+    /// <summary>Default value for the "syntax" field</summary>
     public const global::Google.Protobuf.WellKnownTypes.Syntax SyntaxDefaultValue = global::Google.Protobuf.WellKnownTypes.Syntax.Proto2;
 
-    private global::Google.Protobuf.WellKnownTypes.Syntax? syntax_;
+    private global::Google.Protobuf.WellKnownTypes.Syntax syntax_;
     /// <summary>
     /// The source syntax of the service.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Syntax Syntax {
-      get { return syntax_ ?? SyntaxDefaultValue; }
+      get { return syntax_; }
       set {
         syntax_ = value;
       }
     }
+    /// <summary>Gets whether the "syntax" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSyntax {
-      get { return syntax_ != null; }
+      get { return syntax_ != SyntaxDefaultValue; }
     }
+    /// <summary>Clears the value of the "syntax" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSyntax() {
-      syntax_ = null;
+      syntax_ = SyntaxDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -467,6 +479,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
     private string name_;
@@ -475,22 +488,25 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_ ?? NameDefaultValue; }
+      get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "name" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasName {
-      get { return name_ != null; }
+      get { return name_ != NameDefaultValue; }
     }
+    /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearName() {
-      name_ = null;
+      name_ = NameDefaultValue;
     }
 
     /// <summary>Field number for the "request_type_url" field.</summary>
     public const int RequestTypeUrlFieldNumber = 2;
+    /// <summary>Default value for the "request_type_url" field</summary>
     public const string RequestTypeUrlDefaultValue = "";
 
     private string requestTypeUrl_;
@@ -499,46 +515,52 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string RequestTypeUrl {
-      get { return requestTypeUrl_ ?? RequestTypeUrlDefaultValue; }
+      get { return requestTypeUrl_; }
       set {
         requestTypeUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "request_type_url" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasRequestTypeUrl {
-      get { return requestTypeUrl_ != null; }
+      get { return requestTypeUrl_ != RequestTypeUrlDefaultValue; }
     }
+    /// <summary>Clears the value of the "request_type_url" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearRequestTypeUrl() {
-      requestTypeUrl_ = null;
+      requestTypeUrl_ = RequestTypeUrlDefaultValue;
     }
 
     /// <summary>Field number for the "request_streaming" field.</summary>
     public const int RequestStreamingFieldNumber = 3;
+    /// <summary>Default value for the "request_streaming" field</summary>
     public const bool RequestStreamingDefaultValue = false;
 
-    private bool? requestStreaming_;
+    private bool requestStreaming_;
     /// <summary>
     /// If true, the request is streamed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool RequestStreaming {
-      get { return requestStreaming_ ?? RequestStreamingDefaultValue; }
+      get { return requestStreaming_; }
       set {
         requestStreaming_ = value;
       }
     }
+    /// <summary>Gets whether the "request_streaming" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasRequestStreaming {
-      get { return requestStreaming_ != null; }
+      get { return requestStreaming_ != RequestStreamingDefaultValue; }
     }
+    /// <summary>Clears the value of the "request_streaming" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearRequestStreaming() {
-      requestStreaming_ = null;
+      requestStreaming_ = RequestStreamingDefaultValue;
     }
 
     /// <summary>Field number for the "response_type_url" field.</summary>
     public const int ResponseTypeUrlFieldNumber = 4;
+    /// <summary>Default value for the "response_type_url" field</summary>
     public const string ResponseTypeUrlDefaultValue = "";
 
     private string responseTypeUrl_;
@@ -547,42 +569,47 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ResponseTypeUrl {
-      get { return responseTypeUrl_ ?? ResponseTypeUrlDefaultValue; }
+      get { return responseTypeUrl_; }
       set {
         responseTypeUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "response_type_url" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasResponseTypeUrl {
-      get { return responseTypeUrl_ != null; }
+      get { return responseTypeUrl_ != ResponseTypeUrlDefaultValue; }
     }
+    /// <summary>Clears the value of the "response_type_url" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearResponseTypeUrl() {
-      responseTypeUrl_ = null;
+      responseTypeUrl_ = ResponseTypeUrlDefaultValue;
     }
 
     /// <summary>Field number for the "response_streaming" field.</summary>
     public const int ResponseStreamingFieldNumber = 5;
+    /// <summary>Default value for the "response_streaming" field</summary>
     public const bool ResponseStreamingDefaultValue = false;
 
-    private bool? responseStreaming_;
+    private bool responseStreaming_;
     /// <summary>
     /// If true, the response is streamed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool ResponseStreaming {
-      get { return responseStreaming_ ?? ResponseStreamingDefaultValue; }
+      get { return responseStreaming_; }
       set {
         responseStreaming_ = value;
       }
     }
+    /// <summary>Gets whether the "response_streaming" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasResponseStreaming {
-      get { return responseStreaming_ != null; }
+      get { return responseStreaming_ != ResponseStreamingDefaultValue; }
     }
+    /// <summary>Clears the value of the "response_streaming" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearResponseStreaming() {
-      responseStreaming_ = null;
+      responseStreaming_ = ResponseStreamingDefaultValue;
     }
 
     /// <summary>Field number for the "options" field.</summary>
@@ -600,26 +627,29 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "syntax" field.</summary>
     public const int SyntaxFieldNumber = 7;
+    /// <summary>Default value for the "syntax" field</summary>
     public const global::Google.Protobuf.WellKnownTypes.Syntax SyntaxDefaultValue = global::Google.Protobuf.WellKnownTypes.Syntax.Proto2;
 
-    private global::Google.Protobuf.WellKnownTypes.Syntax? syntax_;
+    private global::Google.Protobuf.WellKnownTypes.Syntax syntax_;
     /// <summary>
     /// The source syntax of this method.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Syntax Syntax {
-      get { return syntax_ ?? SyntaxDefaultValue; }
+      get { return syntax_; }
       set {
         syntax_ = value;
       }
     }
+    /// <summary>Gets whether the "syntax" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSyntax {
-      get { return syntax_ != null; }
+      get { return syntax_ != SyntaxDefaultValue; }
     }
+    /// <summary>Clears the value of the "syntax" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSyntax() {
-      syntax_ = null;
+      syntax_ = SyntaxDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -912,6 +942,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
     private string name_;
@@ -920,22 +951,25 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
-      get { return name_ ?? NameDefaultValue; }
+      get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "name" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasName {
-      get { return name_ != null; }
+      get { return name_ != NameDefaultValue; }
     }
+    /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearName() {
-      name_ = null;
+      name_ = NameDefaultValue;
     }
 
     /// <summary>Field number for the "root" field.</summary>
     public const int RootFieldNumber = 2;
+    /// <summary>Default value for the "root" field</summary>
     public const string RootDefaultValue = "";
 
     private string root_;
@@ -945,18 +979,20 @@ namespace Google.Protobuf.WellKnownTypes {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Root {
-      get { return root_ ?? RootDefaultValue; }
+      get { return root_; }
       set {
         root_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
+    /// <summary>Gets whether the "root" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasRoot {
-      get { return root_ != null; }
+      get { return root_ != RootDefaultValue; }
     }
+    /// <summary>Clears the value of the "root" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearRoot() {
-      root_ = null;
+      root_ = RootDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -38,6 +38,7 @@ namespace Google.Protobuf.WellKnownTypes {
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// A generic empty message that you can re-use to avoid defining duplicated

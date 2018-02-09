@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Google.Protobuf.Test
+namespace Google.Protobuf
 {
-    class DefaultValueTests
+    public class DefaultValueTests
     {
     }
 }

@@ -41,7 +41,7 @@ using static UnitTest.Issues.TestProtos.UnittestCustomOptionsProto3Extensions;
 using static UnitTest.Issues.TestProtos.ComplexOptionType2.Types;
 using static UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types;
 
-namespace Google.Protobuf.Test.Reflection
+namespace Google.Protobuf.Reflection
 {
     /// <summary>
     /// The majority of the testing here is done via parsed descriptors. That's simpler to

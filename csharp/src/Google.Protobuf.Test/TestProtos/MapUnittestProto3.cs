@@ -643,7 +643,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestMapSubmessage(TestMapSubmessage other) : this() {
-      TestMap = other.HasTestMap ? other.TestMap.Clone() : null;
+      TestMap = other.testMap_ != null ? other.TestMap.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -693,7 +693,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasTestMap) hash ^= TestMap.GetHashCode();
+      if (testMap_ != null) hash ^= TestMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -707,7 +707,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasTestMap) {
+      if (testMap_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(TestMap);
       }
@@ -719,7 +719,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasTestMap) {
+      if (testMap_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TestMap);
       }
       if (_unknownFields != null) {
@@ -733,8 +733,8 @@ namespace Google.Protobuf.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasTestMap) {
-        if (!HasTestMap) {
+      if (other.testMap_ != null) {
+        if (testMap_ == null) {
           testMap_ = new global::Google.Protobuf.TestProtos.TestMap();
         }
         TestMap.MergeFrom(other.TestMap);
@@ -751,7 +751,7 @@ namespace Google.Protobuf.TestProtos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (!HasTestMap) {
+            if (testMap_ == null) {
               testMap_ = new global::Google.Protobuf.TestProtos.TestMap();
             }
             input.ReadMessage(testMap_);

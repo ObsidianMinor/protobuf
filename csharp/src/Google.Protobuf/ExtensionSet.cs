@@ -7,7 +7,7 @@ namespace Google.Protobuf
     /// </summary>
     public abstract class ExtensionSet
     {
-        internal void RegisterInternal(IExtension extension) => throw new NotImplementedException();
+        public void Register(IExtension extension) => throw new NotImplementedException();
 
         /// <summary>
         /// Attempts to merge a field from the specified input stream. 

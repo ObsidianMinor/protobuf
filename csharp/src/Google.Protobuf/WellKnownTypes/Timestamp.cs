@@ -173,11 +173,6 @@ namespace Google.Protobuf.WellKnownTypes {
         seconds_ = value;
       }
     }
-    /// <summary>Gets whether the "seconds" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasSeconds {
-      get { return seconds_ != SecondsDefaultValue; }
-    }
     /// <summary>Clears the value of the "seconds" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSeconds() {
@@ -202,11 +197,6 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         nanos_ = value;
       }
-    }
-    /// <summary>Gets whether the "nanos" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasNanos {
-      get { return nanos_ != NanosDefaultValue; }
     }
     /// <summary>Clears the value of the "nanos" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -235,8 +225,8 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasSeconds) hash ^= Seconds.GetHashCode();
-      if (HasNanos) hash ^= Nanos.GetHashCode();
+      if (Seconds != 0L) hash ^= Seconds.GetHashCode();
+      if (Nanos != 0) hash ^= Nanos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -250,11 +240,11 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasSeconds) {
+      if (Seconds != 0L) {
         output.WriteRawTag(8);
         output.WriteInt64(Seconds);
       }
-      if (HasNanos) {
+      if (Nanos != 0) {
         output.WriteRawTag(16);
         output.WriteInt32(Nanos);
       }
@@ -266,10 +256,10 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasSeconds) {
+      if (Seconds != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Seconds);
       }
-      if (HasNanos) {
+      if (Nanos != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Nanos);
       }
       if (_unknownFields != null) {
@@ -283,10 +273,10 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasSeconds) {
+      if (other.Seconds != 0L) {
         Seconds = other.Seconds;
       }
-      if (other.HasNanos) {
+      if (other.Nanos != 0) {
         Nanos = other.Nanos;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

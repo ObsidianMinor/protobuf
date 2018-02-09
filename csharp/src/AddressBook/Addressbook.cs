@@ -79,7 +79,7 @@ namespace Google.Protobuf.Examples.AddressBook {
       id_ = other.id_;
       email_ = other.email_;
       phones_ = other.phones_.Clone();
-      LastUpdated = other.HasLastUpdated ? other.LastUpdated.Clone() : null;
+      LastUpdated = other.lastUpdated_ != null ? other.LastUpdated.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,18 +93,13 @@ namespace Google.Protobuf.Examples.AddressBook {
     /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
-    private string name_;
+    private string name_ = NameDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "name" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasName {
-      get { return name_ != NameDefaultValue; }
     }
     /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,11 +123,6 @@ namespace Google.Protobuf.Examples.AddressBook {
         id_ = value;
       }
     }
-    /// <summary>Gets whether the "id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasId {
-      get { return id_ != IdDefaultValue; }
-    }
     /// <summary>Clears the value of the "id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearId() {
@@ -144,18 +134,13 @@ namespace Google.Protobuf.Examples.AddressBook {
     /// <summary>Default value for the "email" field</summary>
     public const string EmailDefaultValue = "";
 
-    private string email_;
+    private string email_ = EmailDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Email {
       get { return email_; }
       set {
         email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "email" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasEmail {
-      get { return email_ != EmailDefaultValue; }
     }
     /// <summary>Clears the value of the "email" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,11 +203,11 @@ namespace Google.Protobuf.Examples.AddressBook {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasName) hash ^= Name.GetHashCode();
-      if (HasId) hash ^= Id.GetHashCode();
-      if (HasEmail) hash ^= Email.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Email.Length != 0) hash ^= Email.GetHashCode();
       hash ^= phones_.GetHashCode();
-      if (HasLastUpdated) hash ^= LastUpdated.GetHashCode();
+      if (lastUpdated_ != null) hash ^= LastUpdated.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -236,20 +221,20 @@ namespace Google.Protobuf.Examples.AddressBook {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasName) {
+      if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (HasId) {
+      if (Id != 0) {
         output.WriteRawTag(16);
         output.WriteInt32(Id);
       }
-      if (HasEmail) {
+      if (Email.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(Email);
       }
       phones_.WriteTo(output, _repeated_phones_codec);
-      if (HasLastUpdated) {
+      if (lastUpdated_ != null) {
         output.WriteRawTag(42);
         output.WriteMessage(LastUpdated);
       }
@@ -261,17 +246,17 @@ namespace Google.Protobuf.Examples.AddressBook {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasName) {
+      if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (HasId) {
+      if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
       }
-      if (HasEmail) {
+      if (Email.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
       }
       size += phones_.CalculateSize(_repeated_phones_codec);
-      if (HasLastUpdated) {
+      if (lastUpdated_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastUpdated);
       }
       if (_unknownFields != null) {
@@ -285,18 +270,18 @@ namespace Google.Protobuf.Examples.AddressBook {
       if (other == null) {
         return;
       }
-      if (other.HasName) {
+      if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.HasId) {
+      if (other.Id != 0) {
         Id = other.Id;
       }
-      if (other.HasEmail) {
+      if (other.Email.Length != 0) {
         Email = other.Email;
       }
       phones_.Add(other.phones_);
-      if (other.HasLastUpdated) {
-        if (!HasLastUpdated) {
+      if (other.lastUpdated_ != null) {
+        if (lastUpdated_ == null) {
           lastUpdated_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         LastUpdated.MergeFrom(other.LastUpdated);
@@ -329,7 +314,7 @@ namespace Google.Protobuf.Examples.AddressBook {
             break;
           }
           case 42: {
-            if (!HasLastUpdated) {
+            if (lastUpdated_ == null) {
               lastUpdated_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(lastUpdated_);
@@ -389,18 +374,13 @@ namespace Google.Protobuf.Examples.AddressBook {
         /// <summary>Default value for the "number" field</summary>
         public const string NumberDefaultValue = "";
 
-        private string number_;
+        private string number_ = NumberDefaultValue;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string Number {
           get { return number_; }
           set {
             number_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
-        }
-        /// <summary>Gets whether the "number" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool HasNumber {
-          get { return number_ != NumberDefaultValue; }
         }
         /// <summary>Clears the value of the "number" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -411,20 +391,15 @@ namespace Google.Protobuf.Examples.AddressBook {
         /// <summary>Field number for the "type" field.</summary>
         public const int TypeFieldNumber = 2;
         /// <summary>Default value for the "type" field</summary>
-        public const global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType TypeDefaultValue = global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType.Mobile;
+        public const global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType TypeDefaultValue = 0;
 
-        private global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType type_;
+        private global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType type_ = TypeDefaultValue;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Google.Protobuf.Examples.AddressBook.Person.Types.PhoneType Type {
           get { return type_; }
           set {
             type_ = value;
           }
-        }
-        /// <summary>Gets whether the "type" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool HasType {
-          get { return type_ != TypeDefaultValue; }
         }
         /// <summary>Clears the value of the "type" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -453,8 +428,8 @@ namespace Google.Protobuf.Examples.AddressBook {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (HasNumber) hash ^= Number.GetHashCode();
-          if (HasType) hash ^= Type.GetHashCode();
+          if (Number.Length != 0) hash ^= Number.GetHashCode();
+          if (Type != 0) hash ^= Type.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -468,11 +443,11 @@ namespace Google.Protobuf.Examples.AddressBook {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (HasNumber) {
+          if (Number.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(Number);
           }
-          if (HasType) {
+          if (Type != 0) {
             output.WriteRawTag(16);
             output.WriteEnum((int) Type);
           }
@@ -484,10 +459,10 @@ namespace Google.Protobuf.Examples.AddressBook {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (HasNumber) {
+          if (Number.Length != 0) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Number);
           }
-          if (HasType) {
+          if (Type != 0) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
           }
           if (_unknownFields != null) {
@@ -501,10 +476,10 @@ namespace Google.Protobuf.Examples.AddressBook {
           if (other == null) {
             return;
           }
-          if (other.HasNumber) {
+          if (other.Number.Length != 0) {
             Number = other.Number;
           }
-          if (other.HasType) {
+          if (other.Type != 0) {
             Type = other.Type;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

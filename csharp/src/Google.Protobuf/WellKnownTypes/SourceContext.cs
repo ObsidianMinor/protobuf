@@ -84,7 +84,7 @@ namespace Google.Protobuf.WellKnownTypes {
     /// <summary>Default value for the "file_name" field</summary>
     public const string FileNameDefaultValue = "";
 
-    private string fileName_;
+    private string fileName_ = FileNameDefaultValue;
     /// <summary>
     /// The path-qualified name of the .proto file that contained the associated
     /// protobuf element.  For example: `"google/protobuf/source_context.proto"`.
@@ -95,11 +95,6 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         fileName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "file_name" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFileName {
-      get { return fileName_ != FileNameDefaultValue; }
     }
     /// <summary>Clears the value of the "file_name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,7 +122,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasFileName) hash ^= FileName.GetHashCode();
+      if (FileName.Length != 0) hash ^= FileName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -141,7 +136,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasFileName) {
+      if (FileName.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(FileName);
       }
@@ -153,7 +148,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasFileName) {
+      if (FileName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FileName);
       }
       if (_unknownFields != null) {
@@ -167,7 +162,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasFileName) {
+      if (other.FileName.Length != 0) {
         FileName = other.FileName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

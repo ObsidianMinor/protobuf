@@ -513,8 +513,13 @@ FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
 std::string GetDefaultValue(const FieldDescriptor* descriptor) {
   switch (descriptor->type()) {
     case FieldDescriptor::TYPE_ENUM:
-    return GetClassName(descriptor->default_value_enum()->type()) + "." + 
-      GetEnumValueName(descriptor->default_value_enum()->type()->name(), descriptor->default_value_enum()->name());
+      if (descriptor->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+        return GetClassName(descriptor->default_value_enum()->type()) + "." + 
+          GetEnumValueName(descriptor->default_value_enum()->type()->name(), descriptor->default_value_enum()->name());
+      }
+      else {
+        return "0";
+      }
     case FieldDescriptor::TYPE_MESSAGE:
     case FieldDescriptor::TYPE_GROUP:
       if (IsWrapperType(descriptor)) {

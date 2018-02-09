@@ -45,7 +45,9 @@ namespace Google.Protobuf
         // TODO: When we use a C# 7.1 compiler, make this private protected.
         internal bool DiscardUnknownFields { get; }
 
-        internal MessageParser(Func<IMessage> factory, bool discardUnknownFields)
+        internal IExtension[] Extensions { get; }
+
+        internal MessageParser(Func<IMessage> factory, bool discardUnknownFields, IExtension[] extensions)
         {
             this.factory = factory;
             DiscardUnknownFields = discardUnknownFields;
@@ -57,7 +59,15 @@ namespace Google.Protobuf
         /// <returns>An empty message.</returns>
         internal IMessage CreateTemplate()
         {
-            return factory();
+            IMessage message = factory();
+            if (message is IExtensionMessage extensionMessage && Extensions != null)
+            {
+                foreach (IExtension extension in Extensions)
+                {
+                    extensionMessage.Extensions.Register(extension);
+                }
+            }
+            return message;
         }
 
         /// <summary>
@@ -67,7 +77,7 @@ namespace Google.Protobuf
         /// <returns>The newly parsed message.</returns>
         public IMessage ParseFrom(byte[] data)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             message.MergeFrom(data, DiscardUnknownFields);
             return message;
         }
@@ -81,7 +91,7 @@ namespace Google.Protobuf
         /// <returns>The newly parsed message.</returns>
         public IMessage ParseFrom(byte[] data, int offset, int length)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             message.MergeFrom(data, offset, length, DiscardUnknownFields);
             return message;
         }
@@ -93,7 +103,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public IMessage ParseFrom(ByteString data)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             message.MergeFrom(data, DiscardUnknownFields);
             return message;
         }
@@ -105,7 +115,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public IMessage ParseFrom(Stream input)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             message.MergeFrom(input, DiscardUnknownFields);
             return message;
         }
@@ -121,7 +131,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public IMessage ParseDelimitedFrom(Stream input)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             message.MergeDelimitedFrom(input, DiscardUnknownFields);
             return message;
         }
@@ -133,7 +143,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public IMessage ParseFrom(CodedInputStream input)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             MergeFrom(message, input);
             return message;
         }
@@ -147,7 +157,7 @@ namespace Google.Protobuf
         /// <exception cref="InvalidProtocolBufferException">The JSON does not represent a Protocol Buffers message correctly</exception>
         public IMessage ParseJson(string json)
         {
-            IMessage message = factory();
+            IMessage message = CreateTemplate();
             JsonParser.Default.Merge(message, json);
             return message;
         }
@@ -173,7 +183,15 @@ namespace Google.Protobuf
         /// <param name="discardUnknownFields">Whether or not to discard unknown fields when parsing.</param>
         /// <returns>A newly configured message parser.</returns>
         public MessageParser WithDiscardUnknownFields(bool discardUnknownFields) =>
-            new MessageParser(factory, discardUnknownFields);
+            new MessageParser(factory, discardUnknownFields, Extensions);
+
+        /// <summary>
+        /// Creates a new message parser which registers the specified extensions upon creating the message type
+        /// </summary>
+        /// <param name="extensions">The extensions to register</param>
+        /// <returns>A newly configured message parser.</returns>
+        public MessageParser WithExtensions(params IExtension[] extensions) =>
+            new MessageParser(factory, DiscardUnknownFields, extensions);
     }
 
     /// <summary>
@@ -208,11 +226,11 @@ namespace Google.Protobuf
         /// to require a parameterless constructor: delegates are significantly faster to execute.
         /// </remarks>
         /// <param name="factory">Function to invoke when a new, empty message is required.</param>
-        public MessageParser(Func<T> factory) : this(factory, false)
+        public MessageParser(Func<T> factory) : this(factory, false, new IExtension[0])
         {
         }
 
-        internal MessageParser(Func<T> factory, bool discardUnknownFields) : base(() => factory(), discardUnknownFields)
+        internal MessageParser(Func<T> factory, bool discardUnknownFields, IExtension[] extensions) : base(() => factory(), discardUnknownFields, extensions)
         {
             this.factory = factory;
         }
@@ -223,7 +241,15 @@ namespace Google.Protobuf
         /// <returns>An empty message.</returns>
         internal new T CreateTemplate()
         {
-            return factory();
+            T message = factory();
+            if (message is IExtensionMessage extensionMessage && Extensions != null)
+            {
+                foreach (IExtension extension in Extensions)
+                {
+                    extensionMessage.Extensions.Register(extension);
+                }
+            }
+            return message;
         }
 
         /// <summary>
@@ -233,7 +259,7 @@ namespace Google.Protobuf
         /// <returns>The newly parsed message.</returns>
         public new T ParseFrom(byte[] data)
         {
-            T message = factory();
+            T message = CreateTemplate();
             message.MergeFrom(data, DiscardUnknownFields);
             return message;
         }
@@ -247,7 +273,7 @@ namespace Google.Protobuf
         /// <returns>The newly parsed message.</returns>
         public new T ParseFrom(byte[] data, int offset, int length)
         {
-            T message = factory();
+            T message = CreateTemplate();
             message.MergeFrom(data, offset, length, DiscardUnknownFields);
             return message;
         }
@@ -259,7 +285,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public new T ParseFrom(ByteString data)
         {
-            T message = factory();
+            T message = CreateTemplate();
             message.MergeFrom(data, DiscardUnknownFields);
             return message;
         }
@@ -271,7 +297,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public new T ParseFrom(Stream input)
         {
-            T message = factory();
+            T message = CreateTemplate();
             message.MergeFrom(input, DiscardUnknownFields);
             return message;
         }
@@ -287,7 +313,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public new T ParseDelimitedFrom(Stream input)
         {
-            T message = factory();
+            T message = CreateTemplate();
             message.MergeDelimitedFrom(input, DiscardUnknownFields);
             return message;
         }
@@ -299,7 +325,7 @@ namespace Google.Protobuf
         /// <returns>The parsed message.</returns>
         public new T ParseFrom(CodedInputStream input)
         {
-            T message = factory();
+            T message = CreateTemplate();
             MergeFrom(message, input);
             return message;
         }
@@ -313,7 +339,7 @@ namespace Google.Protobuf
         /// <exception cref="InvalidProtocolBufferException">The JSON does not represent a Protocol Buffers message correctly</exception>
         public new T ParseJson(string json)
         {
-            T message = factory();
+            T message = CreateTemplate();
             JsonParser.Default.Merge(message, json);
             return message;
         }
@@ -324,6 +350,14 @@ namespace Google.Protobuf
         /// <param name="discardUnknownFields">Whether or not to discard unknown fields when parsing.</param>
         /// <returns>A newly configured message parser.</returns>
         public new MessageParser<T> WithDiscardUnknownFields(bool discardUnknownFields) =>
-            new MessageParser<T>(factory, discardUnknownFields);
+            new MessageParser<T>(factory, discardUnknownFields, Extensions);
+
+        /// <summary>
+        /// Creates a new message parser which registers the specified extensions upon creating the message type
+        /// </summary>
+        /// <param name="extensions">The extensions to register</param>
+        /// <returns>A newly configured message parser.</returns>
+        public new MessageParser<T> WithExtensions(params IExtension[] extensions) =>
+            new MessageParser<T>(factory, DiscardUnknownFields, extensions);
     }
 }

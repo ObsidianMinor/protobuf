@@ -132,9 +132,9 @@ namespace Conformance {
     /// <summary>Field number for the "requested_output_format" field.</summary>
     public const int RequestedOutputFormatFieldNumber = 3;
     /// <summary>Default value for the "requested_output_format" field</summary>
-    public const global::Conformance.WireFormat RequestedOutputFormatDefaultValue = global::Conformance.WireFormat.Unspecified;
+    public const global::Conformance.WireFormat RequestedOutputFormatDefaultValue = 0;
 
-    private global::Conformance.WireFormat requestedOutputFormat_;
+    private global::Conformance.WireFormat requestedOutputFormat_ = RequestedOutputFormatDefaultValue;
     /// <summary>
     /// Which format should the testee serialize its message to?
     /// </summary>
@@ -144,11 +144,6 @@ namespace Conformance {
       set {
         requestedOutputFormat_ = value;
       }
-    }
-    /// <summary>Gets whether the "requested_output_format" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasRequestedOutputFormat {
-      get { return requestedOutputFormat_ != RequestedOutputFormatDefaultValue; }
     }
     /// <summary>Clears the value of the "requested_output_format" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,7 +156,7 @@ namespace Conformance {
     /// <summary>Default value for the "message_type" field</summary>
     public const string MessageTypeDefaultValue = "";
 
-    private string messageType_;
+    private string messageType_ = MessageTypeDefaultValue;
     /// <summary>
     /// The full name for the test message to use; for the moment, either:
     /// protobuf_test_messages.proto3.TestAllTypesProto3 or
@@ -173,11 +168,6 @@ namespace Conformance {
       set {
         messageType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "message_type" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasMessageType {
-      get { return messageType_ != MessageTypeDefaultValue; }
     }
     /// <summary>Clears the value of the "message_type" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -230,8 +220,8 @@ namespace Conformance {
       int hash = 1;
       if (payloadCase_ == PayloadOneofCase.ProtobufPayload) hash ^= ProtobufPayload.GetHashCode();
       if (payloadCase_ == PayloadOneofCase.JsonPayload) hash ^= JsonPayload.GetHashCode();
-      if (HasRequestedOutputFormat) hash ^= RequestedOutputFormat.GetHashCode();
-      if (HasMessageType) hash ^= MessageType.GetHashCode();
+      if (RequestedOutputFormat != 0) hash ^= RequestedOutputFormat.GetHashCode();
+      if (MessageType.Length != 0) hash ^= MessageType.GetHashCode();
       hash ^= (int) payloadCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -254,11 +244,11 @@ namespace Conformance {
         output.WriteRawTag(18);
         output.WriteString(JsonPayload);
       }
-      if (HasRequestedOutputFormat) {
+      if (RequestedOutputFormat != 0) {
         output.WriteRawTag(24);
         output.WriteEnum((int) RequestedOutputFormat);
       }
-      if (HasMessageType) {
+      if (MessageType.Length != 0) {
         output.WriteRawTag(34);
         output.WriteString(MessageType);
       }
@@ -276,10 +266,10 @@ namespace Conformance {
       if (payloadCase_ == PayloadOneofCase.JsonPayload) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(JsonPayload);
       }
-      if (HasRequestedOutputFormat) {
+      if (RequestedOutputFormat != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RequestedOutputFormat);
       }
-      if (HasMessageType) {
+      if (MessageType.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MessageType);
       }
       if (_unknownFields != null) {
@@ -293,10 +283,10 @@ namespace Conformance {
       if (other == null) {
         return;
       }
-      if (other.HasRequestedOutputFormat) {
+      if (other.RequestedOutputFormat != 0) {
         RequestedOutputFormat = other.RequestedOutputFormat;
       }
-      if (other.HasMessageType) {
+      if (other.MessageType.Length != 0) {
         MessageType = other.MessageType;
       }
       switch (other.PayloadCase) {

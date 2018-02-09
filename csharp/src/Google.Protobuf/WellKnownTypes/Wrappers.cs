@@ -108,11 +108,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -139,7 +134,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
+      if (Value != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -153,7 +148,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0D) {
         output.WriteRawTag(9);
         output.WriteDouble(Value);
       }
@@ -165,7 +160,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0D) {
         size += 1 + 8;
       }
       if (_unknownFields != null) {
@@ -179,7 +174,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0D) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -258,11 +253,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -289,7 +279,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
+      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -303,7 +293,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0F) {
         output.WriteRawTag(13);
         output.WriteFloat(Value);
       }
@@ -315,7 +305,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0F) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {
@@ -329,7 +319,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0F) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -408,11 +398,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -439,7 +424,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value != 0L) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -453,7 +438,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0L) {
         output.WriteRawTag(8);
         output.WriteInt64(Value);
       }
@@ -465,7 +450,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Value);
       }
       if (_unknownFields != null) {
@@ -479,7 +464,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0L) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -558,11 +543,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -589,7 +569,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value != 0UL) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -603,7 +583,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0UL) {
         output.WriteRawTag(8);
         output.WriteUInt64(Value);
       }
@@ -615,7 +595,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Value);
       }
       if (_unknownFields != null) {
@@ -629,7 +609,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0UL) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -708,11 +688,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -739,7 +714,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -753,7 +728,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Value);
       }
@@ -765,7 +740,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
       }
       if (_unknownFields != null) {
@@ -779,7 +754,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -858,11 +833,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -889,7 +859,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -903,7 +873,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0) {
         output.WriteRawTag(8);
         output.WriteUInt32(Value);
       }
@@ -915,7 +885,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Value);
       }
       if (_unknownFields != null) {
@@ -929,7 +899,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1008,11 +978,6 @@ namespace Google.Protobuf.WellKnownTypes {
         value_ = value;
       }
     }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
-    }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearValue() {
@@ -1039,7 +1004,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value != false) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1053,7 +1018,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != false) {
         output.WriteRawTag(8);
         output.WriteBool(Value);
       }
@@ -1065,7 +1030,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -1079,7 +1044,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != false) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1147,7 +1112,7 @@ namespace Google.Protobuf.WellKnownTypes {
     /// <summary>Default value for the "value" field</summary>
     public const string ValueDefaultValue = "";
 
-    private string value_;
+    private string value_ = ValueDefaultValue;
     /// <summary>
     /// The string value.
     /// </summary>
@@ -1157,11 +1122,6 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
     }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1189,7 +1149,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1203,7 +1163,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Value);
       }
@@ -1215,7 +1175,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Value);
       }
       if (_unknownFields != null) {
@@ -1229,7 +1189,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value.Length != 0) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1297,7 +1257,7 @@ namespace Google.Protobuf.WellKnownTypes {
     /// <summary>Default value for the "value" field</summary>
     public readonly static pb::ByteString ValueDefaultValue = pb::ByteString.Empty;
 
-    private pb::ByteString value_;
+    private pb::ByteString value_ = ValueDefaultValue;
     /// <summary>
     /// The bytes value.
     /// </summary>
@@ -1307,11 +1267,6 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
     }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1339,7 +1294,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value.Length != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1353,7 +1308,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value.Length != 0) {
         output.WriteRawTag(10);
         output.WriteBytes(Value);
       }
@@ -1365,7 +1320,7 @@ namespace Google.Protobuf.WellKnownTypes {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Value);
       }
       if (_unknownFields != null) {
@@ -1379,7 +1334,7 @@ namespace Google.Protobuf.WellKnownTypes {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value.Length != 0) {
         Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

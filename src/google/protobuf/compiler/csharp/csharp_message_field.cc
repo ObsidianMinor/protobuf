@@ -52,6 +52,10 @@ MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
                                              int fieldOrdinal,
                                              const Options *options)
     : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO3) {
+    variables_["has_property_check"] = name() + "_ != null";
+    variables_["has_not_property_check"] = name() + "_ == null";
+  }
 }
 
 MessageFieldGenerator::~MessageFieldGenerator() {

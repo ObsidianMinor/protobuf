@@ -445,20 +445,15 @@ namespace UnitTest.Issues.TestProtos {
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
     /// <summary>Default value for the "value" field</summary>
-    public const global::UnitTest.Issues.TestProtos.NegativeEnum ValueDefaultValue = global::UnitTest.Issues.TestProtos.NegativeEnum.Zero;
+    public const global::UnitTest.Issues.TestProtos.NegativeEnum ValueDefaultValue = 0;
 
-    private global::UnitTest.Issues.TestProtos.NegativeEnum value_;
+    private global::UnitTest.Issues.TestProtos.NegativeEnum value_ = ValueDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::UnitTest.Issues.TestProtos.NegativeEnum Value {
       get { return value_; }
       set {
         value_ = value;
       }
-    }
-    /// <summary>Gets whether the "value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasValue {
-      get { return value_ != ValueDefaultValue; }
     }
     /// <summary>Clears the value of the "value" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -508,7 +503,7 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasValue) hash ^= Value.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
       hash ^= values_.GetHashCode();
       hash ^= packedValues_.GetHashCode();
       if (_unknownFields != null) {
@@ -524,7 +519,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasValue) {
+      if (Value != 0) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Value);
       }
@@ -538,7 +533,7 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasValue) {
+      if (Value != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Value);
       }
       size += values_.CalculateSize(_repeated_values_codec);
@@ -554,7 +549,7 @@ namespace UnitTest.Issues.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasValue) {
+      if (other.Value != 0) {
         Value = other.Value;
       }
       values_.Add(other.values_);
@@ -718,7 +713,7 @@ namespace UnitTest.Issues.TestProtos {
     public DeprecatedFieldsMessage(DeprecatedFieldsMessage other) : this() {
       primitiveValue_ = other.primitiveValue_;
       primitiveArray_ = other.primitiveArray_.Clone();
-      MessageValue = other.HasMessageValue ? other.MessageValue.Clone() : null;
+      MessageValue = other.messageValue_ != null ? other.MessageValue.Clone() : null;
       messageArray_ = other.messageArray_.Clone();
       enumValue_ = other.enumValue_;
       enumArray_ = other.enumArray_.Clone();
@@ -743,12 +738,6 @@ namespace UnitTest.Issues.TestProtos {
       set {
         primitiveValue_ = value;
       }
-    }
-    /// <summary>Gets whether the "PrimitiveValue" field is set</summary>
-    [global::System.ObsoleteAttribute]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasPrimitiveValue {
-      get { return primitiveValue_ != PrimitiveValueDefaultValue; }
     }
     /// <summary>Clears the value of the "PrimitiveValue" field</summary>
     [global::System.ObsoleteAttribute]
@@ -806,9 +795,9 @@ namespace UnitTest.Issues.TestProtos {
     /// <summary>Field number for the "EnumValue" field.</summary>
     public const int EnumValueFieldNumber = 5;
     /// <summary>Default value for the "EnumValue" field</summary>
-    public const global::UnitTest.Issues.TestProtos.DeprecatedEnum EnumValueDefaultValue = global::UnitTest.Issues.TestProtos.DeprecatedEnum.DeprecatedZero;
+    public const global::UnitTest.Issues.TestProtos.DeprecatedEnum EnumValueDefaultValue = 0;
 
-    private global::UnitTest.Issues.TestProtos.DeprecatedEnum enumValue_;
+    private global::UnitTest.Issues.TestProtos.DeprecatedEnum enumValue_ = EnumValueDefaultValue;
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::UnitTest.Issues.TestProtos.DeprecatedEnum EnumValue {
@@ -816,12 +805,6 @@ namespace UnitTest.Issues.TestProtos {
       set {
         enumValue_ = value;
       }
-    }
-    /// <summary>Gets whether the "EnumValue" field is set</summary>
-    [global::System.ObsoleteAttribute]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasEnumValue {
-      get { return enumValue_ != EnumValueDefaultValue; }
     }
     /// <summary>Clears the value of the "EnumValue" field</summary>
     [global::System.ObsoleteAttribute]
@@ -866,11 +849,11 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasPrimitiveValue) hash ^= PrimitiveValue.GetHashCode();
+      if (PrimitiveValue != 0) hash ^= PrimitiveValue.GetHashCode();
       hash ^= primitiveArray_.GetHashCode();
-      if (HasMessageValue) hash ^= MessageValue.GetHashCode();
+      if (messageValue_ != null) hash ^= MessageValue.GetHashCode();
       hash ^= messageArray_.GetHashCode();
-      if (HasEnumValue) hash ^= EnumValue.GetHashCode();
+      if (EnumValue != 0) hash ^= EnumValue.GetHashCode();
       hash ^= enumArray_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -885,17 +868,17 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasPrimitiveValue) {
+      if (PrimitiveValue != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(PrimitiveValue);
       }
       primitiveArray_.WriteTo(output, _repeated_primitiveArray_codec);
-      if (HasMessageValue) {
+      if (messageValue_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(MessageValue);
       }
       messageArray_.WriteTo(output, _repeated_messageArray_codec);
-      if (HasEnumValue) {
+      if (EnumValue != 0) {
         output.WriteRawTag(40);
         output.WriteEnum((int) EnumValue);
       }
@@ -908,15 +891,15 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasPrimitiveValue) {
+      if (PrimitiveValue != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(PrimitiveValue);
       }
       size += primitiveArray_.CalculateSize(_repeated_primitiveArray_codec);
-      if (HasMessageValue) {
+      if (messageValue_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MessageValue);
       }
       size += messageArray_.CalculateSize(_repeated_messageArray_codec);
-      if (HasEnumValue) {
+      if (EnumValue != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EnumValue);
       }
       size += enumArray_.CalculateSize(_repeated_enumArray_codec);
@@ -931,18 +914,18 @@ namespace UnitTest.Issues.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasPrimitiveValue) {
+      if (other.PrimitiveValue != 0) {
         PrimitiveValue = other.PrimitiveValue;
       }
       primitiveArray_.Add(other.primitiveArray_);
-      if (other.HasMessageValue) {
-        if (!HasMessageValue) {
+      if (other.messageValue_ != null) {
+        if (messageValue_ == null) {
           messageValue_ = new global::UnitTest.Issues.TestProtos.DeprecatedChild();
         }
         MessageValue.MergeFrom(other.MessageValue);
       }
       messageArray_.Add(other.messageArray_);
-      if (other.HasEnumValue) {
+      if (other.EnumValue != 0) {
         EnumValue = other.EnumValue;
       }
       enumArray_.Add(other.enumArray_);
@@ -967,7 +950,7 @@ namespace UnitTest.Issues.TestProtos {
             break;
           }
           case 26: {
-            if (!HasMessageValue) {
+            if (messageValue_ == null) {
               messageValue_ = new global::UnitTest.Issues.TestProtos.DeprecatedChild();
             }
             input.ReadMessage(messageValue_);
@@ -1042,11 +1025,6 @@ namespace UnitTest.Issues.TestProtos {
         item_ = value;
       }
     }
-    /// <summary>Gets whether the "item" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasItem {
-      get { return item_ != ItemDefaultValue; }
-    }
     /// <summary>Clears the value of the "item" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearItem() {
@@ -1073,7 +1051,7 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasItem) hash ^= Item.GetHashCode();
+      if (Item != 0) hash ^= Item.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1087,7 +1065,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasItem) {
+      if (Item != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Item);
       }
@@ -1099,7 +1077,7 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasItem) {
+      if (Item != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Item);
       }
       if (_unknownFields != null) {
@@ -1113,7 +1091,7 @@ namespace UnitTest.Issues.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasItem) {
+      if (other.Item != 0) {
         Item = other.Item;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1185,11 +1163,6 @@ namespace UnitTest.Issues.TestProtos {
         types_ = value;
       }
     }
-    /// <summary>Gets whether the "types" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasTypes_ {
-      get { return types_ != Types_DefaultValue; }
-    }
     /// <summary>Clears the value of the "types" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearTypes_() {
@@ -1208,11 +1181,6 @@ namespace UnitTest.Issues.TestProtos {
       set {
         descriptor_ = value;
       }
-    }
-    /// <summary>Gets whether the "descriptor" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasDescriptor_ {
-      get { return descriptor_ != Descriptor_DefaultValue; }
     }
     /// <summary>Clears the value of the "descriptor" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1241,8 +1209,8 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasTypes_) hash ^= Types_.GetHashCode();
-      if (HasDescriptor_) hash ^= Descriptor_.GetHashCode();
+      if (Types_ != 0) hash ^= Types_.GetHashCode();
+      if (Descriptor_ != 0) hash ^= Descriptor_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1256,11 +1224,11 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasTypes_) {
+      if (Types_ != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Types_);
       }
-      if (HasDescriptor_) {
+      if (Descriptor_ != 0) {
         output.WriteRawTag(16);
         output.WriteInt32(Descriptor_);
       }
@@ -1272,10 +1240,10 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasTypes_) {
+      if (Types_ != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Types_);
       }
-      if (HasDescriptor_) {
+      if (Descriptor_ != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Descriptor_);
       }
       if (_unknownFields != null) {
@@ -1289,10 +1257,10 @@ namespace UnitTest.Issues.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasTypes_) {
+      if (other.Types_ != 0) {
         Types_ = other.Types_;
       }
-      if (other.HasDescriptor_) {
+      if (other.Descriptor_ != 0) {
         Descriptor_ = other.Descriptor_;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1509,11 +1477,6 @@ namespace UnitTest.Issues.TestProtos {
         plainInt32_ = value;
       }
     }
-    /// <summary>Gets whether the "plain_int32" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasPlainInt32 {
-      get { return plainInt32_ != PlainInt32DefaultValue; }
-    }
     /// <summary>Clears the value of the "plain_int32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearPlainInt32() {
@@ -1547,18 +1510,13 @@ namespace UnitTest.Issues.TestProtos {
     /// <summary>Default value for the "plain_string" field</summary>
     public const string PlainStringDefaultValue = "";
 
-    private string plainString_;
+    private string plainString_ = PlainStringDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PlainString {
       get { return plainString_; }
       set {
         plainString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "plain_string" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasPlainString {
-      get { return plainString_ != PlainStringDefaultValue; }
     }
     /// <summary>Clears the value of the "plain_string" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1653,10 +1611,10 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasPlainInt32) hash ^= PlainInt32.GetHashCode();
+      if (PlainInt32 != 0) hash ^= PlainInt32.GetHashCode();
       if (o1Case_ == O1OneofCase.O1String) hash ^= O1String.GetHashCode();
       if (o1Case_ == O1OneofCase.O1Int32) hash ^= O1Int32.GetHashCode();
-      if (HasPlainString) hash ^= PlainString.GetHashCode();
+      if (PlainString.Length != 0) hash ^= PlainString.GetHashCode();
       if (o2Case_ == O2OneofCase.O2Int32) hash ^= O2Int32.GetHashCode();
       if (o2Case_ == O2OneofCase.O2String) hash ^= O2String.GetHashCode();
       hash ^= (int) o1Case_;
@@ -1674,7 +1632,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasPlainString) {
+      if (PlainString.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(PlainString);
       }
@@ -1686,7 +1644,7 @@ namespace UnitTest.Issues.TestProtos {
         output.WriteRawTag(26);
         output.WriteString(O2String);
       }
-      if (HasPlainInt32) {
+      if (PlainInt32 != 0) {
         output.WriteRawTag(32);
         output.WriteInt32(PlainInt32);
       }
@@ -1706,7 +1664,7 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasPlainInt32) {
+      if (PlainInt32 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlainInt32);
       }
       if (o1Case_ == O1OneofCase.O1String) {
@@ -1715,7 +1673,7 @@ namespace UnitTest.Issues.TestProtos {
       if (o1Case_ == O1OneofCase.O1Int32) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(O1Int32);
       }
-      if (HasPlainString) {
+      if (PlainString.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PlainString);
       }
       if (o2Case_ == O2OneofCase.O2Int32) {
@@ -1735,10 +1693,10 @@ namespace UnitTest.Issues.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasPlainInt32) {
+      if (other.PlainInt32 != 0) {
         PlainInt32 = other.PlainInt32;
       }
-      if (other.HasPlainString) {
+      if (other.PlainString.Length != 0) {
         PlainString = other.PlainString;
       }
       switch (other.O1Case) {
@@ -1841,7 +1799,7 @@ namespace UnitTest.Issues.TestProtos {
     /// <summary>Default value for the "name" field</summary>
     public const string NameDefaultValue = "";
 
-    private string name_;
+    private string name_ = NameDefaultValue;
     /// <summary>
     /// Message for testing the effects for of the json_name option
     /// </summary>
@@ -1851,11 +1809,6 @@ namespace UnitTest.Issues.TestProtos {
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "name" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasName {
-      get { return name_ != NameDefaultValue; }
     }
     /// <summary>Clears the value of the "name" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1868,18 +1821,13 @@ namespace UnitTest.Issues.TestProtos {
     /// <summary>Default value for the "description" field</summary>
     public const string DescriptionDefaultValue = "";
 
-    private string description_;
+    private string description_ = DescriptionDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
       get { return description_; }
       set {
         description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "description" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasDescription {
-      get { return description_ != DescriptionDefaultValue; }
     }
     /// <summary>Clears the value of the "description" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1892,18 +1840,13 @@ namespace UnitTest.Issues.TestProtos {
     /// <summary>Default value for the "guid" field</summary>
     public const string GuidDefaultValue = "";
 
-    private string guid_;
+    private string guid_ = GuidDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Guid {
       get { return guid_; }
       set {
         guid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "guid" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasGuid {
-      get { return guid_ != GuidDefaultValue; }
     }
     /// <summary>Clears the value of the "guid" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1933,9 +1876,9 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasName) hash ^= Name.GetHashCode();
-      if (HasDescription) hash ^= Description.GetHashCode();
-      if (HasGuid) hash ^= Guid.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Guid.Length != 0) hash ^= Guid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1949,15 +1892,15 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasName) {
+      if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (HasDescription) {
+      if (Description.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Description);
       }
-      if (HasGuid) {
+      if (Guid.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(Guid);
       }
@@ -1969,13 +1912,13 @@ namespace UnitTest.Issues.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasName) {
+      if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (HasDescription) {
+      if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (HasGuid) {
+      if (Guid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Guid);
       }
       if (_unknownFields != null) {
@@ -1989,13 +1932,13 @@ namespace UnitTest.Issues.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasName) {
+      if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.HasDescription) {
+      if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.HasGuid) {
+      if (other.Guid.Length != 0) {
         Guid = other.Guid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -2278,11 +2221,6 @@ namespace UnitTest.Issues.TestProtos {
             x_ = value;
           }
         }
-        /// <summary>Gets whether the "x" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool HasX {
-          get { return x_ != XDefaultValue; }
-        }
         /// <summary>Clears the value of the "x" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void ClearX() {
@@ -2301,11 +2239,6 @@ namespace UnitTest.Issues.TestProtos {
           set {
             y_ = value;
           }
-        }
-        /// <summary>Gets whether the "y" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool HasY {
-          get { return y_ != YDefaultValue; }
         }
         /// <summary>Clears the value of the "y" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2334,8 +2267,8 @@ namespace UnitTest.Issues.TestProtos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (HasX) hash ^= X.GetHashCode();
-          if (HasY) hash ^= Y.GetHashCode();
+          if (X != 0) hash ^= X.GetHashCode();
+          if (Y != 0) hash ^= Y.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2349,11 +2282,11 @@ namespace UnitTest.Issues.TestProtos {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (HasX) {
+          if (X != 0) {
             output.WriteRawTag(8);
             output.WriteInt32(X);
           }
-          if (HasY) {
+          if (Y != 0) {
             output.WriteRawTag(16);
             output.WriteInt32(Y);
           }
@@ -2365,10 +2298,10 @@ namespace UnitTest.Issues.TestProtos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (HasX) {
+          if (X != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(X);
           }
-          if (HasY) {
+          if (Y != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(Y);
           }
           if (_unknownFields != null) {
@@ -2382,10 +2315,10 @@ namespace UnitTest.Issues.TestProtos {
           if (other == null) {
             return;
           }
-          if (other.HasX) {
+          if (other.X != 0) {
             X = other.X;
           }
-          if (other.HasY) {
+          if (other.Y != 0) {
             Y = other.Y;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

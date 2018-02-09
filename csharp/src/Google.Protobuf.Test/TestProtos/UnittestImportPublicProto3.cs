@@ -86,11 +86,6 @@ namespace Google.Protobuf.TestProtos {
         e_ = value;
       }
     }
-    /// <summary>Gets whether the "e" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasE {
-      get { return e_ != EDefaultValue; }
-    }
     /// <summary>Clears the value of the "e" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearE() {
@@ -117,7 +112,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasE) hash ^= E.GetHashCode();
+      if (E != 0) hash ^= E.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -131,7 +126,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasE) {
+      if (E != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(E);
       }
@@ -143,7 +138,7 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasE) {
+      if (E != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(E);
       }
       if (_unknownFields != null) {
@@ -157,7 +152,7 @@ namespace Google.Protobuf.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasE) {
+      if (other.E != 0) {
         E = other.E;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

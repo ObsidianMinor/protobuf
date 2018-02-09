@@ -54,6 +54,10 @@ PrimitiveFieldGenerator::PrimitiveFieldGenerator(
   // TODO(jonskeet): Make this cleaner...
   is_value_type = descriptor->type() != FieldDescriptor::TYPE_STRING
       && descriptor->type() != FieldDescriptor::TYPE_BYTES;
+  if (!is_value_type && descriptor->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO3) {
+    variables_["has_property_check"] = variables_["property_name"] + ".Length != 0";
+    variables_["other_has_property_check"] = "other." + variables_["property_name"] + ".Length != 0";
+  }
 }
 
 PrimitiveFieldGenerator::~PrimitiveFieldGenerator() {
@@ -78,12 +82,12 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
     printer->Print(
       variables_,
-      "private $nullable_type_name$ $name$_;\n");
+      "private $nullable_type_name$ $name_def_message$;\n");
   }
   else {
     printer->Print(
       variables_,
-      "private $type_name$ $name$_;\n");
+      "private $type_name$ $name_def_message$;\n");
   }
   WritePropertyDocComment(printer, descriptor_);
   AddPublicMemberAttributes(printer);
@@ -114,16 +118,15 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   printer->Print(
     "  }\n"
     "}\n");
-  printer->Print(variables_, "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
-  AddPublicMemberAttributes(printer);
-  printer->Print(variables_, "$access_level$ bool Has$property_name$ {\n");
   if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
-    printer->Print(variables_, "  get { return $name$_ != null; }\n");
+    printer->Print(variables_, "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
+    AddPublicMemberAttributes(printer);
+    printer->Print(
+      variables_, 
+      "$access_level$ bool Has$property_name$ {\n"
+      "  get { return $name$_ != null; }\n"
+      "}\n");
   }
-  else {
-    printer->Print(variables_, "  get { return $name$_ != $property_name$DefaultValue; }\n");
-  }
-  printer->Print("}\n");
   printer->Print(variables_, "/// <summary>Clears the value of the \"$descriptor_name$\" field</summary>\n");
   AddPublicMemberAttributes(printer);
   printer->Print(

@@ -78,10 +78,24 @@ void FieldGeneratorBase::SetCommonFieldVariables(
   (*variables)["default_value"] = default_value();
   (*variables)["capitalized_type_name"] = capitalized_type_name();
   (*variables)["number"] = number();
-  (*variables)["has_property_check"] = "Has" + (*variables)["property_name"];
-  (*variables)["other_has_property_check"] = "other.Has" + (*variables)["property_name"];
-  (*variables)["has_not_property_check"] = "!" + (*variables)["has_property_check"];
-  (*variables)["other_has_not_property_check"] = "!" + (*variables)["other_has_property_check"];
+  if (has_default_value() && descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO3) {
+    (*variables)["name_def_message"] =
+      (*variables)["name"] + "_ = " + (*variables)["property_name"] + "DefaultValue";
+  } else {
+    (*variables)["name_def_message"] = (*variables)["name"] + "_";
+  }
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+    (*variables)["has_property_check"] = "Has" + (*variables)["property_name"];
+    (*variables)["other_has_property_check"] = "other.Has" + (*variables)["property_name"];
+    (*variables)["has_not_property_check"] = "!" + (*variables)["has_property_check"];
+    (*variables)["other_has_not_property_check"] = "!" + (*variables)["other_has_property_check"];
+  }
+  else {
+    (*variables)["has_property_check"] =
+      (*variables)["property_name"] + " != " + (*variables)["default_value"];
+    (*variables)["other_has_property_check"] = "other." +
+      (*variables)["property_name"] + " != " + (*variables)["default_value"];
+  }
 }
 
 void FieldGeneratorBase::SetCommonOneofFieldVariables(

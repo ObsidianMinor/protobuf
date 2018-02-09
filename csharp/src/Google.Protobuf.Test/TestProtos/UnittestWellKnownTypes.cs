@@ -205,15 +205,15 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestWellKnownTypes(TestWellKnownTypes other) : this() {
-      AnyField = other.HasAnyField ? other.AnyField.Clone() : null;
-      ApiField = other.HasApiField ? other.ApiField.Clone() : null;
-      DurationField = other.HasDurationField ? other.DurationField.Clone() : null;
-      EmptyField = other.HasEmptyField ? other.EmptyField.Clone() : null;
-      FieldMaskField = other.HasFieldMaskField ? other.FieldMaskField.Clone() : null;
-      SourceContextField = other.HasSourceContextField ? other.SourceContextField.Clone() : null;
-      StructField = other.HasStructField ? other.StructField.Clone() : null;
-      TimestampField = other.HasTimestampField ? other.TimestampField.Clone() : null;
-      TypeField = other.HasTypeField ? other.TypeField.Clone() : null;
+      AnyField = other.anyField_ != null ? other.AnyField.Clone() : null;
+      ApiField = other.apiField_ != null ? other.ApiField.Clone() : null;
+      DurationField = other.durationField_ != null ? other.DurationField.Clone() : null;
+      EmptyField = other.emptyField_ != null ? other.EmptyField.Clone() : null;
+      FieldMaskField = other.fieldMaskField_ != null ? other.FieldMaskField.Clone() : null;
+      SourceContextField = other.sourceContextField_ != null ? other.SourceContextField.Clone() : null;
+      StructField = other.structField_ != null ? other.StructField.Clone() : null;
+      TimestampField = other.timestampField_ != null ? other.TimestampField.Clone() : null;
+      TypeField = other.typeField_ != null ? other.TypeField.Clone() : null;
       DoubleField = other.DoubleField;
       FloatField = other.FloatField;
       Int64Field = other.Int64Field;
@@ -223,7 +223,7 @@ namespace Google.Protobuf.TestProtos {
       BoolField = other.BoolField;
       StringField = other.StringField;
       BytesField = other.BytesField;
-      ValueField = other.HasValueField ? other.ValueField.Clone() : null;
+      ValueField = other.valueField_ != null ? other.ValueField.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -591,15 +591,15 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasAnyField) hash ^= AnyField.GetHashCode();
-      if (HasApiField) hash ^= ApiField.GetHashCode();
-      if (HasDurationField) hash ^= DurationField.GetHashCode();
-      if (HasEmptyField) hash ^= EmptyField.GetHashCode();
-      if (HasFieldMaskField) hash ^= FieldMaskField.GetHashCode();
-      if (HasSourceContextField) hash ^= SourceContextField.GetHashCode();
-      if (HasStructField) hash ^= StructField.GetHashCode();
-      if (HasTimestampField) hash ^= TimestampField.GetHashCode();
-      if (HasTypeField) hash ^= TypeField.GetHashCode();
+      if (anyField_ != null) hash ^= AnyField.GetHashCode();
+      if (apiField_ != null) hash ^= ApiField.GetHashCode();
+      if (durationField_ != null) hash ^= DurationField.GetHashCode();
+      if (emptyField_ != null) hash ^= EmptyField.GetHashCode();
+      if (fieldMaskField_ != null) hash ^= FieldMaskField.GetHashCode();
+      if (sourceContextField_ != null) hash ^= SourceContextField.GetHashCode();
+      if (structField_ != null) hash ^= StructField.GetHashCode();
+      if (timestampField_ != null) hash ^= TimestampField.GetHashCode();
+      if (typeField_ != null) hash ^= TypeField.GetHashCode();
       if (doubleField_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(DoubleField);
       if (floatField_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(FloatField);
       if (int64Field_ != null) hash ^= Int64Field.GetHashCode();
@@ -609,7 +609,7 @@ namespace Google.Protobuf.TestProtos {
       if (boolField_ != null) hash ^= BoolField.GetHashCode();
       if (stringField_ != null) hash ^= StringField.GetHashCode();
       if (bytesField_ != null) hash ^= BytesField.GetHashCode();
-      if (HasValueField) hash ^= ValueField.GetHashCode();
+      if (valueField_ != null) hash ^= ValueField.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -623,39 +623,39 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasAnyField) {
+      if (anyField_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(AnyField);
       }
-      if (HasApiField) {
+      if (apiField_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(ApiField);
       }
-      if (HasDurationField) {
+      if (durationField_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(DurationField);
       }
-      if (HasEmptyField) {
+      if (emptyField_ != null) {
         output.WriteRawTag(34);
         output.WriteMessage(EmptyField);
       }
-      if (HasFieldMaskField) {
+      if (fieldMaskField_ != null) {
         output.WriteRawTag(42);
         output.WriteMessage(FieldMaskField);
       }
-      if (HasSourceContextField) {
+      if (sourceContextField_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(SourceContextField);
       }
-      if (HasStructField) {
+      if (structField_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(StructField);
       }
-      if (HasTimestampField) {
+      if (timestampField_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(TimestampField);
       }
-      if (HasTypeField) {
+      if (typeField_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(TypeField);
       }
@@ -686,7 +686,7 @@ namespace Google.Protobuf.TestProtos {
       if (bytesField_ != null) {
         _single_bytesField_codec.WriteTagAndValue(output, BytesField);
       }
-      if (HasValueField) {
+      if (valueField_ != null) {
         output.WriteRawTag(154, 1);
         output.WriteMessage(ValueField);
       }
@@ -698,31 +698,31 @@ namespace Google.Protobuf.TestProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasAnyField) {
+      if (anyField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AnyField);
       }
-      if (HasApiField) {
+      if (apiField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ApiField);
       }
-      if (HasDurationField) {
+      if (durationField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DurationField);
       }
-      if (HasEmptyField) {
+      if (emptyField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(EmptyField);
       }
-      if (HasFieldMaskField) {
+      if (fieldMaskField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FieldMaskField);
       }
-      if (HasSourceContextField) {
+      if (sourceContextField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourceContextField);
       }
-      if (HasStructField) {
+      if (structField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StructField);
       }
-      if (HasTimestampField) {
+      if (timestampField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TimestampField);
       }
-      if (HasTypeField) {
+      if (typeField_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TypeField);
       }
       if (doubleField_ != null) {
@@ -752,7 +752,7 @@ namespace Google.Protobuf.TestProtos {
       if (bytesField_ != null) {
         size += _single_bytesField_codec.CalculateSizeWithTag(BytesField);
       }
-      if (HasValueField) {
+      if (valueField_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(ValueField);
       }
       if (_unknownFields != null) {
@@ -766,56 +766,56 @@ namespace Google.Protobuf.TestProtos {
       if (other == null) {
         return;
       }
-      if (other.HasAnyField) {
-        if (!HasAnyField) {
+      if (other.anyField_ != null) {
+        if (anyField_ == null) {
           anyField_ = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         AnyField.MergeFrom(other.AnyField);
       }
-      if (other.HasApiField) {
-        if (!HasApiField) {
+      if (other.apiField_ != null) {
+        if (apiField_ == null) {
           apiField_ = new global::Google.Protobuf.WellKnownTypes.Api();
         }
         ApiField.MergeFrom(other.ApiField);
       }
-      if (other.HasDurationField) {
-        if (!HasDurationField) {
+      if (other.durationField_ != null) {
+        if (durationField_ == null) {
           durationField_ = new global::Google.Protobuf.WellKnownTypes.Duration();
         }
         DurationField.MergeFrom(other.DurationField);
       }
-      if (other.HasEmptyField) {
-        if (!HasEmptyField) {
+      if (other.emptyField_ != null) {
+        if (emptyField_ == null) {
           emptyField_ = new global::Google.Protobuf.WellKnownTypes.Empty();
         }
         EmptyField.MergeFrom(other.EmptyField);
       }
-      if (other.HasFieldMaskField) {
-        if (!HasFieldMaskField) {
+      if (other.fieldMaskField_ != null) {
+        if (fieldMaskField_ == null) {
           fieldMaskField_ = new global::Google.Protobuf.WellKnownTypes.FieldMask();
         }
         FieldMaskField.MergeFrom(other.FieldMaskField);
       }
-      if (other.HasSourceContextField) {
-        if (!HasSourceContextField) {
+      if (other.sourceContextField_ != null) {
+        if (sourceContextField_ == null) {
           sourceContextField_ = new global::Google.Protobuf.WellKnownTypes.SourceContext();
         }
         SourceContextField.MergeFrom(other.SourceContextField);
       }
-      if (other.HasStructField) {
-        if (!HasStructField) {
+      if (other.structField_ != null) {
+        if (structField_ == null) {
           structField_ = new global::Google.Protobuf.WellKnownTypes.Struct();
         }
         StructField.MergeFrom(other.StructField);
       }
-      if (other.HasTimestampField) {
-        if (!HasTimestampField) {
+      if (other.timestampField_ != null) {
+        if (timestampField_ == null) {
           timestampField_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         TimestampField.MergeFrom(other.TimestampField);
       }
-      if (other.HasTypeField) {
-        if (!HasTypeField) {
+      if (other.typeField_ != null) {
+        if (typeField_ == null) {
           typeField_ = new global::Google.Protobuf.WellKnownTypes.Type();
         }
         TypeField.MergeFrom(other.TypeField);
@@ -865,8 +865,8 @@ namespace Google.Protobuf.TestProtos {
           BytesField = other.BytesField;
         }
       }
-      if (other.HasValueField) {
-        if (!HasValueField) {
+      if (other.valueField_ != null) {
+        if (valueField_ == null) {
           valueField_ = new global::Google.Protobuf.WellKnownTypes.Value();
         }
         ValueField.MergeFrom(other.ValueField);
@@ -883,63 +883,63 @@ namespace Google.Protobuf.TestProtos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (!HasAnyField) {
+            if (anyField_ == null) {
               anyField_ = new global::Google.Protobuf.WellKnownTypes.Any();
             }
             input.ReadMessage(anyField_);
             break;
           }
           case 18: {
-            if (!HasApiField) {
+            if (apiField_ == null) {
               apiField_ = new global::Google.Protobuf.WellKnownTypes.Api();
             }
             input.ReadMessage(apiField_);
             break;
           }
           case 26: {
-            if (!HasDurationField) {
+            if (durationField_ == null) {
               durationField_ = new global::Google.Protobuf.WellKnownTypes.Duration();
             }
             input.ReadMessage(durationField_);
             break;
           }
           case 34: {
-            if (!HasEmptyField) {
+            if (emptyField_ == null) {
               emptyField_ = new global::Google.Protobuf.WellKnownTypes.Empty();
             }
             input.ReadMessage(emptyField_);
             break;
           }
           case 42: {
-            if (!HasFieldMaskField) {
+            if (fieldMaskField_ == null) {
               fieldMaskField_ = new global::Google.Protobuf.WellKnownTypes.FieldMask();
             }
             input.ReadMessage(fieldMaskField_);
             break;
           }
           case 50: {
-            if (!HasSourceContextField) {
+            if (sourceContextField_ == null) {
               sourceContextField_ = new global::Google.Protobuf.WellKnownTypes.SourceContext();
             }
             input.ReadMessage(sourceContextField_);
             break;
           }
           case 58: {
-            if (!HasStructField) {
+            if (structField_ == null) {
               structField_ = new global::Google.Protobuf.WellKnownTypes.Struct();
             }
             input.ReadMessage(structField_);
             break;
           }
           case 66: {
-            if (!HasTimestampField) {
+            if (timestampField_ == null) {
               timestampField_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(timestampField_);
             break;
           }
           case 74: {
-            if (!HasTypeField) {
+            if (typeField_ == null) {
               typeField_ = new global::Google.Protobuf.WellKnownTypes.Type();
             }
             input.ReadMessage(typeField_);
@@ -1009,7 +1009,7 @@ namespace Google.Protobuf.TestProtos {
             break;
           }
           case 154: {
-            if (!HasValueField) {
+            if (valueField_ == null) {
               valueField_ = new global::Google.Protobuf.WellKnownTypes.Value();
             }
             input.ReadMessage(valueField_);

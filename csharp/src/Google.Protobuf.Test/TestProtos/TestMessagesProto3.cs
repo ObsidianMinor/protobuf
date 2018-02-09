@@ -274,13 +274,13 @@ namespace ProtobufTestMessages.Proto3 {
       optionalBool_ = other.optionalBool_;
       optionalString_ = other.optionalString_;
       optionalBytes_ = other.optionalBytes_;
-      OptionalNestedMessage = other.HasOptionalNestedMessage ? other.OptionalNestedMessage.Clone() : null;
-      OptionalForeignMessage = other.HasOptionalForeignMessage ? other.OptionalForeignMessage.Clone() : null;
+      OptionalNestedMessage = other.optionalNestedMessage_ != null ? other.OptionalNestedMessage.Clone() : null;
+      OptionalForeignMessage = other.optionalForeignMessage_ != null ? other.OptionalForeignMessage.Clone() : null;
       optionalNestedEnum_ = other.optionalNestedEnum_;
       optionalForeignEnum_ = other.optionalForeignEnum_;
       optionalStringPiece_ = other.optionalStringPiece_;
       optionalCord_ = other.optionalCord_;
-      RecursiveMessage = other.HasRecursiveMessage ? other.RecursiveMessage.Clone() : null;
+      RecursiveMessage = other.recursiveMessage_ != null ? other.RecursiveMessage.Clone() : null;
       repeatedInt32_ = other.repeatedInt32_.Clone();
       repeatedInt64_ = other.repeatedInt64_.Clone();
       repeatedUint32_ = other.repeatedUint32_.Clone();
@@ -339,12 +339,12 @@ namespace ProtobufTestMessages.Proto3 {
       repeatedDoubleWrapper_ = other.repeatedDoubleWrapper_.Clone();
       repeatedStringWrapper_ = other.repeatedStringWrapper_.Clone();
       repeatedBytesWrapper_ = other.repeatedBytesWrapper_.Clone();
-      OptionalDuration = other.HasOptionalDuration ? other.OptionalDuration.Clone() : null;
-      OptionalTimestamp = other.HasOptionalTimestamp ? other.OptionalTimestamp.Clone() : null;
-      OptionalFieldMask = other.HasOptionalFieldMask ? other.OptionalFieldMask.Clone() : null;
-      OptionalStruct = other.HasOptionalStruct ? other.OptionalStruct.Clone() : null;
-      OptionalAny = other.HasOptionalAny ? other.OptionalAny.Clone() : null;
-      OptionalValue = other.HasOptionalValue ? other.OptionalValue.Clone() : null;
+      OptionalDuration = other.optionalDuration_ != null ? other.OptionalDuration.Clone() : null;
+      OptionalTimestamp = other.optionalTimestamp_ != null ? other.OptionalTimestamp.Clone() : null;
+      OptionalFieldMask = other.optionalFieldMask_ != null ? other.OptionalFieldMask.Clone() : null;
+      OptionalStruct = other.optionalStruct_ != null ? other.OptionalStruct.Clone() : null;
+      OptionalAny = other.optionalAny_ != null ? other.OptionalAny.Clone() : null;
+      OptionalValue = other.optionalValue_ != null ? other.OptionalValue.Clone() : null;
       repeatedDuration_ = other.repeatedDuration_.Clone();
       repeatedTimestamp_ = other.repeatedTimestamp_.Clone();
       repeatedFieldmask_ = other.repeatedFieldmask_.Clone();
@@ -423,11 +423,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalInt32_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_int32" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalInt32 {
-      get { return optionalInt32_ != OptionalInt32DefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_int32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalInt32() {
@@ -446,11 +441,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalInt64_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_int64" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalInt64 {
-      get { return optionalInt64_ != OptionalInt64DefaultValue; }
     }
     /// <summary>Clears the value of the "optional_int64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -471,11 +461,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalUint32_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_uint32" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalUint32 {
-      get { return optionalUint32_ != OptionalUint32DefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_uint32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalUint32() {
@@ -494,11 +479,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalUint64_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_uint64" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalUint64 {
-      get { return optionalUint64_ != OptionalUint64DefaultValue; }
     }
     /// <summary>Clears the value of the "optional_uint64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -519,11 +499,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalSint32_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_sint32" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalSint32 {
-      get { return optionalSint32_ != OptionalSint32DefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_sint32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalSint32() {
@@ -542,11 +517,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalSint64_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_sint64" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalSint64 {
-      get { return optionalSint64_ != OptionalSint64DefaultValue; }
     }
     /// <summary>Clears the value of the "optional_sint64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -567,11 +537,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalFixed32_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_fixed32" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalFixed32 {
-      get { return optionalFixed32_ != OptionalFixed32DefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_fixed32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalFixed32() {
@@ -590,11 +555,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalFixed64_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_fixed64" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalFixed64 {
-      get { return optionalFixed64_ != OptionalFixed64DefaultValue; }
     }
     /// <summary>Clears the value of the "optional_fixed64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -615,11 +575,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalSfixed32_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_sfixed32" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalSfixed32 {
-      get { return optionalSfixed32_ != OptionalSfixed32DefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_sfixed32" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalSfixed32() {
@@ -638,11 +593,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalSfixed64_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_sfixed64" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalSfixed64 {
-      get { return optionalSfixed64_ != OptionalSfixed64DefaultValue; }
     }
     /// <summary>Clears the value of the "optional_sfixed64" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -663,11 +613,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalFloat_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_float" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalFloat {
-      get { return optionalFloat_ != OptionalFloatDefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_float" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalFloat() {
@@ -686,11 +631,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalDouble_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_double" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalDouble {
-      get { return optionalDouble_ != OptionalDoubleDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_double" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -711,11 +651,6 @@ namespace ProtobufTestMessages.Proto3 {
         optionalBool_ = value;
       }
     }
-    /// <summary>Gets whether the "optional_bool" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalBool {
-      get { return optionalBool_ != OptionalBoolDefaultValue; }
-    }
     /// <summary>Clears the value of the "optional_bool" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearOptionalBool() {
@@ -727,18 +662,13 @@ namespace ProtobufTestMessages.Proto3 {
     /// <summary>Default value for the "optional_string" field</summary>
     public const string OptionalStringDefaultValue = "";
 
-    private string optionalString_;
+    private string optionalString_ = OptionalStringDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OptionalString {
       get { return optionalString_; }
       set {
         optionalString_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "optional_string" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalString {
-      get { return optionalString_ != OptionalStringDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_string" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -751,18 +681,13 @@ namespace ProtobufTestMessages.Proto3 {
     /// <summary>Default value for the "optional_bytes" field</summary>
     public readonly static pb::ByteString OptionalBytesDefaultValue = pb::ByteString.Empty;
 
-    private pb::ByteString optionalBytes_;
+    private pb::ByteString optionalBytes_ = OptionalBytesDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OptionalBytes {
       get { return optionalBytes_; }
       set {
         optionalBytes_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "optional_bytes" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalBytes {
-      get { return optionalBytes_ != OptionalBytesDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_bytes" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -815,20 +740,15 @@ namespace ProtobufTestMessages.Proto3 {
     /// <summary>Field number for the "optional_nested_enum" field.</summary>
     public const int OptionalNestedEnumFieldNumber = 21;
     /// <summary>Default value for the "optional_nested_enum" field</summary>
-    public const global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum OptionalNestedEnumDefaultValue = global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum.Foo;
+    public const global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum OptionalNestedEnumDefaultValue = 0;
 
-    private global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum optionalNestedEnum_;
+    private global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum optionalNestedEnum_ = OptionalNestedEnumDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum OptionalNestedEnum {
       get { return optionalNestedEnum_; }
       set {
         optionalNestedEnum_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_nested_enum" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalNestedEnum {
-      get { return optionalNestedEnum_ != OptionalNestedEnumDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_nested_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -839,20 +759,15 @@ namespace ProtobufTestMessages.Proto3 {
     /// <summary>Field number for the "optional_foreign_enum" field.</summary>
     public const int OptionalForeignEnumFieldNumber = 22;
     /// <summary>Default value for the "optional_foreign_enum" field</summary>
-    public const global::ProtobufTestMessages.Proto3.ForeignEnum OptionalForeignEnumDefaultValue = global::ProtobufTestMessages.Proto3.ForeignEnum.ForeignFoo;
+    public const global::ProtobufTestMessages.Proto3.ForeignEnum OptionalForeignEnumDefaultValue = 0;
 
-    private global::ProtobufTestMessages.Proto3.ForeignEnum optionalForeignEnum_;
+    private global::ProtobufTestMessages.Proto3.ForeignEnum optionalForeignEnum_ = OptionalForeignEnumDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto3.ForeignEnum OptionalForeignEnum {
       get { return optionalForeignEnum_; }
       set {
         optionalForeignEnum_ = value;
       }
-    }
-    /// <summary>Gets whether the "optional_foreign_enum" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalForeignEnum {
-      get { return optionalForeignEnum_ != OptionalForeignEnumDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_foreign_enum" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -865,18 +780,13 @@ namespace ProtobufTestMessages.Proto3 {
     /// <summary>Default value for the "optional_string_piece" field</summary>
     public const string OptionalStringPieceDefaultValue = "";
 
-    private string optionalStringPiece_;
+    private string optionalStringPiece_ = OptionalStringPieceDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OptionalStringPiece {
       get { return optionalStringPiece_; }
       set {
         optionalStringPiece_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "optional_string_piece" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalStringPiece {
-      get { return optionalStringPiece_ != OptionalStringPieceDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_string_piece" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -889,18 +799,13 @@ namespace ProtobufTestMessages.Proto3 {
     /// <summary>Default value for the "optional_cord" field</summary>
     public const string OptionalCordDefaultValue = "";
 
-    private string optionalCord_;
+    private string optionalCord_ = OptionalCordDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OptionalCord {
       get { return optionalCord_; }
       set {
         optionalCord_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-    /// <summary>Gets whether the "optional_cord" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasOptionalCord {
-      get { return optionalCord_ != OptionalCordDefaultValue; }
     }
     /// <summary>Clears the value of the "optional_cord" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1427,7 +1332,7 @@ namespace ProtobufTestMessages.Proto3 {
     public const int OneofEnumFieldNumber = 119;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum OneofEnum {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofEnum ? (global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum) oneofField_ : global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum.Foo; }
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofEnum ? (global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedEnum) oneofField_ : 0; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofEnum;
@@ -1838,11 +1743,6 @@ namespace ProtobufTestMessages.Proto3 {
         fieldname1_ = value;
       }
     }
-    /// <summary>Gets whether the "fieldname1" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldname1 {
-      get { return fieldname1_ != Fieldname1DefaultValue; }
-    }
     /// <summary>Clears the value of the "fieldname1" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldname1() {
@@ -1861,11 +1761,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fieldName2_ = value;
       }
-    }
-    /// <summary>Gets whether the "field_name2" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName2 {
-      get { return fieldName2_ != FieldName2DefaultValue; }
     }
     /// <summary>Clears the value of the "field_name2" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1886,11 +1781,6 @@ namespace ProtobufTestMessages.Proto3 {
         FieldName3_ = value;
       }
     }
-    /// <summary>Gets whether the "_field_name3" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName3 {
-      get { return FieldName3_ != FieldName3DefaultValue; }
-    }
     /// <summary>Clears the value of the "_field_name3" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName3() {
@@ -1909,11 +1799,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fieldName4_ = value;
       }
-    }
-    /// <summary>Gets whether the "field__name4_" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName4 {
-      get { return fieldName4_ != FieldName4DefaultValue; }
     }
     /// <summary>Clears the value of the "field__name4_" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1934,11 +1819,6 @@ namespace ProtobufTestMessages.Proto3 {
         field0Name5_ = value;
       }
     }
-    /// <summary>Gets whether the "field0name5" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasField0Name5 {
-      get { return field0Name5_ != Field0Name5DefaultValue; }
-    }
     /// <summary>Clears the value of the "field0name5" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearField0Name5() {
@@ -1957,11 +1837,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         field0Name6_ = value;
       }
-    }
-    /// <summary>Gets whether the "field_0_name6" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasField0Name6 {
-      get { return field0Name6_ != Field0Name6DefaultValue; }
     }
     /// <summary>Clears the value of the "field_0_name6" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1982,11 +1857,6 @@ namespace ProtobufTestMessages.Proto3 {
         fieldName7_ = value;
       }
     }
-    /// <summary>Gets whether the "fieldName7" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName7 {
-      get { return fieldName7_ != FieldName7DefaultValue; }
-    }
     /// <summary>Clears the value of the "fieldName7" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName7() {
@@ -2005,11 +1875,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fieldName8_ = value;
       }
-    }
-    /// <summary>Gets whether the "FieldName8" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName8 {
-      get { return fieldName8_ != FieldName8DefaultValue; }
     }
     /// <summary>Clears the value of the "FieldName8" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2030,11 +1895,6 @@ namespace ProtobufTestMessages.Proto3 {
         fieldName9_ = value;
       }
     }
-    /// <summary>Gets whether the "field_Name9" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName9 {
-      get { return fieldName9_ != FieldName9DefaultValue; }
-    }
     /// <summary>Clears the value of the "field_Name9" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName9() {
@@ -2053,11 +1913,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fieldName10_ = value;
       }
-    }
-    /// <summary>Gets whether the "Field_Name10" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName10 {
-      get { return fieldName10_ != FieldName10DefaultValue; }
     }
     /// <summary>Clears the value of the "Field_Name10" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2078,11 +1933,6 @@ namespace ProtobufTestMessages.Proto3 {
         fIELDNAME11_ = value;
       }
     }
-    /// <summary>Gets whether the "FIELD_NAME11" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFIELDNAME11 {
-      get { return fIELDNAME11_ != FIELDNAME11DefaultValue; }
-    }
     /// <summary>Clears the value of the "FIELD_NAME11" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFIELDNAME11() {
@@ -2101,11 +1951,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fIELDName12_ = value;
       }
-    }
-    /// <summary>Gets whether the "FIELD_name12" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFIELDName12 {
-      get { return fIELDName12_ != FIELDName12DefaultValue; }
     }
     /// <summary>Clears the value of the "FIELD_name12" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2126,11 +1971,6 @@ namespace ProtobufTestMessages.Proto3 {
         FieldName13_ = value;
       }
     }
-    /// <summary>Gets whether the "__field_name13" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName13 {
-      get { return FieldName13_ != FieldName13DefaultValue; }
-    }
     /// <summary>Clears the value of the "__field_name13" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName13() {
@@ -2149,11 +1989,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         FieldName14_ = value;
       }
-    }
-    /// <summary>Gets whether the "__Field_name14" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName14 {
-      get { return FieldName14_ != FieldName14DefaultValue; }
     }
     /// <summary>Clears the value of the "__Field_name14" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2174,11 +2009,6 @@ namespace ProtobufTestMessages.Proto3 {
         fieldName15_ = value;
       }
     }
-    /// <summary>Gets whether the "field__name15" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName15 {
-      get { return fieldName15_ != FieldName15DefaultValue; }
-    }
     /// <summary>Clears the value of the "field__name15" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName15() {
@@ -2197,11 +2027,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fieldName16_ = value;
       }
-    }
-    /// <summary>Gets whether the "field__Name16" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName16 {
-      get { return fieldName16_ != FieldName16DefaultValue; }
     }
     /// <summary>Clears the value of the "field__Name16" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2222,11 +2047,6 @@ namespace ProtobufTestMessages.Proto3 {
         fieldName17_ = value;
       }
     }
-    /// <summary>Gets whether the "field_name17__" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName17 {
-      get { return fieldName17_ != FieldName17DefaultValue; }
-    }
     /// <summary>Clears the value of the "field_name17__" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearFieldName17() {
@@ -2245,11 +2065,6 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         fieldName18_ = value;
       }
-    }
-    /// <summary>Gets whether the "Field_name18__" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasFieldName18 {
-      get { return fieldName18_ != FieldName18DefaultValue; }
     }
     /// <summary>Clears the value of the "Field_name18__" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2422,28 +2237,28 @@ namespace ProtobufTestMessages.Proto3 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasOptionalInt32) hash ^= OptionalInt32.GetHashCode();
-      if (HasOptionalInt64) hash ^= OptionalInt64.GetHashCode();
-      if (HasOptionalUint32) hash ^= OptionalUint32.GetHashCode();
-      if (HasOptionalUint64) hash ^= OptionalUint64.GetHashCode();
-      if (HasOptionalSint32) hash ^= OptionalSint32.GetHashCode();
-      if (HasOptionalSint64) hash ^= OptionalSint64.GetHashCode();
-      if (HasOptionalFixed32) hash ^= OptionalFixed32.GetHashCode();
-      if (HasOptionalFixed64) hash ^= OptionalFixed64.GetHashCode();
-      if (HasOptionalSfixed32) hash ^= OptionalSfixed32.GetHashCode();
-      if (HasOptionalSfixed64) hash ^= OptionalSfixed64.GetHashCode();
-      if (HasOptionalFloat) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OptionalFloat);
-      if (HasOptionalDouble) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(OptionalDouble);
-      if (HasOptionalBool) hash ^= OptionalBool.GetHashCode();
-      if (HasOptionalString) hash ^= OptionalString.GetHashCode();
-      if (HasOptionalBytes) hash ^= OptionalBytes.GetHashCode();
-      if (HasOptionalNestedMessage) hash ^= OptionalNestedMessage.GetHashCode();
-      if (HasOptionalForeignMessage) hash ^= OptionalForeignMessage.GetHashCode();
-      if (HasOptionalNestedEnum) hash ^= OptionalNestedEnum.GetHashCode();
-      if (HasOptionalForeignEnum) hash ^= OptionalForeignEnum.GetHashCode();
-      if (HasOptionalStringPiece) hash ^= OptionalStringPiece.GetHashCode();
-      if (HasOptionalCord) hash ^= OptionalCord.GetHashCode();
-      if (HasRecursiveMessage) hash ^= RecursiveMessage.GetHashCode();
+      if (OptionalInt32 != 0) hash ^= OptionalInt32.GetHashCode();
+      if (OptionalInt64 != 0L) hash ^= OptionalInt64.GetHashCode();
+      if (OptionalUint32 != 0) hash ^= OptionalUint32.GetHashCode();
+      if (OptionalUint64 != 0UL) hash ^= OptionalUint64.GetHashCode();
+      if (OptionalSint32 != 0) hash ^= OptionalSint32.GetHashCode();
+      if (OptionalSint64 != 0L) hash ^= OptionalSint64.GetHashCode();
+      if (OptionalFixed32 != 0) hash ^= OptionalFixed32.GetHashCode();
+      if (OptionalFixed64 != 0UL) hash ^= OptionalFixed64.GetHashCode();
+      if (OptionalSfixed32 != 0) hash ^= OptionalSfixed32.GetHashCode();
+      if (OptionalSfixed64 != 0L) hash ^= OptionalSfixed64.GetHashCode();
+      if (OptionalFloat != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OptionalFloat);
+      if (OptionalDouble != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(OptionalDouble);
+      if (OptionalBool != false) hash ^= OptionalBool.GetHashCode();
+      if (OptionalString.Length != 0) hash ^= OptionalString.GetHashCode();
+      if (OptionalBytes.Length != 0) hash ^= OptionalBytes.GetHashCode();
+      if (optionalNestedMessage_ != null) hash ^= OptionalNestedMessage.GetHashCode();
+      if (optionalForeignMessage_ != null) hash ^= OptionalForeignMessage.GetHashCode();
+      if (OptionalNestedEnum != 0) hash ^= OptionalNestedEnum.GetHashCode();
+      if (OptionalForeignEnum != 0) hash ^= OptionalForeignEnum.GetHashCode();
+      if (OptionalStringPiece.Length != 0) hash ^= OptionalStringPiece.GetHashCode();
+      if (OptionalCord.Length != 0) hash ^= OptionalCord.GetHashCode();
+      if (recursiveMessage_ != null) hash ^= RecursiveMessage.GetHashCode();
       hash ^= repeatedInt32_.GetHashCode();
       hash ^= repeatedInt64_.GetHashCode();
       hash ^= repeatedUint32_.GetHashCode();
@@ -2511,36 +2326,36 @@ namespace ProtobufTestMessages.Proto3 {
       hash ^= repeatedDoubleWrapper_.GetHashCode();
       hash ^= repeatedStringWrapper_.GetHashCode();
       hash ^= repeatedBytesWrapper_.GetHashCode();
-      if (HasOptionalDuration) hash ^= OptionalDuration.GetHashCode();
-      if (HasOptionalTimestamp) hash ^= OptionalTimestamp.GetHashCode();
-      if (HasOptionalFieldMask) hash ^= OptionalFieldMask.GetHashCode();
-      if (HasOptionalStruct) hash ^= OptionalStruct.GetHashCode();
-      if (HasOptionalAny) hash ^= OptionalAny.GetHashCode();
-      if (HasOptionalValue) hash ^= OptionalValue.GetHashCode();
+      if (optionalDuration_ != null) hash ^= OptionalDuration.GetHashCode();
+      if (optionalTimestamp_ != null) hash ^= OptionalTimestamp.GetHashCode();
+      if (optionalFieldMask_ != null) hash ^= OptionalFieldMask.GetHashCode();
+      if (optionalStruct_ != null) hash ^= OptionalStruct.GetHashCode();
+      if (optionalAny_ != null) hash ^= OptionalAny.GetHashCode();
+      if (optionalValue_ != null) hash ^= OptionalValue.GetHashCode();
       hash ^= repeatedDuration_.GetHashCode();
       hash ^= repeatedTimestamp_.GetHashCode();
       hash ^= repeatedFieldmask_.GetHashCode();
       hash ^= repeatedStruct_.GetHashCode();
       hash ^= repeatedAny_.GetHashCode();
       hash ^= repeatedValue_.GetHashCode();
-      if (HasFieldname1) hash ^= Fieldname1.GetHashCode();
-      if (HasFieldName2) hash ^= FieldName2.GetHashCode();
-      if (HasFieldName3) hash ^= FieldName3.GetHashCode();
-      if (HasFieldName4) hash ^= FieldName4.GetHashCode();
-      if (HasField0Name5) hash ^= Field0Name5.GetHashCode();
-      if (HasField0Name6) hash ^= Field0Name6.GetHashCode();
-      if (HasFieldName7) hash ^= FieldName7.GetHashCode();
-      if (HasFieldName8) hash ^= FieldName8.GetHashCode();
-      if (HasFieldName9) hash ^= FieldName9.GetHashCode();
-      if (HasFieldName10) hash ^= FieldName10.GetHashCode();
-      if (HasFIELDNAME11) hash ^= FIELDNAME11.GetHashCode();
-      if (HasFIELDName12) hash ^= FIELDName12.GetHashCode();
-      if (HasFieldName13) hash ^= FieldName13.GetHashCode();
-      if (HasFieldName14) hash ^= FieldName14.GetHashCode();
-      if (HasFieldName15) hash ^= FieldName15.GetHashCode();
-      if (HasFieldName16) hash ^= FieldName16.GetHashCode();
-      if (HasFieldName17) hash ^= FieldName17.GetHashCode();
-      if (HasFieldName18) hash ^= FieldName18.GetHashCode();
+      if (Fieldname1 != 0) hash ^= Fieldname1.GetHashCode();
+      if (FieldName2 != 0) hash ^= FieldName2.GetHashCode();
+      if (FieldName3 != 0) hash ^= FieldName3.GetHashCode();
+      if (FieldName4 != 0) hash ^= FieldName4.GetHashCode();
+      if (Field0Name5 != 0) hash ^= Field0Name5.GetHashCode();
+      if (Field0Name6 != 0) hash ^= Field0Name6.GetHashCode();
+      if (FieldName7 != 0) hash ^= FieldName7.GetHashCode();
+      if (FieldName8 != 0) hash ^= FieldName8.GetHashCode();
+      if (FieldName9 != 0) hash ^= FieldName9.GetHashCode();
+      if (FieldName10 != 0) hash ^= FieldName10.GetHashCode();
+      if (FIELDNAME11 != 0) hash ^= FIELDNAME11.GetHashCode();
+      if (FIELDName12 != 0) hash ^= FIELDName12.GetHashCode();
+      if (FieldName13 != 0) hash ^= FieldName13.GetHashCode();
+      if (FieldName14 != 0) hash ^= FieldName14.GetHashCode();
+      if (FieldName15 != 0) hash ^= FieldName15.GetHashCode();
+      if (FieldName16 != 0) hash ^= FieldName16.GetHashCode();
+      if (FieldName17 != 0) hash ^= FieldName17.GetHashCode();
+      if (FieldName18 != 0) hash ^= FieldName18.GetHashCode();
       hash ^= (int) oneofFieldCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2555,91 +2370,91 @@ namespace ProtobufTestMessages.Proto3 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasOptionalInt32) {
+      if (OptionalInt32 != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(OptionalInt32);
       }
-      if (HasOptionalInt64) {
+      if (OptionalInt64 != 0L) {
         output.WriteRawTag(16);
         output.WriteInt64(OptionalInt64);
       }
-      if (HasOptionalUint32) {
+      if (OptionalUint32 != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(OptionalUint32);
       }
-      if (HasOptionalUint64) {
+      if (OptionalUint64 != 0UL) {
         output.WriteRawTag(32);
         output.WriteUInt64(OptionalUint64);
       }
-      if (HasOptionalSint32) {
+      if (OptionalSint32 != 0) {
         output.WriteRawTag(40);
         output.WriteSInt32(OptionalSint32);
       }
-      if (HasOptionalSint64) {
+      if (OptionalSint64 != 0L) {
         output.WriteRawTag(48);
         output.WriteSInt64(OptionalSint64);
       }
-      if (HasOptionalFixed32) {
+      if (OptionalFixed32 != 0) {
         output.WriteRawTag(61);
         output.WriteFixed32(OptionalFixed32);
       }
-      if (HasOptionalFixed64) {
+      if (OptionalFixed64 != 0UL) {
         output.WriteRawTag(65);
         output.WriteFixed64(OptionalFixed64);
       }
-      if (HasOptionalSfixed32) {
+      if (OptionalSfixed32 != 0) {
         output.WriteRawTag(77);
         output.WriteSFixed32(OptionalSfixed32);
       }
-      if (HasOptionalSfixed64) {
+      if (OptionalSfixed64 != 0L) {
         output.WriteRawTag(81);
         output.WriteSFixed64(OptionalSfixed64);
       }
-      if (HasOptionalFloat) {
+      if (OptionalFloat != 0F) {
         output.WriteRawTag(93);
         output.WriteFloat(OptionalFloat);
       }
-      if (HasOptionalDouble) {
+      if (OptionalDouble != 0D) {
         output.WriteRawTag(97);
         output.WriteDouble(OptionalDouble);
       }
-      if (HasOptionalBool) {
+      if (OptionalBool != false) {
         output.WriteRawTag(104);
         output.WriteBool(OptionalBool);
       }
-      if (HasOptionalString) {
+      if (OptionalString.Length != 0) {
         output.WriteRawTag(114);
         output.WriteString(OptionalString);
       }
-      if (HasOptionalBytes) {
+      if (OptionalBytes.Length != 0) {
         output.WriteRawTag(122);
         output.WriteBytes(OptionalBytes);
       }
-      if (HasOptionalNestedMessage) {
+      if (optionalNestedMessage_ != null) {
         output.WriteRawTag(146, 1);
         output.WriteMessage(OptionalNestedMessage);
       }
-      if (HasOptionalForeignMessage) {
+      if (optionalForeignMessage_ != null) {
         output.WriteRawTag(154, 1);
         output.WriteMessage(OptionalForeignMessage);
       }
-      if (HasOptionalNestedEnum) {
+      if (OptionalNestedEnum != 0) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) OptionalNestedEnum);
       }
-      if (HasOptionalForeignEnum) {
+      if (OptionalForeignEnum != 0) {
         output.WriteRawTag(176, 1);
         output.WriteEnum((int) OptionalForeignEnum);
       }
-      if (HasOptionalStringPiece) {
+      if (OptionalStringPiece.Length != 0) {
         output.WriteRawTag(194, 1);
         output.WriteString(OptionalStringPiece);
       }
-      if (HasOptionalCord) {
+      if (OptionalCord.Length != 0) {
         output.WriteRawTag(202, 1);
         output.WriteString(OptionalCord);
       }
-      if (HasRecursiveMessage) {
+      if (recursiveMessage_ != null) {
         output.WriteRawTag(218, 1);
         output.WriteMessage(RecursiveMessage);
       }
@@ -2755,27 +2570,27 @@ namespace ProtobufTestMessages.Proto3 {
       repeatedDoubleWrapper_.WriteTo(output, _repeated_repeatedDoubleWrapper_codec);
       repeatedStringWrapper_.WriteTo(output, _repeated_repeatedStringWrapper_codec);
       repeatedBytesWrapper_.WriteTo(output, _repeated_repeatedBytesWrapper_codec);
-      if (HasOptionalDuration) {
+      if (optionalDuration_ != null) {
         output.WriteRawTag(234, 18);
         output.WriteMessage(OptionalDuration);
       }
-      if (HasOptionalTimestamp) {
+      if (optionalTimestamp_ != null) {
         output.WriteRawTag(242, 18);
         output.WriteMessage(OptionalTimestamp);
       }
-      if (HasOptionalFieldMask) {
+      if (optionalFieldMask_ != null) {
         output.WriteRawTag(250, 18);
         output.WriteMessage(OptionalFieldMask);
       }
-      if (HasOptionalStruct) {
+      if (optionalStruct_ != null) {
         output.WriteRawTag(130, 19);
         output.WriteMessage(OptionalStruct);
       }
-      if (HasOptionalAny) {
+      if (optionalAny_ != null) {
         output.WriteRawTag(138, 19);
         output.WriteMessage(OptionalAny);
       }
-      if (HasOptionalValue) {
+      if (optionalValue_ != null) {
         output.WriteRawTag(146, 19);
         output.WriteMessage(OptionalValue);
       }
@@ -2785,75 +2600,75 @@ namespace ProtobufTestMessages.Proto3 {
       repeatedAny_.WriteTo(output, _repeated_repeatedAny_codec);
       repeatedValue_.WriteTo(output, _repeated_repeatedValue_codec);
       repeatedStruct_.WriteTo(output, _repeated_repeatedStruct_codec);
-      if (HasFieldname1) {
+      if (Fieldname1 != 0) {
         output.WriteRawTag(136, 25);
         output.WriteInt32(Fieldname1);
       }
-      if (HasFieldName2) {
+      if (FieldName2 != 0) {
         output.WriteRawTag(144, 25);
         output.WriteInt32(FieldName2);
       }
-      if (HasFieldName3) {
+      if (FieldName3 != 0) {
         output.WriteRawTag(152, 25);
         output.WriteInt32(FieldName3);
       }
-      if (HasFieldName4) {
+      if (FieldName4 != 0) {
         output.WriteRawTag(160, 25);
         output.WriteInt32(FieldName4);
       }
-      if (HasField0Name5) {
+      if (Field0Name5 != 0) {
         output.WriteRawTag(168, 25);
         output.WriteInt32(Field0Name5);
       }
-      if (HasField0Name6) {
+      if (Field0Name6 != 0) {
         output.WriteRawTag(176, 25);
         output.WriteInt32(Field0Name6);
       }
-      if (HasFieldName7) {
+      if (FieldName7 != 0) {
         output.WriteRawTag(184, 25);
         output.WriteInt32(FieldName7);
       }
-      if (HasFieldName8) {
+      if (FieldName8 != 0) {
         output.WriteRawTag(192, 25);
         output.WriteInt32(FieldName8);
       }
-      if (HasFieldName9) {
+      if (FieldName9 != 0) {
         output.WriteRawTag(200, 25);
         output.WriteInt32(FieldName9);
       }
-      if (HasFieldName10) {
+      if (FieldName10 != 0) {
         output.WriteRawTag(208, 25);
         output.WriteInt32(FieldName10);
       }
-      if (HasFIELDNAME11) {
+      if (FIELDNAME11 != 0) {
         output.WriteRawTag(216, 25);
         output.WriteInt32(FIELDNAME11);
       }
-      if (HasFIELDName12) {
+      if (FIELDName12 != 0) {
         output.WriteRawTag(224, 25);
         output.WriteInt32(FIELDName12);
       }
-      if (HasFieldName13) {
+      if (FieldName13 != 0) {
         output.WriteRawTag(232, 25);
         output.WriteInt32(FieldName13);
       }
-      if (HasFieldName14) {
+      if (FieldName14 != 0) {
         output.WriteRawTag(240, 25);
         output.WriteInt32(FieldName14);
       }
-      if (HasFieldName15) {
+      if (FieldName15 != 0) {
         output.WriteRawTag(248, 25);
         output.WriteInt32(FieldName15);
       }
-      if (HasFieldName16) {
+      if (FieldName16 != 0) {
         output.WriteRawTag(128, 26);
         output.WriteInt32(FieldName16);
       }
-      if (HasFieldName17) {
+      if (FieldName17 != 0) {
         output.WriteRawTag(136, 26);
         output.WriteInt32(FieldName17);
       }
-      if (HasFieldName18) {
+      if (FieldName18 != 0) {
         output.WriteRawTag(144, 26);
         output.WriteInt32(FieldName18);
       }
@@ -2865,70 +2680,70 @@ namespace ProtobufTestMessages.Proto3 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasOptionalInt32) {
+      if (OptionalInt32 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(OptionalInt32);
       }
-      if (HasOptionalInt64) {
+      if (OptionalInt64 != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(OptionalInt64);
       }
-      if (HasOptionalUint32) {
+      if (OptionalUint32 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OptionalUint32);
       }
-      if (HasOptionalUint64) {
+      if (OptionalUint64 != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(OptionalUint64);
       }
-      if (HasOptionalSint32) {
+      if (OptionalSint32 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeSInt32Size(OptionalSint32);
       }
-      if (HasOptionalSint64) {
+      if (OptionalSint64 != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeSInt64Size(OptionalSint64);
       }
-      if (HasOptionalFixed32) {
+      if (OptionalFixed32 != 0) {
         size += 1 + 4;
       }
-      if (HasOptionalFixed64) {
+      if (OptionalFixed64 != 0UL) {
         size += 1 + 8;
       }
-      if (HasOptionalSfixed32) {
+      if (OptionalSfixed32 != 0) {
         size += 1 + 4;
       }
-      if (HasOptionalSfixed64) {
+      if (OptionalSfixed64 != 0L) {
         size += 1 + 8;
       }
-      if (HasOptionalFloat) {
+      if (OptionalFloat != 0F) {
         size += 1 + 4;
       }
-      if (HasOptionalDouble) {
+      if (OptionalDouble != 0D) {
         size += 1 + 8;
       }
-      if (HasOptionalBool) {
+      if (OptionalBool != false) {
         size += 1 + 1;
       }
-      if (HasOptionalString) {
+      if (OptionalString.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OptionalString);
       }
-      if (HasOptionalBytes) {
+      if (OptionalBytes.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(OptionalBytes);
       }
-      if (HasOptionalNestedMessage) {
+      if (optionalNestedMessage_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalNestedMessage);
       }
-      if (HasOptionalForeignMessage) {
+      if (optionalForeignMessage_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalForeignMessage);
       }
-      if (HasOptionalNestedEnum) {
+      if (OptionalNestedEnum != 0) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OptionalNestedEnum);
       }
-      if (HasOptionalForeignEnum) {
+      if (OptionalForeignEnum != 0) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OptionalForeignEnum);
       }
-      if (HasOptionalStringPiece) {
+      if (OptionalStringPiece.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(OptionalStringPiece);
       }
-      if (HasOptionalCord) {
+      if (OptionalCord.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(OptionalCord);
       }
-      if (HasRecursiveMessage) {
+      if (recursiveMessage_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(RecursiveMessage);
       }
       size += repeatedInt32_.CalculateSize(_repeated_repeatedInt32_codec);
@@ -3034,22 +2849,22 @@ namespace ProtobufTestMessages.Proto3 {
       size += repeatedDoubleWrapper_.CalculateSize(_repeated_repeatedDoubleWrapper_codec);
       size += repeatedStringWrapper_.CalculateSize(_repeated_repeatedStringWrapper_codec);
       size += repeatedBytesWrapper_.CalculateSize(_repeated_repeatedBytesWrapper_codec);
-      if (HasOptionalDuration) {
+      if (optionalDuration_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalDuration);
       }
-      if (HasOptionalTimestamp) {
+      if (optionalTimestamp_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalTimestamp);
       }
-      if (HasOptionalFieldMask) {
+      if (optionalFieldMask_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalFieldMask);
       }
-      if (HasOptionalStruct) {
+      if (optionalStruct_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalStruct);
       }
-      if (HasOptionalAny) {
+      if (optionalAny_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalAny);
       }
-      if (HasOptionalValue) {
+      if (optionalValue_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalValue);
       }
       size += repeatedDuration_.CalculateSize(_repeated_repeatedDuration_codec);
@@ -3058,58 +2873,58 @@ namespace ProtobufTestMessages.Proto3 {
       size += repeatedStruct_.CalculateSize(_repeated_repeatedStruct_codec);
       size += repeatedAny_.CalculateSize(_repeated_repeatedAny_codec);
       size += repeatedValue_.CalculateSize(_repeated_repeatedValue_codec);
-      if (HasFieldname1) {
+      if (Fieldname1 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Fieldname1);
       }
-      if (HasFieldName2) {
+      if (FieldName2 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName2);
       }
-      if (HasFieldName3) {
+      if (FieldName3 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName3);
       }
-      if (HasFieldName4) {
+      if (FieldName4 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName4);
       }
-      if (HasField0Name5) {
+      if (Field0Name5 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Field0Name5);
       }
-      if (HasField0Name6) {
+      if (Field0Name6 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Field0Name6);
       }
-      if (HasFieldName7) {
+      if (FieldName7 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName7);
       }
-      if (HasFieldName8) {
+      if (FieldName8 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName8);
       }
-      if (HasFieldName9) {
+      if (FieldName9 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName9);
       }
-      if (HasFieldName10) {
+      if (FieldName10 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName10);
       }
-      if (HasFIELDNAME11) {
+      if (FIELDNAME11 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FIELDNAME11);
       }
-      if (HasFIELDName12) {
+      if (FIELDName12 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FIELDName12);
       }
-      if (HasFieldName13) {
+      if (FieldName13 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName13);
       }
-      if (HasFieldName14) {
+      if (FieldName14 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName14);
       }
-      if (HasFieldName15) {
+      if (FieldName15 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName15);
       }
-      if (HasFieldName16) {
+      if (FieldName16 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName16);
       }
-      if (HasFieldName17) {
+      if (FieldName17 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName17);
       }
-      if (HasFieldName18) {
+      if (FieldName18 != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(FieldName18);
       }
       if (_unknownFields != null) {
@@ -3123,77 +2938,77 @@ namespace ProtobufTestMessages.Proto3 {
       if (other == null) {
         return;
       }
-      if (other.HasOptionalInt32) {
+      if (other.OptionalInt32 != 0) {
         OptionalInt32 = other.OptionalInt32;
       }
-      if (other.HasOptionalInt64) {
+      if (other.OptionalInt64 != 0L) {
         OptionalInt64 = other.OptionalInt64;
       }
-      if (other.HasOptionalUint32) {
+      if (other.OptionalUint32 != 0) {
         OptionalUint32 = other.OptionalUint32;
       }
-      if (other.HasOptionalUint64) {
+      if (other.OptionalUint64 != 0UL) {
         OptionalUint64 = other.OptionalUint64;
       }
-      if (other.HasOptionalSint32) {
+      if (other.OptionalSint32 != 0) {
         OptionalSint32 = other.OptionalSint32;
       }
-      if (other.HasOptionalSint64) {
+      if (other.OptionalSint64 != 0L) {
         OptionalSint64 = other.OptionalSint64;
       }
-      if (other.HasOptionalFixed32) {
+      if (other.OptionalFixed32 != 0) {
         OptionalFixed32 = other.OptionalFixed32;
       }
-      if (other.HasOptionalFixed64) {
+      if (other.OptionalFixed64 != 0UL) {
         OptionalFixed64 = other.OptionalFixed64;
       }
-      if (other.HasOptionalSfixed32) {
+      if (other.OptionalSfixed32 != 0) {
         OptionalSfixed32 = other.OptionalSfixed32;
       }
-      if (other.HasOptionalSfixed64) {
+      if (other.OptionalSfixed64 != 0L) {
         OptionalSfixed64 = other.OptionalSfixed64;
       }
-      if (other.HasOptionalFloat) {
+      if (other.OptionalFloat != 0F) {
         OptionalFloat = other.OptionalFloat;
       }
-      if (other.HasOptionalDouble) {
+      if (other.OptionalDouble != 0D) {
         OptionalDouble = other.OptionalDouble;
       }
-      if (other.HasOptionalBool) {
+      if (other.OptionalBool != false) {
         OptionalBool = other.OptionalBool;
       }
-      if (other.HasOptionalString) {
+      if (other.OptionalString.Length != 0) {
         OptionalString = other.OptionalString;
       }
-      if (other.HasOptionalBytes) {
+      if (other.OptionalBytes.Length != 0) {
         OptionalBytes = other.OptionalBytes;
       }
-      if (other.HasOptionalNestedMessage) {
-        if (!HasOptionalNestedMessage) {
+      if (other.optionalNestedMessage_ != null) {
+        if (optionalNestedMessage_ == null) {
           optionalNestedMessage_ = new global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedMessage();
         }
         OptionalNestedMessage.MergeFrom(other.OptionalNestedMessage);
       }
-      if (other.HasOptionalForeignMessage) {
-        if (!HasOptionalForeignMessage) {
+      if (other.optionalForeignMessage_ != null) {
+        if (optionalForeignMessage_ == null) {
           optionalForeignMessage_ = new global::ProtobufTestMessages.Proto3.ForeignMessage();
         }
         OptionalForeignMessage.MergeFrom(other.OptionalForeignMessage);
       }
-      if (other.HasOptionalNestedEnum) {
+      if (other.OptionalNestedEnum != 0) {
         OptionalNestedEnum = other.OptionalNestedEnum;
       }
-      if (other.HasOptionalForeignEnum) {
+      if (other.OptionalForeignEnum != 0) {
         OptionalForeignEnum = other.OptionalForeignEnum;
       }
-      if (other.HasOptionalStringPiece) {
+      if (other.OptionalStringPiece.Length != 0) {
         OptionalStringPiece = other.OptionalStringPiece;
       }
-      if (other.HasOptionalCord) {
+      if (other.OptionalCord.Length != 0) {
         OptionalCord = other.OptionalCord;
       }
-      if (other.HasRecursiveMessage) {
-        if (!HasRecursiveMessage) {
+      if (other.recursiveMessage_ != null) {
+        if (recursiveMessage_ == null) {
           recursiveMessage_ = new global::ProtobufTestMessages.Proto3.TestAllTypesProto3();
         }
         RecursiveMessage.MergeFrom(other.RecursiveMessage);
@@ -3292,38 +3107,38 @@ namespace ProtobufTestMessages.Proto3 {
       repeatedDoubleWrapper_.Add(other.repeatedDoubleWrapper_);
       repeatedStringWrapper_.Add(other.repeatedStringWrapper_);
       repeatedBytesWrapper_.Add(other.repeatedBytesWrapper_);
-      if (other.HasOptionalDuration) {
-        if (!HasOptionalDuration) {
+      if (other.optionalDuration_ != null) {
+        if (optionalDuration_ == null) {
           optionalDuration_ = new global::Google.Protobuf.WellKnownTypes.Duration();
         }
         OptionalDuration.MergeFrom(other.OptionalDuration);
       }
-      if (other.HasOptionalTimestamp) {
-        if (!HasOptionalTimestamp) {
+      if (other.optionalTimestamp_ != null) {
+        if (optionalTimestamp_ == null) {
           optionalTimestamp_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         OptionalTimestamp.MergeFrom(other.OptionalTimestamp);
       }
-      if (other.HasOptionalFieldMask) {
-        if (!HasOptionalFieldMask) {
+      if (other.optionalFieldMask_ != null) {
+        if (optionalFieldMask_ == null) {
           optionalFieldMask_ = new global::Google.Protobuf.WellKnownTypes.FieldMask();
         }
         OptionalFieldMask.MergeFrom(other.OptionalFieldMask);
       }
-      if (other.HasOptionalStruct) {
-        if (!HasOptionalStruct) {
+      if (other.optionalStruct_ != null) {
+        if (optionalStruct_ == null) {
           optionalStruct_ = new global::Google.Protobuf.WellKnownTypes.Struct();
         }
         OptionalStruct.MergeFrom(other.OptionalStruct);
       }
-      if (other.HasOptionalAny) {
-        if (!HasOptionalAny) {
+      if (other.optionalAny_ != null) {
+        if (optionalAny_ == null) {
           optionalAny_ = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         OptionalAny.MergeFrom(other.OptionalAny);
       }
-      if (other.HasOptionalValue) {
-        if (!HasOptionalValue) {
+      if (other.optionalValue_ != null) {
+        if (optionalValue_ == null) {
           optionalValue_ = new global::Google.Protobuf.WellKnownTypes.Value();
         }
         OptionalValue.MergeFrom(other.OptionalValue);
@@ -3334,58 +3149,58 @@ namespace ProtobufTestMessages.Proto3 {
       repeatedStruct_.Add(other.repeatedStruct_);
       repeatedAny_.Add(other.repeatedAny_);
       repeatedValue_.Add(other.repeatedValue_);
-      if (other.HasFieldname1) {
+      if (other.Fieldname1 != 0) {
         Fieldname1 = other.Fieldname1;
       }
-      if (other.HasFieldName2) {
+      if (other.FieldName2 != 0) {
         FieldName2 = other.FieldName2;
       }
-      if (other.HasFieldName3) {
+      if (other.FieldName3 != 0) {
         FieldName3 = other.FieldName3;
       }
-      if (other.HasFieldName4) {
+      if (other.FieldName4 != 0) {
         FieldName4 = other.FieldName4;
       }
-      if (other.HasField0Name5) {
+      if (other.Field0Name5 != 0) {
         Field0Name5 = other.Field0Name5;
       }
-      if (other.HasField0Name6) {
+      if (other.Field0Name6 != 0) {
         Field0Name6 = other.Field0Name6;
       }
-      if (other.HasFieldName7) {
+      if (other.FieldName7 != 0) {
         FieldName7 = other.FieldName7;
       }
-      if (other.HasFieldName8) {
+      if (other.FieldName8 != 0) {
         FieldName8 = other.FieldName8;
       }
-      if (other.HasFieldName9) {
+      if (other.FieldName9 != 0) {
         FieldName9 = other.FieldName9;
       }
-      if (other.HasFieldName10) {
+      if (other.FieldName10 != 0) {
         FieldName10 = other.FieldName10;
       }
-      if (other.HasFIELDNAME11) {
+      if (other.FIELDNAME11 != 0) {
         FIELDNAME11 = other.FIELDNAME11;
       }
-      if (other.HasFIELDName12) {
+      if (other.FIELDName12 != 0) {
         FIELDName12 = other.FIELDName12;
       }
-      if (other.HasFieldName13) {
+      if (other.FieldName13 != 0) {
         FieldName13 = other.FieldName13;
       }
-      if (other.HasFieldName14) {
+      if (other.FieldName14 != 0) {
         FieldName14 = other.FieldName14;
       }
-      if (other.HasFieldName15) {
+      if (other.FieldName15 != 0) {
         FieldName15 = other.FieldName15;
       }
-      if (other.HasFieldName16) {
+      if (other.FieldName16 != 0) {
         FieldName16 = other.FieldName16;
       }
-      if (other.HasFieldName17) {
+      if (other.FieldName17 != 0) {
         FieldName17 = other.FieldName17;
       }
-      if (other.HasFieldName18) {
+      if (other.FieldName18 != 0) {
         FieldName18 = other.FieldName18;
       }
       switch (other.OneofFieldCase) {
@@ -3493,14 +3308,14 @@ namespace ProtobufTestMessages.Proto3 {
             break;
           }
           case 146: {
-            if (!HasOptionalNestedMessage) {
+            if (optionalNestedMessage_ == null) {
               optionalNestedMessage_ = new global::ProtobufTestMessages.Proto3.TestAllTypesProto3.Types.NestedMessage();
             }
             input.ReadMessage(optionalNestedMessage_);
             break;
           }
           case 154: {
-            if (!HasOptionalForeignMessage) {
+            if (optionalForeignMessage_ == null) {
               optionalForeignMessage_ = new global::ProtobufTestMessages.Proto3.ForeignMessage();
             }
             input.ReadMessage(optionalForeignMessage_);
@@ -3523,7 +3338,7 @@ namespace ProtobufTestMessages.Proto3 {
             break;
           }
           case 218: {
-            if (!HasRecursiveMessage) {
+            if (recursiveMessage_ == null) {
               recursiveMessage_ = new global::ProtobufTestMessages.Proto3.TestAllTypesProto3();
             }
             input.ReadMessage(recursiveMessage_);
@@ -3846,42 +3661,42 @@ namespace ProtobufTestMessages.Proto3 {
             break;
           }
           case 2410: {
-            if (!HasOptionalDuration) {
+            if (optionalDuration_ == null) {
               optionalDuration_ = new global::Google.Protobuf.WellKnownTypes.Duration();
             }
             input.ReadMessage(optionalDuration_);
             break;
           }
           case 2418: {
-            if (!HasOptionalTimestamp) {
+            if (optionalTimestamp_ == null) {
               optionalTimestamp_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(optionalTimestamp_);
             break;
           }
           case 2426: {
-            if (!HasOptionalFieldMask) {
+            if (optionalFieldMask_ == null) {
               optionalFieldMask_ = new global::Google.Protobuf.WellKnownTypes.FieldMask();
             }
             input.ReadMessage(optionalFieldMask_);
             break;
           }
           case 2434: {
-            if (!HasOptionalStruct) {
+            if (optionalStruct_ == null) {
               optionalStruct_ = new global::Google.Protobuf.WellKnownTypes.Struct();
             }
             input.ReadMessage(optionalStruct_);
             break;
           }
           case 2442: {
-            if (!HasOptionalAny) {
+            if (optionalAny_ == null) {
               optionalAny_ = new global::Google.Protobuf.WellKnownTypes.Any();
             }
             input.ReadMessage(optionalAny_);
             break;
           }
           case 2450: {
-            if (!HasOptionalValue) {
+            if (optionalValue_ == null) {
               optionalValue_ = new global::Google.Protobuf.WellKnownTypes.Value();
             }
             input.ReadMessage(optionalValue_);
@@ -4027,7 +3842,7 @@ namespace ProtobufTestMessages.Proto3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public NestedMessage(NestedMessage other) : this() {
           a_ = other.a_;
-          Corecursive = other.HasCorecursive ? other.Corecursive.Clone() : null;
+          Corecursive = other.corecursive_ != null ? other.Corecursive.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -4048,11 +3863,6 @@ namespace ProtobufTestMessages.Proto3 {
           set {
             a_ = value;
           }
-        }
-        /// <summary>Gets whether the "a" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool HasA {
-          get { return a_ != ADefaultValue; }
         }
         /// <summary>Clears the value of the "a" field</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4102,8 +3912,8 @@ namespace ProtobufTestMessages.Proto3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (HasA) hash ^= A.GetHashCode();
-          if (HasCorecursive) hash ^= Corecursive.GetHashCode();
+          if (A != 0) hash ^= A.GetHashCode();
+          if (corecursive_ != null) hash ^= Corecursive.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4117,11 +3927,11 @@ namespace ProtobufTestMessages.Proto3 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (HasA) {
+          if (A != 0) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
           }
-          if (HasCorecursive) {
+          if (corecursive_ != null) {
             output.WriteRawTag(18);
             output.WriteMessage(Corecursive);
           }
@@ -4133,10 +3943,10 @@ namespace ProtobufTestMessages.Proto3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (HasA) {
+          if (A != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(A);
           }
-          if (HasCorecursive) {
+          if (corecursive_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Corecursive);
           }
           if (_unknownFields != null) {
@@ -4150,11 +3960,11 @@ namespace ProtobufTestMessages.Proto3 {
           if (other == null) {
             return;
           }
-          if (other.HasA) {
+          if (other.A != 0) {
             A = other.A;
           }
-          if (other.HasCorecursive) {
-            if (!HasCorecursive) {
+          if (other.corecursive_ != null) {
+            if (corecursive_ == null) {
               corecursive_ = new global::ProtobufTestMessages.Proto3.TestAllTypesProto3();
             }
             Corecursive.MergeFrom(other.Corecursive);
@@ -4175,7 +3985,7 @@ namespace ProtobufTestMessages.Proto3 {
                 break;
               }
               case 18: {
-                if (!HasCorecursive) {
+                if (corecursive_ == null) {
                   corecursive_ = new global::ProtobufTestMessages.Proto3.TestAllTypesProto3();
                 }
                 input.ReadMessage(corecursive_);
@@ -4239,11 +4049,6 @@ namespace ProtobufTestMessages.Proto3 {
         c_ = value;
       }
     }
-    /// <summary>Gets whether the "c" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasC {
-      get { return c_ != CDefaultValue; }
-    }
     /// <summary>Clears the value of the "c" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearC() {
@@ -4270,7 +4075,7 @@ namespace ProtobufTestMessages.Proto3 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasC) hash ^= C.GetHashCode();
+      if (C != 0) hash ^= C.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4284,7 +4089,7 @@ namespace ProtobufTestMessages.Proto3 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (HasC) {
+      if (C != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(C);
       }
@@ -4296,7 +4101,7 @@ namespace ProtobufTestMessages.Proto3 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (HasC) {
+      if (C != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(C);
       }
       if (_unknownFields != null) {
@@ -4310,7 +4115,7 @@ namespace ProtobufTestMessages.Proto3 {
       if (other == null) {
         return;
       }
-      if (other.HasC) {
+      if (other.C != 0) {
         C = other.C;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

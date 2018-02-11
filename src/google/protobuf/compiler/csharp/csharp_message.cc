@@ -564,19 +564,23 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Indent();
   printer->Print(
     "default:\n");
-  if (has_extension_ranges_) {
+  if (IsDescriptorOptionMessage(descriptor_)) {
+    printer->Print("  _extensions.MergeFieldFrom(input);\n");
+  }
+  else {
+    if (has_extension_ranges_) {
+      printer->Print(
+      "  if (!_extensions.TryMergeFieldFrom(input)) {\n");
+      printer->Indent();
+    }
     printer->Print(
-    "  if (!_extensions.TryMergeFieldFrom(input)) {\n");
-    printer->Indent();
+      "  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);\n");
+    if (has_extension_ranges_) {
+      printer->Outdent();
+      printer->Print("  }\n");
+    }
   }
-  printer->Print(
-    "  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);\n");
-  if (has_extension_ranges_) {
-    printer->Outdent();
-    printer->Print("  }\n");
-  }
-  printer->Print(
-    "  break;\n");
+  printer->Print("  break;\n");
   for (int i = 0; i < fields_by_number().size(); i++) {
     const FieldDescriptor* field = fields_by_number()[i];
     internal::WireFormatLite::WireType wt =

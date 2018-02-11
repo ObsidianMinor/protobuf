@@ -4665,9 +4665,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 10: {
             JavaPackage = input.ReadString();
@@ -5102,9 +5100,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 8: {
             MessageSetWireFormat = input.ReadBool();
@@ -5542,9 +5538,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 8: {
             ctype_ = (global::Google.Protobuf.Reflection.FieldOptions.Types.CType) input.ReadEnum();
@@ -5735,9 +5729,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 7994: {
             uninterpretedOption_.AddEntriesFrom(input, _repeated_uninterpretedOption_codec);
@@ -5957,9 +5949,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 16: {
             AllowAlias = input.ReadBool();
@@ -6146,9 +6136,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 8: {
             Deprecated = input.ReadBool();
@@ -6331,9 +6319,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 264: {
             Deprecated = input.ReadBool();
@@ -6553,9 +6539,7 @@ namespace Google.Protobuf.Reflection {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            if (!_extensions.TryMergeFieldFrom(input)) {
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            }
+            _extensions.MergeFieldFrom(input);
             break;
           case 264: {
             Deprecated = input.ReadBool();

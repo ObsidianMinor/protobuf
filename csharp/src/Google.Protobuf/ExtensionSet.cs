@@ -17,6 +17,8 @@ namespace Google.Protobuf
         /// <returns>True if the field was merged, false otherwise</returns>
         public bool TryMergeFieldFrom(CodedInputStream stream) => throw new NotImplementedException();
 
+        internal void MergeFieldFrom(CodedInputStream stream) => throw new NotImplementedException();
+
         public void WriteTo(CodedOutputStream stream) => throw new NotImplementedException();
 
         public override int GetHashCode() => throw new NotImplementedException();

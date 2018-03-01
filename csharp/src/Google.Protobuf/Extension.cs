@@ -21,7 +21,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Gets the tag number of this field
         /// </summary>
-        int Tag { get; }
+        uint Tag { get; }
 
         /// <summary>
         /// Gets the default value of this extension
@@ -39,7 +39,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="tag"></param>
         /// <param name="defaultValue"></param>
-        public Extension(int tag, TValue defaultValue)
+        public Extension(uint tag, TValue defaultValue)
         {
             Tag = tag;
             DefaultValue = defaultValue;
@@ -48,7 +48,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Gets the tag number of this field
         /// </summary>
-        public int Tag { get; }
+        public uint Tag { get; }
 
         Type IExtension.ValueType => typeof(TValue);
 

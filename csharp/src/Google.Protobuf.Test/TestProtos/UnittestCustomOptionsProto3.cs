@@ -167,75 +167,75 @@ namespace UnitTest.Issues.TestProtos {
 
   public static partial class UnittestCustomOptionsProto3Extensions {
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong> FileOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong>(61895792, 0UL);
+      new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong>(61895792u, 0UL);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> MessageOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61912288, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61912288u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, ulong> FieldOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, ulong>(61927489, 0UL);
+      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, ulong>(61927489u, 0UL);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, int> OneofOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, int>(61920888, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, int>(61920888u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, int> EnumOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, int>(62028613, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, int>(62028613u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, int> EnumValueOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, int>(12485424, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, int>(12485424u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, long> ServiceOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, long>(63101200, 0L);
+      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, long>(63101200u, 0L);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.MethodOpt1> MethodOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.MethodOpt1>(63126880, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.MethodOpt1>(63126880u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, bool> BoolOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, bool>(61648720, false);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, bool>(61648720u, false);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> Int32Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61645672, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61645672u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long> Int64Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(61644336, 0L);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(61644336u, 0L);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint> Uint32Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint>(61639040, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint>(61639040u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong> Uint64Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong>(61618936, 0UL);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong>(61618936u, 0UL);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> Sint32Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61612544, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61612544u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long> Sint64Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(61606904, 0L);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(61606904u, 0L);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint> Fixed32Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint>(61602461, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint>(61602461u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong> Fixed64Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong>(61601553, 0UL);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong>(61601553u, 0UL);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> Sfixed32Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61589165, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(61589165u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long> Sfixed64Opt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(61483801, 0L);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(61483801u, 0L);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, float> FloatOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, float>(61403125, 0F);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, float>(61403125u, 0F);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, double> DoubleOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, double>(61386345, 0D);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, double>(61386345u, 0D);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, string> StringOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, string>(61386282, "");
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, string>(61386282u, "");
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, pb::ByteString> BytesOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, pb::ByteString>(61385906, pb::ByteString.Empty);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, pb::ByteString>(61385906u, pb::ByteString.Empty);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType> EnumOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType>(61385864, 0);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType>(61385864u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType> MessageTypeOpt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType>(61327738, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType>(61327738u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType1> ComplexOpt1 =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType1>(61174050, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType1>(61174050u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2> ComplexOpt2 =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2>(61095594, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2>(61095594u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType3> ComplexOpt3 =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType3>(61091706, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType3>(61091706u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::UnitTest.Issues.TestProtos.Aggregate> Fileopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123827834, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123827834u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.Aggregate> Msgopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123840706, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123840706u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::UnitTest.Issues.TestProtos.Aggregate> Fieldopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123850994, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123850994u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, global::UnitTest.Issues.TestProtos.Aggregate> Enumopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123865746, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123865746u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, global::UnitTest.Issues.TestProtos.Aggregate> Enumvalopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123895370, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123895370u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::UnitTest.Issues.TestProtos.Aggregate> Serviceopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123977162, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::UnitTest.Issues.TestProtos.Aggregate>(123977162u, null);
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.Aggregate> Methodopt =
-      new pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.Aggregate>(124101706, null);
+      new pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.Aggregate>(124101706u, null);
   }
 
   #region Enums
@@ -448,6 +448,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the TestMessageWithCustomOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -566,6 +571,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class CustomOptionFooResponse : pb::IMessage<CustomOptionFooResponse> {
@@ -665,6 +675,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -768,6 +783,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class CustomOptionFooServerMessage : pb::IMessage<CustomOptionFooServerMessage> {
@@ -869,6 +889,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class DummyMessageContainingEnum : pb::IMessage<DummyMessageContainingEnum> {
@@ -968,6 +993,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
     #region Nested types
@@ -1084,6 +1114,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class CustomOptionMinIntegerValues : pb::IMessage<CustomOptionMinIntegerValues> {
@@ -1183,6 +1218,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -1286,6 +1326,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class CustomOptionOtherValues : pb::IMessage<CustomOptionOtherValues> {
@@ -1385,6 +1430,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -1488,6 +1538,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class SettingRealsFromNegativeInts : pb::IMessage<SettingRealsFromNegativeInts> {
@@ -1587,6 +1642,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -1817,6 +1877,11 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -2064,6 +2129,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the ComplexOptionType2 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2203,12 +2273,17 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
         #region Extensions
         /// <summary>Container for extensions for other messages declared in the ComplexOptionType4 message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Extensions {
           public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4> ComplexOpt4 =
-            new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4>(61068370, null);
+            new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4>(61068370u, null);
         }
         #endregion
 
@@ -2354,6 +2429,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -2456,6 +2536,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -2681,6 +2766,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class AggregateMessage : pb::IMessage<AggregateMessage> {
@@ -2818,6 +2908,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -2920,6 +3015,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
     #region Nested types
@@ -3064,6 +3164,11 @@ namespace UnitTest.Issues.TestProtos {
               }
             }
           }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
         }
 
       }

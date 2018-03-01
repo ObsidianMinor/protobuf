@@ -616,6 +616,11 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class TestMapSubmessage : pb::IMessage<TestMapSubmessage> {
@@ -761,6 +766,11 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class TestMessageMap : pb::IMessage<TestMessageMap> {
@@ -880,6 +890,11 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -1024,6 +1039,11 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -1427,6 +1447,11 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -1550,6 +1575,11 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
     #region Nested types
@@ -1685,6 +1715,11 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }

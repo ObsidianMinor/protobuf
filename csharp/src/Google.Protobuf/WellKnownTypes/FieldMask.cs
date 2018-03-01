@@ -371,6 +371,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   #endregion

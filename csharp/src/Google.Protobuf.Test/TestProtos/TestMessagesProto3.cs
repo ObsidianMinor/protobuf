@@ -3802,6 +3802,11 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the TestAllTypesProto3 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3995,6 +4000,11 @@ namespace ProtobufTestMessages.Proto3 {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
     }
@@ -4135,6 +4145,11 @@ namespace ProtobufTestMessages.Proto3 {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }

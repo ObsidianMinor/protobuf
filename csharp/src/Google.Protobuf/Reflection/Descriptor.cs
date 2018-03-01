@@ -312,6 +312,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -798,6 +803,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -1151,6 +1161,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the DescriptorProto message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1380,6 +1395,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
       /// <summary>
@@ -1574,6 +1594,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
     }
@@ -1715,6 +1740,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -2266,6 +2296,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the FieldDescriptorProto message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2520,6 +2555,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -2780,6 +2820,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the EnumDescriptorProto message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2977,6 +3022,11 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
         }
 
       }
@@ -3214,6 +3264,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -3421,6 +3476,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -3784,6 +3844,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -4747,6 +4812,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the FileOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5124,6 +5194,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -5572,6 +5647,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the FieldOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5737,6 +5817,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -5967,6 +6052,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class EnumValueOptions : pb::IExtensionMessage<EnumValueOptions> {
@@ -6150,6 +6240,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class ServiceOptions : pb::IExtensionMessage<ServiceOptions> {
@@ -6331,6 +6426,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -6555,6 +6655,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
     #region Nested types
@@ -6960,6 +7065,11 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the UninterpretedOption message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7152,6 +7262,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
     }
@@ -7325,6 +7440,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
     #region Nested types
@@ -7655,6 +7775,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
     }
@@ -7788,6 +7913,11 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
     #region Nested types
@@ -8051,6 +8181,11 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
         }
 
       }

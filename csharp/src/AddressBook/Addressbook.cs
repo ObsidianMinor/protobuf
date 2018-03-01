@@ -324,6 +324,11 @@ namespace Google.Protobuf.Examples.AddressBook {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the Person message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -505,6 +510,11 @@ namespace Google.Protobuf.Examples.AddressBook {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
     }
@@ -632,6 +642,11 @@ namespace Google.Protobuf.Examples.AddressBook {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }

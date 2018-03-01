@@ -188,6 +188,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the Issue307 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -291,6 +296,11 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
         #region Nested types
         /// <summary>Container for nested types declared in the NestedOnce message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -392,6 +402,11 @@ namespace UnitTest.Issues.TestProtos {
                     break;
                 }
               }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool IsInitialized() {
+              return true;
             }
 
           }
@@ -583,6 +598,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class DeprecatedChild : pb::IMessage<DeprecatedChild> {
@@ -682,6 +702,11 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -973,6 +998,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -1111,6 +1141,11 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }
@@ -1286,6 +1321,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the ReservedNames message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1390,6 +1430,11 @@ namespace UnitTest.Issues.TestProtos {
                 break;
             }
           }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
         }
 
       }
@@ -1756,6 +1801,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   public sealed partial class TestJsonName : pb::IMessage<TestJsonName> {
@@ -1968,6 +2018,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -2169,6 +2224,11 @@ namespace UnitTest.Issues.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the OneofMerging message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2342,6 +2402,11 @@ namespace UnitTest.Issues.TestProtos {
               }
             }
           }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
         }
 
       }

@@ -417,6 +417,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -778,6 +783,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -1036,6 +1046,11 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }

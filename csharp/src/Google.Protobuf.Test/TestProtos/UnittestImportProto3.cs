@@ -186,6 +186,11 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   #endregion

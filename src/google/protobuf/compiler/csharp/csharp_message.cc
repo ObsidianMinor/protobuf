@@ -616,6 +616,13 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Print("}\n"); // while
   printer->Outdent();
   printer->Print("}\n\n"); // method
+
+  WriteGeneratedCodeAttributes(printer);
+  printer->Print("public bool IsInitialized() {\n");
+  printer->Indent();
+  printer->Print("return true;\n");
+  printer->Outdent();
+  printer->Print("}\n\n");
 }
 
 int MessageGenerator::GetFieldOrdinal(const FieldDescriptor* descriptor) {

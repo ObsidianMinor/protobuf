@@ -55,7 +55,7 @@ ExtensionGenerator::~ExtensionGenerator() {
 void ExtensionGenerator::Generate(io::Printer* printer) {
   printer->Print(
     "$access_level$ static readonly pb::Extension<$extended_type$, $type$> $property_name$ =\n"
-    "  new pb::Extension<$extended_type$, $type$>($tag$, $default_value$);\n",
+    "  new pb::Extension<$extended_type$, $type$>($tag$u, $default_value$);\n",
     "access_level", class_access_level(),
     "extended_type", extendee_type_name(),
     "type", GetTypeName(descriptor_),

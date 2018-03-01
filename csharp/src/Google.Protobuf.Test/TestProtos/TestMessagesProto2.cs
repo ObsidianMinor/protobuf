@@ -193,7 +193,7 @@ namespace ProtobufTestMessages.Proto2 {
 
   public static partial class TestMessagesProto2Extensions {
     public static readonly pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2, int> ExtensionInt32 =
-      new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2, int>(960, 0);
+      new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2, int>(960u, 0);
   }
 
   #region Enums
@@ -2257,9 +2257,9 @@ namespace ProtobufTestMessages.Proto2 {
         output.WriteEnum((int) OneofEnum);
       }
       if (HasData) {
-        output.WriteRawTag(203, 12, 127, 0);
+        output.WriteRawTag(203, 12, 0, 0);
         output.WriteGroup(Data);
-        output.WriteRawTag(204, 12, 127, 0);
+        output.WriteRawTag(204, 12, 205, 220);
       }
       if (HasFieldname1) {
         output.WriteRawTag(136, 25);
@@ -3163,6 +3163,11 @@ namespace ProtobufTestMessages.Proto2 {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the TestAllTypesProto2 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3361,6 +3366,11 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
       /// <summary>
@@ -3547,6 +3557,11 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
       }
 
       /// <summary>
@@ -3663,6 +3678,11 @@ namespace ProtobufTestMessages.Proto2 {
                 break;
             }
           }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
         }
 
       }
@@ -3807,12 +3827,17 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
         #region Extensions
         /// <summary>Container for extensions for other messages declared in the MessageSetCorrectExtension1 message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Extensions {
           public static readonly pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrect, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrectExtension1> MessageSetExtension =
-            new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrect, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrectExtension1>(12382154, null);
+            new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrect, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrectExtension1>(12382154u, null);
         }
         #endregion
 
@@ -3958,12 +3983,17 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+
         #region Extensions
         /// <summary>Container for extensions for other messages declared in the MessageSetCorrectExtension2 message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Extensions {
           public static readonly pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrect, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrectExtension2> MessageSetExtension =
-            new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrect, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrectExtension2>(33082498, null);
+            new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrect, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.MessageSetCorrectExtension2>(33082498u, null);
         }
         #endregion
 
@@ -4112,6 +4142,11 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }

@@ -388,6 +388,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -868,6 +873,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
     #region Nested types
     /// <summary>Container for nested types declared in the Field message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1254,6 +1264,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -1459,6 +1474,11 @@ namespace Google.Protobuf.WellKnownTypes {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
+
   }
 
   /// <summary>
@@ -1654,6 +1674,11 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
     }
 
   }

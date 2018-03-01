@@ -165,6 +165,7 @@ namespace UnitTest.Issues.TestProtos {
 
   }
 
+  /// <summary>Holder for extension identifiers generated from the top level of unittest_custom_options_proto3.proto</summary>
   public static partial class UnittestCustomOptionsProto3Extensions {
     public static readonly pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong> FileOpt1 =
       new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong>(61895792u, 0UL);

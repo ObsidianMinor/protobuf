@@ -191,6 +191,7 @@ namespace ProtobufTestMessages.Proto2 {
 
   }
 
+  /// <summary>Holder for extension identifiers generated from the top level of google/protobuf/test_messages_proto2.proto</summary>
   public static partial class TestMessagesProto2Extensions {
     public static readonly pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2, int> ExtensionInt32 =
       new pb::Extension<global::ProtobufTestMessages.Proto2.TestAllTypesProto2, int>(960u, 0);
@@ -2259,7 +2260,7 @@ namespace ProtobufTestMessages.Proto2 {
       if (HasData) {
         output.WriteRawTag(203, 12, 0, 0);
         output.WriteGroup(Data);
-        output.WriteRawTag(204, 12, 205, 220);
+        output.WriteRawTag(204, 12, 166, 241);
       }
       if (HasFieldname1) {
         output.WriteRawTag(136, 25);

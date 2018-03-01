@@ -302,6 +302,15 @@ namespace Google.Protobuf
             WriteLength(value.CalculateSize());
             value.WriteTo(this);
         }
+        
+        /// <summary>
+        /// Writes a group, without a tag, to the stream.
+        /// <summary>
+        /// <param name="value">The value to write</param>
+        public void WriteGroup(IMessage value)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Write a byte string, without a tag, to the stream.

@@ -592,6 +592,14 @@ namespace Google.Protobuf
         }
 
         /// <summary>
+        /// Reads an embedded group field from the stream.
+        /// </summary>
+        public void ReadGroup(IMessage builder)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Reads a bytes field value from the stream.
         /// </summary>   
         public ByteString ReadBytes()

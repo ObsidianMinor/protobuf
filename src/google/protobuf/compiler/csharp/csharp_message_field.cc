@@ -37,6 +37,8 @@
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/stubs/strutil.h>
+#include <google/protobuf/wire_format.h>
+#include <google/protobuf/wire_format_lite.h>
 
 #include <google/protobuf/compiler/csharp/csharp_doc_comment.h>
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
@@ -52,9 +54,20 @@ MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
                                              int fieldOrdinal,
                                              const Options *options)
     : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
-  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO3) {
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO3) {
     variables_["has_property_check"] = name() + "_ != null";
     variables_["has_not_property_check"] = name() + "_ == null";
+  }
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
+    int tag_size = internal::WireFormat::TagSize(descriptor_->number(), descriptor_->type());
+    uint tag = internal::WireFormatLite::MakeTag(descriptor_->number(), internal::WireFormatLite::WIRETYPE_END_GROUP);
+    uint8 tag_array[5];
+    io::CodedOutputStream::WriteTagToArray(tag, tag_array);
+    string tag_bytes = SimpleItoa(tag_array[0]);
+    for (int i = 1; i < tag_size; i++) {
+      tag_bytes += ", " + SimpleItoa(tag_array[i]);
+    }
+    variables_["end_tag_bytes"] = tag_bytes;
   }
 }
 
@@ -112,18 +125,33 @@ void MessageFieldGenerator::GenerateParsingCode(io::Printer* printer) {
     variables_,
     "if ($has_not_property_check$) {\n"
     "  $name$_ = new $type_name$();\n"
-    "}\n"
+    "}\n");
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
+    printer->Print(variables_, "input.ReadGroup($name$_);\n");
+  }
+  else {
     // TODO(jonskeet): Do we really need merging behaviour like this?
-    "input.ReadMessage($name$_);\n"); // No need to support TYPE_GROUP...
+    printer->Print(variables_, "input.ReadMessage($name$_);\n");
+  }
 }
 
 void MessageFieldGenerator::GenerateSerializationCode(io::Printer* printer) {
   printer->Print(
     variables_,
     "if ($has_property_check$) {\n"
-    "  output.WriteRawTag($tag_bytes$);\n"
-    "  output.WriteMessage($property_name$);\n"
-    "}\n");
+    "  output.WriteRawTag($tag_bytes$);\n");
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
+    printer->Print(
+      variables_, 
+      "  output.WriteGroup($property_name$);\n"
+      "  output.WriteRawTag($end_tag_bytes$);\n");
+  }
+  else {
+    printer->Print(
+      variables_,
+      "  output.WriteMessage($property_name$);\n");
+  }
+  printer->Print("}\n");
 }
 
 void MessageFieldGenerator::GenerateSerializedSizeCode(io::Printer* printer) {
@@ -206,9 +234,14 @@ void MessageOneofFieldGenerator::GenerateParsingCode(io::Printer* printer) {
     "$type_name$ subBuilder = new $type_name$();\n"
     "if ($has_property_check$) {\n"
     "  subBuilder.MergeFrom($property_name$);\n"
-    "}\n"
-    "input.ReadMessage(subBuilder);\n" // No support of TYPE_GROUP
-    "$property_name$ = subBuilder;\n");
+    "}\n");
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
+    printer->Print("input.ReadGroup(subBuilder);\n");
+  }
+  else {
+    printer->Print("input.ReadMessage(subBuilder);\n");
+  }
+  printer->Print(variables_, "$property_name$ = subBuilder;\n");
 }
 
 void MessageOneofFieldGenerator::WriteToString(io::Printer* printer) {

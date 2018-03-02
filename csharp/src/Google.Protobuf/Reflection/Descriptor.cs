@@ -7264,6 +7264,8 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (!HasNamePart_) return false;
+          if (!HasIsExtension) return false;
           return true;
         }
 

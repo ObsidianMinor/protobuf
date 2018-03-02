@@ -2258,9 +2258,9 @@ namespace ProtobufTestMessages.Proto2 {
         output.WriteEnum((int) OneofEnum);
       }
       if (HasData) {
-        output.WriteRawTag(203, 12, 0, 0);
+        output.WriteRawTag(203, 12, 127, 0);
         output.WriteGroup(Data);
-        output.WriteRawTag(204, 12, 166, 241);
+        output.WriteRawTag(204, 12, 127, 0);
       }
       if (HasFieldname1) {
         output.WriteRawTag(136, 25);

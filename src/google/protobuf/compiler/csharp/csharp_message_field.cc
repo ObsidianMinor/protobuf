@@ -178,6 +178,15 @@ void MessageFieldGenerator::WriteToString(io::Printer* printer) {
     variables_,
     "PrintField(\"$field_name$\", has$property_name$, $name$_, writer);\n");
 }
+void MessageFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
+  if (descriptor_->is_required()) {
+    printer->Print(
+      variables_,
+      "if ($has_property_check$) {\n"
+      "  if (!$property_name$.IsInitialized()) return false;\n"
+      "}\n");
+  }
+}
 
 void MessageFieldGenerator::GenerateCloningCode(io::Printer* printer) {
   printer->Print(variables_,

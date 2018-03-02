@@ -620,6 +620,11 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   WriteGeneratedCodeAttributes(printer);
   printer->Print("public bool IsInitialized() {\n");
   printer->Indent();
+  for (int i = 0; i < fields_by_number().size(); i++) {
+    scoped_ptr<FieldGeneratorBase> generator(
+      CreateFieldGeneratorInternal(fields_by_number()[i]));
+    generator->GenerateIsInitialized(printer);
+  }
   printer->Print("return true;\n");
   printer->Outdent();
   printer->Print("}\n\n");

@@ -305,7 +305,7 @@ namespace Google.Protobuf
         
         /// <summary>
         /// Writes a group, without a tag, to the stream.
-        /// <summary>
+        /// </summary>
         /// <param name="value">The value to write</param>
         public void WriteGroup(IMessage value)
         {

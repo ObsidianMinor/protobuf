@@ -678,6 +678,8 @@ namespace Google.Protobuf.Collections
                 }
 
                 MessageDescriptor IMessage.Descriptor { get { return null; } }
+
+                bool IMessage.IsInitialized() => throw new NotImplementedException();
             }
         }
 

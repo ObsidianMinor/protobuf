@@ -64,7 +64,7 @@ namespace Google.Protobuf
             {
                 foreach (IExtension extension in Extensions)
                 {
-                    extensionMessage.Extensions.Register(extension);
+                    extensionMessage.ExtensionSet.Register(extension);
                 }
             }
             return message;
@@ -246,7 +246,7 @@ namespace Google.Protobuf
             {
                 foreach (IExtension extension in Extensions)
                 {
-                    extensionMessage.Extensions.Register(extension);
+                    extensionMessage.ExtensionSet.Register(extension);
                 }
             }
             return message;

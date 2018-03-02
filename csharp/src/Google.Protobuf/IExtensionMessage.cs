@@ -8,7 +8,7 @@
         /// <summary>
         /// Gets the extension set for this message
         /// </summary>
-        ExtensionSet Extensions { get; }
+        ExtensionSet ExtensionSet { get; }
     }
 
     /// <summary>
@@ -20,7 +20,6 @@
         /// <summary>
         /// Gets the extension set for this message
         /// </summary>
-        new ExtensionSet<T> Extensions { get; }
+        new ExtensionSet<T> ExtensionSet { get; }
     }
-
 }

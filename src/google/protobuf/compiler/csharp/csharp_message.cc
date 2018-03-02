@@ -169,9 +169,9 @@ void MessageGenerator::Generate(io::Printer* printer) {
 
   if (has_extension_ranges_) {
     WriteGeneratedCodeAttributes(printer);
-    printer->Print(vars, "public pb::ExtensionSet<$class_name$> Extensions { get { return _extensions; } }\n");
+    printer->Print(vars, "public pb::ExtensionSet<$class_name$> ExtensionSet { get { return _extensions; } }\n");
     WriteGeneratedCodeAttributes(printer);
-    printer->Print("pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }\n\n");
+    printer->Print("pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }\n\n");
   }
 
   // Parameterless constructor and partial OnConstruction method.

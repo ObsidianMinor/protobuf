@@ -1624,9 +1624,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<ExtensionRangeOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<ExtensionRangeOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ExtensionRangeOptions() {
@@ -3871,9 +3871,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<FileOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<FileOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileOptions() {
@@ -4862,9 +4862,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<MessageOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<MessageOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MessageOptions() {
@@ -5221,9 +5221,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<FieldOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<FieldOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldOptions() {
@@ -5703,9 +5703,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<OneofOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<OneofOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public OneofOptions() {
@@ -5844,9 +5844,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<EnumOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<EnumOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumOptions() {
@@ -6077,9 +6077,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<EnumValueOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<EnumValueOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueOptions() {
@@ -6265,9 +6265,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<ServiceOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<ServiceOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceOptions() {
@@ -6453,9 +6453,9 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<MethodOptions> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<MethodOptions> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodOptions() {

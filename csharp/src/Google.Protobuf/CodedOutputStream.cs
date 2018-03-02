@@ -302,14 +302,17 @@ namespace Google.Protobuf
             WriteLength(value.CalculateSize());
             value.WriteTo(this);
         }
-        
+
         /// <summary>
-        /// Writes a group, without a tag, to the stream.
+        /// Writes a group with tags to the stream.
         /// </summary>
+        /// <param name="fieldNumber">The field number of the group</param>
         /// <param name="value">The value to write</param>
-        public void WriteGroup(IMessage value)
+        public void WriteGroup(int fieldNumber, IMessage value)
         {
-            throw new NotImplementedException();
+            WriteTag(fieldNumber, WireFormat.WireType.StartGroup);
+            value.WriteTo(this);
+            WriteTag(fieldNumber, WireFormat.WireType.EndGroup);
         }
 
         /// <summary>

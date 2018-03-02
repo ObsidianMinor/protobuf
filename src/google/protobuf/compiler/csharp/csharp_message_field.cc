@@ -58,17 +58,6 @@ MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
     variables_["has_property_check"] = name() + "_ != null";
     variables_["has_not_property_check"] = name() + "_ == null";
   }
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
-    int tag_size = internal::WireFormat::TagSize(descriptor_->number(), descriptor_->type());
-    uint tag = internal::WireFormatLite::MakeTag(descriptor_->number(), internal::WireFormatLite::WIRETYPE_END_GROUP);
-    uint8 tag_array[5];
-    io::CodedOutputStream::WriteTagToArray(tag, tag_array);
-    string tag_bytes = SimpleItoa(tag_array[0]);
-    for (int i = 1; i < tag_size; i++) {
-      tag_bytes += ", " + SimpleItoa(tag_array[i]);
-    }
-    variables_["end_tag_bytes"] = tag_bytes;
-  }
 }
 
 MessageFieldGenerator::~MessageFieldGenerator() {
@@ -136,22 +125,21 @@ void MessageFieldGenerator::GenerateParsingCode(io::Printer* printer) {
 }
 
 void MessageFieldGenerator::GenerateSerializationCode(io::Printer* printer) {
-  printer->Print(
-    variables_,
-    "if ($has_property_check$) {\n"
-    "  output.WriteRawTag($tag_bytes$);\n");
   if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
     printer->Print(
-      variables_, 
-      "  output.WriteGroup($property_name$);\n"
-      "  output.WriteRawTag($end_tag_bytes$);\n");
+      variables_,
+      "if ($has_property_check$) {\n" 
+      "  output.WriteGroup($number$, $property_name$);\n"
+      "}\n");
   }
   else {
     printer->Print(
       variables_,
-      "  output.WriteMessage($property_name$);\n");
+      "if ($has_property_check$) {\n"
+      "  output.WriteRawTag($tag_bytes$);\n"
+      "  output.WriteMessage($property_name$);\n"
+      "}\n");
   }
-  printer->Print("}\n");
 }
 
 void MessageFieldGenerator::GenerateSerializedSizeCode(io::Printer* printer) {

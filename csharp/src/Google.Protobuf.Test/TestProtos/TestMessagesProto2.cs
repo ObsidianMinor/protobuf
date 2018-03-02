@@ -234,9 +234,9 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestAllTypesProto2> Extensions { get { return _extensions; } }
+    public pb::ExtensionSet<TestAllTypesProto2> ExtensionSet { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestAllTypesProto2() {
@@ -2258,9 +2258,7 @@ namespace ProtobufTestMessages.Proto2 {
         output.WriteEnum((int) OneofEnum);
       }
       if (HasData) {
-        output.WriteRawTag(203, 12, 127, 0);
-        output.WriteGroup(Data);
-        output.WriteRawTag(204, 12, 127, 0);
+        output.WriteGroup(201, Data);
       }
       if (HasFieldname1) {
         output.WriteRawTag(136, 25);
@@ -3586,9 +3584,9 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public pb::ExtensionSet<MessageSetCorrect> Extensions { get { return _extensions; } }
+        public pb::ExtensionSet<MessageSetCorrect> ExtensionSet { get { return _extensions; } }
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        pb::ExtensionSet pb::IExtensionMessage.Extensions { get { return _extensions; } }
+        pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public MessageSetCorrect() {

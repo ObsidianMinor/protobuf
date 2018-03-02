@@ -960,7 +960,7 @@ namespace Google.Protobuf
 
             return oldLimit;
         }
-
+        
         private void RecomputeBufferSizeAfterLimit()
         {
             bufferSize += bufferSizeAfterLimit;

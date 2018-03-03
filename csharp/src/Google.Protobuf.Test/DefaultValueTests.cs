@@ -57,8 +57,8 @@ namespace Google.Protobuf
             Assert.AreEqual(1.5f, extreme.SmallFloat);
             Assert.AreEqual(-1f, extreme.NegativeOneFloat);
             Assert.AreEqual(-1.5f, extreme.NegativeFloat);
-            Assert.AreEqual(2E8, extreme.LargeFloat);
-            Assert.AreEqual(-8e-28, extreme.SmallNegativeFloat);
+            Assert.AreEqual(2E8f, extreme.LargeFloat);
+            Assert.AreEqual(-8e-28f, extreme.SmallNegativeFloat);
             Assert.AreEqual(double.PositiveInfinity, extreme.InfDouble);
             Assert.AreEqual(double.NegativeInfinity, extreme.NegInfDouble);
             Assert.AreEqual(double.NaN, extreme.NanDouble);

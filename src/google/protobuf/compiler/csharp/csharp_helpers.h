@@ -112,6 +112,9 @@ std::string StringToBase64(const std::string& input);
 
 std::string FileDescriptorToBase64(const FileDescriptor* descriptor);
 
+// Escapes a string with C# variable length code points
+std::string StringToEscapedCSharpString(const std::string& input);
+
 FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
                                          int fieldOrdinal,
                                          const Options* options);

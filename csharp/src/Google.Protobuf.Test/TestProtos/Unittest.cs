@@ -760,7 +760,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool> DefaultBoolExtension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(584u, true);
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultStringExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(594u, "hello");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(594u, "\u0068\u0065\u006c\u006c\u006f");
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> DefaultBytesExtension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(602u, pb::ByteString.FromBase64("d29ybGQ="));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum> DefaultNestedEnumExtension =
@@ -770,9 +770,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum> DefaultImportEnumExtension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(664u, global::Google.Protobuf.TestProtos.ImportEnum.ImportBar);
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultStringPieceExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(674u, "abc");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(674u, "\u0061\u0062\u0063");
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultCordExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(682u, "123");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(682u, "\u0031\u0032\u0033");
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> OneofUint32Extension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(888u, 0);
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> OneofNestedMessageExtension =
@@ -2185,7 +2185,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "default_string" field.</summary>
     public const int DefaultStringFieldNumber = 74;
     /// <summary>Default value for the "default_string" field</summary>
-    public const string DefaultStringDefaultValue = "hello";
+    public const string DefaultStringDefaultValue = "\u0068\u0065\u006c\u006c\u006f";
 
     private string defaultString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2305,7 +2305,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "default_string_piece" field.</summary>
     public const int DefaultStringPieceFieldNumber = 84;
     /// <summary>Default value for the "default_string_piece" field</summary>
-    public const string DefaultStringPieceDefaultValue = "abc";
+    public const string DefaultStringPieceDefaultValue = "\u0061\u0062\u0063";
 
     private string defaultStringPiece_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2329,7 +2329,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "default_cord" field.</summary>
     public const int DefaultCordFieldNumber = 85;
     /// <summary>Default value for the "default_cord" field</summary>
-    public const string DefaultCordDefaultValue = "123";
+    public const string DefaultCordDefaultValue = "\u0031\u0032\u0033";
 
     private string defaultCord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5392,7 +5392,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Extensions {
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> Test =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(8018u, "test");
+        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(8018u, "\u0074\u0065\u0073\u0074");
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> NestedStringExtension =
         new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(8026u, "");
     }
@@ -11762,7 +11762,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "utf8_string" field.</summary>
     public const int Utf8StringFieldNumber = 6;
     /// <summary>Default value for the "utf8_string" field</summary>
-    public const string Utf8StringDefaultValue = "ሴ";
+    public const string Utf8StringDefaultValue = "\u1234";
 
     private string utf8String_;
     /// <summary>
@@ -12112,7 +12112,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "cpp_trigraph" field.</summary>
     public const int CppTrigraphFieldNumber = 20;
     /// <summary>Default value for the "cpp_trigraph" field</summary>
-    public const string CppTrigraphDefaultValue = "? ? ?? ?? ??? ??/ ??-";
+    public const string CppTrigraphDefaultValue = "\u003f\u0020\u003f\u0020\u003f\u003f\u0020\u003f\u003f\u0020\u003f\u003f\u003f\u0020\u003f\u003f\u002f\u0020\u003f\u003f\u002d";
 
     private string cppTrigraph_;
     /// <summary>
@@ -12143,7 +12143,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "string_with_zero" field.</summary>
     public const int StringWithZeroFieldNumber = 23;
     /// <summary>Default value for the "string_with_zero" field</summary>
-    public const string StringWithZeroDefaultValue = "hel lo";
+    public const string StringWithZeroDefaultValue = "\u0068\u0065\u006c\u0000\u006c\u006f";
 
     private string stringWithZero_;
     /// <summary>
@@ -12194,7 +12194,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "string_piece_with_zero" field.</summary>
     public const int StringPieceWithZeroFieldNumber = 25;
     /// <summary>Default value for the "string_piece_with_zero" field</summary>
-    public const string StringPieceWithZeroDefaultValue = "ab c";
+    public const string StringPieceWithZeroDefaultValue = "\u0061\u0062\u0000\u0063";
 
     private string stringPieceWithZero_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12218,7 +12218,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "cord_with_zero" field.</summary>
     public const int CordWithZeroFieldNumber = 26;
     /// <summary>Default value for the "cord_with_zero" field</summary>
-    public const string CordWithZeroDefaultValue = "12 3";
+    public const string CordWithZeroDefaultValue = "\u0031\u0032\u0000\u0033";
 
     private string cordWithZero_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12242,7 +12242,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "replacement_string" field.</summary>
     public const int ReplacementStringFieldNumber = 27;
     /// <summary>Default value for the "replacement_string" field</summary>
-    public const string ReplacementStringDefaultValue = "${unknown}";
+    public const string ReplacementStringDefaultValue = "\u0024\u007b\u0075\u006e\u006b\u006e\u006f\u0077\u006e\u007d";
 
     private string replacementString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15340,7 +15340,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarStringFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BarString {
-      get { return barCase_ == BarOneofCase.BarString ? (string) bar_ : "STRING"; }
+      get { return barCase_ == BarOneofCase.BarString ? (string) bar_ : "\u0053\u0054\u0052\u0049\u004e\u0047"; }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarString;
@@ -15351,7 +15351,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarCordFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BarCord {
-      get { return barCase_ == BarOneofCase.BarCord ? (string) bar_ : "CORD"; }
+      get { return barCase_ == BarOneofCase.BarCord ? (string) bar_ : "\u0043\u004f\u0052\u0044"; }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarCord;
@@ -15362,7 +15362,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarStringPieceFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BarStringPiece {
-      get { return barCase_ == BarOneofCase.BarStringPiece ? (string) bar_ : "SPIECE"; }
+      get { return barCase_ == BarOneofCase.BarStringPiece ? (string) bar_ : "\u0053\u0050\u0049\u0045\u0043\u0045"; }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarStringPiece;
@@ -15418,7 +15418,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "baz_string" field.</summary>
     public const int BazStringFieldNumber = 19;
     /// <summary>Default value for the "baz_string" field</summary>
-    public const string BazStringDefaultValue = "BAZ";
+    public const string BazStringDefaultValue = "\u0042\u0041\u005a";
 
     private string bazString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19650,7 +19650,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "a" field.</summary>
     public const int AFieldNumber = 1;
     /// <summary>Default value for the "a" field</summary>
-    public const string ADefaultValue = "*/ <- Neither should this.";
+    public const string ADefaultValue = "\u002a\u002f\u0020\u003c\u002d\u0020\u004e\u0065\u0069\u0074\u0068\u0065\u0072\u0020\u0073\u0068\u006f\u0075\u006c\u0064\u0020\u0074\u0068\u0069\u0073\u002e";
 
     private string a_;
     /// <summary>

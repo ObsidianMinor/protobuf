@@ -33,6 +33,7 @@
 using System;
 using System.IO;
 using Google.Protobuf.TestProtos;
+using Proto2 = Google.Protobuf.TestProtos.Proto2;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -52,6 +53,14 @@ namespace Google.Protobuf
             // This demonstrates what we're really interested in...
             var message1 = new TestAllTypes { SingleForeignMessage = new ForeignMessage() };
             var message2 = new TestAllTypes(); // SingleForeignMessage is null
+            EqualityTester.AssertInequality(message1, message2);
+        }
+
+        [Test]
+        public void EmptyMessageFieldDistinctFromMissingMessageField_Proto2()
+        {
+            var message1 = new Proto2.TestAllTypes { OptionalForeignMessage = new Proto2.ForeignMessage() };
+            var message2 = new Proto2.TestAllTypes();
             EqualityTester.AssertInequality(message1, message2);
         }
 
@@ -111,6 +120,126 @@ namespace Google.Protobuf
             Assert.AreEqual("", message.OneofString);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
             Assert.IsNull(message.OneofNestedMessage);
+        }
+
+        [Test]
+        public void DefaultValues_Proto2()
+        {
+            // Singular
+            Proto2.TestAllTypes message = new Proto2.TestAllTypes();
+            Assert.AreEqual(0, message.OptionalInt32);
+            Assert.AreEqual(0, message.OptionalInt64);
+            Assert.AreEqual(0, message.OptionalUint32);
+            Assert.AreEqual(0, message.OptionalUint64);
+            Assert.AreEqual(0, message.OptionalSint32);
+            Assert.AreEqual(0, message.OptionalSint64);
+            Assert.AreEqual(0, message.OptionalFixed32);
+            Assert.AreEqual(0, message.OptionalFixed64);
+            Assert.AreEqual(0, message.OptionalSfixed32);
+            Assert.AreEqual(0, message.OptionalSfixed64);
+            Assert.AreEqual(0f, message.OptionalFloat);
+            Assert.AreEqual(0d, message.OptionalDouble);
+            Assert.IsFalse(message.OptionalBool);
+            Assert.AreEqual("", message.OptionalString);
+            Assert.AreEqual(ByteString.Empty, message.OptionalBytes);
+            Assert.IsNull(message.OptionalGroup);
+            Assert.IsNull(message.OptionalNestedMessage);
+            Assert.IsNull(message.OptionalForeignMessage);
+            Assert.IsNull(message.OptionalImportMessage);
+            Assert.AreEqual(Proto2.TestAllTypes.Types.NestedEnum.Foo, message.OptionalNestedEnum);
+            Assert.AreEqual(Proto2.ForeignEnum.ForeignFoo, message.OptionalForeignEnum);
+            Assert.AreEqual(ImportEnum.Unspecified, message.OptionalImportEnum);
+            Assert.AreEqual("", message.OptionalStringPiece);
+            Assert.AreEqual("", message.OptionalCord);
+            Assert.IsNull(message.OptionalPublicImportMessage);
+            Assert.IsNull(message.OptionalLazyMessage);
+
+            // Repeated fields
+            Assert.AreEqual(0, message.RepeatedBool.Count);
+            Assert.AreEqual(0, message.RepeatedBytes.Count);
+            Assert.AreEqual(0, message.RepeatedDouble.Count);
+            Assert.AreEqual(0, message.RepeatedFixed32.Count);
+            Assert.AreEqual(0, message.RepeatedFixed64.Count);
+            Assert.AreEqual(0, message.RepeatedFloat.Count);
+            Assert.AreEqual(0, message.RepeatedForeignEnum.Count);
+            Assert.AreEqual(0, message.RepeatedForeignMessage.Count);
+            Assert.AreEqual(0, message.RepeatedImportEnum.Count);
+            Assert.AreEqual(0, message.RepeatedImportMessage.Count);
+            Assert.AreEqual(0, message.RepeatedNestedEnum.Count);
+            Assert.AreEqual(0, message.RepeatedNestedMessage.Count);
+            Assert.AreEqual(0, message.RepeatedSfixed32.Count);
+            Assert.AreEqual(0, message.RepeatedSfixed64.Count);
+            Assert.AreEqual(0, message.RepeatedSint32.Count);
+            Assert.AreEqual(0, message.RepeatedSint64.Count);
+            Assert.AreEqual(0, message.RepeatedString.Count);
+            Assert.AreEqual(0, message.RepeatedUint32.Count);
+            Assert.AreEqual(0, message.RepeatedUint64.Count);
+            Assert.AreEqual(0, message.RepeatedGroup.Count);
+            Assert.AreEqual(0, message.RepeatedLazyMessage.Count);
+            Assert.AreEqual(0, message.RepeatedStringPiece.Count);
+            Assert.AreEqual(0, message.RepeatedCord.Count);
+
+            // Singular with defaults
+            Assert.AreEqual(41, message.DefaultInt32);
+            Assert.AreEqual(42, message.DefaultInt64);
+            Assert.AreEqual(43, message.DefaultUint32);
+            Assert.AreEqual(44, message.DefaultUint64);
+            Assert.AreEqual(-45, message.DefaultSint32);
+            Assert.AreEqual(46, message.DefaultSint64);
+            Assert.AreEqual(47, message.DefaultFixed32);
+            Assert.AreEqual(48, message.DefaultFixed64);
+            Assert.AreEqual(49, message.DefaultSfixed32);
+            Assert.AreEqual(-50, message.DefaultSfixed64);
+            Assert.AreEqual(51.5, message.DefaultFloat);
+            Assert.AreEqual(52e3, message.DefaultDouble);
+            Assert.IsTrue(message.DefaultBool);
+            Assert.AreEqual("hello", message.DefaultString);
+            Assert.AreEqual(ByteString.CopyFromUtf8("world"), message.DefaultBytes);
+            Assert.AreEqual(Proto2.TestAllTypes.Types.NestedEnum.Bar, message.DefaultNestedEnum);
+            Assert.AreEqual(Proto2.ForeignEnum.ForeignBar, message.DefaultForeignEnum);
+            Assert.AreEqual(ImportEnum.ImportBar, message.DefaultImportEnum);
+            Assert.AreEqual("abc", message.DefaultStringPiece);
+            Assert.AreEqual("123", message.DefaultCord);
+
+            // Oneof fields
+            Assert.AreEqual(Proto2.TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
+            Assert.AreEqual(0, message.OneofUint32);
+            Assert.AreEqual("", message.OneofString);
+            Assert.AreEqual(ByteString.Empty, message.OneofBytes);
+            Assert.IsNull(message.OneofNestedMessage);
+        }
+
+        [Test]
+        public void ExtremeDefaultValues_Proto2()
+        {
+            Proto2.TestExtremeDefaultValues extreme = new Proto2.TestExtremeDefaultValues();
+            Assert.AreEqual(ByteString.CopyFrom(0, 1, 7, 8, 12, 10, 13, 9, 11, 92, 39, 34, 254), extreme.EscapedBytes);
+            Assert.AreEqual(0xFFFFFFFF, extreme.LargeUint32);
+            Assert.AreEqual(0xFFFFFFFFFFFFFFFF, extreme.LargeUint64);
+            Assert.AreEqual(-0x7FFFFFFF, extreme.SmallInt32);
+            Assert.AreEqual(-0x7FFFFFFFFFFFFFFF, extreme.SmallInt64);
+            Assert.AreEqual(-0x80000000, extreme.ReallySmallInt32);
+            Assert.AreEqual(-0x8000000000000000, extreme.ReallySmallInt64);
+            Assert.AreEqual("\u1234", extreme.Utf8String);
+            Assert.AreEqual(0f, extreme.ZeroFloat);
+            Assert.AreEqual(1f, extreme.OneFloat);
+            Assert.AreEqual(1.5f, extreme.SmallFloat);
+            Assert.AreEqual(-1f, extreme.NegativeOneFloat);
+            Assert.AreEqual(-1.5f, extreme.NegativeFloat);
+            Assert.AreEqual(2E8f, extreme.LargeFloat);
+            Assert.AreEqual(-8e-28f, extreme.SmallNegativeFloat);
+            Assert.AreEqual(double.PositiveInfinity, extreme.InfDouble);
+            Assert.AreEqual(double.NegativeInfinity, extreme.NegInfDouble);
+            Assert.AreEqual(double.NaN, extreme.NanDouble);
+            Assert.AreEqual(float.PositiveInfinity, extreme.InfFloat);
+            Assert.AreEqual(float.NegativeInfinity, extreme.NegInfFloat);
+            Assert.AreEqual(float.NaN, extreme.NanFloat);
+            Assert.AreEqual("? ? ?? ?? ??? ??/ ??-", extreme.CppTrigraph);
+            Assert.AreEqual("hel\0lo", extreme.StringWithZero);
+            Assert.AreEqual(ByteString.CopyFromUtf8("wor\0ld"), extreme.BytesWithZero);
+            Assert.AreEqual("ab\0c", extreme.StringPieceWithZero);
+            Assert.AreEqual("12\03", extreme.CordWithZero);
+            Assert.AreEqual("${unknown}", extreme.ReplacementString);
         }
 
         [Test]

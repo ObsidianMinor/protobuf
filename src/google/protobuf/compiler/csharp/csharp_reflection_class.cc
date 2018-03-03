@@ -147,19 +147,20 @@ void ReflectionClassGenerator::WriteDescriptor(io::Printer* printer) {
     "reflection_class_name", reflectionClassname_);
   printer->Indent();
   printer->Print(
-    "byte[] descriptorData = global::System.Convert.FromBase64String(\n");
+    "byte[] descriptorData = \n");
   printer->Indent();
   printer->Indent();
-  printer->Print("string.Concat(\n");
+  printer->Print("new byte[] { \n");
   printer->Indent();
-
+  printer->Indent();
   // TODO(jonskeet): Consider a C#-escaping format here instead of just Base64.
-  std::string base64 = FileDescriptorToBase64(file_);
-  while (base64.size() > 60) {
-    printer->Print("\"$base64$\",\n", "base64", base64.substr(0, 60));
-    base64 = base64.substr(60);
+  std::string escapedString = FileDescriptorToEscapedCSharpByteString(file_);
+  while (escapedString.size() > 60) {
+    printer->Print("$escapedString$\n", "escapedString", escapedString.substr(0, 60));
+    escapedString = escapedString.substr(60);
   }
-  printer->Print("\"$base64$\"));\n", "base64", base64);
+  printer->Print("$escapedString$};\n", "escapedString", escapedString);
+  printer->Outdent();
   printer->Outdent();
   printer->Outdent();
   printer->Outdent();

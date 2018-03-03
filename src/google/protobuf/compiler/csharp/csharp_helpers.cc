@@ -452,6 +452,27 @@ std::string FileDescriptorToBase64(const FileDescriptor* descriptor) {
   return StringToBase64(fdp_bytes);
 }
 
+static const char hex_chars[] = "0123456789abcdef";
+
+std::string StringToEscapedCSharpBytesString(const std::string& input) {
+  std::string result;
+  for (int x = 0; x < input.size(); x++) {
+    result += "0x";
+    result += hex_chars[(input[x] & 0xF0) >> 4];
+    result += hex_chars[(input[x] & 0x0F)];
+    result += ", ";
+  }
+  return result;
+}
+
+std::string FileDescriptorToEscapedCSharpByteString(const FileDescriptor* descriptor) {
+  std::string fdp_bytes;
+  FileDescriptorProto fdp;
+  descriptor->CopyTo(&fdp);
+  fdp.SerializeToString(&fdp_bytes);
+  return StringToEscapedCSharpBytesString(fdp_bytes);
+}
+
 FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
                                          int presenceIndex,
                                          const Options* options) {

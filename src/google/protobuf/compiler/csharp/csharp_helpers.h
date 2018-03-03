@@ -106,6 +106,10 @@ std::string StringToBase64(const std::string& input);
 
 std::string FileDescriptorToBase64(const FileDescriptor* descriptor);
 
+std::string StringToEscapedCSharpBytesString(const std::string& input);
+
+std::string FileDescriptorToEscapedCSharpByteString(const FileDescriptor* descriptor);
+
 FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
                                          int presenceIndex,
                                          const Options* options);

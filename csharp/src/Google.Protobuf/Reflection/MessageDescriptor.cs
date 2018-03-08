@@ -93,7 +93,7 @@ namespace Google.Protobuf.Reflection
             fieldsInDeclarationOrder = DescriptorUtil.ConvertAndMakeReadOnly(
                 proto.Field,
                 (field, index) =>
-                new FieldDescriptor(field, file, this, index, generatedCodeInfo?.PropertyNames[index]));
+                new FieldDescriptor(field, file, this, index, generatedCodeInfo?.PropertyNames[index], null));
             fieldsInNumberOrder = new ReadOnlyCollection<FieldDescriptor>(fieldsInDeclarationOrder.OrderBy(field => field.FieldNumber).ToArray());
             // TODO: Use field => field.Proto.JsonName when we're confident it's appropriate. (And then use it in the formatter, too.)
             jsonFieldMap = CreateJsonFieldMap(fieldsInNumberOrder);
@@ -227,7 +227,19 @@ namespace Google.Protobuf.Reflection
         /// <param name="value">The value of this extension</param>
         /// <typeparam name="T">The type of the value to get</typeparam>
         /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetOption<T>(Extension<MessageOptions, T> extension, out T value) => throw new NotImplementedException();
+        public bool TryGetOption<T>(Extension<MessageOptions, T> extension, out T value)
+        {
+            if (Proto.Options.HasExtension(extension))
+            {
+                value = Proto.Options.GetExtension(extension);
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
 
         /// <summary>
         /// Looks up and cross-links all fields and nested types.

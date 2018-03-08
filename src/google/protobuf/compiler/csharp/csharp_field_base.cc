@@ -72,6 +72,7 @@ void FieldGeneratorBase::SetCommonFieldVariables(
 
   (*variables)["property_name"] = property_name();
   (*variables)["type_name"] = type_name();
+  (*variables)["extended_type"] = GetClassName(descriptor_->containing_type());
   (*variables)["nullable_type_name"] = nullable_type_name();
   (*variables)["name"] = name();
   (*variables)["descriptor_name"] = descriptor_->name();
@@ -107,11 +108,9 @@ void FieldGeneratorBase::SetCommonOneofFieldVariables(
   (*variables)["oneof_property_name"] = oneof_property_name();
 }
 
-FieldGeneratorBase::FieldGeneratorBase(const FieldDescriptor* descriptor,
-                                       int fieldOrdinal, const Options* options)
+FieldGeneratorBase::FieldGeneratorBase(const FieldDescriptor* descriptor, const Options* options)
     : SourceGeneratorBase(descriptor->file(), options),
-      descriptor_(descriptor),
-      fieldOrdinal_(fieldOrdinal) {
+      descriptor_(descriptor) {
   SetCommonFieldVariables(&variables_);
 }
 
@@ -131,6 +130,11 @@ void FieldGeneratorBase::GenerateCodecCode(io::Printer* printer) {
 void FieldGeneratorBase::GenerateIsInitialized(io::Printer* printer) {
     // No-op: only message fields and primitives need this
     // default is to not generate any code
+}
+
+void FieldGeneratorBase::GenerateExtensionCode(io::Printer* printer) {
+  // No-op: only message fields, enum fields, primitives, 
+  // and repeated fields need this default is to not generate any code
 }
 
 void FieldGeneratorBase::AddDeprecatedFlag(io::Printer* printer) {

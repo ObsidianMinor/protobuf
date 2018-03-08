@@ -49,8 +49,8 @@ namespace compiler {
 namespace csharp {
 
 RepeatedMessageFieldGenerator::RepeatedMessageFieldGenerator(
-    const FieldDescriptor* descriptor, int fieldOrdinal, const Options *options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+    const FieldDescriptor* descriptor, const Options *options)
+    : FieldGeneratorBase(descriptor, options) {
 }
 
 RepeatedMessageFieldGenerator::~RepeatedMessageFieldGenerator() {
@@ -66,12 +66,12 @@ void RepeatedMessageFieldGenerator::GenerateMembers(io::Printer* printer) {
   // "create single field generator for this repeated field"
   // function, but it doesn't seem worth it for just this.
   if (IsWrapperType(descriptor_)) {
-    std::unique_ptr<FieldGeneratorBase> single_generator(
-      new WrapperFieldGenerator(descriptor_, fieldOrdinal_, this->options()));
+    scoped_ptr<FieldGeneratorBase> single_generator(
+      new WrapperFieldGenerator(descriptor_, this->options()));
     single_generator->GenerateCodecCode(printer);
   } else {
-    std::unique_ptr<FieldGeneratorBase> single_generator(
-      new MessageFieldGenerator(descriptor_, fieldOrdinal_, this->options()));
+    scoped_ptr<FieldGeneratorBase> single_generator(
+      new MessageFieldGenerator(descriptor_, this->options()));
     single_generator->GenerateCodecCode(printer);
   }
   printer->Print(";\n");
@@ -136,6 +136,23 @@ void RepeatedMessageFieldGenerator::GenerateCloningCode(io::Printer* printer) {
 }
 
 void RepeatedMessageFieldGenerator::GenerateFreezingCode(io::Printer* printer) {
+}
+
+void RepeatedMessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::RepeatedExtension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::RepeatedExtension<$extended_type$, $type_name$>(");
+    if (IsWrapperType(descriptor_)) {
+      scoped_ptr<FieldGeneratorBase> single_generator(
+        new WrapperFieldGenerator(descriptor_, this->options()));
+      single_generator->GenerateCodecCode(printer);
+    } else {
+      scoped_ptr<FieldGeneratorBase> single_generator(
+        new MessageFieldGenerator(descriptor_, this->options()));
+      single_generator->GenerateCodecCode(printer);
+    }
+    printer->Print(");\n");
 }
 
 }  // namespace csharp

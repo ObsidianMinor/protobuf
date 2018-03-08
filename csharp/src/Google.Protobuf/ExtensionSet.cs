@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Google.Protobuf.Collections;
 
 namespace Google.Protobuf
 {
@@ -7,17 +9,47 @@ namespace Google.Protobuf
     /// </summary>
     public abstract class ExtensionSet
     {
-        internal void Register(IExtension extension) => throw new NotImplementedException();
+        private readonly Type targetType;
+        private readonly Dictionary<Extension, IExtensionValue> extensionValues;
+
+        internal ExtensionSet(Type target)
+        {
+            targetType = target;
+        }
+
+        internal IExtensionValue GetValueFor(Extension extension)
+        {
+            if (extension.TargetType != targetType)
+                throw new ArgumentException("Cannot register extension for wrong target type");
+
+            if (extensionValues.TryGetValue(extension, out var value))
+                return value;
+            else
+                throw new InvalidOperationException("The set does not have a registered extension for this extension");
+        }
 
         /// <summary>
-        /// Attempts to merge a field from the specified input stream. 
+        /// Registers the specified extension in the set
+        /// </summary>
+        /// <param name="extension">The extension to register</param>
+        public void Register(Extension extension)
+        {
+            if (extension.TargetType != targetType)
+                throw new ArgumentException("Cannot register extension for wrong target type");
+
+            if (extensionValues.ContainsKey(extension))
+                throw new InvalidOperationException("The specified extension is already registered in this set");
+
+            extensionValues.Add(extension, extension.GetValue());
+        }
+
+        /// <summary>
+        /// Attempts to merge a field from the specified input stream.
         /// If the set does not contain an extension for the field number in the stream this returns false.
         /// </summary>
         /// <param name="stream">The field to merge from</param>
         /// <returns>True if the field was merged, false otherwise</returns>
         public bool TryMergeFieldFrom(CodedInputStream stream) => throw new NotImplementedException();
-
-        internal void MergeFieldFrom(CodedInputStream stream) => throw new NotImplementedException();
 
         /// <summary>
         /// Writes this set into the specified <see cref="CodedOutputStream"/>
@@ -44,11 +76,23 @@ namespace Google.Protobuf
     /// <typeparam name="TTarget"></typeparam>
     public sealed class ExtensionSet<TTarget> : ExtensionSet where TTarget : IExtensionMessage<TTarget>
     {
+        public ExtensionSet() : base(typeof(TTarget)) { }
+
         /// <summary>
-        /// Registers the specified Extension
+        /// Registers the specified extension
         /// </summary>
         /// <param name="extension">The extension to register</param>
-        public void Register<TValue>(Extension<TTarget, TValue> extension) => throw new NotImplementedException();
+        public void Register<TValue>(Extension<TTarget, TValue> extension) => Register((Extension)extension);
+
+        public TValue Get<TValue>(Extension<TTarget, TValue> extension) => throw new NotImplementedException();
+
+        public RepeatedField<TValue> Get<TValue>(RepeatedExtension<TTarget, TValue> extension) => throw new NotImplementedException();
+
+        public void Set<TValue>(Extension<TTarget, TValue> extension, TValue value) => throw new NotImplementedException();
+
+        public bool Has(Extension extension) => throw new NotImplementedException();
+
+        public void Clear(Extension extension) => throw new NotImplementedException();
 
         /// <summary>
         /// Merges the specified <see cref="ExtensionSet{TTarget}"/> into this set

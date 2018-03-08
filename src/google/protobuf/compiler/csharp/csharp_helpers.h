@@ -91,6 +91,8 @@ std::string GetNullableTypeName(const FieldDescriptor* descriptor);
 
 std::string GetDefaultValue(const FieldDescriptor* descriptor);
 
+std::string GetFullExtensionName(const FieldDescriptor* descriptor);
+
 int GetFixedSize(FieldDescriptor::Type type);
 
 std::string UnderscoresToCamelCase(const std::string& input,
@@ -115,9 +117,7 @@ std::string FileDescriptorToBase64(const FileDescriptor* descriptor);
 // Escapes a string with C# variable length code points
 std::string StringToEscapedCSharpString(const std::string& input);
 
-FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
-                                         int fieldOrdinal,
-                                         const Options* options);
+FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor, const Options* options);
 
 // Determines whether the given message is a map entry message,
 // i.e. one implicitly created by protoc due to a map<key, value> field.

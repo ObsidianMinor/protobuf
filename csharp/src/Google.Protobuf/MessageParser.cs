@@ -45,9 +45,9 @@ namespace Google.Protobuf
         // TODO: When we use a C# 7.1 compiler, make this private protected.
         internal bool DiscardUnknownFields { get; }
 
-        internal IExtension[] Extensions { get; }
+        internal ExtensionRegistry Extensions { get; }
 
-        internal MessageParser(Func<IMessage> factory, bool discardUnknownFields, IExtension[] extensions)
+        internal MessageParser(Func<IMessage> factory, bool discardUnknownFields, ExtensionRegistry extensions)
         {
             this.factory = factory;
             DiscardUnknownFields = discardUnknownFields;
@@ -62,10 +62,7 @@ namespace Google.Protobuf
             IMessage message = factory();
             if (message is IExtensionMessage extensionMessage && Extensions != null)
             {
-                foreach (IExtension extension in Extensions)
-                {
-                    extensionMessage.ExtensionSet.Register(extension);
-                }
+                Extensions.RegisterExtensionsFor(extensionMessage);
             }
             return message;
         }
@@ -190,7 +187,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="extensions">The extensions to register</param>
         /// <returns>A newly configured message parser.</returns>
-        public MessageParser WithExtensions(params IExtension[] extensions) =>
+        public MessageParser WithExtensions(ExtensionRegistry extensions) =>
             new MessageParser(factory, DiscardUnknownFields, extensions);
     }
 
@@ -226,11 +223,11 @@ namespace Google.Protobuf
         /// to require a parameterless constructor: delegates are significantly faster to execute.
         /// </remarks>
         /// <param name="factory">Function to invoke when a new, empty message is required.</param>
-        public MessageParser(Func<T> factory) : this(factory, false, new IExtension[0])
+        public MessageParser(Func<T> factory) : this(factory, false, new ExtensionRegistry())
         {
         }
 
-        internal MessageParser(Func<T> factory, bool discardUnknownFields, IExtension[] extensions) : base(() => factory(), discardUnknownFields, extensions)
+        internal MessageParser(Func<T> factory, bool discardUnknownFields, ExtensionRegistry extensions) : base(() => factory(), discardUnknownFields, extensions)
         {
             this.factory = factory;
         }
@@ -244,10 +241,7 @@ namespace Google.Protobuf
             T message = factory();
             if (message is IExtensionMessage extensionMessage && Extensions != null)
             {
-                foreach (IExtension extension in Extensions)
-                {
-                    extensionMessage.ExtensionSet.Register(extension);
-                }
+                Extensions.RegisterExtensionsFor(extensionMessage);
             }
             return message;
         }
@@ -357,7 +351,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="extensions">The extensions to register</param>
         /// <returns>A newly configured message parser.</returns>
-        public new MessageParser<T> WithExtensions(params IExtension[] extensions) =>
+        public new MessageParser<T> WithExtensions(ExtensionRegistry extensions) =>
             new MessageParser<T>(factory, DiscardUnknownFields, extensions);
     }
 }

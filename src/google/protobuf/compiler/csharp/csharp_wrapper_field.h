@@ -46,7 +46,6 @@ struct Options;
 class WrapperFieldGenerator : public FieldGeneratorBase {
  public:
   WrapperFieldGenerator(const FieldDescriptor* descriptor,
-                        int fieldOrdinal,
                         const Options *options);
   ~WrapperFieldGenerator();
 
@@ -57,6 +56,7 @@ class WrapperFieldGenerator : public FieldGeneratorBase {
   virtual void GenerateParsingCode(io::Printer* printer);
   virtual void GenerateSerializationCode(io::Printer* printer);
   virtual void GenerateSerializedSizeCode(io::Printer* printer);
+  virtual void GenerateExtensionCode(io::Printer* printer);
 
   virtual void WriteHash(io::Printer* printer);
   virtual void WriteEquals(io::Printer* printer);
@@ -70,7 +70,6 @@ class WrapperFieldGenerator : public FieldGeneratorBase {
 class WrapperOneofFieldGenerator : public WrapperFieldGenerator {
  public:
   WrapperOneofFieldGenerator(const FieldDescriptor* descriptor,
-                             int fieldOrdinal,
                              const Options *options);
   ~WrapperOneofFieldGenerator();
 

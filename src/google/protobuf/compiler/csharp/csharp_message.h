@@ -63,8 +63,8 @@ class MessageGenerator : public SourceGeneratorBase {
 
   void GenerateMessageSerializationMethods(io::Printer* printer);
   void GenerateMergingMethods(io::Printer* printer);
+  void GenerateExtensionMessageMethods(io::Printer* printer);
 
-  int GetFieldOrdinal(const FieldDescriptor* descriptor);
   FieldGeneratorBase* CreateFieldGeneratorInternal(
       const FieldDescriptor* descriptor);
 

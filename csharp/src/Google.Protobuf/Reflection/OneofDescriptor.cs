@@ -97,7 +97,19 @@ namespace Google.Protobuf.Reflection
         /// <param name="value">The value of this extension</param>
         /// <typeparam name="T">The type of the value to get</typeparam>
         /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetOption<T>(Extension<OneofOptions, T> extension, out T value) => throw new System.NotImplementedException();
+        public bool TryGetOption<T>(Extension<OneofOptions, T> extension, out T value)
+        {
+            if (proto.Options.HasExtension(extension))
+            {
+                value = proto.Options.GetExtension(extension);
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
 
         internal void CrossLink()
         {

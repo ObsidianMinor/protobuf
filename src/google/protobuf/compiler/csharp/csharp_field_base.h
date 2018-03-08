@@ -45,13 +45,13 @@ namespace csharp {
 class FieldGeneratorBase : public SourceGeneratorBase {
  public:
   FieldGeneratorBase(const FieldDescriptor* descriptor,
-                     int fieldOrdinal,
                      const Options* options);
   ~FieldGeneratorBase();
 
   virtual void GenerateCloningCode(io::Printer* printer) = 0;
   virtual void GenerateFreezingCode(io::Printer* printer);
   virtual void GenerateCodecCode(io::Printer* printer);
+  virtual void GenerateExtensionCode(io::Printer* printer);
   virtual void GenerateMembers(io::Printer* printer) = 0;
   virtual void GenerateMergingCode(io::Printer* printer) = 0;
   virtual void GenerateParsingCode(io::Printer* printer) = 0;
@@ -66,7 +66,6 @@ class FieldGeneratorBase : public SourceGeneratorBase {
 
  protected:
   const FieldDescriptor* descriptor_;
-  const int fieldOrdinal_;
   std::map<string, string> variables_;
 
   void AddDeprecatedFlag(io::Printer* printer);

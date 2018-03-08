@@ -48,8 +48,8 @@ namespace compiler {
 namespace csharp {
 
 RepeatedPrimitiveFieldGenerator::RepeatedPrimitiveFieldGenerator(
-    const FieldDescriptor* descriptor, int fieldOrdinal, const Options *options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+    const FieldDescriptor* descriptor, const Options *options)
+    : FieldGeneratorBase(descriptor, options) {
 }
 
 RepeatedPrimitiveFieldGenerator::~RepeatedPrimitiveFieldGenerator() {
@@ -117,6 +117,13 @@ void RepeatedPrimitiveFieldGenerator::GenerateCloningCode(io::Printer* printer) 
 }
 
 void RepeatedPrimitiveFieldGenerator::GenerateFreezingCode(io::Printer* printer) {
+}
+
+void RepeatedPrimitiveFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::RepeatedExtension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::RepeatedExtension<$extended_type$, $type_name$>(pb::FieldCodec.For$capitalized_type_name$($tag$));\n");
 }
 
 }  // namespace csharp

@@ -46,7 +46,6 @@
 #include <google/protobuf/compiler/csharp/csharp_options.h>
 #include <google/protobuf/compiler/csharp/csharp_reflection_class.h>
 #include <google/protobuf/compiler/csharp/csharp_field_base.h>
-#include <google/protobuf/compiler/csharp/csharp_extension.h>
 
 namespace google {
 namespace protobuf {
@@ -82,8 +81,9 @@ void ReflectionClassGenerator::Generate(io::Printer* printer) {
       "file_name", file_->name());
       printer->Indent();
       for (int i = 0; i < file_->extension_count(); i++) {
-        ExtensionGenerator generator(file_->extension(i), this->options());
-        generator.Generate(printer);
+        scoped_ptr<FieldGeneratorBase> generator(
+          CreateFieldGenerator(file_->extension(i), this->options()));
+        generator->GenerateExtensionCode(printer);
       }
       printer->Outdent();
       printer->Print(
@@ -216,6 +216,16 @@ void ReflectionClassGenerator::WriteDescriptor(io::Printer* printer) {
   else {
       printer->Print("null, ");
   }
+  if (file_->extension_count() > 0) {
+    std::vector<std::string> extensions;
+    for (int i = 0; i < file_->extension_count(); i++) {
+      extensions.push_back(GetFullExtensionName(file_->extension(i)));
+    }
+    printer->Print("new pb::Extension[] { $extensions$ }, ", "extensions", JoinStrings(extensions, ", "));
+  }
+  else {
+    printer->Print("null, ");
+  }
   if (file_->message_type_count() > 0) {
       printer->Print("new pbr::GeneratedClrTypeInfo[] {\n");
       printer->Indent();
@@ -290,6 +300,17 @@ void ReflectionClassGenerator::WriteGeneratedCodeInfo(const Descriptor* descript
   }
   else {
       printer->Print("null, ");
+  }
+
+  if (descriptor->extension_count() > 0) {
+    std::vector<std::string> extensions;
+    for (int i = 0; i < descriptor->extension_count(); i++) {
+      extensions.push_back(GetFullExtensionName(descriptor->extension(i)));
+    }
+    printer->Print("new pb::Extension[] { $extensions$ }, ", "extensions", JoinStrings(extensions, ", "));
+  }
+  else {
+    printer->Print("null, ");
   }
 
   // Nested types

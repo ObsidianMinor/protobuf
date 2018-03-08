@@ -59,7 +59,6 @@
 #include <google/protobuf/compiler/csharp/csharp_repeated_message_field.h>
 #include <google/protobuf/compiler/csharp/csharp_repeated_primitive_field.h>
 #include <google/protobuf/compiler/csharp/csharp_wrapper_field.h>
-#include <google/protobuf/compiler/csharp/csharp_extension.h>
 
 namespace google {
 namespace protobuf {
@@ -480,50 +479,49 @@ std::string StringToEscapedCSharpString(const std::string& input) {
 }
 
 FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
-                                         int fieldOrdinal,
                                          const Options* options) {
   switch (descriptor->type()) {
     case FieldDescriptor::TYPE_GROUP:
     case FieldDescriptor::TYPE_MESSAGE:
       if (descriptor->is_repeated()) {
         if (descriptor->is_map()) {
-          return new MapFieldGenerator(descriptor, fieldOrdinal, options);
+          return new MapFieldGenerator(descriptor, options);
         } else {
-          return new RepeatedMessageFieldGenerator(descriptor, fieldOrdinal, options);
+          return new RepeatedMessageFieldGenerator(descriptor, options);
         }
       } else {
         if (IsWrapperType(descriptor)) {
           if (descriptor->containing_oneof()) {
-            return new WrapperOneofFieldGenerator(descriptor, fieldOrdinal, options);
+            return new WrapperOneofFieldGenerator(descriptor, options);
           } else {
-            return new WrapperFieldGenerator(descriptor, fieldOrdinal, options);
+            return new WrapperFieldGenerator(descriptor, options);
           }
         } else {
           if (descriptor->containing_oneof()) {
-            return new MessageOneofFieldGenerator(descriptor, fieldOrdinal, options);
+            return new MessageOneofFieldGenerator(descriptor, options);
           } else {
-            return new MessageFieldGenerator(descriptor, fieldOrdinal, options);
+            return new MessageFieldGenerator(descriptor, options);
           }
         }
       }
     case FieldDescriptor::TYPE_ENUM:
       if (descriptor->is_repeated()) {
-        return new RepeatedEnumFieldGenerator(descriptor, fieldOrdinal, options);
+        return new RepeatedEnumFieldGenerator(descriptor, options);
       } else {
         if (descriptor->containing_oneof()) {
-          return new EnumOneofFieldGenerator(descriptor, fieldOrdinal, options);
+          return new EnumOneofFieldGenerator(descriptor, options);
         } else {
-          return new EnumFieldGenerator(descriptor, fieldOrdinal, options);
+          return new EnumFieldGenerator(descriptor, options);
         }
       }
     default:
       if (descriptor->is_repeated()) {
-        return new RepeatedPrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+        return new RepeatedPrimitiveFieldGenerator(descriptor, options);
       } else {
         if (descriptor->containing_oneof()) {
-          return new PrimitiveOneofFieldGenerator(descriptor, fieldOrdinal, options);
+          return new PrimitiveOneofFieldGenerator(descriptor, options);
         } else {
-          return new PrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+          return new PrimitiveFieldGenerator(descriptor, options);
         }
       }
   }
@@ -605,6 +603,15 @@ std::string GetDefaultValue(const FieldDescriptor* descriptor) {
     default:
       GOOGLE_LOG(FATAL)<< "Unknown field type.";
       return "";
+  }
+}
+
+std::string GetFullExtensionName(const FieldDescriptor* descriptor) {
+  if (descriptor->extension_scope()) {
+    return GetClassName(descriptor->extension_scope()) + ".Extensions." + GetPropertyName(descriptor);
+  }
+  else {
+    return GetExtensionClassUnqualifiedName(descriptor->file())  + "." + GetPropertyName(descriptor);
   }
 }
 

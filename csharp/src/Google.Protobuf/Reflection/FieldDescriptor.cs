@@ -44,7 +44,9 @@ namespace Google.Protobuf.Reflection
         private MessageDescriptor messageType;
         private FieldType fieldType;
         private readonly string propertyName; // Annoyingly, needed in Crosslink.
+        private object defaultValue;
         private IFieldAccessor accessor;
+        private Extension extension;
 
         /// <summary>
         /// Get the field's containing message type.
@@ -61,11 +63,11 @@ namespace Google.Protobuf.Reflection
         /// but can be overridden using the <c>json_name</c> option in the .proto file.
         /// </summary>
         public string JsonName { get; }
-
+        
         internal FieldDescriptorProto Proto { get; }
 
         internal FieldDescriptor(FieldDescriptorProto proto, FileDescriptor file,
-                                 MessageDescriptor parent, int index, string propertyName)
+                                 MessageDescriptor parent, int index, string propertyName, Extension extension)
             : base(file, file.ComputeFullName(parent, proto.Name), index)
         {
             Proto = proto;
@@ -96,9 +98,9 @@ namespace Google.Protobuf.Reflection
             // We could trust the generated code and check whether the type of the property is
             // a MapField, but that feels a tad nasty.
             this.propertyName = propertyName;
+            this.extension = extension;
             JsonName =  Proto.JsonName == "" ? JsonFormatter.ToJsonName(Proto.Name) : Proto.JsonName;
         }
-    
 
         /// <summary>
         /// The brief name of the descriptor's target.
@@ -199,6 +201,11 @@ namespace Google.Protobuf.Reflection
         public int FieldNumber => Proto.Number;
 
         /// <summary>
+        /// Returns the default value of the field
+        /// </summary>
+        public object DefaultValue => defaultValue;
+
+        /// <summary>
         /// Compares this descriptor with another one, ordering in "canonical" order
         /// which simply means ascending order by field number. <paramref name="other"/>
         /// must be a field of the same type, i.e. the <see cref="ContainingType"/> of
@@ -236,9 +243,9 @@ namespace Google.Protobuf.Reflection
         {
             get
             {
-                if (fieldType != FieldType.Message)
+                if (fieldType != FieldType.Message && fieldType != FieldType.Group)
                 {
-                    throw new InvalidOperationException("MessageType is only valid for message fields.");
+                    throw new InvalidOperationException("MessageType is only valid for message or group fields.");
                 }
                 return messageType;
             }
@@ -251,7 +258,19 @@ namespace Google.Protobuf.Reflection
         /// <param name="value">The value of this extension</param>
         /// <typeparam name="T">The type of the value to get</typeparam>
         /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetOption<T>(Extension<FieldOptions, T> extension, out T value) => throw new NotImplementedException();
+        public bool TryGetOption<T>(Extension<FieldOptions, T> extension, out T value)
+        {
+            if (Proto.Options.HasExtension(extension))
+            {
+                value = Proto.Options.GetExtension(extension);
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
 
         /// <summary>
         /// Look up and cross-link all field types etc.

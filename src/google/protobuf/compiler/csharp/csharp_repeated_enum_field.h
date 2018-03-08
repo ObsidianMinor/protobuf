@@ -46,7 +46,6 @@ namespace csharp {
 class RepeatedEnumFieldGenerator : public FieldGeneratorBase {
  public:
   RepeatedEnumFieldGenerator(const FieldDescriptor* descriptor,
-                             int fieldOrdinal,
                              const Options *options);
   ~RepeatedEnumFieldGenerator();
 
@@ -57,6 +56,7 @@ class RepeatedEnumFieldGenerator : public FieldGeneratorBase {
   virtual void GenerateParsingCode(io::Printer* printer);
   virtual void GenerateSerializationCode(io::Printer* printer);
   virtual void GenerateSerializedSizeCode(io::Printer* printer);
+  virtual void GenerateExtensionCode(io::Printer* printer);
 
   virtual void WriteHash(io::Printer* printer);
   virtual void WriteEquals(io::Printer* printer);

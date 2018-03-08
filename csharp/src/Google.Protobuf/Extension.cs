@@ -1,64 +1,63 @@
 ﻿using System;
-using Google.Protobuf.Reflection;
 
 namespace Google.Protobuf
 {
     /// <summary>
     /// Represents an non-generic extension definition
     /// </summary>
-    public interface IExtension
+    public abstract class Extension
     {
         /// <summary>
         /// Gets the type this extension is for
         /// </summary>
-        Type TargetType { get; }
-
-        /// <summary>
-        /// Gets the type of value this extension represents
-        /// </summary>
-        Type ValueType { get; }
-
-        /// <summary>
-        /// Gets the tag number of this field
-        /// </summary>
-        uint Tag { get; }
-
-        /// <summary>
-        /// Gets the default value of this extension
-        /// </summary>
-        object DefaultValue { get; }
+        internal abstract Type TargetType { get; }
+        
+        internal abstract IExtensionValue GetValue();
     }
 
     /// <summary>
     /// An extension identifier which can be used to get an extension's value
     /// </summary>
-    public sealed class Extension<TTarget, TValue> : IExtension where TTarget : IExtensionMessage<TTarget>
+    public sealed class Extension<TTarget, TValue> : Extension where TTarget : IExtensionMessage<TTarget>
     {
+        private FieldCodec<TValue> codec;
+
         /// <summary>
-        /// Creates a new extension identifier with the specified tag and default value
+        /// Creates a new extension identifier with the specified codec
         /// </summary>
-        /// <param name="tag"></param>
-        /// <param name="defaultValue"></param>
-        public Extension(uint tag, TValue defaultValue)
+        public Extension(FieldCodec<TValue> codec)
         {
-            Tag = tag;
-            DefaultValue = defaultValue;
+            this.codec = codec;
         }
 
+        internal override Type TargetType => typeof(TTarget);
+
+        internal override IExtensionValue GetValue()
+        {
+            return new ExtensionValue<TValue>();
+        }
+    }
+
+    /// <summary>
+    /// An extension identifier which can be used to get a repeated extension's value
+    /// </summary>
+    public sealed class RepeatedExtension<TTarget, TValue> : Extension where TTarget : IExtensionMessage<TTarget>
+    {
+        private FieldCodec<TValue> codec;
+
         /// <summary>
-        /// Gets the tag number of this field
+        /// Creates a new extension identifier with the specified codec
         /// </summary>
-        public uint Tag { get; }
+        public RepeatedExtension(FieldCodec<TValue> codec)
+        {
+            this.codec = codec;
+        }
 
-        Type IExtension.ValueType => typeof(TValue);
+        internal override Type TargetType => typeof(TTarget);
 
-        Type IExtension.TargetType => typeof(TTarget);
-
-        object IExtension.DefaultValue => DefaultValue;
-
-        /// <summary>
-        /// Gets the default value of this extension
-        /// </summary>
-        public TValue DefaultValue { get; }
+        internal override IExtensionValue GetValue()
+        {
+            return new RepeatedExtensionValue<TValue>();
+        }
     }
 }

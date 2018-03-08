@@ -31,8 +31,10 @@
 #endregion
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Google.Protobuf.Collections;
 
 namespace Google.Protobuf.Reflection
 {
@@ -65,6 +67,10 @@ namespace Google.Protobuf.Reflection
             Services = DescriptorUtil.ConvertAndMakeReadOnly(proto.Service,
                                                              (service, index) =>
                                                              new ServiceDescriptor(service, this, index));
+
+            Extensions = DescriptorUtil.ConvertAndMakeReadOnly(proto.Extension,
+                                                               (extension, index) =>
+                                                               new FieldDescriptor(extension, this, null, index, null, generatedCodeInfo.Extensions[index]));
         }
 
         /// <summary>
@@ -150,6 +156,11 @@ namespace Google.Protobuf.Reflection
         /// Unmodifiable list of top-level services declared in this file.
         /// </value>
         public IList<ServiceDescriptor> Services { get; }
+
+        /// <summary>
+        /// Unmodifiable list of top-level extensions declared in this file.
+        /// </summary>
+        public IList<FieldDescriptor> Extensions { get; }
 
         /// <value>
         /// Unmodifiable list of this file's dependencies (imports).
@@ -282,10 +293,12 @@ namespace Google.Protobuf.Reflection
             FileDescriptor[] dependencies,
             GeneratedClrTypeInfo generatedCodeInfo)
         {
+            ExtensionRegistry registry = new ExtensionRegistry();
+            registry.Add(GetAllOptionExtensions(dependencies, generatedCodeInfo));
             FileDescriptorProto proto;
             try
             {
-                proto = FileDescriptorProto.Parser.ParseFrom(descriptorData);
+                proto = FileDescriptorProto.Parser.WithExtensions(registry).ParseFrom(descriptorData);
             }
             catch (InvalidProtocolBufferException e)
             {
@@ -302,6 +315,11 @@ namespace Google.Protobuf.Reflection
             {
                 throw new ArgumentException($"Invalid embedded descriptor for \"{proto.Name}\".", e);
             }
+        }
+
+        private static IEnumerable<Extension> GetAllOptionExtensions(FileDescriptor[] depenencies, GeneratedClrTypeInfo generatedInfo)
+        {
+            yield break;
         }
 
         /// <summary>
@@ -337,6 +355,39 @@ namespace Google.Protobuf.Reflection
         /// <param name="value">The value of this extension</param>
         /// <typeparam name="T">The type of the value to get</typeparam>
         /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetOption<T>(Extension<FileOptions, T> extension, out T value) => throw new NotImplementedException();
+        public bool TryGetOption<T>(Extension<FileOptions, T> extension, out T value)
+        {
+            if (Proto.Options.HasExtension(extension))
+            {
+                value = Proto.Options.GetExtension(extension);
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Tries to get the specified custom extension option for this file
+        /// </summary>
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
+        public bool TryGetOption<T>(RepeatedExtension<FileOptions, T> extension, out RepeatedField<T> value)
+        {
+            if (Proto.Options.HasExtension(extension))
+            {
+                value = Proto.Options.GetExtension(extension);
+                return true;
+            }
+            else
+            {
+                value = null;
+                return false;
+            }
+        }
     }
 }

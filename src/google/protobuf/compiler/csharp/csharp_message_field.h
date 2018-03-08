@@ -44,7 +44,6 @@ namespace csharp {
 class MessageFieldGenerator : public FieldGeneratorBase {
  public:
   MessageFieldGenerator(const FieldDescriptor* descriptor,
-                        int fieldOrdinal,
                         const Options *options);
   ~MessageFieldGenerator();
 
@@ -57,6 +56,7 @@ class MessageFieldGenerator : public FieldGeneratorBase {
   virtual void GenerateSerializationCode(io::Printer* printer);
   virtual void GenerateSerializedSizeCode(io::Printer* printer);
   virtual void GenerateIsInitialized(io::Printer* printer);
+  virtual void GenerateExtensionCode(io::Printer* printer);
 
   virtual void WriteHash(io::Printer* printer);
   virtual void WriteEquals(io::Printer* printer);
@@ -69,7 +69,6 @@ class MessageFieldGenerator : public FieldGeneratorBase {
 class MessageOneofFieldGenerator : public MessageFieldGenerator {
  public:
   MessageOneofFieldGenerator(const FieldDescriptor* descriptor,
-                             int fieldOrdinal,
                              const Options *options);
   ~MessageOneofFieldGenerator();
 

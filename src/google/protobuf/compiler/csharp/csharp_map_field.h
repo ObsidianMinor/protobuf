@@ -44,7 +44,6 @@ namespace csharp {
 class MapFieldGenerator : public FieldGeneratorBase {
  public:
   MapFieldGenerator(const FieldDescriptor* descriptor,
-                    int fieldOrdinal,
                     const Options* options);
   ~MapFieldGenerator();
 

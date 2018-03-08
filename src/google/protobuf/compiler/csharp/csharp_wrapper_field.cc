@@ -47,9 +47,8 @@ namespace protobuf {
 namespace compiler {
 namespace csharp {
 
-WrapperFieldGenerator::WrapperFieldGenerator(const FieldDescriptor* descriptor,
-                                       int fieldOrdinal, const Options *options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+WrapperFieldGenerator::WrapperFieldGenerator(const FieldDescriptor* descriptor, const Options *options)
+    : FieldGeneratorBase(descriptor, options) {
   variables_["has_property_check"] = name() + "_ != null";
   variables_["has_not_property_check"] = name() + "_ == null";
   const FieldDescriptor* wrapped_field = descriptor->message_type()->field(0);
@@ -162,9 +161,18 @@ void WrapperFieldGenerator::GenerateCodecCode(io::Printer* printer) {
   }
 }
 
+void WrapperFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::Extension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::Extension<$extended_type$, $type_name$>(");
+  GenerateCodecCode(printer);
+  printer->Print(");\n");
+}
+
 WrapperOneofFieldGenerator::WrapperOneofFieldGenerator(
-    const FieldDescriptor* descriptor, int fieldOrdinal, const Options *options)
-    : WrapperFieldGenerator(descriptor, fieldOrdinal, options) {
+    const FieldDescriptor* descriptor, const Options *options)
+    : WrapperFieldGenerator(descriptor, options) {
     SetCommonOneofFieldVariables(&variables_);
 }
 

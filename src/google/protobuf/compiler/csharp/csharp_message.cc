@@ -45,7 +45,6 @@
 #include <google/protobuf/compiler/csharp/csharp_doc_comment.h>
 #include <google/protobuf/compiler/csharp/csharp_enum.h>
 #include <google/protobuf/compiler/csharp/csharp_field_base.h>
-#include <google/protobuf/compiler/csharp/csharp_extension.h>
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_message.h>
 #include <google/protobuf/compiler/csharp/csharp_names.h>
@@ -167,13 +166,6 @@ void MessageGenerator::Generate(io::Printer* printer) {
     "}\n"
     "\n");
 
-  if (has_extension_ranges_) {
-    WriteGeneratedCodeAttributes(printer);
-    printer->Print(vars, "public pb::ExtensionSet<$class_name$> ExtensionSet { get { return _extensions; } }\n");
-    WriteGeneratedCodeAttributes(printer);
-    printer->Print("pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }\n\n");
-  }
-
   // Parameterless constructor and partial OnConstruction method.
   WriteGeneratedCodeAttributes(printer);
   printer->Print(
@@ -246,6 +238,9 @@ void MessageGenerator::Generate(io::Printer* printer) {
   // Standard methods
   GenerateFrameworkMethods(printer);
   GenerateMessageSerializationMethods(printer);
+  if (has_extension_ranges_) {
+    GenerateExtensionMessageMethods(printer);
+  }
   GenerateMergingMethods(printer);
 
   // Nested messages and enums
@@ -285,8 +280,9 @@ void MessageGenerator::Generate(io::Printer* printer) {
       "public static partial class Extensions {\n");
     printer->Indent();
     for (int i = 0; i < descriptor_->extension_count(); i++) {
-      ExtensionGenerator generator(descriptor_->extension(i), this->options());
-      generator.Generate(printer);
+      scoped_ptr<FieldGeneratorBase> generator(
+        CreateFieldGeneratorInternal(descriptor_->extension(i)));
+      generator->GenerateExtensionCode(printer);
     }
     printer->Outdent();
     printer->Print(
@@ -564,10 +560,6 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Indent();
   printer->Print(
     "default:\n");
-  if (IsDescriptorOptionMessage(descriptor_)) {
-    printer->Print("  _extensions.MergeFieldFrom(input);\n");
-  }
-  else {
     if (has_extension_ranges_) {
       printer->Print(
       "  if (!_extensions.TryMergeFieldFrom(input)) {\n");
@@ -579,7 +571,6 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
       printer->Outdent();
       printer->Print("  }\n");
     }
-  }
   printer->Print("  break;\n");
   for (int i = 0; i < fields_by_number().size(); i++) {
     const FieldDescriptor* field = fields_by_number()[i];
@@ -630,19 +621,35 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Print("}\n\n");
 }
 
-int MessageGenerator::GetFieldOrdinal(const FieldDescriptor* descriptor) {
-  for (int i = 0; i < field_names().size(); i++) {
-    if (field_names()[i] == descriptor->name()) {
-      return i;
-    }
-  }
-  GOOGLE_LOG(DFATAL)<< "Could not find ordinal for field " << descriptor->name();
-  return -1;
+void MessageGenerator::GenerateExtensionMessageMethods(io::Printer* printer) {
+  printer->Print(
+    "void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {\n"
+    "  _extensions.Register(extension);\n"
+    "}\n\n"
+    "public void RegisterExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
+    "  _extensions.Register(extension);\n"
+    "}\n\n"
+    "public TValue GetExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
+    "  return _extensions.Get(extension);\n"
+    "}\n\n"
+    "public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
+    "  return _extensions.Get(extension);\n"
+    "}\n\n"
+    "public void SetExtension<TValue>(pb::Extension<$class_name$, TValue> extension, TValue value) {\n"
+    "  _extensions.Set(extension, value);\n"
+    "}\n\n"
+    "public bool HasExtension(pb::Extension extension) {\n"
+    "  return _extensions.Has(extension);\n"
+    "}\n\n"
+    "public void ClearExtension(pb::Extension extension) {\n"
+    "  _extensions.Clear(extension);\n"
+    "}\n\n",
+    "class_name", class_name());
 }
 
 FieldGeneratorBase* MessageGenerator::CreateFieldGeneratorInternal(
     const FieldDescriptor* descriptor) {
-  return CreateFieldGenerator(descriptor, GetFieldOrdinal(descriptor), this->options());
+  return CreateFieldGenerator(descriptor, this->options());
 }
 
 }  // namespace csharp

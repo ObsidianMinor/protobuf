@@ -554,74 +554,74 @@ namespace Google.Protobuf.TestProtos.Proto2 {
             "b2dsZS5Qcm90b2J1Zi5UZXN0UHJvdG9zLlByb3RvMg=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.TestProtos.UnittestImportProto3Reflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.TestProtos.Proto2.ForeignEnum), typeof(global::Google.Protobuf.TestProtos.Proto2.TestEnumWithDupValue), typeof(global::Google.Protobuf.TestProtos.Proto2.TestSparseEnum), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Parser, new[]{ "OptionalInt32", "OptionalInt64", "OptionalUint32", "OptionalUint64", "OptionalSint32", "OptionalSint64", "OptionalFixed32", "OptionalFixed64", "OptionalSfixed32", "OptionalSfixed64", "OptionalFloat", "OptionalDouble", "OptionalBool", "OptionalString", "OptionalBytes", "OptionalGroup", "OptionalNestedMessage", "OptionalForeignMessage", "OptionalImportMessage", "OptionalNestedEnum", "OptionalForeignEnum", "OptionalImportEnum", "OptionalStringPiece", "OptionalCord", "OptionalPublicImportMessage", "OptionalLazyMessage", "RepeatedInt32", "RepeatedInt64", "RepeatedUint32", "RepeatedUint64", "RepeatedSint32", "RepeatedSint64", "RepeatedFixed32", "RepeatedFixed64", "RepeatedSfixed32", "RepeatedSfixed64", "RepeatedFloat", "RepeatedDouble", "RepeatedBool", "RepeatedString", "RepeatedBytes", "RepeatedGroup", "RepeatedNestedMessage", "RepeatedForeignMessage", "RepeatedImportMessage", "RepeatedNestedEnum", "RepeatedForeignEnum", "RepeatedImportEnum", "RepeatedStringPiece", "RepeatedCord", "RepeatedLazyMessage", "DefaultInt32", "DefaultInt64", "DefaultUint32", "DefaultUint64", "DefaultSint32", "DefaultSint64", "DefaultFixed32", "DefaultFixed64", "DefaultSfixed32", "DefaultSfixed64", "DefaultFloat", "DefaultDouble", "DefaultBool", "DefaultString", "DefaultBytes", "DefaultNestedEnum", "DefaultForeignEnum", "DefaultImportEnum", "DefaultStringPiece", "DefaultCord", "OneofUint32", "OneofNestedMessage", "OneofString", "OneofBytes" }, new[]{ "OneofField" }, new[]{ typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser, new[]{ "Bb" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.OptionalGroup), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.OptionalGroup.Parser, new[]{ "A" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup.Parser, new[]{ "A" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.NestedTestAllTypes), global::Google.Protobuf.TestProtos.Proto2.NestedTestAllTypes.Parser, new[]{ "Child", "Payload", "RepeatedChild" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedFields), global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedFields.Parser, new[]{ "DeprecatedInt32", "DeprecatedInt32InOneof" }, new[]{ "OneofFields" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedMessage), global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedMessage.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.ForeignMessage), global::Google.Protobuf.TestProtos.Proto2.ForeignMessage.Parser, new[]{ "C", "D" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestReservedFields), global::Google.Protobuf.TestProtos.Proto2.TestReservedFields.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions), global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension), global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension.Parser, new[]{ "A" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension), global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension.Parser, new[]{ "A" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestNestedExtension), global::Google.Protobuf.TestProtos.Proto2.TestNestedExtension.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequired), global::Google.Protobuf.TestProtos.Proto2.TestRequired.Parser, new[]{ "A", "Dummy2", "B", "Dummy4", "Dummy5", "Dummy6", "Dummy7", "Dummy8", "Dummy9", "Dummy10", "Dummy11", "Dummy12", "Dummy13", "Dummy14", "Dummy15", "Dummy16", "Dummy17", "Dummy18", "Dummy19", "Dummy20", "Dummy21", "Dummy22", "Dummy23", "Dummy24", "Dummy25", "Dummy26", "Dummy27", "Dummy28", "Dummy29", "Dummy30", "Dummy31", "Dummy32", "C" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredForeign), global::Google.Protobuf.TestProtos.Proto2.TestRequiredForeign.Parser, new[]{ "OptionalMessage", "RepeatedMessage", "Dummy" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredMessage), global::Google.Protobuf.TestProtos.Proto2.TestRequiredMessage.Parser, new[]{ "OptionalMessage", "RepeatedMessage", "RequiredMessage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestForeignNested), global::Google.Protobuf.TestProtos.Proto2.TestForeignNested.Parser, new[]{ "ForeignNested" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessage), global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessage.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessageWithExtensions), global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessageWithExtensions.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMultipleExtensionRanges), global::Google.Protobuf.TestProtos.Proto2.TestMultipleExtensionRanges.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestReallyLargeTagNumber), global::Google.Protobuf.TestProtos.Proto2.TestReallyLargeTagNumber.Parser, new[]{ "A", "Bb" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRecursiveMessage), global::Google.Protobuf.TestProtos.Proto2.TestRecursiveMessage.Parser, new[]{ "A", "I" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Parser, new[]{ "Bb", "SubGroup" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubMessage), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubMessage.Parser, new[]{ "B" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubGroup), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubGroup.Parser, new[]{ "SubMessage", "NotInThisScc" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionB), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionB.Parser, new[]{ "A", "OptionalInt32" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized), global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Parser, new[]{ "SubMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage), global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage.Parser, new[]{ "SubGroup" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage.Types.SubGroup), global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage.Types.SubGroup.Parser, new[]{ "I" }, null, null, null)})}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber), global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Parser, new[]{ "A", "Foo", "Bar" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Foo), global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Foo.Parser, new[]{ "A" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Bar), global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Bar.Parser, new[]{ "A" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestEagerMessage), global::Google.Protobuf.TestProtos.Proto2.TestEagerMessage.Parser, new[]{ "SubMessage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestLazyMessage), global::Google.Protobuf.TestProtos.Proto2.TestLazyMessage.Parser, new[]{ "SubMessage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits), global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits.Parser, new[]{ "OptionalNestedMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits.Types.NestedMessage.Parser, new[]{ "NestedmessageRepeatedInt32", "NestedmessageRepeatedForeignmessage" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestCamelCaseFieldNames), global::Google.Protobuf.TestProtos.Proto2.TestCamelCaseFieldNames.Parser, new[]{ "PrimitiveField", "StringField", "EnumField", "MessageField", "StringPieceField", "CordField", "RepeatedPrimitiveField", "RepeatedStringField", "RepeatedEnumField", "RepeatedMessageField", "RepeatedStringPieceField", "RepeatedCordField" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings), global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings.Parser, new[]{ "MyString", "MyInt", "MyFloat", "OptionalNestedMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings.Types.NestedMessage.Parser, new[]{ "Oo", "Bb" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestExtremeDefaultValues), global::Google.Protobuf.TestProtos.Proto2.TestExtremeDefaultValues.Parser, new[]{ "EscapedBytes", "LargeUint32", "LargeUint64", "SmallInt32", "SmallInt64", "ReallySmallInt32", "ReallySmallInt64", "Utf8String", "ZeroFloat", "OneFloat", "SmallFloat", "NegativeOneFloat", "NegativeFloat", "LargeFloat", "SmallNegativeFloat", "InfDouble", "NegInfDouble", "NanDouble", "InfFloat", "NegInfFloat", "NanFloat", "CppTrigraph", "StringWithZero", "BytesWithZero", "StringPieceWithZero", "CordWithZero", "ReplacementString" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.SparseEnumMessage), global::Google.Protobuf.TestProtos.Proto2.SparseEnumMessage.Parser, new[]{ "SparseEnum" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.OneString), global::Google.Protobuf.TestProtos.Proto2.OneString.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.MoreString), global::Google.Protobuf.TestProtos.Proto2.MoreString.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.OneBytes), global::Google.Protobuf.TestProtos.Proto2.OneBytes.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.MoreBytes), global::Google.Protobuf.TestProtos.Proto2.MoreBytes.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Int32Message), global::Google.Protobuf.TestProtos.Proto2.Int32Message.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Uint32Message), global::Google.Protobuf.TestProtos.Proto2.Uint32Message.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Int64Message), global::Google.Protobuf.TestProtos.Proto2.Int64Message.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Uint64Message), global::Google.Protobuf.TestProtos.Proto2.Uint64Message.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.BoolMessage), global::Google.Protobuf.TestProtos.Proto2.BoolMessage.Parser, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof), global::Google.Protobuf.TestProtos.Proto2.TestOneof.Parser, new[]{ "FooInt", "FooString", "FooMessage", "FooGroup" }, new[]{ "Foo" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup), global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup.Parser, new[]{ "A", "B" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible), global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible.Parser, new[]{ "FooInt", "FooString", "FooMessage", "FooGroup" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible.Types.FooGroup), global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible.Types.FooGroup.Parser, new[]{ "A", "B" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2), global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Parser, new[]{ "FooInt", "FooString", "FooCord", "FooStringPiece", "FooBytes", "FooEnum", "FooMessage", "FooGroup", "FooLazyMessage", "BarInt", "BarString", "BarCord", "BarStringPiece", "BarBytes", "BarEnum", "BazInt", "BazString" }, new[]{ "Foo", "Bar" }, new[]{ typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup), global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup.Parser, new[]{ "A", "B" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage.Parser, new[]{ "QuxInt", "CorgeInt" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof), global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Parser, new[]{ "FooInt", "FooString", "FooMessage" }, new[]{ "Foo" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage.Parser, new[]{ "RequiredDouble" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestPackedTypes), global::Google.Protobuf.TestProtos.Proto2.TestPackedTypes.Parser, new[]{ "PackedInt32", "PackedInt64", "PackedUint32", "PackedUint64", "PackedSint32", "PackedSint64", "PackedFixed32", "PackedFixed64", "PackedSfixed32", "PackedSfixed64", "PackedFloat", "PackedDouble", "PackedBool", "PackedEnum" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestUnpackedTypes), global::Google.Protobuf.TestProtos.Proto2.TestUnpackedTypes.Parser, new[]{ "UnpackedInt32", "UnpackedInt64", "UnpackedUint32", "UnpackedUint64", "UnpackedSint32", "UnpackedSint64", "UnpackedFixed32", "UnpackedFixed64", "UnpackedSfixed32", "UnpackedSfixed64", "UnpackedFloat", "UnpackedDouble", "UnpackedBool", "UnpackedEnum" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions), global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions), global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions), global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Parser, new[]{ "ScalarExtension", "EnumExtension", "DynamicEnumExtension", "MessageExtension", "DynamicMessageExtension", "RepeatedExtension", "PackedExtension" }, null, new[]{ typeof(global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Types.DynamicEnumType) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Types.DynamicMessageType), global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Types.DynamicMessageType.Parser, new[]{ "DynamicField" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRepeatedScalarDifferentTagSizes), global::Google.Protobuf.TestProtos.Proto2.TestRepeatedScalarDifferentTagSizes.Parser, new[]{ "RepeatedFixed32", "RepeatedInt32", "RepeatedFixed64", "RepeatedInt64", "RepeatedFloat", "RepeatedUint64" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Parser, new[]{ "RequiredAllTypes", "OptionalAllTypes", "RepeatedAllTypes", "OptionalGroup", "RepeatedGroup" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Parser, new[]{ "Field1", "Field2", "Field3", "Group1", "Group2", "Ext1", "Ext2" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1.Parser, new[]{ "Field1" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2.Parser, new[]{ "Field1" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.OptionalGroup), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.OptionalGroup.Parser, new[]{ "OptionalGroupAllTypes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup.Parser, new[]{ "RepeatedGroupAllTypes" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestCommentInjectionMessage), global::Google.Protobuf.TestProtos.Proto2.TestCommentInjectionMessage.Parser, new[]{ "A" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooRequest), global::Google.Protobuf.TestProtos.Proto2.FooRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooResponse), global::Google.Protobuf.TestProtos.Proto2.FooResponse.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooClientMessage), global::Google.Protobuf.TestProtos.Proto2.FooClientMessage.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooServerMessage), global::Google.Protobuf.TestProtos.Proto2.FooServerMessage.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.BarRequest), global::Google.Protobuf.TestProtos.Proto2.BarRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.BarResponse), global::Google.Protobuf.TestProtos.Proto2.BarResponse.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestJsonName), global::Google.Protobuf.TestProtos.Proto2.TestJsonName.Parser, new[]{ "FieldName1", "FieldName2", "FieldName3", "FieldName4", "FIELDNAME5", "FieldName6" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers), global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers.Parser, new[]{ "OptionalInt32", "Fixed32", "RepeatedInt32", "PackedInt32", "OptionalEnum", "OptionalString", "OptionalBytes", "OptionalMessage", "OptionalGroup", "StringStringMap", "OneofUint32", "OneofTestAllTypes", "OneofString", "OneofBytes" }, new[]{ "OneofField" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers.Types.OptionalGroup), global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers.Types.OptionalGroup.Parser, new[]{ "GroupA" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.TestProtos.Proto2.ForeignEnum), typeof(global::Google.Protobuf.TestProtos.Proto2.TestEnumWithDupValue), typeof(global::Google.Protobuf.TestProtos.Proto2.TestSparseEnum), }, new pb::Extension[] { UnittestExtensions.OptionalInt32Extension, UnittestExtensions.OptionalInt64Extension, UnittestExtensions.OptionalUint32Extension, UnittestExtensions.OptionalUint64Extension, UnittestExtensions.OptionalSint32Extension, UnittestExtensions.OptionalSint64Extension, UnittestExtensions.OptionalFixed32Extension, UnittestExtensions.OptionalFixed64Extension, UnittestExtensions.OptionalSfixed32Extension, UnittestExtensions.OptionalSfixed64Extension, UnittestExtensions.OptionalFloatExtension, UnittestExtensions.OptionalDoubleExtension, UnittestExtensions.OptionalBoolExtension, UnittestExtensions.OptionalStringExtension, UnittestExtensions.OptionalBytesExtension, UnittestExtensions.OptionalGroupExtension, UnittestExtensions.OptionalNestedMessageExtension, UnittestExtensions.OptionalForeignMessageExtension, UnittestExtensions.OptionalImportMessageExtension, UnittestExtensions.OptionalNestedEnumExtension, UnittestExtensions.OptionalForeignEnumExtension, UnittestExtensions.OptionalImportEnumExtension, UnittestExtensions.OptionalStringPieceExtension, UnittestExtensions.OptionalCordExtension, UnittestExtensions.OptionalPublicImportMessageExtension, UnittestExtensions.OptionalLazyMessageExtension, UnittestExtensions.RepeatedInt32Extension, UnittestExtensions.RepeatedInt64Extension, UnittestExtensions.RepeatedUint32Extension, UnittestExtensions.RepeatedUint64Extension, UnittestExtensions.RepeatedSint32Extension, UnittestExtensions.RepeatedSint64Extension, UnittestExtensions.RepeatedFixed32Extension, UnittestExtensions.RepeatedFixed64Extension, UnittestExtensions.RepeatedSfixed32Extension, UnittestExtensions.RepeatedSfixed64Extension, UnittestExtensions.RepeatedFloatExtension, UnittestExtensions.RepeatedDoubleExtension, UnittestExtensions.RepeatedBoolExtension, UnittestExtensions.RepeatedStringExtension, UnittestExtensions.RepeatedBytesExtension, UnittestExtensions.RepeatedGroupExtension, UnittestExtensions.RepeatedNestedMessageExtension, UnittestExtensions.RepeatedForeignMessageExtension, UnittestExtensions.RepeatedImportMessageExtension, UnittestExtensions.RepeatedNestedEnumExtension, UnittestExtensions.RepeatedForeignEnumExtension, UnittestExtensions.RepeatedImportEnumExtension, UnittestExtensions.RepeatedStringPieceExtension, UnittestExtensions.RepeatedCordExtension, UnittestExtensions.RepeatedLazyMessageExtension, UnittestExtensions.DefaultInt32Extension, UnittestExtensions.DefaultInt64Extension, UnittestExtensions.DefaultUint32Extension, UnittestExtensions.DefaultUint64Extension, UnittestExtensions.DefaultSint32Extension, UnittestExtensions.DefaultSint64Extension, UnittestExtensions.DefaultFixed32Extension, UnittestExtensions.DefaultFixed64Extension, UnittestExtensions.DefaultSfixed32Extension, UnittestExtensions.DefaultSfixed64Extension, UnittestExtensions.DefaultFloatExtension, UnittestExtensions.DefaultDoubleExtension, UnittestExtensions.DefaultBoolExtension, UnittestExtensions.DefaultStringExtension, UnittestExtensions.DefaultBytesExtension, UnittestExtensions.DefaultNestedEnumExtension, UnittestExtensions.DefaultForeignEnumExtension, UnittestExtensions.DefaultImportEnumExtension, UnittestExtensions.DefaultStringPieceExtension, UnittestExtensions.DefaultCordExtension, UnittestExtensions.OneofUint32Extension, UnittestExtensions.OneofNestedMessageExtension, UnittestExtensions.OneofStringExtension, UnittestExtensions.OneofBytesExtension, UnittestExtensions.MyExtensionString, UnittestExtensions.MyExtensionInt, UnittestExtensions.PackedInt32Extension, UnittestExtensions.PackedInt64Extension, UnittestExtensions.PackedUint32Extension, UnittestExtensions.PackedUint64Extension, UnittestExtensions.PackedSint32Extension, UnittestExtensions.PackedSint64Extension, UnittestExtensions.PackedFixed32Extension, UnittestExtensions.PackedFixed64Extension, UnittestExtensions.PackedSfixed32Extension, UnittestExtensions.PackedSfixed64Extension, UnittestExtensions.PackedFloatExtension, UnittestExtensions.PackedDoubleExtension, UnittestExtensions.PackedBoolExtension, UnittestExtensions.PackedEnumExtension, UnittestExtensions.UnpackedInt32Extension, UnittestExtensions.UnpackedInt64Extension, UnittestExtensions.UnpackedUint32Extension, UnittestExtensions.UnpackedUint64Extension, UnittestExtensions.UnpackedSint32Extension, UnittestExtensions.UnpackedSint64Extension, UnittestExtensions.UnpackedFixed32Extension, UnittestExtensions.UnpackedFixed64Extension, UnittestExtensions.UnpackedSfixed32Extension, UnittestExtensions.UnpackedSfixed64Extension, UnittestExtensions.UnpackedFloatExtension, UnittestExtensions.UnpackedDoubleExtension, UnittestExtensions.UnpackedBoolExtension, UnittestExtensions.UnpackedEnumExtension, UnittestExtensions.TestAllTypes }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Parser, new[]{ "OptionalInt32", "OptionalInt64", "OptionalUint32", "OptionalUint64", "OptionalSint32", "OptionalSint64", "OptionalFixed32", "OptionalFixed64", "OptionalSfixed32", "OptionalSfixed64", "OptionalFloat", "OptionalDouble", "OptionalBool", "OptionalString", "OptionalBytes", "OptionalGroup", "OptionalNestedMessage", "OptionalForeignMessage", "OptionalImportMessage", "OptionalNestedEnum", "OptionalForeignEnum", "OptionalImportEnum", "OptionalStringPiece", "OptionalCord", "OptionalPublicImportMessage", "OptionalLazyMessage", "RepeatedInt32", "RepeatedInt64", "RepeatedUint32", "RepeatedUint64", "RepeatedSint32", "RepeatedSint64", "RepeatedFixed32", "RepeatedFixed64", "RepeatedSfixed32", "RepeatedSfixed64", "RepeatedFloat", "RepeatedDouble", "RepeatedBool", "RepeatedString", "RepeatedBytes", "RepeatedGroup", "RepeatedNestedMessage", "RepeatedForeignMessage", "RepeatedImportMessage", "RepeatedNestedEnum", "RepeatedForeignEnum", "RepeatedImportEnum", "RepeatedStringPiece", "RepeatedCord", "RepeatedLazyMessage", "DefaultInt32", "DefaultInt64", "DefaultUint32", "DefaultUint64", "DefaultSint32", "DefaultSint64", "DefaultFixed32", "DefaultFixed64", "DefaultSfixed32", "DefaultSfixed64", "DefaultFloat", "DefaultDouble", "DefaultBool", "DefaultString", "DefaultBytes", "DefaultNestedEnum", "DefaultForeignEnum", "DefaultImportEnum", "DefaultStringPiece", "DefaultCord", "OneofUint32", "OneofNestedMessage", "OneofString", "OneofBytes" }, new[]{ "OneofField" }, new[]{ typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser, new[]{ "Bb" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.OptionalGroup), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.OptionalGroup.Parser, new[]{ "A" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup), global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup.Parser, new[]{ "A" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.NestedTestAllTypes), global::Google.Protobuf.TestProtos.Proto2.NestedTestAllTypes.Parser, new[]{ "Child", "Payload", "RepeatedChild" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedFields), global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedFields.Parser, new[]{ "DeprecatedInt32", "DeprecatedInt32InOneof" }, new[]{ "OneofFields" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedMessage), global::Google.Protobuf.TestProtos.Proto2.TestDeprecatedMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.ForeignMessage), global::Google.Protobuf.TestProtos.Proto2.ForeignMessage.Parser, new[]{ "C", "D" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestReservedFields), global::Google.Protobuf.TestProtos.Proto2.TestReservedFields.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions), global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension), global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension.Parser, new[]{ "A" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension), global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension.Parser, new[]{ "A" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestNestedExtension), global::Google.Protobuf.TestProtos.Proto2.TestNestedExtension.Parser, null, null, null, new pb::Extension[] { global::Google.Protobuf.TestProtos.Proto2.TestNestedExtension.Extensions.Test, global::Google.Protobuf.TestProtos.Proto2.TestNestedExtension.Extensions.NestedStringExtension }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequired), global::Google.Protobuf.TestProtos.Proto2.TestRequired.Parser, new[]{ "A", "Dummy2", "B", "Dummy4", "Dummy5", "Dummy6", "Dummy7", "Dummy8", "Dummy9", "Dummy10", "Dummy11", "Dummy12", "Dummy13", "Dummy14", "Dummy15", "Dummy16", "Dummy17", "Dummy18", "Dummy19", "Dummy20", "Dummy21", "Dummy22", "Dummy23", "Dummy24", "Dummy25", "Dummy26", "Dummy27", "Dummy28", "Dummy29", "Dummy30", "Dummy31", "Dummy32", "C" }, null, null, new pb::Extension[] { global::Google.Protobuf.TestProtos.Proto2.TestRequired.Extensions.Single, global::Google.Protobuf.TestProtos.Proto2.TestRequired.Extensions.Multi }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredForeign), global::Google.Protobuf.TestProtos.Proto2.TestRequiredForeign.Parser, new[]{ "OptionalMessage", "RepeatedMessage", "Dummy" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredMessage), global::Google.Protobuf.TestProtos.Proto2.TestRequiredMessage.Parser, new[]{ "OptionalMessage", "RepeatedMessage", "RequiredMessage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestForeignNested), global::Google.Protobuf.TestProtos.Proto2.TestForeignNested.Parser, new[]{ "ForeignNested" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessage), global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessageWithExtensions), global::Google.Protobuf.TestProtos.Proto2.TestEmptyMessageWithExtensions.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMultipleExtensionRanges), global::Google.Protobuf.TestProtos.Proto2.TestMultipleExtensionRanges.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestReallyLargeTagNumber), global::Google.Protobuf.TestProtos.Proto2.TestReallyLargeTagNumber.Parser, new[]{ "A", "Bb" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRecursiveMessage), global::Google.Protobuf.TestProtos.Proto2.TestRecursiveMessage.Parser, new[]{ "A", "I" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Parser, new[]{ "Bb", "SubGroup" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubMessage), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubMessage.Parser, new[]{ "B" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubGroup), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionA.Types.SubGroup.Parser, new[]{ "SubMessage", "NotInThisScc" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionB), global::Google.Protobuf.TestProtos.Proto2.TestMutualRecursionB.Parser, new[]{ "A", "OptionalInt32" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized), global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Parser, new[]{ "SubMessage" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage), global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage.Parser, new[]{ "SubGroup" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage.Types.SubGroup), global::Google.Protobuf.TestProtos.Proto2.TestIsInitialized.Types.SubMessage.Types.SubGroup.Parser, new[]{ "I" }, null, null, null, null)})}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber), global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Parser, new[]{ "A", "Foo", "Bar" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Foo), global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Foo.Parser, new[]{ "A" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Bar), global::Google.Protobuf.TestProtos.Proto2.TestDupFieldNumber.Types.Bar.Parser, new[]{ "A" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestEagerMessage), global::Google.Protobuf.TestProtos.Proto2.TestEagerMessage.Parser, new[]{ "SubMessage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestLazyMessage), global::Google.Protobuf.TestProtos.Proto2.TestLazyMessage.Parser, new[]{ "SubMessage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits), global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits.Parser, new[]{ "OptionalNestedMessage" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestNestedMessageHasBits.Types.NestedMessage.Parser, new[]{ "NestedmessageRepeatedInt32", "NestedmessageRepeatedForeignmessage" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestCamelCaseFieldNames), global::Google.Protobuf.TestProtos.Proto2.TestCamelCaseFieldNames.Parser, new[]{ "PrimitiveField", "StringField", "EnumField", "MessageField", "StringPieceField", "CordField", "RepeatedPrimitiveField", "RepeatedStringField", "RepeatedEnumField", "RepeatedMessageField", "RepeatedStringPieceField", "RepeatedCordField" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings), global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings.Parser, new[]{ "MyString", "MyInt", "MyFloat", "OptionalNestedMessage" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings.Types.NestedMessage.Parser, new[]{ "Oo", "Bb" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestExtremeDefaultValues), global::Google.Protobuf.TestProtos.Proto2.TestExtremeDefaultValues.Parser, new[]{ "EscapedBytes", "LargeUint32", "LargeUint64", "SmallInt32", "SmallInt64", "ReallySmallInt32", "ReallySmallInt64", "Utf8String", "ZeroFloat", "OneFloat", "SmallFloat", "NegativeOneFloat", "NegativeFloat", "LargeFloat", "SmallNegativeFloat", "InfDouble", "NegInfDouble", "NanDouble", "InfFloat", "NegInfFloat", "NanFloat", "CppTrigraph", "StringWithZero", "BytesWithZero", "StringPieceWithZero", "CordWithZero", "ReplacementString" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.SparseEnumMessage), global::Google.Protobuf.TestProtos.Proto2.SparseEnumMessage.Parser, new[]{ "SparseEnum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.OneString), global::Google.Protobuf.TestProtos.Proto2.OneString.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.MoreString), global::Google.Protobuf.TestProtos.Proto2.MoreString.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.OneBytes), global::Google.Protobuf.TestProtos.Proto2.OneBytes.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.MoreBytes), global::Google.Protobuf.TestProtos.Proto2.MoreBytes.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Int32Message), global::Google.Protobuf.TestProtos.Proto2.Int32Message.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Uint32Message), global::Google.Protobuf.TestProtos.Proto2.Uint32Message.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Int64Message), global::Google.Protobuf.TestProtos.Proto2.Int64Message.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.Uint64Message), global::Google.Protobuf.TestProtos.Proto2.Uint64Message.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.BoolMessage), global::Google.Protobuf.TestProtos.Proto2.BoolMessage.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof), global::Google.Protobuf.TestProtos.Proto2.TestOneof.Parser, new[]{ "FooInt", "FooString", "FooMessage", "FooGroup" }, new[]{ "Foo" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup), global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup.Parser, new[]{ "A", "B" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible), global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible.Parser, new[]{ "FooInt", "FooString", "FooMessage", "FooGroup" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible.Types.FooGroup), global::Google.Protobuf.TestProtos.Proto2.TestOneofBackwardsCompatible.Types.FooGroup.Parser, new[]{ "A", "B" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2), global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Parser, new[]{ "FooInt", "FooString", "FooCord", "FooStringPiece", "FooBytes", "FooEnum", "FooMessage", "FooGroup", "FooLazyMessage", "BarInt", "BarString", "BarCord", "BarStringPiece", "BarBytes", "BarEnum", "BazInt", "BazString" }, new[]{ "Foo", "Bar" }, new[]{ typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup), global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup.Parser, new[]{ "A", "B" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage.Parser, new[]{ "QuxInt", "CorgeInt" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof), global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Parser, new[]{ "FooInt", "FooString", "FooMessage" }, new[]{ "Foo" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage), global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage.Parser, new[]{ "RequiredDouble" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestPackedTypes), global::Google.Protobuf.TestProtos.Proto2.TestPackedTypes.Parser, new[]{ "PackedInt32", "PackedInt64", "PackedUint32", "PackedUint64", "PackedSint32", "PackedSint64", "PackedFixed32", "PackedFixed64", "PackedSfixed32", "PackedSfixed64", "PackedFloat", "PackedDouble", "PackedBool", "PackedEnum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestUnpackedTypes), global::Google.Protobuf.TestProtos.Proto2.TestUnpackedTypes.Parser, new[]{ "UnpackedInt32", "UnpackedInt64", "UnpackedUint32", "UnpackedUint64", "UnpackedSint32", "UnpackedSint64", "UnpackedFixed32", "UnpackedFixed64", "UnpackedSfixed32", "UnpackedSfixed64", "UnpackedFloat", "UnpackedDouble", "UnpackedBool", "UnpackedEnum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions), global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions), global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions), global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Parser, new[]{ "ScalarExtension", "EnumExtension", "DynamicEnumExtension", "MessageExtension", "DynamicMessageExtension", "RepeatedExtension", "PackedExtension" }, null, new[]{ typeof(global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Types.DynamicEnumType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Types.DynamicMessageType), global::Google.Protobuf.TestProtos.Proto2.TestDynamicExtensions.Types.DynamicMessageType.Parser, new[]{ "DynamicField" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestRepeatedScalarDifferentTagSizes), global::Google.Protobuf.TestProtos.Proto2.TestRepeatedScalarDifferentTagSizes.Parser, new[]{ "RepeatedFixed32", "RepeatedInt32", "RepeatedFixed64", "RepeatedInt64", "RepeatedFloat", "RepeatedUint64" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Parser, new[]{ "RequiredAllTypes", "OptionalAllTypes", "RepeatedAllTypes", "OptionalGroup", "RepeatedGroup" }, null, null, new pb::Extension[] { global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Extensions.OptionalExt, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Extensions.RepeatedExt }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Parser, new[]{ "Field1", "Field2", "Field3", "Group1", "Group2", "Ext1", "Ext2" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1.Parser, new[]{ "Field1" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2.Parser, new[]{ "Field1" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.OptionalGroup), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.OptionalGroup.Parser, new[]{ "OptionalGroupAllTypes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup), global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup.Parser, new[]{ "RepeatedGroupAllTypes" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestCommentInjectionMessage), global::Google.Protobuf.TestProtos.Proto2.TestCommentInjectionMessage.Parser, new[]{ "A" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooRequest), global::Google.Protobuf.TestProtos.Proto2.FooRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooResponse), global::Google.Protobuf.TestProtos.Proto2.FooResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooClientMessage), global::Google.Protobuf.TestProtos.Proto2.FooClientMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.FooServerMessage), global::Google.Protobuf.TestProtos.Proto2.FooServerMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.BarRequest), global::Google.Protobuf.TestProtos.Proto2.BarRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.BarResponse), global::Google.Protobuf.TestProtos.Proto2.BarResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestJsonName), global::Google.Protobuf.TestProtos.Proto2.TestJsonName.Parser, new[]{ "FieldName1", "FieldName2", "FieldName3", "FieldName4", "FIELDNAME5", "FieldName6" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers), global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers.Parser, new[]{ "OptionalInt32", "Fixed32", "RepeatedInt32", "PackedInt32", "OptionalEnum", "OptionalString", "OptionalBytes", "OptionalMessage", "OptionalGroup", "StringStringMap", "OneofUint32", "OneofTestAllTypes", "OneofString", "OneofBytes" }, new[]{ "OneofField" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers.Types.OptionalGroup), global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers.Types.OptionalGroup.Parser, new[]{ "GroupA" }, null, null, null, null),
             null, })
           }));
     }
@@ -632,217 +632,217 @@ namespace Google.Protobuf.TestProtos.Proto2 {
   /// <summary>Holder for extension identifiers generated from the top level of unittest.proto</summary>
   public static partial class UnittestExtensions {
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> OptionalInt32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(8u, 0);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForInt32(8, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> OptionalInt64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(16u, 0L);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForInt64(16, 0L));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> OptionalUint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(24u, 0);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForUInt32(24, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> OptionalUint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(32u, 0UL);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(pb::FieldCodec.ForUInt64(32, 0UL));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> OptionalSint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(40u, 0);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForSInt32(40, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> OptionalSint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(48u, 0L);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForSInt64(48, 0L));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> OptionalFixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(61u, 0);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForFixed32(61, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> OptionalFixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(65u, 0UL);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(pb::FieldCodec.ForFixed64(65, 0UL));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> OptionalSfixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(77u, 0);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForSFixed32(77, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> OptionalSfixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(81u, 0L);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForSFixed64(81, 0L));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float> OptionalFloatExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float>(93u, 0F);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float>(pb::FieldCodec.ForFloat(93, 0F));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double> OptionalDoubleExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double>(97u, 0D);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double>(pb::FieldCodec.ForDouble(97, 0D));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool> OptionalBoolExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(104u, false);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(pb::FieldCodec.ForBool(104, false));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> OptionalStringExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(114u, "");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(114, ""));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> OptionalBytesExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(122u, pb::ByteString.Empty);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(pb::FieldCodec.ForBytes(122, pb::ByteString.Empty));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension> OptionalGroupExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension>(131u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension>(pb::FieldCodec.ForGroup(131, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> OptionalNestedMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(146u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(146, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage> OptionalForeignMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage>(154u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage>(pb::FieldCodec.ForMessage(154, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage> OptionalImportMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage>(162u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage>(pb::FieldCodec.ForMessage(162, global::Google.Protobuf.TestProtos.ImportMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum> OptionalNestedEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum>(168u, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum.Foo);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum>(pb::FieldCodec.ForEnum(168, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum) x));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> OptionalForeignEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(176u, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum.ForeignFoo);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(pb::FieldCodec.ForEnum(176, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.ForeignEnum) x));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum> OptionalImportEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(184u, global::Google.Protobuf.TestProtos.ImportEnum.Unspecified);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(pb::FieldCodec.ForEnum(184, x => (int) x, x => (global::Google.Protobuf.TestProtos.ImportEnum) x));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> OptionalStringPieceExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(194u, "");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(194, ""));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> OptionalCordExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(202u, "");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(202, ""));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.PublicImportMessage> OptionalPublicImportMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.PublicImportMessage>(210u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.PublicImportMessage>(pb::FieldCodec.ForMessage(210, global::Google.Protobuf.TestProtos.PublicImportMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> OptionalLazyMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(218u, null);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> RepeatedInt32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(248u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> RepeatedInt64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(256u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> RepeatedUint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(264u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> RepeatedUint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(272u, 0UL);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> RepeatedSint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(280u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> RepeatedSint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(288u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> RepeatedFixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(301u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> RepeatedFixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(305u, 0UL);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> RepeatedSfixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(317u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> RepeatedSfixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(321u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float> RepeatedFloatExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float>(333u, 0F);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double> RepeatedDoubleExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double>(337u, 0D);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool> RepeatedBoolExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(344u, false);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> RepeatedStringExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(354u, "");
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> RepeatedBytesExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(362u, pb::ByteString.Empty);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension> RepeatedGroupExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension>(371u, null);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> RepeatedNestedMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(386u, null);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage> RepeatedForeignMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage>(394u, null);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage> RepeatedImportMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage>(402u, null);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum> RepeatedNestedEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum>(408u, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum.Foo);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> RepeatedForeignEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(416u, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum.ForeignFoo);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum> RepeatedImportEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(424u, global::Google.Protobuf.TestProtos.ImportEnum.Unspecified);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> RepeatedStringPieceExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(434u, "");
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> RepeatedCordExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(442u, "");
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> RepeatedLazyMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(458u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(218, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> RepeatedInt32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForInt32(248));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> RepeatedInt64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForInt64(256));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> RepeatedUint32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForUInt32(264));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> RepeatedUint64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(pb::FieldCodec.ForUInt64(272));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> RepeatedSint32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForSInt32(280));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> RepeatedSint64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForSInt64(288));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> RepeatedFixed32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForFixed32(301));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> RepeatedFixed64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(pb::FieldCodec.ForFixed64(305));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> RepeatedSfixed32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForSFixed32(317));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> RepeatedSfixed64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForSFixed64(321));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float> RepeatedFloatExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float>(pb::FieldCodec.ForFloat(333));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double> RepeatedDoubleExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double>(pb::FieldCodec.ForDouble(337));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool> RepeatedBoolExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(pb::FieldCodec.ForBool(344));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> RepeatedStringExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(354));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> RepeatedBytesExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(pb::FieldCodec.ForBytes(362));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension> RepeatedGroupExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension>(pb::FieldCodec.ForGroup(371, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension.Parser));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> RepeatedNestedMessageExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(386, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage> RepeatedForeignMessageExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage>(pb::FieldCodec.ForMessage(394, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage.Parser));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage> RepeatedImportMessageExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportMessage>(pb::FieldCodec.ForMessage(402, global::Google.Protobuf.TestProtos.ImportMessage.Parser));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum> RepeatedNestedEnumExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum>(pb::FieldCodec.ForEnum(408, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum) x));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> RepeatedForeignEnumExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(pb::FieldCodec.ForEnum(416, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.ForeignEnum) x));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum> RepeatedImportEnumExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(pb::FieldCodec.ForEnum(424, x => (int) x, x => (global::Google.Protobuf.TestProtos.ImportEnum) x));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> RepeatedStringPieceExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(434));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> RepeatedCordExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(442));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> RepeatedLazyMessageExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(458, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> DefaultInt32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(488u, 41);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForInt32(488, 41));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> DefaultInt64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(496u, 42L);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForInt64(496, 42L));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> DefaultUint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(504u, 43);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForUInt32(504, 43));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> DefaultUint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(512u, 44UL);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(pb::FieldCodec.ForUInt64(512, 44UL));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> DefaultSint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(520u, -45);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForSInt32(520, -45));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> DefaultSint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(528u, 46L);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForSInt64(528, 46L));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> DefaultFixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(541u, 47);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForFixed32(541, 47));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong> DefaultFixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(545u, 48UL);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, ulong>(pb::FieldCodec.ForFixed64(545, 48UL));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> DefaultSfixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(557u, 49);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForSFixed32(557, 49));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> DefaultSfixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(561u, -50L);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long>(pb::FieldCodec.ForSFixed64(561, -50L));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float> DefaultFloatExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float>(573u, 51.5F);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, float>(pb::FieldCodec.ForFloat(573, 51.5F));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double> DefaultDoubleExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double>(577u, 52000D);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, double>(pb::FieldCodec.ForDouble(577, 52000D));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool> DefaultBoolExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(584u, true);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, bool>(pb::FieldCodec.ForBool(584, true));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultStringExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(594u, "\u0068\u0065\u006c\u006c\u006f");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(594, "\u0068\u0065\u006c\u006c\u006f"));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> DefaultBytesExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(602u, pb::ByteString.FromBase64("d29ybGQ="));
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(pb::FieldCodec.ForBytes(602, pb::ByteString.FromBase64("d29ybGQ=")));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum> DefaultNestedEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum>(648u, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum.Bar);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum>(pb::FieldCodec.ForEnum(648, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum) x, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedEnum.Bar));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> DefaultForeignEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(656u, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum.ForeignBar);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(pb::FieldCodec.ForEnum(656, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.ForeignEnum) x, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum.ForeignBar));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum> DefaultImportEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(664u, global::Google.Protobuf.TestProtos.ImportEnum.ImportBar);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.ImportEnum>(pb::FieldCodec.ForEnum(664, x => (int) x, x => (global::Google.Protobuf.TestProtos.ImportEnum) x, global::Google.Protobuf.TestProtos.ImportEnum.ImportBar));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultStringPieceExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(674u, "\u0061\u0062\u0063");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(674, "\u0061\u0062\u0063"));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultCordExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(682u, "\u0031\u0032\u0033");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(682, "\u0031\u0032\u0033"));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> OneofUint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(888u, 0);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForUInt32(888, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> OneofNestedMessageExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(898u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(898, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> OneofStringExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(906u, "");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(906, ""));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> OneofBytesExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(914u, pb::ByteString.Empty);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(pb::FieldCodec.ForBytes(914, pb::ByteString.Empty));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings, string> MyExtensionString =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings, string>(402u, "");
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings, string>(pb::FieldCodec.ForString(402, ""));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings, int> MyExtensionInt =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings, int>(40u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int> PackedInt32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int>(722u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long> PackedInt64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long>(730u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint> PackedUint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint>(738u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong> PackedUint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong>(746u, 0UL);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int> PackedSint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int>(754u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long> PackedSint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long>(762u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint> PackedFixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint>(770u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong> PackedFixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong>(778u, 0UL);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int> PackedSfixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int>(786u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long> PackedSfixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long>(794u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, float> PackedFloatExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, float>(802u, 0F);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, double> PackedDoubleExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, double>(810u, 0D);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, bool> PackedBoolExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, bool>(818u, false);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> PackedEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(826u, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum.ForeignFoo);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int> UnpackedInt32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int>(720u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long> UnpackedInt64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long>(728u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint> UnpackedUint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint>(736u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong> UnpackedUint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong>(744u, 0UL);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int> UnpackedSint32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int>(752u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long> UnpackedSint64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long>(760u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint> UnpackedFixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint>(773u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong> UnpackedFixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong>(777u, 0UL);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int> UnpackedSfixed32Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int>(789u, 0);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long> UnpackedSfixed64Extension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long>(793u, 0L);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, float> UnpackedFloatExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, float>(805u, 0F);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, double> UnpackedDoubleExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, double>(809u, 0D);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, bool> UnpackedBoolExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, bool>(816u, false);
-    public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> UnpackedEnumExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(824u, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum.ForeignFoo);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestFieldOrderings, int>(pb::FieldCodec.ForInt32(40, 0));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int> PackedInt32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int>(pb::FieldCodec.ForInt32(722));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long> PackedInt64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long>(pb::FieldCodec.ForInt64(730));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint> PackedUint32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint>(pb::FieldCodec.ForUInt32(738));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong> PackedUint64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong>(pb::FieldCodec.ForUInt64(746));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int> PackedSint32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int>(pb::FieldCodec.ForSInt32(754));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long> PackedSint64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long>(pb::FieldCodec.ForSInt64(762));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint> PackedFixed32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, uint>(pb::FieldCodec.ForFixed32(770));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong> PackedFixed64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, ulong>(pb::FieldCodec.ForFixed64(778));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int> PackedSfixed32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, int>(pb::FieldCodec.ForSFixed32(786));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long> PackedSfixed64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, long>(pb::FieldCodec.ForSFixed64(794));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, float> PackedFloatExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, float>(pb::FieldCodec.ForFloat(802));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, double> PackedDoubleExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, double>(pb::FieldCodec.ForDouble(810));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, bool> PackedBoolExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, bool>(pb::FieldCodec.ForBool(818));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> PackedEnumExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestPackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(pb::FieldCodec.ForEnum(826, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.ForeignEnum) x));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int> UnpackedInt32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int>(pb::FieldCodec.ForInt32(720));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long> UnpackedInt64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long>(pb::FieldCodec.ForInt64(728));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint> UnpackedUint32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint>(pb::FieldCodec.ForUInt32(736));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong> UnpackedUint64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong>(pb::FieldCodec.ForUInt64(744));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int> UnpackedSint32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int>(pb::FieldCodec.ForSInt32(752));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long> UnpackedSint64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long>(pb::FieldCodec.ForSInt64(760));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint> UnpackedFixed32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, uint>(pb::FieldCodec.ForFixed32(773));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong> UnpackedFixed64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, ulong>(pb::FieldCodec.ForFixed64(777));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int> UnpackedSfixed32Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, int>(pb::FieldCodec.ForSFixed32(789));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long> UnpackedSfixed64Extension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, long>(pb::FieldCodec.ForSFixed64(793));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, float> UnpackedFloatExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, float>(pb::FieldCodec.ForFloat(805));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, double> UnpackedDoubleExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, double>(pb::FieldCodec.ForDouble(809));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, bool> UnpackedBoolExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, bool>(pb::FieldCodec.ForBool(816));
+    public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum> UnpackedEnumExtension =
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestUnpackedExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignEnum>(pb::FieldCodec.ForEnum(824, x => (int) x, x => (global::Google.Protobuf.TestProtos.Proto2.ForeignEnum) x));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes> TestAllTypes =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes>(4294880002u, null);
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestHugeFieldNumbers, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes>(pb::FieldCodec.ForMessage(4294880002, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Parser));
   }
 
   #region Enums
@@ -1770,7 +1770,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "repeatedgroup" field.</summary>
     public const int RepeatedGroupFieldNumber = 46;
     private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup> _repeated_repeatedGroup_codec
-        = pb::FieldCodec.ForMessage(371, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup.Parser);
+        = pb::FieldCodec.ForGroup(371, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup> repeatedGroup_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup> RepeatedGroup {
@@ -4887,11 +4887,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestAllExtensions> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestAllExtensions() {
       OnConstruction();
     }
@@ -4957,6 +4952,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += _extensions.CalculateSize();
       return size;
+    }
+
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestAllExtensions, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestAllExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestAllExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestAllExtensions, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5392,9 +5415,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Extensions {
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> Test =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(8018u, "\u0074\u0065\u0073\u0074");
+        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(8018, "\u0074\u0065\u0073\u0074"));
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> NestedStringExtension =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(8026u, "");
+        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(8026, ""));
     }
     #endregion
 
@@ -6876,9 +6899,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Extensions {
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired> Single =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired>(8002u, null);
-      public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired> Multi =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired>(8010u, null);
+        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired>(pb::FieldCodec.ForMessage(8002, global::Google.Protobuf.TestProtos.Proto2.TestRequired.Parser));
+      public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired> Multi =
+        new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestRequired>(pb::FieldCodec.ForMessage(8010, global::Google.Protobuf.TestProtos.Proto2.TestRequired.Parser));
     }
     #endregion
 
@@ -7596,11 +7619,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestEmptyMessageWithExtensions> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestEmptyMessageWithExtensions() {
       OnConstruction();
     }
@@ -7668,6 +7686,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       return size;
     }
 
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestEmptyMessageWithExtensions, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestEmptyMessageWithExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestEmptyMessageWithExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestEmptyMessageWithExtensions, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(TestEmptyMessageWithExtensions other) {
       if (other == null) {
@@ -7714,11 +7760,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestMultipleExtensionRanges> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestMultipleExtensionRanges() {
@@ -7786,6 +7827,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += _extensions.CalculateSize();
       return size;
+    }
+
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestMultipleExtensionRanges, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestMultipleExtensionRanges, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestMultipleExtensionRanges, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestMultipleExtensionRanges, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11062,11 +11131,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestFieldOrderings> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestFieldOrderings() {
       OnConstruction();
     }
@@ -11265,6 +11329,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += _extensions.CalculateSize();
       return size;
+    }
+
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestFieldOrderings, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestFieldOrderings, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestFieldOrderings, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestFieldOrderings, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17446,11 +17538,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestPackedExtensions> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestPackedExtensions() {
       OnConstruction();
     }
@@ -17518,6 +17605,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       return size;
     }
 
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestPackedExtensions, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestPackedExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestPackedExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestPackedExtensions, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(TestPackedExtensions other) {
       if (other == null) {
@@ -17564,11 +17679,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestUnpackedExtensions> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestUnpackedExtensions() {
@@ -17636,6 +17746,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += _extensions.CalculateSize();
       return size;
+    }
+
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestUnpackedExtensions, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestUnpackedExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestUnpackedExtensions, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestUnpackedExtensions, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18459,11 +18597,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestParsingMerge> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestParsingMerge() {
       OnConstruction();
     }
@@ -18562,7 +18695,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "repeatedgroup" field.</summary>
     public const int RepeatedGroupFieldNumber = 20;
     private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup> _repeated_repeatedGroup_codec
-        = pb::FieldCodec.ForMessage(163, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup.Parser);
+        = pb::FieldCodec.ForGroup(163, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup> repeatedGroup_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup> RepeatedGroup {
@@ -18651,6 +18784,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += _extensions.CalculateSize();
       return size;
+    }
+
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestParsingMerge, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestParsingMerge, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestParsingMerge, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestParsingMerge, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18817,7 +18978,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         /// <summary>Field number for the "group1" field.</summary>
         public const int Group1FieldNumber = 10;
         private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1> _repeated_group1_codec
-            = pb::FieldCodec.ForMessage(83, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1.Parser);
+            = pb::FieldCodec.ForGroup(83, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1.Parser);
         private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1> group1_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1> Group1 {
@@ -18827,7 +18988,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         /// <summary>Field number for the "group2" field.</summary>
         public const int Group2FieldNumber = 20;
         private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2> _repeated_group2_codec
-            = pb::FieldCodec.ForMessage(163, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2.Parser);
+            = pb::FieldCodec.ForGroup(163, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2.Parser);
         private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2> group2_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2> Group2 {
@@ -19605,9 +19766,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Extensions {
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes> OptionalExt =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes>(8002u, null);
-      public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes> RepeatedExt =
-        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes>(8010u, null);
+        new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes>(pb::FieldCodec.ForMessage(8002, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Parser));
+      public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes> RepeatedExt =
+        new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes>(pb::FieldCodec.ForMessage(8010, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Parser));
     }
     #endregion
 
@@ -20772,11 +20933,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ExtensionSet<TestHugeFieldNumbers> ExtensionSet { get { return _extensions; } }
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pb::ExtensionSet pb::IExtensionMessage.ExtensionSet { get { return _extensions; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestHugeFieldNumbers() {
       OnConstruction();
     }
@@ -21004,7 +21160,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "string_string_map" field.</summary>
     public const int StringStringMapFieldNumber = 536870010;
     private static readonly pbc::MapField<string, string>.Codec _map_stringStringMap_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 4294960082);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 4294960082);
     private readonly pbc::MapField<string, string> stringStringMap_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> StringStringMap {
@@ -21236,6 +21392,34 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += _extensions.CalculateSize();
       return size;
+    }
+
+    void pb::IExtensionMessage.RegisterExtension(pb::Extension extension) {
+      _extensions.Register(extension);
+    }
+
+    public void RegisterExtension<TValue>(pb::Extension<TestHugeFieldNumbers, TValue> extension) {
+      _extensions.Register(extension);
+    }
+
+    public TValue GetExtension<TValue>(pb::Extension<TestHugeFieldNumbers, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestHugeFieldNumbers, TValue> extension) {
+      return _extensions.Get(extension);
+    }
+
+    public void SetExtension<TValue>(pb::Extension<TestHugeFieldNumbers, TValue> extension, TValue value) {
+      _extensions.Set(extension, value);
+    }
+
+    public bool HasExtension(pb::Extension extension) {
+      return _extensions.Has(extension);
+    }
+
+    public void ClearExtension(pb::Extension extension) {
+      _extensions.Clear(extension);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

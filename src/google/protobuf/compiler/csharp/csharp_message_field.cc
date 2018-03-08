@@ -51,9 +51,8 @@ namespace compiler {
 namespace csharp {
 
 MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
-                                             int fieldOrdinal,
                                              const Options *options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+    : FieldGeneratorBase(descriptor, options) {
   if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO3) {
     variables_["has_property_check"] = name() + "_ != null";
     variables_["has_not_property_check"] = name() + "_ == null";
@@ -175,6 +174,14 @@ void MessageFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
       "}\n");
   }
 }
+void MessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::Extension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::Extension<$extended_type$, $type_name$>(");
+  GenerateCodecCode(printer);
+  printer->Print(");\n");
+}
 
 void MessageFieldGenerator::GenerateCloningCode(io::Printer* printer) {
   printer->Print(variables_,
@@ -185,16 +192,22 @@ void MessageFieldGenerator::GenerateFreezingCode(io::Printer* printer) {
 }
 
 void MessageFieldGenerator::GenerateCodecCode(io::Printer* printer) {
-  printer->Print(
-    variables_,
-    "pb::FieldCodec.ForMessage($tag$, $type_name$.Parser)");
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
+    printer->Print(
+      variables_,
+      "pb::FieldCodec.ForGroup($tag$, $type_name$.Parser)");
+  }
+  else {
+    printer->Print(
+      variables_,
+      "pb::FieldCodec.ForMessage($tag$, $type_name$.Parser)");
+  }
 }
 
 MessageOneofFieldGenerator::MessageOneofFieldGenerator(
     const FieldDescriptor* descriptor,
-	  int fieldOrdinal,
     const Options *options)
-    : MessageFieldGenerator(descriptor, fieldOrdinal, options) {
+    : MessageFieldGenerator(descriptor, options) {
   SetCommonOneofFieldVariables(&variables_);
 }
 

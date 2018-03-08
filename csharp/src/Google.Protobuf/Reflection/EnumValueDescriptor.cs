@@ -74,6 +74,18 @@ namespace Google.Protobuf.Reflection
         /// <param name="value">The value of this extension</param>
         /// <typeparam name="T">The type of the value to get</typeparam>
         /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetOption<T>(Extension<EnumValueOptions, T> extension, out T value) => throw new System.NotImplementedException();
+        public bool TryGetOption<T>(Extension<EnumValueOptions, T> extension, out T value)
+        {
+            if (Proto.Options.HasExtension(extension))
+            {
+                value = Proto.Options.GetExtension(extension);
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
     }
 }

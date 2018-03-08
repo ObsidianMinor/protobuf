@@ -42,6 +42,7 @@ namespace Google.Protobuf.Reflection
     {
         private static readonly string[] EmptyNames = new string[0];
         private static readonly GeneratedClrTypeInfo[] EmptyCodeInfo = new GeneratedClrTypeInfo[0];
+        private static readonly Extension[] EmptyExtensions = new Extension[0];
 
         /// <summary>
         /// Irrelevant for file descriptors; the CLR type for the message for message descriptors.
@@ -78,11 +79,16 @@ namespace Google.Protobuf.Reflection
         public Type[] NestedEnums { get; }
 
         /// <summary>
+        /// Extensions defined for this type
+        /// </summary>
+        public Extension[] Extensions { get; }
+
+        /// <summary>
         /// Creates a GeneratedClrTypeInfo for a message descriptor, with nested types, nested enums, the CLR type, property names and oneof names.
         /// Each array parameter may be null, to indicate a lack of values.
         /// The parameter order is designed to make it feasible to format the generated code readably.
         /// </summary>
-        public GeneratedClrTypeInfo(Type clrType, MessageParser parser, string[] propertyNames, string[] oneofNames, Type[] nestedEnums, GeneratedClrTypeInfo[] nestedTypes)
+        public GeneratedClrTypeInfo(Type clrType, MessageParser parser, string[] propertyNames, string[] oneofNames, Type[] nestedEnums, Extension[] extensions, GeneratedClrTypeInfo[] nestedTypes)
         {
             NestedTypes = nestedTypes ?? EmptyCodeInfo;
             NestedEnums = nestedEnums ?? ReflectionUtil.EmptyTypes;
@@ -90,13 +96,14 @@ namespace Google.Protobuf.Reflection
             Parser = parser;
             PropertyNames = propertyNames ?? EmptyNames;
             OneofNames = oneofNames ?? EmptyNames;
+            Extensions = extensions ?? EmptyExtensions;
         }
 
         /// <summary>
-        /// Creates a GeneratedClrTypeInfo for a file descriptor, with only types and enums.
+        /// Creates a GeneratedClrTypeInfo for a file descriptor, with only types, enums, and extensions
         /// </summary>
-        public GeneratedClrTypeInfo(Type[] nestedEnums, GeneratedClrTypeInfo[] nestedTypes)
-            : this(null, null, null, null, nestedEnums, nestedTypes)
+        public GeneratedClrTypeInfo(Type[] nestedEnums, Extension[] extensions, GeneratedClrTypeInfo[] nestedTypes)
+            : this(null, null, null, null, nestedEnums, extensions, nestedTypes)
         {
         }
     }

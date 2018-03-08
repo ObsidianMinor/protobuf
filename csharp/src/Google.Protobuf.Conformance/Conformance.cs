@@ -37,9 +37,9 @@ namespace Conformance {
             "b3RvYnVmLmNvbmZvcm1hbmNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Conformance.WireFormat), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Conformance.ConformanceRequest), global::Conformance.ConformanceRequest.Parser, new[]{ "ProtobufPayload", "JsonPayload", "RequestedOutputFormat", "MessageType" }, new[]{ "Payload" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Conformance.ConformanceResponse), global::Conformance.ConformanceResponse.Parser, new[]{ "ParseError", "SerializeError", "RuntimeError", "ProtobufPayload", "JsonPayload", "Skipped" }, new[]{ "Result" }, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Conformance.WireFormat), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Conformance.ConformanceRequest), global::Conformance.ConformanceRequest.Parser, new[]{ "ProtobufPayload", "JsonPayload", "RequestedOutputFormat", "MessageType" }, new[]{ "Payload" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Conformance.ConformanceResponse), global::Conformance.ConformanceResponse.Parser, new[]{ "ParseError", "SerializeError", "RuntimeError", "ProtobufPayload", "JsonPayload", "Skipped" }, new[]{ "Result" }, null, null, null)
           }));
     }
     #endregion

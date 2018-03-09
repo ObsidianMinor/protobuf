@@ -44,7 +44,6 @@ namespace Google.Protobuf.Reflection
         private MessageDescriptor messageType;
         private FieldType fieldType;
         private readonly string propertyName; // Annoyingly, needed in Crosslink.
-        private object defaultValue;
         private IFieldAccessor accessor;
         private Extension extension;
 
@@ -199,11 +198,6 @@ namespace Google.Protobuf.Reflection
         /// Returns the field number declared in the proto file.
         /// </summary>
         public int FieldNumber => Proto.Number;
-
-        /// <summary>
-        /// Returns the default value of the field
-        /// </summary>
-        public object DefaultValue => defaultValue;
 
         /// <summary>
         /// Compares this descriptor with another one, ordering in "canonical" order

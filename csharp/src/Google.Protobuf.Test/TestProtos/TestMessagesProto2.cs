@@ -2553,11 +2553,11 @@ namespace ProtobufTestMessages.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestAllTypesProto2, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestAllTypesProto2, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -3694,11 +3694,11 @@ namespace ProtobufTestMessages.Proto2 {
           _extensions.Set(extension, value);
         }
 
-        public bool HasExtension(pb::Extension extension) {
+        public bool HasExtension<TValue>(pb::Extension<MessageSetCorrect, TValue> extension) {
           return _extensions.Has(extension);
         }
 
-        public void ClearExtension(pb::Extension extension) {
+        public void ClearExtension<TValue>(pb::Extension<MessageSetCorrect, TValue> extension) {
           _extensions.Clear(extension);
         }
 

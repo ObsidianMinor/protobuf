@@ -10,8 +10,14 @@ namespace Google.Protobuf
     {
         private Dictionary<Type, ICollection<Extension>> extensions = new Dictionary<Type, ICollection<Extension>>();
 
+        /// <summary>
+        /// Adds the specified extension to the registry
+        /// </summary>
         public void Add(Extension extension)
         {
+            if (extension is null)
+                throw new ArgumentNullException(nameof(extension));
+
             if (extensions.TryGetValue(extension.GetType(), out var collection))
             {
                 collection.Add(extension);
@@ -22,17 +28,27 @@ namespace Google.Protobuf
             }
         }
 
-        public void Add(params Extension[] newExtensions) => Add((IEnumerable<Extension>)newExtensions);
+        /// <summary>
+        /// Adds the specified extensions to the registry
+        /// </summary>
+        public void Add(params Extension[] newExtensions) 
+        { 
+            if (newExtensions is null)
+                throw new ArgumentNullException(nameof(newExtensions));
 
-        public void Add(IEnumerable<Extension> newExtensions)
-        {
-            foreach (var extension in newExtensions)
-                Add(extension);
+            Add((IEnumerable<Extension>)newExtensions);
         }
 
-        public void Remove(Extension extension)
+        /// <summary>
+        /// Adds the specified extensions to the reigstry
+        /// </summary>
+        public void Add(IEnumerable<Extension> newExtensions)
         {
-
+            if (newExtensions is null)
+                throw new ArgumentNullException(nameof(newExtensions));
+                
+            foreach (var extension in newExtensions)
+                Add(extension);
         }
 
         /// <summary>

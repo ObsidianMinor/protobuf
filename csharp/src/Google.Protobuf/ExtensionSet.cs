@@ -10,7 +10,8 @@ namespace Google.Protobuf
     public abstract class ExtensionSet
     {
         private readonly Type targetType;
-        private readonly Dictionary<Extension, IExtensionValue> extensionValues;
+        private readonly Dictionary<Extension, IExtensionValue> valuesByIdentifier = new Dictionary<Extension, IExtensionValue>();
+        private readonly Dictionary<uint, IExtensionValue> valuesByTag = new Dictionary<uint, IExtensionValue>();
 
         internal ExtensionSet(Type target)
         {
@@ -20,12 +21,22 @@ namespace Google.Protobuf
         internal IExtensionValue GetValueFor(Extension extension)
         {
             if (extension.TargetType != targetType)
-                throw new ArgumentException("Cannot register extension for wrong target type");
+                throw new ArgumentException($"Type of extension does not match target type of set: Expected {targetType}, got {extension.TargetType}");
 
-            if (extensionValues.TryGetValue(extension, out var value))
+            if (valuesByIdentifier.TryGetValue(extension, out var value))
                 return value;
             else
                 throw new InvalidOperationException("The set does not have a registered extension for this extension");
+        }
+
+        internal bool TryGetValueFor(Extension extension, out IExtensionValue extensionValue)
+        {
+            return valuesByIdentifier.TryGetValue(extension, out extensionValue);
+        }
+
+        internal bool TryGetValueFor(uint tag, out IExtensionValue extensionValue)
+        {
+            return valuesByTag.TryGetValue(tag, out extensionValue);
         }
 
         /// <summary>
@@ -37,10 +48,12 @@ namespace Google.Protobuf
             if (extension.TargetType != targetType)
                 throw new ArgumentException("Cannot register extension for wrong target type");
 
-            if (extensionValues.ContainsKey(extension))
+            if (valuesByIdentifier.ContainsKey(extension))
                 throw new InvalidOperationException("The specified extension is already registered in this set");
 
-            extensionValues.Add(extension, extension.GetValue());
+            var value = extension.GetValue();
+            valuesByTag.Add(extension.Tag, value);
+            valuesByIdentifier.Add(extension, value);
         }
 
         /// <summary>
@@ -49,13 +62,30 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="stream">The field to merge from</param>
         /// <returns>True if the field was merged, false otherwise</returns>
-        public bool TryMergeFieldFrom(CodedInputStream stream) => throw new NotImplementedException();
+        public bool TryMergeFieldFrom(CodedInputStream stream)
+        {
+            if (valuesByTag.TryGetValue(stream.LastTag, out var extensionValue))
+            {
+                extensionValue.MergeForm(stream);
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// Writes this set into the specified <see cref="CodedOutputStream"/>
         /// </summary>
         /// <param name="stream"></param>
-        public void WriteTo(CodedOutputStream stream) => throw new NotImplementedException();
+        public void WriteTo(CodedOutputStream stream)
+        {
+            foreach(var value in valuesByIdentifier.Values)
+            {
+                value.WriteTo(stream);
+            }
+        }
 
         /// <summary>
         /// Gets the extension set's hash code
@@ -67,7 +97,15 @@ namespace Google.Protobuf
         /// Gets the number of bytes required to encode this set
         /// </summary>
         /// <returns>The number of bytes required to encode this set</returns>
-        public int CalculateSize() => throw new NotImplementedException();
+        public int CalculateSize()
+        {
+            int size = 0;
+            foreach(var value in valuesByIdentifier.Values)
+            {
+                size += value.CalculateSize();
+            }
+            return size;
+        }
     }
 
     /// <summary>
@@ -76,6 +114,9 @@ namespace Google.Protobuf
     /// <typeparam name="TTarget"></typeparam>
     public sealed class ExtensionSet<TTarget> : ExtensionSet where TTarget : IExtensionMessage<TTarget>
     {
+        /// <summary>
+        /// Creates a new empty extension set
+        /// </summary>
         public ExtensionSet() : base(typeof(TTarget)) { }
 
         /// <summary>
@@ -84,15 +125,54 @@ namespace Google.Protobuf
         /// <param name="extension">The extension to register</param>
         public void Register<TValue>(Extension<TTarget, TValue> extension) => Register((Extension)extension);
 
-        public TValue Get<TValue>(Extension<TTarget, TValue> extension) => throw new NotImplementedException();
+        /// <summary>
+        /// Gets the value of the specified extension
+        /// </summary>
+        public TValue Get<TValue>(Extension<TTarget, TValue> extension)
+        {
+            var value = (ExtensionValue<TValue>)GetValueFor(extension);
+            return value.GetValue();
+        }
 
+        /// <summary>
+        /// Gets the value of the specified repeated extension
+        /// </summary>
         public RepeatedField<TValue> Get<TValue>(RepeatedExtension<TTarget, TValue> extension) => throw new NotImplementedException();
 
-        public void Set<TValue>(Extension<TTarget, TValue> extension, TValue value) => throw new NotImplementedException();
+        /// <summary>
+        /// Sets the value of the specified extension
+        /// </summary>
+        public void Set<TValue>(Extension<TTarget, TValue> extension, TValue value)
+        {
+            var extensionValue = (ExtensionValue<TValue>)GetValueFor(extension);
+            extensionValue.SetValue(value);
+        }
 
-        public bool Has(Extension extension) => throw new NotImplementedException();
+        /// <summary>
+        /// Gets whether the specified extension has a value
+        /// </summary>
+        public bool Has<TValue>(Extension<TTarget, TValue> extension)
+        {
+            if (TryGetValueFor(extension, out var value))
+            {
+                return ((ExtensionValue<TValue>)value).HasValue;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-        public void Clear(Extension extension) => throw new NotImplementedException();
+        /// <summary>
+        /// Clears the value of the specified extension
+        /// </summary>
+        public void Clear<TValue>(Extension<TTarget, TValue> extension)
+        {
+            if (TryGetValueFor(extension, out var value))
+            {
+                ((ExtensionValue<TValue>)value).ClearValue();
+            }
+        }
 
         /// <summary>
         /// Merges the specified <see cref="ExtensionSet{TTarget}"/> into this set

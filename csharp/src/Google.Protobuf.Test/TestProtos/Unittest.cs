@@ -4974,11 +4974,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestAllExtensions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestAllExtensions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -7706,11 +7706,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestEmptyMessageWithExtensions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestEmptyMessageWithExtensions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -7849,11 +7849,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestMultipleExtensionRanges, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestMultipleExtensionRanges, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -11351,11 +11351,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestFieldOrderings, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestFieldOrderings, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -17625,11 +17625,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestPackedExtensions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestPackedExtensions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -17768,11 +17768,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestUnpackedExtensions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestUnpackedExtensions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -18806,11 +18806,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestParsingMerge, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestParsingMerge, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -21414,11 +21414,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<TestHugeFieldNumbers, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<TestHugeFieldNumbers, TValue> extension) {
       _extensions.Clear(extension);
     }
 

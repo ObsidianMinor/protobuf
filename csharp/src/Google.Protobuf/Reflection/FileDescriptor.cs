@@ -319,7 +319,12 @@ namespace Google.Protobuf.Reflection
 
         private static IEnumerable<Extension> GetAllOptionExtensions(FileDescriptor[] depenencies, GeneratedClrTypeInfo generatedInfo)
         {
-            yield break;
+            return RecursiveGetAllGeneratedExtensions(generatedInfo);
+        }
+
+        private static IEnumerable<Extension> RecursiveGetAllGeneratedExtensions(GeneratedClrTypeInfo generated)
+        {
+            return generated.Extensions.Concat(generated.NestedTypes.SelectMany(RecursiveGetAllGeneratedExtensions));
         }
 
         /// <summary>
@@ -365,27 +370,6 @@ namespace Google.Protobuf.Reflection
             else
             {
                 value = default(T);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Tries to get the specified custom extension option for this file
-        /// </summary>
-        /// <param name="extension">The extension to get the value for</param>
-        /// <param name="value">The value of this extension</param>
-        /// <typeparam name="T">The type of the value to get</typeparam>
-        /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetOption<T>(RepeatedExtension<FileOptions, T> extension, out RepeatedField<T> value)
-        {
-            if (Proto.Options.HasExtension(extension))
-            {
-                value = Proto.Options.GetExtension(extension);
-                return true;
-            }
-            else
-            {
-                value = null;
                 return false;
             }
         }

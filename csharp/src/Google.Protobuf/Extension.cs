@@ -11,6 +11,8 @@ namespace Google.Protobuf
         /// Gets the type this extension is for
         /// </summary>
         internal abstract Type TargetType { get; }
+
+        internal abstract uint Tag { get; }
         
         internal abstract IExtensionValue GetValue();
     }
@@ -32,9 +34,11 @@ namespace Google.Protobuf
 
         internal override Type TargetType => typeof(TTarget);
 
+        internal override uint Tag => codec.Tag;
+
         internal override IExtensionValue GetValue()
         {
-            return new ExtensionValue<TValue>();
+            return new ExtensionValue<TValue>(codec);
         }
     }
 
@@ -55,9 +59,11 @@ namespace Google.Protobuf
 
         internal override Type TargetType => typeof(TTarget);
 
+        internal override uint Tag => codec.Tag;
+
         internal override IExtensionValue GetValue()
         {
-            return new RepeatedExtensionValue<TValue>();
+            return new RepeatedExtensionValue<TValue>(codec);
         }
     }
 }

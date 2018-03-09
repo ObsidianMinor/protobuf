@@ -1729,11 +1729,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<ExtensionRangeOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<ExtensionRangeOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -4698,11 +4698,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<FileOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<FileOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -5205,11 +5205,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<MessageOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<MessageOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -5667,11 +5667,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<FieldOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<FieldOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -5906,11 +5906,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<OneofOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<OneofOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -6150,11 +6150,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<EnumOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<EnumOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -6370,11 +6370,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<EnumValueOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<EnumValueOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -6583,11 +6583,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<ServiceOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<ServiceOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 
@@ -6830,11 +6830,11 @@ namespace Google.Protobuf.Reflection {
       _extensions.Set(extension, value);
     }
 
-    public bool HasExtension(pb::Extension extension) {
+    public bool HasExtension<TValue>(pb::Extension<MethodOptions, TValue> extension) {
       return _extensions.Has(extension);
     }
 
-    public void ClearExtension(pb::Extension extension) {
+    public void ClearExtension<TValue>(pb::Extension<MethodOptions, TValue> extension) {
       _extensions.Clear(extension);
     }
 

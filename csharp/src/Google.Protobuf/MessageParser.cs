@@ -75,7 +75,7 @@ namespace Google.Protobuf
         public IMessage ParseFrom(byte[] data)
         {
             IMessage message = CreateTemplate();
-            message.MergeFrom(data, DiscardUnknownFields);
+            message.MergeFrom(data, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -89,7 +89,7 @@ namespace Google.Protobuf
         public IMessage ParseFrom(byte[] data, int offset, int length)
         {
             IMessage message = CreateTemplate();
-            message.MergeFrom(data, offset, length, DiscardUnknownFields);
+            message.MergeFrom(data, offset, length, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -101,7 +101,7 @@ namespace Google.Protobuf
         public IMessage ParseFrom(ByteString data)
         {
             IMessage message = CreateTemplate();
-            message.MergeFrom(data, DiscardUnknownFields);
+            message.MergeFrom(data, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -113,7 +113,7 @@ namespace Google.Protobuf
         public IMessage ParseFrom(Stream input)
         {
             IMessage message = CreateTemplate();
-            message.MergeFrom(input, DiscardUnknownFields);
+            message.MergeFrom(input, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -129,7 +129,7 @@ namespace Google.Protobuf
         public IMessage ParseDelimitedFrom(Stream input)
         {
             IMessage message = CreateTemplate();
-            message.MergeDelimitedFrom(input, DiscardUnknownFields);
+            message.MergeDelimitedFrom(input, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -254,7 +254,7 @@ namespace Google.Protobuf
         public new T ParseFrom(byte[] data)
         {
             T message = CreateTemplate();
-            message.MergeFrom(data, DiscardUnknownFields);
+            message.MergeFrom(data, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -268,7 +268,7 @@ namespace Google.Protobuf
         public new T ParseFrom(byte[] data, int offset, int length)
         {
             T message = CreateTemplate();
-            message.MergeFrom(data, offset, length, DiscardUnknownFields);
+            message.MergeFrom(data, offset, length, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -280,7 +280,7 @@ namespace Google.Protobuf
         public new T ParseFrom(ByteString data)
         {
             T message = CreateTemplate();
-            message.MergeFrom(data, DiscardUnknownFields);
+            message.MergeFrom(data, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -292,7 +292,7 @@ namespace Google.Protobuf
         public new T ParseFrom(Stream input)
         {
             T message = CreateTemplate();
-            message.MergeFrom(input, DiscardUnknownFields);
+            message.MergeFrom(input, DiscardUnknownFields, Extensions);
             return message;
         }
 
@@ -308,7 +308,7 @@ namespace Google.Protobuf
         public new T ParseDelimitedFrom(Stream input)
         {
             T message = CreateTemplate();
-            message.MergeDelimitedFrom(input, DiscardUnknownFields);
+            message.MergeDelimitedFrom(input, DiscardUnknownFields, Extensions);
             return message;
         }
 

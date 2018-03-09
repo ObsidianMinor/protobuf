@@ -1,28 +1,41 @@
 ﻿using System;
+using Google.Protobuf.Collections;
 
 namespace Google.Protobuf
 {
-    public interface IExtensionValue : IEquatable<IExtensionValue>, IDeepCloneable<IExtensionValue>
+
+    internal interface IExtensionValue : IEquatable<IExtensionValue>, IDeepCloneable<IExtensionValue>
     {
-        void MergeForm(CodedInputStream stream);
+        void MergeForm(CodedInputStream input);
         void MergeFrom(IExtensionValue value);
-        void WriteTo(CodedOutputStream value);
+        void WriteTo(CodedOutputStream output);
         int CalculateSize();
     }
 
     internal sealed class ExtensionValue<T> : IExtensionValue
     {
-        private T value;
+        private bool hasValue;
+        private T field;
         private FieldCodec<T> codec;
+
+        internal ExtensionValue(FieldCodec<T> codec)
+        {
+            this.codec = codec;
+            field = codec.DefaultValue;
+        }
 
         public int CalculateSize()
         {
-            throw new NotImplementedException();
+            return codec.ForceCalculateSizeWithTag(field);
         }
 
         public IExtensionValue Clone()
         {
-            throw new NotImplementedException();
+            return new ExtensionValue<T>(codec) 
+            {
+                hasValue = this.hasValue,
+                field = this.field
+            };
         }
 
         public bool Equals(IExtensionValue other)
@@ -30,27 +43,66 @@ namespace Google.Protobuf
             throw new NotImplementedException();
         }
 
-        public void MergeForm(CodedInputStream stream)
+        public void MergeForm(CodedInputStream input)
         {
-            throw new NotImplementedException();
+            hasValue = true;
+            field = codec.Read(input);
         }
 
         public void MergeFrom(IExtensionValue value)
         {
-            throw new NotImplementedException();
+            if (value is ExtensionValue<T> extensionValue)
+            {
+                if (extensionValue.hasValue)
+                {
+                    field = extensionValue.field;
+                    hasValue = true;
+                }
+            }
         }
 
-        public void WriteTo(CodedOutputStream value)
+        public void WriteTo(CodedOutputStream output)
         {
-            throw new NotImplementedException();
+            if (hasValue)
+            {
+                codec.ForceWriteTagAndValue(output, field);
+            }
+        }
+
+        public T GetValue()
+        {
+            return field;
+        }
+
+        public void SetValue(T value)
+        {
+            hasValue = true;
+            field = value;
+        }
+
+        public bool HasValue => hasValue;
+
+        public void ClearValue() 
+        { 
+            hasValue = false;
+            field = codec.DefaultValue;
         }
     }
 
     internal sealed class RepeatedExtensionValue<T> : IExtensionValue
     {
+        private readonly RepeatedField<T> field;
+        private readonly FieldCodec<T> codec;
+
+        internal RepeatedExtensionValue(FieldCodec<T> codec)
+        {
+            this.codec = codec;
+            field = new RepeatedField<T>();
+        }
+
         public int CalculateSize()
         {
-            throw new NotImplementedException();
+            return field.CalculateSize(codec);
         }
 
         public IExtensionValue Clone()
@@ -63,9 +115,9 @@ namespace Google.Protobuf
             throw new NotImplementedException();
         }
 
-        public void MergeForm(CodedInputStream stream)
+        public void MergeForm(CodedInputStream input)
         {
-            throw new NotImplementedException();
+            field.AddEntriesFrom(input, codec);
         }
 
         public void MergeFrom(IExtensionValue value)
@@ -73,9 +125,9 @@ namespace Google.Protobuf
             throw new NotImplementedException();
         }
 
-        public void WriteTo(CodedOutputStream value)
+        public void WriteTo(CodedOutputStream output)
         {
-            throw new NotImplementedException();
+            field.WriteTo(output, codec);
         }
     }
 }

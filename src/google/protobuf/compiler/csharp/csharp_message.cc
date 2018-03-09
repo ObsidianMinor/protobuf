@@ -638,10 +638,10 @@ void MessageGenerator::GenerateExtensionMessageMethods(io::Printer* printer) {
     "public void SetExtension<TValue>(pb::Extension<$class_name$, TValue> extension, TValue value) {\n"
     "  _extensions.Set(extension, value);\n"
     "}\n\n"
-    "public bool HasExtension(pb::Extension extension) {\n"
+    "public bool HasExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
     "  return _extensions.Has(extension);\n"
     "}\n\n"
-    "public void ClearExtension(pb::Extension extension) {\n"
+    "public void ClearExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
     "  _extensions.Clear(extension);\n"
     "}\n\n",
     "class_name", class_name());

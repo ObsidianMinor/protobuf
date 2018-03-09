@@ -491,6 +491,18 @@ namespace Google.Protobuf
         }
 
         /// <summary>
+        /// Unconditionally writes a tag and the given value to the stream
+        /// </summary>
+        internal void ForceWriteTagAndValue(CodedOutputStream output, T value)
+        {
+            if (Tag != 0)
+            {
+                output.WriteTag(Tag);
+            }
+            ValueWriter(output, value);
+        }
+
+        /// <summary>
         /// Reads a value of the codec type from the given <see cref="CodedInputStream"/>.
         /// </summary>
         /// <param name="input">The input stream to read from.</param>
@@ -502,6 +514,12 @@ namespace Google.Protobuf
         /// if the value is not the default.
         /// </summary>
         public int CalculateSizeWithTag(T value) => IsDefault(value) ? 0 : ValueSizeCalculator(value) + tagSize;
+
+        /// <summary>
+        /// Calculates the size required to write the given value, with a tag,
+        /// even if the value is the default
+        /// </summary>
+        internal int ForceCalculateSizeWithTag(T value) => ValueSizeCalculator(value) + tagSize;
 
         private bool IsDefault(T value) => EqualityComparer.Equals(value, DefaultValue);
     }

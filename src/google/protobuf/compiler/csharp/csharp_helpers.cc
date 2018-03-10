@@ -345,7 +345,8 @@ std::string GetPropertyName(const FieldDescriptor* descriptor) {
   // ones.
   if (property_name == descriptor->containing_type()->name()
       || property_name == "Types"
-      || property_name == "Descriptor") {
+      || property_name == "Descriptor"
+      || property_name == "Extensions") {
     property_name += "_";
   }
   return property_name;

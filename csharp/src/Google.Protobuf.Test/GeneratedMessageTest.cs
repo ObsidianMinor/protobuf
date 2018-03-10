@@ -32,8 +32,9 @@
 
 using System;
 using System.IO;
-using Google.Protobuf.TestProtos;
+using Proto3 = Google.Protobuf.TestProtos;
 using Proto2 = Google.Protobuf.TestProtos.Proto2;
+using static Google.Protobuf.TestProtos.Proto2.UnittestExtensions;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,8 +52,8 @@ namespace Google.Protobuf
         public void EmptyMessageFieldDistinctFromMissingMessageField()
         {
             // This demonstrates what we're really interested in...
-            var message1 = new TestAllTypes { SingleForeignMessage = new ForeignMessage() };
-            var message2 = new TestAllTypes(); // SingleForeignMessage is null
+            var message1 = new Proto3.TestAllTypes { SingleForeignMessage = new Proto3.ForeignMessage() };
+            var message2 = new Proto3.TestAllTypes(); // SingleForeignMessage is null
             EqualityTester.AssertInequality(message1, message2);
         }
 
@@ -68,20 +69,20 @@ namespace Google.Protobuf
         public void DefaultValues()
         {
             // Single fields
-            var message = new TestAllTypes();
+            var message = new Proto3.TestAllTypes();
             Assert.AreEqual(false, message.SingleBool);
             Assert.AreEqual(ByteString.Empty, message.SingleBytes);
             Assert.AreEqual(0.0, message.SingleDouble);
             Assert.AreEqual(0, message.SingleFixed32);
             Assert.AreEqual(0L, message.SingleFixed64);
             Assert.AreEqual(0.0f, message.SingleFloat);
-            Assert.AreEqual(ForeignEnum.ForeignUnspecified, message.SingleForeignEnum);
+            Assert.AreEqual(Proto3.ForeignEnum.ForeignUnspecified, message.SingleForeignEnum);
             Assert.IsNull(message.SingleForeignMessage);
-            Assert.AreEqual(ImportEnum.Unspecified, message.SingleImportEnum);
+            Assert.AreEqual(Proto3.ImportEnum.Unspecified, message.SingleImportEnum);
             Assert.IsNull(message.SingleImportMessage);
             Assert.AreEqual(0, message.SingleInt32);
             Assert.AreEqual(0L, message.SingleInt64);
-            Assert.AreEqual(TestAllTypes.Types.NestedEnum.Unspecified, message.SingleNestedEnum);
+            Assert.AreEqual(Proto3.TestAllTypes.Types.NestedEnum.Unspecified, message.SingleNestedEnum);
             Assert.IsNull(message.SingleNestedMessage);
             Assert.IsNull(message.SinglePublicImportMessage);
             Assert.AreEqual(0, message.SingleSfixed32);
@@ -115,7 +116,7 @@ namespace Google.Protobuf
             Assert.AreEqual(0, message.RepeatedUint64.Count);
 
             // Oneof fields
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
             Assert.AreEqual(0, message.OneofUint32);
             Assert.AreEqual("", message.OneofString);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
@@ -148,7 +149,7 @@ namespace Google.Protobuf
             Assert.IsNull(message.OptionalImportMessage);
             Assert.AreEqual(Proto2.TestAllTypes.Types.NestedEnum.Foo, message.OptionalNestedEnum);
             Assert.AreEqual(Proto2.ForeignEnum.ForeignFoo, message.OptionalForeignEnum);
-            Assert.AreEqual(ImportEnum.Unspecified, message.OptionalImportEnum);
+            Assert.AreEqual(Proto3.ImportEnum.Unspecified, message.OptionalImportEnum);
             Assert.AreEqual("", message.OptionalStringPiece);
             Assert.AreEqual("", message.OptionalCord);
             Assert.IsNull(message.OptionalPublicImportMessage);
@@ -197,7 +198,7 @@ namespace Google.Protobuf
             Assert.AreEqual(ByteString.CopyFromUtf8("world"), message.DefaultBytes);
             Assert.AreEqual(Proto2.TestAllTypes.Types.NestedEnum.Bar, message.DefaultNestedEnum);
             Assert.AreEqual(Proto2.ForeignEnum.ForeignBar, message.DefaultForeignEnum);
-            Assert.AreEqual(ImportEnum.ImportBar, message.DefaultImportEnum);
+            Assert.AreEqual(Proto3.ImportEnum.ImportBar, message.DefaultImportEnum);
             Assert.AreEqual("abc", message.DefaultStringPiece);
             Assert.AreEqual("123", message.DefaultCord);
 
@@ -245,7 +246,7 @@ namespace Google.Protobuf
         [Test]
         public void NullStringAndBytesRejected()
         {
-            var message = new TestAllTypes();
+            var message = new Proto3.TestAllTypes();
             Assert.Throws<ArgumentNullException>(() => message.SingleString = null);
             Assert.Throws<ArgumentNullException>(() => message.OneofString = null);
             Assert.Throws<ArgumentNullException>(() => message.SingleBytes = null);
@@ -255,18 +256,18 @@ namespace Google.Protobuf
         [Test]
         public void RoundTrip_Empty()
         {
-            var message = new TestAllTypes();
+            var message = new Proto3.TestAllTypes();
             // Without setting any values, there's nothing to write.
             byte[] bytes = message.ToByteArray();
             Assert.AreEqual(0, bytes.Length);
-            TestAllTypes parsed = TestAllTypes.Parser.ParseFrom(bytes);
+            Proto3.TestAllTypes parsed = Proto3.TestAllTypes.Parser.ParseFrom(bytes);
             Assert.AreEqual(message, parsed);
         }
 
         [Test]
         public void RoundTrip_SingleValues()
         {
-            var message = new TestAllTypes
+            var message = new Proto3.TestAllTypes
             {
                 SingleBool = true,
                 SingleBytes = ByteString.CopyFrom(1, 2, 3, 4),
@@ -274,15 +275,15 @@ namespace Google.Protobuf
                 SingleFixed32 = 23,
                 SingleFixed64 = 1234567890123,
                 SingleFloat = 12.25f,
-                SingleForeignEnum = ForeignEnum.ForeignBar,
-                SingleForeignMessage = new ForeignMessage { C = 10 },
-                SingleImportEnum = ImportEnum.ImportBaz,
-                SingleImportMessage = new ImportMessage { D = 20 },
+                SingleForeignEnum = Proto3.ForeignEnum.ForeignBar,
+                SingleForeignMessage = new Proto3.ForeignMessage { C = 10 },
+                SingleImportEnum = Proto3.ImportEnum.ImportBaz,
+                SingleImportMessage = new Proto3.ImportMessage { D = 20 },
                 SingleInt32 = 100,
                 SingleInt64 = 3210987654321,
-                SingleNestedEnum = TestAllTypes.Types.NestedEnum.Foo,
-                SingleNestedMessage = new TestAllTypes.Types.NestedMessage { Bb = 35 },
-                SinglePublicImportMessage = new PublicImportMessage { E = 54 },
+                SingleNestedEnum = Proto3.TestAllTypes.Types.NestedEnum.Foo,
+                SingleNestedMessage = new Proto3.TestAllTypes.Types.NestedMessage { Bb = 35 },
+                SinglePublicImportMessage = new Proto3.PublicImportMessage { E = 54 },
                 SingleSfixed32 = -123,
                 SingleSfixed64 = -12345678901234,
                 SingleSint32 = -456,
@@ -293,14 +294,77 @@ namespace Google.Protobuf
             };
 
             byte[] bytes = message.ToByteArray();
-            TestAllTypes parsed = TestAllTypes.Parser.ParseFrom(bytes);
+            Proto3.TestAllTypes parsed = Proto3.TestAllTypes.Parser.ParseFrom(bytes);
+            Assert.AreEqual(message, parsed);
+        }
+
+        [Test]
+        public void RoundTrip_SingleExtensionValues()
+        {
+            ExtensionRegistry registry = new ExtensionRegistry
+            {
+                OptionalBoolExtension,
+                OptionalBytesExtension,
+                OptionalDoubleExtension,
+                OptionalFixed32Extension,
+                OptionalFixed64Extension,
+                OptionalFloatExtension,
+                OptionalForeignEnumExtension,
+                OptionalForeignMessageExtension,
+                OptionalImportEnumExtension,
+                OptionalForeignMessageExtension,
+                OptionalImportEnumExtension,
+                OptionalImportMessageExtension,
+                OptionalInt32Extension,
+                OptionalInt64Extension,
+                OptionalNestedEnumExtension,
+                OptionalNestedMessageExtension,
+                OptionalPublicImportMessageExtension,
+                OptionalSfixed32Extension,
+                OptionalSfixed64Extension,
+                OptionalSint32Extension,
+                OptionalSint64Extension,
+                OptionalStringExtension,
+                OptionalUint32Extension,
+                OptionalUint64Extension,
+                OptionalGroupExtension,
+            };
+
+            var message = new Proto2.TestAllExtensions();
+            message.RegisterExtensions(registry);
+            message.SetExtension(OptionalBoolExtension, true);
+            message.SetExtension(OptionalBytesExtension, ByteString.CopyFrom(1, 2, 3, 4));
+            message.SetExtension(OptionalDoubleExtension, 23.5);
+            message.SetExtension(OptionalFixed32Extension, 23u);
+            message.SetExtension(OptionalFixed64Extension, 1234567890123u);
+            message.SetExtension(OptionalFloatExtension, 12.25f);
+            message.SetExtension(OptionalForeignEnumExtension, Proto2.ForeignEnum.ForeignBar);
+            message.SetExtension(OptionalForeignMessageExtension, new Proto2.ForeignMessage { C = 10 });
+            message.SetExtension(OptionalImportEnumExtension, Proto3.ImportEnum.ImportBaz);
+            message.SetExtension(OptionalImportMessageExtension, new Proto3.ImportMessage { D = 20 });
+            message.SetExtension(OptionalInt32Extension, 100);
+            message.SetExtension(OptionalInt64Extension, 3210987654321);
+            message.SetExtension(OptionalNestedEnumExtension, Proto2.TestAllTypes.Types.NestedEnum.Foo);
+            message.SetExtension(OptionalNestedMessageExtension, new Proto2.TestAllTypes.Types.NestedMessage { Bb = 35 });
+            message.SetExtension(OptionalPublicImportMessageExtension, new Proto3.PublicImportMessage { E = 54 });
+            message.SetExtension(OptionalSfixed32Extension, -123);
+            message.SetExtension(OptionalSfixed64Extension, -12345678901234);
+            message.SetExtension(OptionalSint32Extension, -456);
+            message.SetExtension(OptionalSint64Extension, -12345678901235);
+            message.SetExtension(OptionalStringExtension, "test");
+            message.SetExtension(OptionalUint32Extension, uint.MaxValue);
+            message.SetExtension(OptionalUint64Extension, ulong.MaxValue);
+            message.SetExtension(OptionalGroupExtension, new Proto2.OptionalGroup_extension { A = 10 });
+
+            byte[] bytes = message.ToByteArray();
+            Proto2.TestAllExtensions parsed = Proto2.TestAllExtensions.Parser.WithExtensions(registry).ParseFrom(bytes);
             Assert.AreEqual(message, parsed);
         }
 
         [Test]
         public void RoundTrip_RepeatedValues()
         {
-            var message = new TestAllTypes
+            var message = new Proto3.TestAllTypes
             {
                 RepeatedBool = { true, false },
                 RepeatedBytes = { ByteString.CopyFrom(1, 2, 3, 4), ByteString.CopyFrom(5, 6) },
@@ -308,15 +372,15 @@ namespace Google.Protobuf
                 RepeatedFixed32 = { uint.MaxValue, 23 },
                 RepeatedFixed64 = { ulong.MaxValue, 1234567890123 },
                 RepeatedFloat = { 100f, 12.25f },
-                RepeatedForeignEnum = { ForeignEnum.ForeignFoo, ForeignEnum.ForeignBar },
-                RepeatedForeignMessage = { new ForeignMessage(), new ForeignMessage { C = 10 } },
-                RepeatedImportEnum = { ImportEnum.ImportBaz, ImportEnum.Unspecified },
-                RepeatedImportMessage = { new ImportMessage { D = 20 }, new ImportMessage { D = 25 } },
+                RepeatedForeignEnum = { Proto3.ForeignEnum.ForeignFoo, Proto3.ForeignEnum.ForeignBar },
+                RepeatedForeignMessage = { new Proto3.ForeignMessage(), new Proto3.ForeignMessage { C = 10 } },
+                RepeatedImportEnum = { Proto3.ImportEnum.ImportBaz, Proto3.ImportEnum.Unspecified },
+                RepeatedImportMessage = { new Proto3.ImportMessage { D = 20 }, new Proto3.ImportMessage { D = 25 } },
                 RepeatedInt32 = { 100, 200 },
                 RepeatedInt64 = { 3210987654321, long.MaxValue },
-                RepeatedNestedEnum = { TestAllTypes.Types.NestedEnum.Foo, TestAllTypes.Types.NestedEnum.Neg },
-                RepeatedNestedMessage = { new TestAllTypes.Types.NestedMessage { Bb = 35 }, new TestAllTypes.Types.NestedMessage { Bb = 10 } },
-                RepeatedPublicImportMessage = { new PublicImportMessage { E = 54 }, new PublicImportMessage { E = -1 } },
+                RepeatedNestedEnum = { Proto3.TestAllTypes.Types.NestedEnum.Foo, Proto3.TestAllTypes.Types.NestedEnum.Neg },
+                RepeatedNestedMessage = { new Proto3.TestAllTypes.Types.NestedMessage { Bb = 35 }, new Proto3.TestAllTypes.Types.NestedMessage { Bb = 10 } },
+                RepeatedPublicImportMessage = { new Proto3.PublicImportMessage { E = 54 }, new Proto3.PublicImportMessage { E = -1 } },
                 RepeatedSfixed32 = { -123, 123 },
                 RepeatedSfixed64 = { -12345678901234, 12345678901234 },
                 RepeatedSint32 = { -456, 100 },
@@ -327,7 +391,7 @@ namespace Google.Protobuf
             };
 
             byte[] bytes = message.ToByteArray();
-            TestAllTypes parsed = TestAllTypes.Parser.ParseFrom(bytes);
+            Proto3.TestAllTypes parsed = Proto3.TestAllTypes.Parser.ParseFrom(bytes);
             Assert.AreEqual(message, parsed);
         }
 
@@ -337,7 +401,7 @@ namespace Google.Protobuf
         [Test]
         public void RoundTrip_Maps()
         {
-            var message = new TestMap
+            var message = new Proto3.TestMap
             {
                 MapBoolBool = {
                     { false, true },
@@ -349,24 +413,24 @@ namespace Google.Protobuf
                     { 10, ByteString.Empty }
                 },
                 MapInt32ForeignMessage = {
-                    { 0, new ForeignMessage { C = 10 } },
-                    { 5, new ForeignMessage() },
+                    { 0, new Proto3.ForeignMessage { C = 10 } },
+                    { 5, new Proto3.ForeignMessage() },
                 },
                 MapInt32Enum = {
-                    { 1, MapEnum.Bar },
-                    { 2000, MapEnum.Foo }
+                    { 1, Proto3.MapEnum.Bar },
+                    { 2000, Proto3.MapEnum.Foo }
                 }
             };
 
             byte[] bytes = message.ToByteArray();
-            TestMap parsed = TestMap.Parser.ParseFrom(bytes);
+            Proto3.TestMap parsed = Proto3.TestMap.Parser.ParseFrom(bytes);
             Assert.AreEqual(message, parsed);
         }
 
         [Test]
         public void MapWithEmptyEntry()
         {
-            var message = new TestMap
+            var message = new Proto3.TestMap
             {
                 MapInt32Bytes = { { 0, ByteString.Empty } }
             };
@@ -374,7 +438,7 @@ namespace Google.Protobuf
             byte[] bytes = message.ToByteArray();
             Assert.AreEqual(2, bytes.Length); // Tag for field entry (1 byte), length of entry (0; 1 byte)
 
-            var parsed = TestMap.Parser.ParseFrom(bytes);
+            var parsed = Proto3.TestMap.Parser.ParseFrom(bytes);
             Assert.AreEqual(1, parsed.MapInt32Bytes.Count);
             Assert.AreEqual(ByteString.Empty, parsed.MapInt32Bytes[0]);
         }
@@ -385,15 +449,15 @@ namespace Google.Protobuf
             // Hand-craft the stream to contain a single entry with just a value.
             var memoryStream = new MemoryStream();
             var output = new CodedOutputStream(memoryStream);
-            output.WriteTag(TestMap.MapInt32ForeignMessageFieldNumber, WireFormat.WireType.LengthDelimited);
-            var nestedMessage = new ForeignMessage { C = 20 };
+            output.WriteTag(Proto3.TestMap.MapInt32ForeignMessageFieldNumber, WireFormat.WireType.LengthDelimited);
+            var nestedMessage = new Proto3.ForeignMessage { C = 20 };
             // Size of the entry (tag, size written by WriteMessage, data written by WriteMessage)
             output.WriteLength(2 + nestedMessage.CalculateSize());
             output.WriteTag(2, WireFormat.WireType.LengthDelimited);
             output.WriteMessage(nestedMessage);
             output.Flush();
 
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
             Assert.AreEqual(nestedMessage, parsed.MapInt32ForeignMessage[0]);
         }
 
@@ -403,14 +467,14 @@ namespace Google.Protobuf
             // Hand-craft the stream to contain a single entry with just a key.
             var memoryStream = new MemoryStream();
             var output = new CodedOutputStream(memoryStream);
-            output.WriteTag(TestMap.MapInt32DoubleFieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32DoubleFieldNumber, WireFormat.WireType.LengthDelimited);
             int key = 10;
             output.WriteLength(1 + CodedOutputStream.ComputeInt32Size(key));
             output.WriteTag(1, WireFormat.WireType.Varint);
             output.WriteInt32(key);
             output.Flush();
 
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
             Assert.AreEqual(0.0, parsed.MapInt32Double[key]);
         }
 
@@ -420,15 +484,15 @@ namespace Google.Protobuf
             // Hand-craft the stream to contain a single entry with just a key.
             var memoryStream = new MemoryStream();
             var output = new CodedOutputStream(memoryStream);
-            output.WriteTag(TestMap.MapInt32ForeignMessageFieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32ForeignMessageFieldNumber, WireFormat.WireType.LengthDelimited);
             int key = 10;
             output.WriteLength(1 + CodedOutputStream.ComputeInt32Size(key));
             output.WriteTag(1, WireFormat.WireType.Varint);
             output.WriteInt32(key);
             output.Flush();
 
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
-            Assert.AreEqual(new ForeignMessage(), parsed.MapInt32ForeignMessage[key]);
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            Assert.AreEqual(new Proto3.ForeignMessage(), parsed.MapInt32ForeignMessage[key]);
         }
 
         [Test]
@@ -438,7 +502,7 @@ namespace Google.Protobuf
             var memoryStream = new MemoryStream();
             var output = new CodedOutputStream(memoryStream);
 
-            output.WriteTag(TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
 
             var key = 10; // Field 1 
             var value = 20; // Field 2
@@ -455,7 +519,7 @@ namespace Google.Protobuf
             output.WriteInt32(extra);
             output.Flush();
 
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
             Assert.AreEqual(value, parsed.MapInt32Int32[key]);
         }
 
@@ -465,7 +529,7 @@ namespace Google.Protobuf
             var memoryStream = new MemoryStream();
             var output = new CodedOutputStream(memoryStream);
 
-            output.WriteTag(TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
 
             var key = 10;
             var value = 20;
@@ -479,7 +543,7 @@ namespace Google.Protobuf
             output.WriteInt32(key);
             output.Flush();
 
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
             Assert.AreEqual(value, parsed.MapInt32Int32[key]);
         }
 
@@ -497,7 +561,7 @@ namespace Google.Protobuf
             // First entry
             var key1 = 10;
             var value1 = 20;
-            output.WriteTag(TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
             output.WriteLength(4);
             output.WriteTag(1, WireFormat.WireType.Varint);
             output.WriteInt32(key1);
@@ -507,7 +571,7 @@ namespace Google.Protobuf
             // Second entry
             var key2 = "a";
             var value2 = "b";
-            output.WriteTag(TestMap.MapStringStringFieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapStringStringFieldNumber, WireFormat.WireType.LengthDelimited);
             output.WriteLength(6); // 3 bytes per entry: tag, size, character
             output.WriteTag(1, WireFormat.WireType.LengthDelimited);
             output.WriteString(key2);
@@ -517,7 +581,7 @@ namespace Google.Protobuf
             // Third entry
             var key3 = 15;
             var value3 = 25;
-            output.WriteTag(TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
             output.WriteLength(4);
             output.WriteTag(1, WireFormat.WireType.Varint);
             output.WriteInt32(key3);
@@ -525,8 +589,8 @@ namespace Google.Protobuf
             output.WriteInt32(value3);
 
             output.Flush();
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
-            var expected = new TestMap
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            var expected = new Proto3.TestMap
             {
                 MapInt32Int32 = { { key1, value1 }, { key3, value3 } },
                 MapStringString = { { key2, value2 } }
@@ -545,7 +609,7 @@ namespace Google.Protobuf
             var value2 = 30;
 
             // First entry
-            output.WriteTag(TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
             output.WriteLength(4);
             output.WriteTag(1, WireFormat.WireType.Varint);
             output.WriteInt32(key);
@@ -553,7 +617,7 @@ namespace Google.Protobuf
             output.WriteInt32(value1);
 
             // Second entry - same key, different value
-            output.WriteTag(TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
+            output.WriteTag(Proto3.TestMap.MapInt32Int32FieldNumber, WireFormat.WireType.LengthDelimited);
             output.WriteLength(4);
             output.WriteTag(1, WireFormat.WireType.Varint);
             output.WriteInt32(key);
@@ -561,14 +625,14 @@ namespace Google.Protobuf
             output.WriteInt32(value2);
             output.Flush();
 
-            var parsed = TestMap.Parser.ParseFrom(memoryStream.ToArray());
+            var parsed = Proto3.TestMap.Parser.ParseFrom(memoryStream.ToArray());
             Assert.AreEqual(value2, parsed.MapInt32Int32[key]);
         }
 
         [Test]
         public void CloneSingleNonMessageValues()
         {
-            var original = new TestAllTypes
+            var original = new Proto3.TestAllTypes
             {
                 SingleBool = true,
                 SingleBytes = ByteString.CopyFrom(1, 2, 3, 4),
@@ -578,7 +642,7 @@ namespace Google.Protobuf
                 SingleFloat = 12.25f,
                 SingleInt32 = 100,
                 SingleInt64 = 3210987654321,
-                SingleNestedEnum = TestAllTypes.Types.NestedEnum.Foo,
+                SingleNestedEnum = Proto3.TestAllTypes.Types.NestedEnum.Foo,
                 SingleSfixed32 = -123,
                 SingleSfixed64 = -12345678901234,
                 SingleSint32 = -456,
@@ -598,7 +662,7 @@ namespace Google.Protobuf
         [Test]
         public void CloneRepeatedNonMessageValues()
         {
-            var original = new TestAllTypes
+            var original = new Proto3.TestAllTypes
             {
                 RepeatedBool = { true, false },
                 RepeatedBytes = { ByteString.CopyFrom(1, 2, 3, 4), ByteString.CopyFrom(5, 6) },
@@ -608,7 +672,7 @@ namespace Google.Protobuf
                 RepeatedFloat = { 100f, 12.25f },
                 RepeatedInt32 = { 100, 200 },
                 RepeatedInt64 = { 3210987654321, long.MaxValue },
-                RepeatedNestedEnum = { TestAllTypes.Types.NestedEnum.Foo, TestAllTypes.Types.NestedEnum.Neg },
+                RepeatedNestedEnum = { Proto3.TestAllTypes.Types.NestedEnum.Foo, Proto3.TestAllTypes.Types.NestedEnum.Neg },
                 RepeatedSfixed32 = { -123, 123 },
                 RepeatedSfixed64 = { -12345678901234, 12345678901234 },
                 RepeatedSint32 = { -456, 100 },
@@ -629,9 +693,9 @@ namespace Google.Protobuf
         [Test]
         public void CloneSingleMessageField()
         {
-            var original = new TestAllTypes
+            var original = new Proto3.TestAllTypes
             {
-                SingleNestedMessage = new TestAllTypes.Types.NestedMessage { Bb = 20 }
+                SingleNestedMessage = new Proto3.TestAllTypes.Types.NestedMessage { Bb = 20 }
             };
 
             var clone = original.Clone();
@@ -646,9 +710,9 @@ namespace Google.Protobuf
         [Test]
         public void CloneRepeatedMessageField()
         {
-            var original = new TestAllTypes
+            var original = new Proto3.TestAllTypes
             {
-                RepeatedNestedMessage = { new TestAllTypes.Types.NestedMessage { Bb = 20 } }
+                RepeatedNestedMessage = { new Proto3.TestAllTypes.Types.NestedMessage { Bb = 20 } }
             };
 
             var clone = original.Clone();
@@ -664,9 +728,9 @@ namespace Google.Protobuf
         [Test]
         public void CloneOneofField()
         {
-            var original = new TestAllTypes
+            var original = new Proto3.TestAllTypes
             {
-                OneofNestedMessage = new TestAllTypes.Types.NestedMessage { Bb = 20 }
+                OneofNestedMessage = new Proto3.TestAllTypes.Types.NestedMessage { Bb = 20 }
             };
 
             var clone = original.Clone();
@@ -683,19 +747,19 @@ namespace Google.Protobuf
         {
             // Switch the oneof case between each of the different options, and check everything behaves
             // as expected in each case.
-            var message = new TestAllTypes();
+            var message = new Proto3.TestAllTypes();
             Assert.AreEqual("", message.OneofString);
             Assert.AreEqual(0, message.OneofUint32);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
             Assert.IsNull(message.OneofNestedMessage);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
 
             message.OneofString = "sample";
             Assert.AreEqual("sample", message.OneofString);
             Assert.AreEqual(0, message.OneofUint32);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
             Assert.IsNull(message.OneofNestedMessage);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofString, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofString, message.OneofFieldCase);
 
             var bytes = ByteString.CopyFrom(1, 2, 3);
             message.OneofBytes = bytes;
@@ -703,67 +767,67 @@ namespace Google.Protobuf
             Assert.AreEqual(0, message.OneofUint32);
             Assert.AreEqual(bytes, message.OneofBytes);
             Assert.IsNull(message.OneofNestedMessage);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofBytes, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofBytes, message.OneofFieldCase);
 
             message.OneofUint32 = 20;
             Assert.AreEqual("", message.OneofString);
             Assert.AreEqual(20, message.OneofUint32);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
             Assert.IsNull(message.OneofNestedMessage);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofUint32, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofUint32, message.OneofFieldCase);
 
-            var nestedMessage = new TestAllTypes.Types.NestedMessage { Bb = 25 };
+            var nestedMessage = new Proto3.TestAllTypes.Types.NestedMessage { Bb = 25 };
             message.OneofNestedMessage = nestedMessage;
             Assert.AreEqual("", message.OneofString);
             Assert.AreEqual(0, message.OneofUint32);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
             Assert.AreEqual(nestedMessage, message.OneofNestedMessage);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofNestedMessage, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofNestedMessage, message.OneofFieldCase);
 
             message.ClearOneofField();
             Assert.AreEqual("", message.OneofString);
             Assert.AreEqual(0, message.OneofUint32);
             Assert.AreEqual(ByteString.Empty, message.OneofBytes);
             Assert.IsNull(message.OneofNestedMessage);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
         }
 
         [Test]
         public void Oneof_DefaultValuesNotEqual()
         {
-            var message1 = new TestAllTypes { OneofString = "" };
-            var message2 = new TestAllTypes { OneofUint32 = 0 };
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofString, message1.OneofFieldCase);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofUint32, message2.OneofFieldCase);
+            var message1 = new Proto3.TestAllTypes { OneofString = "" };
+            var message2 = new Proto3.TestAllTypes { OneofUint32 = 0 };
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofString, message1.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofUint32, message2.OneofFieldCase);
             Assert.AreNotEqual(message1, message2);
         }
 
         [Test]
         public void OneofSerialization_NonDefaultValue()
         {
-            var message = new TestAllTypes();
+            var message = new Proto3.TestAllTypes();
             message.OneofString = "this would take a bit of space";
             message.OneofUint32 = 10;
             var bytes = message.ToByteArray();
             Assert.AreEqual(3, bytes.Length); // 2 bytes for the tag + 1 for the value - no string!
 
-            var message2 = TestAllTypes.Parser.ParseFrom(bytes);
+            var message2 = Proto3.TestAllTypes.Parser.ParseFrom(bytes);
             Assert.AreEqual(message, message2);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofUint32, message2.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofUint32, message2.OneofFieldCase);
         }
 
         [Test]
         public void OneofSerialization_DefaultValue()
         {
-            var message = new TestAllTypes();
+            var message = new Proto3.TestAllTypes();
             message.OneofString = "this would take a bit of space";
             message.OneofUint32 = 0; // This is the default value for UInt32; normally wouldn't be serialized
             var bytes = message.ToByteArray();
             Assert.AreEqual(3, bytes.Length); // 2 bytes for the tag + 1 for the value - it's still serialized
 
-            var message2 = TestAllTypes.Parser.ParseFrom(bytes);
+            var message2 = Proto3.TestAllTypes.Parser.ParseFrom(bytes);
             Assert.AreEqual(message, message2);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.OneofUint32, message2.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.OneofUint32, message2.OneofFieldCase);
         }
 
         [Test]
@@ -773,14 +837,14 @@ namespace Google.Protobuf
             var stream = new MemoryStream();
             var output = new CodedOutputStream(stream);
             var unusedFieldNumber = 23456;
-            Assert.IsFalse(TestAllTypes.Descriptor.Fields.InDeclarationOrder().Select(x => x.FieldNumber).Contains(unusedFieldNumber));
+            Assert.IsFalse(Proto3.TestAllTypes.Descriptor.Fields.InDeclarationOrder().Select(x => x.FieldNumber).Contains(unusedFieldNumber));
             output.WriteTag(unusedFieldNumber, WireFormat.WireType.LengthDelimited);
             output.WriteString("ignore me");
             message.WriteTo(output);
             output.Flush();
 
             stream.Position = 0;
-            var parsed = TestAllTypes.Parser.ParseFrom(stream);
+            var parsed = Proto3.TestAllTypes.Parser.ParseFrom(stream);
             // TODO(jieluo): Add test back when DiscardUnknownFields API is supported.
             // Assert.AreEqual(message, parsed);
         }
@@ -802,7 +866,7 @@ namespace Google.Protobuf
             // 130, 3 is the message tag
             // 1 is the data length - but there's no data.
             var data = new byte[] { 130, 3, 1 };
-            Assert.Throws<InvalidProtocolBufferException>(() => TestAllTypes.Parser.ParseFrom(data));
+            Assert.Throws<InvalidProtocolBufferException>(() => Proto3.TestAllTypes.Parser.ParseFrom(data));
         }
 
         /// <summary>
@@ -816,20 +880,20 @@ namespace Google.Protobuf
             var stream = new MemoryStream();
             var output = new CodedOutputStream(stream);
 
-            output.WriteTag(TestAllTypes.SingleFixed32FieldNumber, WireFormat.WireType.Fixed32);
+            output.WriteTag(Proto3.TestAllTypes.SingleFixed32FieldNumber, WireFormat.WireType.Fixed32);
             output.WriteFixed32(123);
             output.WriteTag(100, WireFormat.WireType.EndGroup);
 
             output.Flush();
 
             stream.Position = 0;
-            Assert.Throws<InvalidProtocolBufferException>(() => TestAllTypes.Parser.ParseFrom(stream));
+            Assert.Throws<InvalidProtocolBufferException>(() => Proto3.TestAllTypes.Parser.ParseFrom(stream));
         }
 
         [Test]
         public void CustomDiagnosticMessage_DirectToStringCall()
         {
-            var message = new ForeignMessage { C = 31 };
+            var message = new Proto3.ForeignMessage { C = 31 };
             Assert.AreEqual("{ \"c\": 31, \"@cInHex\": \"1f\" }", message.ToString());
             Assert.AreEqual("{ \"c\": 31 }", JsonFormatter.Default.Format(message));
         }
@@ -837,7 +901,7 @@ namespace Google.Protobuf
         [Test]
         public void CustomDiagnosticMessage_Nested()
         {
-            var message = new TestAllTypes { SingleForeignMessage = new ForeignMessage { C = 16 } };
+            var message = new Proto3.TestAllTypes { SingleForeignMessage = new Proto3.ForeignMessage { C = 16 } };
             Assert.AreEqual("{ \"singleForeignMessage\": { \"c\": 16, \"@cInHex\": \"10\" } }", message.ToString());
             Assert.AreEqual("{ \"singleForeignMessage\": { \"c\": 16 } }", JsonFormatter.Default.Format(message));
         }
@@ -845,7 +909,7 @@ namespace Google.Protobuf
         [Test]
         public void CustomDiagnosticMessage_DirectToTextWriterCall()
         {
-            var message = new ForeignMessage { C = 31 };
+            var message = new Proto3.ForeignMessage { C = 31 };
             var writer = new StringWriter();
             JsonFormatter.Default.Format(message, writer);
             Assert.AreEqual("{ \"c\": 31 }", writer.ToString());
@@ -854,9 +918,9 @@ namespace Google.Protobuf
         [Test]
         public void NaNComparisons()
         {
-            var message1 = new TestAllTypes { SingleDouble = SampleNaNs.Regular };
-            var message2 = new TestAllTypes { SingleDouble = SampleNaNs.PayloadFlipped };
-            var message3 = new TestAllTypes { SingleDouble = SampleNaNs.Regular };
+            var message1 = new Proto3.TestAllTypes { SingleDouble = SampleNaNs.Regular };
+            var message2 = new Proto3.TestAllTypes { SingleDouble = SampleNaNs.PayloadFlipped };
+            var message3 = new Proto3.TestAllTypes { SingleDouble = SampleNaNs.Regular };
 
             EqualityTester.AssertInequality(message1, message2);
             EqualityTester.AssertEquality(message1, message3);

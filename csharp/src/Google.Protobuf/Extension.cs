@@ -13,7 +13,7 @@ namespace Google.Protobuf
         internal abstract Type TargetType { get; }
 
         internal abstract uint Tag { get; }
-        
+
         internal abstract IExtensionValue GetValue();
     }
 
@@ -35,6 +35,8 @@ namespace Google.Protobuf
         internal override Type TargetType => typeof(TTarget);
 
         internal override uint Tag => codec.Tag;
+
+        internal TValue DefaultValue => codec.DefaultValue;
 
         internal override IExtensionValue GetValue()
         {

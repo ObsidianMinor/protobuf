@@ -18,20 +18,18 @@ namespace Google.Protobuf
             targetType = target;
         }
 
-        internal IExtensionValue GetValueFor(Extension extension)
-        {
-            if (extension.TargetType != targetType)
-                throw new ArgumentException($"Type of extension does not match target type of set: Expected {targetType}, got {extension.TargetType}");
-
-            if (valuesByIdentifier.TryGetValue(extension, out var value))
-                return value;
-            else
-                throw new InvalidOperationException("The set does not have a registered extension for this extension");
-        }
-
         internal bool TryGetValueFor(Extension extension, out IExtensionValue extensionValue)
         {
-            return valuesByIdentifier.TryGetValue(extension, out extensionValue);
+            if (valuesByIdentifier.TryGetValue(extension, out extensionValue))
+            {
+                return true;
+            }
+            else
+            {
+                Register(extension);
+                extensionValue = valuesByIdentifier[extension];
+                return true;
+            }
         }
 
         internal bool TryGetValueFor(uint tag, out IExtensionValue extensionValue)
@@ -49,7 +47,7 @@ namespace Google.Protobuf
                 throw new ArgumentException("Cannot register extension for wrong target type");
 
             if (valuesByIdentifier.ContainsKey(extension))
-                throw new InvalidOperationException("The specified extension is already registered in this set");
+                return;
 
             var value = extension.GetValue();
             valuesByTag.Add(extension.Tag, value);
@@ -91,7 +89,17 @@ namespace Google.Protobuf
         /// Gets the extension set's hash code
         /// </summary>
         /// <returns>This extension set's hash code</returns>
-        public override int GetHashCode() => throw new NotImplementedException();
+        public override int GetHashCode()
+        {
+            int ret = 1;
+            foreach (KeyValuePair<Extension, IExtensionValue> field in valuesByIdentifier)
+            {
+                // Use ^ here to make the field order irrelevant.
+                int hash = field.Key.GetHashCode() ^ field.Value.GetHashCode();
+                ret ^= hash;
+            }
+            return ret;
+        }
 
         /// <summary>
         /// Gets the number of bytes required to encode this set
@@ -106,13 +114,81 @@ namespace Google.Protobuf
             }
             return size;
         }
+
+        /// <summary>
+        /// Clones the first set into the specified extension set
+        /// </summary>
+        protected static void Clone(ExtensionSet first, ExtensionSet second)
+        {
+            foreach(var extensionValuePair in first.valuesByIdentifier)
+            {
+                var clonedValue = extensionValuePair.Value.Clone();
+                second.valuesByIdentifier[extensionValuePair.Key] = clonedValue;
+                second.valuesByTag[extensionValuePair.Key.Tag] = clonedValue;
+            }
+        }
+
+        /// <summary>
+        /// Merges the first extension set into the second set
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        protected static void MergeSets(ExtensionSet first, ExtensionSet second)
+        {
+            if (first.targetType != second.targetType)
+                return;
+
+            foreach(var pair in first.valuesByIdentifier)
+            {
+                if (second.TryGetValueFor(pair.Key, out var value))
+                {
+                    value.MergeFrom(pair.Value);
+                }
+                else
+                {
+                    var newValue = pair.Value.Clone();
+                    second.valuesByIdentifier[pair.Key] = newValue;
+                    second.valuesByTag[pair.Key.Tag] = newValue;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns whether the first and second sets are equal
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        protected static bool SetsEqual(ExtensionSet first, ExtensionSet second)
+        {
+            if (first.targetType != second.targetType)
+                return false;
+
+            if (first.valuesByIdentifier.Count != second.valuesByIdentifier.Count)
+                return false;
+
+            foreach(var pair in first.valuesByIdentifier)
+            {
+                if (!second.valuesByIdentifier.TryGetValue(pair.Key, out var secondValue))
+                {
+                    return false;
+                }
+
+                if (!pair.Value.Equals(secondValue))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 
     /// <summary>
     /// Contains a set of extension values
     /// </summary>
     /// <typeparam name="TTarget"></typeparam>
-    public sealed class ExtensionSet<TTarget> : ExtensionSet where TTarget : IExtensionMessage<TTarget>
+    public sealed class ExtensionSet<TTarget> : ExtensionSet, IDeepCloneable<ExtensionSet<TTarget>>, IEquatable<ExtensionSet<TTarget>> where TTarget : IExtensionMessage<TTarget>
     {
         /// <summary>
         /// Creates a new empty extension set
@@ -130,22 +206,44 @@ namespace Google.Protobuf
         /// </summary>
         public TValue Get<TValue>(Extension<TTarget, TValue> extension)
         {
-            var value = (ExtensionValue<TValue>)GetValueFor(extension);
-            return value.GetValue();
+            if (TryGetValueFor(extension, out var value))
+            {
+                return ((ExtensionValue<TValue>)value).GetValue();
+            }
+            else
+            {
+                return extension.DefaultValue; // trust the user to be safe
+            }
         }
 
         /// <summary>
         /// Gets the value of the specified repeated extension
         /// </summary>
-        public RepeatedField<TValue> Get<TValue>(RepeatedExtension<TTarget, TValue> extension) => throw new NotImplementedException();
+        public RepeatedField<TValue> Get<TValue>(RepeatedExtension<TTarget, TValue> extension)
+        {
+            if (TryGetValueFor(extension, out var value))
+            {
+                return ((RepeatedExtensionValue<TValue>)value).GetValue();
+            }
+            else
+            {
+                throw new InvalidOperationException("Could not find field for extension");
+            }
+        }
 
         /// <summary>
         /// Sets the value of the specified extension
         /// </summary>
         public void Set<TValue>(Extension<TTarget, TValue> extension, TValue value)
         {
-            var extensionValue = (ExtensionValue<TValue>)GetValueFor(extension);
-            extensionValue.SetValue(value);
+            if (TryGetValueFor(extension, out var extensionValue))
+            {
+                ((ExtensionValue<TValue>)extensionValue).SetValue(value);
+            }
+            else
+            {
+                throw new InvalidOperationException("Could not find field for extension");
+            }
         }
 
         /// <summary>
@@ -178,12 +276,41 @@ namespace Google.Protobuf
         /// Merges the specified <see cref="ExtensionSet{TTarget}"/> into this set
         /// </summary>
         /// <param name="other">The set to merge from</param>
-        public void MergeFrom(ExtensionSet<TTarget> other) => throw new NotImplementedException();
+        public void MergeFrom(ExtensionSet<TTarget> other)
+        {
+            MergeSets(other, this);
+        }
 
         /// <summary>
         /// Creates a new <see cref="ExtensionSet{TTarget}"/> from this set
         /// </summary>
         /// <returns>Returns a new <see cref="ExtensionSet{TTarget}"/> with the same extensions and values from this set</returns>
-        public ExtensionSet<TTarget> Clone() => throw new NotImplementedException();
+        public ExtensionSet<TTarget> Clone()
+        {
+            var newSet = new ExtensionSet<TTarget>();
+            Clone(this, newSet);
+            return newSet;
+        }
+
+        /// <summary>
+        /// Returns whether this set and the provided set are equal
+        /// </summary>
+        /// <param name="other">The set to compare to</param>
+        public bool Equals(ExtensionSet<TTarget> other) => SetsEqual(this, other);
+
+        /// <summary>
+        /// Returns whether this set is equal to the specified object
+        /// </summary>
+        /// <param name="obj">The object to compare to</param>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (obj is ExtensionSet<TTarget> set && Equals(set))
+                return true;
+
+            return false;
+        }
     }
 }

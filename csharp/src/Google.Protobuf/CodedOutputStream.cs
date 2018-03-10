@@ -306,13 +306,10 @@ namespace Google.Protobuf
         /// <summary>
         /// Writes a group with tags to the stream.
         /// </summary>
-        /// <param name="fieldNumber">The field number of the group</param>
         /// <param name="value">The value to write</param>
-        public void WriteGroup(int fieldNumber, IMessage value)
+        public void WriteGroup(IMessage value)
         {
-            WriteTag(fieldNumber, WireFormat.WireType.StartGroup);
             value.WriteTo(this);
-            WriteTag(fieldNumber, WireFormat.WireType.EndGroup);
         }
 
         /// <summary>

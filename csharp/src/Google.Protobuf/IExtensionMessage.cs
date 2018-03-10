@@ -3,7 +3,7 @@
 namespace Google.Protobuf
 {
     /// <summary>
-    /// Interface for a Protocol Buffers message, supporting basic operations for serialization as well as getting and setting extension field values
+    /// Interface for a Protocol Buffers message, supporting basic operations for serialization as well as registering extension field values
     /// </summary>
     public interface IExtensionMessage : IMessage
     {

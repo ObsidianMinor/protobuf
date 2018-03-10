@@ -108,6 +108,7 @@ namespace Google.Protobuf
         /// The absolute position of the end of the current message.
         /// </summary> 
         private int currentLimit = int.MaxValue;
+        private uint tagLimit = uint.MaxValue;
 
         private int recursionDepth = 0;
 
@@ -378,7 +379,7 @@ namespace Google.Protobuf
                 if (IsAtEnd)
                 {
                     lastTag = 0;
-                    return 0; // This is the only case in which we return 0.
+                    return 0;
                 }
 
                 lastTag = ReadRawVarint32();
@@ -387,6 +388,10 @@ namespace Google.Protobuf
             {
                 // If we actually read a tag with a field of 0, that's not a valid tag.
                 throw InvalidProtocolBufferException.InvalidTag();
+            }
+            if (ReachedTagLimit)
+            {
+                return 0;
             }
             return lastTag;
         }
@@ -605,7 +610,23 @@ namespace Google.Protobuf
         /// </summary>
         public void ReadGroup(IMessage builder)
         {
-            throw new NotImplementedException();
+            if (recursionDepth >= recursionLimit)
+            {
+                throw InvalidProtocolBufferException.RecursionLimitExceeded();
+            }
+            uint oldTag = PushTag();
+            ++recursionDepth;
+            if (builder is IExtensionMessage extensionMessage)
+            {
+                ExtensionRegistry?.RegisterExtensionsFor(extensionMessage);
+            }
+            builder.MergeFrom(this);
+            if (!ReachedTagLimit)
+            {
+                throw InvalidProtocolBufferException.TruncatedMessage();
+            }
+            --recursionDepth;
+            PopTag(oldTag);
         }
 
         /// <summary>
@@ -969,6 +990,19 @@ namespace Google.Protobuf
 
             return oldLimit;
         }
+
+        /// <summary>
+        /// Sets tagLimit to the limit calculated by the last tag.
+        /// This is called when descending into a group message. The previous limit is returned.
+        /// </summary>
+        /// <returns>The old limit</returns>
+        internal uint PushTag()
+        {
+            uint oldLimit = tagLimit;
+            uint newLimit = WireFormat.MakeTag(WireFormat.GetTagFieldNumber(LastTag), WireFormat.WireType.EndGroup);
+            tagLimit = newLimit;
+            return oldLimit;
+        }
         
         private void RecomputeBufferSizeAfterLimit()
         {
@@ -996,6 +1030,14 @@ namespace Google.Protobuf
         }
 
         /// <summary>
+        /// Discards the current limit, returning the previous limit
+        /// </summary>
+        internal void PopTag(uint oldTag)
+        {
+            tagLimit = oldTag;
+        }
+
+        /// <summary>
         /// Returns whether or not all the data before the limit has been read.
         /// </summary>
         /// <returns></returns>
@@ -1009,6 +1051,17 @@ namespace Google.Protobuf
                 }
                 int currentAbsolutePosition = totalBytesRetired + bufferPos;
                 return currentAbsolutePosition >= currentLimit;
+            }
+        }
+
+        /// <summary>
+        /// Returns whether or not all the data before the tag limit has been read.
+        /// </summary>
+        internal bool ReachedTagLimit
+        {
+            get
+            {
+                return tagLimit == lastTag;
             }
         }
 

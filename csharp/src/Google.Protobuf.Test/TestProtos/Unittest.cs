@@ -662,7 +662,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> OptionalBytesExtension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(pb::FieldCodec.ForBytes(122, pb::ByteString.Empty));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension> OptionalGroupExtension =
-      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension>(pb::FieldCodec.ForGroup(131, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension.Parser));
+      new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension>(pb::FieldCodec.ForGroup(131, 132, global::Google.Protobuf.TestProtos.Proto2.OptionalGroup_extension.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> OptionalNestedMessageExtension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(146, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage> OptionalForeignMessageExtension =
@@ -714,7 +714,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString> RepeatedBytesExtension =
       new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, pb::ByteString>(pb::FieldCodec.ForBytes(362));
     public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension> RepeatedGroupExtension =
-      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension>(pb::FieldCodec.ForGroup(371, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension.Parser));
+      new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension>(pb::FieldCodec.ForGroup(371, 372, global::Google.Protobuf.TestProtos.Proto2.RepeatedGroup_extension.Parser));
     public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> RepeatedNestedMessageExtension =
       new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(386, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
     public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.ForeignMessage> RepeatedForeignMessageExtension =
@@ -1770,7 +1770,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "repeatedgroup" field.</summary>
     public const int RepeatedGroupFieldNumber = 46;
     private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup> _repeated_repeatedGroup_codec
-        = pb::FieldCodec.ForGroup(371, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup.Parser);
+        = pb::FieldCodec.ForGroup(371, 372, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup> repeatedGroup_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.RepeatedGroup> RepeatedGroup {
@@ -2660,7 +2660,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteBytes(OptionalBytes);
       }
       if (HasOptionalGroup) {
-        output.WriteGroup(16, OptionalGroup);
+        output.WriteRawTag(131, 1);
+        output.WriteGroup(OptionalGroup);
+        output.WriteRawTag(132, 1);
       }
       if (HasOptionalNestedMessage) {
         output.WriteRawTag(146, 1);
@@ -2877,7 +2879,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(OptionalBytes);
       }
       if (HasOptionalGroup) {
-        size += 4 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
       }
       if (HasOptionalNestedMessage) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalNestedMessage);
@@ -8394,7 +8396,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteMessage(Bb);
       }
       if (HasSubGroup) {
-        output.WriteGroup(2, SubGroup);
+        output.WriteRawTag(19);
+        output.WriteGroup(SubGroup);
+        output.WriteRawTag(20);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -8408,7 +8412,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Bb);
       }
       if (HasSubGroup) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SubGroup);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SubGroup);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -9256,7 +9260,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (HasSubGroup) {
-            output.WriteGroup(1, SubGroup);
+            output.WriteRawTag(11);
+            output.WriteGroup(SubGroup);
+            output.WriteRawTag(12);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -9267,7 +9273,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public int CalculateSize() {
           int size = 0;
           if (HasSubGroup) {
-            size += 2 + pb::CodedOutputStream.ComputeMessageSize(SubGroup);
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(SubGroup);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -9629,10 +9635,14 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteInt32(A);
       }
       if (HasFoo) {
-        output.WriteGroup(2, Foo);
+        output.WriteRawTag(19);
+        output.WriteGroup(Foo);
+        output.WriteRawTag(20);
       }
       if (HasBar) {
-        output.WriteGroup(3, Bar);
+        output.WriteRawTag(27);
+        output.WriteGroup(Bar);
+        output.WriteRawTag(28);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -9646,10 +9656,10 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(A);
       }
       if (HasFoo) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Foo);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Foo);
       }
       if (HasBar) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Bar);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Bar);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -14465,7 +14475,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteMessage(FooMessage);
       }
       if (fooCase_ == FooOneofCase.FooGroup) {
-        output.WriteGroup(4, FooGroup);
+        output.WriteRawTag(35);
+        output.WriteGroup(FooGroup);
+        output.WriteRawTag(36);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -14485,7 +14497,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (fooCase_ == FooOneofCase.FooGroup) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -14942,7 +14954,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteMessage(FooMessage);
       }
       if (HasFooGroup) {
-        output.WriteGroup(4, FooGroup);
+        output.WriteRawTag(35);
+        output.WriteGroup(FooGroup);
+        output.WriteRawTag(36);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -14962,7 +14976,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (HasFooGroup) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -15679,7 +15693,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteMessage(FooMessage);
       }
       if (fooCase_ == FooOneofCase.FooGroup) {
-        output.WriteGroup(8, FooGroup);
+        output.WriteRawTag(67);
+        output.WriteGroup(FooGroup);
+        output.WriteRawTag(68);
       }
       if (fooCase_ == FooOneofCase.FooLazyMessage) {
         output.WriteRawTag(90);
@@ -15747,7 +15763,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (fooCase_ == FooOneofCase.FooGroup) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
       }
       if (fooCase_ == FooOneofCase.FooLazyMessage) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooLazyMessage);
@@ -18695,7 +18711,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Field number for the "repeatedgroup" field.</summary>
     public const int RepeatedGroupFieldNumber = 20;
     private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup> _repeated_repeatedGroup_codec
-        = pb::FieldCodec.ForGroup(163, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup.Parser);
+        = pb::FieldCodec.ForGroup(163, 164, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup> repeatedGroup_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedGroup> RepeatedGroup {
@@ -18756,7 +18772,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       repeatedAllTypes_.WriteTo(output, _repeated_repeatedAllTypes_codec);
       if (HasOptionalGroup) {
-        output.WriteGroup(10, OptionalGroup);
+        output.WriteRawTag(83);
+        output.WriteGroup(OptionalGroup);
+        output.WriteRawTag(84);
       }
       repeatedGroup_.WriteTo(output, _repeated_repeatedGroup_codec);
       if (_unknownFields != null) {
@@ -18776,7 +18794,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += repeatedAllTypes_.CalculateSize(_repeated_repeatedAllTypes_codec);
       if (HasOptionalGroup) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
       }
       size += repeatedGroup_.CalculateSize(_repeated_repeatedGroup_codec);
       if (_unknownFields != null) {
@@ -18978,7 +18996,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         /// <summary>Field number for the "group1" field.</summary>
         public const int Group1FieldNumber = 10;
         private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1> _repeated_group1_codec
-            = pb::FieldCodec.ForGroup(83, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1.Parser);
+            = pb::FieldCodec.ForGroup(83, 84, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1.Parser);
         private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1> group1_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group1> Group1 {
@@ -18988,7 +19006,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         /// <summary>Field number for the "group2" field.</summary>
         public const int Group2FieldNumber = 20;
         private static readonly pb::FieldCodec<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2> _repeated_group2_codec
-            = pb::FieldCodec.ForGroup(163, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2.Parser);
+            = pb::FieldCodec.ForGroup(163, 164, global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2.Parser);
         private readonly pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2> group2_ = new pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Protobuf.TestProtos.Proto2.TestParsingMerge.Types.RepeatedFieldsGenerator.Types.Group2> Group2 {
@@ -21323,7 +21341,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteMessage(OptionalMessage);
       }
       if (HasOptionalGroup) {
-        output.WriteGroup(536870008, OptionalGroup);
+        output.WriteRawTag(195, 199, 255, 255, 15);
+        output.WriteGroup(OptionalGroup);
+        output.WriteRawTag(196, 199, 255, 255, 15);
       }
       stringStringMap_.WriteTo(output, _map_stringStringMap_codec);
       if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
@@ -21372,7 +21392,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 5 + pb::CodedOutputStream.ComputeMessageSize(OptionalMessage);
       }
       if (HasOptionalGroup) {
-        size += 10 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
+        size += 5 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
       }
       size += stringStringMap_.CalculateSize(_map_stringStringMap_codec);
       if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {

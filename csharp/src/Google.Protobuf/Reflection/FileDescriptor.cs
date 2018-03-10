@@ -293,8 +293,7 @@ namespace Google.Protobuf.Reflection
             FileDescriptor[] dependencies,
             GeneratedClrTypeInfo generatedCodeInfo)
         {
-            ExtensionRegistry registry = new ExtensionRegistry();
-            registry.Add(GetAllOptionExtensions(dependencies, generatedCodeInfo));
+            ExtensionRegistry registry = new ExtensionRegistry { GetAllOptionExtensions(dependencies, generatedCodeInfo) };
             FileDescriptorProto proto;
             try
             {
@@ -324,7 +323,7 @@ namespace Google.Protobuf.Reflection
 
         private static IEnumerable<Extension> RecursiveGetAllGeneratedExtensions(GeneratedClrTypeInfo generated)
         {
-            return generated.Extensions.Concat(generated.NestedTypes.SelectMany(RecursiveGetAllGeneratedExtensions));
+            return generated.Extensions.Concat(generated.NestedTypes.Where(g => g != null).SelectMany(RecursiveGetAllGeneratedExtensions));
         }
 
         /// <summary>

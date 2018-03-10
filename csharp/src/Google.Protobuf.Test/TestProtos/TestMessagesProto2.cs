@@ -2253,7 +2253,9 @@ namespace ProtobufTestMessages.Proto2 {
         output.WriteEnum((int) OneofEnum);
       }
       if (HasData) {
-        output.WriteGroup(201, Data);
+        output.WriteRawTag(203, 12);
+        output.WriteGroup(Data);
+        output.WriteRawTag(204, 12);
       }
       if (HasFieldname1) {
         output.WriteRawTag(136, 25);
@@ -2470,7 +2472,7 @@ namespace ProtobufTestMessages.Proto2 {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OneofEnum);
       }
       if (HasData) {
-        size += 4 + pb::CodedOutputStream.ComputeMessageSize(Data);
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Data);
       }
       if (HasFieldname1) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Fieldname1);

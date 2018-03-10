@@ -51,6 +51,7 @@ namespace Google.Protobuf
         {
             this.factory = factory;
             DiscardUnknownFields = discardUnknownFields;
+            Extensions = extensions;
         }
 
         /// <summary>

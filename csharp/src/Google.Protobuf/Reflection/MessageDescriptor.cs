@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Google.Protobuf.Collections;
 #if NET35
 // Needed for ReadOnlyDictionary, which does not exist in .NET 3.5
 using Google.Protobuf.Collections;
@@ -101,7 +102,7 @@ namespace Google.Protobuf.Reflection
             Fields = new FieldCollection(this);
         }
 
-        private static ReadOnlyDictionary<string, FieldDescriptor> CreateJsonFieldMap(IList<FieldDescriptor> fields)
+        private static System.Collections.ObjectModel.ReadOnlyDictionary<string, FieldDescriptor> CreateJsonFieldMap(IList<FieldDescriptor> fields)
         {
             var map = new Dictionary<string, FieldDescriptor>();
             foreach (var field in fields)
@@ -109,7 +110,7 @@ namespace Google.Protobuf.Reflection
                 map[field.Name] = field;
                 map[field.JsonName] = field;
             }
-            return new ReadOnlyDictionary<string, FieldDescriptor>(map);
+            return new System.Collections.ObjectModel.ReadOnlyDictionary<string, FieldDescriptor>(map);
         }
 
         /// <summary>
@@ -231,7 +232,15 @@ namespace Google.Protobuf.Reflection
         {
             if (Proto.Options.HasExtension(extension))
             {
-                value = Proto.Options.GetExtension(extension);
+                T realValue = Proto.Options.GetExtension(extension);
+                if (realValue is IDeepCloneable<T> clonable)
+                {
+                    value = clonable.Clone();
+                }
+                else
+                {
+                    value = realValue;
+                }
                 return true;
             }
             else
@@ -239,6 +248,19 @@ namespace Google.Protobuf.Reflection
                 value = default(T);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Tries to get the specified custom extension option for this message
+        /// </summary>
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; otherwise <c>false</c>.</returns>
+        public bool TryGetOption<T>(RepeatedExtension<MessageOptions, T> extension, out RepeatedField<T> value)
+        {
+            value = Proto.Options.GetExtension(extension).Clone();
+            return true;
         }
 
         /// <summary>

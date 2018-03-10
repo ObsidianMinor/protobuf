@@ -161,11 +161,20 @@ void MessageFieldGenerator::GenerateSerializationCode(io::Printer* printer) {
 }
 
 void MessageFieldGenerator::GenerateSerializedSizeCode(io::Printer* printer) {
-  printer->Print(
-    variables_,
-    "if ($has_property_check$) {\n"
-    "  size += $tag_size$ + pb::CodedOutputStream.ComputeMessageSize($property_name$);\n"
-    "}\n");
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
+    printer->Print(
+      variables_,
+      "if ($has_property_check$) {\n"
+      "  size += $tag_size$ + $tag_size$ + pb::CodedOutputStream.ComputeGroupSize($property_name$);\n"
+      "}\n");
+  }
+  else {
+    printer->Print(
+      variables_,
+      "if ($has_property_check$) {\n"
+      "  size += $tag_size$ + pb::CodedOutputStream.ComputeMessageSize($property_name$);\n"
+      "}\n");
+  }
 }
 
 void MessageFieldGenerator::WriteHash(io::Printer* printer) {

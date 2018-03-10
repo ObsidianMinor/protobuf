@@ -182,7 +182,7 @@ namespace Google.Protobuf
             }
             if (groupList != null)
             {
-                result += (CodedOutputStream.ComputeTagSize(fieldNumber) * 2) * lengthDelimitedList.Count;
+                result += (CodedOutputStream.ComputeTagSize(fieldNumber) * 2) * groupList.Count;
                 foreach (UnknownFieldSet value in groupList)
                 {
                     result += value.CalculateSize();

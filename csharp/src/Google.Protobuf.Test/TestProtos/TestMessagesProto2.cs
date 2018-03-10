@@ -2472,7 +2472,7 @@ namespace ProtobufTestMessages.Proto2 {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OneofEnum);
       }
       if (HasData) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(Data);
+        size += 2 + 2 + pb::CodedOutputStream.ComputeGroupSize(Data);
       }
       if (HasFieldname1) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Fieldname1);

@@ -172,5 +172,24 @@ namespace Google.Protobuf
             assertEmpty(discardingParser1.ParseFrom(new MemoryStream(data)));
             assertEmpty(discardingParser2.ParseFrom(new MemoryStream(data)));
         }
+
+        [Test]
+        public void TestGroup() // test that we can save groups
+        {
+            TestProtos.Proto2.TestAllTypes message = new TestProtos.Proto2.TestAllTypes()
+            {
+                OptionalGroup = new TestProtos.Proto2.TestAllTypes.Types.OptionalGroup { A = 10 }
+            };
+            byte[] data = message.ToByteArray();
+
+            TestEmptyMessage empty = TestEmptyMessage.Parser.ParseFrom(data);
+            Assert.AreEqual(message.CalculateSize(), empty.CalculateSize());
+
+            byte[] dataFromEmpty = empty.ToByteArray();
+            Assert.AreEqual(data.Length, dataFromEmpty.Length);
+
+            TestProtos.Proto2.TestAllTypes messageFromEmpty = TestProtos.Proto2.TestAllTypes.Parser.ParseFrom(dataFromEmpty);
+            Assert.AreEqual(message, messageFromEmpty);
+        }
     }
 }

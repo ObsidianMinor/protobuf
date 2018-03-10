@@ -2879,7 +2879,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(OptionalBytes);
       }
       if (HasOptionalGroup) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
+        size += 2 + 2 + pb::CodedOutputStream.ComputeGroupSize(OptionalGroup);
       }
       if (HasOptionalNestedMessage) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OptionalNestedMessage);
@@ -8412,7 +8412,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Bb);
       }
       if (HasSubGroup) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SubGroup);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(SubGroup);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -9273,7 +9273,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public int CalculateSize() {
           int size = 0;
           if (HasSubGroup) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(SubGroup);
+            size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(SubGroup);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -9656,10 +9656,10 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(A);
       }
       if (HasFoo) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Foo);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(Foo);
       }
       if (HasBar) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Bar);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(Bar);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -14497,7 +14497,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (fooCase_ == FooOneofCase.FooGroup) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(FooGroup);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -14976,7 +14976,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (HasFooGroup) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(FooGroup);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -15763,7 +15763,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (fooCase_ == FooOneofCase.FooGroup) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooGroup);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(FooGroup);
       }
       if (fooCase_ == FooOneofCase.FooLazyMessage) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooLazyMessage);
@@ -18794,7 +18794,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       size += repeatedAllTypes_.CalculateSize(_repeated_repeatedAllTypes_codec);
       if (HasOptionalGroup) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
+        size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(OptionalGroup);
       }
       size += repeatedGroup_.CalculateSize(_repeated_repeatedGroup_codec);
       if (_unknownFields != null) {
@@ -21392,7 +21392,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 5 + pb::CodedOutputStream.ComputeMessageSize(OptionalMessage);
       }
       if (HasOptionalGroup) {
-        size += 5 + pb::CodedOutputStream.ComputeMessageSize(OptionalGroup);
+        size += 5 + 5 + pb::CodedOutputStream.ComputeGroupSize(OptionalGroup);
       }
       size += stringStringMap_.CalculateSize(_map_stringStringMap_codec);
       if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {

@@ -312,5 +312,14 @@ namespace Google.Protobuf
 
             return false;
         }
+
+        /// <summary>
+        /// Returns a hash code for this extension set
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

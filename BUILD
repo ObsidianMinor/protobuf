@@ -298,6 +298,7 @@ cc_library(
         "src/google/protobuf/compiler/csharp/csharp_doc_comment.cc",
         "src/google/protobuf/compiler/csharp/csharp_enum.cc",
         "src/google/protobuf/compiler/csharp/csharp_enum_field.cc",
+        "src/google/protobuf/compiler/csharp/csharp_field_base.cc",
         "src/google/protobuf/compiler/csharp/csharp_generator.cc",
         "src/google/protobuf/compiler/csharp/csharp_helpers.cc",
         "src/google/protobuf/compiler/csharp/csharp_map_field.cc",

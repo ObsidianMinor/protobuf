@@ -140,14 +140,6 @@ namespace Google.Protobuf
             return ByteString.AttachBytes(message.ToByteArray());
         }
 
-        /// <summary>
-        /// Registers extensions for the specified message using the specified extension registry
-        /// </summary>
-        /// <param name="message">The message to register extensions for</param>
-        /// <param name="registry">The registry to extensions from</param>
-        public static void RegisterExtensions(this IExtensionMessage message, ExtensionRegistry registry) 
-            => registry.RegisterExtensionsFor(message);
-
         // Implementations allowing unknown fields to be discarded.
         internal static void MergeFrom(this IMessage message, byte[] data, bool discardUnknownFields, ExtensionRegistry registry)
         {

@@ -331,7 +331,7 @@ namespace Google.Protobuf
             };
 
             var message = new Proto2.TestAllExtensions();
-            message.RegisterExtensions(registry);
+            registry.RegisterExtensionsFor(message);
             message.SetExtension(OptionalBoolExtension, true);
             message.SetExtension(OptionalBytesExtension, ByteString.CopyFrom(1, 2, 3, 4));
             message.SetExtension(OptionalDoubleExtension, 23.5);

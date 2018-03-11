@@ -433,6 +433,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    /// <summary>Clears the value of the double_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearDoubleField() {
+      doubleField_ = null;
+    }
+
     /// <summary>Field number for the "float_field" field.</summary>
     public const int FloatFieldFieldNumber = 11;
     private static readonly pb::FieldCodec<float?> _single_floatField_codec = pb::FieldCodec.ForStructWrapper<float>(90);
@@ -443,6 +449,12 @@ namespace Google.Protobuf.TestProtos {
       set {
         floatField_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the float_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFloatField() {
+      floatField_ = null;
     }
 
     /// <summary>Field number for the "int64_field" field.</summary>
@@ -457,6 +469,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    /// <summary>Clears the value of the int64_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearInt64Field() {
+      int64Field_ = null;
+    }
+
     /// <summary>Field number for the "uint64_field" field.</summary>
     public const int Uint64FieldFieldNumber = 13;
     private static readonly pb::FieldCodec<ulong?> _single_uint64Field_codec = pb::FieldCodec.ForStructWrapper<ulong>(106);
@@ -467,6 +485,12 @@ namespace Google.Protobuf.TestProtos {
       set {
         uint64Field_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the uint64_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearUint64Field() {
+      uint64Field_ = null;
     }
 
     /// <summary>Field number for the "int32_field" field.</summary>
@@ -481,6 +505,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    /// <summary>Clears the value of the int32_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearInt32Field() {
+      int32Field_ = null;
+    }
+
     /// <summary>Field number for the "uint32_field" field.</summary>
     public const int Uint32FieldFieldNumber = 15;
     private static readonly pb::FieldCodec<uint?> _single_uint32Field_codec = pb::FieldCodec.ForStructWrapper<uint>(122);
@@ -491,6 +521,12 @@ namespace Google.Protobuf.TestProtos {
       set {
         uint32Field_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the uint32_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearUint32Field() {
+      uint32Field_ = null;
     }
 
     /// <summary>Field number for the "bool_field" field.</summary>
@@ -505,6 +541,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    /// <summary>Clears the value of the bool_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBoolField() {
+      boolField_ = null;
+    }
+
     /// <summary>Field number for the "string_field" field.</summary>
     public const int StringFieldFieldNumber = 17;
     private static readonly pb::FieldCodec<string> _single_stringField_codec = pb::FieldCodec.ForClassWrapper<string>(138);
@@ -517,6 +559,12 @@ namespace Google.Protobuf.TestProtos {
       }
     }
 
+    /// <summary>Clears the value of the string_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearStringField() {
+      stringField_ = null;
+    }
+
     /// <summary>Field number for the "bytes_field" field.</summary>
     public const int BytesFieldFieldNumber = 18;
     private static readonly pb::FieldCodec<pb::ByteString> _single_bytesField_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(146);
@@ -527,6 +575,12 @@ namespace Google.Protobuf.TestProtos {
       set {
         bytesField_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the bytes_field field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBytesField() {
+      bytesField_ = null;
     }
 
     /// <summary>Field number for the "value_field" field.</summary>

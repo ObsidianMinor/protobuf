@@ -1354,6 +1354,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
 
+    /// <summary>Clears the value of the optional_bool_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalBoolWrapper() {
+      optionalBoolWrapper_ = null;
+    }
+
     /// <summary>Field number for the "optional_int32_wrapper" field.</summary>
     public const int OptionalInt32WrapperFieldNumber = 202;
     private static readonly pb::FieldCodec<int?> _single_optionalInt32Wrapper_codec = pb::FieldCodec.ForStructWrapper<int>(1618);
@@ -1364,6 +1370,12 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalInt32Wrapper_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the optional_int32_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalInt32Wrapper() {
+      optionalInt32Wrapper_ = null;
     }
 
     /// <summary>Field number for the "optional_int64_wrapper" field.</summary>
@@ -1378,6 +1390,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
 
+    /// <summary>Clears the value of the optional_int64_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalInt64Wrapper() {
+      optionalInt64Wrapper_ = null;
+    }
+
     /// <summary>Field number for the "optional_uint32_wrapper" field.</summary>
     public const int OptionalUint32WrapperFieldNumber = 204;
     private static readonly pb::FieldCodec<uint?> _single_optionalUint32Wrapper_codec = pb::FieldCodec.ForStructWrapper<uint>(1634);
@@ -1388,6 +1406,12 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalUint32Wrapper_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the optional_uint32_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalUint32Wrapper() {
+      optionalUint32Wrapper_ = null;
     }
 
     /// <summary>Field number for the "optional_uint64_wrapper" field.</summary>
@@ -1402,6 +1426,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
 
+    /// <summary>Clears the value of the optional_uint64_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalUint64Wrapper() {
+      optionalUint64Wrapper_ = null;
+    }
+
     /// <summary>Field number for the "optional_float_wrapper" field.</summary>
     public const int OptionalFloatWrapperFieldNumber = 206;
     private static readonly pb::FieldCodec<float?> _single_optionalFloatWrapper_codec = pb::FieldCodec.ForStructWrapper<float>(1650);
@@ -1412,6 +1442,12 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalFloatWrapper_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the optional_float_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalFloatWrapper() {
+      optionalFloatWrapper_ = null;
     }
 
     /// <summary>Field number for the "optional_double_wrapper" field.</summary>
@@ -1426,6 +1462,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
 
+    /// <summary>Clears the value of the optional_double_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalDoubleWrapper() {
+      optionalDoubleWrapper_ = null;
+    }
+
     /// <summary>Field number for the "optional_string_wrapper" field.</summary>
     public const int OptionalStringWrapperFieldNumber = 208;
     private static readonly pb::FieldCodec<string> _single_optionalStringWrapper_codec = pb::FieldCodec.ForClassWrapper<string>(1666);
@@ -1438,6 +1480,12 @@ namespace ProtobufTestMessages.Proto3 {
       }
     }
 
+    /// <summary>Clears the value of the optional_string_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalStringWrapper() {
+      optionalStringWrapper_ = null;
+    }
+
     /// <summary>Field number for the "optional_bytes_wrapper" field.</summary>
     public const int OptionalBytesWrapperFieldNumber = 209;
     private static readonly pb::FieldCodec<pb::ByteString> _single_optionalBytesWrapper_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(1674);
@@ -1448,6 +1496,12 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         optionalBytesWrapper_ = value;
       }
+    }
+
+    /// <summary>Clears the value of the optional_bytes_wrapper field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOptionalBytesWrapper() {
+      optionalBytesWrapper_ = null;
     }
 
     /// <summary>Field number for the "repeated_bool_wrapper" field.</summary>

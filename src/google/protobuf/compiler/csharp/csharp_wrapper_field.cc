@@ -80,6 +80,15 @@ void WrapperFieldGenerator::GenerateMembers(io::Printer* printer) {
     "  set {\n"
     "    $name$_ = value;\n"
     "  }\n"
+    "}\n\n");
+  printer->Print(
+    variables_,
+    "/// <summary>Clears the value of the $descriptor_name$ field</summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  $name$_ = null;\n"
     "}\n");
 }
 

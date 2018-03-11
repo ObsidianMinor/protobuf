@@ -30,15 +30,14 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns whether the registry is readonly
         /// </summary>
-        public bool IsReadOnly => false;
+        bool ICollection<Extension>.IsReadOnly => false;
 
         /// <summary>
         /// Adds the specified extension to the registry
         /// </summary>
         public void Add(Extension extension)
         {
-            if (extension is null)
-                throw new ArgumentNullException(nameof(extension));
+            ProtoPreconditions.CheckNotNull(extension, nameof(extension));
 
             if (extensions.TryGetValue(extension.TargetType, out var collection))
             {
@@ -54,9 +53,8 @@ namespace Google.Protobuf
         /// Adds the specified extensions to the registry
         /// </summary>
         public void Add(params Extension[] newExtensions)
-        { 
-            if (newExtensions is null)
-                throw new ArgumentNullException(nameof(newExtensions));
+        {
+            ProtoPreconditions.CheckNotNull(newExtensions, nameof(newExtensions));
 
             Add((IEnumerable<Extension>)newExtensions);
         }
@@ -66,9 +64,8 @@ namespace Google.Protobuf
         /// </summary>
         public void Add(IEnumerable<Extension> newExtensions)
         {
-            if (newExtensions is null)
-                throw new ArgumentNullException(nameof(newExtensions));
-                
+            ProtoPreconditions.CheckNotNull(newExtensions, nameof(newExtensions));
+
             foreach (var extension in newExtensions)
                 Add(extension);
         }
@@ -84,10 +81,10 @@ namespace Google.Protobuf
         /// <summary>
         /// Gets whether the extension registry contains the specified extension
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
         public bool Contains(Extension item)
         {
+            ProtoPreconditions.CheckNotNull(item, nameof(item));
+
             return extensions.TryGetValue(item.TargetType, out var collection) && collection.Contains(item);
         }
 
@@ -96,9 +93,13 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="array">The array to copy to</param>
         /// <param name="arrayIndex">The array index to start at</param>
-        public void CopyTo(Extension[] array, int arrayIndex)
+        void ICollection<Extension>.CopyTo(Extension[] array, int arrayIndex)
         {
-            foreach(var collection in extensions.Values)
+            ProtoPreconditions.CheckNotNull(array, nameof(array));
+            if (arrayIndex < 0 || arrayIndex >= array.Length)
+                throw new ArgumentOutOfRangeException(nameof(arrayIndex));
+
+            foreach (var collection in extensions.Values)
             {
                 collection.CopyTo(array, arrayIndex);
                 arrayIndex += collection.Count;
@@ -122,6 +123,8 @@ namespace Google.Protobuf
         /// <param name="message"></param>
         public void RegisterExtensionsFor(IExtensionMessage message)
         {
+            ProtoPreconditions.CheckNotNull(message, nameof(message));
+
             if (extensions.TryGetValue(message.GetType(), out var collection))
             {
                 foreach(var extension in collection)
@@ -138,6 +141,8 @@ namespace Google.Protobuf
         /// <returns></returns>
         public bool Remove(Extension item)
         {
+            ProtoPreconditions.CheckNotNull(item, nameof(item));
+
             return extensions.TryGetValue(item.TargetType, out var collection) && collection.Remove(item);
         }
 

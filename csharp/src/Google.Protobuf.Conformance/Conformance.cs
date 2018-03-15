@@ -117,6 +117,13 @@ namespace Conformance {
         payloadCase_ = PayloadOneofCase.ProtobufPayload;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "protobuf_payload" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearProtobufPayload() {
+      if (payloadCase_ == PayloadOneofCase.ProtobufPayload) {
+        ClearPayload();
+      }
+    }
 
     /// <summary>Field number for the "json_payload" field.</summary>
     public const int JsonPayloadFieldNumber = 2;
@@ -126,6 +133,13 @@ namespace Conformance {
       set {
         payload_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         payloadCase_ = PayloadOneofCase.JsonPayload;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "json_payload" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearJsonPayload() {
+      if (payloadCase_ == PayloadOneofCase.JsonPayload) {
+        ClearPayload();
       }
     }
 
@@ -236,6 +250,7 @@ namespace Conformance {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (payloadCase_ == PayloadOneofCase.ProtobufPayload) {
         output.WriteRawTag(10);
         output.WriteBytes(ProtobufPayload);
@@ -410,6 +425,13 @@ namespace Conformance {
         resultCase_ = ResultOneofCase.ParseError;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "parse_error" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearParseError() {
+      if (resultCase_ == ResultOneofCase.ParseError) {
+        ClearResult();
+      }
+    }
 
     /// <summary>Field number for the "serialize_error" field.</summary>
     public const int SerializeErrorFieldNumber = 6;
@@ -424,6 +446,13 @@ namespace Conformance {
       set {
         result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         resultCase_ = ResultOneofCase.SerializeError;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "serialize_error" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSerializeError() {
+      if (resultCase_ == ResultOneofCase.SerializeError) {
+        ClearResult();
       }
     }
 
@@ -442,6 +471,13 @@ namespace Conformance {
         resultCase_ = ResultOneofCase.RuntimeError;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "runtime_error" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearRuntimeError() {
+      if (resultCase_ == ResultOneofCase.RuntimeError) {
+        ClearResult();
+      }
+    }
 
     /// <summary>Field number for the "protobuf_payload" field.</summary>
     public const int ProtobufPayloadFieldNumber = 3;
@@ -455,6 +491,13 @@ namespace Conformance {
       set {
         result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         resultCase_ = ResultOneofCase.ProtobufPayload;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "protobuf_payload" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearProtobufPayload() {
+      if (resultCase_ == ResultOneofCase.ProtobufPayload) {
+        ClearResult();
       }
     }
 
@@ -472,6 +515,13 @@ namespace Conformance {
         resultCase_ = ResultOneofCase.JsonPayload;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "json_payload" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearJsonPayload() {
+      if (resultCase_ == ResultOneofCase.JsonPayload) {
+        ClearResult();
+      }
+    }
 
     /// <summary>Field number for the "skipped" field.</summary>
     public const int SkippedFieldNumber = 5;
@@ -485,6 +535,13 @@ namespace Conformance {
       set {
         result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         resultCase_ = ResultOneofCase.Skipped;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "skipped" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSkipped() {
+      if (resultCase_ == ResultOneofCase.Skipped) {
+        ClearResult();
       }
     }
 
@@ -557,6 +614,7 @@ namespace Conformance {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (resultCase_ == ResultOneofCase.ParseError) {
         output.WriteRawTag(10);
         output.WriteString(ParseError);

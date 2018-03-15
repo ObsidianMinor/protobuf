@@ -449,6 +449,8 @@ libprotoc_la_SOURCES =                                         \
   google/protobuf/compiler/csharp/csharp_map_field.h           \
   google/protobuf/compiler/csharp/csharp_message.cc            \
   google/protobuf/compiler/csharp/csharp_message.h             \
+  google/protobuf/compiler/csharp/csharp_group_field.cc        \
+  google/protobuf/compiler/csharp/csharp_group_field.h         \
   google/protobuf/compiler/csharp/csharp_message_field.cc      \
   google/protobuf/compiler/csharp/csharp_message_field.h       \
   google/protobuf/compiler/csharp/csharp_options.h             \
@@ -458,6 +460,8 @@ libprotoc_la_SOURCES =                                         \
   google/protobuf/compiler/csharp/csharp_reflection_class.h      \
   google/protobuf/compiler/csharp/csharp_repeated_enum_field.cc \
   google/protobuf/compiler/csharp/csharp_repeated_enum_field.h \
+  google/protobuf/compiler/csharp/csharp_repeated_group_field.cc \
+  google/protobuf/compiler/csharp/csharp_repeated_group_field.h \
   google/protobuf/compiler/csharp/csharp_repeated_message_field.cc \
   google/protobuf/compiler/csharp/csharp_repeated_message_field.h \
   google/protobuf/compiler/csharp/csharp_repeated_primitive_field.cc \

@@ -154,6 +154,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -262,6 +263,7 @@ namespace UnitTest.Issues.TestProtos {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -370,6 +372,7 @@ namespace UnitTest.Issues.TestProtos {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public void WriteTo(pb::CodedOutputStream output) {
+              pb::ProtoPreconditions.CheckInitialized(this);
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(output);
               }
@@ -534,6 +537,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Value);
@@ -670,6 +674,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -893,6 +898,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (PrimitiveValue != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(PrimitiveValue);
@@ -1095,6 +1101,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Item != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Item);
@@ -1259,6 +1266,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Types_ != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Types_);
@@ -1398,6 +1406,7 @@ namespace UnitTest.Issues.TestProtos {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1538,6 +1547,13 @@ namespace UnitTest.Issues.TestProtos {
         o1Case_ = O1OneofCase.O1String;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "o1_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearO1String() {
+      if (o1Case_ == O1OneofCase.O1String) {
+        ClearO1();
+      }
+    }
 
     /// <summary>Field number for the "o1_int32" field.</summary>
     public const int O1Int32FieldNumber = 5;
@@ -1547,6 +1563,13 @@ namespace UnitTest.Issues.TestProtos {
       set {
         o1_ = value;
         o1Case_ = O1OneofCase.O1Int32;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "o1_int32" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearO1Int32() {
+      if (o1Case_ == O1OneofCase.O1Int32) {
+        ClearO1();
       }
     }
 
@@ -1579,6 +1602,13 @@ namespace UnitTest.Issues.TestProtos {
         o2Case_ = O2OneofCase.O2Int32;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "o2_int32" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearO2Int32() {
+      if (o2Case_ == O2OneofCase.O2Int32) {
+        ClearO2();
+      }
+    }
 
     /// <summary>Field number for the "o2_string" field.</summary>
     public const int O2StringFieldNumber = 3;
@@ -1588,6 +1618,13 @@ namespace UnitTest.Issues.TestProtos {
       set {
         o2_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         o2Case_ = O2OneofCase.O2String;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "o2_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearO2String() {
+      if (o2Case_ == O2OneofCase.O2String) {
+        ClearO2();
       }
     }
 
@@ -1677,6 +1714,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (PlainString.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(PlainString);
@@ -1942,6 +1980,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2082,6 +2121,13 @@ namespace UnitTest.Issues.TestProtos {
         valueCase_ = ValueOneofCase.Text;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "text" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearText() {
+      if (valueCase_ == ValueOneofCase.Text) {
+        ClearValue();
+      }
+    }
 
     /// <summary>Field number for the "nested" field.</summary>
     public const int NestedFieldNumber = 2;
@@ -2091,6 +2137,13 @@ namespace UnitTest.Issues.TestProtos {
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Nested;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "nested" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearNested() {
+      if (valueCase_ == ValueOneofCase.Nested) {
+        ClearValue();
       }
     }
 
@@ -2151,6 +2204,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (valueCase_ == ValueOneofCase.Text) {
         output.WriteRawTag(10);
         output.WriteString(Text);
@@ -2342,6 +2396,7 @@ namespace UnitTest.Issues.TestProtos {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (X != 0) {
             output.WriteRawTag(8);
             output.WriteInt32(X);

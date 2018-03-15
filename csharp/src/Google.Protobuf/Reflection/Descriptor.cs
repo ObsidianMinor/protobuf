@@ -271,6 +271,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       file_.WriteTo(output, _repeated_file_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -636,6 +637,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -805,6 +807,12 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
+      if (HasSourceCodeInfo) {
+        if (!SourceCodeInfo.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -1037,6 +1045,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -1163,6 +1172,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -1313,6 +1325,7 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasStart) {
             output.WriteRawTag(8);
             output.WriteInt32(Start);
@@ -1397,6 +1410,9 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasOptions) {
+            if (!Options.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -1532,6 +1548,7 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasStart) {
             output.WriteRawTag(8);
             output.WriteInt32(Start);
@@ -1678,7 +1695,7 @@ namespace Google.Protobuf.Reflection {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -1691,6 +1708,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2139,6 +2157,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2321,6 +2340,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -2512,6 +2534,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2582,6 +2605,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -2754,6 +2780,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2845,6 +2872,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -2985,6 +3015,7 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasStart) {
             output.WriteRawTag(8);
             output.WriteInt32(Start);
@@ -3205,6 +3236,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -3289,6 +3321,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -3426,6 +3461,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -3503,6 +3539,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -3745,6 +3784,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -3871,6 +3911,9 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptions) {
+        if (!Options.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -4521,7 +4564,7 @@ namespace Google.Protobuf.Reflection {
       if (HasPhpClassPrefix) hash ^= PhpClassPrefix.GetHashCode();
       if (HasPhpNamespace) hash ^= PhpNamespace.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -4534,6 +4577,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasJavaPackage) {
         output.WriteRawTag(10);
         output.WriteString(JavaPackage);
@@ -5126,7 +5170,7 @@ namespace Google.Protobuf.Reflection {
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       if (HasMapEntry) hash ^= MapEntry.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -5139,6 +5183,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasMessageSetWireFormat) {
         output.WriteRawTag(8);
         output.WriteBool(MessageSetWireFormat);
@@ -5574,7 +5619,7 @@ namespace Google.Protobuf.Reflection {
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       if (HasWeak) hash ^= Weak.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -5587,6 +5632,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasCtype) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Ctype);
@@ -5855,7 +5901,7 @@ namespace Google.Protobuf.Reflection {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -5868,6 +5914,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -6085,7 +6132,7 @@ namespace Google.Protobuf.Reflection {
       if (HasAllowAlias) hash ^= AllowAlias.GetHashCode();
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6098,6 +6145,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasAllowAlias) {
         output.WriteRawTag(16);
         output.WriteBool(AllowAlias);
@@ -6312,7 +6360,7 @@ namespace Google.Protobuf.Reflection {
       int hash = 1;
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6325,6 +6373,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasDeprecated) {
         output.WriteRawTag(8);
         output.WriteBool(Deprecated);
@@ -6525,7 +6574,7 @@ namespace Google.Protobuf.Reflection {
       int hash = 1;
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6538,6 +6587,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasDeprecated) {
         output.WriteRawTag(136, 2);
         output.WriteBool(Deprecated);
@@ -6765,7 +6815,7 @@ namespace Google.Protobuf.Reflection {
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       if (HasIdempotencyLevel) hash ^= IdempotencyLevel.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6778,6 +6828,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasDeprecated) {
         output.WriteRawTag(136, 2);
         output.WriteBool(Deprecated);
@@ -7163,6 +7214,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       name_.WriteTo(output, _repeated_name_codec);
       if (HasIdentifierValue) {
         output.WriteRawTag(26);
@@ -7423,6 +7475,7 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasNamePart_) {
             output.WriteRawTag(10);
             output.WriteString(NamePart_);
@@ -7626,6 +7679,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       location_.WriteTo(output, _repeated_location_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -7915,6 +7969,7 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           path_.WriteTo(output, _repeated_path_codec);
           span_.WriteTo(output, _repeated_span_codec);
           if (HasLeadingComments) {
@@ -8099,6 +8154,7 @@ namespace Google.Protobuf.Reflection {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       annotation_.WriteTo(output, _repeated_annotation_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -8324,6 +8380,7 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           path_.WriteTo(output, _repeated_path_codec);
           if (HasSourceFile) {
             output.WriteRawTag(18);

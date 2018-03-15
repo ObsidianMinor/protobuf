@@ -1250,6 +1250,13 @@ namespace ProtobufTestMessages.Proto3 {
         oneofFieldCase_ = OneofFieldOneofCase.OneofUint32;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_uint32" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofUint32() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "oneof_nested_message" field.</summary>
     public const int OneofNestedMessageFieldNumber = 112;
@@ -1259,6 +1266,13 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.OneofNestedMessage;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_nested_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofNestedMessage() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+        ClearOneofField();
       }
     }
 
@@ -1272,6 +1286,13 @@ namespace ProtobufTestMessages.Proto3 {
         oneofFieldCase_ = OneofFieldOneofCase.OneofString;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofString() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "oneof_bytes" field.</summary>
     public const int OneofBytesFieldNumber = 114;
@@ -1281,6 +1302,13 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofBytes;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_bytes" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofBytes() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+        ClearOneofField();
       }
     }
 
@@ -1294,6 +1322,13 @@ namespace ProtobufTestMessages.Proto3 {
         oneofFieldCase_ = OneofFieldOneofCase.OneofBool;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_bool" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofBool() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBool) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "oneof_uint64" field.</summary>
     public const int OneofUint64FieldNumber = 116;
@@ -1303,6 +1338,13 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofUint64;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_uint64" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofUint64() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint64) {
+        ClearOneofField();
       }
     }
 
@@ -1316,6 +1358,13 @@ namespace ProtobufTestMessages.Proto3 {
         oneofFieldCase_ = OneofFieldOneofCase.OneofFloat;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_float" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofFloat() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofFloat) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "oneof_double" field.</summary>
     public const int OneofDoubleFieldNumber = 118;
@@ -1327,6 +1376,13 @@ namespace ProtobufTestMessages.Proto3 {
         oneofFieldCase_ = OneofFieldOneofCase.OneofDouble;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_double" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofDouble() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofDouble) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "oneof_enum" field.</summary>
     public const int OneofEnumFieldNumber = 119;
@@ -1336,6 +1392,13 @@ namespace ProtobufTestMessages.Proto3 {
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofEnum;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_enum" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofEnum() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.OneofEnum) {
+        ClearOneofField();
       }
     }
 
@@ -2424,6 +2487,7 @@ namespace ProtobufTestMessages.Proto3 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (OptionalInt32 != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(OptionalInt32);
@@ -3986,6 +4050,7 @@ namespace ProtobufTestMessages.Proto3 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (A != 0) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
@@ -4153,6 +4218,7 @@ namespace ProtobufTestMessages.Proto3 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (C != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(C);

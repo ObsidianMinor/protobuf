@@ -46,7 +46,6 @@ namespace Google.Protobuf.Reflection
         // and proto2 vs proto3 for non-message types, as proto3 doesn't support "full" presence detection or default
         // values.
 
-        private readonly static Type[] emptyTypes = new Type[0];
         private readonly Action<IMessage, object> setValueDelegate;
         private readonly Action<IMessage> clearDelegate;
 
@@ -57,23 +56,8 @@ namespace Google.Protobuf.Reflection
                 throw new ArgumentException("Not all required properties/methods available");
             }
             setValueDelegate = ReflectionUtil.CreateActionIMessageObject(property.GetSetMethod());
-            MethodInfo clearMethod = property.DeclaringType.GetRuntimeMethod("Clear" + property.Name, emptyTypes);
-            if (clearMethod == null) // this method should only not exist for individual oneof fields
-            {
-                var clrType = property.PropertyType;
-                
-                // TODO: Validate that this is a reasonable single field? (Should be a value type, a message type, or string/ByteString.)
-                object defaultValue =
-                    descriptor.FieldType == FieldType.Message || descriptor.FieldType == FieldType.Group ? null
-                    : clrType == typeof(string) ? ""
-                    : clrType == typeof(ByteString) ? ByteString.Empty
-                    : Activator.CreateInstance(clrType);
-                clearDelegate = message => SetValue(message, defaultValue);
-            }
-            else
-            {
-                clearDelegate = ReflectionUtil.CreateActionIMessage(clearMethod);
-            }
+            MethodInfo clearMethod = property.DeclaringType.GetRuntimeMethod("Clear" + property.Name, ReflectionUtil.EmptyTypes);
+            clearDelegate = ReflectionUtil.CreateActionIMessage(clearMethod ?? throw new ArgumentException("Not all required properties/methods available"));
         }
 
         public override void Clear(IMessage message)

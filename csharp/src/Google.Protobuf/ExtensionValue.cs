@@ -49,7 +49,7 @@ namespace Google.Protobuf
             if (ReferenceEquals(this, other))
                 return true;
 
-            return other is ExtensionValue<T> value && hasValue.Equals(value.hasValue) && field.Equals(value.field) && codec.Equals(value.codec);
+            return other is ExtensionValue<T> value && codec.Equals(value.codec) && hasValue.Equals(value.hasValue) && Equals(field, value.field);
             // we check for equality in the codec since we could have equal field values however the values could be written in different ways
         }
 

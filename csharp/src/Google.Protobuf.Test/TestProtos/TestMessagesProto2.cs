@@ -1294,10 +1294,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofUint32FieldNumber = 111;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OneofUint32 {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint32 ? (uint) oneofField_ : 0; }
+      get { return HasOneofUint32 ? (uint) oneofField_ : 0; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofUint32;
+      }
+    }
+    /// <summary>Gets whether the "oneof_uint32" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofUint32 {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint32; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_uint32" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofUint32() {
+      if (HasOneofUint32) {
+        ClearOneofField();
       }
     }
 
@@ -1305,10 +1317,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofNestedMessageFieldNumber = 112;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage OneofNestedMessage {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage ? (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage) oneofField_ : null; }
+      get { return HasOneofNestedMessage ? (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage) oneofField_ : null; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.OneofNestedMessage;
+      }
+    }
+    /// <summary>Gets whether the "oneof_nested_message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofNestedMessage {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_nested_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofNestedMessage() {
+      if (HasOneofNestedMessage) {
+        ClearOneofField();
       }
     }
 
@@ -1316,10 +1340,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofStringFieldNumber = 113;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OneofString {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofString ? (string) oneofField_ : ""; }
+      get { return HasOneofString ? (string) oneofField_ : ""; }
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofString;
+      }
+    }
+    /// <summary>Gets whether the "oneof_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofString {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofString() {
+      if (HasOneofString) {
+        ClearOneofField();
       }
     }
 
@@ -1327,10 +1363,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofBytesFieldNumber = 114;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OneofBytes {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
+      get { return HasOneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofBytes;
+      }
+    }
+    /// <summary>Gets whether the "oneof_bytes" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofBytes {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBytes; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_bytes" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofBytes() {
+      if (HasOneofBytes) {
+        ClearOneofField();
       }
     }
 
@@ -1338,10 +1386,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofBoolFieldNumber = 115;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool OneofBool {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBool ? (bool) oneofField_ : false; }
+      get { return HasOneofBool ? (bool) oneofField_ : false; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofBool;
+      }
+    }
+    /// <summary>Gets whether the "oneof_bool" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofBool {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBool; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_bool" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofBool() {
+      if (HasOneofBool) {
+        ClearOneofField();
       }
     }
 
@@ -1349,10 +1409,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofUint64FieldNumber = 116;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong OneofUint64 {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint64 ? (ulong) oneofField_ : 0UL; }
+      get { return HasOneofUint64 ? (ulong) oneofField_ : 0UL; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofUint64;
+      }
+    }
+    /// <summary>Gets whether the "oneof_uint64" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofUint64 {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint64; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_uint64" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofUint64() {
+      if (HasOneofUint64) {
+        ClearOneofField();
       }
     }
 
@@ -1360,10 +1432,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofFloatFieldNumber = 117;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float OneofFloat {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofFloat ? (float) oneofField_ : 0F; }
+      get { return HasOneofFloat ? (float) oneofField_ : 0F; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofFloat;
+      }
+    }
+    /// <summary>Gets whether the "oneof_float" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofFloat {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofFloat; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_float" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofFloat() {
+      if (HasOneofFloat) {
+        ClearOneofField();
       }
     }
 
@@ -1371,10 +1455,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofDoubleFieldNumber = 118;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double OneofDouble {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofDouble ? (double) oneofField_ : 0D; }
+      get { return HasOneofDouble ? (double) oneofField_ : 0D; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofDouble;
+      }
+    }
+    /// <summary>Gets whether the "oneof_double" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofDouble {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofDouble; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_double" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofDouble() {
+      if (HasOneofDouble) {
+        ClearOneofField();
       }
     }
 
@@ -1382,10 +1478,22 @@ namespace ProtobufTestMessages.Proto2 {
     public const int OneofEnumFieldNumber = 119;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum OneofEnum {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofEnum ? (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum) oneofField_ : global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum.Foo; }
+      get { return HasOneofEnum ? (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum) oneofField_ : global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum.Foo; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofEnum;
+      }
+    }
+    /// <summary>Gets whether the "oneof_enum" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofEnum {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofEnum; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_enum" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofEnum() {
+      if (HasOneofEnum) {
+        ClearOneofField();
       }
     }
 
@@ -2046,15 +2154,15 @@ namespace ProtobufTestMessages.Proto2 {
       hash ^= MapStringForeignMessage.GetHashCode();
       hash ^= MapStringNestedEnum.GetHashCode();
       hash ^= MapStringForeignEnum.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) hash ^= OneofUint32.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) hash ^= OneofNestedMessage.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) hash ^= OneofString.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) hash ^= OneofBytes.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBool) hash ^= OneofBool.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint64) hash ^= OneofUint64.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofFloat) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneofFloat);
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofDouble) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(OneofDouble);
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofEnum) hash ^= OneofEnum.GetHashCode();
+      if (HasOneofUint32) hash ^= OneofUint32.GetHashCode();
+      if (HasOneofNestedMessage) hash ^= OneofNestedMessage.GetHashCode();
+      if (HasOneofString) hash ^= OneofString.GetHashCode();
+      if (HasOneofBytes) hash ^= OneofBytes.GetHashCode();
+      if (HasOneofBool) hash ^= OneofBool.GetHashCode();
+      if (HasOneofUint64) hash ^= OneofUint64.GetHashCode();
+      if (HasOneofFloat) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneofFloat);
+      if (HasOneofDouble) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(OneofDouble);
+      if (HasOneofEnum) hash ^= OneofEnum.GetHashCode();
       if (HasData) hash ^= Data.GetHashCode();
       if (HasFieldname1) hash ^= Fieldname1.GetHashCode();
       if (HasFieldName2) hash ^= FieldName2.GetHashCode();
@@ -2075,7 +2183,7 @@ namespace ProtobufTestMessages.Proto2 {
       if (HasFieldName17) hash ^= FieldName17.GetHashCode();
       if (HasFieldName18) hash ^= FieldName18.GetHashCode();
       hash ^= (int) oneofFieldCase_;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -2088,6 +2196,7 @@ namespace ProtobufTestMessages.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasOptionalInt32) {
         output.WriteRawTag(8);
         output.WriteInt32(OptionalInt32);
@@ -2216,39 +2325,39 @@ namespace ProtobufTestMessages.Proto2 {
       mapStringForeignMessage_.WriteTo(output, _map_mapStringForeignMessage_codec);
       mapStringNestedEnum_.WriteTo(output, _map_mapStringNestedEnum_codec);
       mapStringForeignEnum_.WriteTo(output, _map_mapStringForeignEnum_codec);
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+      if (HasOneofUint32) {
         output.WriteRawTag(248, 6);
         output.WriteUInt32(OneofUint32);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+      if (HasOneofNestedMessage) {
         output.WriteRawTag(130, 7);
         output.WriteMessage(OneofNestedMessage);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+      if (HasOneofString) {
         output.WriteRawTag(138, 7);
         output.WriteString(OneofString);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+      if (HasOneofBytes) {
         output.WriteRawTag(146, 7);
         output.WriteBytes(OneofBytes);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBool) {
+      if (HasOneofBool) {
         output.WriteRawTag(152, 7);
         output.WriteBool(OneofBool);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint64) {
+      if (HasOneofUint64) {
         output.WriteRawTag(160, 7);
         output.WriteUInt64(OneofUint64);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofFloat) {
+      if (HasOneofFloat) {
         output.WriteRawTag(173, 7);
         output.WriteFloat(OneofFloat);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofDouble) {
+      if (HasOneofDouble) {
         output.WriteRawTag(177, 7);
         output.WriteDouble(OneofDouble);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofEnum) {
+      if (HasOneofEnum) {
         output.WriteRawTag(184, 7);
         output.WriteEnum((int) OneofEnum);
       }
@@ -2444,31 +2553,31 @@ namespace ProtobufTestMessages.Proto2 {
       size += mapStringForeignMessage_.CalculateSize(_map_mapStringForeignMessage_codec);
       size += mapStringNestedEnum_.CalculateSize(_map_mapStringNestedEnum_codec);
       size += mapStringForeignEnum_.CalculateSize(_map_mapStringForeignEnum_codec);
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+      if (HasOneofUint32) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(OneofUint32);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+      if (HasOneofNestedMessage) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OneofNestedMessage);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+      if (HasOneofString) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(OneofString);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+      if (HasOneofBytes) {
         size += 2 + pb::CodedOutputStream.ComputeBytesSize(OneofBytes);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBool) {
+      if (HasOneofBool) {
         size += 2 + 1;
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint64) {
+      if (HasOneofUint64) {
         size += 2 + pb::CodedOutputStream.ComputeUInt64Size(OneofUint64);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofFloat) {
+      if (HasOneofFloat) {
         size += 2 + 4;
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofDouble) {
+      if (HasOneofDouble) {
         size += 2 + 8;
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofEnum) {
+      if (HasOneofEnum) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OneofEnum);
       }
       if (HasData) {
@@ -3068,7 +3177,7 @@ namespace ProtobufTestMessages.Proto2 {
           }
           case 898: {
             global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage subBuilder = new global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage();
-            if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+            if (HasOneofNestedMessage) {
               subBuilder.MergeFrom(OneofNestedMessage);
             }
             input.ReadMessage(subBuilder);
@@ -3189,6 +3298,21 @@ namespace ProtobufTestMessages.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalNestedMessage) {
+        if (!OptionalNestedMessage.IsInitialized()) return false;
+      }
+      if (HasOptionalForeignMessage) {
+        if (!OptionalForeignMessage.IsInitialized()) return false;
+      }
+      if (HasRecursiveMessage) {
+        if (!RecursiveMessage.IsInitialized()) return false;
+      }
+      if (HasOneofNestedMessage) {
+        if (!OneofNestedMessage.IsInitialized()) return false;
+      }
+      if (HasData) {
+        if (!Data.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -3322,6 +3446,7 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
@@ -3392,6 +3517,9 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasCorecursive) {
+            if (!Corecursive.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -3519,6 +3647,7 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasGroupInt32) {
             output.WriteRawTag(208, 12);
             output.WriteInt32(GroupInt32);
@@ -3647,7 +3776,7 @@ namespace ProtobufTestMessages.Proto2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (_unknownFields != null) {
+          hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
           return hash;
@@ -3660,6 +3789,7 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -3826,6 +3956,7 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasStr) {
             output.WriteRawTag(202, 1);
             output.WriteString(Str);
@@ -3982,6 +4113,7 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasI) {
             output.WriteRawTag(72);
             output.WriteInt32(I);
@@ -4143,6 +4275,7 @@ namespace ProtobufTestMessages.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasC) {
         output.WriteRawTag(8);
         output.WriteInt32(C);

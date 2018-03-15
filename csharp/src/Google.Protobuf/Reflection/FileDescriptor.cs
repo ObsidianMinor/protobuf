@@ -68,9 +68,7 @@ namespace Google.Protobuf.Reflection
                                                              (service, index) =>
                                                              new ServiceDescriptor(service, this, index));
 
-            Extensions = DescriptorUtil.ConvertAndMakeReadOnly(proto.Extension,
-                                                               (extension, index) =>
-                                                               new FieldDescriptor(extension, this, null, index, null, generatedCodeInfo.Extensions[index]));
+            Extensions = new ExtensionCollection(this, generatedCodeInfo.Extensions);
         }
 
         /// <summary>
@@ -160,7 +158,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Unmodifiable list of top-level extensions declared in this file.
         /// </summary>
-        public IList<FieldDescriptor> Extensions { get; }
+        public ExtensionCollection Extensions { get; }
 
         /// <value>
         /// Unmodifiable list of this file's dependencies (imports).
@@ -278,6 +276,8 @@ namespace Google.Protobuf.Reflection
             {
                 service.CrossLink();
             }
+
+            Extensions.CrossLink();
         }
 
         /// <summary>
@@ -293,7 +293,8 @@ namespace Google.Protobuf.Reflection
             FileDescriptor[] dependencies,
             GeneratedClrTypeInfo generatedCodeInfo)
         {
-            ExtensionRegistry registry = new ExtensionRegistry { GetAllOptionExtensions(dependencies, generatedCodeInfo) };
+            ExtensionRegistry registry = new ExtensionRegistry();
+            AddAllExtensions(dependencies, generatedCodeInfo, registry);
             FileDescriptorProto proto;
             try
             {
@@ -316,14 +317,29 @@ namespace Google.Protobuf.Reflection
             }
         }
 
-        private static IEnumerable<Extension> GetAllOptionExtensions(FileDescriptor[] depenencies, GeneratedClrTypeInfo generatedInfo)
+        private static void AddAllExtensions(FileDescriptor[] dependencies, GeneratedClrTypeInfo generatedInfo, ExtensionRegistry registry)
         {
-            return RecursiveGetAllGeneratedExtensions(generatedInfo);
+            registry.Add(dependencies.SelectMany(GetAllDependedExtensions).Concat(GetAllGeneratedExtensions(generatedInfo)));
         }
 
-        private static IEnumerable<Extension> RecursiveGetAllGeneratedExtensions(GeneratedClrTypeInfo generated)
+        private static IEnumerable<Extension> GetAllGeneratedExtensions(GeneratedClrTypeInfo generated)
         {
-            return generated.Extensions.Concat(generated.NestedTypes.Where(g => g != null).SelectMany(RecursiveGetAllGeneratedExtensions));
+            return generated.Extensions.Concat(generated.NestedTypes.Where(t => t != null).SelectMany(GetAllGeneratedExtensions));
+        }
+
+        private static IEnumerable<Extension> GetAllDependedExtensions(FileDescriptor descriptor)
+        {
+            return descriptor.Extensions.UnorderedExtensions
+                .Select(s => s.Extension)
+                .Concat(descriptor.Dependencies.Concat(descriptor.PublicDependencies).SelectMany(GetAllDependedExtensions))
+                .Concat(descriptor.MessageTypes.SelectMany(GetAllDependedExtensionsFromMessage));
+        }
+
+        private static IEnumerable<Extension> GetAllDependedExtensionsFromMessage(MessageDescriptor descriptor)
+        {
+            return descriptor.Extensions.UnorderedExtensions
+                .Select(s => s.Extension)
+                .Concat(descriptor.NestedTypes.SelectMany(GetAllDependedExtensionsFromMessage));
         }
 
         /// <summary>
@@ -390,6 +406,7 @@ namespace Google.Protobuf.Reflection
         /// /// <returns><c>true</c> if a suitable value for the field was found; otherwise <c>false</c>.</returns>
         public bool TryGetOption<T>(RepeatedExtension<FileOptions, T> extension, out RepeatedField<T> value)
         {
+            // there is no option to check if our descriptor "has" an extension value, so we just return true every time
             value = Proto.Options.GetExtension(extension).Clone();
             return true;
         }

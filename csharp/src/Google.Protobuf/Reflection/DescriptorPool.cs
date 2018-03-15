@@ -51,6 +51,9 @@ namespace Google.Protobuf.Reflection
         private readonly IDictionary<DescriptorIntPair, EnumValueDescriptor> enumValuesByNumber =
             new Dictionary<DescriptorIntPair, EnumValueDescriptor>();
 
+        private readonly IDictionary<MessageDescriptor, IDictionary<DescriptorIntPair, FieldDescriptor>> extensionsByTypeByNumber =
+            new Dictionary<MessageDescriptor, IDictionary<DescriptorIntPair, FieldDescriptor>>();
+
         private readonly HashSet<FileDescriptor> dependencies;
 
         internal DescriptorPool(FileDescriptor[] dependencyFiles)
@@ -227,7 +230,7 @@ namespace Google.Protobuf.Reflection
         /// containing type and number already exists.</exception>
         internal void AddFieldByNumber(FieldDescriptor field)
         {
-            DescriptorIntPair key = new DescriptorIntPair(field.ContainingType, field.FieldNumber);
+            DescriptorIntPair key = new DescriptorIntPair(field.ExtendeeType ?? field.ContainingType, field.FieldNumber);
             FieldDescriptor old;
             if (fieldsByNumber.TryGetValue(key, out old))
             {

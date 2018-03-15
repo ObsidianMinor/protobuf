@@ -75,5 +75,17 @@ namespace Google.Protobuf
             }
             return value;
         }
+
+        /// <summary>
+        /// Throws an ArgumentException if the given message is not initialized
+        /// </summary>
+        public static void CheckInitialized(IMessage message)
+        {
+            CheckNotNull(message, nameof(message));
+            if (!message.IsInitialized())
+            {
+                throw new ArgumentException("The provided message is not initialized");
+            }
+        }
     }
 }

@@ -136,6 +136,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (FileName.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(FileName);

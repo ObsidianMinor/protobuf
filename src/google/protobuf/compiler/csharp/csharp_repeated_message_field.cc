@@ -143,16 +143,16 @@ void RepeatedMessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) 
     variables_,
     "$access_level$ static readonly pb::RepeatedExtension<$extended_type$, $type_name$> $property_name$ =\n"
     "  new pb::RepeatedExtension<$extended_type$, $type_name$>(");
-    if (IsWrapperType(descriptor_)) {
-      scoped_ptr<FieldGeneratorBase> single_generator(
-        new WrapperFieldGenerator(descriptor_, this->options()));
-      single_generator->GenerateCodecCode(printer);
-    } else {
-      scoped_ptr<FieldGeneratorBase> single_generator(
-        new MessageFieldGenerator(descriptor_, this->options()));
-      single_generator->GenerateCodecCode(printer);
-    }
-    printer->Print(");\n");
+  if (IsWrapperType(descriptor_)) {
+    scoped_ptr<FieldGeneratorBase> single_generator(
+      new WrapperFieldGenerator(descriptor_, this->options()));
+    single_generator->GenerateCodecCode(printer);
+  } else {
+    scoped_ptr<FieldGeneratorBase> single_generator(
+      new MessageFieldGenerator(descriptor_, this->options()));
+    single_generator->GenerateCodecCode(printer);
+  }
+  printer->Print(");\n");
 }
 
 }  // namespace csharp

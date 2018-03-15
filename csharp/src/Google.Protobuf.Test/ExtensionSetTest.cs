@@ -17,6 +17,15 @@ namespace Google.Protobuf
         }
 
         [Test]
+        public void EmptyBadTypesNoEquality()
+        {
+            ExtensionSet<MessageOptions> set1 = new ExtensionSet<MessageOptions>();
+            ExtensionSet<FieldOptions> set2 = new ExtensionSet<FieldOptions>();
+            Assert.AreNotEqual(set1, set2);
+            Assert.AreNotEqual(set1.GetHashCode(), set2.GetHashCode());
+        }
+
+        [Test]
         public void OneValueEquality()
         {
             ExtensionSet<MessageOptions> set1 = new ExtensionSet<MessageOptions>();
@@ -103,6 +112,18 @@ namespace Google.Protobuf
 
             set1.Clear(UnittestExtensions.DefaultBoolExtension);
             Assert.False(set1.Has(UnittestExtensions.DefaultBoolExtension));
+        }
+
+        [Test]
+        public void CloneEquality()
+        {
+            ExtensionSet<MessageOptions> set1 = new ExtensionSet<MessageOptions>();
+            set1.Set(UnittestCustomOptionsProto3Extensions.ComplexOpt1, new ComplexOptionType1 { Foo = 1 });
+
+            ExtensionSet<MessageOptions> set2 = set1.Clone();
+
+            Assert.AreEqual(set1, set2);
+            Assert.AreEqual(set1.GetHashCode(), set2.GetHashCode());
         }
     }
 }

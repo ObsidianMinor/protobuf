@@ -260,6 +260,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (TypeUrl.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(TypeUrl);

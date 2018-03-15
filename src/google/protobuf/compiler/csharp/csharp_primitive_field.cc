@@ -230,6 +230,7 @@ void PrimitiveFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
 }
 
 void PrimitiveFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  WritePropertyDocComment(printer, descriptor_);
   printer->Print(
     variables_,
     "$access_level$ static readonly pb::Extension<$extended_type$, $type_name$> $property_name$ =\n"
@@ -255,20 +256,42 @@ void PrimitiveOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
     "$access_level$ $type_name$ $property_name$ {\n"
     "  get { return $has_property_check$ ? ($type_name$) $oneof_name$_ : $default_value$; }\n"
     "  set {\n");
-    if (is_value_type) {
-      printer->Print(
-        variables_,
-        "    $oneof_name$_ = value;\n");
-    } else {
-      printer->Print(
-        variables_,
-        "    $oneof_name$_ = pb::ProtoPreconditions.CheckNotNull(value, \"value\");\n");
-    }
+  if (is_value_type) {
     printer->Print(
       variables_,
-      "    $oneof_name$Case_ = $oneof_property_name$OneofCase.$property_name$;\n"
-      "  }\n"
+      "    $oneof_name$_ = value;\n");
+  } else {
+    printer->Print(
+      variables_,
+      "    $oneof_name$_ = pb::ProtoPreconditions.CheckNotNull(value, \"value\");\n");
+  }
+  printer->Print(
+    variables_,
+    "    $oneof_name$Case_ = $oneof_property_name$OneofCase.$property_name$;\n"
+    "  }\n"
+    "}\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
+    AddPublicMemberAttributes(printer);
+    printer->Print(
+      variables_,
+      "$access_level$ bool Has$property_name$ {\n"
+      "  get { return $oneof_name$Case_ == $oneof_property_name$OneofCase.$property_name$; }\n"
       "}\n");
+  }
+  printer->Print(
+    variables_,
+    "/// <summary> Clears the value of the oneof if it's currently set to \"$descriptor_name$\" </summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  if ($has_property_check$) {\n"
+    "    Clear$oneof_property_name$();\n"
+    "  }\n"
+    "}\n");
 }
 
 void PrimitiveOneofFieldGenerator::GenerateMergingCode(io::Printer* printer) {

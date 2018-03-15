@@ -59,7 +59,7 @@ namespace Google.Protobuf
                 (ref string old, string newVal) => old = newVal,
                 CodedOutputStream.ComputeStringSize,
                 tag, null,
-                defaultValue);
+                defaultValue ?? "");
         }
 
         /// <summary>

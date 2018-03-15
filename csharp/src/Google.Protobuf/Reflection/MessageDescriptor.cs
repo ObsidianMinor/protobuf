@@ -34,7 +34,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Google.Protobuf.Collections;
 #if NET35
 // Needed for ReadOnlyDictionary, which does not exist in .NET 3.5
 using Google.Protobuf.Collections;
@@ -64,7 +63,7 @@ namespace Google.Protobuf.Reflection
         private readonly IList<FieldDescriptor> fieldsInDeclarationOrder;
         private readonly IList<FieldDescriptor> fieldsInNumberOrder;
         private readonly IDictionary<string, FieldDescriptor> jsonFieldMap;
-        
+
         internal MessageDescriptor(DescriptorProto proto, FileDescriptor file, MessageDescriptor parent, int typeIndex, GeneratedClrTypeInfo generatedCodeInfo)
             : base(file, file.ComputeFullName(parent, proto.Name), typeIndex)
         {
@@ -91,6 +90,8 @@ namespace Google.Protobuf.Reflection
                 (type, index) =>
                 new EnumDescriptor(type, file, this, index, generatedCodeInfo.NestedEnums[index]));
 
+            Extensions = new ExtensionCollection(this, generatedCodeInfo?.Extensions);
+
             fieldsInDeclarationOrder = DescriptorUtil.ConvertAndMakeReadOnly(
                 proto.Field,
                 (field, index) =>
@@ -102,7 +103,7 @@ namespace Google.Protobuf.Reflection
             Fields = new FieldCollection(this);
         }
 
-        private static System.Collections.ObjectModel.ReadOnlyDictionary<string, FieldDescriptor> CreateJsonFieldMap(IList<FieldDescriptor> fields)
+        private static ReadOnlyDictionary<string, FieldDescriptor> CreateJsonFieldMap(IList<FieldDescriptor> fields)
         {
             var map = new Dictionary<string, FieldDescriptor>();
             foreach (var field in fields)
@@ -110,7 +111,7 @@ namespace Google.Protobuf.Reflection
                 map[field.Name] = field;
                 map[field.JsonName] = field;
             }
-            return new System.Collections.ObjectModel.ReadOnlyDictionary<string, FieldDescriptor>(map);
+            return new ReadOnlyDictionary<string, FieldDescriptor>(map);
         }
 
         /// <summary>
@@ -182,6 +183,11 @@ namespace Google.Protobuf.Reflection
         /// A collection of fields, which can be retrieved by name or field number.
         /// </value>
         public FieldCollection Fields { get; }
+
+        /// <summary>
+        /// An unmodifiable list of extensions defined in this message's scrope
+        /// </summary>
+        public ExtensionCollection Extensions { get; }
 
         /// <value>
         /// An unmodifiable list of this message type's nested types.
@@ -257,7 +263,7 @@ namespace Google.Protobuf.Reflection
         /// <param name="value">The value of this extension</param>
         /// <typeparam name="T">The type of the value to get</typeparam>
         /// /// <returns><c>true</c> if a suitable value for the field was found; otherwise <c>false</c>.</returns>
-        public bool TryGetOption<T>(RepeatedExtension<MessageOptions, T> extension, out RepeatedField<T> value)
+        public bool TryGetOption<T>(RepeatedExtension<MessageOptions, T> extension, out Collections.RepeatedField<T> value)
         {
             value = Proto.Options.GetExtension(extension).Clone();
             return true;
@@ -282,6 +288,8 @@ namespace Google.Protobuf.Reflection
             {
                 oneof.CrossLink();
             }
+
+            Extensions.CrossLink();
         }
 
         /// <summary>

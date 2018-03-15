@@ -57,23 +57,6 @@ MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
     variables_["has_property_check"] = name() + "_ != null";
     variables_["has_not_property_check"] = name() + "_ == null";
   }
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP)
-  {
-    int tag_size = internal::WireFormat::TagSize(descriptor_->number(), descriptor_->type());
-    if (descriptor_->type() == FieldDescriptor::TYPE_GROUP)
-      tag_size = tag_size / 2;
-    uint tag = internal::WireFormatLite::MakeTag(
-      descriptor_->number(),
-      internal::WireFormatLite::WIRETYPE_END_GROUP);
-    uint8 tag_array[5];
-    io::CodedOutputStream::WriteTagToArray(tag, tag_array);
-    string tag_bytes = SimpleItoa(tag_array[0]);
-    for (int i = 1; i < tag_size; i++) {
-      tag_bytes += ", " + SimpleItoa(tag_array[i]);
-    }
-    variables_["end_tag"] = SimpleItoa(tag);
-    variables_["end_tag_bytes"] = tag_bytes;
-  }
 }
 
 MessageFieldGenerator::~MessageFieldGenerator() {
@@ -130,51 +113,25 @@ void MessageFieldGenerator::GenerateParsingCode(io::Printer* printer) {
     variables_,
     "if ($has_not_property_check$) {\n"
     "  $name$_ = new $type_name$();\n"
-    "}\n");
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
-    printer->Print(variables_, "input.ReadGroup($name$_);\n");
-  }
-  else {
-    // TODO(jonskeet): Do we really need merging behaviour like this?
-    printer->Print(variables_, "input.ReadMessage($name$_);\n");
-  }
+    "}\n"
+    "input.ReadMessage($name$_);\n");
 }
 
 void MessageFieldGenerator::GenerateSerializationCode(io::Printer* printer) {
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
-    printer->Print(
-      variables_,
-      "if ($has_property_check$) {\n" 
-      "  output.WriteRawTag($tag_bytes$);\n"
-      "  output.WriteGroup($property_name$);\n"
-      "  output.WriteRawTag($end_tag_bytes$);\n"
-      "}\n");
-  }
-  else {
-    printer->Print(
-      variables_,
-      "if ($has_property_check$) {\n"
-      "  output.WriteRawTag($tag_bytes$);\n"
-      "  output.WriteMessage($property_name$);\n"
-      "}\n");
-  }
+  printer->Print(
+    variables_,
+    "if ($has_property_check$) {\n"
+    "  output.WriteRawTag($tag_bytes$);\n"
+    "  output.WriteMessage($property_name$);\n"
+    "}\n");
 }
 
 void MessageFieldGenerator::GenerateSerializedSizeCode(io::Printer* printer) {
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
-    printer->Print(
-      variables_,
-      "if ($has_property_check$) {\n"
-      "  size += $tag_size$ + $tag_size$ + pb::CodedOutputStream.ComputeGroupSize($property_name$);\n"
-      "}\n");
-  }
-  else {
-    printer->Print(
-      variables_,
-      "if ($has_property_check$) {\n"
-      "  size += $tag_size$ + pb::CodedOutputStream.ComputeMessageSize($property_name$);\n"
-      "}\n");
-  }
+  printer->Print(
+    variables_,
+    "if ($has_property_check$) {\n"
+    "  size += $tag_size$ + pb::CodedOutputStream.ComputeMessageSize($property_name$);\n"
+    "}\n");
 }
 
 void MessageFieldGenerator::WriteHash(io::Printer* printer) {
@@ -194,12 +151,19 @@ void MessageFieldGenerator::WriteToString(io::Printer* printer) {
     "PrintField(\"$field_name$\", has$property_name$, $name$_, writer);\n");
 }
 void MessageFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
-  if (descriptor_->is_required()) {
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
     printer->Print(
       variables_,
       "if ($has_property_check$) {\n"
       "  if (!$property_name$.IsInitialized()) return false;\n"
       "}\n");
+    if (descriptor_->is_required()) {
+      printer->Print(
+        variables_,
+        "else {\n"
+        "  return false;\n"
+        "}\n");
+    }
   }
 }
 void MessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
@@ -220,16 +184,9 @@ void MessageFieldGenerator::GenerateFreezingCode(io::Printer* printer) {
 }
 
 void MessageFieldGenerator::GenerateCodecCode(io::Printer* printer) {
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
-    printer->Print(
-      variables_,
-      "pb::FieldCodec.ForGroup($tag$, $end_tag$, $type_name$.Parser)");
-  }
-  else {
-    printer->Print(
-      variables_,
-      "pb::FieldCodec.ForMessage($tag$, $type_name$.Parser)");
-  }
+  printer->Print(
+    variables_,
+    "pb::FieldCodec.ForMessage($tag$, $type_name$.Parser)");
 }
 
 MessageOneofFieldGenerator::MessageOneofFieldGenerator(
@@ -255,6 +212,28 @@ void MessageOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
     "    $oneof_name$Case_ = value == null ? $oneof_property_name$OneofCase.None : $oneof_property_name$OneofCase.$property_name$;\n"
     "  }\n"
     "}\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
+    AddPublicMemberAttributes(printer);
+    printer->Print(
+      variables_,
+      "$access_level$ bool Has$property_name$ {\n"
+      "  get { return $oneof_name$Case_ == $oneof_property_name$OneofCase.$property_name$; }\n"
+      "}\n");
+  }
+  printer->Print(
+    variables_,
+    "/// <summary> Clears the value of the oneof if it's currently set to \"$descriptor_name$\" </summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  if ($has_property_check$) {\n"
+    "    Clear$oneof_property_name$();\n"
+    "  }\n"
+    "}\n");
 }
 
 void MessageOneofFieldGenerator::GenerateMergingCode(io::Printer* printer) {
@@ -272,14 +251,9 @@ void MessageOneofFieldGenerator::GenerateParsingCode(io::Printer* printer) {
     "$type_name$ subBuilder = new $type_name$();\n"
     "if ($has_property_check$) {\n"
     "  subBuilder.MergeFrom($property_name$);\n"
-    "}\n");
-  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP) {
-    printer->Print("input.ReadGroup(subBuilder);\n");
-  }
-  else {
-    printer->Print("input.ReadMessage(subBuilder);\n");
-  }
-  printer->Print(variables_, "$property_name$ = subBuilder;\n");
+    "}\n"
+    "input.ReadMessage(subBuilder);\n"
+    "$property_name$ = subBuilder;\n");
 }
 
 void MessageOneofFieldGenerator::WriteToString(io::Printer* printer) {

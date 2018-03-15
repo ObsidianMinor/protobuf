@@ -11,7 +11,7 @@ namespace Google.Protobuf
     {
         private readonly Type targetType;
         private readonly Dictionary<Extension, IExtensionValue> valuesByIdentifier = new Dictionary<Extension, IExtensionValue>();
-        private readonly Dictionary<uint, IExtensionValue> valuesByTag = new Dictionary<uint, IExtensionValue>();
+        private readonly Dictionary<int, IExtensionValue> valuesByNumber = new Dictionary<int, IExtensionValue>();
 
         internal ExtensionSet(Type target)
         {
@@ -32,11 +32,6 @@ namespace Google.Protobuf
             }
         }
 
-        internal bool TryGetValueFor(uint tag, out IExtensionValue extensionValue)
-        {
-            return valuesByTag.TryGetValue(tag, out extensionValue);
-        }
-
         /// <summary>
         /// Registers the specified extension in the set
         /// </summary>
@@ -50,7 +45,7 @@ namespace Google.Protobuf
                 return;
 
             var value = extension.GetValue();
-            valuesByTag.Add(extension.Tag, value);
+            valuesByNumber.Add(extension.FieldNumber, value);
             valuesByIdentifier.Add(extension, value);
         }
 
@@ -62,7 +57,7 @@ namespace Google.Protobuf
         /// <returns>True if the field was merged, false otherwise</returns>
         public bool TryMergeFieldFrom(CodedInputStream stream)
         {
-            if (valuesByTag.TryGetValue(stream.LastTag, out var extensionValue))
+            if (valuesByNumber.TryGetValue(WireFormat.GetTagFieldNumber(stream.LastTag), out var extensionValue))
             {
                 extensionValue.MergeForm(stream);
                 return true;
@@ -91,7 +86,7 @@ namespace Google.Protobuf
         /// <returns>This extension set's hash code</returns>
         public override int GetHashCode()
         {
-            int ret = 1;
+            int ret = targetType.GetHashCode();
             foreach (KeyValuePair<Extension, IExtensionValue> field in valuesByIdentifier)
             {
                 // Use ^ here to make the field order irrelevant.
@@ -124,7 +119,7 @@ namespace Google.Protobuf
             {
                 var clonedValue = extensionValuePair.Value.Clone();
                 second.valuesByIdentifier[extensionValuePair.Key] = clonedValue;
-                second.valuesByTag[extensionValuePair.Key.Tag] = clonedValue;
+                second.valuesByNumber[extensionValuePair.Key.FieldNumber] = clonedValue;
             }
         }
 
@@ -148,7 +143,7 @@ namespace Google.Protobuf
                 {
                     var newValue = pair.Value.Clone();
                     second.valuesByIdentifier[pair.Key] = newValue;
-                    second.valuesByTag[pair.Key.Tag] = newValue;
+                    second.valuesByNumber[pair.Key.FieldNumber] = newValue;
                 }
             }
         }

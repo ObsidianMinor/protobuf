@@ -104,9 +104,14 @@ void FieldGeneratorBase::SetCommonFieldVariables(
 void FieldGeneratorBase::SetCommonOneofFieldVariables(
     std::map<string, string>* variables) {
   (*variables)["oneof_name"] = oneof_name();
-  (*variables)["has_property_check"] =
-    oneof_name() + "Case_ == " + oneof_property_name() +
-    "OneofCase." + property_name();
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    (*variables)["has_property_check"] = "Has" + property_name();
+  }
+  else {
+    (*variables)["has_property_check"] =
+      oneof_name() + "Case_ == " + oneof_property_name() +
+      "OneofCase." + property_name();
+  }
   (*variables)["oneof_property_name"] = oneof_property_name();
 }
 

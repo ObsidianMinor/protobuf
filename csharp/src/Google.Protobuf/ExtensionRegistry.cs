@@ -6,20 +6,23 @@ using System.Linq;
 namespace Google.Protobuf
 {
     /// <summary>
-    /// Provides extensions to messages
+    /// Provides extensions to messages while parsing
     /// </summary>
     public sealed class ExtensionRegistry : ICollection<Extension>, IDeepCloneable<ExtensionRegistry>
     {
-        private Dictionary<Type, ICollection<Extension>> extensions;
+        private IDictionary<Type, ICollection<Extension>> extensions;
 
         /// <summary>
         /// Creates a new empty extension registry
         /// </summary>
-        public ExtensionRegistry() : this(new Dictionary<Type, ICollection<Extension>>()) { }
-
-        private ExtensionRegistry(Dictionary<Type, ICollection<Extension>> collection)
+        public ExtensionRegistry()
         {
-            extensions = collection;
+            extensions = new Dictionary<Type, ICollection<Extension>>();
+        }
+
+        private ExtensionRegistry(IDictionary<Type, ICollection<Extension>> collection)
+        {
+            extensions = collection.ToDictionary(k => k.Key, v => (ICollection<Extension>)new List<Extension>(v.Value));
         }
 
         /// <summary>
@@ -98,6 +101,8 @@ namespace Google.Protobuf
             ProtoPreconditions.CheckNotNull(array, nameof(array));
             if (arrayIndex < 0 || arrayIndex >= array.Length)
                 throw new ArgumentOutOfRangeException(nameof(arrayIndex));
+            if (array.Length - arrayIndex < Count)
+                throw new ArgumentException("The provided array is shorter than the number of elements in the registry");
 
             foreach (var collection in extensions.Values)
             {
@@ -118,9 +123,8 @@ namespace Google.Protobuf
         }
 
         /// <summary>
-        /// Searches the registry for extensions
+        /// Searches the registry for extensions and registers found extensions in the specified message
         /// </summary>
-        /// <param name="message"></param>
         public void RegisterExtensionsFor(IExtensionMessage message)
         {
             ProtoPreconditions.CheckNotNull(message, nameof(message));
@@ -153,7 +157,7 @@ namespace Google.Protobuf
         /// </summary>
         public ExtensionRegistry Clone()
         {
-            return new ExtensionRegistry(extensions.ToDictionary(kvp => kvp.Key, kvp => (ICollection<Extension>)new List<Extension>(kvp.Value)));
+            return new ExtensionRegistry(extensions);
         }
     }
 }

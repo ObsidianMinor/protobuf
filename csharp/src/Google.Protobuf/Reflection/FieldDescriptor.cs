@@ -43,15 +43,20 @@ namespace Google.Protobuf.Reflection
     {
         private EnumDescriptor enumType;
         private MessageDescriptor messageType;
+        private MessageDescriptor extendeeType;
         private FieldType fieldType;
         private readonly string propertyName; // Annoyingly, needed in Crosslink.
         private IFieldAccessor accessor;
-        private Extension extension;
 
         /// <summary>
         /// Get the field's containing message type.
         /// </summary>
         public MessageDescriptor ContainingType { get; }
+
+        /// <summary>
+        /// Gets the field's extendee, or <c>null</c> if it is not an extension field
+        /// </summary>
+        public MessageDescriptor ExtendeeType => extendeeType;
 
         /// <summary>
         /// Returns the oneof containing this field, or <c>null</c> if it is not part of a oneof.
@@ -63,8 +68,10 @@ namespace Google.Protobuf.Reflection
         /// but can be overridden using the <c>json_name</c> option in the .proto file.
         /// </summary>
         public string JsonName { get; }
-        
+
         internal FieldDescriptorProto Proto { get; }
+
+        internal Extension Extension { get; }
 
         internal FieldDescriptor(FieldDescriptorProto proto, FileDescriptor file,
                                  MessageDescriptor parent, int index, string propertyName, Extension extension)
@@ -98,7 +105,7 @@ namespace Google.Protobuf.Reflection
             // We could trust the generated code and check whether the type of the property is
             // a MapField, but that feels a tad nasty.
             this.propertyName = propertyName;
-            this.extension = extension;
+            Extension = extension;
             JsonName =  Proto.JsonName == "" ? JsonFormatter.ToJsonName(Proto.Name) : Proto.JsonName;
         }
 
@@ -293,12 +300,12 @@ namespace Google.Protobuf.Reflection
         /// </summary>
         internal void CrossLink()
         {
-            if (Proto.TypeName != "")
+            if (Proto.HasTypeName)
             {
                 IDescriptor typeDescriptor =
                     File.DescriptorPool.LookupSymbol(Proto.TypeName, this);
 
-                if (Proto.Type != 0)
+                if (Proto.HasType)
                 {
                     // Choose field type based on symbol.
                     if (typeDescriptor is MessageDescriptor)
@@ -315,7 +322,7 @@ namespace Google.Protobuf.Reflection
                     }
                 }
 
-                if (fieldType == FieldType.Message)
+                if (fieldType == FieldType.Message || fieldType == FieldType.Group)
                 {
                     if (!(typeDescriptor is MessageDescriptor))
                     {
@@ -323,7 +330,7 @@ namespace Google.Protobuf.Reflection
                     }
                     messageType = (MessageDescriptor) typeDescriptor;
 
-                    if (Proto.DefaultValue != "")
+                    if (Proto.HasDefaultValue)
                     {
                         throw new DescriptorValidationException(this, "Messages can't have default values.");
                     }
@@ -349,11 +356,16 @@ namespace Google.Protobuf.Reflection
                 }
             }
 
+            if(Proto.HasExtendee)
+            {
+                extendeeType = File.DescriptorPool.LookupSymbol(Proto.Extendee, this) as MessageDescriptor;
+            }
+
             // Note: no attempt to perform any default value parsing
 
             File.DescriptorPool.AddFieldByNumber(this);
 
-            if (ContainingType != null && ContainingType.Proto.Options != null && ContainingType.Proto.Options.MessageSetWireFormat)
+            if (ContainingType != null && ContainingType.Proto.HasOptions && ContainingType.Proto.Options.MessageSetWireFormat)
             {
                 throw new DescriptorValidationException(this, "MessageSet format is not supported.");
             }
@@ -364,9 +376,14 @@ namespace Google.Protobuf.Reflection
         {
             // If we're given no property name, that's because we really don't want an accessor.
             // (At the moment, that means it's a map entry message...)
-            if (propertyName == null)
+            if (propertyName == null && Extension == null)
             {
                 return null;
+            }
+
+            if (Extension != null)
+            {
+                return new ExtensionAccessor(this);
             }
             var property = ContainingType.ClrType.GetProperty(propertyName);
             if (property == null)

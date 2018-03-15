@@ -631,6 +631,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
   /// <summary>Holder for extension identifiers generated from the top level of unittest.proto</summary>
   public static partial class UnittestExtensions {
+    /// <summary>
+    /// Singular
+    /// </summary>
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> OptionalInt32Extension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForInt32(8, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> OptionalInt64Extension =
@@ -733,6 +736,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(442));
     public static readonly pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> RepeatedLazyMessageExtension =
       new pb::RepeatedExtension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage>(pb::FieldCodec.ForMessage(458, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage.Parser));
+    /// <summary>
+    /// Singular with defaults
+    /// </summary>
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int> DefaultInt32Extension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, int>(pb::FieldCodec.ForInt32(488, 41));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, long> DefaultInt64Extension =
@@ -773,6 +779,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(674, "\u0061\u0062\u0063"));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> DefaultCordExtension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(682, "\u0031\u0032\u0033"));
+    /// <summary>
+    /// For oneof test
+    /// </summary>
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint> OneofUint32Extension =
       new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, uint>(pb::FieldCodec.ForUInt32(888, 0));
     public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage> OneofNestedMessageExtension =
@@ -2354,10 +2363,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofUint32FieldNumber = 111;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OneofUint32 {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint32 ? (uint) oneofField_ : 0; }
+      get { return HasOneofUint32 ? (uint) oneofField_ : 0; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofUint32;
+      }
+    }
+    /// <summary>Gets whether the "oneof_uint32" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofUint32 {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint32; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_uint32" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofUint32() {
+      if (HasOneofUint32) {
+        ClearOneofField();
       }
     }
 
@@ -2365,10 +2386,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofNestedMessageFieldNumber = 112;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage OneofNestedMessage {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage) oneofField_ : null; }
+      get { return HasOneofNestedMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage) oneofField_ : null; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.OneofNestedMessage;
+      }
+    }
+    /// <summary>Gets whether the "oneof_nested_message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofNestedMessage {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_nested_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofNestedMessage() {
+      if (HasOneofNestedMessage) {
+        ClearOneofField();
       }
     }
 
@@ -2376,10 +2409,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofStringFieldNumber = 113;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OneofString {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofString ? (string) oneofField_ : ""; }
+      get { return HasOneofString ? (string) oneofField_ : ""; }
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofString;
+      }
+    }
+    /// <summary>Gets whether the "oneof_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofString {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofString() {
+      if (HasOneofString) {
+        ClearOneofField();
       }
     }
 
@@ -2387,10 +2432,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofBytesFieldNumber = 114;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OneofBytes {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
+      get { return HasOneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofBytes;
+      }
+    }
+    /// <summary>Gets whether the "oneof_bytes" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofBytes {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBytes; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_bytes" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofBytes() {
+      if (HasOneofBytes) {
+        ClearOneofField();
       }
     }
 
@@ -2581,10 +2638,10 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasDefaultImportEnum) hash ^= DefaultImportEnum.GetHashCode();
       if (HasDefaultStringPiece) hash ^= DefaultStringPiece.GetHashCode();
       if (HasDefaultCord) hash ^= DefaultCord.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) hash ^= OneofUint32.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) hash ^= OneofNestedMessage.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) hash ^= OneofString.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) hash ^= OneofBytes.GetHashCode();
+      if (HasOneofUint32) hash ^= OneofUint32.GetHashCode();
+      if (HasOneofNestedMessage) hash ^= OneofNestedMessage.GetHashCode();
+      if (HasOneofString) hash ^= OneofString.GetHashCode();
+      if (HasOneofBytes) hash ^= OneofBytes.GetHashCode();
       hash ^= (int) oneofFieldCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2599,6 +2656,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasOptionalInt32) {
         output.WriteRawTag(8);
         output.WriteInt32(OptionalInt32);
@@ -2809,19 +2867,19 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteRawTag(170, 5);
         output.WriteString(DefaultCord);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+      if (HasOneofUint32) {
         output.WriteRawTag(248, 6);
         output.WriteUInt32(OneofUint32);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+      if (HasOneofNestedMessage) {
         output.WriteRawTag(130, 7);
         output.WriteMessage(OneofNestedMessage);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+      if (HasOneofString) {
         output.WriteRawTag(138, 7);
         output.WriteString(OneofString);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+      if (HasOneofBytes) {
         output.WriteRawTag(146, 7);
         output.WriteBytes(OneofBytes);
       }
@@ -2996,16 +3054,16 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasDefaultCord) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(DefaultCord);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+      if (HasOneofUint32) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(OneofUint32);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+      if (HasOneofNestedMessage) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(OneofNestedMessage);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+      if (HasOneofString) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(OneofString);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+      if (HasOneofBytes) {
         size += 2 + pb::CodedOutputStream.ComputeBytesSize(OneofBytes);
       }
       if (_unknownFields != null) {
@@ -3553,7 +3611,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           case 898: {
             global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestAllTypes.Types.NestedMessage();
-            if (oneofFieldCase_ == OneofFieldOneofCase.OneofNestedMessage) {
+            if (HasOneofNestedMessage) {
               subBuilder.MergeFrom(OneofNestedMessage);
             }
             input.ReadMessage(subBuilder);
@@ -3574,6 +3632,27 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalGroup) {
+        if (!OptionalGroup.IsInitialized()) return false;
+      }
+      if (HasOptionalNestedMessage) {
+        if (!OptionalNestedMessage.IsInitialized()) return false;
+      }
+      if (HasOptionalForeignMessage) {
+        if (!OptionalForeignMessage.IsInitialized()) return false;
+      }
+      if (HasOptionalImportMessage) {
+        if (!OptionalImportMessage.IsInitialized()) return false;
+      }
+      if (HasOptionalPublicImportMessage) {
+        if (!OptionalPublicImportMessage.IsInitialized()) return false;
+      }
+      if (HasOptionalLazyMessage) {
+        if (!OptionalLazyMessage.IsInitialized()) return false;
+      }
+      if (HasOneofNestedMessage) {
+        if (!OneofNestedMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -3688,6 +3767,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasBb) {
             output.WriteRawTag(8);
             output.WriteInt32(Bb);
@@ -3835,6 +3915,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(136, 1);
             output.WriteInt32(A);
@@ -3982,6 +4063,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(248, 2);
             output.WriteInt32(A);
@@ -4171,6 +4253,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasChild) {
         output.WriteRawTag(10);
         output.WriteMessage(Child);
@@ -4254,6 +4337,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasChild) {
+        if (!Child.IsInitialized()) return false;
+      }
+      if (HasPayload) {
+        if (!Payload.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -4331,10 +4420,24 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int DeprecatedInt32InOneof {
-      get { return oneofFieldsCase_ == OneofFieldsOneofCase.DeprecatedInt32InOneof ? (int) oneofFields_ : 0; }
+      get { return HasDeprecatedInt32InOneof ? (int) oneofFields_ : 0; }
       set {
         oneofFields_ = value;
         oneofFieldsCase_ = OneofFieldsOneofCase.DeprecatedInt32InOneof;
+      }
+    }
+    /// <summary>Gets whether the "deprecated_int32_in_oneof" field is set</summary>
+    [global::System.ObsoleteAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasDeprecatedInt32InOneof {
+      get { return oneofFieldsCase_ == OneofFieldsOneofCase.DeprecatedInt32InOneof; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "deprecated_int32_in_oneof" </summary>
+    [global::System.ObsoleteAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearDeprecatedInt32InOneof() {
+      if (HasDeprecatedInt32InOneof) {
+        ClearOneofFields();
       }
     }
 
@@ -4379,7 +4482,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public override int GetHashCode() {
       int hash = 1;
       if (HasDeprecatedInt32) hash ^= DeprecatedInt32.GetHashCode();
-      if (oneofFieldsCase_ == OneofFieldsOneofCase.DeprecatedInt32InOneof) hash ^= DeprecatedInt32InOneof.GetHashCode();
+      if (HasDeprecatedInt32InOneof) hash ^= DeprecatedInt32InOneof.GetHashCode();
       hash ^= (int) oneofFieldsCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4394,11 +4497,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasDeprecatedInt32) {
         output.WriteRawTag(8);
         output.WriteInt32(DeprecatedInt32);
       }
-      if (oneofFieldsCase_ == OneofFieldsOneofCase.DeprecatedInt32InOneof) {
+      if (HasDeprecatedInt32InOneof) {
         output.WriteRawTag(16);
         output.WriteInt32(DeprecatedInt32InOneof);
       }
@@ -4413,7 +4517,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasDeprecatedInt32) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(DeprecatedInt32);
       }
-      if (oneofFieldsCase_ == OneofFieldsOneofCase.DeprecatedInt32InOneof) {
+      if (HasDeprecatedInt32InOneof) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(DeprecatedInt32InOneof);
       }
       if (_unknownFields != null) {
@@ -4532,6 +4636,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4696,6 +4801,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasC) {
         output.WriteRawTag(8);
         output.WriteInt32(C);
@@ -4830,6 +4936,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4927,7 +5034,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -4940,6 +5047,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5106,6 +5214,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(136, 1);
         output.WriteInt32(A);
@@ -5253,6 +5362,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(248, 2);
         output.WriteInt32(A);
@@ -5373,6 +5483,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5416,8 +5527,16 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     /// <summary>Container for extensions for other messages declared in the TestNestedExtension message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Extensions {
+      /// <summary>
+      /// Check for bug where string extensions declared in tested scope did not
+      /// compile.
+      /// </summary>
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> Test =
         new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(8018, "\u0074\u0065\u0073\u0074"));
+      /// <summary>
+      /// Used to test if generated extension name is correct when there are
+      /// underscores.
+      /// </summary>
       public static readonly pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string> NestedStringExtension =
         new pb::Extension<global::Google.Protobuf.TestProtos.Proto2.TestAllExtensions, string>(pb::FieldCodec.ForString(8026, ""));
     }
@@ -6392,6 +6511,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(8);
         output.WriteInt32(A);
@@ -7038,6 +7158,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasOptionalMessage) {
         output.WriteRawTag(10);
         output.WriteMessage(OptionalMessage);
@@ -7115,6 +7236,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalMessage) {
+        if (!OptionalMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -7246,6 +7370,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasOptionalMessage) {
         output.WriteRawTag(10);
         output.WriteMessage(OptionalMessage);
@@ -7329,8 +7454,14 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalMessage) {
+        if (!OptionalMessage.IsInitialized()) return false;
+      }
       if (HasRequiredMessage) {
         if (!RequiredMessage.IsInitialized()) return false;
+      }
+      else {
+        return false;
       }
       return true;
     }
@@ -7429,6 +7560,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasForeignNested) {
         output.WriteRawTag(10);
         output.WriteMessage(ForeignNested);
@@ -7485,6 +7617,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasForeignNested) {
+        if (!ForeignNested.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -7558,6 +7693,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7659,7 +7795,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -7672,6 +7808,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7802,7 +7939,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -7815,6 +7952,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -8015,6 +8153,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(8);
         output.WriteInt32(A);
@@ -8200,6 +8339,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(10);
         output.WriteMessage(A);
@@ -8270,6 +8410,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasA) {
+        if (!A.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -8391,6 +8534,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasBb) {
         output.WriteRawTag(10);
         output.WriteMessage(Bb);
@@ -8468,6 +8612,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasBb) {
+        if (!Bb.IsInitialized()) return false;
+      }
+      if (HasSubGroup) {
+        if (!SubGroup.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -8564,6 +8714,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasB) {
             output.WriteRawTag(10);
             output.WriteMessage(B);
@@ -8620,6 +8771,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasB) {
+            if (!B.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -8741,6 +8895,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasSubMessage) {
             output.WriteRawTag(26);
             output.WriteMessage(SubMessage);
@@ -8817,6 +8972,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasSubMessage) {
+            if (!SubMessage.IsInitialized()) return false;
+          }
+          if (HasNotInThisScc) {
+            if (!NotInThisScc.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -8943,6 +9104,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(10);
         output.WriteMessage(A);
@@ -9013,6 +9175,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasA) {
+        if (!A.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -9107,6 +9272,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasSubMessage) {
         output.WriteRawTag(10);
         output.WriteMessage(SubMessage);
@@ -9163,6 +9329,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasSubMessage) {
+        if (!SubMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -9259,6 +9428,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasSubGroup) {
             output.WriteRawTag(11);
             output.WriteGroup(SubGroup);
@@ -9316,6 +9486,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasSubGroup) {
+            if (!SubGroup.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -9415,6 +9588,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public void WriteTo(pb::CodedOutputStream output) {
+              pb::ProtoPreconditions.CheckInitialized(this);
               if (HasI) {
                 output.WriteRawTag(16);
                 output.WriteInt32(I);
@@ -9630,6 +9804,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(8);
         output.WriteInt32(A);
@@ -9722,6 +9897,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasFoo) {
+        if (!Foo.IsInitialized()) return false;
+      }
+      if (HasBar) {
+        if (!Bar.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -9821,6 +10002,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
@@ -9968,6 +10150,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
@@ -10120,6 +10303,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasSubMessage) {
         output.WriteRawTag(10);
         output.WriteMessage(SubMessage);
@@ -10176,6 +10360,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasSubMessage) {
+        if (!SubMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -10270,6 +10457,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasSubMessage) {
         output.WriteRawTag(10);
         output.WriteMessage(SubMessage);
@@ -10326,6 +10514,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasSubMessage) {
+        if (!SubMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -10423,6 +10614,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasOptionalNestedMessage) {
         output.WriteRawTag(10);
         output.WriteMessage(OptionalNestedMessage);
@@ -10479,6 +10671,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalNestedMessage) {
+        if (!OptionalNestedMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -10577,6 +10772,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           nestedmessageRepeatedInt32_.WriteTo(output, _repeated_nestedmessageRepeatedInt32_codec);
           nestedmessageRepeatedForeignmessage_.WriteTo(output, _repeated_nestedmessageRepeatedForeignmessage_codec);
           if (_unknownFields != null) {
@@ -10944,6 +11140,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasPrimitiveField) {
         output.WriteRawTag(8);
         output.WriteInt32(PrimitiveField);
@@ -11114,6 +11311,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasMessageField) {
+        if (!MessageField.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -11284,7 +11484,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasMyInt) hash ^= MyInt.GetHashCode();
       if (HasMyFloat) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MyFloat);
       if (HasOptionalNestedMessage) hash ^= OptionalNestedMessage.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -11297,6 +11497,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasMyInt) {
         output.WriteRawTag(8);
         output.WriteInt64(MyInt);
@@ -11428,6 +11629,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalNestedMessage) {
+        if (!OptionalNestedMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -11559,6 +11763,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasBb) {
             output.WriteRawTag(8);
             output.WriteInt32(Bb);
@@ -12451,6 +12656,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasEscapedBytes) {
         output.WriteRawTag(10);
         output.WriteBytes(EscapedBytes);
@@ -12962,6 +13168,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasSparseEnum) {
         output.WriteRawTag(8);
         output.WriteEnum((int) SparseEnum);
@@ -13112,6 +13319,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(10);
         output.WriteString(Data);
@@ -13245,6 +13453,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       data_.WriteTo(output, _repeated_data_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -13385,6 +13594,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(10);
         output.WriteBytes(Data);
@@ -13518,6 +13728,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       data_.WriteTo(output, _repeated_data_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -13661,6 +13872,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(8);
         output.WriteInt32(Data);
@@ -13808,6 +14020,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(8);
         output.WriteUInt32(Data);
@@ -13955,6 +14168,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(8);
         output.WriteInt64(Data);
@@ -14102,6 +14316,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(8);
         output.WriteUInt64(Data);
@@ -14249,6 +14464,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasData) {
         output.WriteRawTag(8);
         output.WriteBool(Data);
@@ -14343,7 +14559,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           FooMessage = other.FooMessage.Clone();
           break;
         case FooOneofCase.FooGroup:
-          FooGroup = other.FooGroup.Clone();
+          FooGroup = other.HasFooGroup ? other.FooGroup.Clone() : null;
           break;
       }
 
@@ -14359,10 +14575,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooIntFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FooInt {
-      get { return fooCase_ == FooOneofCase.FooInt ? (int) foo_ : 0; }
+      get { return HasFooInt ? (int) foo_ : 0; }
       set {
         foo_ = value;
         fooCase_ = FooOneofCase.FooInt;
+      }
+    }
+    /// <summary>Gets whether the "foo_int" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooInt {
+      get { return fooCase_ == FooOneofCase.FooInt; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_int" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooInt() {
+      if (HasFooInt) {
+        ClearFoo();
       }
     }
 
@@ -14370,10 +14598,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooStringFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FooString {
-      get { return fooCase_ == FooOneofCase.FooString ? (string) foo_ : ""; }
+      get { return HasFooString ? (string) foo_ : ""; }
       set {
         foo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         fooCase_ = FooOneofCase.FooString;
+      }
+    }
+    /// <summary>Gets whether the "foo_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooString {
+      get { return fooCase_ == FooOneofCase.FooString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooString() {
+      if (HasFooString) {
+        ClearFoo();
       }
     }
 
@@ -14381,22 +14621,44 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooMessageFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestAllTypes FooMessage {
-      get { return fooCase_ == FooOneofCase.FooMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes) foo_ : null; }
+      get { return HasFooMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes) foo_ : null; }
       set {
         foo_ = value;
         fooCase_ = value == null ? FooOneofCase.None : FooOneofCase.FooMessage;
       }
     }
+    /// <summary>Gets whether the "foo_message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooMessage {
+      get { return fooCase_ == FooOneofCase.FooMessage; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooMessage() {
+      if (HasFooMessage) {
+        ClearFoo();
+      }
+    }
 
     /// <summary>Field number for the "foogroup" field.</summary>
     public const int FooGroupFieldNumber = 4;
+    private global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup fooGroup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup FooGroup {
-      get { return fooCase_ == FooOneofCase.FooGroup ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup) foo_ : null; }
+      get { return fooGroup_; }
       set {
-        foo_ = value;
-        fooCase_ = value == null ? FooOneofCase.None : FooOneofCase.FooGroup;
+        fooGroup_ = value;
       }
+    }
+    /// <summary>Gets whether the foogroup field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooGroup {
+      get { return fooGroup_ != null; }
+    }
+    /// <summary>Clears the value of the foogroup field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooGroup() {
+      fooGroup_ = null;
     }
 
     private object foo_;
@@ -14444,10 +14706,10 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (fooCase_ == FooOneofCase.FooInt) hash ^= FooInt.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooString) hash ^= FooString.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooMessage) hash ^= FooMessage.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooGroup) hash ^= FooGroup.GetHashCode();
+      if (HasFooInt) hash ^= FooInt.GetHashCode();
+      if (HasFooString) hash ^= FooString.GetHashCode();
+      if (HasFooMessage) hash ^= FooMessage.GetHashCode();
+      if (HasFooGroup) hash ^= FooGroup.GetHashCode();
       hash ^= (int) fooCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -14462,19 +14724,20 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (fooCase_ == FooOneofCase.FooInt) {
+      pb::ProtoPreconditions.CheckInitialized(this);
+      if (HasFooInt) {
         output.WriteRawTag(8);
         output.WriteInt32(FooInt);
       }
-      if (fooCase_ == FooOneofCase.FooString) {
+      if (HasFooString) {
         output.WriteRawTag(18);
         output.WriteString(FooString);
       }
-      if (fooCase_ == FooOneofCase.FooMessage) {
+      if (HasFooMessage) {
         output.WriteRawTag(26);
         output.WriteMessage(FooMessage);
       }
-      if (fooCase_ == FooOneofCase.FooGroup) {
+      if (HasFooGroup) {
         output.WriteRawTag(35);
         output.WriteGroup(FooGroup);
         output.WriteRawTag(36);
@@ -14487,16 +14750,16 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (fooCase_ == FooOneofCase.FooInt) {
+      if (HasFooInt) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(FooInt);
       }
-      if (fooCase_ == FooOneofCase.FooString) {
+      if (HasFooString) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FooString);
       }
-      if (fooCase_ == FooOneofCase.FooMessage) {
+      if (HasFooMessage) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
-      if (fooCase_ == FooOneofCase.FooGroup) {
+      if (HasFooGroup) {
         size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(FooGroup);
       }
       if (_unknownFields != null) {
@@ -14524,10 +14787,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           FooMessage.MergeFrom(other.FooMessage);
           break;
         case FooOneofCase.FooGroup:
-          if (FooGroup == null) {
-            FooGroup = new global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup();
+          if (other.HasFooGroup) {
+            if (!HasFooGroup) {
+              fooGroup_ = new global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup();
+            }
+            FooGroup.MergeFrom(other.FooGroup);
           }
-          FooGroup.MergeFrom(other.FooGroup);
           break;
       }
 
@@ -14552,7 +14817,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           case 26: {
             global::Google.Protobuf.TestProtos.Proto2.TestAllTypes subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestAllTypes();
-            if (fooCase_ == FooOneofCase.FooMessage) {
+            if (HasFooMessage) {
               subBuilder.MergeFrom(FooMessage);
             }
             input.ReadMessage(subBuilder);
@@ -14560,12 +14825,10 @@ namespace Google.Protobuf.TestProtos.Proto2 {
             break;
           }
           case 35: {
-            global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup();
-            if (fooCase_ == FooOneofCase.FooGroup) {
-              subBuilder.MergeFrom(FooGroup);
+            if (!HasFooGroup) {
+              fooGroup_ = new global::Google.Protobuf.TestProtos.Proto2.TestOneof.Types.FooGroup();
             }
-            input.ReadGroup(subBuilder);
-            FooGroup = subBuilder;
+            input.ReadGroup(fooGroup_);
             break;
           }
         }
@@ -14574,6 +14837,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasFooMessage) {
+        if (!FooMessage.IsInitialized()) return false;
+      }
+      if (HasFooGroup) {
+        if (!FooGroup.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -14700,6 +14969,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(40);
             output.WriteInt32(A);
@@ -14941,6 +15211,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasFooInt) {
         output.WriteRawTag(8);
         output.WriteInt32(FooInt);
@@ -15046,6 +15317,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasFooMessage) {
+        if (!FooMessage.IsInitialized()) return false;
+      }
+      if (HasFooGroup) {
+        if (!FooGroup.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -15172,6 +15449,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(40);
             output.WriteInt32(A);
@@ -15296,7 +15574,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           FooMessage = other.FooMessage.Clone();
           break;
         case FooOneofCase.FooGroup:
-          FooGroup = other.FooGroup.Clone();
+          FooGroup = other.HasFooGroup ? other.FooGroup.Clone() : null;
           break;
         case FooOneofCase.FooLazyMessage:
           FooLazyMessage = other.FooLazyMessage.Clone();
@@ -15336,10 +15614,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooIntFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FooInt {
-      get { return fooCase_ == FooOneofCase.FooInt ? (int) foo_ : 0; }
+      get { return HasFooInt ? (int) foo_ : 0; }
       set {
         foo_ = value;
         fooCase_ = FooOneofCase.FooInt;
+      }
+    }
+    /// <summary>Gets whether the "foo_int" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooInt {
+      get { return fooCase_ == FooOneofCase.FooInt; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_int" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooInt() {
+      if (HasFooInt) {
+        ClearFoo();
       }
     }
 
@@ -15347,10 +15637,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooStringFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FooString {
-      get { return fooCase_ == FooOneofCase.FooString ? (string) foo_ : ""; }
+      get { return HasFooString ? (string) foo_ : ""; }
       set {
         foo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         fooCase_ = FooOneofCase.FooString;
+      }
+    }
+    /// <summary>Gets whether the "foo_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooString {
+      get { return fooCase_ == FooOneofCase.FooString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooString() {
+      if (HasFooString) {
+        ClearFoo();
       }
     }
 
@@ -15358,10 +15660,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooCordFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FooCord {
-      get { return fooCase_ == FooOneofCase.FooCord ? (string) foo_ : ""; }
+      get { return HasFooCord ? (string) foo_ : ""; }
       set {
         foo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         fooCase_ = FooOneofCase.FooCord;
+      }
+    }
+    /// <summary>Gets whether the "foo_cord" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooCord {
+      get { return fooCase_ == FooOneofCase.FooCord; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_cord" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooCord() {
+      if (HasFooCord) {
+        ClearFoo();
       }
     }
 
@@ -15369,10 +15683,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooStringPieceFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FooStringPiece {
-      get { return fooCase_ == FooOneofCase.FooStringPiece ? (string) foo_ : ""; }
+      get { return HasFooStringPiece ? (string) foo_ : ""; }
       set {
         foo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         fooCase_ = FooOneofCase.FooStringPiece;
+      }
+    }
+    /// <summary>Gets whether the "foo_string_piece" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooStringPiece {
+      get { return fooCase_ == FooOneofCase.FooStringPiece; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_string_piece" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooStringPiece() {
+      if (HasFooStringPiece) {
+        ClearFoo();
       }
     }
 
@@ -15380,10 +15706,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooBytesFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString FooBytes {
-      get { return fooCase_ == FooOneofCase.FooBytes ? (pb::ByteString) foo_ : pb::ByteString.Empty; }
+      get { return HasFooBytes ? (pb::ByteString) foo_ : pb::ByteString.Empty; }
       set {
         foo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         fooCase_ = FooOneofCase.FooBytes;
+      }
+    }
+    /// <summary>Gets whether the "foo_bytes" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooBytes {
+      get { return fooCase_ == FooOneofCase.FooBytes; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_bytes" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooBytes() {
+      if (HasFooBytes) {
+        ClearFoo();
       }
     }
 
@@ -15391,10 +15729,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooEnumFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum FooEnum {
-      get { return fooCase_ == FooOneofCase.FooEnum ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum) foo_ : global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum.Foo; }
+      get { return HasFooEnum ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum) foo_ : global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum.Foo; }
       set {
         foo_ = value;
         fooCase_ = FooOneofCase.FooEnum;
+      }
+    }
+    /// <summary>Gets whether the "foo_enum" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooEnum {
+      get { return fooCase_ == FooOneofCase.FooEnum; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_enum" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooEnum() {
+      if (HasFooEnum) {
+        ClearFoo();
       }
     }
 
@@ -15402,32 +15752,66 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooMessageFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage FooMessage {
-      get { return fooCase_ == FooOneofCase.FooMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage) foo_ : null; }
+      get { return HasFooMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage) foo_ : null; }
       set {
         foo_ = value;
         fooCase_ = value == null ? FooOneofCase.None : FooOneofCase.FooMessage;
       }
     }
+    /// <summary>Gets whether the "foo_message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooMessage {
+      get { return fooCase_ == FooOneofCase.FooMessage; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooMessage() {
+      if (HasFooMessage) {
+        ClearFoo();
+      }
+    }
 
     /// <summary>Field number for the "foogroup" field.</summary>
     public const int FooGroupFieldNumber = 8;
+    private global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup fooGroup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup FooGroup {
-      get { return fooCase_ == FooOneofCase.FooGroup ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup) foo_ : null; }
+      get { return fooGroup_; }
       set {
-        foo_ = value;
-        fooCase_ = value == null ? FooOneofCase.None : FooOneofCase.FooGroup;
+        fooGroup_ = value;
       }
+    }
+    /// <summary>Gets whether the foogroup field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooGroup {
+      get { return fooGroup_ != null; }
+    }
+    /// <summary>Clears the value of the foogroup field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooGroup() {
+      fooGroup_ = null;
     }
 
     /// <summary>Field number for the "foo_lazy_message" field.</summary>
     public const int FooLazyMessageFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage FooLazyMessage {
-      get { return fooCase_ == FooOneofCase.FooLazyMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage) foo_ : null; }
+      get { return HasFooLazyMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage) foo_ : null; }
       set {
         foo_ = value;
         fooCase_ = value == null ? FooOneofCase.None : FooOneofCase.FooLazyMessage;
+      }
+    }
+    /// <summary>Gets whether the "foo_lazy_message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooLazyMessage {
+      get { return fooCase_ == FooOneofCase.FooLazyMessage; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_lazy_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooLazyMessage() {
+      if (HasFooLazyMessage) {
+        ClearFoo();
       }
     }
 
@@ -15435,10 +15819,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarIntFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int BarInt {
-      get { return barCase_ == BarOneofCase.BarInt ? (int) bar_ : 5; }
+      get { return HasBarInt ? (int) bar_ : 5; }
       set {
         bar_ = value;
         barCase_ = BarOneofCase.BarInt;
+      }
+    }
+    /// <summary>Gets whether the "bar_int" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBarInt {
+      get { return barCase_ == BarOneofCase.BarInt; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bar_int" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBarInt() {
+      if (HasBarInt) {
+        ClearBar();
       }
     }
 
@@ -15446,10 +15842,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarStringFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BarString {
-      get { return barCase_ == BarOneofCase.BarString ? (string) bar_ : "\u0053\u0054\u0052\u0049\u004e\u0047"; }
+      get { return HasBarString ? (string) bar_ : "\u0053\u0054\u0052\u0049\u004e\u0047"; }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarString;
+      }
+    }
+    /// <summary>Gets whether the "bar_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBarString {
+      get { return barCase_ == BarOneofCase.BarString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bar_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBarString() {
+      if (HasBarString) {
+        ClearBar();
       }
     }
 
@@ -15457,10 +15865,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarCordFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BarCord {
-      get { return barCase_ == BarOneofCase.BarCord ? (string) bar_ : "\u0043\u004f\u0052\u0044"; }
+      get { return HasBarCord ? (string) bar_ : "\u0043\u004f\u0052\u0044"; }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarCord;
+      }
+    }
+    /// <summary>Gets whether the "bar_cord" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBarCord {
+      get { return barCase_ == BarOneofCase.BarCord; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bar_cord" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBarCord() {
+      if (HasBarCord) {
+        ClearBar();
       }
     }
 
@@ -15468,10 +15888,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarStringPieceFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string BarStringPiece {
-      get { return barCase_ == BarOneofCase.BarStringPiece ? (string) bar_ : "\u0053\u0050\u0049\u0045\u0043\u0045"; }
+      get { return HasBarStringPiece ? (string) bar_ : "\u0053\u0050\u0049\u0045\u0043\u0045"; }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarStringPiece;
+      }
+    }
+    /// <summary>Gets whether the "bar_string_piece" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBarStringPiece {
+      get { return barCase_ == BarOneofCase.BarStringPiece; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bar_string_piece" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBarStringPiece() {
+      if (HasBarStringPiece) {
+        ClearBar();
       }
     }
 
@@ -15479,10 +15911,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarBytesFieldNumber = 16;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString BarBytes {
-      get { return barCase_ == BarOneofCase.BarBytes ? (pb::ByteString) bar_ : pb::ByteString.FromBase64("QllURVM="); }
+      get { return HasBarBytes ? (pb::ByteString) bar_ : pb::ByteString.FromBase64("QllURVM="); }
       set {
         bar_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         barCase_ = BarOneofCase.BarBytes;
+      }
+    }
+    /// <summary>Gets whether the "bar_bytes" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBarBytes {
+      get { return barCase_ == BarOneofCase.BarBytes; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bar_bytes" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBarBytes() {
+      if (HasBarBytes) {
+        ClearBar();
       }
     }
 
@@ -15490,10 +15934,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int BarEnumFieldNumber = 17;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum BarEnum {
-      get { return barCase_ == BarOneofCase.BarEnum ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum) bar_ : global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum.Bar; }
+      get { return HasBarEnum ? (global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum) bar_ : global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedEnum.Bar; }
       set {
         bar_ = value;
         barCase_ = BarOneofCase.BarEnum;
+      }
+    }
+    /// <summary>Gets whether the "bar_enum" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBarEnum {
+      get { return barCase_ == BarOneofCase.BarEnum; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bar_enum" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBarEnum() {
+      if (HasBarEnum) {
+        ClearBar();
       }
     }
 
@@ -15632,21 +16088,21 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (fooCase_ == FooOneofCase.FooInt) hash ^= FooInt.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooString) hash ^= FooString.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooCord) hash ^= FooCord.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooStringPiece) hash ^= FooStringPiece.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooBytes) hash ^= FooBytes.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooEnum) hash ^= FooEnum.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooMessage) hash ^= FooMessage.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooGroup) hash ^= FooGroup.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooLazyMessage) hash ^= FooLazyMessage.GetHashCode();
-      if (barCase_ == BarOneofCase.BarInt) hash ^= BarInt.GetHashCode();
-      if (barCase_ == BarOneofCase.BarString) hash ^= BarString.GetHashCode();
-      if (barCase_ == BarOneofCase.BarCord) hash ^= BarCord.GetHashCode();
-      if (barCase_ == BarOneofCase.BarStringPiece) hash ^= BarStringPiece.GetHashCode();
-      if (barCase_ == BarOneofCase.BarBytes) hash ^= BarBytes.GetHashCode();
-      if (barCase_ == BarOneofCase.BarEnum) hash ^= BarEnum.GetHashCode();
+      if (HasFooInt) hash ^= FooInt.GetHashCode();
+      if (HasFooString) hash ^= FooString.GetHashCode();
+      if (HasFooCord) hash ^= FooCord.GetHashCode();
+      if (HasFooStringPiece) hash ^= FooStringPiece.GetHashCode();
+      if (HasFooBytes) hash ^= FooBytes.GetHashCode();
+      if (HasFooEnum) hash ^= FooEnum.GetHashCode();
+      if (HasFooMessage) hash ^= FooMessage.GetHashCode();
+      if (HasFooGroup) hash ^= FooGroup.GetHashCode();
+      if (HasFooLazyMessage) hash ^= FooLazyMessage.GetHashCode();
+      if (HasBarInt) hash ^= BarInt.GetHashCode();
+      if (HasBarString) hash ^= BarString.GetHashCode();
+      if (HasBarCord) hash ^= BarCord.GetHashCode();
+      if (HasBarStringPiece) hash ^= BarStringPiece.GetHashCode();
+      if (HasBarBytes) hash ^= BarBytes.GetHashCode();
+      if (HasBarEnum) hash ^= BarEnum.GetHashCode();
       if (HasBazInt) hash ^= BazInt.GetHashCode();
       if (HasBazString) hash ^= BazString.GetHashCode();
       hash ^= (int) fooCase_;
@@ -15664,64 +16120,65 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (fooCase_ == FooOneofCase.FooInt) {
+      pb::ProtoPreconditions.CheckInitialized(this);
+      if (HasFooInt) {
         output.WriteRawTag(8);
         output.WriteInt32(FooInt);
       }
-      if (fooCase_ == FooOneofCase.FooString) {
+      if (HasFooString) {
         output.WriteRawTag(18);
         output.WriteString(FooString);
       }
-      if (fooCase_ == FooOneofCase.FooCord) {
+      if (HasFooCord) {
         output.WriteRawTag(26);
         output.WriteString(FooCord);
       }
-      if (fooCase_ == FooOneofCase.FooStringPiece) {
+      if (HasFooStringPiece) {
         output.WriteRawTag(34);
         output.WriteString(FooStringPiece);
       }
-      if (fooCase_ == FooOneofCase.FooBytes) {
+      if (HasFooBytes) {
         output.WriteRawTag(42);
         output.WriteBytes(FooBytes);
       }
-      if (fooCase_ == FooOneofCase.FooEnum) {
+      if (HasFooEnum) {
         output.WriteRawTag(48);
         output.WriteEnum((int) FooEnum);
       }
-      if (fooCase_ == FooOneofCase.FooMessage) {
+      if (HasFooMessage) {
         output.WriteRawTag(58);
         output.WriteMessage(FooMessage);
       }
-      if (fooCase_ == FooOneofCase.FooGroup) {
+      if (HasFooGroup) {
         output.WriteRawTag(67);
         output.WriteGroup(FooGroup);
         output.WriteRawTag(68);
       }
-      if (fooCase_ == FooOneofCase.FooLazyMessage) {
+      if (HasFooLazyMessage) {
         output.WriteRawTag(90);
         output.WriteMessage(FooLazyMessage);
       }
-      if (barCase_ == BarOneofCase.BarInt) {
+      if (HasBarInt) {
         output.WriteRawTag(96);
         output.WriteInt32(BarInt);
       }
-      if (barCase_ == BarOneofCase.BarString) {
+      if (HasBarString) {
         output.WriteRawTag(106);
         output.WriteString(BarString);
       }
-      if (barCase_ == BarOneofCase.BarCord) {
+      if (HasBarCord) {
         output.WriteRawTag(114);
         output.WriteString(BarCord);
       }
-      if (barCase_ == BarOneofCase.BarStringPiece) {
+      if (HasBarStringPiece) {
         output.WriteRawTag(122);
         output.WriteString(BarStringPiece);
       }
-      if (barCase_ == BarOneofCase.BarBytes) {
+      if (HasBarBytes) {
         output.WriteRawTag(130, 1);
         output.WriteBytes(BarBytes);
       }
-      if (barCase_ == BarOneofCase.BarEnum) {
+      if (HasBarEnum) {
         output.WriteRawTag(136, 1);
         output.WriteEnum((int) BarEnum);
       }
@@ -15741,49 +16198,49 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (fooCase_ == FooOneofCase.FooInt) {
+      if (HasFooInt) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(FooInt);
       }
-      if (fooCase_ == FooOneofCase.FooString) {
+      if (HasFooString) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FooString);
       }
-      if (fooCase_ == FooOneofCase.FooCord) {
+      if (HasFooCord) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FooCord);
       }
-      if (fooCase_ == FooOneofCase.FooStringPiece) {
+      if (HasFooStringPiece) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FooStringPiece);
       }
-      if (fooCase_ == FooOneofCase.FooBytes) {
+      if (HasFooBytes) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(FooBytes);
       }
-      if (fooCase_ == FooOneofCase.FooEnum) {
+      if (HasFooEnum) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FooEnum);
       }
-      if (fooCase_ == FooOneofCase.FooMessage) {
+      if (HasFooMessage) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
-      if (fooCase_ == FooOneofCase.FooGroup) {
+      if (HasFooGroup) {
         size += 1 + 1 + pb::CodedOutputStream.ComputeGroupSize(FooGroup);
       }
-      if (fooCase_ == FooOneofCase.FooLazyMessage) {
+      if (HasFooLazyMessage) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooLazyMessage);
       }
-      if (barCase_ == BarOneofCase.BarInt) {
+      if (HasBarInt) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(BarInt);
       }
-      if (barCase_ == BarOneofCase.BarString) {
+      if (HasBarString) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BarString);
       }
-      if (barCase_ == BarOneofCase.BarCord) {
+      if (HasBarCord) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BarCord);
       }
-      if (barCase_ == BarOneofCase.BarStringPiece) {
+      if (HasBarStringPiece) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BarStringPiece);
       }
-      if (barCase_ == BarOneofCase.BarBytes) {
+      if (HasBarBytes) {
         size += 2 + pb::CodedOutputStream.ComputeBytesSize(BarBytes);
       }
-      if (barCase_ == BarOneofCase.BarEnum) {
+      if (HasBarEnum) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) BarEnum);
       }
       if (HasBazInt) {
@@ -15835,10 +16292,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           FooMessage.MergeFrom(other.FooMessage);
           break;
         case FooOneofCase.FooGroup:
-          if (FooGroup == null) {
-            FooGroup = new global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup();
+          if (other.HasFooGroup) {
+            if (!HasFooGroup) {
+              fooGroup_ = new global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup();
+            }
+            FooGroup.MergeFrom(other.FooGroup);
           }
-          FooGroup.MergeFrom(other.FooGroup);
           break;
         case FooOneofCase.FooLazyMessage:
           if (FooLazyMessage == null) {
@@ -15907,7 +16366,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           case 58: {
             global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage();
-            if (fooCase_ == FooOneofCase.FooMessage) {
+            if (HasFooMessage) {
               subBuilder.MergeFrom(FooMessage);
             }
             input.ReadMessage(subBuilder);
@@ -15915,17 +16374,15 @@ namespace Google.Protobuf.TestProtos.Proto2 {
             break;
           }
           case 67: {
-            global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup();
-            if (fooCase_ == FooOneofCase.FooGroup) {
-              subBuilder.MergeFrom(FooGroup);
+            if (!HasFooGroup) {
+              fooGroup_ = new global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.FooGroup();
             }
-            input.ReadGroup(subBuilder);
-            FooGroup = subBuilder;
+            input.ReadGroup(fooGroup_);
             break;
           }
           case 90: {
             global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestOneof2.Types.NestedMessage();
-            if (fooCase_ == FooOneofCase.FooLazyMessage) {
+            if (HasFooLazyMessage) {
               subBuilder.MergeFrom(FooLazyMessage);
             }
             input.ReadMessage(subBuilder);
@@ -15971,6 +16428,15 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasFooMessage) {
+        if (!FooMessage.IsInitialized()) return false;
+      }
+      if (HasFooGroup) {
+        if (!FooGroup.IsInitialized()) return false;
+      }
+      if (HasFooLazyMessage) {
+        if (!FooLazyMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -16103,6 +16569,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasA) {
             output.WriteRawTag(72);
             output.WriteInt32(A);
@@ -16277,6 +16744,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasQuxInt) {
             output.WriteRawTag(8);
             output.WriteInt64(QuxInt);
@@ -16394,10 +16862,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooIntFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FooInt {
-      get { return fooCase_ == FooOneofCase.FooInt ? (int) foo_ : 0; }
+      get { return HasFooInt ? (int) foo_ : 0; }
       set {
         foo_ = value;
         fooCase_ = FooOneofCase.FooInt;
+      }
+    }
+    /// <summary>Gets whether the "foo_int" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooInt {
+      get { return fooCase_ == FooOneofCase.FooInt; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_int" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooInt() {
+      if (HasFooInt) {
+        ClearFoo();
       }
     }
 
@@ -16405,10 +16885,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooStringFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FooString {
-      get { return fooCase_ == FooOneofCase.FooString ? (string) foo_ : ""; }
+      get { return HasFooString ? (string) foo_ : ""; }
       set {
         foo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         fooCase_ = FooOneofCase.FooString;
+      }
+    }
+    /// <summary>Gets whether the "foo_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooString {
+      get { return fooCase_ == FooOneofCase.FooString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooString() {
+      if (HasFooString) {
+        ClearFoo();
       }
     }
 
@@ -16416,10 +16908,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int FooMessageFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage FooMessage {
-      get { return fooCase_ == FooOneofCase.FooMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage) foo_ : null; }
+      get { return HasFooMessage ? (global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage) foo_ : null; }
       set {
         foo_ = value;
         fooCase_ = value == null ? FooOneofCase.None : FooOneofCase.FooMessage;
+      }
+    }
+    /// <summary>Gets whether the "foo_message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFooMessage {
+      get { return fooCase_ == FooOneofCase.FooMessage; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "foo_message" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFooMessage() {
+      if (HasFooMessage) {
+        ClearFoo();
       }
     }
 
@@ -16466,9 +16970,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (fooCase_ == FooOneofCase.FooInt) hash ^= FooInt.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooString) hash ^= FooString.GetHashCode();
-      if (fooCase_ == FooOneofCase.FooMessage) hash ^= FooMessage.GetHashCode();
+      if (HasFooInt) hash ^= FooInt.GetHashCode();
+      if (HasFooString) hash ^= FooString.GetHashCode();
+      if (HasFooMessage) hash ^= FooMessage.GetHashCode();
       hash ^= (int) fooCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -16483,15 +16987,16 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (fooCase_ == FooOneofCase.FooInt) {
+      pb::ProtoPreconditions.CheckInitialized(this);
+      if (HasFooInt) {
         output.WriteRawTag(8);
         output.WriteInt32(FooInt);
       }
-      if (fooCase_ == FooOneofCase.FooString) {
+      if (HasFooString) {
         output.WriteRawTag(18);
         output.WriteString(FooString);
       }
-      if (fooCase_ == FooOneofCase.FooMessage) {
+      if (HasFooMessage) {
         output.WriteRawTag(26);
         output.WriteMessage(FooMessage);
       }
@@ -16503,13 +17008,13 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (fooCase_ == FooOneofCase.FooInt) {
+      if (HasFooInt) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(FooInt);
       }
-      if (fooCase_ == FooOneofCase.FooString) {
+      if (HasFooString) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FooString);
       }
-      if (fooCase_ == FooOneofCase.FooMessage) {
+      if (HasFooMessage) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FooMessage);
       }
       if (_unknownFields != null) {
@@ -16559,7 +17064,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           case 26: {
             global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestRequiredOneof.Types.NestedMessage();
-            if (fooCase_ == FooOneofCase.FooMessage) {
+            if (HasFooMessage) {
               subBuilder.MergeFrom(FooMessage);
             }
             input.ReadMessage(subBuilder);
@@ -16572,6 +17077,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasFooMessage) {
+        if (!FooMessage.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -16671,6 +17179,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasRequiredDouble) {
             output.WriteRawTag(9);
             output.WriteDouble(RequiredDouble);
@@ -16979,6 +17488,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       packedInt32_.WriteTo(output, _repeated_packedInt32_codec);
       packedInt64_.WriteTo(output, _repeated_packedInt64_codec);
       packedUint32_.WriteTo(output, _repeated_packedUint32_codec);
@@ -17383,6 +17893,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       unpackedInt32_.WriteTo(output, _repeated_unpackedInt32_codec);
       unpackedInt64_.WriteTo(output, _repeated_unpackedInt64_codec);
       unpackedUint32_.WriteTo(output, _repeated_unpackedUint32_codec);
@@ -17592,7 +18103,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -17605,6 +18116,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -17735,7 +18247,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -17748,6 +18260,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -18047,6 +18560,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasScalarExtension) {
         output.WriteRawTag(133, 125);
         output.WriteFixed32(ScalarExtension);
@@ -18180,6 +18694,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasMessageExtension) {
+        if (!MessageExtension.IsInitialized()) return false;
+      }
+      if (HasDynamicMessageExtension) {
+        if (!DynamicMessageExtension.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -18285,6 +18805,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasDynamicField) {
             output.WriteRawTag(160, 131, 1);
             output.WriteInt32(DynamicField);
@@ -18502,6 +19023,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       repeatedFixed32_.WriteTo(output, _repeated_repeatedFixed32_codec);
       repeatedInt32_.WriteTo(output, _repeated_repeatedInt32_codec);
       repeatedFixed64_.WriteTo(output, _repeated_repeatedFixed64_codec);
@@ -18749,7 +19271,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       hash ^= repeatedAllTypes_.GetHashCode();
       if (HasOptionalGroup) hash ^= OptionalGroup.GetHashCode();
       hash ^= repeatedGroup_.GetHashCode();
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -18762,6 +19284,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasRequiredAllTypes) {
         output.WriteRawTag(10);
         output.WriteMessage(RequiredAllTypes);
@@ -18908,6 +19431,15 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       if (HasRequiredAllTypes) {
         if (!RequiredAllTypes.IsInitialized()) return false;
+      }
+      else {
+        return false;
+      }
+      if (HasOptionalAllTypes) {
+        if (!OptionalAllTypes.IsInitialized()) return false;
+      }
+      if (HasOptionalGroup) {
+        if (!OptionalGroup.IsInitialized()) return false;
       }
       return true;
     }
@@ -19079,6 +19611,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           field1_.WriteTo(output, _repeated_field1_codec);
           field2_.WriteTo(output, _repeated_field2_codec);
           field3_.WriteTo(output, _repeated_field3_codec);
@@ -19260,6 +19793,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public void WriteTo(pb::CodedOutputStream output) {
+              pb::ProtoPreconditions.CheckInitialized(this);
               if (HasField1) {
                 output.WriteRawTag(90);
                 output.WriteMessage(Field1);
@@ -19316,6 +19850,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public bool IsInitialized() {
+              if (HasField1) {
+                if (!Field1.IsInitialized()) return false;
+              }
               return true;
             }
 
@@ -19410,6 +19947,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public void WriteTo(pb::CodedOutputStream output) {
+              pb::ProtoPreconditions.CheckInitialized(this);
               if (HasField1) {
                 output.WriteRawTag(170, 1);
                 output.WriteMessage(Field1);
@@ -19466,6 +20004,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public bool IsInitialized() {
+              if (HasField1) {
+                if (!Field1.IsInitialized()) return false;
+              }
               return true;
             }
 
@@ -19565,6 +20106,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasOptionalGroupAllTypes) {
             output.WriteRawTag(90);
             output.WriteMessage(OptionalGroupAllTypes);
@@ -19621,6 +20163,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasOptionalGroupAllTypes) {
+            if (!OptionalGroupAllTypes.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -19715,6 +20260,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasRepeatedGroupAllTypes) {
             output.WriteRawTag(170, 1);
             output.WriteMessage(RepeatedGroupAllTypes);
@@ -19771,6 +20317,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (HasRepeatedGroupAllTypes) {
+            if (!RepeatedGroupAllTypes.IsInitialized()) return false;
+          }
           return true;
         }
 
@@ -19887,6 +20436,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasA) {
         output.WriteRawTag(10);
         output.WriteString(A);
@@ -20010,6 +20560,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -20116,6 +20667,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -20222,6 +20774,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -20328,6 +20881,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -20434,6 +20988,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -20540,6 +21095,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -20808,6 +21364,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasFieldName1) {
         output.WriteRawTag(8);
         output.WriteInt32(FieldName1);
@@ -21189,10 +21746,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofUint32FieldNumber = 536870011;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OneofUint32 {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint32 ? (uint) oneofField_ : 0; }
+      get { return HasOneofUint32 ? (uint) oneofField_ : 0; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = OneofFieldOneofCase.OneofUint32;
+      }
+    }
+    /// <summary>Gets whether the "oneof_uint32" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofUint32 {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofUint32; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_uint32" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofUint32() {
+      if (HasOneofUint32) {
+        ClearOneofField();
       }
     }
 
@@ -21200,10 +21769,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofTestAllTypesFieldNumber = 536870012;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.TestProtos.Proto2.TestAllTypes OneofTestAllTypes {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofTestAllTypes ? (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes) oneofField_ : null; }
+      get { return HasOneofTestAllTypes ? (global::Google.Protobuf.TestProtos.Proto2.TestAllTypes) oneofField_ : null; }
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.OneofTestAllTypes;
+      }
+    }
+    /// <summary>Gets whether the "oneof_test_all_types" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofTestAllTypes {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofTestAllTypes; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_test_all_types" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofTestAllTypes() {
+      if (HasOneofTestAllTypes) {
+        ClearOneofField();
       }
     }
 
@@ -21211,10 +21792,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofStringFieldNumber = 536870013;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OneofString {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofString ? (string) oneofField_ : ""; }
+      get { return HasOneofString ? (string) oneofField_ : ""; }
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofString;
+      }
+    }
+    /// <summary>Gets whether the "oneof_string" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofString {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofString; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_string" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofString() {
+      if (HasOneofString) {
+        ClearOneofField();
       }
     }
 
@@ -21222,10 +21815,22 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public const int OneofBytesFieldNumber = 536870014;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OneofBytes {
-      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
+      get { return HasOneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
       set {
         oneofField_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         oneofFieldCase_ = OneofFieldOneofCase.OneofBytes;
+      }
+    }
+    /// <summary>Gets whether the "oneof_bytes" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasOneofBytes {
+      get { return oneofFieldCase_ == OneofFieldOneofCase.OneofBytes; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_bytes" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofBytes() {
+      if (HasOneofBytes) {
+        ClearOneofField();
       }
     }
 
@@ -21296,12 +21901,12 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasOptionalMessage) hash ^= OptionalMessage.GetHashCode();
       if (HasOptionalGroup) hash ^= OptionalGroup.GetHashCode();
       hash ^= StringStringMap.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) hash ^= OneofUint32.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofTestAllTypes) hash ^= OneofTestAllTypes.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) hash ^= OneofString.GetHashCode();
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) hash ^= OneofBytes.GetHashCode();
+      if (HasOneofUint32) hash ^= OneofUint32.GetHashCode();
+      if (HasOneofTestAllTypes) hash ^= OneofTestAllTypes.GetHashCode();
+      if (HasOneofString) hash ^= OneofString.GetHashCode();
+      if (HasOneofBytes) hash ^= OneofBytes.GetHashCode();
       hash ^= (int) oneofFieldCase_;
-      if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -21314,6 +21919,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (HasOptionalInt32) {
         output.WriteRawTag(128, 199, 255, 255, 15);
         output.WriteInt32(OptionalInt32);
@@ -21346,19 +21952,19 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         output.WriteRawTag(196, 199, 255, 255, 15);
       }
       stringStringMap_.WriteTo(output, _map_stringStringMap_codec);
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+      if (HasOneofUint32) {
         output.WriteRawTag(216, 199, 255, 255, 15);
         output.WriteUInt32(OneofUint32);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofTestAllTypes) {
+      if (HasOneofTestAllTypes) {
         output.WriteRawTag(226, 199, 255, 255, 15);
         output.WriteMessage(OneofTestAllTypes);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+      if (HasOneofString) {
         output.WriteRawTag(234, 199, 255, 255, 15);
         output.WriteString(OneofString);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+      if (HasOneofBytes) {
         output.WriteRawTag(242, 199, 255, 255, 15);
         output.WriteBytes(OneofBytes);
       }
@@ -21395,16 +22001,16 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         size += 5 + 5 + pb::CodedOutputStream.ComputeGroupSize(OptionalGroup);
       }
       size += stringStringMap_.CalculateSize(_map_stringStringMap_codec);
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofUint32) {
+      if (HasOneofUint32) {
         size += 5 + pb::CodedOutputStream.ComputeUInt32Size(OneofUint32);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofTestAllTypes) {
+      if (HasOneofTestAllTypes) {
         size += 5 + pb::CodedOutputStream.ComputeMessageSize(OneofTestAllTypes);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofString) {
+      if (HasOneofString) {
         size += 5 + pb::CodedOutputStream.ComputeStringSize(OneofString);
       }
-      if (oneofFieldCase_ == OneofFieldOneofCase.OneofBytes) {
+      if (HasOneofBytes) {
         size += 5 + pb::CodedOutputStream.ComputeBytesSize(OneofBytes);
       }
       if (_unknownFields != null) {
@@ -21563,7 +22169,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           case 4294960098: {
             global::Google.Protobuf.TestProtos.Proto2.TestAllTypes subBuilder = new global::Google.Protobuf.TestProtos.Proto2.TestAllTypes();
-            if (oneofFieldCase_ == OneofFieldOneofCase.OneofTestAllTypes) {
+            if (HasOneofTestAllTypes) {
               subBuilder.MergeFrom(OneofTestAllTypes);
             }
             input.ReadMessage(subBuilder);
@@ -21584,6 +22190,15 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (HasOptionalMessage) {
+        if (!OptionalMessage.IsInitialized()) return false;
+      }
+      if (HasOptionalGroup) {
+        if (!OptionalGroup.IsInitialized()) return false;
+      }
+      if (HasOneofTestAllTypes) {
+        if (!OneofTestAllTypes.IsInitialized()) return false;
+      }
       return true;
     }
 
@@ -21683,6 +22298,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (HasGroupA) {
             output.WriteRawTag(200, 199, 255, 255, 15);
             output.WriteInt32(GroupA);

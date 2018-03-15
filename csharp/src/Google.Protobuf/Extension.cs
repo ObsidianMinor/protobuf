@@ -7,14 +7,21 @@ namespace Google.Protobuf
     /// </summary>
     public abstract class Extension
     {
-        /// <summary>
-        /// Gets the type this extension is for
-        /// </summary>
+        private readonly int fieldNumber;
+
+        internal Extension(uint tag)
+        {
+            fieldNumber = WireFormat.GetTagFieldNumber(tag);
+        }
+
         internal abstract Type TargetType { get; }
 
-        internal abstract uint Tag { get; }
-
         internal abstract IExtensionValue GetValue();
+
+        /// <summary>
+        /// Gets the field number of this extension
+        /// </summary>
+        public int FieldNumber => fieldNumber;
     }
 
     /// <summary>
@@ -27,15 +34,13 @@ namespace Google.Protobuf
         /// <summary>
         /// Creates a new extension identifier with the specified codec
         /// </summary>
-        public Extension(FieldCodec<TValue> codec)
+        public Extension(FieldCodec<TValue> codec) : base(codec.Tag)
         {
             this.codec = codec;
         }
 
         internal override Type TargetType => typeof(TTarget);
-
-        internal override uint Tag => codec.Tag;
-
+        
         internal TValue DefaultValue => codec.DefaultValue;
 
         internal override IExtensionValue GetValue()
@@ -54,15 +59,13 @@ namespace Google.Protobuf
         /// <summary>
         /// Creates a new extension identifier with the specified codec
         /// </summary>
-        public RepeatedExtension(FieldCodec<TValue> codec)
+        public RepeatedExtension(FieldCodec<TValue> codec) : base(codec.Tag)
         {
             this.codec = codec;
         }
 
         internal override Type TargetType => typeof(TTarget);
-
-        internal override uint Tag => codec.Tag;
-
+        
         internal override IExtensionValue GetValue()
         {
             return new RepeatedExtensionValue<TValue>(codec);

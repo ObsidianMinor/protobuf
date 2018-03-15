@@ -31,6 +31,9 @@
 #endregion
 
 using Google.Protobuf.TestProtos;
+using Proto3 = Google.Protobuf.TestProtos;
+using Proto2 = Google.Protobuf.TestProtos.Proto2;
+using static Google.Protobuf.TestProtos.Proto2.UnittestExtensions;
 using NUnit.Framework;
 using System;
 using System.Collections;
@@ -44,36 +47,36 @@ namespace Google.Protobuf.Reflection
         public void GetValue()
         {
             var message = SampleMessages.CreateFullTestAllTypes();
-            var fields = TestAllTypes.Descriptor.Fields;
-            Assert.AreEqual(message.SingleBool, fields[TestAllTypes.SingleBoolFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleBytes, fields[TestAllTypes.SingleBytesFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleDouble, fields[TestAllTypes.SingleDoubleFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleFixed32, fields[TestAllTypes.SingleFixed32FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleFixed64, fields[TestAllTypes.SingleFixed64FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleFloat, fields[TestAllTypes.SingleFloatFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleForeignEnum, fields[TestAllTypes.SingleForeignEnumFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleForeignMessage, fields[TestAllTypes.SingleForeignMessageFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleImportEnum, fields[TestAllTypes.SingleImportEnumFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleImportMessage, fields[TestAllTypes.SingleImportMessageFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleInt32, fields[TestAllTypes.SingleInt32FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleInt64, fields[TestAllTypes.SingleInt64FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleNestedEnum, fields[TestAllTypes.SingleNestedEnumFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleNestedMessage, fields[TestAllTypes.SingleNestedMessageFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SinglePublicImportMessage, fields[TestAllTypes.SinglePublicImportMessageFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleSint32, fields[TestAllTypes.SingleSint32FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleSint64, fields[TestAllTypes.SingleSint64FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleString, fields[TestAllTypes.SingleStringFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleSfixed32, fields[TestAllTypes.SingleSfixed32FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleSfixed64, fields[TestAllTypes.SingleSfixed64FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleUint32, fields[TestAllTypes.SingleUint32FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.SingleUint64, fields[TestAllTypes.SingleUint64FieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.OneofBytes, fields[TestAllTypes.OneofBytesFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.OneofString, fields[TestAllTypes.OneofStringFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.OneofNestedMessage, fields[TestAllTypes.OneofNestedMessageFieldNumber].Accessor.GetValue(message));
-            Assert.AreEqual(message.OneofUint32, fields[TestAllTypes.OneofUint32FieldNumber].Accessor.GetValue(message));
+            var fields = Proto3.TestAllTypes.Descriptor.Fields;
+            Assert.AreEqual(message.SingleBool, fields[Proto3.TestAllTypes.SingleBoolFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleBytes, fields[Proto3.TestAllTypes.SingleBytesFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleDouble, fields[Proto3.TestAllTypes.SingleDoubleFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleFixed32, fields[Proto3.TestAllTypes.SingleFixed32FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleFixed64, fields[Proto3.TestAllTypes.SingleFixed64FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleFloat, fields[Proto3.TestAllTypes.SingleFloatFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleForeignEnum, fields[Proto3.TestAllTypes.SingleForeignEnumFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleForeignMessage, fields[Proto3.TestAllTypes.SingleForeignMessageFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleImportEnum, fields[Proto3.TestAllTypes.SingleImportEnumFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleImportMessage, fields[Proto3.TestAllTypes.SingleImportMessageFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleInt32, fields[Proto3.TestAllTypes.SingleInt32FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleInt64, fields[Proto3.TestAllTypes.SingleInt64FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleNestedEnum, fields[Proto3.TestAllTypes.SingleNestedEnumFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleNestedMessage, fields[Proto3.TestAllTypes.SingleNestedMessageFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SinglePublicImportMessage, fields[Proto3.TestAllTypes.SinglePublicImportMessageFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleSint32, fields[Proto3.TestAllTypes.SingleSint32FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleSint64, fields[Proto3.TestAllTypes.SingleSint64FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleString, fields[Proto3.TestAllTypes.SingleStringFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleSfixed32, fields[Proto3.TestAllTypes.SingleSfixed32FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleSfixed64, fields[Proto3.TestAllTypes.SingleSfixed64FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleUint32, fields[Proto3.TestAllTypes.SingleUint32FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.SingleUint64, fields[Proto3.TestAllTypes.SingleUint64FieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.OneofBytes, fields[Proto3.TestAllTypes.OneofBytesFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.OneofString, fields[Proto3.TestAllTypes.OneofStringFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.OneofNestedMessage, fields[Proto3.TestAllTypes.OneofNestedMessageFieldNumber].Accessor.GetValue(message));
+            Assert.AreEqual(message.OneofUint32, fields[Proto3.TestAllTypes.OneofUint32FieldNumber].Accessor.GetValue(message));
 
             // Just one example for repeated fields - they're all just returning the list
-            var list = (IList) fields[TestAllTypes.RepeatedInt32FieldNumber].Accessor.GetValue(message);
+            var list = (IList) fields[Proto3.TestAllTypes.RepeatedInt32FieldNumber].Accessor.GetValue(message);
             Assert.AreEqual(message.RepeatedInt32, list);
             Assert.AreEqual(message.RepeatedInt32[0], list[0]); // Just in case there was any doubt...
 
@@ -86,17 +89,42 @@ namespace Google.Protobuf.Reflection
         }
 
         [Test]
+        public void GetValue_Extension()
+        {
+            var message = SampleMessages.CreateFullTestAllExtensions();
+            var descriptor = Proto2.TestAllExtensions.Descriptor;
+
+            void AssertExtensionValue<T>(Extension<Proto2.TestAllExtensions, T> extension)
+            {
+                Assert.AreEqual(message.GetExtension(extension), descriptor.FindFieldByNumber(extension.FieldNumber).Accessor.GetValue(message));
+            }
+
+            void AssertRepeatedExtensionValue<T>(RepeatedExtension<Proto2.TestAllExtensions, T> extension)
+            {
+                Assert.AreEqual(message.GetExtension(extension), descriptor.FindFieldByNumber(extension.FieldNumber).Accessor.GetValue(message));
+            }
+
+            AssertExtensionValue(OptionalBoolExtension);
+            AssertExtensionValue(OptionalInt32Extension);
+            AssertExtensionValue(OptionalStringExtension);
+            AssertExtensionValue(OptionalBytesExtension);
+            AssertExtensionValue(OptionalForeignEnumExtension);
+            AssertExtensionValue(OptionalForeignMessageExtension);
+            AssertRepeatedExtensionValue(RepeatedDoubleExtension);
+        }
+
+        [Test]
         public void Clear()
         {
             var message = SampleMessages.CreateFullTestAllTypes();
-            var fields = TestAllTypes.Descriptor.Fields;
-            fields[TestAllTypes.SingleBoolFieldNumber].Accessor.Clear(message);
-            fields[TestAllTypes.SingleInt32FieldNumber].Accessor.Clear(message);
-            fields[TestAllTypes.SingleStringFieldNumber].Accessor.Clear(message);
-            fields[TestAllTypes.SingleBytesFieldNumber].Accessor.Clear(message);
-            fields[TestAllTypes.SingleForeignEnumFieldNumber].Accessor.Clear(message);
-            fields[TestAllTypes.SingleForeignMessageFieldNumber].Accessor.Clear(message);
-            fields[TestAllTypes.RepeatedDoubleFieldNumber].Accessor.Clear(message);
+            var fields = Proto3.TestAllTypes.Descriptor.Fields;
+            fields[Proto3.TestAllTypes.SingleBoolFieldNumber].Accessor.Clear(message);
+            fields[Proto3.TestAllTypes.SingleInt32FieldNumber].Accessor.Clear(message);
+            fields[Proto3.TestAllTypes.SingleStringFieldNumber].Accessor.Clear(message);
+            fields[Proto3.TestAllTypes.SingleBytesFieldNumber].Accessor.Clear(message);
+            fields[Proto3.TestAllTypes.SingleForeignEnumFieldNumber].Accessor.Clear(message);
+            fields[Proto3.TestAllTypes.SingleForeignMessageFieldNumber].Accessor.Clear(message);
+            fields[Proto3.TestAllTypes.RepeatedDoubleFieldNumber].Accessor.Clear(message);
 
             var expected = new TestAllTypes(SampleMessages.CreateFullTestAllTypes())
             {
@@ -119,18 +147,44 @@ namespace Google.Protobuf.Reflection
         }
 
         [Test]
+        public void Clear_Extension()
+        {
+            var message = SampleMessages.CreateFullTestAllExtensions();
+            var descriptor = Proto2.TestAllExtensions.Descriptor;
+
+            descriptor.FindFieldByNumber(OptionalBoolExtension.FieldNumber).Accessor.Clear(message);
+            descriptor.FindFieldByNumber(OptionalInt32Extension.FieldNumber).Accessor.Clear(message);
+            descriptor.FindFieldByNumber(OptionalStringExtension.FieldNumber).Accessor.Clear(message);
+            descriptor.FindFieldByNumber(OptionalBytesExtension.FieldNumber).Accessor.Clear(message);
+            descriptor.FindFieldByNumber(OptionalForeignEnumExtension.FieldNumber).Accessor.Clear(message);
+            descriptor.FindFieldByNumber(OptionalForeignMessageExtension.FieldNumber).Accessor.Clear(message);
+            descriptor.FindFieldByNumber(RepeatedDoubleExtension.FieldNumber).Accessor.Clear(message);
+
+            var expected = new Proto2.TestAllExtensions(SampleMessages.CreateFullTestAllExtensions());
+            expected.ClearExtension(OptionalBoolExtension);
+            expected.ClearExtension(OptionalInt32Extension);
+            expected.ClearExtension(OptionalStringExtension);
+            expected.ClearExtension(OptionalBytesExtension);
+            expected.ClearExtension(OptionalForeignEnumExtension);
+            expected.ClearExtension(OptionalForeignMessageExtension);
+            expected.GetExtension(RepeatedDoubleExtension).Clear();
+
+            Assert.AreEqual(expected, message);
+        }
+
+        [Test]
         public void SetValue_SingleFields()
         {
             // Just a sample (primitives, messages, enums, strings, byte strings)
             var message = SampleMessages.CreateFullTestAllTypes();
-            var fields = TestAllTypes.Descriptor.Fields;
-            fields[TestAllTypes.SingleBoolFieldNumber].Accessor.SetValue(message, false);
-            fields[TestAllTypes.SingleInt32FieldNumber].Accessor.SetValue(message, 500);
-            fields[TestAllTypes.SingleStringFieldNumber].Accessor.SetValue(message, "It's a string");
-            fields[TestAllTypes.SingleBytesFieldNumber].Accessor.SetValue(message, ByteString.CopyFrom(99, 98, 97));
-            fields[TestAllTypes.SingleForeignEnumFieldNumber].Accessor.SetValue(message, ForeignEnum.ForeignFoo);
-            fields[TestAllTypes.SingleForeignMessageFieldNumber].Accessor.SetValue(message, new ForeignMessage { C = 12345 });
-            fields[TestAllTypes.SingleDoubleFieldNumber].Accessor.SetValue(message, 20150701.5);
+            var fields = Proto3.TestAllTypes.Descriptor.Fields;
+            fields[Proto3.TestAllTypes.SingleBoolFieldNumber].Accessor.SetValue(message, false);
+            fields[Proto3.TestAllTypes.SingleInt32FieldNumber].Accessor.SetValue(message, 500);
+            fields[Proto3.TestAllTypes.SingleStringFieldNumber].Accessor.SetValue(message, "It's a string");
+            fields[Proto3.TestAllTypes.SingleBytesFieldNumber].Accessor.SetValue(message, ByteString.CopyFrom(99, 98, 97));
+            fields[Proto3.TestAllTypes.SingleForeignEnumFieldNumber].Accessor.SetValue(message, ForeignEnum.ForeignFoo);
+            fields[Proto3.TestAllTypes.SingleForeignMessageFieldNumber].Accessor.SetValue(message, new ForeignMessage { C = 12345 });
+            fields[Proto3.TestAllTypes.SingleDoubleFieldNumber].Accessor.SetValue(message, 20150701.5);
 
             var expected = new TestAllTypes(SampleMessages.CreateFullTestAllTypes())
             {
@@ -147,11 +201,52 @@ namespace Google.Protobuf.Reflection
         }
 
         [Test]
+        public void SetValue_SingleFields_Extension()
+        {
+            var message = SampleMessages.CreateFullTestAllExtensions();
+            var descriptor = Proto2.TestAllExtensions.Descriptor;
+
+            descriptor.FindFieldByNumber(OptionalBoolExtension.FieldNumber).Accessor.SetValue(message, false);
+            descriptor.FindFieldByNumber(OptionalInt32Extension.FieldNumber).Accessor.SetValue(message, 500);
+            descriptor.FindFieldByNumber(OptionalStringExtension.FieldNumber).Accessor.SetValue(message, "It's a string");
+            descriptor.FindFieldByNumber(OptionalBytesExtension.FieldNumber).Accessor.SetValue(message, ByteString.CopyFrom(99, 98, 97));
+            descriptor.FindFieldByNumber(OptionalForeignEnumExtension.FieldNumber).Accessor.SetValue(message, Proto2.ForeignEnum.ForeignFoo);
+            descriptor.FindFieldByNumber(OptionalForeignMessageExtension.FieldNumber).Accessor.SetValue(message, new Proto2.ForeignMessage { C = 12345 });
+            descriptor.FindFieldByNumber(OptionalDoubleExtension.FieldNumber).Accessor.SetValue(message, 20150701.5);
+
+            var expected = new Proto2.TestAllExtensions(SampleMessages.CreateFullTestAllExtensions());
+            expected.SetExtension(OptionalBoolExtension, false);
+            expected.SetExtension(OptionalInt32Extension, 500);
+            expected.SetExtension(OptionalStringExtension, "It's a string");
+            expected.SetExtension(OptionalBytesExtension, ByteString.CopyFrom(99, 98, 97));
+            expected.SetExtension(OptionalForeignEnumExtension, Proto2.ForeignEnum.ForeignFoo);
+            expected.SetExtension(OptionalForeignMessageExtension, new Proto2.ForeignMessage { C = 12345 });
+            expected.SetExtension(OptionalDoubleExtension, 20150701.5);
+
+            Assert.AreEqual(expected, message);
+        }
+
+        [Test]
         public void SetValue_SingleFields_WrongType()
         {
             IMessage message = SampleMessages.CreateFullTestAllTypes();
             var fields = message.Descriptor.Fields;
-            Assert.Throws<InvalidCastException>(() => fields[TestAllTypes.SingleBoolFieldNumber].Accessor.SetValue(message, "This isn't a bool"));
+            Assert.Throws<InvalidCastException>(() => fields[Proto3.TestAllTypes.SingleBoolFieldNumber].Accessor.SetValue(message, "This isn't a bool"));
+        }
+
+        [Test]
+        public void SetValue_SingleFields_WrongValueType_Extension()
+        {
+            var message = SampleMessages.CreateFullTestAllExtensions();
+            var descriptor = Proto2.TestAllExtensions.Descriptor;
+            Assert.Throws<InvalidCastException>(() => descriptor.FindFieldByNumber(OptionalBoolExtension.FieldNumber).Accessor.SetValue(message, "not a bool"));
+        }
+
+        [Test]
+        public void SetValue_SingleFields_WrongMessageType_Extension()
+        {
+            var descriptor = Proto2.TestAllExtensions.Descriptor;
+            Assert.Throws<InvalidCastException>(() => descriptor.FindFieldByNumber(OptionalBoolExtension.FieldNumber).Accessor.SetValue(new Proto2.TestEmptyMessageWithExtensions(), true));
         }
 
         [Test]
@@ -167,7 +262,7 @@ namespace Google.Protobuf.Reflection
         {
             IMessage message = SampleMessages.CreateFullTestAllTypes();
             var fields = message.Descriptor.Fields;
-            Assert.Throws<InvalidOperationException>(() => fields[TestAllTypes.RepeatedDoubleFieldNumber].Accessor.SetValue(message, new double[10]));
+            Assert.Throws<InvalidOperationException>(() => fields[Proto3.TestAllTypes.RepeatedDoubleFieldNumber].Accessor.SetValue(message, new double[10]));
         }
 
         [Test]
@@ -175,42 +270,42 @@ namespace Google.Protobuf.Reflection
         {
             IMessage message = SampleMessages.CreateFullTestAllTypes();
             var fields = message.Descriptor.Fields;
-            Assert.Throws<InvalidCastException>(() => fields[TestAllTypes.SingleBoolFieldNumber].Accessor.GetValue(new TestMap()));
+            Assert.Throws<InvalidCastException>(() => fields[Proto3.TestAllTypes.SingleBoolFieldNumber].Accessor.GetValue(new TestMap()));
         }
 
         [Test]
         public void Oneof()
         {
             var message = new TestAllTypes();
-            var descriptor = TestAllTypes.Descriptor;
+            var descriptor = Proto3.TestAllTypes.Descriptor;
             Assert.AreEqual(1, descriptor.Oneofs.Count);
             var oneof = descriptor.Oneofs[0];
             Assert.AreEqual("oneof_field", oneof.Name);
             Assert.IsNull(oneof.Accessor.GetCaseFieldDescriptor(message));
 
             message.OneofString = "foo";
-            Assert.AreSame(descriptor.Fields[TestAllTypes.OneofStringFieldNumber], oneof.Accessor.GetCaseFieldDescriptor(message));
+            Assert.AreSame(descriptor.Fields[Proto3.TestAllTypes.OneofStringFieldNumber], oneof.Accessor.GetCaseFieldDescriptor(message));
 
             message.OneofUint32 = 10;
-            Assert.AreSame(descriptor.Fields[TestAllTypes.OneofUint32FieldNumber], oneof.Accessor.GetCaseFieldDescriptor(message));
+            Assert.AreSame(descriptor.Fields[Proto3.TestAllTypes.OneofUint32FieldNumber], oneof.Accessor.GetCaseFieldDescriptor(message));
 
             oneof.Accessor.Clear(message);
-            Assert.AreEqual(TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
+            Assert.AreEqual(Proto3.TestAllTypes.OneofFieldOneofCase.None, message.OneofFieldCase);
         }
 
         [Test]
         public void FieldDescriptor_ByName()
         {
-            var descriptor = TestAllTypes.Descriptor;
+            var descriptor = Proto3.TestAllTypes.Descriptor;
             Assert.AreSame(
-                descriptor.Fields[TestAllTypes.SingleBoolFieldNumber],
+                descriptor.Fields[Proto3.TestAllTypes.SingleBoolFieldNumber],
                 descriptor.Fields["single_bool"]);
         }
 
         [Test]
         public void FieldDescriptor_NotFound()
         {
-            var descriptor = TestAllTypes.Descriptor;
+            var descriptor = Proto3.TestAllTypes.Descriptor;
             Assert.Throws<KeyNotFoundException>(() => descriptor.Fields[999999].ToString());
             Assert.Throws<KeyNotFoundException>(() => descriptor.Fields["not found"].ToString());
         }        

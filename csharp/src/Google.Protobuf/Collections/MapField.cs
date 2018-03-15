@@ -679,7 +679,7 @@ namespace Google.Protobuf.Collections
 
                 MessageDescriptor IMessage.Descriptor { get { return null; } }
 
-                bool IMessage.IsInitialized() => throw new NotImplementedException();
+                bool IMessage.IsInitialized() => Value is IMessage message ? message.IsInitialized() : true;
             }
         }
 

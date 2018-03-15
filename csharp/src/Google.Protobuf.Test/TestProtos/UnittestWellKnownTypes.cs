@@ -677,6 +677,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (anyField_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(AnyField);
@@ -1385,6 +1386,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       anyField_.WriteTo(output, _repeated_anyField_codec);
       apiField_.WriteTo(output, _repeated_apiField_codec);
       durationField_.WriteTo(output, _repeated_durationField_codec);
@@ -1652,6 +1654,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.AnyField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "any_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearAnyField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.AnyField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "api_field" field.</summary>
     public const int ApiFieldFieldNumber = 2;
@@ -1661,6 +1670,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.ApiField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "api_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearApiField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.ApiField) {
+        ClearOneofField();
       }
     }
 
@@ -1674,6 +1690,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.DurationField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "duration_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearDurationField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.DurationField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "empty_field" field.</summary>
     public const int EmptyFieldFieldNumber = 4;
@@ -1683,6 +1706,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.EmptyField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "empty_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearEmptyField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.EmptyField) {
+        ClearOneofField();
       }
     }
 
@@ -1696,6 +1726,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.FieldMaskField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "field_mask_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFieldMaskField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.FieldMaskField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "source_context_field" field.</summary>
     public const int SourceContextFieldFieldNumber = 6;
@@ -1705,6 +1742,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.SourceContextField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "source_context_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSourceContextField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.SourceContextField) {
+        ClearOneofField();
       }
     }
 
@@ -1718,6 +1762,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.StructField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "struct_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearStructField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.StructField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "timestamp_field" field.</summary>
     public const int TimestampFieldFieldNumber = 8;
@@ -1729,6 +1780,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.TimestampField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "timestamp_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTimestampField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.TimestampField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "type_field" field.</summary>
     public const int TypeFieldFieldNumber = 9;
@@ -1738,6 +1796,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.TypeField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "type_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTypeField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.TypeField) {
+        ClearOneofField();
       }
     }
 
@@ -1752,6 +1817,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.DoubleField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "double_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearDoubleField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.DoubleField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "float_field" field.</summary>
     public const int FloatFieldFieldNumber = 11;
@@ -1762,6 +1834,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.FloatField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "float_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFloatField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.FloatField) {
+        ClearOneofField();
       }
     }
 
@@ -1776,6 +1855,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.Int64Field;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "int64_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearInt64Field() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.Int64Field) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "uint64_field" field.</summary>
     public const int Uint64FieldFieldNumber = 13;
@@ -1786,6 +1872,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.Uint64Field;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "uint64_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearUint64Field() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.Uint64Field) {
+        ClearOneofField();
       }
     }
 
@@ -1800,6 +1893,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.Int32Field;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "int32_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearInt32Field() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.Int32Field) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "uint32_field" field.</summary>
     public const int Uint32FieldFieldNumber = 15;
@@ -1810,6 +1910,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.Uint32Field;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "uint32_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearUint32Field() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.Uint32Field) {
+        ClearOneofField();
       }
     }
 
@@ -1824,6 +1931,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.BoolField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "bool_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBoolField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.BoolField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "string_field" field.</summary>
     public const int StringFieldFieldNumber = 17;
@@ -1836,6 +1950,13 @@ namespace Google.Protobuf.TestProtos {
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.StringField;
       }
     }
+    /// <summary> Clears the value of the oneof if it's currently set to "string_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearStringField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.StringField) {
+        ClearOneofField();
+      }
+    }
 
     /// <summary>Field number for the "bytes_field" field.</summary>
     public const int BytesFieldFieldNumber = 18;
@@ -1846,6 +1967,13 @@ namespace Google.Protobuf.TestProtos {
       set {
         oneofField_ = value;
         oneofFieldCase_ = value == null ? OneofFieldOneofCase.None : OneofFieldOneofCase.BytesField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bytes_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBytesField() {
+      if (oneofFieldCase_ == OneofFieldOneofCase.BytesField) {
+        ClearOneofField();
       }
     }
 
@@ -1954,6 +2082,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (oneofFieldCase_ == OneofFieldOneofCase.AnyField) {
         output.WriteRawTag(10);
         output.WriteMessage(AnyField);
@@ -2617,6 +2746,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       anyField_.WriteTo(output, _map_anyField_codec);
       apiField_.WriteTo(output, _map_apiField_codec);
       durationField_.WriteTo(output, _map_durationField_codec);

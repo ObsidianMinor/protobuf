@@ -299,18 +299,16 @@ namespace Google.Protobuf
         /// <param name="value">The value to write</param>
         public void WriteMessage(IMessage value)
         {
-            ProtoPreconditions.CheckInitialized(value);
             WriteLength(value.CalculateSize());
             value.WriteTo(this);
         }
 
         /// <summary>
-        /// Writes a group with tags to the stream.
+        /// Writes a group without a tag to the stream.
         /// </summary>
         /// <param name="value">The value to write</param>
         public void WriteGroup(IMessage value)
         {
-            ProtoPreconditions.CheckInitialized(value);
             value.WriteTo(this);
         }
 

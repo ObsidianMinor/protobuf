@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Google.Protobuf.Collections;
 
 namespace Google.Protobuf
@@ -108,6 +109,15 @@ namespace Google.Protobuf
                 size += value.CalculateSize();
             }
             return size;
+        }
+
+        /// <summary>
+        /// Gets whether all the extension messages are initialized in this collection
+        /// </summary>
+        /// <returns></returns>
+        public bool IsInitialized()
+        {
+            return valuesByIdentifier.Values.All(v => v.IsInitialized());
         }
 
         /// <summary>

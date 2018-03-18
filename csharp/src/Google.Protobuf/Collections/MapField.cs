@@ -286,6 +286,14 @@ namespace Google.Protobuf.Collections
         }
 
         /// <summary>
+        /// Determintes whether all map message values are initialized
+        /// </summary>
+        public bool IsInitialized()
+        {
+            return list.All(kvp => kvp.Value is IMessage message ? message.IsInitialized() : true);
+        }
+
+        /// <summary>
         /// Determines whether map contains an entry equivalent to the given key/value pair.
         /// </summary>
         /// <param name="item">The key/value pair to find.</param>

@@ -149,6 +149,7 @@ namespace Google.Protobuf.WellKnownTypes {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

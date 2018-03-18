@@ -609,6 +609,7 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Print("}\n"); // switch
   printer->Outdent();
   printer->Print("}\n"); // while
+  printer->Print("pb::ProtoPreconditions.CheckMergedRequiredFields(this);\n");
   printer->Outdent();
   printer->Print("}\n\n"); // method
 
@@ -619,6 +620,9 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
     scoped_ptr<FieldGeneratorBase> generator(
       CreateFieldGeneratorInternal(fields_by_number()[i]));
     generator->GenerateIsInitialized(printer);
+  }
+  if (has_extension_ranges_) {
+    printer->Print("if (!_extensions.IsInitialized()) return false;\n");
   }
   printer->Print("return true;\n");
   printer->Outdent();

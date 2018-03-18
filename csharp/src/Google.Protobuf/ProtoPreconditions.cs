@@ -84,7 +84,19 @@ namespace Google.Protobuf
             CheckNotNull(message, nameof(message));
             if (!message.IsInitialized())
             {
-                throw new ArgumentException("The provided message is not initialized");
+                throw new ArgumentException("The provided message is not initialized", nameof(message));
+            }
+        }
+
+        /// <summary>
+        /// Throws an InvalidProtocolBufferException if the given message is not initialized
+        /// </summary>
+        public static void CheckMergedRequiredFields(IMessage message)
+        {
+            CheckNotNull(message, nameof(message));
+            if (!message.IsInitialized())
+            {
+                throw InvalidProtocolBufferException.MissingFields();
             }
         }
     }

@@ -3294,6 +3294,7 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3307,12 +3308,34 @@ namespace ProtobufTestMessages.Proto2 {
       if (HasRecursiveMessage) {
         if (!RecursiveMessage.IsInitialized()) return false;
       }
+      if (!repeatedNestedMessage_.IsInitialized()) return false;
+      if (!repeatedForeignMessage_.IsInitialized()) return false;
+      if (!mapInt32Int32_.IsInitialized()) return false;
+      if (!mapInt64Int64_.IsInitialized()) return false;
+      if (!mapUint32Uint32_.IsInitialized()) return false;
+      if (!mapUint64Uint64_.IsInitialized()) return false;
+      if (!mapSint32Sint32_.IsInitialized()) return false;
+      if (!mapSint64Sint64_.IsInitialized()) return false;
+      if (!mapFixed32Fixed32_.IsInitialized()) return false;
+      if (!mapFixed64Fixed64_.IsInitialized()) return false;
+      if (!mapSfixed32Sfixed32_.IsInitialized()) return false;
+      if (!mapSfixed64Sfixed64_.IsInitialized()) return false;
+      if (!mapInt32Float_.IsInitialized()) return false;
+      if (!mapInt32Double_.IsInitialized()) return false;
+      if (!mapBoolBool_.IsInitialized()) return false;
+      if (!mapStringString_.IsInitialized()) return false;
+      if (!mapStringBytes_.IsInitialized()) return false;
+      if (!mapStringNestedMessage_.IsInitialized()) return false;
+      if (!mapStringForeignMessage_.IsInitialized()) return false;
+      if (!mapStringNestedEnum_.IsInitialized()) return false;
+      if (!mapStringForeignEnum_.IsInitialized()) return false;
       if (HasOneofNestedMessage) {
         if (!OneofNestedMessage.IsInitialized()) return false;
       }
       if (HasData) {
         if (!Data.IsInitialized()) return false;
       }
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -3513,6 +3536,7 @@ namespace ProtobufTestMessages.Proto2 {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3708,6 +3732,7 @@ namespace ProtobufTestMessages.Proto2 {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3855,10 +3880,12 @@ namespace ProtobufTestMessages.Proto2 {
                 break;
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
+          if (!_extensions.IsInitialized()) return false;
           return true;
         }
 
@@ -4003,6 +4030,7 @@ namespace ProtobufTestMessages.Proto2 {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4160,6 +4188,7 @@ namespace ProtobufTestMessages.Proto2 {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4322,6 +4351,7 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

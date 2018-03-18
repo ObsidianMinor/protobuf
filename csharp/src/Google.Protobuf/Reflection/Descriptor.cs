@@ -311,10 +311,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!file_.IsInitialized()) return false;
       return true;
     }
 
@@ -803,10 +805,15 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!messageType_.IsInitialized()) return false;
+      if (!enumType_.IsInitialized()) return false;
+      if (!service_.IsInitialized()) return false;
+      if (!extension_.IsInitialized()) return false;
       if (HasOptions) {
         if (!Options.IsInitialized()) return false;
       }
@@ -1168,13 +1175,21 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!field_.IsInitialized()) return false;
+      if (!nestedType_.IsInitialized()) return false;
+      if (!enumType_.IsInitialized()) return false;
+      if (!extensionRange_.IsInitialized()) return false;
+      if (!extension_.IsInitialized()) return false;
       if (HasOptions) {
         if (!Options.IsInitialized()) return false;
       }
+      if (!oneofDecl_.IsInitialized()) return false;
+      if (!reservedRange_.IsInitialized()) return false;
       return true;
     }
 
@@ -1406,6 +1421,7 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1609,6 +1625,7 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1781,10 +1798,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -2336,6 +2356,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2601,6 +2622,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2868,13 +2890,16 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!value_.IsInitialized()) return false;
       if (HasOptions) {
         if (!Options.IsInitialized()) return false;
       }
+      if (!reservedRange_.IsInitialized()) return false;
       return true;
     }
 
@@ -3076,6 +3101,7 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3317,6 +3343,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3535,10 +3562,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!method_.IsInitialized()) return false;
       if (HasOptions) {
         if (!Options.IsInitialized()) return false;
       }
@@ -3907,6 +3936,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4902,10 +4932,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -5312,10 +5345,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -5789,10 +5825,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -5987,10 +6026,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -6246,10 +6288,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -6460,10 +6505,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -6674,10 +6722,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -6929,10 +6980,13 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!uninterpretedOption_.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) return false;
       return true;
     }
 
@@ -7338,10 +7392,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!name_.IsInitialized()) return false;
       return true;
     }
 
@@ -7536,6 +7592,7 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7719,10 +7776,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!location_.IsInitialized()) return false;
       return true;
     }
 
@@ -8053,6 +8112,7 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8194,10 +8254,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!annotation_.IsInitialized()) return false;
       return true;
     }
 
@@ -8463,6 +8525,7 @@ namespace Google.Protobuf.Reflection {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -3918,10 +3918,47 @@ namespace ProtobufTestMessages.Proto3 {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!repeatedNestedMessage_.IsInitialized()) return false;
+      if (!repeatedForeignMessage_.IsInitialized()) return false;
+      if (!mapInt32Int32_.IsInitialized()) return false;
+      if (!mapInt64Int64_.IsInitialized()) return false;
+      if (!mapUint32Uint32_.IsInitialized()) return false;
+      if (!mapUint64Uint64_.IsInitialized()) return false;
+      if (!mapSint32Sint32_.IsInitialized()) return false;
+      if (!mapSint64Sint64_.IsInitialized()) return false;
+      if (!mapFixed32Fixed32_.IsInitialized()) return false;
+      if (!mapFixed64Fixed64_.IsInitialized()) return false;
+      if (!mapSfixed32Sfixed32_.IsInitialized()) return false;
+      if (!mapSfixed64Sfixed64_.IsInitialized()) return false;
+      if (!mapInt32Float_.IsInitialized()) return false;
+      if (!mapInt32Double_.IsInitialized()) return false;
+      if (!mapBoolBool_.IsInitialized()) return false;
+      if (!mapStringString_.IsInitialized()) return false;
+      if (!mapStringBytes_.IsInitialized()) return false;
+      if (!mapStringNestedMessage_.IsInitialized()) return false;
+      if (!mapStringForeignMessage_.IsInitialized()) return false;
+      if (!mapStringNestedEnum_.IsInitialized()) return false;
+      if (!mapStringForeignEnum_.IsInitialized()) return false;
+      if (!repeatedBoolWrapper_.IsInitialized()) return false;
+      if (!repeatedInt32Wrapper_.IsInitialized()) return false;
+      if (!repeatedInt64Wrapper_.IsInitialized()) return false;
+      if (!repeatedUint32Wrapper_.IsInitialized()) return false;
+      if (!repeatedUint64Wrapper_.IsInitialized()) return false;
+      if (!repeatedFloatWrapper_.IsInitialized()) return false;
+      if (!repeatedDoubleWrapper_.IsInitialized()) return false;
+      if (!repeatedStringWrapper_.IsInitialized()) return false;
+      if (!repeatedBytesWrapper_.IsInitialized()) return false;
+      if (!repeatedDuration_.IsInitialized()) return false;
+      if (!repeatedTimestamp_.IsInitialized()) return false;
+      if (!repeatedFieldmask_.IsInitialized()) return false;
+      if (!repeatedAny_.IsInitialized()) return false;
+      if (!repeatedValue_.IsInitialized()) return false;
+      if (!repeatedStruct_.IsInitialized()) return false;
       return true;
     }
 
@@ -4117,6 +4154,7 @@ namespace ProtobufTestMessages.Proto3 {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4265,6 +4303,7 @@ namespace ProtobufTestMessages.Proto3 {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

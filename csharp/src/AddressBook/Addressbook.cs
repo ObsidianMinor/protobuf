@@ -323,10 +323,12 @@ namespace Google.Protobuf.Examples.AddressBook {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!phones_.IsInitialized()) return false;
       return true;
     }
 
@@ -510,6 +512,7 @@ namespace Google.Protobuf.Examples.AddressBook {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -645,10 +648,12 @@ namespace Google.Protobuf.Examples.AddressBook {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
+      if (!people_.IsInitialized()) return false;
       return true;
     }
 

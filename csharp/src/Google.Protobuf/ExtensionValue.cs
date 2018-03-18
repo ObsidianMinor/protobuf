@@ -9,6 +9,7 @@ namespace Google.Protobuf
         void MergeFrom(IExtensionValue value);
         void WriteTo(CodedOutputStream output);
         int CalculateSize();
+        bool IsInitialized();
     }
 
     internal sealed class ExtensionValue<T> : IExtensionValue
@@ -98,6 +99,11 @@ namespace Google.Protobuf
             }
         }
 
+        public bool IsInitialized()
+        {
+            return field is IMessage message ? message.IsInitialized() : true;
+        }
+
         public T GetValue() => field;
 
         public void SetValue(T value)
@@ -175,6 +181,8 @@ namespace Google.Protobuf
         {
             field.WriteTo(output, codec);
         }
+
+        public bool IsInitialized() => field.IsInitialized();
 
         public RepeatedField<T> GetValue() => field;
     }

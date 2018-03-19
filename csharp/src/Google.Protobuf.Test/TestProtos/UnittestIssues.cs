@@ -194,7 +194,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the Issue307 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -304,7 +303,6 @@ namespace UnitTest.Issues.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
         #region Nested types
         /// <summary>Container for nested types declared in the NestedOnce message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -414,7 +412,6 @@ namespace UnitTest.Issues.TestProtos {
             public bool IsInitialized() {
               return true;
             }
-
           }
 
         }
@@ -610,7 +607,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class DeprecatedChild : pb::IMessage<DeprecatedChild> {
@@ -718,7 +714,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class DeprecatedFieldsMessage : pb::IMessage<DeprecatedFieldsMessage> {
@@ -1015,7 +1010,6 @@ namespace UnitTest.Issues.TestProtos {
       if (!messageArray_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -1162,7 +1156,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class ReservedNames : pb::IMessage<ReservedNames> {
@@ -1342,7 +1335,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the ReservedNames message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1455,7 +1447,6 @@ namespace UnitTest.Issues.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -1854,7 +1845,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestJsonName : pb::IMessage<TestJsonName> {
@@ -2073,7 +2063,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2295,7 +2284,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the OneofMerging message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2477,7 +2465,6 @@ namespace UnitTest.Issues.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }

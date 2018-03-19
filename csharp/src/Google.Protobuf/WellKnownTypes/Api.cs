@@ -426,7 +426,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!mixins_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -795,7 +794,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!options_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -1062,7 +1060,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

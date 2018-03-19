@@ -1079,7 +1079,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -1571,7 +1570,6 @@ namespace Google.Protobuf.TestProtos {
       if (!bytesField_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   public sealed partial class OneofWellKnownTypes : pb::IMessage<OneofWellKnownTypes> {
@@ -2460,7 +2458,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2931,27 +2928,62 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!anyField_.IsInitialized()) return false;
-      if (!apiField_.IsInitialized()) return false;
-      if (!durationField_.IsInitialized()) return false;
-      if (!emptyField_.IsInitialized()) return false;
-      if (!fieldMaskField_.IsInitialized()) return false;
-      if (!sourceContextField_.IsInitialized()) return false;
-      if (!structField_.IsInitialized()) return false;
-      if (!timestampField_.IsInitialized()) return false;
-      if (!typeField_.IsInitialized()) return false;
-      if (!doubleField_.IsInitialized()) return false;
-      if (!floatField_.IsInitialized()) return false;
-      if (!int64Field_.IsInitialized()) return false;
-      if (!uint64Field_.IsInitialized()) return false;
-      if (!int32Field_.IsInitialized()) return false;
-      if (!uint32Field_.IsInitialized()) return false;
-      if (!boolField_.IsInitialized()) return false;
-      if (!stringField_.IsInitialized()) return false;
-      if (!bytesField_.IsInitialized()) return false;
+      if (!anyField_.IsInitialized()) {
+        return false;
+      }
+      if (!apiField_.IsInitialized()) {
+        return false;
+      }
+      if (!durationField_.IsInitialized()) {
+        return false;
+      }
+      if (!emptyField_.IsInitialized()) {
+        return false;
+      }
+      if (!fieldMaskField_.IsInitialized()) {
+        return false;
+      }
+      if (!sourceContextField_.IsInitialized()) {
+        return false;
+      }
+      if (!structField_.IsInitialized()) {
+        return false;
+      }
+      if (!timestampField_.IsInitialized()) {
+        return false;
+      }
+      if (!typeField_.IsInitialized()) {
+        return false;
+      }
+      if (!doubleField_.IsInitialized()) {
+        return false;
+      }
+      if (!floatField_.IsInitialized()) {
+        return false;
+      }
+      if (!int64Field_.IsInitialized()) {
+        return false;
+      }
+      if (!uint64Field_.IsInitialized()) {
+        return false;
+      }
+      if (!int32Field_.IsInitialized()) {
+        return false;
+      }
+      if (!uint32Field_.IsInitialized()) {
+        return false;
+      }
+      if (!boolField_.IsInitialized()) {
+        return false;
+      }
+      if (!stringField_.IsInitialized()) {
+        return false;
+      }
+      if (!bytesField_.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   #endregion

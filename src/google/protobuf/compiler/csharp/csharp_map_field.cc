@@ -133,7 +133,9 @@ void MapFieldGenerator::GenerateCloningCode(io::Printer* printer) {
 
 void MapFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
   printer->Print(variables_,
-    "if (!$name$_.IsInitialized()) return false;\n");
+    "if (!$name$_.IsInitialized()) {\n"
+    "  return false;\n"
+    "}\n");
 }
 
 void MapFieldGenerator::GenerateFreezingCode(io::Printer* printer) {

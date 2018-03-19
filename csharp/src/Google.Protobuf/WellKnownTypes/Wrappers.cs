@@ -202,7 +202,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -354,7 +353,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -506,7 +504,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -658,7 +655,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -810,7 +806,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -962,7 +957,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -1114,7 +1108,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -1266,7 +1259,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -1418,7 +1410,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

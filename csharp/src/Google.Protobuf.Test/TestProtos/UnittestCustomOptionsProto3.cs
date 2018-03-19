@@ -462,7 +462,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestMessageWithCustomOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -587,7 +586,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class CustomOptionFooResponse : pb::IMessage<CustomOptionFooResponse> {
@@ -695,7 +693,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class CustomOptionFooClientMessage : pb::IMessage<CustomOptionFooClientMessage> {
@@ -803,7 +800,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class CustomOptionFooServerMessage : pb::IMessage<CustomOptionFooServerMessage> {
@@ -911,7 +907,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class DummyMessageContainingEnum : pb::IMessage<DummyMessageContainingEnum> {
@@ -1019,7 +1014,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the DummyMessageContainingEnum message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1140,7 +1134,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class CustomOptionMinIntegerValues : pb::IMessage<CustomOptionMinIntegerValues> {
@@ -1248,7 +1241,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class CustomOptionMaxIntegerValues : pb::IMessage<CustomOptionMaxIntegerValues> {
@@ -1356,7 +1348,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class CustomOptionOtherValues : pb::IMessage<CustomOptionOtherValues> {
@@ -1464,7 +1455,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class SettingRealsFromPositiveInts : pb::IMessage<SettingRealsFromPositiveInts> {
@@ -1572,7 +1562,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class SettingRealsFromNegativeInts : pb::IMessage<SettingRealsFromNegativeInts> {
@@ -1680,7 +1669,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class ComplexOptionType1 : pb::IMessage<ComplexOptionType1> {
@@ -1917,7 +1905,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class ComplexOptionType2 : pb::IMessage<ComplexOptionType2> {
@@ -2170,7 +2157,6 @@ namespace UnitTest.Issues.TestProtos {
       if (!barney_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the ComplexOptionType2 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2316,7 +2302,6 @@ namespace UnitTest.Issues.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
         #region Extensions
         /// <summary>Container for extensions for other messages declared in the ComplexOptionType4 message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2474,7 +2459,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2585,7 +2569,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2815,7 +2798,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class AggregateMessage : pb::IMessage<AggregateMessage> {
@@ -2959,7 +2941,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -3070,7 +3051,6 @@ namespace UnitTest.Issues.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the NestedOptionType message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3221,7 +3201,6 @@ namespace UnitTest.Issues.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }

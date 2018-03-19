@@ -204,10 +204,11 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!fields_.IsInitialized()) return false;
+      if (!fields_.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   /// <summary>
@@ -611,7 +612,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -748,7 +748,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!values_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   #endregion

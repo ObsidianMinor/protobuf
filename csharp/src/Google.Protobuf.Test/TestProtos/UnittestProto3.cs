@@ -1827,7 +1827,6 @@ namespace Google.Protobuf.TestProtos {
       if (!repeatedPublicImportMessage_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestAllTypes message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1989,7 +1988,6 @@ namespace Google.Protobuf.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -2214,7 +2212,6 @@ namespace Google.Protobuf.TestProtos {
       if (!repeatedChild_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   public sealed partial class TestDeprecatedFields : pb::IMessage<TestDeprecatedFields> {
@@ -2360,7 +2357,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2508,7 +2504,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestReservedFields : pb::IMessage<TestReservedFields> {
@@ -2616,7 +2611,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2771,7 +2765,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -2958,7 +2951,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestRecursiveMessage : pb::IMessage<TestRecursiveMessage> {
@@ -3146,7 +3138,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -3301,7 +3292,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestMutualRecursionB : pb::IMessage<TestMutualRecursionB> {
@@ -3489,7 +3479,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestEnumAllowAlias : pb::IMessage<TestEnumAllowAlias> {
@@ -3633,7 +3622,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -3980,7 +3968,6 @@ namespace Google.Protobuf.TestProtos {
       if (!repeatedMessageField_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -4244,7 +4231,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestFieldOrderings message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4431,7 +4417,6 @@ namespace Google.Protobuf.TestProtos {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -4580,7 +4565,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -4727,7 +4711,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class MoreString : pb::IMessage<MoreString> {
@@ -4855,7 +4838,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class OneBytes : pb::IMessage<OneBytes> {
@@ -4999,7 +4981,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class MoreBytes : pb::IMessage<MoreBytes> {
@@ -5143,7 +5124,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -5290,7 +5270,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class Uint32Message : pb::IMessage<Uint32Message> {
@@ -5434,7 +5413,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class Int64Message : pb::IMessage<Int64Message> {
@@ -5578,7 +5556,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class Uint64Message : pb::IMessage<Uint64Message> {
@@ -5722,7 +5699,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class BoolMessage : pb::IMessage<BoolMessage> {
@@ -5866,7 +5842,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -6124,7 +6099,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestPackedTypes : pb::IMessage<TestPackedTypes> {
@@ -6526,7 +6500,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -6932,7 +6905,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestRepeatedScalarDifferentTagSizes : pb::IMessage<TestRepeatedScalarDifferentTagSizes> {
@@ -7180,7 +7152,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestCommentInjectionMessage : pb::IMessage<TestCommentInjectionMessage> {
@@ -7327,7 +7298,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -7438,7 +7408,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class FooResponse : pb::IMessage<FooResponse> {
@@ -7546,7 +7515,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class FooClientMessage : pb::IMessage<FooClientMessage> {
@@ -7654,7 +7622,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class FooServerMessage : pb::IMessage<FooServerMessage> {
@@ -7762,7 +7729,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class BarRequest : pb::IMessage<BarRequest> {
@@ -7870,7 +7836,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class BarResponse : pb::IMessage<BarResponse> {
@@ -7978,7 +7943,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestEmptyMessage : pb::IMessage<TestEmptyMessage> {
@@ -8086,7 +8050,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

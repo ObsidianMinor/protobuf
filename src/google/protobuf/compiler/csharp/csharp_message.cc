@@ -402,8 +402,9 @@ void MessageGenerator::GenerateFrameworkMethods(io::Printer* printer) {
             "property_name", UnderscoresToCamelCase(descriptor_->oneof_decl(i)->name(), true));
     }
     if (has_extension_ranges_) {
-      printer->Print("if (!Equals(_extensions, other._extensions))\n"
-                     "  return false;\n");
+      printer->Print("if (!Equals(_extensions, other._extensions)) {\n"
+                     "  return false;\n"
+                     "}\n");
     }
     printer->Outdent();
     printer->Print(
@@ -427,7 +428,7 @@ void MessageGenerator::GenerateFrameworkMethods(io::Printer* printer) {
             "name", UnderscoresToCamelCase(descriptor_->oneof_decl(i)->name(), false));
     }
     if (has_extension_ranges_) {
-      printer->Print("hash ^= _extensions.GetHashCode();");
+      printer->Print("hash ^= _extensions.GetHashCode();\n");
     }
     printer->Print(
         "if (_unknownFields != null) {\n"
@@ -622,11 +623,13 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
     generator->GenerateIsInitialized(printer);
   }
   if (has_extension_ranges_) {
-    printer->Print("if (!_extensions.IsInitialized()) return false;\n");
+    printer->Print("if (!_extensions.IsInitialized()) {\n"
+                   "  return false;\n"
+                   "}\n");
   }
   printer->Print("return true;\n");
   printer->Outdent();
-  printer->Print("}\n\n");
+  printer->Print("}\n");
 }
 
 void MessageGenerator::GenerateExtensionMessageMethods(io::Printer* printer) {

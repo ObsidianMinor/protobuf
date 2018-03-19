@@ -331,7 +331,6 @@ namespace Google.Protobuf.Examples.AddressBook {
       if (!phones_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the Person message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -519,7 +518,6 @@ namespace Google.Protobuf.Examples.AddressBook {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -656,7 +654,6 @@ namespace Google.Protobuf.Examples.AddressBook {
       if (!people_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   #endregion

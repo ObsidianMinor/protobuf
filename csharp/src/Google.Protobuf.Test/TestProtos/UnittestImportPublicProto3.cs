@@ -180,7 +180,6 @@ namespace Google.Protobuf.TestProtos {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

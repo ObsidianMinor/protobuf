@@ -2084,8 +2084,9 @@ namespace ProtobufTestMessages.Proto2 {
       if (FieldName17 != other.FieldName17) return false;
       if (FieldName18 != other.FieldName18) return false;
       if (OneofFieldCase != other.OneofFieldCase) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2183,7 +2184,8 @@ namespace ProtobufTestMessages.Proto2 {
       if (HasFieldName17) hash ^= FieldName17.GetHashCode();
       if (HasFieldName18) hash ^= FieldName18.GetHashCode();
       hash ^= (int) oneofFieldCase_;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -3310,35 +3312,74 @@ namespace ProtobufTestMessages.Proto2 {
       }
       if (!repeatedNestedMessage_.IsInitialized()) return false;
       if (!repeatedForeignMessage_.IsInitialized()) return false;
-      if (!mapInt32Int32_.IsInitialized()) return false;
-      if (!mapInt64Int64_.IsInitialized()) return false;
-      if (!mapUint32Uint32_.IsInitialized()) return false;
-      if (!mapUint64Uint64_.IsInitialized()) return false;
-      if (!mapSint32Sint32_.IsInitialized()) return false;
-      if (!mapSint64Sint64_.IsInitialized()) return false;
-      if (!mapFixed32Fixed32_.IsInitialized()) return false;
-      if (!mapFixed64Fixed64_.IsInitialized()) return false;
-      if (!mapSfixed32Sfixed32_.IsInitialized()) return false;
-      if (!mapSfixed64Sfixed64_.IsInitialized()) return false;
-      if (!mapInt32Float_.IsInitialized()) return false;
-      if (!mapInt32Double_.IsInitialized()) return false;
-      if (!mapBoolBool_.IsInitialized()) return false;
-      if (!mapStringString_.IsInitialized()) return false;
-      if (!mapStringBytes_.IsInitialized()) return false;
-      if (!mapStringNestedMessage_.IsInitialized()) return false;
-      if (!mapStringForeignMessage_.IsInitialized()) return false;
-      if (!mapStringNestedEnum_.IsInitialized()) return false;
-      if (!mapStringForeignEnum_.IsInitialized()) return false;
+      if (!mapInt32Int32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt64Int64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapUint32Uint32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapUint64Uint64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSint32Sint32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSint64Sint64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapFixed32Fixed32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapFixed64Fixed64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSfixed32Sfixed32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSfixed64Sfixed64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Float_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Double_.IsInitialized()) {
+        return false;
+      }
+      if (!mapBoolBool_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringString_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringBytes_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringNestedMessage_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringForeignMessage_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringNestedEnum_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringForeignEnum_.IsInitialized()) {
+        return false;
+      }
       if (HasOneofNestedMessage) {
         if (!OneofNestedMessage.IsInitialized()) return false;
       }
       if (HasData) {
         if (!Data.IsInitialized()) return false;
       }
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestAllTypesProto2 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3546,7 +3587,6 @@ namespace ProtobufTestMessages.Proto2 {
           }
           return true;
         }
-
       }
 
       /// <summary>
@@ -3739,7 +3779,6 @@ namespace ProtobufTestMessages.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
       /// <summary>
@@ -3793,15 +3832,17 @@ namespace ProtobufTestMessages.Proto2 {
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (!Equals(_extensions, other._extensions))
+          if (!Equals(_extensions, other._extensions)) {
             return false;
+          }
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+          hash ^= _extensions.GetHashCode();
+          if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
           return hash;
@@ -3885,10 +3926,11 @@ namespace ProtobufTestMessages.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
-          if (!_extensions.IsInitialized()) return false;
+          if (!_extensions.IsInitialized()) {
+            return false;
+          }
           return true;
         }
-
       }
 
       public sealed partial class MessageSetCorrectExtension1 : pb::IMessage<MessageSetCorrectExtension1> {
@@ -4037,7 +4079,6 @@ namespace ProtobufTestMessages.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
         #region Extensions
         /// <summary>Container for extensions for other messages declared in the MessageSetCorrectExtension1 message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4195,7 +4236,6 @@ namespace ProtobufTestMessages.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
         #region Extensions
         /// <summary>Container for extensions for other messages declared in the MessageSetCorrectExtension2 message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4358,7 +4398,6 @@ namespace ProtobufTestMessages.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

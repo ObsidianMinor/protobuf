@@ -377,7 +377,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

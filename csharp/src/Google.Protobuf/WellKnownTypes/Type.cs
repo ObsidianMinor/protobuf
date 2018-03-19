@@ -396,7 +396,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!options_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -884,7 +883,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!options_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the Field message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1279,7 +1277,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!options_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -1492,7 +1489,6 @@ namespace Google.Protobuf.WellKnownTypes {
       if (!options_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -1696,7 +1692,6 @@ namespace Google.Protobuf.WellKnownTypes {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

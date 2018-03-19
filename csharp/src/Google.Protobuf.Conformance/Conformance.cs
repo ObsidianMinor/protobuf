@@ -349,7 +349,6 @@ namespace Conformance {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -742,7 +741,6 @@ namespace Conformance {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   #endregion

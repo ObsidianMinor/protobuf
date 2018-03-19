@@ -319,7 +319,6 @@ namespace Google.Protobuf.Reflection {
       if (!file_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -822,7 +821,6 @@ namespace Google.Protobuf.Reflection {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -1192,7 +1190,6 @@ namespace Google.Protobuf.Reflection {
       if (!reservedRange_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the DescriptorProto message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1431,7 +1428,6 @@ namespace Google.Protobuf.Reflection {
           }
           return true;
         }
-
       }
 
       /// <summary>
@@ -1632,7 +1628,6 @@ namespace Google.Protobuf.Reflection {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -1703,8 +1698,9 @@ namespace Google.Protobuf.Reflection {
         return true;
       }
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1712,7 +1708,8 @@ namespace Google.Protobuf.Reflection {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -1804,10 +1801,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   /// <summary>
@@ -2366,7 +2364,6 @@ namespace Google.Protobuf.Reflection {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the FieldDescriptorProto message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2632,7 +2629,6 @@ namespace Google.Protobuf.Reflection {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -2902,7 +2898,6 @@ namespace Google.Protobuf.Reflection {
       if (!reservedRange_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the EnumDescriptorProto message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3108,7 +3103,6 @@ namespace Google.Protobuf.Reflection {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -3353,7 +3347,6 @@ namespace Google.Protobuf.Reflection {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -3573,7 +3566,6 @@ namespace Google.Protobuf.Reflection {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -3946,7 +3938,6 @@ namespace Google.Protobuf.Reflection {
       }
       return true;
     }
-
   }
 
   public sealed partial class FileOptions : pb::IExtensionMessage<FileOptions> {
@@ -4567,8 +4558,9 @@ namespace Google.Protobuf.Reflection {
       if (PhpClassPrefix != other.PhpClassPrefix) return false;
       if (PhpNamespace != other.PhpNamespace) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4594,7 +4586,8 @@ namespace Google.Protobuf.Reflection {
       if (HasPhpClassPrefix) hash ^= PhpClassPrefix.GetHashCode();
       if (HasPhpNamespace) hash ^= PhpNamespace.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -4938,10 +4931,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the FileOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5190,8 +5184,9 @@ namespace Google.Protobuf.Reflection {
       if (Deprecated != other.Deprecated) return false;
       if (MapEntry != other.MapEntry) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5203,7 +5198,8 @@ namespace Google.Protobuf.Reflection {
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       if (HasMapEntry) hash ^= MapEntry.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -5351,10 +5347,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class FieldOptions : pb::IExtensionMessage<FieldOptions> {
@@ -5640,8 +5637,9 @@ namespace Google.Protobuf.Reflection {
       if (Deprecated != other.Deprecated) return false;
       if (Weak != other.Weak) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5655,7 +5653,8 @@ namespace Google.Protobuf.Reflection {
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       if (HasWeak) hash ^= Weak.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -5831,10 +5830,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the FieldOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5931,8 +5931,9 @@ namespace Google.Protobuf.Reflection {
         return true;
       }
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5940,7 +5941,8 @@ namespace Google.Protobuf.Reflection {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6032,10 +6034,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class EnumOptions : pb::IExtensionMessage<EnumOptions> {
@@ -6163,8 +6166,9 @@ namespace Google.Protobuf.Reflection {
       if (AllowAlias != other.AllowAlias) return false;
       if (Deprecated != other.Deprecated) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6174,7 +6178,8 @@ namespace Google.Protobuf.Reflection {
       if (HasAllowAlias) hash ^= AllowAlias.GetHashCode();
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6294,10 +6299,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class EnumValueOptions : pb::IExtensionMessage<EnumValueOptions> {
@@ -6395,8 +6401,9 @@ namespace Google.Protobuf.Reflection {
       }
       if (Deprecated != other.Deprecated) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6405,7 +6412,8 @@ namespace Google.Protobuf.Reflection {
       int hash = 1;
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6511,10 +6519,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class ServiceOptions : pb::IExtensionMessage<ServiceOptions> {
@@ -6612,8 +6621,9 @@ namespace Google.Protobuf.Reflection {
       }
       if (Deprecated != other.Deprecated) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6622,7 +6632,8 @@ namespace Google.Protobuf.Reflection {
       int hash = 1;
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6728,10 +6739,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class MethodOptions : pb::IExtensionMessage<MethodOptions> {
@@ -6855,8 +6867,9 @@ namespace Google.Protobuf.Reflection {
       if (Deprecated != other.Deprecated) return false;
       if (IdempotencyLevel != other.IdempotencyLevel) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6866,7 +6879,8 @@ namespace Google.Protobuf.Reflection {
       if (HasDeprecated) hash ^= Deprecated.GetHashCode();
       if (HasIdempotencyLevel) hash ^= IdempotencyLevel.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -6986,10 +7000,11 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
       if (!uninterpretedOption_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the MethodOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7400,7 +7415,6 @@ namespace Google.Protobuf.Reflection {
       if (!name_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the UninterpretedOption message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7597,11 +7611,14 @@ namespace Google.Protobuf.Reflection {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
-          if (!HasNamePart_) return false;
-          if (!HasIsExtension) return false;
+          if (!HasNamePart_) {
+            return false;
+          }
+          if (!HasIsExtension) {
+            return false;
+          }
           return true;
         }
-
       }
 
     }
@@ -7784,7 +7801,6 @@ namespace Google.Protobuf.Reflection {
       if (!location_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the SourceCodeInfo message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8119,7 +8135,6 @@ namespace Google.Protobuf.Reflection {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -8262,7 +8277,6 @@ namespace Google.Protobuf.Reflection {
       if (!annotation_.IsInitialized()) return false;
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the GeneratedCodeInfo message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8532,7 +8546,6 @@ namespace Google.Protobuf.Reflection {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }

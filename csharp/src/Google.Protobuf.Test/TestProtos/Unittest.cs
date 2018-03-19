@@ -3661,7 +3661,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestAllTypes message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3827,7 +3826,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
       public sealed partial class OptionalGroup : pb::IMessage<OptionalGroup> {
@@ -3976,7 +3974,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
       public sealed partial class RepeatedGroup : pb::IMessage<RepeatedGroup> {
@@ -4125,7 +4122,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -4356,7 +4352,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (!repeatedChild_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   public sealed partial class TestDeprecatedFields : pb::IMessage<TestDeprecatedFields> {
@@ -4579,7 +4574,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   [global::System.ObsoleteAttribute]
@@ -4688,7 +4682,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -4882,7 +4875,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestReservedFields : pb::IMessage<TestReservedFields> {
@@ -4990,7 +4982,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestAllExtensions : pb::IExtensionMessage<TestAllExtensions> {
@@ -5041,15 +5032,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -5133,10 +5126,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class OptionalGroup_extension : pb::IMessage<OptionalGroup_extension> {
@@ -5285,7 +5279,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class RepeatedGroup_extension : pb::IMessage<RepeatedGroup_extension> {
@@ -5434,7 +5427,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestNestedExtension : pb::IMessage<TestNestedExtension> {
@@ -5542,7 +5534,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
     #region Extensions
     /// <summary>Container for extensions for other messages declared in the TestNestedExtension message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7031,12 +7022,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!HasA) return false;
-      if (!HasB) return false;
-      if (!HasC) return false;
+      if (!HasA) {
+        return false;
+      }
+      if (!HasB) {
+        return false;
+      }
+      if (!HasC) {
+        return false;
+      }
       return true;
     }
-
     #region Extensions
     /// <summary>Container for extensions for other messages declared in the TestRequired message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7264,7 +7260,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (!repeatedMessage_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   public sealed partial class TestRequiredMessage : pb::IMessage<TestRequiredMessage> {
@@ -7490,7 +7485,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -7648,7 +7642,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -7759,7 +7752,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -7814,15 +7806,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -7906,10 +7900,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class TestMultipleExtensionRanges : pb::IExtensionMessage<TestMultipleExtensionRanges> {
@@ -7960,15 +7955,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -8052,10 +8049,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   /// <summary>
@@ -8252,7 +8250,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestRecursiveMessage : pb::IMessage<TestRecursiveMessage> {
@@ -8448,7 +8445,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -8654,7 +8650,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestMutualRecursionA message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8811,7 +8806,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           return true;
         }
-
       }
 
       public sealed partial class SubGroup : pb::IMessage<SubGroup> {
@@ -9016,7 +9010,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           return true;
         }
-
       }
 
     }
@@ -9217,7 +9210,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
   }
 
   public sealed partial class TestIsInitialized : pb::IMessage<TestIsInitialized> {
@@ -9372,7 +9364,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestIsInitialized message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9530,7 +9521,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           return true;
         }
-
         #region Nested types
         /// <summary>Container for nested types declared in the SubMessage message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9679,10 +9669,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public bool IsInitialized() {
-              if (!HasI) return false;
+              if (!HasI) {
+                return false;
+              }
               return true;
             }
-
           }
 
         }
@@ -9946,7 +9937,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestDupFieldNumber message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10097,7 +10087,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
       public sealed partial class Bar : pb::IMessage<Bar> {
@@ -10246,7 +10235,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -10409,7 +10397,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
   }
 
   public sealed partial class TestLazyMessage : pb::IMessage<TestLazyMessage> {
@@ -10564,7 +10551,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
   }
 
   /// <summary>
@@ -10722,7 +10708,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestNestedMessageHasBits message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10874,7 +10859,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           if (!nestedmessageRepeatedForeignmessage_.IsInitialized()) return false;
           return true;
         }
-
       }
 
     }
@@ -11366,7 +11350,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (!repeatedMessageField_.IsInitialized()) return false;
       return true;
     }
-
   }
 
   /// <summary>
@@ -11522,8 +11505,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (MyInt != other.MyInt) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MyFloat, other.MyFloat)) return false;
       if (!object.Equals(OptionalNestedMessage, other.OptionalNestedMessage)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -11534,7 +11518,8 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasMyInt) hash ^= MyInt.GetHashCode();
       if (HasMyFloat) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MyFloat);
       if (HasOptionalNestedMessage) hash ^= OptionalNestedMessage.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -11683,10 +11668,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasOptionalNestedMessage) {
         if (!OptionalNestedMessage.IsInitialized()) return false;
       }
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestFieldOrderings message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11883,7 +11869,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -13127,7 +13112,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class SparseEnumMessage : pb::IMessage<SparseEnumMessage> {
@@ -13276,7 +13260,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -13428,7 +13411,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class MoreString : pb::IMessage<MoreString> {
@@ -13556,7 +13538,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class OneBytes : pb::IMessage<OneBytes> {
@@ -13705,7 +13686,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class MoreBytes : pb::IMessage<MoreBytes> {
@@ -13833,7 +13813,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -13985,7 +13964,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class Uint32Message : pb::IMessage<Uint32Message> {
@@ -14134,7 +14112,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class Int64Message : pb::IMessage<Int64Message> {
@@ -14283,7 +14260,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class Uint64Message : pb::IMessage<Uint64Message> {
@@ -14432,7 +14408,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class BoolMessage : pb::IMessage<BoolMessage> {
@@ -14581,7 +14556,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -14910,7 +14884,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestOneof message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15102,7 +15075,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -15392,7 +15364,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestOneofBackwardsCompatible message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15584,7 +15555,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -16508,7 +16478,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestOneof2 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16706,7 +16675,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
       public sealed partial class NestedMessage : pb::IMessage<NestedMessage> {
@@ -16876,7 +16844,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -17154,7 +17121,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestRequiredOneof message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17303,10 +17269,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsInitialized() {
-          if (!HasRequiredDouble) return false;
+          if (!HasRequiredDouble) {
+            return false;
+          }
           return true;
         }
-
       }
 
     }
@@ -17713,7 +17680,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -18119,7 +18085,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestPackedExtensions : pb::IExtensionMessage<TestPackedExtensions> {
@@ -18170,15 +18135,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -18262,10 +18229,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   public sealed partial class TestUnpackedExtensions : pb::IExtensionMessage<TestUnpackedExtensions> {
@@ -18316,15 +18284,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -18408,10 +18378,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsInitialized() {
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
   }
 
   /// <summary>
@@ -18782,7 +18753,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestDynamicExtensions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18939,7 +18909,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }
@@ -19192,7 +19161,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -19340,8 +19308,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if(!repeatedAllTypes_.Equals(other.repeatedAllTypes_)) return false;
       if (!object.Equals(OptionalGroup, other.OptionalGroup)) return false;
       if(!repeatedGroup_.Equals(other.repeatedGroup_)) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -19353,7 +19322,8 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       hash ^= repeatedAllTypes_.GetHashCode();
       if (HasOptionalGroup) hash ^= OptionalGroup.GetHashCode();
       hash ^= repeatedGroup_.GetHashCode();
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -19526,10 +19496,11 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         if (!OptionalGroup.IsInitialized()) return false;
       }
       if (!repeatedGroup_.IsInitialized()) return false;
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestParsingMerge message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19793,7 +19764,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           if (!ext2_.IsInitialized()) return false;
           return true;
         }
-
         #region Nested types
         /// <summary>Container for nested types declared in the RepeatedFieldsGenerator message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19950,7 +19920,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
               }
               return true;
             }
-
           }
 
           public sealed partial class Group2 : pb::IMessage<Group2> {
@@ -20105,7 +20074,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
               }
               return true;
             }
-
           }
 
         }
@@ -20265,7 +20233,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           return true;
         }
-
       }
 
       public sealed partial class RepeatedGroup : pb::IMessage<RepeatedGroup> {
@@ -20420,7 +20387,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
           }
           return true;
         }
-
       }
 
     }
@@ -20588,7 +20554,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   /// <summary>
@@ -20699,7 +20664,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class FooResponse : pb::IMessage<FooResponse> {
@@ -20807,7 +20771,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class FooClientMessage : pb::IMessage<FooClientMessage> {
@@ -20915,7 +20878,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class FooServerMessage : pb::IMessage<FooServerMessage> {
@@ -21023,7 +20985,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class BarRequest : pb::IMessage<BarRequest> {
@@ -21131,7 +21092,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class BarResponse : pb::IMessage<BarResponse> {
@@ -21239,7 +21199,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestJsonName : pb::IMessage<TestJsonName> {
@@ -21593,7 +21552,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     public bool IsInitialized() {
       return true;
     }
-
   }
 
   public sealed partial class TestHugeFieldNumbers : pb::IExtensionMessage<TestHugeFieldNumbers> {
@@ -21989,8 +21947,9 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (OneofString != other.OneofString) return false;
       if (OneofBytes != other.OneofBytes) return false;
       if (OneofFieldCase != other.OneofFieldCase) return false;
-      if (!Equals(_extensions, other._extensions))
+      if (!Equals(_extensions, other._extensions)) {
         return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -22012,7 +21971,8 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasOneofString) hash ^= OneofString.GetHashCode();
       if (HasOneofBytes) hash ^= OneofBytes.GetHashCode();
       hash ^= (int) oneofFieldCase_;
-      hash ^= _extensions.GetHashCode();if (_unknownFields != null) {
+      hash ^= _extensions.GetHashCode();
+      if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
       return hash;
@@ -22303,14 +22263,17 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       if (HasOptionalGroup) {
         if (!OptionalGroup.IsInitialized()) return false;
       }
-      if (!stringStringMap_.IsInitialized()) return false;
+      if (!stringStringMap_.IsInitialized()) {
+        return false;
+      }
       if (HasOneofTestAllTypes) {
         if (!OneofTestAllTypes.IsInitialized()) return false;
       }
-      if (!_extensions.IsInitialized()) return false;
+      if (!_extensions.IsInitialized()) {
+        return false;
+      }
       return true;
     }
-
     #region Nested types
     /// <summary>Container for nested types declared in the TestHugeFieldNumbers message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22461,7 +22424,6 @@ namespace Google.Protobuf.TestProtos.Proto2 {
         public bool IsInitialized() {
           return true;
         }
-
       }
 
     }

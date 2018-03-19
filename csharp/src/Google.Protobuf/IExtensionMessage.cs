@@ -20,6 +20,11 @@ namespace Google.Protobuf
     public interface IExtensionMessage<T> : IExtensionMessage, IMessage<T> where T : IExtensionMessage<T>
     {
         /// <summary>
+        /// Registers an extension in this message
+        /// </summary>
+        void RegisterExtension<TValue>(Extension<T, TValue> extension);
+
+        /// <summary>
         /// Gets the value of the specified extension
         /// </summary>
         TValue GetExtension<TValue>(Extension<T, TValue> extension);

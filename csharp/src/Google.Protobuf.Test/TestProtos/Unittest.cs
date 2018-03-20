@@ -5011,7 +5011,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestAllExtensions(TestAllExtensions other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7785,7 +7785,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestEmptyMessageWithExtensions(TestEmptyMessageWithExtensions other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7934,7 +7934,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestMultipleExtensionRanges(TestMultipleExtensionRanges other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11387,7 +11387,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       myFloat_ = other.myFloat_;
       OptionalNestedMessage = other.HasOptionalNestedMessage ? other.OptionalNestedMessage.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18114,7 +18114,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestPackedExtensions(TestPackedExtensions other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18263,7 +18263,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TestUnpackedExtensions(TestUnpackedExtensions other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19199,7 +19199,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       OptionalGroup = other.HasOptionalGroup ? other.OptionalGroup.Clone() : null;
       repeatedGroup_ = other.repeatedGroup_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21606,7 +21606,7 @@ namespace Google.Protobuf.TestProtos.Proto2 {
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

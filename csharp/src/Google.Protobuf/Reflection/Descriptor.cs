@@ -1663,7 +1663,7 @@ namespace Google.Protobuf.Reflection {
     public ExtensionRangeOptions(ExtensionRangeOptions other) : this() {
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3986,7 +3986,7 @@ namespace Google.Protobuf.Reflection {
       phpNamespace_ = other.phpNamespace_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4995,7 +4995,7 @@ namespace Google.Protobuf.Reflection {
       mapEntry_ = other.mapEntry_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5388,7 +5388,7 @@ namespace Google.Protobuf.Reflection {
       weak_ = other.weak_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5896,7 +5896,7 @@ namespace Google.Protobuf.Reflection {
     public OneofOptions(OneofOptions other) : this() {
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6071,7 +6071,7 @@ namespace Google.Protobuf.Reflection {
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6335,7 +6335,7 @@ namespace Google.Protobuf.Reflection {
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6555,7 +6555,7 @@ namespace Google.Protobuf.Reflection {
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6776,7 +6776,7 @@ namespace Google.Protobuf.Reflection {
       idempotencyLevel_ = other.idempotencyLevel_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -354,7 +354,7 @@ namespace ProtobufTestMessages.Proto2 {
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      _extensions = other._extensions.Clone();
+      _extensions.MergeFrom(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3811,7 +3811,7 @@ namespace ProtobufTestMessages.Proto2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public MessageSetCorrect(MessageSetCorrect other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-          _extensions = other._extensions.Clone();
+          _extensions.MergeFrom(other._extensions);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

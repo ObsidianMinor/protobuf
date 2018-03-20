@@ -353,7 +353,7 @@ void MessageGenerator::GenerateCloningCode(io::Printer* printer) {
   printer->Print(
       "_unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);\n");
   if (has_extension_ranges_) {
-    printer->Print("_extensions = other._extensions.Clone();\n");
+    printer->Print("_extensions.MergeFrom(other._extensions);\n");
   }
 
   printer->Outdent();

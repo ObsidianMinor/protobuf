@@ -338,7 +338,7 @@ namespace Google.Protobuf
                     return value;
                 },
                 (output, value) => output.WriteMessage(value),
-                (ref T old, T newVal) => old.MergeFrom(newVal),
+                (ref T old, T newVal) => { if (old == null) old = newVal; else old.MergeFrom(newVal); },
                 message => CodedOutputStream.ComputeMessageSize(message),
                 tag,
                 null,
@@ -362,7 +362,7 @@ namespace Google.Protobuf
                     return value;
                 },
                 (output, value) => output.WriteGroup(value),
-                (ref T old, T newVal) => old.MergeFrom(newVal),
+                (ref T old, T newVal) => { if (old == null) old = newVal; else old.MergeFrom(newVal); },
                 message => CodedOutputStream.ComputeGroupSize(message),
                 startTag,
                 endTag,

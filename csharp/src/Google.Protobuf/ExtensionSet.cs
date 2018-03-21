@@ -121,19 +121,6 @@ namespace Google.Protobuf
         }
 
         /// <summary>
-        /// Clones the first set into the specified extension set
-        /// </summary>
-        protected static void Clone(ExtensionSet first, ExtensionSet second)
-        {
-            foreach(var extensionValuePair in first.valuesByIdentifier)
-            {
-                var clonedValue = extensionValuePair.Value.Clone();
-                second.valuesByIdentifier[extensionValuePair.Key] = clonedValue;
-                second.valuesByNumber[extensionValuePair.Key.FieldNumber] = clonedValue;
-            }
-        }
-
-        /// <summary>
         /// Merges the first extension set into the second set
         /// </summary>
         /// <param name="first"></param>
@@ -193,7 +180,7 @@ namespace Google.Protobuf
     /// Contains a set of extension values
     /// </summary>
     /// <typeparam name="TTarget"></typeparam>
-    public sealed class ExtensionSet<TTarget> : ExtensionSet, IDeepCloneable<ExtensionSet<TTarget>>, IEquatable<ExtensionSet<TTarget>> where TTarget : IExtensionMessage<TTarget>
+    public sealed class ExtensionSet<TTarget> : ExtensionSet, IEquatable<ExtensionSet<TTarget>> where TTarget : IExtensionMessage<TTarget>
     {
         /// <summary>
         /// Creates a new empty extension set
@@ -284,17 +271,6 @@ namespace Google.Protobuf
         public void MergeFrom(ExtensionSet<TTarget> other)
         {
             MergeSets(other, this);
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="ExtensionSet{TTarget}"/> from this set
-        /// </summary>
-        /// <returns>Returns a new <see cref="ExtensionSet{TTarget}"/> with the same extensions and values from this set</returns>
-        public ExtensionSet<TTarget> Clone()
-        {
-            var newSet = new ExtensionSet<TTarget>();
-            Clone(this, newSet);
-            return newSet;
         }
 
         /// <summary>

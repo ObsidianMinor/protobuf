@@ -120,7 +120,8 @@ namespace Google.Protobuf
             ExtensionSet<MessageOptions> set1 = new ExtensionSet<MessageOptions>();
             set1.Set(UnittestCustomOptionsProto3Extensions.ComplexOpt1, new ComplexOptionType1 { Foo = 1 });
 
-            ExtensionSet<MessageOptions> set2 = set1.Clone();
+            ExtensionSet<MessageOptions> set2 = new ExtensionSet<MessageOptions>();
+            set2.MergeFrom(set1);
 
             Assert.AreEqual(set1, set2);
             Assert.AreEqual(set1.GetHashCode(), set2.GetHashCode());

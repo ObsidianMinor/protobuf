@@ -1061,7 +1061,15 @@ namespace Google.Protobuf
         {
             get
             {
-                return tagLimit == lastTag;
+                if (tagLimit == lastTag) 
+                {
+                    return true;
+                }
+
+                if (WireFormat.GetTagWireType(lastTag) == WireFormat.WireType.EndGroup)
+                    throw InvalidProtocolBufferException.InvalidEndTag();
+
+                return false;
             }
         }
 

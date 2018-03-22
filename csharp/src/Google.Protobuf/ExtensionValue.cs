@@ -69,14 +69,7 @@ namespace Google.Protobuf
         public void MergeForm(CodedInputStream input)
         {
             hasValue = true;
-            if (field == null)
-            {
-                field = codec.Read(input);
-            }
-            else
-            {
-                codec.Merge(ref field, codec.Read(input));
-            }
+            codec.Merge(ref field, codec.Read(input));
         }
 
         public void MergeFrom(IExtensionValue value)

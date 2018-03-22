@@ -64,7 +64,7 @@ void RepeatedGroupFieldGenerator::GenerateMembers(io::Printer* printer) {
   // Don't want to duplicate the codec code here... maybe we should have a
   // "create single field generator for this repeated field"
   // function, but it doesn't seem worth it for just this.
-  scoped_ptr<FieldGeneratorBase> single_generator(
+  std::unique_ptr<FieldGeneratorBase> single_generator(
       new GroupFieldGenerator(descriptor_, this->options()));
   single_generator->GenerateCodecCode(printer);
   printer->Print(";\n");
@@ -85,7 +85,7 @@ void RepeatedGroupFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
     variables_,
     "$access_level$ static readonly pb::RepeatedExtension<$extended_type$, $type_name$> $property_name$ =\n"
     "  new pb::RepeatedExtension<$extended_type$, $type_name$>(");
-  scoped_ptr<FieldGeneratorBase> single_generator(
+  std::unique_ptr<FieldGeneratorBase> single_generator(
     new GroupFieldGenerator(descriptor_, this->options()));
   single_generator->GenerateCodecCode(printer);
   printer->Print(");\n");

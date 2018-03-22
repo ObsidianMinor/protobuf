@@ -81,7 +81,7 @@ void ReflectionClassGenerator::Generate(io::Printer* printer) {
       "file_name", file_->name());
       printer->Indent();
       for (int i = 0; i < file_->extension_count(); i++) {
-        scoped_ptr<FieldGeneratorBase> generator(
+        std::unique_ptr<FieldGeneratorBase> generator(
           CreateFieldGenerator(file_->extension(i), this->options()));
         generator->GenerateExtensionCode(printer);
       }

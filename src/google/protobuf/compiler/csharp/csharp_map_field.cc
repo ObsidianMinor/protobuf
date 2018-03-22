@@ -62,9 +62,9 @@ void MapFieldGenerator::GenerateMembers(io::Printer* printer) {
       descriptor_->message_type()->FindFieldByName("value");
   variables_["key_type_name"] = GetTypeName(key_descriptor);
   variables_["value_type_name"] = GetTypeName(value_descriptor);
-  scoped_ptr<FieldGeneratorBase> key_generator(
+  std::unique_ptr<FieldGeneratorBase> key_generator(
       CreateFieldGenerator(key_descriptor, this->options()));
-  scoped_ptr<FieldGeneratorBase> value_generator(
+  std::unique_ptr<FieldGeneratorBase> value_generator(
       CreateFieldGenerator(value_descriptor, this->options()));
 
   printer->Print(

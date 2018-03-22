@@ -280,7 +280,7 @@ void MessageGenerator::Generate(io::Printer* printer) {
       "public static partial class Extensions {\n");
     printer->Indent();
     for (int i = 0; i < descriptor_->extension_count(); i++) {
-      scoped_ptr<FieldGeneratorBase> generator(
+      std::unique_ptr<FieldGeneratorBase> generator(
         CreateFieldGeneratorInternal(descriptor_->extension(i)));
       generator->GenerateExtensionCode(printer);
     }
@@ -618,7 +618,7 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   printer->Print("public bool IsInitialized() {\n");
   printer->Indent();
   for (int i = 0; i < fields_by_number().size(); i++) {
-    scoped_ptr<FieldGeneratorBase> generator(
+    std::unique_ptr<FieldGeneratorBase> generator(
       CreateFieldGeneratorInternal(fields_by_number()[i]));
     generator->GenerateIsInitialized(printer);
   }

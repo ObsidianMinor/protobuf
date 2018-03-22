@@ -66,11 +66,11 @@ void RepeatedMessageFieldGenerator::GenerateMembers(io::Printer* printer) {
   // "create single field generator for this repeated field"
   // function, but it doesn't seem worth it for just this.
   if (IsWrapperType(descriptor_)) {
-    scoped_ptr<FieldGeneratorBase> single_generator(
+    std::unique_ptr<FieldGeneratorBase> single_generator(
       new WrapperFieldGenerator(descriptor_, this->options()));
     single_generator->GenerateCodecCode(printer);
   } else {
-    scoped_ptr<FieldGeneratorBase> single_generator(
+    std::unique_ptr<FieldGeneratorBase> single_generator(
       new MessageFieldGenerator(descriptor_, this->options()));
     single_generator->GenerateCodecCode(printer);
   }
@@ -149,11 +149,11 @@ void RepeatedMessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) 
     "$access_level$ static readonly pb::RepeatedExtension<$extended_type$, $type_name$> $property_name$ =\n"
     "  new pb::RepeatedExtension<$extended_type$, $type_name$>(");
   if (IsWrapperType(descriptor_)) {
-    scoped_ptr<FieldGeneratorBase> single_generator(
+    std::unique_ptr<FieldGeneratorBase> single_generator(
       new WrapperFieldGenerator(descriptor_, this->options()));
     single_generator->GenerateCodecCode(printer);
   } else {
-    scoped_ptr<FieldGeneratorBase> single_generator(
+    std::unique_ptr<FieldGeneratorBase> single_generator(
       new MessageFieldGenerator(descriptor_, this->options()));
     single_generator->GenerateCodecCode(printer);
   }

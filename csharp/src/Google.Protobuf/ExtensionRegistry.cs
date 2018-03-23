@@ -114,7 +114,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns an enumerator to enumerate through the items in the registry
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns an enumerator for the extensions in this registry</returns>
         public IEnumerator<Extension> GetEnumerator()
         {
             foreach (var collection in extensions.Values)
@@ -141,8 +141,8 @@ namespace Google.Protobuf
         /// <summary>
         /// Removes the specified extension from the set
         /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
+        /// <param name="item">The extension</param>
+        /// <returns><c>true</c> if the extension was removed, otherwise <c>false</c></returns>
         public bool Remove(Extension item)
         {
             ProtoPreconditions.CheckNotNull(item, nameof(item));

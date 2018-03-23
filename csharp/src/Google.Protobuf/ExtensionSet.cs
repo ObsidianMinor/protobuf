@@ -72,7 +72,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Writes this set into the specified <see cref="CodedOutputStream"/>
         /// </summary>
-        /// <param name="stream"></param>
+        /// <param name="stream">The stream to write to</param>
         public void WriteTo(CodedOutputStream stream)
         {
             foreach(var value in valuesByIdentifier.Values)
@@ -114,7 +114,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Gets whether all the extension messages are initialized in this collection
         /// </summary>
-        /// <returns></returns>
+        /// <returns><c>true</c> if all the messages in this set are initialized, otherwise <c>false</c></returns>
         public bool IsInitialized()
         {
             return valuesByIdentifier.Values.All(v => v.IsInitialized());
@@ -123,8 +123,6 @@ namespace Google.Protobuf
         /// <summary>
         /// Merges the first extension set into the second set
         /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
         protected static void MergeSets(ExtensionSet first, ExtensionSet second)
         {
             if (first.targetType != second.targetType)
@@ -148,9 +146,6 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns whether the first and second sets are equal
         /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <returns></returns>
         protected static bool SetsEqual(ExtensionSet first, ExtensionSet second)
         {
             if (first.targetType != second.targetType)
@@ -179,7 +174,7 @@ namespace Google.Protobuf
     /// <summary>
     /// Contains a set of extension values
     /// </summary>
-    /// <typeparam name="TTarget"></typeparam>
+    /// <typeparam name="TTarget">The type of message this set targets</typeparam>
     public sealed class ExtensionSet<TTarget> : ExtensionSet, IEquatable<ExtensionSet<TTarget>> where TTarget : IExtensionMessage<TTarget>
     {
         /// <summary>
@@ -297,7 +292,6 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns a hash code for this extension set
         /// </summary>
-        /// <returns></returns>
         public override int GetHashCode()
         {
             return base.GetHashCode();

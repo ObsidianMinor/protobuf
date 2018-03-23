@@ -651,8 +651,8 @@ namespace Google.Protobuf
         /// <summary>
         /// Merges the value of the codec type into the specified reference from the given new value
         /// </summary>
-        /// <param name="newValue"></param>
-        /// <param name="value"></param>
+        /// <param name="newValue">The new value to merge</param>
+        /// <param name="value">The original value to merge into</param>
         public void Merge(ref T value, T newValue) => ValueMerger(ref value, newValue);
 
         /// <summary>

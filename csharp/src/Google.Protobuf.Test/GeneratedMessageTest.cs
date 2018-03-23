@@ -395,6 +395,39 @@ namespace Google.Protobuf
             Assert.AreEqual(message, parsed);
         }
 
+        [Test]
+        public void RoundTrip_RepeatedValues_Proto2()
+        {
+            var message = new Proto2.TestAllTypes
+            {
+                RepeatedBool = { true, false },
+                RepeatedBytes = { ByteString.CopyFrom(1, 2, 3, 4), ByteString.CopyFrom(5, 6) },
+                RepeatedDouble = { -12.25, 23.5 },
+                RepeatedFixed32 = { uint.MaxValue, 23 },
+                RepeatedFixed64 = { ulong.MaxValue, 1234567890123 },
+                RepeatedFloat = { 100f, 12.25f },
+                RepeatedForeignEnum = { Proto2.ForeignEnum.ForeignFoo, Proto2.ForeignEnum.ForeignBar },
+                RepeatedForeignMessage = { new Proto2.ForeignMessage(), new Proto2.ForeignMessage { C = 10 } },
+                RepeatedImportEnum = { Proto3.ImportEnum.ImportBaz, Proto3.ImportEnum.Unspecified },
+                RepeatedImportMessage = { new Proto3.ImportMessage { D = 20 }, new Proto3.ImportMessage { D = 25 } },
+                RepeatedInt32 = { 100, 200 },
+                RepeatedInt64 = { 3210987654321, long.MaxValue },
+                RepeatedNestedEnum = { Proto2.TestAllTypes.Types.NestedEnum.Foo, Proto2.TestAllTypes.Types.NestedEnum.Neg },
+                RepeatedNestedMessage = { new Proto2.TestAllTypes.Types.NestedMessage { Bb = 35 }, new Proto2.TestAllTypes.Types.NestedMessage { Bb = 10 } },
+                RepeatedSfixed32 = { -123, 123 },
+                RepeatedSfixed64 = { -12345678901234, 12345678901234 },
+                RepeatedSint32 = { -456, 100 },
+                RepeatedSint64 = { -12345678901235, 123 },
+                RepeatedString = { "foo", "bar" },
+                RepeatedUint32 = { uint.MaxValue, uint.MinValue },
+                RepeatedUint64 = { ulong.MaxValue, uint.MinValue }
+            };
+
+            byte[] bytes = message.ToByteArray();
+            Proto2.TestAllTypes parsed = Proto2.TestAllTypes.Parser.ParseFrom(bytes);
+            Assert.AreEqual(message, parsed);
+        }
+
         // Note that not every map within map_unittest_proto3 is used. They all go through very
         // similar code paths. The fact that all maps are present is validation that we have codecs
         // for every type.

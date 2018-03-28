@@ -686,7 +686,13 @@ namespace Google.Protobuf
                 case FieldType.Bytes:
                     try
                     {
-                        return ByteString.FromBase64(text);
+                        if ((text.Contains("-") || text.Contains("_")) && text.Contains("="))
+                            throw new FormatException("The string contains URL safe characters and padding characters");
+
+                        return ByteString.FromBase64(text
+                            .Replace('-', '+')
+                            .Replace('_', '/')
+                            .PadRight(text.Length + (text.Length % 4), '='));
                     }
                     catch (FormatException e)
                     {

@@ -62,6 +62,8 @@ namespace Google.Protobuf
                 FieldCodec.ForEnum(100, t => (int) t, t => (ForeignEnum) t), ForeignEnum.ForeignBaz, "Enum"),
             new FieldCodecTestData<ForeignMessage>(
                 FieldCodec.ForMessage(100, ForeignMessage.Parser), new ForeignMessage { C = 10 }, "Message"),
+            new FieldCodecTestData<TestProtos.Proto2.TestAllTypes.Types.OptionalGroup>(
+                FieldCodec.ForGroup(131, 132, TestProtos.Proto2.TestAllTypes.Types.OptionalGroup.Parser), new TestProtos.Proto2.TestAllTypes.Types.OptionalGroup { A = 10 }, "Group")
         };
 #pragma warning restore 0414
 
@@ -122,6 +124,11 @@ namespace Google.Protobuf
 
             public void TestRoundTripRaw()
             {
+                if (name == "Group") // can't check raw groups, we will have to live with just tags
+                {
+                    return;
+                }
+
                 var stream = new MemoryStream();
                 var codedOutput = new CodedOutputStream(stream);
                 codec.ValueWriter(codedOutput, sampleValue);

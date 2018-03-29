@@ -1,4 +1,5 @@
-﻿using Google.Protobuf.Reflection;
+﻿using System;
+using Google.Protobuf.Reflection;
 using Google.Protobuf.TestProtos.Proto2;
 using NUnit.Framework;
 using UnitTest.Issues.TestProtos;
@@ -125,6 +126,22 @@ namespace Google.Protobuf
 
             Assert.AreEqual(set1, set2);
             Assert.AreEqual(set1.GetHashCode(), set2.GetHashCode());
+        }
+
+        [Test]
+        public void InitializationOfExtensionMessages()
+        {
+            TestAllExtensions message = new TestAllExtensions();
+            message.SetExtension(TestRequired.Extensions.Single, new TestRequired());
+            Assert.Throws<ArgumentException>(() => message.ToByteArray());
+        }
+
+        [Test]
+        public void InitializationOfRepeatedExtensionMessages()
+        {
+            TestAllExtensions message = new TestAllExtensions();
+            message.GetExtension(TestRequired.Extensions.Multi).Add(new TestRequired());
+            Assert.Throws<ArgumentException>(() => message.ToByteArray());
         }
     }
 }

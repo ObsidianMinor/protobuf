@@ -32,6 +32,7 @@
 
 using System;
 using Google.Protobuf.TestProtos;
+using Google.Protobuf.TestProtos.Proto2;
 using UnitTestExtensions = Google.Protobuf.TestProtos.Proto2.UnittestExtensions;
 
 namespace Google.Protobuf
@@ -45,9 +46,9 @@ namespace Google.Protobuf
         /// Creates a new sample TestAllTypes message with all fields populated.
         /// The "oneof" field is populated with the string property (OneofString).
         /// </summary>
-        public static TestAllTypes CreateFullTestAllTypes()
+        public static TestProtos.TestAllTypes CreateFullTestAllTypes()
         {
-            return new TestAllTypes
+            return new TestProtos.TestAllTypes
             {
                 SingleBool = true,
                 SingleBytes = ByteString.CopyFrom(1, 2, 3, 4),
@@ -55,14 +56,14 @@ namespace Google.Protobuf
                 SingleFixed32 = 23,
                 SingleFixed64 = 1234567890123,
                 SingleFloat = 12.25f,
-                SingleForeignEnum = ForeignEnum.ForeignBar,
-                SingleForeignMessage = new ForeignMessage { C = 10 },
+                SingleForeignEnum = TestProtos.ForeignEnum.ForeignBar,
+                SingleForeignMessage = new TestProtos.ForeignMessage { C = 10 },
                 SingleImportEnum = ImportEnum.ImportBaz,
                 SingleImportMessage = new ImportMessage { D = 20 },
                 SingleInt32 = 100,
                 SingleInt64 = 3210987654321,
-                SingleNestedEnum = TestAllTypes.Types.NestedEnum.Foo,
-                SingleNestedMessage = new TestAllTypes.Types.NestedMessage { Bb = 35 },
+                SingleNestedEnum = TestProtos.TestAllTypes.Types.NestedEnum.Foo,
+                SingleNestedMessage = new TestProtos.TestAllTypes.Types.NestedMessage { Bb = 35 },
                 SinglePublicImportMessage = new PublicImportMessage { E = 54 },
                 SingleSfixed32 = -123,
                 SingleSfixed64 = -12345678901234,
@@ -77,14 +78,14 @@ namespace Google.Protobuf
                 RepeatedFixed32 = { UInt32.MaxValue, 23 },
                 RepeatedFixed64 = { UInt64.MaxValue, 1234567890123 },
                 RepeatedFloat = { 100f, 12.25f },
-                RepeatedForeignEnum = { ForeignEnum.ForeignFoo, ForeignEnum.ForeignBar },
-                RepeatedForeignMessage = { new ForeignMessage(), new ForeignMessage { C = 10 } },
+                RepeatedForeignEnum = { TestProtos.ForeignEnum.ForeignFoo, TestProtos.ForeignEnum.ForeignBar },
+                RepeatedForeignMessage = { new TestProtos.ForeignMessage(), new TestProtos.ForeignMessage { C = 10 } },
                 RepeatedImportEnum = { ImportEnum.ImportBaz, ImportEnum.Unspecified },
                 RepeatedImportMessage = { new ImportMessage { D = 20 }, new ImportMessage { D = 25 } },
                 RepeatedInt32 = { 100, 200 },
                 RepeatedInt64 = { 3210987654321, Int64.MaxValue },
-                RepeatedNestedEnum = { TestAllTypes.Types.NestedEnum.Foo, TestAllTypes.Types.NestedEnum.Neg },
-                RepeatedNestedMessage = { new TestAllTypes.Types.NestedMessage { Bb = 35 }, new TestAllTypes.Types.NestedMessage { Bb = 10 } },
+                RepeatedNestedEnum = { TestProtos.TestAllTypes.Types.NestedEnum.Foo, TestProtos.TestAllTypes.Types.NestedEnum.Neg },
+                RepeatedNestedMessage = { new TestProtos.TestAllTypes.Types.NestedMessage { Bb = 35 }, new TestProtos.TestAllTypes.Types.NestedMessage { Bb = 10 } },
                 RepeatedPublicImportMessage = { new PublicImportMessage { E = 54 }, new PublicImportMessage { E = -1 } },
                 RepeatedSfixed32 = { -123, 123 },
                 RepeatedSfixed64 = { -12345678901234, 12345678901234 },
@@ -97,7 +98,7 @@ namespace Google.Protobuf
             };
         }
 
-        public static TestProtos.Proto2.TestAllExtensions CreateFullTestAllExtensions()
+        public static TestAllExtensions CreateFullTestAllExtensions()
         {
             var message = new TestProtos.Proto2.TestAllExtensions();
             message.SetExtension(UnitTestExtensions.OptionalInt32Extension, 31);

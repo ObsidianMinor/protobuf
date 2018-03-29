@@ -331,7 +331,6 @@ namespace Google.Protobuf
             };
 
             var message = new Proto2.TestAllExtensions();
-            registry.RegisterExtensionsFor(message);
             message.SetExtension(OptionalBoolExtension, true);
             message.SetExtension(OptionalBytesExtension, ByteString.CopyFrom(1, 2, 3, 4));
             message.SetExtension(OptionalDoubleExtension, 23.5);
@@ -957,6 +956,29 @@ namespace Google.Protobuf
 
             EqualityTester.AssertInequality(message1, message2);
             EqualityTester.AssertEquality(message1, message3);
+        }
+
+        [Test]
+        public void MissingRequiredMessageField()
+        {
+            var message = new Proto2.TestRequiredMessage();
+            Assert.Throws<ArgumentException>(() => message.ToByteArray());
+        }
+
+        [Test]
+        public void MissingRequiredFieldsInRequiredMessage()
+        {
+            var message = new Proto2.TestRequiredMessage
+            {
+                RequiredMessage = new Proto2.TestRequired()
+            };
+            Assert.Throws<ArgumentException>(() => message.ToByteArray());
+        }
+
+        [Test]
+        public void MissingRequiredField_Merged()
+        {
+            Assert.Throws<InvalidProtocolBufferException>(() => Proto2.TestRequiredMessage.Parser.ParseFrom(new byte[0]));
         }
     }
 }

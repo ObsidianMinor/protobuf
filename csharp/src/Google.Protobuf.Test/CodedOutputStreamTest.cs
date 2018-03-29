@@ -423,32 +423,5 @@ namespace Google.Protobuf
             var stream = new CodedOutputStream(new byte[10]);
             stream.Dispose();
         }
-
-        [Test]
-        public void WriteMessage_ChecksInitialization()
-        {
-            var goodMessage = new Proto2.TestRequiredMessage
-            {
-                RequiredMessage = new Proto2.TestRequired { A = 10, B = 20, C = 30 }
-            };
-
-            goodMessage.ToByteArray();
-            var badMessage = new Proto2.TestRequiredMessage();
-            Assert.Throws<ArgumentException>(() => badMessage.ToByteArray());
-        }
-
-        [Test]
-        public void WriteGroup_ChecksInitialization()
-        {
-            var goodMessage = new Proto2.TestIsInitialized.Types.SubMessage.Types.SubGroup
-            {
-                I = 10
-            };
-
-            goodMessage.ToByteArray();
-
-            var badMessage = new Proto2.TestIsInitialized.Types.SubMessage.Types.SubGroup();
-            Assert.Throws<ArgumentException>(() => badMessage.ToByteArray());
-        }
     }
 }

@@ -48,9 +48,8 @@ namespace compiler {
 namespace csharp {
 
 MapFieldGenerator::MapFieldGenerator(const FieldDescriptor* descriptor,
-                                     int fieldOrdinal,
                                      const Options* options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+    : FieldGeneratorBase(descriptor, options) {
 }
 
 MapFieldGenerator::~MapFieldGenerator() {
@@ -61,12 +60,12 @@ void MapFieldGenerator::GenerateMembers(io::Printer* printer) {
       descriptor_->message_type()->FindFieldByName("key");
   const FieldDescriptor* value_descriptor =
       descriptor_->message_type()->FindFieldByName("value");
-  variables_["key_type_name"] = type_name(key_descriptor);
-  variables_["value_type_name"] = type_name(value_descriptor);
+  variables_["key_type_name"] = GetTypeName(key_descriptor);
+  variables_["value_type_name"] = GetTypeName(value_descriptor);
   std::unique_ptr<FieldGeneratorBase> key_generator(
-      CreateFieldGenerator(key_descriptor, 1, this->options()));
+      CreateFieldGenerator(key_descriptor, this->options()));
   std::unique_ptr<FieldGeneratorBase> value_generator(
-      CreateFieldGenerator(value_descriptor, 2, this->options()));
+      CreateFieldGenerator(value_descriptor, this->options()));
 
   printer->Print(
     variables_,
@@ -130,6 +129,13 @@ void MapFieldGenerator::WriteToString(io::Printer* printer) {
 void MapFieldGenerator::GenerateCloningCode(io::Printer* printer) {
   printer->Print(variables_,
     "$name$_ = other.$name$_.Clone();\n");
+}
+
+void MapFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
+  printer->Print(variables_,
+    "if (!$name$_.IsInitialized()) {\n"
+    "  return false;\n"
+    "}\n");
 }
 
 void MapFieldGenerator::GenerateFreezingCode(io::Printer* printer) {

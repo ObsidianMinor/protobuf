@@ -36,12 +36,16 @@
 #include <google/protobuf/stubs/hash.h>
 #include <limits>
 #include <vector>
+#include <sstream>
+#include <locale>
+#include <codecvt>
 
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
 #include <google/protobuf/compiler/csharp/csharp_names.h>
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/wire_format.h>
+#include <google/protobuf/stubs/mathlimits.h>
 #include <google/protobuf/stubs/strutil.h>
 #include <google/protobuf/stubs/substitute.h>
 
@@ -49,10 +53,12 @@
 #include <google/protobuf/compiler/csharp/csharp_enum_field.h>
 #include <google/protobuf/compiler/csharp/csharp_map_field.h>
 #include <google/protobuf/compiler/csharp/csharp_message_field.h>
+#include <google/protobuf/compiler/csharp/csharp_group_field.h>
 #include <google/protobuf/compiler/csharp/csharp_options.h>
 #include <google/protobuf/compiler/csharp/csharp_primitive_field.h>
 #include <google/protobuf/compiler/csharp/csharp_repeated_enum_field.h>
 #include <google/protobuf/compiler/csharp/csharp_repeated_message_field.h>
+#include <google/protobuf/compiler/csharp/csharp_repeated_group_field.h>
 #include <google/protobuf/compiler/csharp/csharp_repeated_primitive_field.h>
 #include <google/protobuf/compiler/csharp/csharp_wrapper_field.h>
 
@@ -132,6 +138,12 @@ std::string GetReflectionClassUnqualifiedName(const FileDescriptor* descriptor) 
   // TODO: Detect collisions with existing messages,
   // and append an underscore if necessary.
   return GetFileNameBase(descriptor) + "Reflection";
+}
+
+std::string GetExtensionClassUnqualifiedName(const FileDescriptor* descriptor) {
+  // TODO: Detect collisions with existing messages,
+  // and append an underscore if necessary.
+  return GetFileNameBase(descriptor) + "Extensions";
 }
 
 // TODO(jtattermusch): can we reuse a utility function?
@@ -335,7 +347,8 @@ std::string GetPropertyName(const FieldDescriptor* descriptor) {
   // ones.
   if (property_name == descriptor->containing_type()->name()
       || property_name == "Types"
-      || property_name == "Descriptor") {
+      || property_name == "Descriptor"
+      || property_name == "Extensions") {
     property_name += "_";
   }
   return property_name;
@@ -451,53 +464,275 @@ std::string FileDescriptorToBase64(const FileDescriptor* descriptor) {
   return StringToBase64(fdp_bytes);
 }
 
+static const char hex_chars[] = "0123456789abcdef";
+
+std::string StringToEscapedCSharpString(const std::string& input) {
+  // convert string to UTF16 to make unicode literals
+  std::wstring_convert<std::codecvt_utf8<char16_t>,char16_t> converter;
+  std::u16string converted = converter.from_bytes(input);
+  std::string result;
+  for (int i = 0; i < converted.size(); i++) {
+    result += "\\u";
+    result += hex_chars[(converted[i] & 0xF000) >> 12];
+    result += hex_chars[(converted[i] & 0x0F00) >> 8];
+    result += hex_chars[(converted[i] & 0x00F0) >> 4];
+    result += hex_chars[(converted[i] & 0x000F)];
+  }
+  return result;
+}
+
 FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
-                                         int fieldOrdinal,
                                          const Options* options) {
   switch (descriptor->type()) {
     case FieldDescriptor::TYPE_GROUP:
+      if (descriptor->is_repeated()) {
+        return new RepeatedGroupFieldGenerator(descriptor, options);
+      }
+      else {
+        return new GroupFieldGenerator(descriptor, options);
+      }
     case FieldDescriptor::TYPE_MESSAGE:
       if (descriptor->is_repeated()) {
         if (descriptor->is_map()) {
-          return new MapFieldGenerator(descriptor, fieldOrdinal, options);
+          return new MapFieldGenerator(descriptor, options);
         } else {
-          return new RepeatedMessageFieldGenerator(descriptor, fieldOrdinal, options);
+          return new RepeatedMessageFieldGenerator(descriptor, options);
         }
       } else {
         if (IsWrapperType(descriptor)) {
           if (descriptor->containing_oneof()) {
-            return new WrapperOneofFieldGenerator(descriptor, fieldOrdinal, options);
+            return new WrapperOneofFieldGenerator(descriptor, options);
           } else {
-            return new WrapperFieldGenerator(descriptor, fieldOrdinal, options);
+            return new WrapperFieldGenerator(descriptor, options);
           }
         } else {
           if (descriptor->containing_oneof()) {
-            return new MessageOneofFieldGenerator(descriptor, fieldOrdinal, options);
+            return new MessageOneofFieldGenerator(descriptor, options);
           } else {
-            return new MessageFieldGenerator(descriptor, fieldOrdinal, options);
+            return new MessageFieldGenerator(descriptor, options);
           }
         }
       }
     case FieldDescriptor::TYPE_ENUM:
       if (descriptor->is_repeated()) {
-        return new RepeatedEnumFieldGenerator(descriptor, fieldOrdinal, options);
+        return new RepeatedEnumFieldGenerator(descriptor, options);
       } else {
         if (descriptor->containing_oneof()) {
-          return new EnumOneofFieldGenerator(descriptor, fieldOrdinal, options);
+          return new EnumOneofFieldGenerator(descriptor, options);
         } else {
-          return new EnumFieldGenerator(descriptor, fieldOrdinal, options);
+          return new EnumFieldGenerator(descriptor, options);
         }
       }
     default:
       if (descriptor->is_repeated()) {
-        return new RepeatedPrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+        return new RepeatedPrimitiveFieldGenerator(descriptor, options);
       } else {
         if (descriptor->containing_oneof()) {
-          return new PrimitiveOneofFieldGenerator(descriptor, fieldOrdinal, options);
+          return new PrimitiveOneofFieldGenerator(descriptor, options);
         } else {
-          return new PrimitiveFieldGenerator(descriptor, fieldOrdinal, options);
+          return new PrimitiveFieldGenerator(descriptor, options);
         }
       }
+  }
+}
+
+std::string GetDefaultValue(const FieldDescriptor* descriptor) {
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_ENUM:
+      if (descriptor->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+        return GetClassName(descriptor->default_value_enum()->type()) + "." + 
+          GetEnumValueName(descriptor->default_value_enum()->type()->name(), descriptor->default_value_enum()->name());
+      }
+      else {
+        return "0";
+      }
+    case FieldDescriptor::TYPE_MESSAGE:
+    case FieldDescriptor::TYPE_GROUP:
+      if (IsWrapperType(descriptor)) {
+        const FieldDescriptor* wrapped_field = descriptor->message_type()->field(0);
+        return GetDefaultValue(wrapped_field);
+      } else {
+        return "null";
+      }
+    case FieldDescriptor::TYPE_DOUBLE: {
+      double value = descriptor->default_value_double();
+      if (value == std::numeric_limits<double>::infinity()) {
+        return "double.PositiveInfinity";
+      } else if (value == -std::numeric_limits<double>::infinity()) {
+        return "double.NegativeInfinity";
+      } else if (MathLimits<double>::IsNaN(value)) {
+        return "double.NaN";
+      }
+      return SimpleDtoa(value) + "D";
+    }
+    case FieldDescriptor::TYPE_FLOAT: {
+      float value = descriptor->default_value_float();
+      if (value == std::numeric_limits<float>::infinity()) {
+        return "float.PositiveInfinity";
+      } else if (value == -std::numeric_limits<float>::infinity()) {
+        return "float.NegativeInfinity";
+      } else if (MathLimits<float>::IsNaN(value)) {
+        return "float.NaN";
+      }
+      return SimpleFtoa(value) + "F";
+    }
+    case FieldDescriptor::TYPE_INT64:
+      return SimpleItoa(descriptor->default_value_int64()) + "L";
+    case FieldDescriptor::TYPE_UINT64:
+      return SimpleItoa(descriptor->default_value_uint64()) + "UL";
+    case FieldDescriptor::TYPE_INT32:
+      return SimpleItoa(descriptor->default_value_int32());
+    case FieldDescriptor::TYPE_FIXED64:
+      return SimpleItoa(descriptor->default_value_uint64()) + "UL";
+    case FieldDescriptor::TYPE_FIXED32:
+      return SimpleItoa(descriptor->default_value_uint32());
+    case FieldDescriptor::TYPE_BOOL:
+      if (descriptor->default_value_bool()) {
+        return "true";
+      } else {
+        return "false";
+      }
+    case FieldDescriptor::TYPE_STRING:
+      return "\"" + StringToEscapedCSharpString(descriptor->default_value_string()) +  "\"";
+    case FieldDescriptor::TYPE_BYTES:
+      if (descriptor->default_value_string().empty())
+        return "pb::ByteString.Empty";
+      else
+        return "pb::ByteString.FromBase64(\"" + StringToBase64(descriptor->default_value_string()) + "\")";
+    case FieldDescriptor::TYPE_UINT32:
+      return SimpleItoa(descriptor->default_value_uint32());
+    case FieldDescriptor::TYPE_SFIXED32:
+      return SimpleItoa(descriptor->default_value_int32());
+    case FieldDescriptor::TYPE_SFIXED64:
+      return SimpleItoa(descriptor->default_value_int64()) + "L";
+    case FieldDescriptor::TYPE_SINT32:
+      return SimpleItoa(descriptor->default_value_int32());
+    case FieldDescriptor::TYPE_SINT64:
+      return SimpleItoa(descriptor->default_value_int64()) + "L";
+    default:
+      GOOGLE_LOG(FATAL)<< "Unknown field type.";
+      return "";
+  }
+}
+
+std::string GetFullExtensionName(const FieldDescriptor* descriptor) {
+  if (descriptor->extension_scope()) {
+    return GetClassName(descriptor->extension_scope()) + ".Extensions." + GetPropertyName(descriptor);
+  }
+  else {
+    return GetExtensionClassUnqualifiedName(descriptor->file())  + "." + GetPropertyName(descriptor);
+  }
+}
+
+std::string GetTypeName(const FieldDescriptor* descriptor) {
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_ENUM:
+      return GetClassName(descriptor->enum_type());
+    case FieldDescriptor::TYPE_MESSAGE:
+    case FieldDescriptor::TYPE_GROUP:
+      if (IsWrapperType(descriptor)) {
+        const FieldDescriptor* wrapped_field =
+            descriptor->message_type()->field(0);
+        string wrapped_field_type_name = GetTypeName(wrapped_field);
+        // String and ByteString go to the same type; other wrapped types
+        // go to the nullable equivalent.
+        if (wrapped_field->type() == FieldDescriptor::TYPE_STRING ||
+            wrapped_field->type() == FieldDescriptor::TYPE_BYTES) {
+          return wrapped_field_type_name;
+        } else {
+          return wrapped_field_type_name + "?";
+        }
+      }
+      return GetClassName(descriptor->message_type());
+    case FieldDescriptor::TYPE_DOUBLE:
+      return "double";
+    case FieldDescriptor::TYPE_FLOAT:
+      return "float";
+    case FieldDescriptor::TYPE_INT64:
+      return "long";
+    case FieldDescriptor::TYPE_UINT64:
+      return "ulong";
+    case FieldDescriptor::TYPE_INT32:
+      return "int";
+    case FieldDescriptor::TYPE_FIXED64:
+      return "ulong";
+    case FieldDescriptor::TYPE_FIXED32:
+      return "uint";
+    case FieldDescriptor::TYPE_BOOL:
+      return "bool";
+    case FieldDescriptor::TYPE_STRING:
+      return "string";
+    case FieldDescriptor::TYPE_BYTES:
+      return "pb::ByteString";
+    case FieldDescriptor::TYPE_UINT32:
+      return "uint";
+    case FieldDescriptor::TYPE_SFIXED32:
+      return "int";
+    case FieldDescriptor::TYPE_SFIXED64:
+      return "long";
+    case FieldDescriptor::TYPE_SINT32:
+      return "int";
+    case FieldDescriptor::TYPE_SINT64:
+      return "long";
+    default:
+      GOOGLE_LOG(FATAL)<< "Unknown field type.";
+      return "";
+  }
+}
+
+std::string GetNullableTypeName(const FieldDescriptor* descriptor) {
+  switch (descriptor->type()) {
+    case FieldDescriptor::TYPE_ENUM:
+      return GetClassName(descriptor->enum_type()) + "?";
+    case FieldDescriptor::TYPE_MESSAGE:
+    case FieldDescriptor::TYPE_GROUP:
+      if (IsWrapperType(descriptor)) {
+        const FieldDescriptor* wrapped_field =
+            descriptor->message_type()->field(0);
+        string wrapped_field_type_name = GetTypeName(wrapped_field);
+        // String and ByteString go to the same type; other wrapped types
+        // go to the nullable equivalent.
+        if (wrapped_field->type() == FieldDescriptor::TYPE_STRING ||
+            wrapped_field->type() == FieldDescriptor::TYPE_BYTES) {
+          return wrapped_field_type_name;
+        } else {
+          return wrapped_field_type_name + "?";
+        }
+      }
+      return GetClassName(descriptor->message_type());
+    case FieldDescriptor::TYPE_DOUBLE:
+      return "double?";
+    case FieldDescriptor::TYPE_FLOAT:
+      return "float?";
+    case FieldDescriptor::TYPE_INT64:
+      return "long?";
+    case FieldDescriptor::TYPE_UINT64:
+      return "ulong?";
+    case FieldDescriptor::TYPE_INT32:
+      return "int?";
+    case FieldDescriptor::TYPE_FIXED64:
+      return "ulong?";
+    case FieldDescriptor::TYPE_FIXED32:
+      return "uint?";
+    case FieldDescriptor::TYPE_BOOL:
+      return "bool?";
+    case FieldDescriptor::TYPE_STRING:
+      return "string";
+    case FieldDescriptor::TYPE_BYTES:
+      return "pb::ByteString";
+    case FieldDescriptor::TYPE_UINT32:
+      return "uint?";
+    case FieldDescriptor::TYPE_SFIXED32:
+      return "int?";
+    case FieldDescriptor::TYPE_SFIXED64:
+      return "long?";
+    case FieldDescriptor::TYPE_SINT32:
+      return "int?";
+    case FieldDescriptor::TYPE_SINT64:
+      return "long?";
+    default:
+      GOOGLE_LOG(FATAL)<< "Unknown field type.";
+      return "";
   }
 }
 

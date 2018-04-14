@@ -57,6 +57,8 @@ void FieldGeneratorBase::SetCommonFieldVariables(
   // repeated fields varies by wire format. The wire format is encoded in the bottom 3 bits, which
   // never effects the tag size.
   int tag_size = internal::WireFormat::TagSize(descriptor_->number(), descriptor_->type());
+  if (descriptor_->type() == FieldDescriptor::TYPE_GROUP)
+    tag_size = tag_size / 2;
   uint tag = internal::WireFormat::MakeTag(descriptor_);
   uint8 tag_array[5];
   io::CodedOutputStream::WriteTagToArray(tag, tag_array);
@@ -72,37 +74,50 @@ void FieldGeneratorBase::SetCommonFieldVariables(
 
   (*variables)["property_name"] = property_name();
   (*variables)["type_name"] = type_name();
+  (*variables)["extended_type"] = GetClassName(descriptor_->containing_type());
+  (*variables)["nullable_type_name"] = nullable_type_name();
   (*variables)["name"] = name();
   (*variables)["descriptor_name"] = descriptor_->name();
   (*variables)["default_value"] = default_value();
-  if (has_default_value()) {
+  (*variables)["capitalized_type_name"] = capitalized_type_name();
+  (*variables)["number"] = number();
+  if (has_default_value() && descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO3) {
     (*variables)["name_def_message"] =
-      (*variables)["name"] + "_ = " + (*variables)["default_value"];
+      (*variables)["name"] + "_ = " + (*variables)["property_name"] + "DefaultValue";
   } else {
     (*variables)["name_def_message"] = (*variables)["name"] + "_";
   }
-  (*variables)["capitalized_type_name"] = capitalized_type_name();
-  (*variables)["number"] = number();
-  (*variables)["has_property_check"] =
-    (*variables)["property_name"] + " != " + (*variables)["default_value"];
-  (*variables)["other_has_property_check"] = "other." +
-    (*variables)["property_name"] + " != " + (*variables)["default_value"];
+  if (descriptor_->file()->syntax() == FileDescriptor::Syntax::SYNTAX_PROTO2) {
+    (*variables)["has_property_check"] = "Has" + (*variables)["property_name"];
+    (*variables)["other_has_property_check"] = "other.Has" + (*variables)["property_name"];
+    (*variables)["has_not_property_check"] = "!" + (*variables)["has_property_check"];
+    (*variables)["other_has_not_property_check"] = "!" + (*variables)["other_has_property_check"];
+  }
+  else {
+    (*variables)["has_property_check"] =
+      (*variables)["property_name"] + " != " + (*variables)["default_value"];
+    (*variables)["other_has_property_check"] = "other." +
+      (*variables)["property_name"] + " != " + (*variables)["default_value"];
+  }
 }
 
 void FieldGeneratorBase::SetCommonOneofFieldVariables(
     std::map<string, string>* variables) {
   (*variables)["oneof_name"] = oneof_name();
-  (*variables)["has_property_check"] =
-    oneof_name() + "Case_ == " + oneof_property_name() +
-    "OneofCase." + property_name();
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    (*variables)["has_property_check"] = "Has" + property_name();
+  }
+  else {
+    (*variables)["has_property_check"] =
+      oneof_name() + "Case_ == " + oneof_property_name() +
+      "OneofCase." + property_name();
+  }
   (*variables)["oneof_property_name"] = oneof_property_name();
 }
 
-FieldGeneratorBase::FieldGeneratorBase(const FieldDescriptor* descriptor,
-                                       int fieldOrdinal, const Options* options)
+FieldGeneratorBase::FieldGeneratorBase(const FieldDescriptor* descriptor, const Options* options)
     : SourceGeneratorBase(descriptor->file(), options),
-      descriptor_(descriptor),
-      fieldOrdinal_(fieldOrdinal) {
+      descriptor_(descriptor) {
   SetCommonFieldVariables(&variables_);
 }
 
@@ -117,6 +132,16 @@ void FieldGeneratorBase::GenerateFreezingCode(io::Printer* printer) {
 void FieldGeneratorBase::GenerateCodecCode(io::Printer* printer) {
     // No-op: expect this to be overridden by appropriate types.
     // Could fail if we get called here though...
+}
+
+void FieldGeneratorBase::GenerateIsInitialized(io::Printer* printer) {
+    // No-op: only message fields and primitives need this
+    // default is to not generate any code
+}
+
+void FieldGeneratorBase::GenerateExtensionCode(io::Printer* printer) {
+  // No-op: only message fields, enum fields, primitives, 
+  // and repeated fields need this default is to not generate any code
 }
 
 void FieldGeneratorBase::AddDeprecatedFlag(io::Printer* printer) {
@@ -150,63 +175,11 @@ std::string FieldGeneratorBase::name() {
 }
 
 std::string FieldGeneratorBase::type_name() {
-  return type_name(descriptor_);
+  return GetTypeName(descriptor_);
 }
 
-std::string FieldGeneratorBase::type_name(const FieldDescriptor* descriptor) {
-  switch (descriptor->type()) {
-    case FieldDescriptor::TYPE_ENUM:
-      return GetClassName(descriptor->enum_type());
-    case FieldDescriptor::TYPE_MESSAGE:
-    case FieldDescriptor::TYPE_GROUP:
-      if (IsWrapperType(descriptor)) {
-        const FieldDescriptor* wrapped_field =
-            descriptor->message_type()->field(0);
-        string wrapped_field_type_name = type_name(wrapped_field);
-        // String and ByteString go to the same type; other wrapped types
-        // go to the nullable equivalent.
-        if (wrapped_field->type() == FieldDescriptor::TYPE_STRING ||
-            wrapped_field->type() == FieldDescriptor::TYPE_BYTES) {
-          return wrapped_field_type_name;
-        } else {
-          return wrapped_field_type_name + "?";
-        }
-      }
-      return GetClassName(descriptor->message_type());
-    case FieldDescriptor::TYPE_DOUBLE:
-      return "double";
-    case FieldDescriptor::TYPE_FLOAT:
-      return "float";
-    case FieldDescriptor::TYPE_INT64:
-      return "long";
-    case FieldDescriptor::TYPE_UINT64:
-      return "ulong";
-    case FieldDescriptor::TYPE_INT32:
-      return "int";
-    case FieldDescriptor::TYPE_FIXED64:
-      return "ulong";
-    case FieldDescriptor::TYPE_FIXED32:
-      return "uint";
-    case FieldDescriptor::TYPE_BOOL:
-      return "bool";
-    case FieldDescriptor::TYPE_STRING:
-      return "string";
-    case FieldDescriptor::TYPE_BYTES:
-      return "pb::ByteString";
-    case FieldDescriptor::TYPE_UINT32:
-      return "uint";
-    case FieldDescriptor::TYPE_SFIXED32:
-      return "int";
-    case FieldDescriptor::TYPE_SFIXED64:
-      return "long";
-    case FieldDescriptor::TYPE_SINT32:
-      return "int";
-    case FieldDescriptor::TYPE_SINT64:
-      return "long";
-    default:
-      GOOGLE_LOG(FATAL)<< "Unknown field type.";
-      return "";
-  }
+std::string FieldGeneratorBase::nullable_type_name() {
+  return GetNullableTypeName(descriptor_);
 }
 
 bool FieldGeneratorBase::has_default_value() {
@@ -290,90 +263,8 @@ bool AllPrintableAscii(const std::string& text) {
   return true;
 }
 
-std::string FieldGeneratorBase::GetStringDefaultValueInternal() {
-  // No other default values needed for proto3...
-  return "\"\"";
-}
-
-std::string FieldGeneratorBase::GetBytesDefaultValueInternal() {
-  // No other default values needed for proto3...
-  return "pb::ByteString.Empty";
-}
-
 std::string FieldGeneratorBase::default_value() {
-    return default_value(descriptor_);
-}
-
-std::string FieldGeneratorBase::default_value(const FieldDescriptor* descriptor) {
-  switch (descriptor->type()) {
-    case FieldDescriptor::TYPE_ENUM:
-      // All proto3 enums have a default value of 0, and there's an implicit conversion from the constant 0 to
-      // any C# enum. This means we don't need to work out what we actually mapped the enum value name to.
-     return "0";
-    case FieldDescriptor::TYPE_MESSAGE:
-    case FieldDescriptor::TYPE_GROUP:
-      if (IsWrapperType(descriptor)) {
-        const FieldDescriptor* wrapped_field = descriptor->message_type()->field(0);
-        return default_value(wrapped_field);
-      } else {
-        return "null";
-      }
-    case FieldDescriptor::TYPE_DOUBLE: {
-      double value = descriptor->default_value_double();
-      if (value == std::numeric_limits<double>::infinity()) {
-        return "double.PositiveInfinity";
-      } else if (value == -std::numeric_limits<double>::infinity()) {
-        return "double.NegativeInfinity";
-      } else if (MathLimits<double>::IsNaN(value)) {
-        return "double.NaN";
-      }
-      return SimpleDtoa(value) + "D";
-    }
-    case FieldDescriptor::TYPE_FLOAT: {
-      float value = descriptor->default_value_float();
-      if (value == std::numeric_limits<float>::infinity()) {
-        return "float.PositiveInfinity";
-      } else if (value == -std::numeric_limits<float>::infinity()) {
-        return "float.NegativeInfinity";
-      } else if (MathLimits<float>::IsNaN(value)) {
-        return "float.NaN";
-      }
-      return SimpleFtoa(value) + "F";
-    }
-    case FieldDescriptor::TYPE_INT64:
-      return SimpleItoa(descriptor->default_value_int64()) + "L";
-    case FieldDescriptor::TYPE_UINT64:
-      return SimpleItoa(descriptor->default_value_uint64()) + "UL";
-    case FieldDescriptor::TYPE_INT32:
-      return SimpleItoa(descriptor->default_value_int32());
-    case FieldDescriptor::TYPE_FIXED64:
-      return SimpleItoa(descriptor->default_value_uint64()) + "UL";
-    case FieldDescriptor::TYPE_FIXED32:
-      return SimpleItoa(descriptor->default_value_uint32());
-    case FieldDescriptor::TYPE_BOOL:
-      if (descriptor->default_value_bool()) {
-        return "true";
-      } else {
-        return "false";
-      }
-    case FieldDescriptor::TYPE_STRING:
-      return GetStringDefaultValueInternal();
-    case FieldDescriptor::TYPE_BYTES:
-      return GetBytesDefaultValueInternal();
-    case FieldDescriptor::TYPE_UINT32:
-      return SimpleItoa(descriptor->default_value_uint32());
-    case FieldDescriptor::TYPE_SFIXED32:
-      return SimpleItoa(descriptor->default_value_int32());
-    case FieldDescriptor::TYPE_SFIXED64:
-      return SimpleItoa(descriptor->default_value_int64()) + "L";
-    case FieldDescriptor::TYPE_SINT32:
-      return SimpleItoa(descriptor->default_value_int32());
-    case FieldDescriptor::TYPE_SINT64:
-      return SimpleItoa(descriptor->default_value_int64()) + "L";
-    default:
-      GOOGLE_LOG(FATAL)<< "Unknown field type.";
-      return "";
-  }
+    return GetDefaultValue(descriptor_);
 }
 
 std::string FieldGeneratorBase::number() {

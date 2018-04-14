@@ -46,9 +46,8 @@ namespace protobuf {
 namespace compiler {
 namespace csharp {
 
-EnumFieldGenerator::EnumFieldGenerator(const FieldDescriptor* descriptor,
-                                       int fieldOrdinal, const Options *options)
-    : PrimitiveFieldGenerator(descriptor, fieldOrdinal, options) {
+EnumFieldGenerator::EnumFieldGenerator(const FieldDescriptor* descriptor, const Options *options)
+    : PrimitiveFieldGenerator(descriptor, options) {
 }
 
 EnumFieldGenerator::~EnumFieldGenerator() {
@@ -76,14 +75,30 @@ void EnumFieldGenerator::GenerateSerializedSizeCode(io::Printer* printer) {
 }
 
 void EnumFieldGenerator::GenerateCodecCode(io::Printer* printer) {
-    printer->Print(
-        variables_,
-        "pb::FieldCodec.ForEnum($tag$, x => (int) x, x => ($type_name$) x)");
+    if (descriptor_->has_default_value()) {
+      printer->Print(
+          variables_,
+          "pb::FieldCodec.ForEnum($tag$, x => (int) x, x => ($type_name$) x, $default_value$)");
+    }
+    else {
+      printer->Print(
+          variables_,
+          "pb::FieldCodec.ForEnum($tag$, x => (int) x, x => ($type_name$) x)");
+    }
+}
+
+void EnumFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::Extension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::Extension<$extended_type$, $type_name$>(");
+  GenerateCodecCode(printer);
+  printer->Print(");\n");
 }
 
 EnumOneofFieldGenerator::EnumOneofFieldGenerator(
-    const FieldDescriptor* descriptor, int fieldOrdinal, const Options *options)
-  : PrimitiveOneofFieldGenerator(descriptor, fieldOrdinal, options) {
+    const FieldDescriptor* descriptor, const Options *options)
+  : PrimitiveOneofFieldGenerator(descriptor, options) {
 }
 
 EnumOneofFieldGenerator::~EnumOneofFieldGenerator() {

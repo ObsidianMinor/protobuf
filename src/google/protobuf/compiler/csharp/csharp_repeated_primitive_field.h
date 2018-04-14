@@ -43,7 +43,7 @@ namespace csharp {
 
 class RepeatedPrimitiveFieldGenerator : public FieldGeneratorBase {
  public:
-  RepeatedPrimitiveFieldGenerator(const FieldDescriptor* descriptor, int fieldOrdinal, const Options *options);
+  RepeatedPrimitiveFieldGenerator(const FieldDescriptor* descriptor, const Options *options);
   ~RepeatedPrimitiveFieldGenerator();
 
   virtual void GenerateCloningCode(io::Printer* printer);
@@ -53,6 +53,7 @@ class RepeatedPrimitiveFieldGenerator : public FieldGeneratorBase {
   virtual void GenerateParsingCode(io::Printer* printer);
   virtual void GenerateSerializationCode(io::Printer* printer);
   virtual void GenerateSerializedSizeCode(io::Printer* printer);
+  virtual void GenerateExtensionCode(io::Printer* printer);
 
   virtual void WriteHash(io::Printer* printer);
   virtual void WriteEquals(io::Printer* printer);

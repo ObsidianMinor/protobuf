@@ -44,7 +44,6 @@ namespace csharp {
 class MapFieldGenerator : public FieldGeneratorBase {
  public:
   MapFieldGenerator(const FieldDescriptor* descriptor,
-                    int fieldOrdinal,
                     const Options* options);
   ~MapFieldGenerator();
 
@@ -55,6 +54,7 @@ class MapFieldGenerator : public FieldGeneratorBase {
   virtual void GenerateParsingCode(io::Printer* printer);
   virtual void GenerateSerializationCode(io::Printer* printer);
   virtual void GenerateSerializedSizeCode(io::Printer* printer);
+  virtual void GenerateIsInitialized(io::Printer* printer);
 
   virtual void WriteHash(io::Printer* printer);
   virtual void WriteEquals(io::Printer* printer);

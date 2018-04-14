@@ -37,6 +37,8 @@
 #include <google/protobuf/io/printer.h>
 #include <google/protobuf/io/zero_copy_stream.h>
 #include <google/protobuf/stubs/strutil.h>
+#include <google/protobuf/wire_format.h>
+#include <google/protobuf/wire_format_lite.h>
 
 #include <google/protobuf/compiler/csharp/csharp_doc_comment.h>
 #include <google/protobuf/compiler/csharp/csharp_helpers.h>
@@ -49,11 +51,12 @@ namespace compiler {
 namespace csharp {
 
 MessageFieldGenerator::MessageFieldGenerator(const FieldDescriptor* descriptor,
-                                             int fieldOrdinal,
                                              const Options *options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
-  variables_["has_property_check"] = name() + "_ != null";
-  variables_["has_not_property_check"] = name() + "_ == null";
+    : FieldGeneratorBase(descriptor, options) {
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO3) {
+    variables_["has_property_check"] = name() + "_ != null";
+    variables_["has_not_property_check"] = name() + "_ == null";
+  }
 }
 
 MessageFieldGenerator::~MessageFieldGenerator() {
@@ -74,6 +77,24 @@ void MessageFieldGenerator::GenerateMembers(io::Printer* printer) {
     "    $name$_ = value;\n"
     "  }\n"
     "}\n");
+  printer->Print(
+    variables_,
+    "/// <summary>Gets whether the $descriptor_name$ field is set</summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ bool Has$property_name$ {\n"
+    "  get { return $name$_ != null; }\n"
+    "}\n");
+  printer->Print(
+    variables_,
+    "/// <summary>Clears the value of the $descriptor_name$ field</summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  $name$_ = null;\n"
+    "}\n");
 }
 
 void MessageFieldGenerator::GenerateMergingCode(io::Printer* printer) {
@@ -93,8 +114,7 @@ void MessageFieldGenerator::GenerateParsingCode(io::Printer* printer) {
     "if ($has_not_property_check$) {\n"
     "  $name$_ = new $type_name$();\n"
     "}\n"
-    // TODO(jonskeet): Do we really need merging behaviour like this?
-    "input.ReadMessage($name$_);\n"); // No need to support TYPE_GROUP...
+    "input.ReadMessage($name$_);\n");
 }
 
 void MessageFieldGenerator::GenerateSerializationCode(io::Printer* printer) {
@@ -130,6 +150,30 @@ void MessageFieldGenerator::WriteToString(io::Printer* printer) {
     variables_,
     "PrintField(\"$field_name$\", has$property_name$, $name$_, writer);\n");
 }
+void MessageFieldGenerator::GenerateIsInitialized(io::Printer* printer) {
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "if ($has_property_check$) {\n"
+      "  if (!$property_name$.IsInitialized()) return false;\n"
+      "}\n");
+    if (descriptor_->is_required()) {
+      printer->Print(
+        variables_,
+        "else {\n"
+        "  return false;\n"
+        "}\n");
+    }
+  }
+}
+void MessageFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::Extension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::Extension<$extended_type$, $type_name$>(");
+  GenerateCodecCode(printer);
+  printer->Print(");\n");
+}
 
 void MessageFieldGenerator::GenerateCloningCode(io::Printer* printer) {
   printer->Print(variables_,
@@ -147,9 +191,8 @@ void MessageFieldGenerator::GenerateCodecCode(io::Printer* printer) {
 
 MessageOneofFieldGenerator::MessageOneofFieldGenerator(
     const FieldDescriptor* descriptor,
-	  int fieldOrdinal,
     const Options *options)
-    : MessageFieldGenerator(descriptor, fieldOrdinal, options) {
+    : MessageFieldGenerator(descriptor, options) {
   SetCommonOneofFieldVariables(&variables_);
 }
 
@@ -167,6 +210,28 @@ void MessageOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
     "  set {\n"
     "    $oneof_name$_ = value;\n"
     "    $oneof_name$Case_ = value == null ? $oneof_property_name$OneofCase.None : $oneof_property_name$OneofCase.$property_name$;\n"
+    "  }\n"
+    "}\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
+    AddPublicMemberAttributes(printer);
+    printer->Print(
+      variables_,
+      "$access_level$ bool Has$property_name$ {\n"
+      "  get { return $oneof_name$Case_ == $oneof_property_name$OneofCase.$property_name$; }\n"
+      "}\n");
+  }
+  printer->Print(
+    variables_,
+    "/// <summary> Clears the value of the oneof if it's currently set to \"$descriptor_name$\" </summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  if ($has_property_check$) {\n"
+    "    Clear$oneof_property_name$();\n"
     "  }\n"
     "}\n");
 }
@@ -187,7 +252,7 @@ void MessageOneofFieldGenerator::GenerateParsingCode(io::Printer* printer) {
     "if ($has_property_check$) {\n"
     "  subBuilder.MergeFrom($property_name$);\n"
     "}\n"
-    "input.ReadMessage(subBuilder);\n" // No support of TYPE_GROUP
+    "input.ReadMessage(subBuilder);\n"
     "$property_name$ = subBuilder;\n");
 }
 

@@ -74,6 +74,9 @@ std::string StripDotProto(const std::string& proto_file);
 // Gets unqualified name of the reflection class
 std::string GetReflectionClassUnqualifiedName(const FileDescriptor* descriptor);
 
+// Gets unqualified name of the extensions class
+std::string GetExtensionClassUnqualifiedName(const FileDescriptor* descriptor);
+
 std::string GetClassName(const EnumDescriptor* descriptor);
 
 std::string GetFieldName(const FieldDescriptor* descriptor);
@@ -81,6 +84,14 @@ std::string GetFieldName(const FieldDescriptor* descriptor);
 std::string GetFieldConstantName(const FieldDescriptor* field);
 
 std::string GetPropertyName(const FieldDescriptor* descriptor);
+
+std::string GetTypeName(const FieldDescriptor* descriptor);
+
+std::string GetNullableTypeName(const FieldDescriptor* descriptor);
+
+std::string GetDefaultValue(const FieldDescriptor* descriptor);
+
+std::string GetFullExtensionName(const FieldDescriptor* descriptor);
 
 int GetFixedSize(FieldDescriptor::Type type);
 
@@ -103,9 +114,10 @@ std::string StringToBase64(const std::string& input);
 
 std::string FileDescriptorToBase64(const FileDescriptor* descriptor);
 
-FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor,
-                                         int fieldOrdinal,
-                                         const Options* options);
+// Escapes a string with C# variable length code points
+std::string StringToEscapedCSharpString(const std::string& input);
+
+FieldGeneratorBase* CreateFieldGenerator(const FieldDescriptor* descriptor, const Options* options);
 
 // Determines whether the given message is a map entry message,
 // i.e. one implicitly created by protoc due to a map<key, value> field.

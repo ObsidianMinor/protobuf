@@ -57,13 +57,14 @@ class MessageGenerator : public SourceGeneratorBase {
 
  private:
   const Descriptor* descriptor_;
+  bool has_extension_ranges_;
   std::vector<std::string> field_names_;
   std::vector<const FieldDescriptor*> fields_by_number_;
 
   void GenerateMessageSerializationMethods(io::Printer* printer);
   void GenerateMergingMethods(io::Printer* printer);
+  void GenerateExtensionMessageMethods(io::Printer* printer);
 
-  int GetFieldOrdinal(const FieldDescriptor* descriptor);
   FieldGeneratorBase* CreateFieldGeneratorInternal(
       const FieldDescriptor* descriptor);
 

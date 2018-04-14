@@ -45,6 +45,7 @@
 #include <google/protobuf/compiler/csharp/csharp_names.h>
 #include <google/protobuf/compiler/csharp/csharp_options.h>
 #include <google/protobuf/compiler/csharp/csharp_reflection_class.h>
+#include <google/protobuf/compiler/csharp/csharp_field_base.h>
 
 namespace google {
 namespace protobuf {
@@ -57,6 +58,7 @@ ReflectionClassGenerator::ReflectionClassGenerator(const FileDescriptor* file,
       file_(file) {
   namespace_ = GetFileNamespace(file);
   reflectionClassname_ = GetReflectionClassUnqualifiedName(file);
+  extensionClassname_ = GetExtensionClassUnqualifiedName(file);
 }
 
 ReflectionClassGenerator::~ReflectionClassGenerator() {
@@ -68,8 +70,27 @@ void ReflectionClassGenerator::Generate(io::Printer* printer) {
   WriteDescriptor(printer);
   // Close the class declaration.
   printer->Outdent();
-  printer->Print("}\n");
+  printer->Print("}\n\n");
 
+  if (file_->extension_count() > 0) {
+      printer->Print(
+          "/// <summary>Holder for extension identifiers generated from the top level of $file_name$</summary>\n"
+          "$access_level$ static partial class $class_name$ {\n",
+      "access_level", class_access_level(),
+      "class_name", extensionClassname_,
+      "file_name", file_->name());
+      printer->Indent();
+      for (int i = 0; i < file_->extension_count(); i++) {
+        std::unique_ptr<FieldGeneratorBase> generator(
+          CreateFieldGenerator(file_->extension(i), this->options()));
+        generator->GenerateExtensionCode(printer);
+      }
+      printer->Outdent();
+      printer->Print(
+      "}\n"
+      "\n");
+  }
+  
   // write children: Enums
   if (file_->enum_type_count() > 0) {
     printer->Print("#region Enums\n");
@@ -195,6 +216,16 @@ void ReflectionClassGenerator::WriteDescriptor(io::Printer* printer) {
   else {
       printer->Print("null, ");
   }
+  if (file_->extension_count() > 0) {
+    std::vector<std::string> extensions;
+    for (int i = 0; i < file_->extension_count(); i++) {
+      extensions.push_back(GetFullExtensionName(file_->extension(i)));
+    }
+    printer->Print("new pb::Extension[] { $extensions$ }, ", "extensions", JoinStrings(extensions, ", "));
+  }
+  else {
+    printer->Print("null, ");
+  }
   if (file_->message_type_count() > 0) {
       printer->Print("new pbr::GeneratedClrTypeInfo[] {\n");
       printer->Indent();
@@ -269,6 +300,17 @@ void ReflectionClassGenerator::WriteGeneratedCodeInfo(const Descriptor* descript
   }
   else {
       printer->Print("null, ");
+  }
+
+  if (descriptor->extension_count() > 0) {
+    std::vector<std::string> extensions;
+    for (int i = 0; i < descriptor->extension_count(); i++) {
+      extensions.push_back(GetFullExtensionName(descriptor->extension(i)));
+    }
+    printer->Print("new pb::Extension[] { $extensions$ }, ", "extensions", JoinStrings(extensions, ", "));
+  }
+  else {
+    printer->Print("null, ");
   }
 
   // Nested types

@@ -47,16 +47,15 @@ namespace protobuf {
 namespace compiler {
 namespace csharp {
 
-WrapperFieldGenerator::WrapperFieldGenerator(const FieldDescriptor* descriptor,
-                                       int fieldOrdinal, const Options *options)
-    : FieldGeneratorBase(descriptor, fieldOrdinal, options) {
+WrapperFieldGenerator::WrapperFieldGenerator(const FieldDescriptor* descriptor, const Options *options)
+    : FieldGeneratorBase(descriptor, options) {
   variables_["has_property_check"] = name() + "_ != null";
   variables_["has_not_property_check"] = name() + "_ == null";
   const FieldDescriptor* wrapped_field = descriptor->message_type()->field(0);
   is_value_type = wrapped_field->type() != FieldDescriptor::TYPE_STRING &&
       wrapped_field->type() != FieldDescriptor::TYPE_BYTES;
   if (is_value_type) {
-    variables_["nonnullable_type_name"] = type_name(wrapped_field);
+    variables_["nonnullable_type_name"] = GetTypeName(wrapped_field);
   }
 }
 
@@ -81,6 +80,15 @@ void WrapperFieldGenerator::GenerateMembers(io::Printer* printer) {
     "  set {\n"
     "    $name$_ = value;\n"
     "  }\n"
+    "}\n\n");
+  printer->Print(
+    variables_,
+    "/// <summary>Clears the value of the $descriptor_name$ field</summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  $name$_ = null;\n"
     "}\n");
 }
 
@@ -162,9 +170,18 @@ void WrapperFieldGenerator::GenerateCodecCode(io::Printer* printer) {
   }
 }
 
+void WrapperFieldGenerator::GenerateExtensionCode(io::Printer* printer) {
+  printer->Print(
+    variables_,
+    "$access_level$ static readonly pb::Extension<$extended_type$, $type_name$> $property_name$ =\n"
+    "  new pb::Extension<$extended_type$, $type_name$>(");
+  GenerateCodecCode(printer);
+  printer->Print(");\n");
+}
+
 WrapperOneofFieldGenerator::WrapperOneofFieldGenerator(
-    const FieldDescriptor* descriptor, int fieldOrdinal, const Options *options)
-    : WrapperFieldGenerator(descriptor, fieldOrdinal, options) {
+    const FieldDescriptor* descriptor, const Options *options)
+    : WrapperFieldGenerator(descriptor, options) {
     SetCommonOneofFieldVariables(&variables_);
 }
 
@@ -187,6 +204,28 @@ void WrapperOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
     "  set {\n"
     "    $oneof_name$_ = value;\n"
     "    $oneof_name$Case_ = value == null ? $oneof_property_name$OneofCase.None : $oneof_property_name$OneofCase.$property_name$;\n"
+    "  }\n"
+    "}\n");
+  if (descriptor_->file()->syntax() == FileDescriptor::SYNTAX_PROTO2) {
+    printer->Print(
+      variables_,
+      "/// <summary>Gets whether the \"$descriptor_name$\" field is set</summary>\n");
+    AddPublicMemberAttributes(printer);
+    printer->Print(
+      variables_,
+      "$access_level$ bool Has$property_name$ {\n"
+      "  get { return $oneof_name$Case_ == $oneof_property_name$OneofCase.$property_name$; }\n"
+      "}\n");
+  }
+  printer->Print(
+    variables_,
+    "/// <summary> Clears the value of the oneof if it's currently set to \"$descriptor_name$\" </summary>\n");
+  AddPublicMemberAttributes(printer);
+  printer->Print(
+    variables_,
+    "$access_level$ void Clear$property_name$() {\n"
+    "  if ($has_property_check$) {\n"
+    "    Clear$oneof_property_name$();\n"
     "  }\n"
     "}\n");
 }

@@ -32,13 +32,14 @@ namespace Google.Protobuf.WellKnownTypes {
             "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.FieldMask), global::Google.Protobuf.WellKnownTypes.FieldMask.Parser, new[]{ "Paths" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.FieldMask), global::Google.Protobuf.WellKnownTypes.FieldMask.Parser, new[]{ "Paths" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// `FieldMask` represents a set of symbolic field paths, for example:
@@ -329,6 +330,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       paths_.WriteTo(output, _repeated_paths_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -368,8 +370,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   #endregion

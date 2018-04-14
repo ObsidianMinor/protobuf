@@ -36,21 +36,22 @@ namespace Google.Protobuf.WellKnownTypes {
             "QqoCHkdvb2dsZS5Qcm90b2J1Zi5XZWxsS25vd25UeXBlc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.DoubleValue), global::Google.Protobuf.WellKnownTypes.DoubleValue.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.FloatValue), global::Google.Protobuf.WellKnownTypes.FloatValue.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.Int64Value), global::Google.Protobuf.WellKnownTypes.Int64Value.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.UInt64Value), global::Google.Protobuf.WellKnownTypes.UInt64Value.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.Int32Value), global::Google.Protobuf.WellKnownTypes.Int32Value.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.UInt32Value), global::Google.Protobuf.WellKnownTypes.UInt32Value.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.BoolValue), global::Google.Protobuf.WellKnownTypes.BoolValue.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.StringValue), global::Google.Protobuf.WellKnownTypes.StringValue.Parser, new[]{ "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.BytesValue), global::Google.Protobuf.WellKnownTypes.BytesValue.Parser, new[]{ "Value" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.DoubleValue), global::Google.Protobuf.WellKnownTypes.DoubleValue.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.FloatValue), global::Google.Protobuf.WellKnownTypes.FloatValue.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.Int64Value), global::Google.Protobuf.WellKnownTypes.Int64Value.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.UInt64Value), global::Google.Protobuf.WellKnownTypes.UInt64Value.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.Int32Value), global::Google.Protobuf.WellKnownTypes.Int32Value.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.UInt32Value), global::Google.Protobuf.WellKnownTypes.UInt32Value.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.BoolValue), global::Google.Protobuf.WellKnownTypes.BoolValue.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.StringValue), global::Google.Protobuf.WellKnownTypes.StringValue.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.BytesValue), global::Google.Protobuf.WellKnownTypes.BytesValue.Parser, new[]{ "Value" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// Wrapper message for `double`.
@@ -93,6 +94,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const double ValueDefaultValue = 0D;
+
     private double value_;
     /// <summary>
     /// The double value.
@@ -103,6 +107,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,6 +148,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0D) {
         output.WriteRawTag(9);
         output.WriteDouble(Value);
@@ -185,8 +195,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -230,6 +245,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const float ValueDefaultValue = 0F;
+
     private float value_;
     /// <summary>
     /// The float value.
@@ -240,6 +258,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -276,6 +299,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0F) {
         output.WriteRawTag(13);
         output.WriteFloat(Value);
@@ -322,8 +346,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -367,6 +396,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const long ValueDefaultValue = 0L;
+
     private long value_;
     /// <summary>
     /// The int64 value.
@@ -377,6 +409,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -413,6 +450,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0L) {
         output.WriteRawTag(8);
         output.WriteInt64(Value);
@@ -459,8 +497,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -504,6 +547,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const ulong ValueDefaultValue = 0UL;
+
     private ulong value_;
     /// <summary>
     /// The uint64 value.
@@ -514,6 +560,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -550,6 +601,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0UL) {
         output.WriteRawTag(8);
         output.WriteUInt64(Value);
@@ -596,8 +648,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -641,6 +698,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const int ValueDefaultValue = 0;
+
     private int value_;
     /// <summary>
     /// The int32 value.
@@ -651,6 +711,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -687,6 +752,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Value);
@@ -733,8 +799,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -778,6 +849,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const uint ValueDefaultValue = 0;
+
     private uint value_;
     /// <summary>
     /// The uint32 value.
@@ -788,6 +862,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -824,6 +903,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != 0) {
         output.WriteRawTag(8);
         output.WriteUInt32(Value);
@@ -870,8 +950,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -915,6 +1000,9 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
+    /// <summary>Default value for the "value" field</summary>
+    public const bool ValueDefaultValue = false;
+
     private bool value_;
     /// <summary>
     /// The bool value.
@@ -925,6 +1013,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = value;
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -961,6 +1054,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value != false) {
         output.WriteRawTag(8);
         output.WriteBool(Value);
@@ -1007,8 +1101,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -1052,7 +1151,10 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
-    private string value_ = "";
+    /// <summary>Default value for the "value" field</summary>
+    public const string ValueDefaultValue = "";
+
+    private string value_ = ValueDefaultValue;
     /// <summary>
     /// The string value.
     /// </summary>
@@ -1062,6 +1164,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1098,6 +1205,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Value);
@@ -1144,8 +1252,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -1189,7 +1302,10 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
-    private pb::ByteString value_ = pb::ByteString.Empty;
+    /// <summary>Default value for the "value" field</summary>
+    public readonly static pb::ByteString ValueDefaultValue = pb::ByteString.Empty;
+
+    private pb::ByteString value_ = ValueDefaultValue;
     /// <summary>
     /// The bytes value.
     /// </summary>
@@ -1199,6 +1315,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValue() {
+      value_ = ValueDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1235,6 +1356,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Value.Length != 0) {
         output.WriteRawTag(10);
         output.WriteBytes(Value);
@@ -1281,8 +1403,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   #endregion

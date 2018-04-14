@@ -32,13 +32,14 @@ namespace Google.Protobuf.WellKnownTypes {
             "YnVmLldlbGxLbm93blR5cGVzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.SourceContext), global::Google.Protobuf.WellKnownTypes.SourceContext.Parser, new[]{ "FileName" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.SourceContext), global::Google.Protobuf.WellKnownTypes.SourceContext.Parser, new[]{ "FileName" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// `SourceContext` represents information about the source of a
@@ -80,7 +81,10 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "file_name" field.</summary>
     public const int FileNameFieldNumber = 1;
-    private string fileName_ = "";
+    /// <summary>Default value for the "file_name" field</summary>
+    public const string FileNameDefaultValue = "";
+
+    private string fileName_ = FileNameDefaultValue;
     /// <summary>
     /// The path-qualified name of the .proto file that contained the associated
     /// protobuf element.  For example: `"google/protobuf/source_context.proto"`.
@@ -91,6 +95,11 @@ namespace Google.Protobuf.WellKnownTypes {
       set {
         fileName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Clears the value of the "file_name" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFileName() {
+      fileName_ = FileNameDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,6 +136,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (FileName.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(FileName);
@@ -173,8 +183,13 @@ namespace Google.Protobuf.WellKnownTypes {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   #endregion

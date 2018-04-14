@@ -31,13 +31,14 @@ namespace Google.Protobuf.WellKnownTypes {
             "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.Empty), global::Google.Protobuf.WellKnownTypes.Empty.Parser, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.WellKnownTypes.Empty), global::Google.Protobuf.WellKnownTypes.Empty.Parser, null, null, null, null, null)
           }));
     }
     #endregion
 
   }
+
   #region Messages
   /// <summary>
   /// A generic empty message that you can re-use to avoid defining duplicated
@@ -115,6 +116,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -147,8 +149,13 @@ namespace Google.Protobuf.WellKnownTypes {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   #endregion

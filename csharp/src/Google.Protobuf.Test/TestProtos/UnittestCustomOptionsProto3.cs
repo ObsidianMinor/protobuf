@@ -139,31 +139,106 @@ namespace UnitTest.Issues.TestProtos {
             "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { pbr::FileDescriptor.DescriptorProtoFileDescriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnitTest.Issues.TestProtos.MethodOpt1), typeof(global::UnitTest.Issues.TestProtos.AggregateEnum), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.TestMessageWithCustomOptions), global::UnitTest.Issues.TestProtos.TestMessageWithCustomOptions.Parser, new[]{ "Field1", "OneofField" }, new[]{ "AnOneof" }, new[]{ typeof(global::UnitTest.Issues.TestProtos.TestMessageWithCustomOptions.Types.AnEnum) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooRequest), global::UnitTest.Issues.TestProtos.CustomOptionFooRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooResponse), global::UnitTest.Issues.TestProtos.CustomOptionFooResponse.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooClientMessage), global::UnitTest.Issues.TestProtos.CustomOptionFooClientMessage.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooServerMessage), global::UnitTest.Issues.TestProtos.CustomOptionFooServerMessage.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum), global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Parser, null, null, new[]{ typeof(global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType), global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionMinIntegerValues), global::UnitTest.Issues.TestProtos.CustomOptionMinIntegerValues.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionMaxIntegerValues), global::UnitTest.Issues.TestProtos.CustomOptionMaxIntegerValues.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionOtherValues), global::UnitTest.Issues.TestProtos.CustomOptionOtherValues.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.SettingRealsFromPositiveInts), global::UnitTest.Issues.TestProtos.SettingRealsFromPositiveInts.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.SettingRealsFromNegativeInts), global::UnitTest.Issues.TestProtos.SettingRealsFromNegativeInts.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType1), global::UnitTest.Issues.TestProtos.ComplexOptionType1.Parser, new[]{ "Foo", "Foo2", "Foo3", "Foo4" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType2), global::UnitTest.Issues.TestProtos.ComplexOptionType2.Parser, new[]{ "Bar", "Baz", "Fred", "Barney" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4), global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4.Parser, new[]{ "Waldo" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType3), global::UnitTest.Issues.TestProtos.ComplexOptionType3.Parser, new[]{ "Qux" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.VariousComplexOptions), global::UnitTest.Issues.TestProtos.VariousComplexOptions.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.Aggregate), global::UnitTest.Issues.TestProtos.Aggregate.Parser, new[]{ "I", "S", "Sub" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.AggregateMessage), global::UnitTest.Issues.TestProtos.AggregateMessage.Parser, new[]{ "Fieldname" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.NestedOptionType), global::UnitTest.Issues.TestProtos.NestedOptionType.Parser, null, null, new[]{ typeof(global::UnitTest.Issues.TestProtos.NestedOptionType.Types.NestedEnum) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.NestedOptionType.Types.NestedMessage), global::UnitTest.Issues.TestProtos.NestedOptionType.Types.NestedMessage.Parser, new[]{ "NestedField" }, null, null, null)})
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnitTest.Issues.TestProtos.MethodOpt1), typeof(global::UnitTest.Issues.TestProtos.AggregateEnum), }, new pb::Extension[] { UnittestCustomOptionsProto3Extensions.FileOpt1, UnittestCustomOptionsProto3Extensions.MessageOpt1, UnittestCustomOptionsProto3Extensions.FieldOpt1, UnittestCustomOptionsProto3Extensions.OneofOpt1, UnittestCustomOptionsProto3Extensions.EnumOpt1, UnittestCustomOptionsProto3Extensions.EnumValueOpt1, UnittestCustomOptionsProto3Extensions.ServiceOpt1, UnittestCustomOptionsProto3Extensions.MethodOpt1, UnittestCustomOptionsProto3Extensions.BoolOpt, UnittestCustomOptionsProto3Extensions.Int32Opt, UnittestCustomOptionsProto3Extensions.Int64Opt, UnittestCustomOptionsProto3Extensions.Uint32Opt, UnittestCustomOptionsProto3Extensions.Uint64Opt, UnittestCustomOptionsProto3Extensions.Sint32Opt, UnittestCustomOptionsProto3Extensions.Sint64Opt, UnittestCustomOptionsProto3Extensions.Fixed32Opt, UnittestCustomOptionsProto3Extensions.Fixed64Opt, UnittestCustomOptionsProto3Extensions.Sfixed32Opt, UnittestCustomOptionsProto3Extensions.Sfixed64Opt, UnittestCustomOptionsProto3Extensions.FloatOpt, UnittestCustomOptionsProto3Extensions.DoubleOpt, UnittestCustomOptionsProto3Extensions.StringOpt, UnittestCustomOptionsProto3Extensions.BytesOpt, UnittestCustomOptionsProto3Extensions.EnumOpt, UnittestCustomOptionsProto3Extensions.MessageTypeOpt, UnittestCustomOptionsProto3Extensions.ComplexOpt1, UnittestCustomOptionsProto3Extensions.ComplexOpt2, UnittestCustomOptionsProto3Extensions.ComplexOpt3, UnittestCustomOptionsProto3Extensions.Fileopt, UnittestCustomOptionsProto3Extensions.Msgopt, UnittestCustomOptionsProto3Extensions.Fieldopt, UnittestCustomOptionsProto3Extensions.Enumopt, UnittestCustomOptionsProto3Extensions.Enumvalopt, UnittestCustomOptionsProto3Extensions.Serviceopt, UnittestCustomOptionsProto3Extensions.Methodopt }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.TestMessageWithCustomOptions), global::UnitTest.Issues.TestProtos.TestMessageWithCustomOptions.Parser, new[]{ "Field1", "OneofField" }, new[]{ "AnOneof" }, new[]{ typeof(global::UnitTest.Issues.TestProtos.TestMessageWithCustomOptions.Types.AnEnum) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooRequest), global::UnitTest.Issues.TestProtos.CustomOptionFooRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooResponse), global::UnitTest.Issues.TestProtos.CustomOptionFooResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooClientMessage), global::UnitTest.Issues.TestProtos.CustomOptionFooClientMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionFooServerMessage), global::UnitTest.Issues.TestProtos.CustomOptionFooServerMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum), global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Parser, null, null, new[]{ typeof(global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType), global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionMinIntegerValues), global::UnitTest.Issues.TestProtos.CustomOptionMinIntegerValues.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionMaxIntegerValues), global::UnitTest.Issues.TestProtos.CustomOptionMaxIntegerValues.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.CustomOptionOtherValues), global::UnitTest.Issues.TestProtos.CustomOptionOtherValues.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.SettingRealsFromPositiveInts), global::UnitTest.Issues.TestProtos.SettingRealsFromPositiveInts.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.SettingRealsFromNegativeInts), global::UnitTest.Issues.TestProtos.SettingRealsFromNegativeInts.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType1), global::UnitTest.Issues.TestProtos.ComplexOptionType1.Parser, new[]{ "Foo", "Foo2", "Foo3", "Foo4" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType2), global::UnitTest.Issues.TestProtos.ComplexOptionType2.Parser, new[]{ "Bar", "Baz", "Fred", "Barney" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4), global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4.Parser, new[]{ "Waldo" }, null, null, new pb::Extension[] { global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4.Extensions.ComplexOpt4 }, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.ComplexOptionType3), global::UnitTest.Issues.TestProtos.ComplexOptionType3.Parser, new[]{ "Qux" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.VariousComplexOptions), global::UnitTest.Issues.TestProtos.VariousComplexOptions.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.Aggregate), global::UnitTest.Issues.TestProtos.Aggregate.Parser, new[]{ "I", "S", "Sub" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.AggregateMessage), global::UnitTest.Issues.TestProtos.AggregateMessage.Parser, new[]{ "Fieldname" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.NestedOptionType), global::UnitTest.Issues.TestProtos.NestedOptionType.Parser, null, null, new[]{ typeof(global::UnitTest.Issues.TestProtos.NestedOptionType.Types.NestedEnum) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::UnitTest.Issues.TestProtos.NestedOptionType.Types.NestedMessage), global::UnitTest.Issues.TestProtos.NestedOptionType.Types.NestedMessage.Parser, new[]{ "NestedField" }, null, null, null, null)})
           }));
     }
     #endregion
 
   }
+
+  /// <summary>Holder for extension identifiers generated from the top level of unittest_custom_options_proto3.proto</summary>
+  public static partial class UnittestCustomOptionsProto3Extensions {
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong> FileOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, ulong>(pb::FieldCodec.ForUInt64(61895792, 0UL));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> MessageOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(pb::FieldCodec.ForInt32(61912288, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, ulong> FieldOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, ulong>(pb::FieldCodec.ForFixed64(61927489, 0UL));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, int> OneofOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, int>(pb::FieldCodec.ForInt32(61920888, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, int> EnumOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, int>(pb::FieldCodec.ForSFixed32(62028613, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, int> EnumValueOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, int>(pb::FieldCodec.ForInt32(12485424, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, long> ServiceOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, long>(pb::FieldCodec.ForSInt64(63101200, 0L));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.MethodOpt1> MethodOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.MethodOpt1>(pb::FieldCodec.ForEnum(63126880, x => (int) x, x => (global::UnitTest.Issues.TestProtos.MethodOpt1) x));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, bool> BoolOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, bool>(pb::FieldCodec.ForBool(61648720, false));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> Int32Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(pb::FieldCodec.ForInt32(61645672, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long> Int64Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(pb::FieldCodec.ForInt64(61644336, 0L));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint> Uint32Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint>(pb::FieldCodec.ForUInt32(61639040, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong> Uint64Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong>(pb::FieldCodec.ForUInt64(61618936, 0UL));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> Sint32Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(pb::FieldCodec.ForSInt32(61612544, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long> Sint64Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(pb::FieldCodec.ForSInt64(61606904, 0L));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint> Fixed32Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, uint>(pb::FieldCodec.ForFixed32(61602461, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong> Fixed64Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, ulong>(pb::FieldCodec.ForFixed64(61601553, 0UL));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int> Sfixed32Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, int>(pb::FieldCodec.ForSFixed32(61589165, 0));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long> Sfixed64Opt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, long>(pb::FieldCodec.ForSFixed64(61483801, 0L));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, float> FloatOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, float>(pb::FieldCodec.ForFloat(61403125, 0F));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, double> DoubleOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, double>(pb::FieldCodec.ForDouble(61386345, 0D));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, string> StringOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, string>(pb::FieldCodec.ForString(61386282, ""));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, pb::ByteString> BytesOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, pb::ByteString>(pb::FieldCodec.ForBytes(61385906, pb::ByteString.Empty));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType> EnumOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType>(pb::FieldCodec.ForEnum(61385864, x => (int) x, x => (global::UnitTest.Issues.TestProtos.DummyMessageContainingEnum.Types.TestEnumType) x));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType> MessageTypeOpt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType>(pb::FieldCodec.ForMessage(61327738, global::UnitTest.Issues.TestProtos.DummyMessageInvalidAsOptionType.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType1> ComplexOpt1 =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType1>(pb::FieldCodec.ForMessage(61174050, global::UnitTest.Issues.TestProtos.ComplexOptionType1.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2> ComplexOpt2 =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2>(pb::FieldCodec.ForMessage(61095594, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType3> ComplexOpt3 =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType3>(pb::FieldCodec.ForMessage(61091706, global::UnitTest.Issues.TestProtos.ComplexOptionType3.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::UnitTest.Issues.TestProtos.Aggregate> Fileopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.FileOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(123827834, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.Aggregate> Msgopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(123840706, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::UnitTest.Issues.TestProtos.Aggregate> Fieldopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(123850994, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, global::UnitTest.Issues.TestProtos.Aggregate> Enumopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(123865746, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, global::UnitTest.Issues.TestProtos.Aggregate> Enumvalopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.EnumValueOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(123895370, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::UnitTest.Issues.TestProtos.Aggregate> Serviceopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.ServiceOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(123977162, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.Aggregate> Methodopt =
+      new pb::Extension<global::Google.Protobuf.Reflection.MethodOptions, global::UnitTest.Issues.TestProtos.Aggregate>(pb::FieldCodec.ForMessage(124101706, global::UnitTest.Issues.TestProtos.Aggregate.Parser));
+  }
+
   #region Enums
   public enum MethodOpt1 {
     [pbr::OriginalName("METHODOPT1_UNSPECIFIED")] Unspecified = 0,
@@ -225,13 +300,21 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "field1" field.</summary>
     public const int Field1FieldNumber = 1;
-    private string field1_ = "";
+    /// <summary>Default value for the "field1" field</summary>
+    public const string Field1DefaultValue = "";
+
+    private string field1_ = Field1DefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Field1 {
       get { return field1_; }
       set {
         field1_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Clears the value of the "field1" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearField1() {
+      field1_ = Field1DefaultValue;
     }
 
     /// <summary>Field number for the "oneof_field" field.</summary>
@@ -242,6 +325,13 @@ namespace UnitTest.Issues.TestProtos {
       set {
         anOneof_ = value;
         anOneofCase_ = AnOneofOneofCase.OneofField;
+      }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "oneof_field" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearOneofField() {
+      if (anOneofCase_ == AnOneofOneofCase.OneofField) {
+        ClearAnOneof();
       }
     }
 
@@ -301,6 +391,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Field1.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Field1);
@@ -364,8 +455,13 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
     #region Nested types
     /// <summary>Container for nested types declared in the TestMessageWithCustomOptions message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -450,6 +546,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -482,8 +579,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class CustomOptionFooResponse : pb::IMessage<CustomOptionFooResponse> {
@@ -551,6 +653,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -583,8 +686,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class CustomOptionFooClientMessage : pb::IMessage<CustomOptionFooClientMessage> {
@@ -652,6 +760,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -684,8 +793,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class CustomOptionFooServerMessage : pb::IMessage<CustomOptionFooServerMessage> {
@@ -753,6 +867,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -785,8 +900,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class DummyMessageContainingEnum : pb::IMessage<DummyMessageContainingEnum> {
@@ -854,6 +974,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -886,8 +1007,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
     #region Nested types
     /// <summary>Container for nested types declared in the DummyMessageContainingEnum message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -968,6 +1094,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1000,8 +1127,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class CustomOptionMinIntegerValues : pb::IMessage<CustomOptionMinIntegerValues> {
@@ -1069,6 +1201,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1101,8 +1234,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class CustomOptionMaxIntegerValues : pb::IMessage<CustomOptionMaxIntegerValues> {
@@ -1170,6 +1308,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1202,8 +1341,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class CustomOptionOtherValues : pb::IMessage<CustomOptionOtherValues> {
@@ -1271,6 +1415,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1303,8 +1448,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class SettingRealsFromPositiveInts : pb::IMessage<SettingRealsFromPositiveInts> {
@@ -1372,6 +1522,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1404,8 +1555,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class SettingRealsFromNegativeInts : pb::IMessage<SettingRealsFromNegativeInts> {
@@ -1473,6 +1629,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1505,8 +1662,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class ComplexOptionType1 : pb::IMessage<ComplexOptionType1> {
@@ -1548,6 +1710,9 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "foo" field.</summary>
     public const int FooFieldNumber = 1;
+    /// <summary>Default value for the "foo" field</summary>
+    public const int FooDefaultValue = 0;
+
     private int foo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Foo {
@@ -1556,9 +1721,17 @@ namespace UnitTest.Issues.TestProtos {
         foo_ = value;
       }
     }
+    /// <summary>Clears the value of the "foo" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFoo() {
+      foo_ = FooDefaultValue;
+    }
 
     /// <summary>Field number for the "foo2" field.</summary>
     public const int Foo2FieldNumber = 2;
+    /// <summary>Default value for the "foo2" field</summary>
+    public const int Foo2DefaultValue = 0;
+
     private int foo2_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Foo2 {
@@ -1567,9 +1740,17 @@ namespace UnitTest.Issues.TestProtos {
         foo2_ = value;
       }
     }
+    /// <summary>Clears the value of the "foo2" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFoo2() {
+      foo2_ = Foo2DefaultValue;
+    }
 
     /// <summary>Field number for the "foo3" field.</summary>
     public const int Foo3FieldNumber = 3;
+    /// <summary>Default value for the "foo3" field</summary>
+    public const int Foo3DefaultValue = 0;
+
     private int foo3_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Foo3 {
@@ -1577,6 +1758,11 @@ namespace UnitTest.Issues.TestProtos {
       set {
         foo3_ = value;
       }
+    }
+    /// <summary>Clears the value of the "foo3" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFoo3() {
+      foo3_ = Foo3DefaultValue;
     }
 
     /// <summary>Field number for the "foo4" field.</summary>
@@ -1629,6 +1815,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Foo != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Foo);
@@ -1711,8 +1898,13 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class ComplexOptionType2 : pb::IMessage<ComplexOptionType2> {
@@ -1762,9 +1954,22 @@ namespace UnitTest.Issues.TestProtos {
         bar_ = value;
       }
     }
+    /// <summary>Gets whether the bar field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasBar {
+      get { return bar_ != null; }
+    }
+    /// <summary>Clears the value of the bar field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBar() {
+      bar_ = null;
+    }
 
     /// <summary>Field number for the "baz" field.</summary>
     public const int BazFieldNumber = 2;
+    /// <summary>Default value for the "baz" field</summary>
+    public const int BazDefaultValue = 0;
+
     private int baz_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Baz {
@@ -1772,6 +1977,11 @@ namespace UnitTest.Issues.TestProtos {
       set {
         baz_ = value;
       }
+    }
+    /// <summary>Clears the value of the "baz" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBaz() {
+      baz_ = BazDefaultValue;
     }
 
     /// <summary>Field number for the "fred" field.</summary>
@@ -1783,6 +1993,16 @@ namespace UnitTest.Issues.TestProtos {
       set {
         fred_ = value;
       }
+    }
+    /// <summary>Gets whether the fred field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasFred {
+      get { return fred_ != null; }
+    }
+    /// <summary>Clears the value of the fred field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFred() {
+      fred_ = null;
     }
 
     /// <summary>Field number for the "barney" field.</summary>
@@ -1835,6 +2055,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (bar_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(Bar);
@@ -1928,8 +2149,14 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!barney_.IsInitialized()) return false;
+      return true;
+    }
     #region Nested types
     /// <summary>Container for nested types declared in the ComplexOptionType2 message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1970,6 +2197,9 @@ namespace UnitTest.Issues.TestProtos {
 
         /// <summary>Field number for the "waldo" field.</summary>
         public const int WaldoFieldNumber = 1;
+        /// <summary>Default value for the "waldo" field</summary>
+        public const int WaldoDefaultValue = 0;
+
         private int waldo_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Waldo {
@@ -1977,6 +2207,11 @@ namespace UnitTest.Issues.TestProtos {
           set {
             waldo_ = value;
           }
+        }
+        /// <summary>Clears the value of the "waldo" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void ClearWaldo() {
+          waldo_ = WaldoDefaultValue;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2013,6 +2248,7 @@ namespace UnitTest.Issues.TestProtos {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (Waldo != 0) {
             output.WriteRawTag(8);
             output.WriteInt32(Waldo);
@@ -2059,7 +2295,21 @@ namespace UnitTest.Issues.TestProtos {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
+        #region Extensions
+        /// <summary>Container for extensions for other messages declared in the ComplexOptionType4 message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static partial class Extensions {
+          public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4> ComplexOpt4 =
+            new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4>(pb::FieldCodec.ForMessage(61068370, global::UnitTest.Issues.TestProtos.ComplexOptionType2.Types.ComplexOptionType4.Parser));
+        }
+        #endregion
 
       }
 
@@ -2104,6 +2354,9 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "qux" field.</summary>
     public const int QuxFieldNumber = 1;
+    /// <summary>Default value for the "qux" field</summary>
+    public const int QuxDefaultValue = 0;
+
     private int qux_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Qux {
@@ -2111,6 +2364,11 @@ namespace UnitTest.Issues.TestProtos {
       set {
         qux_ = value;
       }
+    }
+    /// <summary>Clears the value of the "qux" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearQux() {
+      qux_ = QuxDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2147,6 +2405,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Qux != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Qux);
@@ -2193,8 +2452,13 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -2265,6 +2529,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2297,8 +2562,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -2342,6 +2612,9 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "i" field.</summary>
     public const int IFieldNumber = 1;
+    /// <summary>Default value for the "i" field</summary>
+    public const int IDefaultValue = 0;
+
     private int i_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int I {
@@ -2350,16 +2623,29 @@ namespace UnitTest.Issues.TestProtos {
         i_ = value;
       }
     }
+    /// <summary>Clears the value of the "i" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearI() {
+      i_ = IDefaultValue;
+    }
 
     /// <summary>Field number for the "s" field.</summary>
     public const int SFieldNumber = 2;
-    private string s_ = "";
+    /// <summary>Default value for the "s" field</summary>
+    public const string SDefaultValue = "";
+
+    private string s_ = SDefaultValue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string S {
       get { return s_; }
       set {
         s_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Clears the value of the "s" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearS() {
+      s_ = SDefaultValue;
     }
 
     /// <summary>Field number for the "sub" field.</summary>
@@ -2374,6 +2660,16 @@ namespace UnitTest.Issues.TestProtos {
       set {
         sub_ = value;
       }
+    }
+    /// <summary>Gets whether the sub field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasSub {
+      get { return sub_ != null; }
+    }
+    /// <summary>Clears the value of the sub field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSub() {
+      sub_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2414,6 +2710,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (I != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(I);
@@ -2494,8 +2791,13 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class AggregateMessage : pb::IMessage<AggregateMessage> {
@@ -2534,6 +2836,9 @@ namespace UnitTest.Issues.TestProtos {
 
     /// <summary>Field number for the "fieldname" field.</summary>
     public const int FieldnameFieldNumber = 1;
+    /// <summary>Default value for the "fieldname" field</summary>
+    public const int FieldnameDefaultValue = 0;
+
     private int fieldname_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Fieldname {
@@ -2541,6 +2846,11 @@ namespace UnitTest.Issues.TestProtos {
       set {
         fieldname_ = value;
       }
+    }
+    /// <summary>Clears the value of the "fieldname" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearFieldname() {
+      fieldname_ = FieldnameDefaultValue;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2577,6 +2887,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (Fieldname != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Fieldname);
@@ -2623,8 +2934,13 @@ namespace UnitTest.Issues.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   /// <summary>
@@ -2695,6 +3011,7 @@ namespace UnitTest.Issues.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2727,8 +3044,13 @@ namespace UnitTest.Issues.TestProtos {
             break;
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
     #region Nested types
     /// <summary>Container for nested types declared in the NestedOptionType message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2774,6 +3096,9 @@ namespace UnitTest.Issues.TestProtos {
 
         /// <summary>Field number for the "nested_field" field.</summary>
         public const int NestedFieldFieldNumber = 1;
+        /// <summary>Default value for the "nested_field" field</summary>
+        public const int NestedFieldDefaultValue = 0;
+
         private int nestedField_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int NestedField {
@@ -2781,6 +3106,11 @@ namespace UnitTest.Issues.TestProtos {
           set {
             nestedField_ = value;
           }
+        }
+        /// <summary>Clears the value of the "nested_field" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void ClearNestedField() {
+          nestedField_ = NestedFieldDefaultValue;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2817,6 +3147,7 @@ namespace UnitTest.Issues.TestProtos {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          pb::ProtoPreconditions.CheckInitialized(this);
           if (NestedField != 0) {
             output.WriteRawTag(8);
             output.WriteInt32(NestedField);
@@ -2863,8 +3194,13 @@ namespace UnitTest.Issues.TestProtos {
               }
             }
           }
+          pb::ProtoPreconditions.CheckMergedRequiredFields(this);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool IsInitialized() {
+          return true;
+        }
       }
 
     }

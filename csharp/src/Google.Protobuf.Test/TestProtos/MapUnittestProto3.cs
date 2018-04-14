@@ -150,19 +150,20 @@ namespace Google.Protobuf.TestProtos {
             "WhACQh2qAhpHb29nbGUuUHJvdG9idWYuVGVzdFByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.TestProtos.UnittestProto3Reflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.TestProtos.MapEnum), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestMap), global::Google.Protobuf.TestProtos.TestMap.Parser, new[]{ "MapInt32Int32", "MapInt64Int64", "MapUint32Uint32", "MapUint64Uint64", "MapSint32Sint32", "MapSint64Sint64", "MapFixed32Fixed32", "MapFixed64Fixed64", "MapSfixed32Sfixed32", "MapSfixed64Sfixed64", "MapInt32Float", "MapInt32Double", "MapBoolBool", "MapStringString", "MapInt32Bytes", "MapInt32Enum", "MapInt32ForeignMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestMapSubmessage), global::Google.Protobuf.TestProtos.TestMapSubmessage.Parser, new[]{ "TestMap" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestMessageMap), global::Google.Protobuf.TestProtos.TestMessageMap.Parser, new[]{ "MapInt32Message" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestSameTypeMap), global::Google.Protobuf.TestProtos.TestSameTypeMap.Parser, new[]{ "Map1", "Map2" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestArenaMap), global::Google.Protobuf.TestProtos.TestArenaMap.Parser, new[]{ "MapInt32Int32", "MapInt64Int64", "MapUint32Uint32", "MapUint64Uint64", "MapSint32Sint32", "MapSint64Sint64", "MapFixed32Fixed32", "MapFixed64Fixed64", "MapSfixed32Sfixed32", "MapSfixed64Sfixed64", "MapInt32Float", "MapInt32Double", "MapBoolBool", "MapInt32Enum", "MapInt32ForeignMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType), global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType.Parser, new[]{ "Type" }, null, new[]{ typeof(global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType.Types.Type) }, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.MessageContainingMapCalledEntry), global::Google.Protobuf.TestProtos.MessageContainingMapCalledEntry.Parser, new[]{ "Entry" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.TestProtos.MapEnum), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestMap), global::Google.Protobuf.TestProtos.TestMap.Parser, new[]{ "MapInt32Int32", "MapInt64Int64", "MapUint32Uint32", "MapUint64Uint64", "MapSint32Sint32", "MapSint64Sint64", "MapFixed32Fixed32", "MapFixed64Fixed64", "MapSfixed32Sfixed32", "MapSfixed64Sfixed64", "MapInt32Float", "MapInt32Double", "MapBoolBool", "MapStringString", "MapInt32Bytes", "MapInt32Enum", "MapInt32ForeignMessage" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestMapSubmessage), global::Google.Protobuf.TestProtos.TestMapSubmessage.Parser, new[]{ "TestMap" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestMessageMap), global::Google.Protobuf.TestProtos.TestMessageMap.Parser, new[]{ "MapInt32Message" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestSameTypeMap), global::Google.Protobuf.TestProtos.TestSameTypeMap.Parser, new[]{ "Map1", "Map2" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.TestArenaMap), global::Google.Protobuf.TestProtos.TestArenaMap.Parser, new[]{ "MapInt32Int32", "MapInt64Int64", "MapUint32Uint32", "MapUint64Uint64", "MapSint32Sint32", "MapSint64Sint64", "MapFixed32Fixed32", "MapFixed64Fixed64", "MapSfixed32Sfixed32", "MapSfixed64Sfixed64", "MapInt32Float", "MapInt32Double", "MapBoolBool", "MapInt32Enum", "MapInt32ForeignMessage" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType), global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType.Parser, new[]{ "Type" }, null, new[]{ typeof(global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType.Types.Type) }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.TestProtos.MessageContainingMapCalledEntry), global::Google.Protobuf.TestProtos.MessageContainingMapCalledEntry.Parser, new[]{ "Entry" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
 
   }
+
   #region Enums
   public enum MapEnum {
     [pbr::OriginalName("MAP_ENUM_FOO")] Foo = 0,
@@ -229,7 +230,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_int32" field.</summary>
     public const int MapInt32Int32FieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_mapInt32Int32_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 10);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
     private readonly pbc::MapField<int, int> mapInt32Int32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> MapInt32Int32 {
@@ -239,7 +240,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int64_int64" field.</summary>
     public const int MapInt64Int64FieldNumber = 2;
     private static readonly pbc::MapField<long, long>.Codec _map_mapInt64Int64_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8), pb::FieldCodec.ForInt64(16), 18);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 18);
     private readonly pbc::MapField<long, long> mapInt64Int64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<long, long> MapInt64Int64 {
@@ -249,7 +250,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_uint32_uint32" field.</summary>
     public const int MapUint32Uint32FieldNumber = 3;
     private static readonly pbc::MapField<uint, uint>.Codec _map_mapUint32Uint32_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8), pb::FieldCodec.ForUInt32(16), 26);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
     private readonly pbc::MapField<uint, uint> mapUint32Uint32_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<uint, uint> MapUint32Uint32 {
@@ -259,7 +260,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_uint64_uint64" field.</summary>
     public const int MapUint64Uint64FieldNumber = 4;
     private static readonly pbc::MapField<ulong, ulong>.Codec _map_mapUint64Uint64_codec
-        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForUInt64(8), pb::FieldCodec.ForUInt64(16), 34);
+        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt64(16, 0UL), 34);
     private readonly pbc::MapField<ulong, ulong> mapUint64Uint64_ = new pbc::MapField<ulong, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<ulong, ulong> MapUint64Uint64 {
@@ -269,7 +270,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sint32_sint32" field.</summary>
     public const int MapSint32Sint32FieldNumber = 5;
     private static readonly pbc::MapField<int, int>.Codec _map_mapSint32Sint32_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSInt32(8), pb::FieldCodec.ForSInt32(16), 42);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSInt32(8, 0), pb::FieldCodec.ForSInt32(16, 0), 42);
     private readonly pbc::MapField<int, int> mapSint32Sint32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> MapSint32Sint32 {
@@ -279,7 +280,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sint64_sint64" field.</summary>
     public const int MapSint64Sint64FieldNumber = 6;
     private static readonly pbc::MapField<long, long>.Codec _map_mapSint64Sint64_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSInt64(8), pb::FieldCodec.ForSInt64(16), 50);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSInt64(8, 0L), pb::FieldCodec.ForSInt64(16, 0L), 50);
     private readonly pbc::MapField<long, long> mapSint64Sint64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<long, long> MapSint64Sint64 {
@@ -289,7 +290,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_fixed32_fixed32" field.</summary>
     public const int MapFixed32Fixed32FieldNumber = 7;
     private static readonly pbc::MapField<uint, uint>.Codec _map_mapFixed32Fixed32_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForFixed32(13), pb::FieldCodec.ForFixed32(21), 58);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForFixed32(13, 0), pb::FieldCodec.ForFixed32(21, 0), 58);
     private readonly pbc::MapField<uint, uint> mapFixed32Fixed32_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<uint, uint> MapFixed32Fixed32 {
@@ -299,7 +300,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_fixed64_fixed64" field.</summary>
     public const int MapFixed64Fixed64FieldNumber = 8;
     private static readonly pbc::MapField<ulong, ulong>.Codec _map_mapFixed64Fixed64_codec
-        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForFixed64(9), pb::FieldCodec.ForFixed64(17), 66);
+        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForFixed64(9, 0UL), pb::FieldCodec.ForFixed64(17, 0UL), 66);
     private readonly pbc::MapField<ulong, ulong> mapFixed64Fixed64_ = new pbc::MapField<ulong, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<ulong, ulong> MapFixed64Fixed64 {
@@ -309,7 +310,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sfixed32_sfixed32" field.</summary>
     public const int MapSfixed32Sfixed32FieldNumber = 9;
     private static readonly pbc::MapField<int, int>.Codec _map_mapSfixed32Sfixed32_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSFixed32(13), pb::FieldCodec.ForSFixed32(21), 74);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSFixed32(13, 0), pb::FieldCodec.ForSFixed32(21, 0), 74);
     private readonly pbc::MapField<int, int> mapSfixed32Sfixed32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> MapSfixed32Sfixed32 {
@@ -319,7 +320,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sfixed64_sfixed64" field.</summary>
     public const int MapSfixed64Sfixed64FieldNumber = 10;
     private static readonly pbc::MapField<long, long>.Codec _map_mapSfixed64Sfixed64_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSFixed64(9), pb::FieldCodec.ForSFixed64(17), 82);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSFixed64(9, 0L), pb::FieldCodec.ForSFixed64(17, 0L), 82);
     private readonly pbc::MapField<long, long> mapSfixed64Sfixed64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<long, long> MapSfixed64Sfixed64 {
@@ -329,7 +330,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_float" field.</summary>
     public const int MapInt32FloatFieldNumber = 11;
     private static readonly pbc::MapField<int, float>.Codec _map_mapInt32Float_codec
-        = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForFloat(21), 90);
+        = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 90);
     private readonly pbc::MapField<int, float> mapInt32Float_ = new pbc::MapField<int, float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, float> MapInt32Float {
@@ -339,7 +340,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_double" field.</summary>
     public const int MapInt32DoubleFieldNumber = 12;
     private static readonly pbc::MapField<int, double>.Codec _map_mapInt32Double_codec
-        = new pbc::MapField<int, double>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForDouble(17), 98);
+        = new pbc::MapField<int, double>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForDouble(17, 0D), 98);
     private readonly pbc::MapField<int, double> mapInt32Double_ = new pbc::MapField<int, double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, double> MapInt32Double {
@@ -349,7 +350,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_bool_bool" field.</summary>
     public const int MapBoolBoolFieldNumber = 13;
     private static readonly pbc::MapField<bool, bool>.Codec _map_mapBoolBool_codec
-        = new pbc::MapField<bool, bool>.Codec(pb::FieldCodec.ForBool(8), pb::FieldCodec.ForBool(16), 106);
+        = new pbc::MapField<bool, bool>.Codec(pb::FieldCodec.ForBool(8, false), pb::FieldCodec.ForBool(16, false), 106);
     private readonly pbc::MapField<bool, bool> mapBoolBool_ = new pbc::MapField<bool, bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<bool, bool> MapBoolBool {
@@ -359,7 +360,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_string_string" field.</summary>
     public const int MapStringStringFieldNumber = 14;
     private static readonly pbc::MapField<string, string>.Codec _map_mapStringString_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 114);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 114);
     private readonly pbc::MapField<string, string> mapStringString_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> MapStringString {
@@ -369,7 +370,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_bytes" field.</summary>
     public const int MapInt32BytesFieldNumber = 15;
     private static readonly pbc::MapField<int, pb::ByteString>.Codec _map_mapInt32Bytes_codec
-        = new pbc::MapField<int, pb::ByteString>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForBytes(18), 122);
+        = new pbc::MapField<int, pb::ByteString>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForBytes(18, pb::ByteString.Empty), 122);
     private readonly pbc::MapField<int, pb::ByteString> mapInt32Bytes_ = new pbc::MapField<int, pb::ByteString>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, pb::ByteString> MapInt32Bytes {
@@ -379,7 +380,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_enum" field.</summary>
     public const int MapInt32EnumFieldNumber = 16;
     private static readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>.Codec _map_mapInt32Enum_codec
-        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Google.Protobuf.TestProtos.MapEnum) x), 130);
+        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Google.Protobuf.TestProtos.MapEnum) x), 130);
     private readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum> mapInt32Enum_ = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum> MapInt32Enum {
@@ -389,7 +390,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_foreign_message" field.</summary>
     public const int MapInt32ForeignMessageFieldNumber = 17;
     private static readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>.Codec _map_mapInt32ForeignMessage_codec
-        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.ForeignMessage.Parser), 138);
+        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.ForeignMessage.Parser), 138);
     private readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage> mapInt32ForeignMessage_ = new pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage> MapInt32ForeignMessage {
@@ -462,6 +463,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       mapInt32Int32_.WriteTo(output, _map_mapInt32Int32_codec);
       mapInt64Int64_.WriteTo(output, _map_mapInt64Int64_codec);
       mapUint32Uint32_.WriteTo(output, _map_mapUint32Uint32_codec);
@@ -613,8 +615,64 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!mapInt32Int32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt64Int64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapUint32Uint32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapUint64Uint64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSint32Sint32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSint64Sint64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapFixed32Fixed32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapFixed64Fixed64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSfixed32Sfixed32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSfixed64Sfixed64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Float_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Double_.IsInitialized()) {
+        return false;
+      }
+      if (!mapBoolBool_.IsInitialized()) {
+        return false;
+      }
+      if (!mapStringString_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Bytes_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Enum_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32ForeignMessage_.IsInitialized()) {
+        return false;
+      }
+      return true;
+    }
   }
 
   public sealed partial class TestMapSubmessage : pb::IMessage<TestMapSubmessage> {
@@ -661,6 +719,16 @@ namespace Google.Protobuf.TestProtos {
         testMap_ = value;
       }
     }
+    /// <summary>Gets whether the test_map field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasTestMap {
+      get { return testMap_ != null; }
+    }
+    /// <summary>Clears the value of the test_map field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTestMap() {
+      testMap_ = null;
+    }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
@@ -696,6 +764,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       if (testMap_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(TestMap);
@@ -748,8 +817,13 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      return true;
+    }
   }
 
   public sealed partial class TestMessageMap : pb::IMessage<TestMessageMap> {
@@ -789,7 +863,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_message" field.</summary>
     public const int MapInt32MessageFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.TestAllTypes>.Codec _map_mapInt32Message_codec
-        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.TestAllTypes>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.TestAllTypes.Parser), 10);
+        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.TestAllTypes>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.TestAllTypes.Parser), 10);
     private readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.TestAllTypes> mapInt32Message_ = new pbc::MapField<int, global::Google.Protobuf.TestProtos.TestAllTypes>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Google.Protobuf.TestProtos.TestAllTypes> MapInt32Message {
@@ -830,6 +904,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       mapInt32Message_.WriteTo(output, _map_mapInt32Message_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -869,8 +944,16 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!mapInt32Message_.IsInitialized()) {
+        return false;
+      }
+      return true;
+    }
   }
 
   /// <summary>
@@ -914,7 +997,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map1" field.</summary>
     public const int Map1FieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_map1_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 10);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
     private readonly pbc::MapField<int, int> map1_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> Map1 {
@@ -924,7 +1007,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map2" field.</summary>
     public const int Map2FieldNumber = 2;
     private static readonly pbc::MapField<int, int>.Codec _map_map2_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 18);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 18);
     private readonly pbc::MapField<int, int> map2_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> Map2 {
@@ -967,6 +1050,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       map1_.WriteTo(output, _map_map1_codec);
       map2_.WriteTo(output, _map_map2_codec);
       if (_unknownFields != null) {
@@ -1013,8 +1097,19 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!map1_.IsInitialized()) {
+        return false;
+      }
+      if (!map2_.IsInitialized()) {
+        return false;
+      }
+      return true;
+    }
   }
 
   public sealed partial class TestArenaMap : pb::IMessage<TestArenaMap> {
@@ -1068,7 +1163,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_int32" field.</summary>
     public const int MapInt32Int32FieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_mapInt32Int32_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 10);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
     private readonly pbc::MapField<int, int> mapInt32Int32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> MapInt32Int32 {
@@ -1078,7 +1173,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int64_int64" field.</summary>
     public const int MapInt64Int64FieldNumber = 2;
     private static readonly pbc::MapField<long, long>.Codec _map_mapInt64Int64_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8), pb::FieldCodec.ForInt64(16), 18);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 18);
     private readonly pbc::MapField<long, long> mapInt64Int64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<long, long> MapInt64Int64 {
@@ -1088,7 +1183,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_uint32_uint32" field.</summary>
     public const int MapUint32Uint32FieldNumber = 3;
     private static readonly pbc::MapField<uint, uint>.Codec _map_mapUint32Uint32_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8), pb::FieldCodec.ForUInt32(16), 26);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
     private readonly pbc::MapField<uint, uint> mapUint32Uint32_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<uint, uint> MapUint32Uint32 {
@@ -1098,7 +1193,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_uint64_uint64" field.</summary>
     public const int MapUint64Uint64FieldNumber = 4;
     private static readonly pbc::MapField<ulong, ulong>.Codec _map_mapUint64Uint64_codec
-        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForUInt64(8), pb::FieldCodec.ForUInt64(16), 34);
+        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt64(16, 0UL), 34);
     private readonly pbc::MapField<ulong, ulong> mapUint64Uint64_ = new pbc::MapField<ulong, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<ulong, ulong> MapUint64Uint64 {
@@ -1108,7 +1203,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sint32_sint32" field.</summary>
     public const int MapSint32Sint32FieldNumber = 5;
     private static readonly pbc::MapField<int, int>.Codec _map_mapSint32Sint32_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSInt32(8), pb::FieldCodec.ForSInt32(16), 42);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSInt32(8, 0), pb::FieldCodec.ForSInt32(16, 0), 42);
     private readonly pbc::MapField<int, int> mapSint32Sint32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> MapSint32Sint32 {
@@ -1118,7 +1213,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sint64_sint64" field.</summary>
     public const int MapSint64Sint64FieldNumber = 6;
     private static readonly pbc::MapField<long, long>.Codec _map_mapSint64Sint64_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSInt64(8), pb::FieldCodec.ForSInt64(16), 50);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSInt64(8, 0L), pb::FieldCodec.ForSInt64(16, 0L), 50);
     private readonly pbc::MapField<long, long> mapSint64Sint64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<long, long> MapSint64Sint64 {
@@ -1128,7 +1223,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_fixed32_fixed32" field.</summary>
     public const int MapFixed32Fixed32FieldNumber = 7;
     private static readonly pbc::MapField<uint, uint>.Codec _map_mapFixed32Fixed32_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForFixed32(13), pb::FieldCodec.ForFixed32(21), 58);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForFixed32(13, 0), pb::FieldCodec.ForFixed32(21, 0), 58);
     private readonly pbc::MapField<uint, uint> mapFixed32Fixed32_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<uint, uint> MapFixed32Fixed32 {
@@ -1138,7 +1233,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_fixed64_fixed64" field.</summary>
     public const int MapFixed64Fixed64FieldNumber = 8;
     private static readonly pbc::MapField<ulong, ulong>.Codec _map_mapFixed64Fixed64_codec
-        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForFixed64(9), pb::FieldCodec.ForFixed64(17), 66);
+        = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForFixed64(9, 0UL), pb::FieldCodec.ForFixed64(17, 0UL), 66);
     private readonly pbc::MapField<ulong, ulong> mapFixed64Fixed64_ = new pbc::MapField<ulong, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<ulong, ulong> MapFixed64Fixed64 {
@@ -1148,7 +1243,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sfixed32_sfixed32" field.</summary>
     public const int MapSfixed32Sfixed32FieldNumber = 9;
     private static readonly pbc::MapField<int, int>.Codec _map_mapSfixed32Sfixed32_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSFixed32(13), pb::FieldCodec.ForSFixed32(21), 74);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSFixed32(13, 0), pb::FieldCodec.ForSFixed32(21, 0), 74);
     private readonly pbc::MapField<int, int> mapSfixed32Sfixed32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> MapSfixed32Sfixed32 {
@@ -1158,7 +1253,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_sfixed64_sfixed64" field.</summary>
     public const int MapSfixed64Sfixed64FieldNumber = 10;
     private static readonly pbc::MapField<long, long>.Codec _map_mapSfixed64Sfixed64_codec
-        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSFixed64(9), pb::FieldCodec.ForSFixed64(17), 82);
+        = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSFixed64(9, 0L), pb::FieldCodec.ForSFixed64(17, 0L), 82);
     private readonly pbc::MapField<long, long> mapSfixed64Sfixed64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<long, long> MapSfixed64Sfixed64 {
@@ -1168,7 +1263,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_float" field.</summary>
     public const int MapInt32FloatFieldNumber = 11;
     private static readonly pbc::MapField<int, float>.Codec _map_mapInt32Float_codec
-        = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForFloat(21), 90);
+        = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 90);
     private readonly pbc::MapField<int, float> mapInt32Float_ = new pbc::MapField<int, float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, float> MapInt32Float {
@@ -1178,7 +1273,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_double" field.</summary>
     public const int MapInt32DoubleFieldNumber = 12;
     private static readonly pbc::MapField<int, double>.Codec _map_mapInt32Double_codec
-        = new pbc::MapField<int, double>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForDouble(17), 98);
+        = new pbc::MapField<int, double>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForDouble(17, 0D), 98);
     private readonly pbc::MapField<int, double> mapInt32Double_ = new pbc::MapField<int, double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, double> MapInt32Double {
@@ -1188,7 +1283,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_bool_bool" field.</summary>
     public const int MapBoolBoolFieldNumber = 13;
     private static readonly pbc::MapField<bool, bool>.Codec _map_mapBoolBool_codec
-        = new pbc::MapField<bool, bool>.Codec(pb::FieldCodec.ForBool(8), pb::FieldCodec.ForBool(16), 106);
+        = new pbc::MapField<bool, bool>.Codec(pb::FieldCodec.ForBool(8, false), pb::FieldCodec.ForBool(16, false), 106);
     private readonly pbc::MapField<bool, bool> mapBoolBool_ = new pbc::MapField<bool, bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<bool, bool> MapBoolBool {
@@ -1198,7 +1293,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_enum" field.</summary>
     public const int MapInt32EnumFieldNumber = 14;
     private static readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>.Codec _map_mapInt32Enum_codec
-        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Google.Protobuf.TestProtos.MapEnum) x), 114);
+        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Google.Protobuf.TestProtos.MapEnum) x), 114);
     private readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum> mapInt32Enum_ = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Google.Protobuf.TestProtos.MapEnum> MapInt32Enum {
@@ -1208,7 +1303,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "map_int32_foreign_message" field.</summary>
     public const int MapInt32ForeignMessageFieldNumber = 15;
     private static readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>.Codec _map_mapInt32ForeignMessage_codec
-        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.ForeignMessage.Parser), 122);
+        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.ForeignMessage.Parser), 122);
     private readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage> mapInt32ForeignMessage_ = new pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Google.Protobuf.TestProtos.ForeignMessage> MapInt32ForeignMessage {
@@ -1277,6 +1372,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       mapInt32Int32_.WriteTo(output, _map_mapInt32Int32_codec);
       mapInt64Int64_.WriteTo(output, _map_mapInt64Int64_codec);
       mapUint32Uint32_.WriteTo(output, _map_mapUint32Uint32_codec);
@@ -1414,8 +1510,58 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!mapInt32Int32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt64Int64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapUint32Uint32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapUint64Uint64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSint32Sint32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSint64Sint64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapFixed32Fixed32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapFixed64Fixed64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSfixed32Sfixed32_.IsInitialized()) {
+        return false;
+      }
+      if (!mapSfixed64Sfixed64_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Float_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Double_.IsInitialized()) {
+        return false;
+      }
+      if (!mapBoolBool_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32Enum_.IsInitialized()) {
+        return false;
+      }
+      if (!mapInt32ForeignMessage_.IsInitialized()) {
+        return false;
+      }
+      return true;
+    }
   }
 
   /// <summary>
@@ -1459,7 +1605,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
     private static readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType>.Codec _map_type_codec
-        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType.Parser), 10);
+        = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType.Parser), 10);
     private readonly pbc::MapField<int, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType> type_ = new pbc::MapField<int, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::Google.Protobuf.TestProtos.MessageContainingEnumCalledType> Type {
@@ -1500,6 +1646,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       type_.WriteTo(output, _map_type_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1539,8 +1686,16 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!type_.IsInitialized()) {
+        return false;
+      }
+      return true;
+    }
     #region Nested types
     /// <summary>Container for nested types declared in the MessageContainingEnumCalledType message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1594,7 +1749,7 @@ namespace Google.Protobuf.TestProtos {
     /// <summary>Field number for the "entry" field.</summary>
     public const int EntryFieldNumber = 1;
     private static readonly pbc::MapField<int, int>.Codec _map_entry_codec
-        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 10);
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 10);
     private readonly pbc::MapField<int, int> entry_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, int> Entry {
@@ -1635,6 +1790,7 @@ namespace Google.Protobuf.TestProtos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      pb::ProtoPreconditions.CheckInitialized(this);
       entry_.WriteTo(output, _map_entry_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1674,8 +1830,16 @@ namespace Google.Protobuf.TestProtos {
           }
         }
       }
+      pb::ProtoPreconditions.CheckMergedRequiredFields(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsInitialized() {
+      if (!entry_.IsInitialized()) {
+        return false;
+      }
+      return true;
+    }
   }
 
   #endregion

@@ -30,6 +30,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
+using System;
 using System.IO;
 
 namespace Google.Protobuf
@@ -45,7 +46,7 @@ namespace Google.Protobuf
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="data">The data to merge, which must be protobuf-encoded binary data.</param>
         public static void MergeFrom(this IMessage message, byte[] data) =>
-            MergeFrom(message, data, false);
+            MergeFrom(message, data, false, new ExtensionRegistry());
 
         /// <summary>
         /// Merges data from the given byte array slice into an existing message.
@@ -55,7 +56,7 @@ namespace Google.Protobuf
         /// <param name="offset">The offset of the slice to merge.</param>
         /// <param name="length">The length of the slice to merge.</param>
         public static void MergeFrom(this IMessage message, byte[] data, int offset, int length) =>
-            MergeFrom(message, data, offset, length, false);
+            MergeFrom(message, data, offset, length, false, new ExtensionRegistry());
 
         /// <summary>
         /// Merges data from the given byte string into an existing message.
@@ -63,7 +64,7 @@ namespace Google.Protobuf
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="data">The data to merge, which must be protobuf-encoded binary data.</param>
         public static void MergeFrom(this IMessage message, ByteString data) =>
-            MergeFrom(message, data, false);
+            MergeFrom(message, data, false, new ExtensionRegistry());
 
         /// <summary>
         /// Merges data from the given stream into an existing message.
@@ -71,7 +72,7 @@ namespace Google.Protobuf
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="input">Stream containing the data to merge, which must be protobuf-encoded binary data.</param>
         public static void MergeFrom(this IMessage message, Stream input) =>
-            MergeFrom(message, input, false);
+            MergeFrom(message, input, false, new ExtensionRegistry());
 
         /// <summary>
         /// Merges length-delimited data from the given stream into an existing message.
@@ -83,7 +84,7 @@ namespace Google.Protobuf
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="input">Stream containing the data to merge, which must be protobuf-encoded binary data.</param>
         public static void MergeDelimitedFrom(this IMessage message, Stream input) =>
-            MergeDelimitedFrom(message, input, false);
+            MergeDelimitedFrom(message, input, false, new ExtensionRegistry());
 
         /// <summary>
         /// Converts the given message into a byte array in protobuf encoding.
@@ -141,53 +142,57 @@ namespace Google.Protobuf
         }
 
         // Implementations allowing unknown fields to be discarded.
-        internal static void MergeFrom(this IMessage message, byte[] data, bool discardUnknownFields)
+        internal static void MergeFrom(this IMessage message, byte[] data, bool discardUnknownFields, ExtensionRegistry registry)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(data, "data");
             CodedInputStream input = new CodedInputStream(data);
             input.DiscardUnknownFields = discardUnknownFields;
+            input.ExtensionRegistry = registry;
             message.MergeFrom(input);
             input.CheckReadEndOfStreamTag();
         }
 
-        internal static void MergeFrom(this IMessage message, byte[] data, int offset, int length, bool discardUnknownFields)
+        internal static void MergeFrom(this IMessage message, byte[] data, int offset, int length, bool discardUnknownFields, ExtensionRegistry registry)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(data, "data");
             CodedInputStream input = new CodedInputStream(data, offset, length);
             input.DiscardUnknownFields = discardUnknownFields;
+            input.ExtensionRegistry = registry;
             message.MergeFrom(input);
             input.CheckReadEndOfStreamTag();
         }
 
-        internal static void MergeFrom(this IMessage message, ByteString data, bool discardUnknownFields)
+        internal static void MergeFrom(this IMessage message, ByteString data, bool discardUnknownFields, ExtensionRegistry registry)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(data, "data");
             CodedInputStream input = data.CreateCodedInput();
             input.DiscardUnknownFields = discardUnknownFields;
+            input.ExtensionRegistry = registry;
             message.MergeFrom(input);
             input.CheckReadEndOfStreamTag();
         }
 
-        internal static void MergeFrom(this IMessage message, Stream input, bool discardUnknownFields)
+        internal static void MergeFrom(this IMessage message, Stream input, bool discardUnknownFields, ExtensionRegistry registry)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(input, "input");
             CodedInputStream codedInput = new CodedInputStream(input);
             codedInput.DiscardUnknownFields = discardUnknownFields;
+            codedInput.ExtensionRegistry = registry;
             message.MergeFrom(codedInput);
             codedInput.CheckReadEndOfStreamTag();
         }
 
-        internal static void MergeDelimitedFrom(this IMessage message, Stream input, bool discardUnknownFields)
+        internal static void MergeDelimitedFrom(this IMessage message, Stream input, bool discardUnknownFields, ExtensionRegistry registry)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(input, "input");
             int size = (int) CodedInputStream.ReadRawVarint32(input);
             Stream limitedStream = new LimitedInputStream(input, size);
-            MergeFrom(message, limitedStream, discardUnknownFields);
+            MergeFrom(message, limitedStream, discardUnknownFields, registry);
         }
     }
 }

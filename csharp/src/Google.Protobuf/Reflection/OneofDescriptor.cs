@@ -32,6 +32,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Google.Protobuf.Collections;
 using Google.Protobuf.Compatibility;
 
 namespace Google.Protobuf.Reflection
@@ -91,9 +92,46 @@ namespace Google.Protobuf.Reflection
         public OneofAccessor Accessor { get { return accessor; } }
 
         /// <summary>
-        /// The (possibly empty) set of custom options for this oneof.
+        /// Tries to get the specified custom extension option for this oneof
         /// </summary>
-        public CustomOptions CustomOptions => proto.Options?.CustomOptions ?? CustomOptions.Empty;
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
+        public bool TryGetOption<T>(Extension<OneofOptions, T> extension, out T value)
+        {
+            if (proto.Options.HasExtension(extension))
+            {
+                T realValue = proto.Options.GetExtension(extension);
+                if (realValue is IDeepCloneable<T> clonable)
+                {
+                    value = clonable.Clone();
+                }
+                else
+                {
+                    value = realValue;
+                }
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Tries to get the specified custom extension option for this oneof
+        /// </summary>
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; otherwise <c>false</c>.</returns>
+        public bool TryGetOption<T>(RepeatedExtension<OneofOptions, T> extension, out RepeatedField<T> value)
+        {
+            value = proto.Options.GetExtension(extension).Clone();
+            return true;
+        }
 
         internal void CrossLink()
         {

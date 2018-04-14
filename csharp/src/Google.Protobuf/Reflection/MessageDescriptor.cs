@@ -63,7 +63,7 @@ namespace Google.Protobuf.Reflection
         private readonly IList<FieldDescriptor> fieldsInDeclarationOrder;
         private readonly IList<FieldDescriptor> fieldsInNumberOrder;
         private readonly IDictionary<string, FieldDescriptor> jsonFieldMap;
-        
+
         internal MessageDescriptor(DescriptorProto proto, FileDescriptor file, MessageDescriptor parent, int typeIndex, GeneratedClrTypeInfo generatedCodeInfo)
             : base(file, file.ComputeFullName(parent, proto.Name), typeIndex)
         {
@@ -90,10 +90,12 @@ namespace Google.Protobuf.Reflection
                 (type, index) =>
                 new EnumDescriptor(type, file, this, index, generatedCodeInfo.NestedEnums[index]));
 
+            Extensions = new ExtensionCollection(this, generatedCodeInfo?.Extensions);
+
             fieldsInDeclarationOrder = DescriptorUtil.ConvertAndMakeReadOnly(
                 proto.Field,
                 (field, index) =>
-                new FieldDescriptor(field, file, this, index, generatedCodeInfo?.PropertyNames[index]));
+                new FieldDescriptor(field, file, this, index, generatedCodeInfo?.PropertyNames[index], null));
             fieldsInNumberOrder = new ReadOnlyCollection<FieldDescriptor>(fieldsInDeclarationOrder.OrderBy(field => field.FieldNumber).ToArray());
             // TODO: Use field => field.Proto.JsonName when we're confident it's appropriate. (And then use it in the formatter, too.)
             jsonFieldMap = CreateJsonFieldMap(fieldsInNumberOrder);
@@ -182,6 +184,11 @@ namespace Google.Protobuf.Reflection
         /// </value>
         public FieldCollection Fields { get; }
 
+        /// <summary>
+        /// An unmodifiable list of extensions defined in this message's scrope
+        /// </summary>
+        public ExtensionCollection Extensions { get; }
+
         /// <value>
         /// An unmodifiable list of this message type's nested types.
         /// </value>
@@ -221,9 +228,46 @@ namespace Google.Protobuf.Reflection
             File.DescriptorPool.FindSymbol<T>(FullName + "." + name);
 
         /// <summary>
-        /// The (possibly empty) set of custom options for this message.
+        /// Tries to get the specified custom extension option for this message
         /// </summary>
-        public CustomOptions CustomOptions => Proto.Options?.CustomOptions ?? CustomOptions.Empty;
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
+        public bool TryGetOption<T>(Extension<MessageOptions, T> extension, out T value)
+        {
+            if (Proto.Options.HasExtension(extension))
+            {
+                T realValue = Proto.Options.GetExtension(extension);
+                if (realValue is IDeepCloneable<T> clonable)
+                {
+                    value = clonable.Clone();
+                }
+                else
+                {
+                    value = realValue;
+                }
+                return true;
+            }
+            else
+            {
+                value = default(T);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Tries to get the specified custom extension option for this message
+        /// </summary>
+        /// <param name="extension">The extension to get the value for</param>
+        /// <param name="value">The value of this extension</param>
+        /// <typeparam name="T">The type of the value to get</typeparam>
+        /// /// <returns><c>true</c> if a suitable value for the field was found; otherwise <c>false</c>.</returns>
+        public bool TryGetOption<T>(RepeatedExtension<MessageOptions, T> extension, out Collections.RepeatedField<T> value)
+        {
+            value = Proto.Options.GetExtension(extension).Clone();
+            return true;
+        }
 
         /// <summary>
         /// Looks up and cross-links all fields and nested types.
@@ -244,6 +288,8 @@ namespace Google.Protobuf.Reflection
             {
                 oneof.CrossLink();
             }
+
+            Extensions.CrossLink();
         }
 
         /// <summary>

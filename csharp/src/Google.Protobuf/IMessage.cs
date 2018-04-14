@@ -42,6 +42,12 @@ namespace Google.Protobuf
     public interface IMessage
     {
         /// <summary>
+        /// Checks if all required fields have values set
+        /// </summary>
+        /// <returns></returns>
+        bool IsInitialized();
+
+        /// <summary>
         /// Merges the data from the specified coded input stream with the current message.
         /// </summary>
         /// <remarks>See the user guide for precise merge semantics.</remarks>

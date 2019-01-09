@@ -14,6 +14,7 @@
     <releaseNotes>Tools for Protocol Buffers</releaseNotes>
     <copyright>Copyright 2015, Google Inc.</copyright>
     <tags>Protocol Buffers Binary Serialization Format Google proto proto3</tags>
+    <developmentDependency>true</developmentDependency>
   </metadata>
   <files>
     <file src="protoc\windows_x86\protoc.exe" target="tools\windows_x86\protoc.exe"/>

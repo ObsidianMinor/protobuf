@@ -55,7 +55,7 @@ namespace Google.Protobuf.Collections
         private static readonly T[] EmptyArray = new T[0];
         private const int MinArraySize = 8;
 
-        private T[] array = EmptyArray;
+        internal T[] array = EmptyArray;
         private int count = 0;
 
         /// <summary>
@@ -595,5 +595,52 @@ namespace Google.Protobuf.Collections
             Remove((T)value);
         }
         #endregion        
+    }
+
+    /// <summary>
+    /// Provides extensions for accessing repeated fields as other types
+    /// </summary>
+    public static class RepeatedFieldExtensions
+    {
+#if NETSTANDARD2_0
+        /// <summary>
+        /// Returns the repeated field as a span
+        /// </summary>
+        /// <typeparam name="T">The type of the field</typeparam>
+        /// <param name="field">The field to access</param>
+        public static Span<T> AsSpan<T>(this RepeatedField<T> field) where T : struct
+        {
+            return new Span<T>(field.array, 0, field.Count);
+        }
+        /// <summary>
+        /// Returns the specified repeated field as a span starting at the specified index
+        /// </summary>
+        /// <typeparam name="T">The type of the field</typeparam>
+        /// <param name="field">The field to access</param>
+        /// <param name="start">The starting index</param>
+        public static Span<T> AsSpan<T>(this RepeatedField<T> field, int start) where T : struct
+        {
+            if (start < 0 || start > field.Count)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            return new Span<T>(field.array, start, field.Count - start);
+        }
+        /// <summary>
+        /// Returns the specified repeated field as a span starting at the specified index with the specified number of elements
+        /// </summary>
+        /// <typeparam name="T">The type of the field</typeparam>
+        /// <param name="field">The field to access</param>
+        /// <param name="start">The starting index</param>
+        /// <param name="count">The number of elements to use</param>
+        public static Span<T> AsSpan<T>(this RepeatedField<T> field, int start, int count) where T : struct
+        {
+            if (start < 0 || count < 0 || start + count > field.Count)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            return field.array.AsSpan(start, count);
+        }
+#endif
     }
 }

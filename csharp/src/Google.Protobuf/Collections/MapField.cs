@@ -168,7 +168,7 @@ namespace Google.Protobuf.Collections
         /// otherwise, the default value for the type of the <paramref name="value"/> parameter.
         /// This parameter is passed uninitialized.</param>
         /// <returns><c>true</c> if the map contains an element with the specified key; otherwise, <c>false</c>.</returns>
-        public bool TryGetValue([DisallowNull] TKey key, [NotNullWhen(true)] out TValue value)
+        public bool TryGetValue([DisallowNull] TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             LinkedListNode<KeyValuePair<TKey, TValue>> node;
             if (map.TryGetValue(key, out node))

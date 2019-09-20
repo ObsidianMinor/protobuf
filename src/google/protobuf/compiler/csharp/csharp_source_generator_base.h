@@ -43,6 +43,15 @@ namespace csharp {
 
 struct Options;
 
+enum Nullability {
+  ALLOW_NULL,
+  DISALLOW_NULL,
+  NOT_NULL,
+  RETURN_NOT_NULL,
+  MAYBE_NULL,
+  RETURN_MAYBE_NULL
+};
+
 class SourceGeneratorBase {
  protected:
   SourceGeneratorBase(const FileDescriptor* descriptor, const Options* options);
@@ -51,12 +60,14 @@ class SourceGeneratorBase {
   SourceGeneratorBase(const SourceGeneratorBase&) = delete;
   SourceGeneratorBase& operator=(const SourceGeneratorBase&) = delete;
 
+  const char* nullability(Nullability nullability);
   std::string class_access_level();
   const Options* options();
 
   // Write any attributes used to decorate generated function members (methods and properties).
   // Should not be used to decorate types.
   void WriteGeneratedCodeAttributes(io::Printer* printer);
+  void WriteNullabilityAttribute(io::Printer* printer, Nullability nullability);
 
  private:
   const FileDescriptor* descriptor_;

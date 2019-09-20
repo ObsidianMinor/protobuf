@@ -67,11 +67,19 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   // null, or whether we just handle it, in the cases of bytes and string.
   // (Basically, should null-handling code be in the getter or the setter?)
   if (IsProto2(descriptor_->file())) {
+    WriteNullabilityAttribute(printer, NOT_NULL);
     printer->Print(
       variables_,
       "private readonly static $type_name$ $property_name$DefaultValue = $default_value$;\n\n");
   }
 
+  if (!is_value_type && IsProto2(descriptor_->file())) {
+    WriteNullabilityAttribute(printer, ALLOW_NULL);
+    WriteNullabilityAttribute(printer, MAYBE_NULL);
+  } else {
+    WriteNullabilityAttribute(printer, DISALLOW_NULL);
+    WriteNullabilityAttribute(printer, NOT_NULL);
+  }
   printer->Print(
     variables_,
     "private $type_name$ $name_def_message$;\n");
@@ -80,6 +88,8 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
   AddPublicMemberAttributes(printer);
   if (IsProto2(descriptor_->file())) {
     if (presenceIndex_ == -1) {
+      WriteNullabilityAttribute(printer, NOT_NULL);
+      WriteNullabilityAttribute(printer, DISALLOW_NULL);
       printer->Print(
         variables_,
         "$access_level$ $type_name$ $property_name$ {\n"
@@ -93,6 +103,10 @@ void PrimitiveFieldGenerator::GenerateMembers(io::Printer* printer) {
         "  set {\n");
     }
   } else {
+    if (!is_value_type) {
+      WriteNullabilityAttribute(printer, NOT_NULL);
+      WriteNullabilityAttribute(printer, DISALLOW_NULL);
+    }
     printer->Print(
       variables_,
       "$access_level$ $type_name$ $property_name$ {\n"
@@ -251,6 +265,10 @@ PrimitiveOneofFieldGenerator::~PrimitiveOneofFieldGenerator() {
 void PrimitiveOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
   WritePropertyDocComment(printer, descriptor_);
   AddPublicMemberAttributes(printer);
+  if (!is_value_type) {
+    WriteNullabilityAttribute(printer, NOT_NULL);
+    WriteNullabilityAttribute(printer, DISALLOW_NULL);
+  }
   printer->Print(
     variables_,
     "$access_level$ $type_name$ $property_name$ {\n"

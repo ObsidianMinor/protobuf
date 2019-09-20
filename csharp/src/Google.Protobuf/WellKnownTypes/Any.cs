@@ -16,6 +16,7 @@ namespace Google.Protobuf.WellKnownTypes {
 
     #region Descriptor
     /// <summary>File descriptor for google/protobuf/any.proto</summary>
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -120,17 +121,23 @@ namespace Google.Protobuf.WellKnownTypes {
   ///     }
   /// </summary>
   public sealed partial class Any : pb::IMessage<Any> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<Any> _parser = new pb::MessageParser<Any>(() => new Any());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<Any> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -143,19 +150,22 @@ namespace Google.Protobuf.WellKnownTypes {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Any(Any other) : this() {
+    public Any([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Any other) : this() {
       typeUrl_ = other.typeUrl_;
       value_ = other.value_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public Any Clone() {
       return new Any(this);
     }
 
     /// <summary>Field number for the "type_url" field.</summary>
     public const int TypeUrlFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string typeUrl_ = "";
     /// <summary>
     /// A URL/resource name that uniquely identifies the type of the serialized
@@ -187,6 +197,8 @@ namespace Google.Protobuf.WellKnownTypes {
     /// used with implementation specific semantics.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string TypeUrl {
       get { return typeUrl_; }
       set {
@@ -196,11 +208,15 @@ namespace Google.Protobuf.WellKnownTypes {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private pb::ByteString value_ = pb::ByteString.Empty;
     /// <summary>
     /// Must be a valid serialized protocol buffer of the above specified type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public pb::ByteString Value {
       get { return value_; }
       set {
@@ -209,12 +225,12 @@ namespace Google.Protobuf.WellKnownTypes {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as Any);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Any other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] Any other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -238,12 +254,13 @@ namespace Google.Protobuf.WellKnownTypes {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (TypeUrl.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(TypeUrl);
@@ -273,7 +290,7 @@ namespace Google.Protobuf.WellKnownTypes {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Any other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Any other) {
       if (other == null) {
         return;
       }
@@ -287,7 +304,7 @@ namespace Google.Protobuf.WellKnownTypes {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {

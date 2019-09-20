@@ -136,14 +136,19 @@ void MessageGenerator::Generate(io::Printer* printer) {
   printer->Indent();
 
   // All static fields and properties
+  WriteNullabilityAttribute(printer, NOT_NULL);
   printer->Print(
       vars,
       "private static readonly pb::MessageParser<$class_name$> _parser = new pb::MessageParser<$class_name$>(() => new $class_name$());\n");
 
+  WriteNullabilityAttribute(printer, MAYBE_NULL);
+  WriteNullabilityAttribute(printer, ALLOW_NULL);
   printer->Print(
       "private pb::UnknownFieldSet _unknownFields;\n");
 
   if (has_extension_ranges_) {
+    WriteNullabilityAttribute(printer, MAYBE_NULL);
+    WriteNullabilityAttribute(printer, ALLOW_NULL);
     if (IsDescriptorProto(descriptor_->file())) {
       printer->Print(vars, "internal pb::ExtensionSet<$class_name$> _extensions;\n"); // CustomOptions compatibility
     } else {
@@ -161,6 +166,7 @@ void MessageGenerator::Generate(io::Printer* printer) {
 
   WriteGeneratedCodeAttributes(printer);
 
+  WriteNullabilityAttribute(printer, NOT_NULL);
   printer->Print(
       vars,
       "public static pb::MessageParser<$class_name$> Parser { get { return _parser; } }\n\n");
@@ -175,6 +181,7 @@ void MessageGenerator::Generate(io::Printer* printer) {
   }
 
   WriteGeneratedCodeAttributes(printer);
+  WriteNullabilityAttribute(printer, NOT_NULL);
   printer->Print(
     vars,
     "public static pbr::MessageDescriptor Descriptor {\n"
@@ -182,6 +189,7 @@ void MessageGenerator::Generate(io::Printer* printer) {
     "}\n"
     "\n");
   WriteGeneratedCodeAttributes(printer);
+  WriteNullabilityAttribute(printer, NOT_NULL);
   printer->Print(
     vars,
     "pbr::MessageDescriptor pb::IMessage.Descriptor {\n"
@@ -262,29 +270,36 @@ void MessageGenerator::Generate(io::Printer* printer) {
   GenerateFrameworkMethods(printer);
   GenerateMessageSerializationMethods(printer);
   GenerateMergingMethods(printer);
+  
+  vars["return_not_null"] = nullability(RETURN_NOT_NULL);
+  vars["return_maybe_null"] = nullability(RETURN_MAYBE_NULL);
+  vars["disallow_null"] = nullability(DISALLOW_NULL);
 
   if (has_extension_ranges_) {
     printer->Print(
       vars,
-      "public TValue GetExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
+      "$return_maybe_null$\n"
+      "public TValue GetExtension<TValue>($disallow_null$ pb::Extension<$class_name$, TValue> extension) {\n"
       "  return pb::ExtensionSet.Get(ref _extensions, extension);\n"
       "}\n"
-      "public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
+      "$return_maybe_null$\n"
+      "public pbc::RepeatedField<TValue> GetExtension<TValue>($disallow_null$ pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
       "  return pb::ExtensionSet.Get(ref _extensions, extension);\n"
       "}\n"
-      "public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
+      "$return_not_null$\n"
+      "public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>($disallow_null$ pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
       "  return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);\n"
       "}\n"
-      "public void SetExtension<TValue>(pb::Extension<$class_name$, TValue> extension, TValue value) {\n"
+      "public void SetExtension<TValue>($disallow_null$ pb::Extension<$class_name$, TValue> extension, $disallow_null$ TValue value) {\n"
       "  pb::ExtensionSet.Set(ref _extensions, extension, value);\n"
       "}\n"
-      "public bool HasExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
+      "public bool HasExtension<TValue>($disallow_null$ pb::Extension<$class_name$, TValue> extension) {\n"
       "  return pb::ExtensionSet.Has(ref _extensions, extension);\n"
       "}\n"
-      "public void ClearExtension<TValue>(pb::Extension<$class_name$, TValue> extension) {\n"
+      "public void ClearExtension<TValue>($disallow_null$ pb::Extension<$class_name$, TValue> extension) {\n"
       "  pb::ExtensionSet.Clear(ref _extensions, extension);\n"
       "}\n"
-      "public void ClearExtension<TValue>(pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
+      "public void ClearExtension<TValue>($disallow_null$ pb::RepeatedExtension<$class_name$, TValue> extension) {\n"
       "  pb::ExtensionSet.Clear(ref _extensions, extension);\n"
       "}\n\n");
   }
@@ -360,9 +375,9 @@ void MessageGenerator::GenerateCloningCode(io::Printer* printer) {
   std::map<string, string> vars;
   WriteGeneratedCodeAttributes(printer);
   vars["class_name"] = class_name();
-    printer->Print(
-    vars,
-    "public $class_name$($class_name$ other) : this() {\n");
+  vars["disallow_null"] = nullability(DISALLOW_NULL);
+
+  printer->Print(vars, "public $class_name$($disallow_null$ $class_name$ other) : this() {\n");
   printer->Indent();
   for (int i = 0; i < has_bit_field_count_; i++) {
     printer->Print("_hasBits$i$ = other._hasBits$i$;\n", "i", StrCat(i));
@@ -409,6 +424,7 @@ void MessageGenerator::GenerateCloningCode(io::Printer* printer) {
   printer->Print("}\n\n");
 
   WriteGeneratedCodeAttributes(printer);
+  WriteNullabilityAttribute(printer, RETURN_NOT_NULL);
   printer->Print(
     vars,
     "public $class_name$ Clone() {\n"
@@ -422,18 +438,19 @@ void MessageGenerator::GenerateFreezingCode(io::Printer* printer) {
 void MessageGenerator::GenerateFrameworkMethods(io::Printer* printer) {
     std::map<string, string> vars;
     vars["class_name"] = class_name();
+    vars["allow_null"] = nullability(ALLOW_NULL);
 
     // Equality
     WriteGeneratedCodeAttributes(printer);
     printer->Print(
         vars,
-        "public override bool Equals(object other) {\n"
+        "public override bool Equals($allow_null$ object other) {\n"
         "  return Equals(other as $class_name$);\n"
         "}\n\n");
     WriteGeneratedCodeAttributes(printer);
     printer->Print(
         vars,
-        "public bool Equals($class_name$ other) {\n"
+        "public bool Equals($allow_null$ $class_name$ other) {\n"
         "  if (ReferenceEquals(other, null)) {\n"
         "    return false;\n"
         "  }\n"
@@ -492,6 +509,7 @@ void MessageGenerator::GenerateFrameworkMethods(io::Printer* printer) {
     printer->Print("}\n\n");
 
     WriteGeneratedCodeAttributes(printer);
+    WriteNullabilityAttribute(printer, RETURN_NOT_NULL);
     printer->Print(
         "public override string ToString() {\n"
         "  return pb::JsonFormatter.ToDiagnosticString(this);\n"
@@ -499,9 +517,13 @@ void MessageGenerator::GenerateFrameworkMethods(io::Printer* printer) {
 }
 
 void MessageGenerator::GenerateMessageSerializationMethods(io::Printer* printer) {
+  std::map<string, string> vars;
+  vars["disallow_null"] = nullability(DISALLOW_NULL);
+
   WriteGeneratedCodeAttributes(printer);
   printer->Print(
-      "public void WriteTo(pb::CodedOutputStream output) {\n");
+      vars,
+      "public void WriteTo($disallow_null$ pb::CodedOutputStream output) {\n");
   printer->Indent();
 
   // Serialize all the fields
@@ -564,11 +586,12 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
   //   for code size.
   std::map<string, string> vars;
   vars["class_name"] = class_name();
+  vars["disallow_null"] = nullability(DISALLOW_NULL);
 
   WriteGeneratedCodeAttributes(printer);
   printer->Print(
     vars,
-    "public void MergeFrom($class_name$ other) {\n");
+    "public void MergeFrom($disallow_null$ $class_name$ other) {\n");
   printer->Indent();
   printer->Print(
     "if (other == null) {\n"
@@ -617,7 +640,7 @@ void MessageGenerator::GenerateMergingMethods(io::Printer* printer) {
 
 
   WriteGeneratedCodeAttributes(printer);
-  printer->Print("public void MergeFrom(pb::CodedInputStream input) {\n");
+  printer->Print(vars, "public void MergeFrom($disallow_null$ pb::CodedInputStream input) {\n");
   printer->Indent();
   printer->Print(
     "uint tag;\n"

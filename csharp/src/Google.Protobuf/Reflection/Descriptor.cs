@@ -16,6 +16,7 @@ namespace Google.Protobuf.Reflection {
 
     #region Descriptor
     /// <summary>File descriptor for google/protobuf/descriptor.proto</summary>
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -194,17 +195,23 @@ namespace Google.Protobuf.Reflection {
   /// files it parses.
   /// </summary>
   public sealed partial class FileDescriptorSet : pb::IMessage<FileDescriptorSet> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<FileDescriptorSet> _parser = new pb::MessageParser<FileDescriptorSet>(() => new FileDescriptorSet());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<FileDescriptorSet> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -217,12 +224,13 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FileDescriptorSet(FileDescriptorSet other) : this() {
+    public FileDescriptorSet([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FileDescriptorSet other) : this() {
       file_ = other.file_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public FileDescriptorSet Clone() {
       return new FileDescriptorSet(this);
     }
@@ -233,17 +241,18 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(10, global::Google.Protobuf.Reflection.FileDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FileDescriptorProto> file_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FileDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FileDescriptorProto> File {
       get { return file_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as FileDescriptorSet);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FileDescriptorSet other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] FileDescriptorSet other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -265,12 +274,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       file_.WriteTo(output, _repeated_file_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -288,7 +298,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FileDescriptorSet other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FileDescriptorSet other) {
       if (other == null) {
         return;
       }
@@ -297,7 +307,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -318,17 +328,23 @@ namespace Google.Protobuf.Reflection {
   /// Describes a complete .proto file.
   /// </summary>
   public sealed partial class FileDescriptorProto : pb::IMessage<FileDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<FileDescriptorProto> _parser = new pb::MessageParser<FileDescriptorProto>(() => new FileDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<FileDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -341,7 +357,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FileDescriptorProto(FileDescriptorProto other) : this() {
+    public FileDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FileDescriptorProto other) : this() {
       name_ = other.name_;
       package_ = other.package_;
       dependency_ = other.dependency_.Clone();
@@ -358,19 +374,25 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public FileDescriptorProto Clone() {
       return new FileDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     /// <summary>
     /// file name, relative to root of source tree
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -390,13 +412,18 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "package" field.</summary>
     public const int PackageFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string PackageDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string package_;
     /// <summary>
     /// e.g. "foo", "foo.bar", etc.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Package {
       get { return package_ ?? PackageDefaultValue; }
       set {
@@ -423,6 +450,7 @@ namespace Google.Protobuf.Reflection {
     /// Names of files imported by this file.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<string> Dependency {
       get { return dependency_; }
     }
@@ -436,6 +464,7 @@ namespace Google.Protobuf.Reflection {
     /// Indexes of the public imported files in the dependency list above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> PublicDependency {
       get { return publicDependency_; }
     }
@@ -450,6 +479,7 @@ namespace Google.Protobuf.Reflection {
     /// For Google-internal migration only. Do not use.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> WeakDependency {
       get { return weakDependency_; }
     }
@@ -463,6 +493,7 @@ namespace Google.Protobuf.Reflection {
     /// All top-level definitions in this file.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> MessageType {
       get { return messageType_; }
     }
@@ -473,6 +504,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(42, global::Google.Protobuf.Reflection.EnumDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> enumType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> EnumType {
       get { return enumType_; }
     }
@@ -483,6 +515,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(50, global::Google.Protobuf.Reflection.ServiceDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.ServiceDescriptorProto> service_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.ServiceDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.ServiceDescriptorProto> Service {
       get { return service_; }
     }
@@ -493,14 +526,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(58, global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> extension_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> Extension {
       get { return extension_; }
     }
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 8;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.FileOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.FileOptions Options {
       get { return options_; }
       set {
@@ -520,6 +558,8 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "source_code_info" field.</summary>
     public const int SourceCodeInfoFieldNumber = 9;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.SourceCodeInfo sourceCodeInfo_;
     /// <summary>
     /// This field contains optional information about the original source code.
@@ -528,6 +568,8 @@ namespace Google.Protobuf.Reflection {
     /// development tools.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.SourceCodeInfo SourceCodeInfo {
       get { return sourceCodeInfo_; }
       set {
@@ -547,14 +589,19 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "syntax" field.</summary>
     public const int SyntaxFieldNumber = 12;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string SyntaxDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string syntax_;
     /// <summary>
     /// The syntax of the proto file.
     /// The supported values are "proto2" and "proto3".
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Syntax {
       get { return syntax_ ?? SyntaxDefaultValue; }
       set {
@@ -573,12 +620,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as FileDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FileDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] FileDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -622,12 +669,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -692,7 +740,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FileDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FileDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -728,7 +776,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -801,17 +849,23 @@ namespace Google.Protobuf.Reflection {
   /// Describes a message type.
   /// </summary>
   public sealed partial class DescriptorProto : pb::IMessage<DescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<DescriptorProto> _parser = new pb::MessageParser<DescriptorProto>(() => new DescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<DescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -824,7 +878,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public DescriptorProto(DescriptorProto other) : this() {
+    public DescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] DescriptorProto other) : this() {
       name_ = other.name_;
       field_ = other.field_.Clone();
       extension_ = other.extension_.Clone();
@@ -839,16 +893,22 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public DescriptorProto Clone() {
       return new DescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -872,6 +932,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> field_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> Field {
       get { return field_; }
     }
@@ -882,6 +943,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(50, global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> extension_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> Extension {
       get { return extension_; }
     }
@@ -892,6 +954,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(26, global::Google.Protobuf.Reflection.DescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> nestedType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> NestedType {
       get { return nestedType_; }
     }
@@ -902,6 +965,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(34, global::Google.Protobuf.Reflection.EnumDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> enumType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> EnumType {
       get { return enumType_; }
     }
@@ -912,6 +976,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(42, global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange> extensionRange_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange> ExtensionRange {
       get { return extensionRange_; }
     }
@@ -922,14 +987,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(66, global::Google.Protobuf.Reflection.OneofDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.OneofDescriptorProto> oneofDecl_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.OneofDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.OneofDescriptorProto> OneofDecl {
       get { return oneofDecl_; }
     }
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 7;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.MessageOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.MessageOptions Options {
       get { return options_; }
       set {
@@ -953,6 +1023,7 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(74, global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange> reservedRange_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange> ReservedRange {
       get { return reservedRange_; }
     }
@@ -967,17 +1038,18 @@ namespace Google.Protobuf.Reflection {
     /// A given name may only be reserved once.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<string> ReservedName {
       get { return reservedName_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as DescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(DescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] DescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1017,12 +1089,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -1068,7 +1141,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(DescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] DescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -1093,7 +1166,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1152,18 +1225,24 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class ExtensionRange : pb::IMessage<ExtensionRange> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<ExtensionRange> _parser = new pb::MessageParser<ExtensionRange>(() => new ExtensionRange());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<ExtensionRange> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.DescriptorProto.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -1176,7 +1255,7 @@ namespace Google.Protobuf.Reflection {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public ExtensionRange(ExtensionRange other) : this() {
+        public ExtensionRange([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ExtensionRange other) : this() {
           _hasBits0 = other._hasBits0;
           start_ = other.start_;
           end_ = other.end_;
@@ -1185,14 +1264,18 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public ExtensionRange Clone() {
           return new ExtensionRange(this);
         }
 
         /// <summary>Field number for the "start" field.</summary>
         public const int StartFieldNumber = 1;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int StartDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int start_;
         /// <summary>
         /// Inclusive.
@@ -1218,8 +1301,11 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "end" field.</summary>
         public const int EndFieldNumber = 2;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int EndDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int end_;
         /// <summary>
         /// Exclusive.
@@ -1245,8 +1331,12 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "options" field.</summary>
         public const int OptionsFieldNumber = 3;
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private global::Google.Protobuf.Reflection.ExtensionRangeOptions options_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         public global::Google.Protobuf.Reflection.ExtensionRangeOptions Options {
           get { return options_; }
           set {
@@ -1265,12 +1355,12 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as ExtensionRange);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(ExtensionRange other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] ExtensionRange other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -1296,12 +1386,13 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasStart) {
             output.WriteRawTag(8);
             output.WriteInt32(Start);
@@ -1338,7 +1429,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(ExtensionRange other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ExtensionRange other) {
           if (other == null) {
             return;
           }
@@ -1358,7 +1449,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -1392,18 +1483,24 @@ namespace Google.Protobuf.Reflection {
       /// not overlap.
       /// </summary>
       public sealed partial class ReservedRange : pb::IMessage<ReservedRange> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<ReservedRange> _parser = new pb::MessageParser<ReservedRange>(() => new ReservedRange());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<ReservedRange> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.DescriptorProto.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -1416,7 +1513,7 @@ namespace Google.Protobuf.Reflection {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public ReservedRange(ReservedRange other) : this() {
+        public ReservedRange([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ReservedRange other) : this() {
           _hasBits0 = other._hasBits0;
           start_ = other.start_;
           end_ = other.end_;
@@ -1424,14 +1521,18 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public ReservedRange Clone() {
           return new ReservedRange(this);
         }
 
         /// <summary>Field number for the "start" field.</summary>
         public const int StartFieldNumber = 1;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int StartDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int start_;
         /// <summary>
         /// Inclusive.
@@ -1457,8 +1558,11 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "end" field.</summary>
         public const int EndFieldNumber = 2;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int EndDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int end_;
         /// <summary>
         /// Exclusive.
@@ -1483,12 +1587,12 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as ReservedRange);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(ReservedRange other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] ReservedRange other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -1512,12 +1616,13 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasStart) {
             output.WriteRawTag(8);
             output.WriteInt32(Start);
@@ -1547,7 +1652,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(ReservedRange other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ReservedRange other) {
           if (other == null) {
             return;
           }
@@ -1561,7 +1666,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -1588,19 +1693,27 @@ namespace Google.Protobuf.Reflection {
   }
 
   public sealed partial class ExtensionRangeOptions : pb::IExtendableMessage<ExtensionRangeOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<ExtensionRangeOptions> _parser = new pb::MessageParser<ExtensionRangeOptions>(() => new ExtensionRangeOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<ExtensionRangeOptions> _extensions;
     private pb::ExtensionSet<ExtensionRangeOptions> _Extensions => _extensions;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<ExtensionRangeOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -1613,13 +1726,14 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExtensionRangeOptions(ExtensionRangeOptions other) : this() {
+    public ExtensionRangeOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ExtensionRangeOptions other) : this() {
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public ExtensionRangeOptions Clone() {
       return new ExtensionRangeOptions(this);
     }
@@ -1633,17 +1747,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as ExtensionRangeOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ExtensionRangeOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] ExtensionRangeOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1671,12 +1786,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
       if (_extensions != null) {
         _extensions.WriteTo(output);
@@ -1700,7 +1816,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ExtensionRangeOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ExtensionRangeOptions other) {
       if (other == null) {
         return;
       }
@@ -1710,7 +1826,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1727,25 +1843,28 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<ExtensionRangeOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ExtensionRangeOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<ExtensionRangeOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<ExtensionRangeOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<ExtensionRangeOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<ExtensionRangeOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<ExtensionRangeOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ExtensionRangeOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<ExtensionRangeOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ExtensionRangeOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<ExtensionRangeOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ExtensionRangeOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<ExtensionRangeOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<ExtensionRangeOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
@@ -1755,18 +1874,24 @@ namespace Google.Protobuf.Reflection {
   /// Describes a field within a message.
   /// </summary>
   public sealed partial class FieldDescriptorProto : pb::IMessage<FieldDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<FieldDescriptorProto> _parser = new pb::MessageParser<FieldDescriptorProto>(() => new FieldDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<FieldDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -1779,7 +1904,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FieldDescriptorProto(FieldDescriptorProto other) : this() {
+    public FieldDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FieldDescriptorProto other) : this() {
       _hasBits0 = other._hasBits0;
       name_ = other.name_;
       number_ = other.number_;
@@ -1795,16 +1920,22 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public FieldDescriptorProto Clone() {
       return new FieldDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -1824,8 +1955,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "number" field.</summary>
     public const int NumberFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int NumberDefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int number_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Number {
@@ -1848,8 +1982,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "label" field.</summary>
     public const int LabelFieldNumber = 4;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label LabelDefaultValue = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.Optional;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label label_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label Label {
@@ -1872,8 +2009,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 5;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type TypeDefaultValue = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Double;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type type_;
     /// <summary>
     /// If type_name is set, this need not be set.  If both this and type_name
@@ -1900,8 +2040,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "type_name" field.</summary>
     public const int TypeNameFieldNumber = 6;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string TypeNameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string typeName_;
     /// <summary>
     /// For message and enum types, this is the name of the type.  If the name
@@ -1911,6 +2054,8 @@ namespace Google.Protobuf.Reflection {
     /// namespace).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string TypeName {
       get { return typeName_ ?? TypeNameDefaultValue; }
       set {
@@ -1930,14 +2075,19 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "extendee" field.</summary>
     public const int ExtendeeFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string ExtendeeDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string extendee_;
     /// <summary>
     /// For extensions, this is the name of the type being extended.  It is
     /// resolved in the same manner as type_name.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Extendee {
       get { return extendee_ ?? ExtendeeDefaultValue; }
       set {
@@ -1957,8 +2107,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "default_value" field.</summary>
     public const int DefaultValueFieldNumber = 7;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string DefaultValueDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string defaultValue_;
     /// <summary>
     /// For numeric types, contains the original text representation of the value.
@@ -1968,6 +2121,8 @@ namespace Google.Protobuf.Reflection {
     /// TODO(kenton):  Base-64 encode?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string DefaultValue {
       get { return defaultValue_ ?? DefaultValueDefaultValue; }
       set {
@@ -1987,8 +2142,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "oneof_index" field.</summary>
     public const int OneofIndexFieldNumber = 9;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int OneofIndexDefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int oneofIndex_;
     /// <summary>
     /// If set, gives the index of a oneof in the containing type's oneof_decl
@@ -2015,8 +2173,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "json_name" field.</summary>
     public const int JsonNameFieldNumber = 10;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string JsonNameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string jsonName_;
     /// <summary>
     /// JSON name of this field. The value is set by protocol compiler. If the
@@ -2025,6 +2186,8 @@ namespace Google.Protobuf.Reflection {
     /// it to camelCase.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string JsonName {
       get { return jsonName_ ?? JsonNameDefaultValue; }
       set {
@@ -2044,8 +2207,12 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 8;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.FieldOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.FieldOptions Options {
       get { return options_; }
       set {
@@ -2064,12 +2231,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as FieldDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FieldDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] FieldDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2109,12 +2276,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2200,7 +2368,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FieldDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FieldDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -2241,7 +2409,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2368,17 +2536,23 @@ namespace Google.Protobuf.Reflection {
   /// Describes a oneof.
   /// </summary>
   public sealed partial class OneofDescriptorProto : pb::IMessage<OneofDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<OneofDescriptorProto> _parser = new pb::MessageParser<OneofDescriptorProto>(() => new OneofDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<OneofDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -2391,23 +2565,29 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OneofDescriptorProto(OneofDescriptorProto other) : this() {
+    public OneofDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] OneofDescriptorProto other) : this() {
       name_ = other.name_;
       options_ = other.HasOptions ? other.options_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public OneofDescriptorProto Clone() {
       return new OneofDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -2427,8 +2607,12 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.OneofOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.OneofOptions Options {
       get { return options_; }
       set {
@@ -2447,12 +2631,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as OneofDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(OneofDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] OneofDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2476,12 +2660,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2511,7 +2696,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(OneofDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] OneofDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -2528,7 +2713,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2556,17 +2741,23 @@ namespace Google.Protobuf.Reflection {
   /// Describes an enum type.
   /// </summary>
   public sealed partial class EnumDescriptorProto : pb::IMessage<EnumDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<EnumDescriptorProto> _parser = new pb::MessageParser<EnumDescriptorProto>(() => new EnumDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<EnumDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -2579,7 +2770,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnumDescriptorProto(EnumDescriptorProto other) : this() {
+    public EnumDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumDescriptorProto other) : this() {
       name_ = other.name_;
       value_ = other.value_.Clone();
       options_ = other.HasOptions ? other.options_.Clone() : null;
@@ -2589,16 +2780,22 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public EnumDescriptorProto Clone() {
       return new EnumDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -2622,14 +2819,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.EnumValueDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumValueDescriptorProto> value_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumValueDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumValueDescriptorProto> Value {
       get { return value_; }
     }
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.EnumOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.EnumOptions Options {
       get { return options_; }
       set {
@@ -2658,6 +2860,7 @@ namespace Google.Protobuf.Reflection {
     /// overlap.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto.Types.EnumReservedRange> ReservedRange {
       get { return reservedRange_; }
     }
@@ -2672,17 +2875,18 @@ namespace Google.Protobuf.Reflection {
     /// be reserved once.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<string> ReservedName {
       get { return reservedName_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as EnumDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EnumDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] EnumDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2712,12 +2916,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -2753,7 +2958,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EnumDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -2773,7 +2978,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2820,18 +3025,24 @@ namespace Google.Protobuf.Reflection {
       /// domain.
       /// </summary>
       public sealed partial class EnumReservedRange : pb::IMessage<EnumReservedRange> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<EnumReservedRange> _parser = new pb::MessageParser<EnumReservedRange>(() => new EnumReservedRange());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<EnumReservedRange> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.EnumDescriptorProto.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -2844,7 +3055,7 @@ namespace Google.Protobuf.Reflection {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public EnumReservedRange(EnumReservedRange other) : this() {
+        public EnumReservedRange([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumReservedRange other) : this() {
           _hasBits0 = other._hasBits0;
           start_ = other.start_;
           end_ = other.end_;
@@ -2852,14 +3063,18 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public EnumReservedRange Clone() {
           return new EnumReservedRange(this);
         }
 
         /// <summary>Field number for the "start" field.</summary>
         public const int StartFieldNumber = 1;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int StartDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int start_;
         /// <summary>
         /// Inclusive.
@@ -2885,8 +3100,11 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "end" field.</summary>
         public const int EndFieldNumber = 2;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int EndDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int end_;
         /// <summary>
         /// Inclusive.
@@ -2911,12 +3129,12 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as EnumReservedRange);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(EnumReservedRange other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] EnumReservedRange other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -2940,12 +3158,13 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasStart) {
             output.WriteRawTag(8);
             output.WriteInt32(Start);
@@ -2975,7 +3194,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(EnumReservedRange other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumReservedRange other) {
           if (other == null) {
             return;
           }
@@ -2989,7 +3208,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -3019,18 +3238,24 @@ namespace Google.Protobuf.Reflection {
   /// Describes a value within an enum.
   /// </summary>
   public sealed partial class EnumValueDescriptorProto : pb::IMessage<EnumValueDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<EnumValueDescriptorProto> _parser = new pb::MessageParser<EnumValueDescriptorProto>(() => new EnumValueDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<EnumValueDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -3043,7 +3268,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnumValueDescriptorProto(EnumValueDescriptorProto other) : this() {
+    public EnumValueDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumValueDescriptorProto other) : this() {
       _hasBits0 = other._hasBits0;
       name_ = other.name_;
       number_ = other.number_;
@@ -3052,16 +3277,22 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public EnumValueDescriptorProto Clone() {
       return new EnumValueDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -3081,8 +3312,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "number" field.</summary>
     public const int NumberFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int NumberDefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int number_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Number {
@@ -3105,8 +3339,12 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.EnumValueOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.EnumValueOptions Options {
       get { return options_; }
       set {
@@ -3125,12 +3363,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as EnumValueDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EnumValueDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] EnumValueDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -3156,12 +3394,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -3198,7 +3437,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EnumValueDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumValueDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -3218,7 +3457,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3250,17 +3489,23 @@ namespace Google.Protobuf.Reflection {
   /// Describes a service.
   /// </summary>
   public sealed partial class ServiceDescriptorProto : pb::IMessage<ServiceDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<ServiceDescriptorProto> _parser = new pb::MessageParser<ServiceDescriptorProto>(() => new ServiceDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<ServiceDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -3273,7 +3518,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ServiceDescriptorProto(ServiceDescriptorProto other) : this() {
+    public ServiceDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ServiceDescriptorProto other) : this() {
       name_ = other.name_;
       method_ = other.method_.Clone();
       options_ = other.HasOptions ? other.options_.Clone() : null;
@@ -3281,16 +3526,22 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public ServiceDescriptorProto Clone() {
       return new ServiceDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -3314,14 +3565,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.MethodDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.MethodDescriptorProto> method_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.MethodDescriptorProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.MethodDescriptorProto> Method {
       get { return method_; }
     }
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.ServiceOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.ServiceOptions Options {
       get { return options_; }
       set {
@@ -3340,12 +3596,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as ServiceDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ServiceDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] ServiceDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -3371,12 +3627,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -3408,7 +3665,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ServiceDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ServiceDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -3426,7 +3683,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3458,18 +3715,24 @@ namespace Google.Protobuf.Reflection {
   /// Describes a method of a service.
   /// </summary>
   public sealed partial class MethodDescriptorProto : pb::IMessage<MethodDescriptorProto> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<MethodDescriptorProto> _parser = new pb::MessageParser<MethodDescriptorProto>(() => new MethodDescriptorProto());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<MethodDescriptorProto> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -3482,7 +3745,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MethodDescriptorProto(MethodDescriptorProto other) : this() {
+    public MethodDescriptorProto([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MethodDescriptorProto other) : this() {
       _hasBits0 = other._hasBits0;
       name_ = other.name_;
       inputType_ = other.inputType_;
@@ -3494,16 +3757,22 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public MethodDescriptorProto Clone() {
       return new MethodDescriptorProto(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string NameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string name_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_ ?? NameDefaultValue; }
       set {
@@ -3523,14 +3792,19 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "input_type" field.</summary>
     public const int InputTypeFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string InputTypeDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string inputType_;
     /// <summary>
     /// Input and output type names.  These are resolved in the same way as
     /// FieldDescriptorProto.type_name, but must refer to a message type.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string InputType {
       get { return inputType_ ?? InputTypeDefaultValue; }
       set {
@@ -3550,10 +3824,15 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "output_type" field.</summary>
     public const int OutputTypeFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string OutputTypeDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string outputType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string OutputType {
       get { return outputType_ ?? OutputTypeDefaultValue; }
       set {
@@ -3573,8 +3852,12 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 4;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Google.Protobuf.Reflection.MethodOptions options_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Google.Protobuf.Reflection.MethodOptions Options {
       get { return options_; }
       set {
@@ -3594,8 +3877,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "client_streaming" field.</summary>
     public const int ClientStreamingFieldNumber = 5;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool ClientStreamingDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool clientStreaming_;
     /// <summary>
     /// Identifies if client streams multiple client messages
@@ -3621,8 +3907,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "server_streaming" field.</summary>
     public const int ServerStreamingFieldNumber = 6;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool ServerStreamingDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool serverStreaming_;
     /// <summary>
     /// Identifies if server streams multiple server messages
@@ -3647,12 +3936,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as MethodDescriptorProto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(MethodDescriptorProto other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] MethodDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -3684,12 +3973,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasName) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -3747,7 +4037,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(MethodDescriptorProto other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MethodDescriptorProto other) {
       if (other == null) {
         return;
       }
@@ -3776,7 +4066,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3817,20 +4107,28 @@ namespace Google.Protobuf.Reflection {
   }
 
   public sealed partial class FileOptions : pb::IExtendableMessage<FileOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<FileOptions> _parser = new pb::MessageParser<FileOptions>(() => new FileOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<FileOptions> _extensions;
     private pb::ExtensionSet<FileOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<FileOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -3843,7 +4141,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FileOptions(FileOptions other) : this() {
+    public FileOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FileOptions other) : this() {
       _hasBits0 = other._hasBits0;
       javaPackage_ = other.javaPackage_;
       javaOuterClassname_ = other.javaOuterClassname_;
@@ -3871,14 +4169,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public FileOptions Clone() {
       return new FileOptions(this);
     }
 
     /// <summary>Field number for the "java_package" field.</summary>
     public const int JavaPackageFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string JavaPackageDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string javaPackage_;
     /// <summary>
     /// Sets the Java package where classes generated from this .proto will be
@@ -3887,6 +4189,8 @@ namespace Google.Protobuf.Reflection {
     /// domain names.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string JavaPackage {
       get { return javaPackage_ ?? JavaPackageDefaultValue; }
       set {
@@ -3906,8 +4210,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "java_outer_classname" field.</summary>
     public const int JavaOuterClassnameFieldNumber = 8;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string JavaOuterClassnameDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string javaOuterClassname_;
     /// <summary>
     /// If set, all the classes from the .proto file are wrapped in a single
@@ -3917,6 +4224,8 @@ namespace Google.Protobuf.Reflection {
     /// explicitly choose the class name).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string JavaOuterClassname {
       get { return javaOuterClassname_ ?? JavaOuterClassnameDefaultValue; }
       set {
@@ -3936,8 +4245,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "java_multiple_files" field.</summary>
     public const int JavaMultipleFilesFieldNumber = 10;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool JavaMultipleFilesDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool javaMultipleFiles_;
     /// <summary>
     /// If set true, then the Java code generator will generate a separate .java
@@ -3968,8 +4280,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "java_generate_equals_and_hash" field.</summary>
     public const int JavaGenerateEqualsAndHashFieldNumber = 20;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool JavaGenerateEqualsAndHashDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool javaGenerateEqualsAndHash_;
     /// <summary>
     /// This option does nothing.
@@ -3998,8 +4313,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "java_string_check_utf8" field.</summary>
     public const int JavaStringCheckUtf8FieldNumber = 27;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool JavaStringCheckUtf8DefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool javaStringCheckUtf8_;
     /// <summary>
     /// If set true, then the Java2 code generator will generate code that
@@ -4030,8 +4348,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "optimize_for" field.</summary>
     public const int OptimizeForFieldNumber = 9;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode OptimizeForDefaultValue = global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.Speed;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode optimizeFor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode OptimizeFor {
@@ -4054,8 +4375,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "go_package" field.</summary>
     public const int GoPackageFieldNumber = 11;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string GoPackageDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string goPackage_;
     /// <summary>
     /// Sets the Go package where structs generated from this .proto will be
@@ -4065,6 +4389,8 @@ namespace Google.Protobuf.Reflection {
     ///   - Otherwise, the basename of the .proto file, without extension.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string GoPackage {
       get { return goPackage_ ?? GoPackageDefaultValue; }
       set {
@@ -4084,8 +4410,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "cc_generic_services" field.</summary>
     public const int CcGenericServicesFieldNumber = 16;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool CcGenericServicesDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool ccGenericServices_;
     /// <summary>
     /// Should generic services be generated in each language?  "Generic" services
@@ -4120,8 +4449,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "java_generic_services" field.</summary>
     public const int JavaGenericServicesFieldNumber = 17;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool JavaGenericServicesDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool javaGenericServices_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool JavaGenericServices {
@@ -4144,8 +4476,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "py_generic_services" field.</summary>
     public const int PyGenericServicesFieldNumber = 18;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool PyGenericServicesDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool pyGenericServices_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool PyGenericServices {
@@ -4168,8 +4503,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "php_generic_services" field.</summary>
     public const int PhpGenericServicesFieldNumber = 42;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool PhpGenericServicesDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool phpGenericServices_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool PhpGenericServices {
@@ -4192,8 +4530,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 23;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this file deprecated?
@@ -4222,8 +4563,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "cc_enable_arenas" field.</summary>
     public const int CcEnableArenasFieldNumber = 31;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool CcEnableArenasDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool ccEnableArenas_;
     /// <summary>
     /// Enables the use of arenas for the proto messages in this file. This applies
@@ -4250,14 +4594,19 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "objc_class_prefix" field.</summary>
     public const int ObjcClassPrefixFieldNumber = 36;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string ObjcClassPrefixDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string objcClassPrefix_;
     /// <summary>
     /// Sets the objective c class prefix which is prepended to all objective c
     /// generated classes from this .proto. There is no default.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string ObjcClassPrefix {
       get { return objcClassPrefix_ ?? ObjcClassPrefixDefaultValue; }
       set {
@@ -4277,13 +4626,18 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "csharp_namespace" field.</summary>
     public const int CsharpNamespaceFieldNumber = 37;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string CsharpNamespaceDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string csharpNamespace_;
     /// <summary>
     /// Namespace for generated classes; defaults to the package.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string CsharpNamespace {
       get { return csharpNamespace_ ?? CsharpNamespaceDefaultValue; }
       set {
@@ -4303,8 +4657,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "swift_prefix" field.</summary>
     public const int SwiftPrefixFieldNumber = 39;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string SwiftPrefixDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string swiftPrefix_;
     /// <summary>
     /// By default Swift generators will take the proto package and CamelCase it
@@ -4313,6 +4670,8 @@ namespace Google.Protobuf.Reflection {
     /// to prefix the types/symbols defined.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string SwiftPrefix {
       get { return swiftPrefix_ ?? SwiftPrefixDefaultValue; }
       set {
@@ -4332,14 +4691,19 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "php_class_prefix" field.</summary>
     public const int PhpClassPrefixFieldNumber = 40;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string PhpClassPrefixDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string phpClassPrefix_;
     /// <summary>
     /// Sets the php class prefix which is prepended to all php generated classes
     /// from this .proto. Default is empty.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string PhpClassPrefix {
       get { return phpClassPrefix_ ?? PhpClassPrefixDefaultValue; }
       set {
@@ -4359,8 +4723,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "php_namespace" field.</summary>
     public const int PhpNamespaceFieldNumber = 41;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string PhpNamespaceDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string phpNamespace_;
     /// <summary>
     /// Use this option to change the namespace of php generated classes. Default
@@ -4368,6 +4735,8 @@ namespace Google.Protobuf.Reflection {
     /// determining the namespace.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string PhpNamespace {
       get { return phpNamespace_ ?? PhpNamespaceDefaultValue; }
       set {
@@ -4387,8 +4756,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "php_metadata_namespace" field.</summary>
     public const int PhpMetadataNamespaceFieldNumber = 44;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string PhpMetadataNamespaceDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string phpMetadataNamespace_;
     /// <summary>
     /// Use this option to change the namespace of php generated metadata classes.
@@ -4396,6 +4768,8 @@ namespace Google.Protobuf.Reflection {
     /// used for determining the namespace.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string PhpMetadataNamespace {
       get { return phpMetadataNamespace_ ?? PhpMetadataNamespaceDefaultValue; }
       set {
@@ -4415,8 +4789,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "ruby_package" field.</summary>
     public const int RubyPackageFieldNumber = 45;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string RubyPackageDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string rubyPackage_;
     /// <summary>
     /// Use this option to change the package of ruby generated classes. Default
@@ -4424,6 +4801,8 @@ namespace Google.Protobuf.Reflection {
     /// determining the ruby package.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string RubyPackage {
       get { return rubyPackage_ ?? RubyPackageDefaultValue; }
       set {
@@ -4451,17 +4830,18 @@ namespace Google.Protobuf.Reflection {
     /// See the documentation for the "Options" section above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as FileOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FileOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] FileOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -4529,12 +4909,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasJavaPackage) {
         output.WriteRawTag(10);
         output.WriteString(JavaPackage);
@@ -4698,7 +5079,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FileOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FileOptions other) {
       if (other == null) {
         return;
       }
@@ -4768,7 +5149,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -4865,25 +5246,28 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<FileOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FileOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<FileOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<FileOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<FileOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<FileOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<FileOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FileOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<FileOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FileOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<FileOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FileOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<FileOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<FileOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
@@ -4915,20 +5299,28 @@ namespace Google.Protobuf.Reflection {
   }
 
   public sealed partial class MessageOptions : pb::IExtendableMessage<MessageOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<MessageOptions> _parser = new pb::MessageParser<MessageOptions>(() => new MessageOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<MessageOptions> _extensions;
     private pb::ExtensionSet<MessageOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<MessageOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -4941,7 +5333,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MessageOptions(MessageOptions other) : this() {
+    public MessageOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageOptions other) : this() {
       _hasBits0 = other._hasBits0;
       messageSetWireFormat_ = other.messageSetWireFormat_;
       noStandardDescriptorAccessor_ = other.noStandardDescriptorAccessor_;
@@ -4953,14 +5345,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public MessageOptions Clone() {
       return new MessageOptions(this);
     }
 
     /// <summary>Field number for the "message_set_wire_format" field.</summary>
     public const int MessageSetWireFormatFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool MessageSetWireFormatDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool messageSetWireFormat_;
     /// <summary>
     /// Set true to use the old proto1 MessageSet wire format for extensions.
@@ -5003,8 +5399,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "no_standard_descriptor_accessor" field.</summary>
     public const int NoStandardDescriptorAccessorFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool NoStandardDescriptorAccessorDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool noStandardDescriptorAccessor_;
     /// <summary>
     /// Disables the generation of the standard "descriptor()" accessor, which can
@@ -5032,8 +5431,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this message deprecated?
@@ -5062,8 +5464,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "map_entry" field.</summary>
     public const int MapEntryFieldNumber = 7;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool MapEntryDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool mapEntry_;
     /// <summary>
     /// Whether the message is an automatically generated map entry type for the
@@ -5116,17 +5521,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as MessageOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(MessageOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] MessageOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -5162,12 +5568,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasMessageSetWireFormat) {
         output.WriteRawTag(8);
         output.WriteBool(MessageSetWireFormat);
@@ -5219,7 +5626,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(MessageOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageOptions other) {
       if (other == null) {
         return;
       }
@@ -5241,7 +5648,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -5274,45 +5681,56 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<MessageOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<MessageOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MessageOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<MessageOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MessageOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<MessageOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<MessageOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<MessageOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<MessageOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MessageOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
   }
 
   public sealed partial class FieldOptions : pb::IExtendableMessage<FieldOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<FieldOptions> _parser = new pb::MessageParser<FieldOptions>(() => new FieldOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<FieldOptions> _extensions;
     private pb::ExtensionSet<FieldOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<FieldOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -5325,7 +5743,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FieldOptions(FieldOptions other) : this() {
+    public FieldOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FieldOptions other) : this() {
       _hasBits0 = other._hasBits0;
       ctype_ = other.ctype_;
       packed_ = other.packed_;
@@ -5339,14 +5757,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public FieldOptions Clone() {
       return new FieldOptions(this);
     }
 
     /// <summary>Field number for the "ctype" field.</summary>
     public const int CtypeFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::Google.Protobuf.Reflection.FieldOptions.Types.CType CtypeDefaultValue = global::Google.Protobuf.Reflection.FieldOptions.Types.CType.String;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::Google.Protobuf.Reflection.FieldOptions.Types.CType ctype_;
     /// <summary>
     /// The ctype option instructs the C++ code generator to use a different
@@ -5375,8 +5797,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "packed" field.</summary>
     public const int PackedFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool PackedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool packed_;
     /// <summary>
     /// The packed option can be enabled for repeated primitive fields to enable
@@ -5406,8 +5831,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "jstype" field.</summary>
     public const int JstypeFieldNumber = 6;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::Google.Protobuf.Reflection.FieldOptions.Types.JSType JstypeDefaultValue = global::Google.Protobuf.Reflection.FieldOptions.Types.JSType.JsNormal;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::Google.Protobuf.Reflection.FieldOptions.Types.JSType jstype_;
     /// <summary>
     /// The jstype option determines the JavaScript type used for values of the
@@ -5443,8 +5871,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "lazy" field.</summary>
     public const int LazyFieldNumber = 5;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool LazyDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool lazy_;
     /// <summary>
     /// Should this field be parsed lazily?  Lazy applies only to message-type
@@ -5496,8 +5927,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this field deprecated?
@@ -5526,8 +5960,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "weak" field.</summary>
     public const int WeakFieldNumber = 10;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool WeakDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool weak_;
     /// <summary>
     /// For Google-internal migration only. Do not use.
@@ -5560,17 +5997,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as FieldOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FieldOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] FieldOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -5610,12 +6048,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasCtype) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Ctype);
@@ -5681,7 +6120,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FieldOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] FieldOptions other) {
       if (other == null) {
         return;
       }
@@ -5709,7 +6148,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -5750,25 +6189,28 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<FieldOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FieldOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<FieldOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<FieldOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<FieldOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<FieldOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<FieldOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FieldOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<FieldOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FieldOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<FieldOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<FieldOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<FieldOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<FieldOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
@@ -5806,19 +6248,27 @@ namespace Google.Protobuf.Reflection {
   }
 
   public sealed partial class OneofOptions : pb::IExtendableMessage<OneofOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<OneofOptions> _parser = new pb::MessageParser<OneofOptions>(() => new OneofOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<OneofOptions> _extensions;
     private pb::ExtensionSet<OneofOptions> _Extensions => _extensions;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<OneofOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -5831,13 +6281,14 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OneofOptions(OneofOptions other) : this() {
+    public OneofOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] OneofOptions other) : this() {
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public OneofOptions Clone() {
       return new OneofOptions(this);
     }
@@ -5851,17 +6302,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as OneofOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(OneofOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] OneofOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -5889,12 +6341,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
       if (_extensions != null) {
         _extensions.WriteTo(output);
@@ -5918,7 +6371,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(OneofOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] OneofOptions other) {
       if (other == null) {
         return;
       }
@@ -5928,7 +6381,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -5945,45 +6398,56 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<OneofOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<OneofOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<OneofOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<OneofOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<OneofOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<OneofOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<OneofOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<OneofOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<OneofOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<OneofOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<OneofOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<OneofOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<OneofOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<OneofOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
   }
 
   public sealed partial class EnumOptions : pb::IExtendableMessage<EnumOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<EnumOptions> _parser = new pb::MessageParser<EnumOptions>(() => new EnumOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<EnumOptions> _extensions;
     private pb::ExtensionSet<EnumOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<EnumOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -5996,7 +6460,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnumOptions(EnumOptions other) : this() {
+    public EnumOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumOptions other) : this() {
       _hasBits0 = other._hasBits0;
       allowAlias_ = other.allowAlias_;
       deprecated_ = other.deprecated_;
@@ -6006,14 +6470,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public EnumOptions Clone() {
       return new EnumOptions(this);
     }
 
     /// <summary>Field number for the "allow_alias" field.</summary>
     public const int AllowAliasFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool AllowAliasDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool allowAlias_;
     /// <summary>
     /// Set this option to true to allow mapping different tag names to the same
@@ -6040,8 +6508,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this enum deprecated?
@@ -6077,17 +6548,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as EnumOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EnumOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] EnumOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -6119,12 +6591,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasAllowAlias) {
         output.WriteRawTag(16);
         output.WriteBool(AllowAlias);
@@ -6162,7 +6635,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EnumOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumOptions other) {
       if (other == null) {
         return;
       }
@@ -6178,7 +6651,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -6203,45 +6676,56 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<EnumOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<EnumOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<EnumOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<EnumOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<EnumOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<EnumOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<EnumOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<EnumOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<EnumOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<EnumOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
   }
 
   public sealed partial class EnumValueOptions : pb::IExtendableMessage<EnumValueOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<EnumValueOptions> _parser = new pb::MessageParser<EnumValueOptions>(() => new EnumValueOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<EnumValueOptions> _extensions;
     private pb::ExtensionSet<EnumValueOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<EnumValueOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -6254,7 +6738,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnumValueOptions(EnumValueOptions other) : this() {
+    public EnumValueOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumValueOptions other) : this() {
       _hasBits0 = other._hasBits0;
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
@@ -6263,14 +6747,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public EnumValueOptions Clone() {
       return new EnumValueOptions(this);
     }
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this enum value deprecated?
@@ -6306,17 +6794,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as EnumValueOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EnumValueOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] EnumValueOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -6346,12 +6835,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasDeprecated) {
         output.WriteRawTag(8);
         output.WriteBool(Deprecated);
@@ -6382,7 +6872,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EnumValueOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] EnumValueOptions other) {
       if (other == null) {
         return;
       }
@@ -6395,7 +6885,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -6416,45 +6906,56 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<EnumValueOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumValueOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<EnumValueOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<EnumValueOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<EnumValueOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<EnumValueOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<EnumValueOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumValueOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<EnumValueOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumValueOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<EnumValueOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<EnumValueOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<EnumValueOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<EnumValueOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
   }
 
   public sealed partial class ServiceOptions : pb::IExtendableMessage<ServiceOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<ServiceOptions> _parser = new pb::MessageParser<ServiceOptions>(() => new ServiceOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<ServiceOptions> _extensions;
     private pb::ExtensionSet<ServiceOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<ServiceOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -6467,7 +6968,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ServiceOptions(ServiceOptions other) : this() {
+    public ServiceOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ServiceOptions other) : this() {
       _hasBits0 = other._hasBits0;
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
@@ -6476,14 +6977,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public ServiceOptions Clone() {
       return new ServiceOptions(this);
     }
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 33;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this service deprecated?
@@ -6519,17 +7024,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as ServiceOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ServiceOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] ServiceOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -6559,12 +7065,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasDeprecated) {
         output.WriteRawTag(136, 2);
         output.WriteBool(Deprecated);
@@ -6595,7 +7102,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ServiceOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ServiceOptions other) {
       if (other == null) {
         return;
       }
@@ -6608,7 +7115,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -6629,45 +7136,56 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<ServiceOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ServiceOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<ServiceOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<ServiceOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<ServiceOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<ServiceOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<ServiceOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ServiceOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<ServiceOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ServiceOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<ServiceOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<ServiceOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<ServiceOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<ServiceOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
   }
 
   public sealed partial class MethodOptions : pb::IExtendableMessage<MethodOptions> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<MethodOptions> _parser = new pb::MessageParser<MethodOptions>(() => new MethodOptions());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     internal pb::ExtensionSet<MethodOptions> _extensions;
     private pb::ExtensionSet<MethodOptions> _Extensions => _extensions;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<MethodOptions> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -6680,7 +7198,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MethodOptions(MethodOptions other) : this() {
+    public MethodOptions([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MethodOptions other) : this() {
       _hasBits0 = other._hasBits0;
       deprecated_ = other.deprecated_;
       idempotencyLevel_ = other.idempotencyLevel_;
@@ -6690,14 +7208,18 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public MethodOptions Clone() {
       return new MethodOptions(this);
     }
 
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 33;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool DeprecatedDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool deprecated_;
     /// <summary>
     /// Is this method deprecated?
@@ -6726,8 +7248,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "idempotency_level" field.</summary>
     public const int IdempotencyLevelFieldNumber = 34;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel IdempotencyLevelDefaultValue = global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel.IdempotencyUnknown;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel idempotencyLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel IdempotencyLevel {
@@ -6757,17 +7282,18 @@ namespace Google.Protobuf.Reflection {
     /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as MethodOptions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(MethodOptions other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] MethodOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -6799,12 +7325,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasDeprecated) {
         output.WriteRawTag(136, 2);
         output.WriteBool(Deprecated);
@@ -6842,7 +7369,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(MethodOptions other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MethodOptions other) {
       if (other == null) {
         return;
       }
@@ -6858,7 +7385,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -6883,25 +7410,28 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<MethodOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MethodOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<MethodOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MethodOptions, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<MethodOptions, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MethodOptions, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<MethodOptions, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MethodOptions, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<MethodOptions, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MethodOptions, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<MethodOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MethodOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<MethodOptions, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MethodOptions, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
@@ -6940,18 +7470,24 @@ namespace Google.Protobuf.Reflection {
   /// in them.
   /// </summary>
   public sealed partial class UninterpretedOption : pb::IMessage<UninterpretedOption> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<UninterpretedOption> _parser = new pb::MessageParser<UninterpretedOption>(() => new UninterpretedOption());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<UninterpretedOption> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -6964,7 +7500,7 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UninterpretedOption(UninterpretedOption other) : this() {
+    public UninterpretedOption([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] UninterpretedOption other) : this() {
       _hasBits0 = other._hasBits0;
       name_ = other.name_.Clone();
       identifierValue_ = other.identifierValue_;
@@ -6977,6 +7513,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public UninterpretedOption Clone() {
       return new UninterpretedOption(this);
     }
@@ -6987,20 +7524,26 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart> name_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart> Name {
       get { return name_; }
     }
 
     /// <summary>Field number for the "identifier_value" field.</summary>
     public const int IdentifierValueFieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string IdentifierValueDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string identifierValue_;
     /// <summary>
     /// The value of the uninterpreted option, in whatever type the tokenizer
     /// identified it as during parsing. Exactly one of these should be set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string IdentifierValue {
       get { return identifierValue_ ?? IdentifierValueDefaultValue; }
       set {
@@ -7020,8 +7563,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "positive_int_value" field.</summary>
     public const int PositiveIntValueFieldNumber = 4;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static ulong PositiveIntValueDefaultValue = 0UL;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private ulong positiveIntValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PositiveIntValue {
@@ -7044,8 +7590,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "negative_int_value" field.</summary>
     public const int NegativeIntValueFieldNumber = 5;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static long NegativeIntValueDefaultValue = 0L;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long negativeIntValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long NegativeIntValue {
@@ -7068,8 +7617,11 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "double_value" field.</summary>
     public const int DoubleValueFieldNumber = 6;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static double DoubleValueDefaultValue = 0D;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private double doubleValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double DoubleValue {
@@ -7092,10 +7644,15 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "string_value" field.</summary>
     public const int StringValueFieldNumber = 7;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static pb::ByteString StringValueDefaultValue = pb::ByteString.Empty;
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private pb::ByteString stringValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public pb::ByteString StringValue {
       get { return stringValue_ ?? StringValueDefaultValue; }
       set {
@@ -7115,10 +7672,15 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "aggregate_value" field.</summary>
     public const int AggregateValueFieldNumber = 8;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string AggregateValueDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string aggregateValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string AggregateValue {
       get { return aggregateValue_ ?? AggregateValueDefaultValue; }
       set {
@@ -7137,12 +7699,12 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as UninterpretedOption);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(UninterpretedOption other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] UninterpretedOption other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -7176,12 +7738,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       name_.WriteTo(output, _repeated_name_codec);
       if (HasIdentifierValue) {
         output.WriteRawTag(26);
@@ -7241,7 +7804,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(UninterpretedOption other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] UninterpretedOption other) {
       if (other == null) {
         return;
       }
@@ -7268,7 +7831,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -7319,18 +7882,24 @@ namespace Google.Protobuf.Reflection {
       /// "foo.(bar.baz).qux".
       /// </summary>
       public sealed partial class NamePart : pb::IMessage<NamePart> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<NamePart> _parser = new pb::MessageParser<NamePart>(() => new NamePart());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<NamePart> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.UninterpretedOption.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -7343,7 +7912,7 @@ namespace Google.Protobuf.Reflection {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public NamePart(NamePart other) : this() {
+        public NamePart([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] NamePart other) : this() {
           _hasBits0 = other._hasBits0;
           namePart_ = other.namePart_;
           isExtension_ = other.isExtension_;
@@ -7351,16 +7920,22 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public NamePart Clone() {
           return new NamePart(this);
         }
 
         /// <summary>Field number for the "name_part" field.</summary>
         public const int NamePart_FieldNumber = 1;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static string NamePart_DefaultValue = "";
 
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
         private string namePart_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
         public string NamePart_ {
           get { return namePart_ ?? NamePart_DefaultValue; }
           set {
@@ -7380,8 +7955,11 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "is_extension" field.</summary>
         public const int IsExtensionFieldNumber = 2;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static bool IsExtensionDefaultValue = false;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private bool isExtension_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsExtension {
@@ -7403,12 +7981,12 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as NamePart);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(NamePart other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] NamePart other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -7432,12 +8010,13 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasNamePart_) {
             output.WriteRawTag(10);
             output.WriteString(NamePart_);
@@ -7467,7 +8046,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(NamePart other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] NamePart other) {
           if (other == null) {
             return;
           }
@@ -7481,7 +8060,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -7512,17 +8091,23 @@ namespace Google.Protobuf.Reflection {
   /// FileDescriptorProto was generated.
   /// </summary>
   public sealed partial class SourceCodeInfo : pb::IMessage<SourceCodeInfo> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<SourceCodeInfo> _parser = new pb::MessageParser<SourceCodeInfo>(() => new SourceCodeInfo());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<SourceCodeInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -7535,12 +8120,13 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SourceCodeInfo(SourceCodeInfo other) : this() {
+    public SourceCodeInfo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] SourceCodeInfo other) : this() {
       location_ = other.location_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public SourceCodeInfo Clone() {
       return new SourceCodeInfo(this);
     }
@@ -7596,17 +8182,18 @@ namespace Google.Protobuf.Reflection {
     ///   be recorded in the future.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location> Location {
       get { return location_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as SourceCodeInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(SourceCodeInfo other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] SourceCodeInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -7628,12 +8215,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       location_.WriteTo(output, _repeated_location_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -7651,7 +8239,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(SourceCodeInfo other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] SourceCodeInfo other) {
       if (other == null) {
         return;
       }
@@ -7660,7 +8248,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -7680,17 +8268,23 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Location : pb::IMessage<Location> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<Location> _parser = new pb::MessageParser<Location>(() => new Location());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<Location> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.SourceCodeInfo.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -7703,7 +8297,7 @@ namespace Google.Protobuf.Reflection {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Location(Location other) : this() {
+        public Location([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Location other) : this() {
           path_ = other.path_.Clone();
           span_ = other.span_.Clone();
           leadingComments_ = other.leadingComments_;
@@ -7713,6 +8307,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public Location Clone() {
           return new Location(this);
         }
@@ -7748,6 +8343,7 @@ namespace Google.Protobuf.Reflection {
         /// of the label to the terminating semicolon).
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public pbc::RepeatedField<int> Path {
           get { return path_; }
         }
@@ -7765,14 +8361,18 @@ namespace Google.Protobuf.Reflection {
         /// 1 to each before displaying to a user.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public pbc::RepeatedField<int> Span {
           get { return span_; }
         }
 
         /// <summary>Field number for the "leading_comments" field.</summary>
         public const int LeadingCommentsFieldNumber = 3;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static string LeadingCommentsDefaultValue = "";
 
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
         private string leadingComments_;
         /// <summary>
         /// If this SourceCodeInfo represents a complete declaration, these are any
@@ -7824,6 +8424,8 @@ namespace Google.Protobuf.Reflection {
         ///   // ignored detached comments.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
         public string LeadingComments {
           get { return leadingComments_ ?? LeadingCommentsDefaultValue; }
           set {
@@ -7843,10 +8445,15 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "trailing_comments" field.</summary>
         public const int TrailingCommentsFieldNumber = 4;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static string TrailingCommentsDefaultValue = "";
 
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
         private string trailingComments_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
         public string TrailingComments {
           get { return trailingComments_ ?? TrailingCommentsDefaultValue; }
           set {
@@ -7870,17 +8477,18 @@ namespace Google.Protobuf.Reflection {
             = pb::FieldCodec.ForString(50);
         private readonly pbc::RepeatedField<string> leadingDetachedComments_ = new pbc::RepeatedField<string>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public pbc::RepeatedField<string> LeadingDetachedComments {
           get { return leadingDetachedComments_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as Location);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Location other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] Location other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -7910,12 +8518,13 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           path_.WriteTo(output, _repeated_path_codec);
           span_.WriteTo(output, _repeated_span_codec);
           if (HasLeadingComments) {
@@ -7951,7 +8560,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Location other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Location other) {
           if (other == null) {
             return;
           }
@@ -7968,7 +8577,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -8014,17 +8623,23 @@ namespace Google.Protobuf.Reflection {
   /// source file, but may contain references to different source .proto files.
   /// </summary>
   public sealed partial class GeneratedCodeInfo : pb::IMessage<GeneratedCodeInfo> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<GeneratedCodeInfo> _parser = new pb::MessageParser<GeneratedCodeInfo>(() => new GeneratedCodeInfo());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<GeneratedCodeInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -8037,12 +8652,13 @@ namespace Google.Protobuf.Reflection {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GeneratedCodeInfo(GeneratedCodeInfo other) : this() {
+    public GeneratedCodeInfo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] GeneratedCodeInfo other) : this() {
       annotation_ = other.annotation_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public GeneratedCodeInfo Clone() {
       return new GeneratedCodeInfo(this);
     }
@@ -8057,17 +8673,18 @@ namespace Google.Protobuf.Reflection {
     /// of its generating .proto file.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation> Annotation {
       get { return annotation_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as GeneratedCodeInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GeneratedCodeInfo other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] GeneratedCodeInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -8089,12 +8706,13 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       annotation_.WriteTo(output, _repeated_annotation_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -8112,7 +8730,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GeneratedCodeInfo other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] GeneratedCodeInfo other) {
       if (other == null) {
         return;
       }
@@ -8121,7 +8739,7 @@ namespace Google.Protobuf.Reflection {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -8141,18 +8759,24 @@ namespace Google.Protobuf.Reflection {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Annotation : pb::IMessage<Annotation> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<Annotation> _parser = new pb::MessageParser<Annotation>(() => new Annotation());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<Annotation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.GeneratedCodeInfo.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -8165,7 +8789,7 @@ namespace Google.Protobuf.Reflection {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Annotation(Annotation other) : this() {
+        public Annotation([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Annotation other) : this() {
           _hasBits0 = other._hasBits0;
           path_ = other.path_.Clone();
           sourceFile_ = other.sourceFile_;
@@ -8175,6 +8799,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public Annotation Clone() {
           return new Annotation(this);
         }
@@ -8189,19 +8814,25 @@ namespace Google.Protobuf.Reflection {
         /// is formatted the same as SourceCodeInfo.Location.path.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public pbc::RepeatedField<int> Path {
           get { return path_; }
         }
 
         /// <summary>Field number for the "source_file" field.</summary>
         public const int SourceFileFieldNumber = 2;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static string SourceFileDefaultValue = "";
 
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
         private string sourceFile_;
         /// <summary>
         /// Identifies the filesystem path to the original source .proto.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
         public string SourceFile {
           get { return sourceFile_ ?? SourceFileDefaultValue; }
           set {
@@ -8221,8 +8852,11 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "begin" field.</summary>
         public const int BeginFieldNumber = 3;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int BeginDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int begin_;
         /// <summary>
         /// Identifies the starting offset in bytes in the generated code
@@ -8249,8 +8883,11 @@ namespace Google.Protobuf.Reflection {
 
         /// <summary>Field number for the "end" field.</summary>
         public const int EndFieldNumber = 4;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int EndDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int end_;
         /// <summary>
         /// Identifies the ending offset in bytes in the generated code that
@@ -8277,12 +8914,12 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as Annotation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Annotation other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] Annotation other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -8310,12 +8947,13 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           path_.WriteTo(output, _repeated_path_codec);
           if (HasSourceFile) {
             output.WriteRawTag(18);
@@ -8354,7 +8992,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Annotation other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Annotation other) {
           if (other == null) {
             return;
           }
@@ -8372,7 +9010,7 @@ namespace Google.Protobuf.Reflection {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {

@@ -16,6 +16,7 @@ namespace Benchmarks {
 
     #region Descriptor
     /// <summary>File descriptor for benchmarks.proto</summary>
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -39,17 +40,23 @@ namespace Benchmarks {
   }
   #region Messages
   public sealed partial class BenchmarkDataset : pb::IMessage<BenchmarkDataset> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<BenchmarkDataset> _parser = new pb::MessageParser<BenchmarkDataset>(() => new BenchmarkDataset());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<BenchmarkDataset> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Benchmarks.BenchmarksReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -62,7 +69,7 @@ namespace Benchmarks {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BenchmarkDataset(BenchmarkDataset other) : this() {
+    public BenchmarkDataset([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] BenchmarkDataset other) : this() {
       name_ = other.name_;
       messageName_ = other.messageName_;
       payload_ = other.payload_.Clone();
@@ -70,18 +77,23 @@ namespace Benchmarks {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public BenchmarkDataset Clone() {
       return new BenchmarkDataset(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string name_ = "";
     /// <summary>
     /// Name of the benchmark dataset.  This should be unique across all datasets.
     /// Should only contain word characters: [a-zA-Z0-9_]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -91,6 +103,8 @@ namespace Benchmarks {
 
     /// <summary>Field number for the "message_name" field.</summary>
     public const int MessageNameFieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string messageName_ = "";
     /// <summary>
     /// Fully-qualified name of the protobuf message for this dataset.
@@ -102,6 +116,8 @@ namespace Benchmarks {
     /// in those files.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string MessageName {
       get { return messageName_; }
       set {
@@ -130,17 +146,18 @@ namespace Benchmarks {
     /// good branch prediction performance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<pb::ByteString> Payload {
       get { return payload_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as BenchmarkDataset);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(BenchmarkDataset other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] BenchmarkDataset other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -166,12 +183,13 @@ namespace Benchmarks {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
@@ -203,7 +221,7 @@ namespace Benchmarks {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(BenchmarkDataset other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] BenchmarkDataset other) {
       if (other == null) {
         return;
       }
@@ -218,7 +236,7 @@ namespace Benchmarks {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {

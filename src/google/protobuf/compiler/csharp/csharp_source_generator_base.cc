@@ -58,6 +58,28 @@ void SourceGeneratorBase::WriteGeneratedCodeAttributes(io::Printer* printer) {
   printer->Print("[global::System.Diagnostics.DebuggerNonUserCodeAttribute]\n");
 }
 
+void SourceGeneratorBase::WriteNullabilityAttribute(io::Printer* printer, Nullability option) {
+  printer->Print(nullability(option));
+  printer->Print("\n");
+}
+
+const char* SourceGeneratorBase::nullability(Nullability nullability) {
+  switch (nullability) {
+    case Nullability::ALLOW_NULL:
+      return "[global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]";
+    case Nullability::DISALLOW_NULL:
+      return "[global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]";
+    case Nullability::MAYBE_NULL:
+      return "[global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]";
+    case Nullability::NOT_NULL:
+      return "[global::System.Diagnostics.CodeAnalysis.NotNullAttribute]";
+    case Nullability::RETURN_NOT_NULL:
+      return "[return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]";
+    case Nullability::RETURN_MAYBE_NULL:
+      return "[return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]";
+  }
+}
+
 std::string SourceGeneratorBase::class_access_level() {
   return this->options()->internal_access ? "internal" : "public";
 }

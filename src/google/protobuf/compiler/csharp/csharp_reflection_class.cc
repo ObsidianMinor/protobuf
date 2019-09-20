@@ -157,6 +157,7 @@ void ReflectionClassGenerator::WriteDescriptor(io::Printer* printer) {
   printer->Print(
     "#region Descriptor\n"
     "/// <summary>File descriptor for $file_name$</summary>\n"
+    "$not_null$\n"
     "public static pbr::FileDescriptor Descriptor {\n"
     "  get { return descriptor; }\n"
     "}\n"
@@ -164,7 +165,8 @@ void ReflectionClassGenerator::WriteDescriptor(io::Printer* printer) {
     "\n"
     "static $reflection_class_name$() {\n",
     "file_name", file_->name(),
-    "reflection_class_name", reflectionClassname_);
+    "reflection_class_name", reflectionClassname_,
+    "not_null", nullability(NOT_NULL));
   printer->Indent();
   printer->Print(
     "byte[] descriptorData = global::System.Convert.FromBase64String(\n");

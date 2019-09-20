@@ -16,6 +16,7 @@ namespace ProtobufTestMessages.Proto2 {
 
     #region Descriptor
     /// <summary>File descriptor for google/protobuf/test_messages_proto2.proto</summary>
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -245,21 +246,29 @@ namespace ProtobufTestMessages.Proto2 {
   /// this stays true in a unit test.
   /// </summary>
   public sealed partial class TestAllTypesProto2 : pb::IExtendableMessage<TestAllTypesProto2> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<TestAllTypesProto2> _parser = new pb::MessageParser<TestAllTypesProto2>(() => new TestAllTypesProto2());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::ExtensionSet<TestAllTypesProto2> _extensions;
     private pb::ExtensionSet<TestAllTypesProto2> _Extensions => _extensions;
     private int _hasBits0;
     private int _hasBits1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<TestAllTypesProto2> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::ProtobufTestMessages.Proto2.TestMessagesProto2Reflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -272,7 +281,7 @@ namespace ProtobufTestMessages.Proto2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestAllTypesProto2(TestAllTypesProto2 other) : this() {
+    public TestAllTypesProto2([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TestAllTypesProto2 other) : this() {
       _hasBits0 = other._hasBits0;
       _hasBits1 = other._hasBits1;
       optionalInt32_ = other.optionalInt32_;
@@ -419,14 +428,18 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public TestAllTypesProto2 Clone() {
       return new TestAllTypesProto2(this);
     }
 
     /// <summary>Field number for the "optional_int32" field.</summary>
     public const int OptionalInt32FieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int OptionalInt32DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int optionalInt32_;
     /// <summary>
     /// Singular
@@ -452,8 +465,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_int64" field.</summary>
     public const int OptionalInt64FieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static long OptionalInt64DefaultValue = 0L;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long optionalInt64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OptionalInt64 {
@@ -476,8 +492,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_uint32" field.</summary>
     public const int OptionalUint32FieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static uint OptionalUint32DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private uint optionalUint32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OptionalUint32 {
@@ -500,8 +519,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_uint64" field.</summary>
     public const int OptionalUint64FieldNumber = 4;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static ulong OptionalUint64DefaultValue = 0UL;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private ulong optionalUint64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong OptionalUint64 {
@@ -524,8 +546,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_sint32" field.</summary>
     public const int OptionalSint32FieldNumber = 5;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int OptionalSint32DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int optionalSint32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalSint32 {
@@ -548,8 +573,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_sint64" field.</summary>
     public const int OptionalSint64FieldNumber = 6;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static long OptionalSint64DefaultValue = 0L;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long optionalSint64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OptionalSint64 {
@@ -572,8 +600,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_fixed32" field.</summary>
     public const int OptionalFixed32FieldNumber = 7;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static uint OptionalFixed32DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private uint optionalFixed32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint OptionalFixed32 {
@@ -596,8 +627,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_fixed64" field.</summary>
     public const int OptionalFixed64FieldNumber = 8;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static ulong OptionalFixed64DefaultValue = 0UL;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private ulong optionalFixed64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong OptionalFixed64 {
@@ -620,8 +654,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_sfixed32" field.</summary>
     public const int OptionalSfixed32FieldNumber = 9;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int OptionalSfixed32DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int optionalSfixed32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalSfixed32 {
@@ -644,8 +681,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_sfixed64" field.</summary>
     public const int OptionalSfixed64FieldNumber = 10;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static long OptionalSfixed64DefaultValue = 0L;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long optionalSfixed64_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OptionalSfixed64 {
@@ -668,8 +708,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_float" field.</summary>
     public const int OptionalFloatFieldNumber = 11;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static float OptionalFloatDefaultValue = 0F;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private float optionalFloat_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float OptionalFloat {
@@ -692,8 +735,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_double" field.</summary>
     public const int OptionalDoubleFieldNumber = 12;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static double OptionalDoubleDefaultValue = 0D;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private double optionalDouble_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double OptionalDouble {
@@ -716,8 +762,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_bool" field.</summary>
     public const int OptionalBoolFieldNumber = 13;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool OptionalBoolDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool optionalBool_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool OptionalBool {
@@ -740,10 +789,15 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_string" field.</summary>
     public const int OptionalStringFieldNumber = 14;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string OptionalStringDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string optionalString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string OptionalString {
       get { return optionalString_ ?? OptionalStringDefaultValue; }
       set {
@@ -763,10 +817,15 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_bytes" field.</summary>
     public const int OptionalBytesFieldNumber = 15;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static pb::ByteString OptionalBytesDefaultValue = pb::ByteString.Empty;
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private pb::ByteString optionalBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public pb::ByteString OptionalBytes {
       get { return optionalBytes_ ?? OptionalBytesDefaultValue; }
       set {
@@ -786,8 +845,12 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_nested_message" field.</summary>
     public const int OptionalNestedMessageFieldNumber = 18;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage optionalNestedMessage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage OptionalNestedMessage {
       get { return optionalNestedMessage_; }
       set {
@@ -807,8 +870,12 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_foreign_message" field.</summary>
     public const int OptionalForeignMessageFieldNumber = 19;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::ProtobufTestMessages.Proto2.ForeignMessageProto2 optionalForeignMessage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.ForeignMessageProto2 OptionalForeignMessage {
       get { return optionalForeignMessage_; }
       set {
@@ -828,8 +895,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_nested_enum" field.</summary>
     public const int OptionalNestedEnumFieldNumber = 21;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum OptionalNestedEnumDefaultValue = global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum.Foo;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum optionalNestedEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum OptionalNestedEnum {
@@ -852,8 +922,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_foreign_enum" field.</summary>
     public const int OptionalForeignEnumFieldNumber = 22;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static global::ProtobufTestMessages.Proto2.ForeignEnumProto2 OptionalForeignEnumDefaultValue = global::ProtobufTestMessages.Proto2.ForeignEnumProto2.ForeignFoo;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private global::ProtobufTestMessages.Proto2.ForeignEnumProto2 optionalForeignEnum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::ProtobufTestMessages.Proto2.ForeignEnumProto2 OptionalForeignEnum {
@@ -876,10 +949,15 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_string_piece" field.</summary>
     public const int OptionalStringPieceFieldNumber = 24;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string OptionalStringPieceDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string optionalStringPiece_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string OptionalStringPiece {
       get { return optionalStringPiece_ ?? OptionalStringPieceDefaultValue; }
       set {
@@ -899,10 +977,15 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_cord" field.</summary>
     public const int OptionalCordFieldNumber = 25;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string OptionalCordDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string optionalCord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string OptionalCord {
       get { return optionalCord_ ?? OptionalCordDefaultValue; }
       set {
@@ -922,8 +1005,12 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "recursive_message" field.</summary>
     public const int RecursiveMessageFieldNumber = 27;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::ProtobufTestMessages.Proto2.TestAllTypesProto2 recursiveMessage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2 RecursiveMessage {
       get { return recursiveMessage_; }
       set {
@@ -950,6 +1037,7 @@ namespace ProtobufTestMessages.Proto2 {
     /// Repeated
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> RepeatedInt32 {
       get { return repeatedInt32_; }
     }
@@ -960,6 +1048,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForInt64(256);
     private readonly pbc::RepeatedField<long> repeatedInt64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> RepeatedInt64 {
       get { return repeatedInt64_; }
     }
@@ -970,6 +1059,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForUInt32(264);
     private readonly pbc::RepeatedField<uint> repeatedUint32_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<uint> RepeatedUint32 {
       get { return repeatedUint32_; }
     }
@@ -980,6 +1070,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForUInt64(272);
     private readonly pbc::RepeatedField<ulong> repeatedUint64_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> RepeatedUint64 {
       get { return repeatedUint64_; }
     }
@@ -990,6 +1081,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSInt32(280);
     private readonly pbc::RepeatedField<int> repeatedSint32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> RepeatedSint32 {
       get { return repeatedSint32_; }
     }
@@ -1000,6 +1092,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSInt64(288);
     private readonly pbc::RepeatedField<long> repeatedSint64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> RepeatedSint64 {
       get { return repeatedSint64_; }
     }
@@ -1010,6 +1103,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFixed32(301);
     private readonly pbc::RepeatedField<uint> repeatedFixed32_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<uint> RepeatedFixed32 {
       get { return repeatedFixed32_; }
     }
@@ -1020,6 +1114,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFixed64(305);
     private readonly pbc::RepeatedField<ulong> repeatedFixed64_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> RepeatedFixed64 {
       get { return repeatedFixed64_; }
     }
@@ -1030,6 +1125,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSFixed32(317);
     private readonly pbc::RepeatedField<int> repeatedSfixed32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> RepeatedSfixed32 {
       get { return repeatedSfixed32_; }
     }
@@ -1040,6 +1136,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSFixed64(321);
     private readonly pbc::RepeatedField<long> repeatedSfixed64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> RepeatedSfixed64 {
       get { return repeatedSfixed64_; }
     }
@@ -1050,6 +1147,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFloat(333);
     private readonly pbc::RepeatedField<float> repeatedFloat_ = new pbc::RepeatedField<float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<float> RepeatedFloat {
       get { return repeatedFloat_; }
     }
@@ -1060,6 +1158,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForDouble(337);
     private readonly pbc::RepeatedField<double> repeatedDouble_ = new pbc::RepeatedField<double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<double> RepeatedDouble {
       get { return repeatedDouble_; }
     }
@@ -1070,6 +1169,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForBool(344);
     private readonly pbc::RepeatedField<bool> repeatedBool_ = new pbc::RepeatedField<bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<bool> RepeatedBool {
       get { return repeatedBool_; }
     }
@@ -1080,6 +1180,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForString(354);
     private readonly pbc::RepeatedField<string> repeatedString_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<string> RepeatedString {
       get { return repeatedString_; }
     }
@@ -1090,6 +1191,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForBytes(362);
     private readonly pbc::RepeatedField<pb::ByteString> repeatedBytes_ = new pbc::RepeatedField<pb::ByteString>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<pb::ByteString> RepeatedBytes {
       get { return repeatedBytes_; }
     }
@@ -1100,6 +1202,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForMessage(386, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage.Parser);
     private readonly pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage> repeatedNestedMessage_ = new pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage> RepeatedNestedMessage {
       get { return repeatedNestedMessage_; }
     }
@@ -1110,6 +1213,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForMessage(394, global::ProtobufTestMessages.Proto2.ForeignMessageProto2.Parser);
     private readonly pbc::RepeatedField<global::ProtobufTestMessages.Proto2.ForeignMessageProto2> repeatedForeignMessage_ = new pbc::RepeatedField<global::ProtobufTestMessages.Proto2.ForeignMessageProto2>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::ProtobufTestMessages.Proto2.ForeignMessageProto2> RepeatedForeignMessage {
       get { return repeatedForeignMessage_; }
     }
@@ -1120,6 +1224,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForEnum(408, x => (int) x, x => (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum) x);
     private readonly pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> repeatedNestedEnum_ = new pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> RepeatedNestedEnum {
       get { return repeatedNestedEnum_; }
     }
@@ -1130,6 +1235,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForEnum(416, x => (int) x, x => (global::ProtobufTestMessages.Proto2.ForeignEnumProto2) x);
     private readonly pbc::RepeatedField<global::ProtobufTestMessages.Proto2.ForeignEnumProto2> repeatedForeignEnum_ = new pbc::RepeatedField<global::ProtobufTestMessages.Proto2.ForeignEnumProto2>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::ProtobufTestMessages.Proto2.ForeignEnumProto2> RepeatedForeignEnum {
       get { return repeatedForeignEnum_; }
     }
@@ -1140,6 +1246,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForString(434);
     private readonly pbc::RepeatedField<string> repeatedStringPiece_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<string> RepeatedStringPiece {
       get { return repeatedStringPiece_; }
     }
@@ -1150,6 +1257,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForString(442);
     private readonly pbc::RepeatedField<string> repeatedCord_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<string> RepeatedCord {
       get { return repeatedCord_; }
     }
@@ -1163,6 +1271,7 @@ namespace ProtobufTestMessages.Proto2 {
     /// Packed
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> PackedInt32 {
       get { return packedInt32_; }
     }
@@ -1173,6 +1282,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForInt64(610);
     private readonly pbc::RepeatedField<long> packedInt64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> PackedInt64 {
       get { return packedInt64_; }
     }
@@ -1183,6 +1293,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForUInt32(618);
     private readonly pbc::RepeatedField<uint> packedUint32_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<uint> PackedUint32 {
       get { return packedUint32_; }
     }
@@ -1193,6 +1304,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForUInt64(626);
     private readonly pbc::RepeatedField<ulong> packedUint64_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> PackedUint64 {
       get { return packedUint64_; }
     }
@@ -1203,6 +1315,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSInt32(634);
     private readonly pbc::RepeatedField<int> packedSint32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> PackedSint32 {
       get { return packedSint32_; }
     }
@@ -1213,6 +1326,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSInt64(642);
     private readonly pbc::RepeatedField<long> packedSint64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> PackedSint64 {
       get { return packedSint64_; }
     }
@@ -1223,6 +1337,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFixed32(650);
     private readonly pbc::RepeatedField<uint> packedFixed32_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<uint> PackedFixed32 {
       get { return packedFixed32_; }
     }
@@ -1233,6 +1348,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFixed64(658);
     private readonly pbc::RepeatedField<ulong> packedFixed64_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> PackedFixed64 {
       get { return packedFixed64_; }
     }
@@ -1243,6 +1359,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSFixed32(666);
     private readonly pbc::RepeatedField<int> packedSfixed32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> PackedSfixed32 {
       get { return packedSfixed32_; }
     }
@@ -1253,6 +1370,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSFixed64(674);
     private readonly pbc::RepeatedField<long> packedSfixed64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> PackedSfixed64 {
       get { return packedSfixed64_; }
     }
@@ -1263,6 +1381,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFloat(682);
     private readonly pbc::RepeatedField<float> packedFloat_ = new pbc::RepeatedField<float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<float> PackedFloat {
       get { return packedFloat_; }
     }
@@ -1273,6 +1392,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForDouble(690);
     private readonly pbc::RepeatedField<double> packedDouble_ = new pbc::RepeatedField<double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<double> PackedDouble {
       get { return packedDouble_; }
     }
@@ -1283,6 +1403,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForBool(698);
     private readonly pbc::RepeatedField<bool> packedBool_ = new pbc::RepeatedField<bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<bool> PackedBool {
       get { return packedBool_; }
     }
@@ -1293,6 +1414,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForEnum(706, x => (int) x, x => (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum) x);
     private readonly pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> packedNestedEnum_ = new pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> PackedNestedEnum {
       get { return packedNestedEnum_; }
     }
@@ -1306,6 +1428,7 @@ namespace ProtobufTestMessages.Proto2 {
     /// Unpacked
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> UnpackedInt32 {
       get { return unpackedInt32_; }
     }
@@ -1316,6 +1439,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForInt64(720);
     private readonly pbc::RepeatedField<long> unpackedInt64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> UnpackedInt64 {
       get { return unpackedInt64_; }
     }
@@ -1326,6 +1450,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForUInt32(728);
     private readonly pbc::RepeatedField<uint> unpackedUint32_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<uint> UnpackedUint32 {
       get { return unpackedUint32_; }
     }
@@ -1336,6 +1461,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForUInt64(736);
     private readonly pbc::RepeatedField<ulong> unpackedUint64_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> UnpackedUint64 {
       get { return unpackedUint64_; }
     }
@@ -1346,6 +1472,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSInt32(744);
     private readonly pbc::RepeatedField<int> unpackedSint32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> UnpackedSint32 {
       get { return unpackedSint32_; }
     }
@@ -1356,6 +1483,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSInt64(752);
     private readonly pbc::RepeatedField<long> unpackedSint64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> UnpackedSint64 {
       get { return unpackedSint64_; }
     }
@@ -1366,6 +1494,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFixed32(765);
     private readonly pbc::RepeatedField<uint> unpackedFixed32_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<uint> UnpackedFixed32 {
       get { return unpackedFixed32_; }
     }
@@ -1376,6 +1505,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFixed64(769);
     private readonly pbc::RepeatedField<ulong> unpackedFixed64_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> UnpackedFixed64 {
       get { return unpackedFixed64_; }
     }
@@ -1386,6 +1516,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSFixed32(781);
     private readonly pbc::RepeatedField<int> unpackedSfixed32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> UnpackedSfixed32 {
       get { return unpackedSfixed32_; }
     }
@@ -1396,6 +1527,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForSFixed64(785);
     private readonly pbc::RepeatedField<long> unpackedSfixed64_ = new pbc::RepeatedField<long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<long> UnpackedSfixed64 {
       get { return unpackedSfixed64_; }
     }
@@ -1406,6 +1538,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForFloat(797);
     private readonly pbc::RepeatedField<float> unpackedFloat_ = new pbc::RepeatedField<float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<float> UnpackedFloat {
       get { return unpackedFloat_; }
     }
@@ -1416,6 +1549,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForDouble(801);
     private readonly pbc::RepeatedField<double> unpackedDouble_ = new pbc::RepeatedField<double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<double> UnpackedDouble {
       get { return unpackedDouble_; }
     }
@@ -1426,6 +1560,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForBool(808);
     private readonly pbc::RepeatedField<bool> unpackedBool_ = new pbc::RepeatedField<bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<bool> UnpackedBool {
       get { return unpackedBool_; }
     }
@@ -1436,6 +1571,7 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForEnum(816, x => (int) x, x => (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum) x);
     private readonly pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> unpackedNestedEnum_ = new pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> UnpackedNestedEnum {
       get { return unpackedNestedEnum_; }
     }
@@ -1449,6 +1585,7 @@ namespace ProtobufTestMessages.Proto2 {
     /// Map
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<int, int> MapInt32Int32 {
       get { return mapInt32Int32_; }
     }
@@ -1459,6 +1596,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForInt64(8, 0L), pb::FieldCodec.ForInt64(16, 0L), 458);
     private readonly pbc::MapField<long, long> mapInt64Int64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<long, long> MapInt64Int64 {
       get { return mapInt64Int64_; }
     }
@@ -1469,6 +1607,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 466);
     private readonly pbc::MapField<uint, uint> mapUint32Uint32_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<uint, uint> MapUint32Uint32 {
       get { return mapUint32Uint32_; }
     }
@@ -1479,6 +1618,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt64(16, 0UL), 474);
     private readonly pbc::MapField<ulong, ulong> mapUint64Uint64_ = new pbc::MapField<ulong, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<ulong, ulong> MapUint64Uint64 {
       get { return mapUint64Uint64_; }
     }
@@ -1489,6 +1629,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSInt32(8, 0), pb::FieldCodec.ForSInt32(16, 0), 482);
     private readonly pbc::MapField<int, int> mapSint32Sint32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<int, int> MapSint32Sint32 {
       get { return mapSint32Sint32_; }
     }
@@ -1499,6 +1640,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSInt64(8, 0L), pb::FieldCodec.ForSInt64(16, 0L), 490);
     private readonly pbc::MapField<long, long> mapSint64Sint64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<long, long> MapSint64Sint64 {
       get { return mapSint64Sint64_; }
     }
@@ -1509,6 +1651,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForFixed32(13, 0), pb::FieldCodec.ForFixed32(21, 0), 498);
     private readonly pbc::MapField<uint, uint> mapFixed32Fixed32_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<uint, uint> MapFixed32Fixed32 {
       get { return mapFixed32Fixed32_; }
     }
@@ -1519,6 +1662,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<ulong, ulong>.Codec(pb::FieldCodec.ForFixed64(9, 0UL), pb::FieldCodec.ForFixed64(17, 0UL), 506);
     private readonly pbc::MapField<ulong, ulong> mapFixed64Fixed64_ = new pbc::MapField<ulong, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<ulong, ulong> MapFixed64Fixed64 {
       get { return mapFixed64Fixed64_; }
     }
@@ -1529,6 +1673,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForSFixed32(13, 0), pb::FieldCodec.ForSFixed32(21, 0), 514);
     private readonly pbc::MapField<int, int> mapSfixed32Sfixed32_ = new pbc::MapField<int, int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<int, int> MapSfixed32Sfixed32 {
       get { return mapSfixed32Sfixed32_; }
     }
@@ -1539,6 +1684,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<long, long>.Codec(pb::FieldCodec.ForSFixed64(9, 0L), pb::FieldCodec.ForSFixed64(17, 0L), 522);
     private readonly pbc::MapField<long, long> mapSfixed64Sfixed64_ = new pbc::MapField<long, long>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<long, long> MapSfixed64Sfixed64 {
       get { return mapSfixed64Sfixed64_; }
     }
@@ -1549,6 +1695,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<int, float>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 530);
     private readonly pbc::MapField<int, float> mapInt32Float_ = new pbc::MapField<int, float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<int, float> MapInt32Float {
       get { return mapInt32Float_; }
     }
@@ -1559,6 +1706,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<int, double>.Codec(pb::FieldCodec.ForInt32(8, 0), pb::FieldCodec.ForDouble(17, 0D), 538);
     private readonly pbc::MapField<int, double> mapInt32Double_ = new pbc::MapField<int, double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<int, double> MapInt32Double {
       get { return mapInt32Double_; }
     }
@@ -1569,6 +1717,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<bool, bool>.Codec(pb::FieldCodec.ForBool(8, false), pb::FieldCodec.ForBool(16, false), 546);
     private readonly pbc::MapField<bool, bool> mapBoolBool_ = new pbc::MapField<bool, bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<bool, bool> MapBoolBool {
       get { return mapBoolBool_; }
     }
@@ -1579,6 +1728,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 554);
     private readonly pbc::MapField<string, string> mapStringString_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<string, string> MapStringString {
       get { return mapStringString_; }
     }
@@ -1589,6 +1739,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForBytes(18, pb::ByteString.Empty), 562);
     private readonly pbc::MapField<string, pb::ByteString> mapStringBytes_ = new pbc::MapField<string, pb::ByteString>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<string, pb::ByteString> MapStringBytes {
       get { return mapStringBytes_; }
     }
@@ -1599,6 +1750,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage.Parser), 570);
     private readonly pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage> mapStringNestedMessage_ = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage> MapStringNestedMessage {
       get { return mapStringNestedMessage_; }
     }
@@ -1609,6 +1761,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignMessageProto2>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::ProtobufTestMessages.Proto2.ForeignMessageProto2.Parser), 578);
     private readonly pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignMessageProto2> mapStringForeignMessage_ = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignMessageProto2>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignMessageProto2> MapStringForeignMessage {
       get { return mapStringForeignMessage_; }
     }
@@ -1619,6 +1772,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum) x, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum.Foo), 586);
     private readonly pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> mapStringNestedEnum_ = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<string, global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedEnum> MapStringNestedEnum {
       get { return mapStringNestedEnum_; }
     }
@@ -1629,6 +1783,7 @@ namespace ProtobufTestMessages.Proto2 {
         = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignEnumProto2>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::ProtobufTestMessages.Proto2.ForeignEnumProto2) x, global::ProtobufTestMessages.Proto2.ForeignEnumProto2.ForeignFoo), 594);
     private readonly pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignEnumProto2> mapStringForeignEnum_ = new pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignEnumProto2>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::MapField<string, global::ProtobufTestMessages.Proto2.ForeignEnumProto2> MapStringForeignEnum {
       get { return mapStringForeignEnum_; }
     }
@@ -1659,6 +1814,8 @@ namespace ProtobufTestMessages.Proto2 {
     /// <summary>Field number for the "oneof_nested_message" field.</summary>
     public const int OneofNestedMessageFieldNumber = 112;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage OneofNestedMessage {
       get { return HasOneofNestedMessage ? (global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.NestedMessage) oneofField_ : null; }
       set {
@@ -1682,6 +1839,8 @@ namespace ProtobufTestMessages.Proto2 {
     /// <summary>Field number for the "oneof_string" field.</summary>
     public const int OneofStringFieldNumber = 113;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string OneofString {
       get { return HasOneofString ? (string) oneofField_ : ""; }
       set {
@@ -1705,6 +1864,8 @@ namespace ProtobufTestMessages.Proto2 {
     /// <summary>Field number for the "oneof_bytes" field.</summary>
     public const int OneofBytesFieldNumber = 114;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public pb::ByteString OneofBytes {
       get { return HasOneofBytes ? (pb::ByteString) oneofField_ : pb::ByteString.Empty; }
       set {
@@ -1842,8 +2003,12 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 201;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.Data data_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Types.Data Data {
       get { return data_; }
       set {
@@ -1863,8 +2028,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "fieldname1" field.</summary>
     public const int Fieldname1FieldNumber = 401;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int Fieldname1DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldname1_;
     /// <summary>
     /// Test field-name-to-JSON-name convention.
@@ -1891,8 +2059,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field_name2" field.</summary>
     public const int FieldName2FieldNumber = 402;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName2DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName2_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName2 {
@@ -1915,8 +2086,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "_field_name3" field.</summary>
     public const int FieldName3FieldNumber = 403;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName3DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int FieldName3_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName3 {
@@ -1939,8 +2113,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field__name4_" field.</summary>
     public const int FieldName4FieldNumber = 404;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName4DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName4_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName4 {
@@ -1963,8 +2140,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field0name5" field.</summary>
     public const int Field0Name5FieldNumber = 405;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int Field0Name5DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field0Name5_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field0Name5 {
@@ -1987,8 +2167,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field_0_name6" field.</summary>
     public const int Field0Name6FieldNumber = 406;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int Field0Name6DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field0Name6_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field0Name6 {
@@ -2011,8 +2194,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "fieldName7" field.</summary>
     public const int FieldName7FieldNumber = 407;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName7DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName7_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName7 {
@@ -2035,8 +2221,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "FieldName8" field.</summary>
     public const int FieldName8FieldNumber = 408;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName8DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName8_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName8 {
@@ -2059,8 +2248,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field_Name9" field.</summary>
     public const int FieldName9FieldNumber = 409;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName9DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName9_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName9 {
@@ -2083,8 +2275,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "Field_Name10" field.</summary>
     public const int FieldName10FieldNumber = 410;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName10DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName10_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName10 {
@@ -2107,8 +2302,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "FIELD_NAME11" field.</summary>
     public const int FIELDNAME11FieldNumber = 411;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FIELDNAME11DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fIELDNAME11_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FIELDNAME11 {
@@ -2131,8 +2329,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "FIELD_name12" field.</summary>
     public const int FIELDName12FieldNumber = 412;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FIELDName12DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fIELDName12_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FIELDName12 {
@@ -2155,8 +2356,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "__field_name13" field.</summary>
     public const int FieldName13FieldNumber = 413;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName13DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int FieldName13_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName13 {
@@ -2179,8 +2383,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "__Field_name14" field.</summary>
     public const int FieldName14FieldNumber = 414;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName14DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int FieldName14_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName14 {
@@ -2203,8 +2410,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field__name15" field.</summary>
     public const int FieldName15FieldNumber = 415;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName15DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName15_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName15 {
@@ -2227,8 +2437,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field__Name16" field.</summary>
     public const int FieldName16FieldNumber = 416;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName16DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName16_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName16 {
@@ -2251,8 +2464,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "field_name17__" field.</summary>
     public const int FieldName17FieldNumber = 417;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName17DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName17_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName17 {
@@ -2275,8 +2491,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "Field_name18__" field.</summary>
     public const int FieldName18FieldNumber = 418;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int FieldName18DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int fieldName18_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int FieldName18 {
@@ -2324,12 +2543,12 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as TestAllTypesProto2);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TestAllTypesProto2 other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] TestAllTypesProto2 other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2593,12 +2812,13 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasOptionalInt32) {
         output.WriteRawTag(8);
         output.WriteInt32(OptionalInt32);
@@ -3107,7 +3327,7 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TestAllTypesProto2 other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TestAllTypesProto2 other) {
       if (other == null) {
         return;
       }
@@ -3352,7 +3572,7 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3898,25 +4118,28 @@ namespace ProtobufTestMessages.Proto2 {
       }
     }
 
-    public TValue GetExtension<TValue>(pb::Extension<TestAllTypesProto2, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<TestAllTypesProto2, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TestAllTypesProto2, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<TestAllTypesProto2, TValue> extension) {
       return pb::ExtensionSet.Get(ref _extensions, extension);
     }
-    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<TestAllTypesProto2, TValue> extension) {
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<TestAllTypesProto2, TValue> extension) {
       return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
     }
-    public void SetExtension<TValue>(pb::Extension<TestAllTypesProto2, TValue> extension, TValue value) {
+    public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<TestAllTypesProto2, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
       pb::ExtensionSet.Set(ref _extensions, extension, value);
     }
-    public bool HasExtension<TValue>(pb::Extension<TestAllTypesProto2, TValue> extension) {
+    public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<TestAllTypesProto2, TValue> extension) {
       return pb::ExtensionSet.Has(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::Extension<TestAllTypesProto2, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<TestAllTypesProto2, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
-    public void ClearExtension<TValue>(pb::RepeatedExtension<TestAllTypesProto2, TValue> extension) {
+    public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<TestAllTypesProto2, TValue> extension) {
       pb::ExtensionSet.Clear(ref _extensions, extension);
     }
 
@@ -3935,18 +4158,24 @@ namespace ProtobufTestMessages.Proto2 {
       }
 
       public sealed partial class NestedMessage : pb::IMessage<NestedMessage> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<NestedMessage> _parser = new pb::MessageParser<NestedMessage>(() => new NestedMessage());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<NestedMessage> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -3959,7 +4188,7 @@ namespace ProtobufTestMessages.Proto2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public NestedMessage(NestedMessage other) : this() {
+        public NestedMessage([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] NestedMessage other) : this() {
           _hasBits0 = other._hasBits0;
           a_ = other.a_;
           corecursive_ = other.HasCorecursive ? other.corecursive_.Clone() : null;
@@ -3967,14 +4196,18 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public NestedMessage Clone() {
           return new NestedMessage(this);
         }
 
         /// <summary>Field number for the "a" field.</summary>
         public const int AFieldNumber = 1;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int ADefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int a_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int A {
@@ -3997,8 +4230,12 @@ namespace ProtobufTestMessages.Proto2 {
 
         /// <summary>Field number for the "corecursive" field.</summary>
         public const int CorecursiveFieldNumber = 2;
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private global::ProtobufTestMessages.Proto2.TestAllTypesProto2 corecursive_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         public global::ProtobufTestMessages.Proto2.TestAllTypesProto2 Corecursive {
           get { return corecursive_; }
           set {
@@ -4017,12 +4254,12 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as NestedMessage);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(NestedMessage other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] NestedMessage other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -4046,12 +4283,13 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasA) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
@@ -4081,7 +4319,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(NestedMessage other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] NestedMessage other) {
           if (other == null) {
             return;
           }
@@ -4098,7 +4336,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -4126,18 +4364,24 @@ namespace ProtobufTestMessages.Proto2 {
       /// groups
       /// </summary>
       public sealed partial class Data : pb::IMessage<Data> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<Data> _parser = new pb::MessageParser<Data>(() => new Data());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<Data> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Descriptor.NestedTypes[20]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -4150,7 +4394,7 @@ namespace ProtobufTestMessages.Proto2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Data(Data other) : this() {
+        public Data([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Data other) : this() {
           _hasBits0 = other._hasBits0;
           groupInt32_ = other.groupInt32_;
           groupUint32_ = other.groupUint32_;
@@ -4158,14 +4402,18 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public Data Clone() {
           return new Data(this);
         }
 
         /// <summary>Field number for the "group_int32" field.</summary>
         public const int GroupInt32FieldNumber = 202;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int GroupInt32DefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int groupInt32_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int GroupInt32 {
@@ -4188,8 +4436,11 @@ namespace ProtobufTestMessages.Proto2 {
 
         /// <summary>Field number for the "group_uint32" field.</summary>
         public const int GroupUint32FieldNumber = 203;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static uint GroupUint32DefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private uint groupUint32_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public uint GroupUint32 {
@@ -4211,12 +4462,12 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as Data);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Data other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] Data other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -4240,12 +4491,13 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasGroupInt32) {
             output.WriteRawTag(208, 12);
             output.WriteInt32(GroupInt32);
@@ -4275,7 +4527,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Data other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] Data other) {
           if (other == null) {
             return;
           }
@@ -4289,7 +4541,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -4316,19 +4568,27 @@ namespace ProtobufTestMessages.Proto2 {
       /// message_set test case.
       /// </summary>
       public sealed partial class MessageSetCorrect : pb::IExtendableMessage<MessageSetCorrect> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<MessageSetCorrect> _parser = new pb::MessageParser<MessageSetCorrect>(() => new MessageSetCorrect());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::ExtensionSet<MessageSetCorrect> _extensions;
         private pb::ExtensionSet<MessageSetCorrect> _Extensions => _extensions;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<MessageSetCorrect> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Descriptor.NestedTypes[21]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -4341,23 +4601,24 @@ namespace ProtobufTestMessages.Proto2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public MessageSetCorrect(MessageSetCorrect other) : this() {
+        public MessageSetCorrect([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageSetCorrect other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
           _extensions = pb::ExtensionSet.Clone(other._extensions);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public MessageSetCorrect Clone() {
           return new MessageSetCorrect(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as MessageSetCorrect);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(MessageSetCorrect other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] MessageSetCorrect other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -4383,12 +4644,13 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (_extensions != null) {
             _extensions.WriteTo(output);
           }
@@ -4410,7 +4672,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(MessageSetCorrect other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageSetCorrect other) {
           if (other == null) {
             return;
           }
@@ -4419,7 +4681,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -4432,42 +4694,51 @@ namespace ProtobufTestMessages.Proto2 {
           }
         }
 
-        public TValue GetExtension<TValue>(pb::Extension<MessageSetCorrect, TValue> extension) {
+        [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        public TValue GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageSetCorrect, TValue> extension) {
           return pb::ExtensionSet.Get(ref _extensions, extension);
         }
-        public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<MessageSetCorrect, TValue> extension) {
+        [return: global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        public pbc::RepeatedField<TValue> GetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MessageSetCorrect, TValue> extension) {
           return pb::ExtensionSet.Get(ref _extensions, extension);
         }
-        public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<MessageSetCorrect, TValue> extension) {
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+        public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MessageSetCorrect, TValue> extension) {
           return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
         }
-        public void SetExtension<TValue>(pb::Extension<MessageSetCorrect, TValue> extension, TValue value) {
+        public void SetExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageSetCorrect, TValue> extension, [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] TValue value) {
           pb::ExtensionSet.Set(ref _extensions, extension, value);
         }
-        public bool HasExtension<TValue>(pb::Extension<MessageSetCorrect, TValue> extension) {
+        public bool HasExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageSetCorrect, TValue> extension) {
           return pb::ExtensionSet.Has(ref _extensions, extension);
         }
-        public void ClearExtension<TValue>(pb::Extension<MessageSetCorrect, TValue> extension) {
+        public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::Extension<MessageSetCorrect, TValue> extension) {
           pb::ExtensionSet.Clear(ref _extensions, extension);
         }
-        public void ClearExtension<TValue>(pb::RepeatedExtension<MessageSetCorrect, TValue> extension) {
+        public void ClearExtension<TValue>([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::RepeatedExtension<MessageSetCorrect, TValue> extension) {
           pb::ExtensionSet.Clear(ref _extensions, extension);
         }
 
       }
 
       public sealed partial class MessageSetCorrectExtension1 : pb::IMessage<MessageSetCorrectExtension1> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<MessageSetCorrectExtension1> _parser = new pb::MessageParser<MessageSetCorrectExtension1>(() => new MessageSetCorrectExtension1());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<MessageSetCorrectExtension1> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Descriptor.NestedTypes[22]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -4480,22 +4751,28 @@ namespace ProtobufTestMessages.Proto2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public MessageSetCorrectExtension1(MessageSetCorrectExtension1 other) : this() {
+        public MessageSetCorrectExtension1([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageSetCorrectExtension1 other) : this() {
           str_ = other.str_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public MessageSetCorrectExtension1 Clone() {
           return new MessageSetCorrectExtension1(this);
         }
 
         /// <summary>Field number for the "str" field.</summary>
         public const int StrFieldNumber = 25;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static string StrDefaultValue = "";
 
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
         private string str_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
         public string Str {
           get { return str_ ?? StrDefaultValue; }
           set {
@@ -4514,12 +4791,12 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as MessageSetCorrectExtension1);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(MessageSetCorrectExtension1 other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] MessageSetCorrectExtension1 other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -4541,12 +4818,13 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasStr) {
             output.WriteRawTag(202, 1);
             output.WriteString(Str);
@@ -4569,7 +4847,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(MessageSetCorrectExtension1 other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageSetCorrectExtension1 other) {
           if (other == null) {
             return;
           }
@@ -4580,7 +4858,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -4607,18 +4885,24 @@ namespace ProtobufTestMessages.Proto2 {
       }
 
       public sealed partial class MessageSetCorrectExtension2 : pb::IMessage<MessageSetCorrectExtension2> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<MessageSetCorrectExtension2> _parser = new pb::MessageParser<MessageSetCorrectExtension2>(() => new MessageSetCorrectExtension2());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<MessageSetCorrectExtension2> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::ProtobufTestMessages.Proto2.TestAllTypesProto2.Descriptor.NestedTypes[23]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -4631,21 +4915,25 @@ namespace ProtobufTestMessages.Proto2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public MessageSetCorrectExtension2(MessageSetCorrectExtension2 other) : this() {
+        public MessageSetCorrectExtension2([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageSetCorrectExtension2 other) : this() {
           _hasBits0 = other._hasBits0;
           i_ = other.i_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public MessageSetCorrectExtension2 Clone() {
           return new MessageSetCorrectExtension2(this);
         }
 
         /// <summary>Field number for the "i" field.</summary>
         public const int IFieldNumber = 9;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int IDefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int i_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int I {
@@ -4667,12 +4955,12 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as MessageSetCorrectExtension2);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(MessageSetCorrectExtension2 other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] MessageSetCorrectExtension2 other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -4694,12 +4982,13 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasI) {
             output.WriteRawTag(72);
             output.WriteInt32(I);
@@ -4722,7 +5011,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(MessageSetCorrectExtension2 other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] MessageSetCorrectExtension2 other) {
           if (other == null) {
             return;
           }
@@ -4733,7 +5022,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -4765,18 +5054,24 @@ namespace ProtobufTestMessages.Proto2 {
   }
 
   public sealed partial class ForeignMessageProto2 : pb::IMessage<ForeignMessageProto2> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<ForeignMessageProto2> _parser = new pb::MessageParser<ForeignMessageProto2>(() => new ForeignMessageProto2());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<ForeignMessageProto2> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::ProtobufTestMessages.Proto2.TestMessagesProto2Reflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -4789,21 +5084,25 @@ namespace ProtobufTestMessages.Proto2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ForeignMessageProto2(ForeignMessageProto2 other) : this() {
+    public ForeignMessageProto2([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ForeignMessageProto2 other) : this() {
       _hasBits0 = other._hasBits0;
       c_ = other.c_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public ForeignMessageProto2 Clone() {
       return new ForeignMessageProto2(this);
     }
 
     /// <summary>Field number for the "c" field.</summary>
     public const int CFieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int CDefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int c_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int C {
@@ -4825,12 +5124,12 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as ForeignMessageProto2);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ForeignMessageProto2 other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] ForeignMessageProto2 other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -4852,12 +5151,13 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasC) {
         output.WriteRawTag(8);
         output.WriteInt32(C);
@@ -4880,7 +5180,7 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ForeignMessageProto2 other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] ForeignMessageProto2 other) {
       if (other == null) {
         return;
       }
@@ -4891,7 +5191,7 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -4909,18 +5209,24 @@ namespace ProtobufTestMessages.Proto2 {
   }
 
   public sealed partial class UnknownToTestAllTypes : pb::IMessage<UnknownToTestAllTypes> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<UnknownToTestAllTypes> _parser = new pb::MessageParser<UnknownToTestAllTypes>(() => new UnknownToTestAllTypes());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<UnknownToTestAllTypes> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::ProtobufTestMessages.Proto2.TestMessagesProto2Reflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -4933,7 +5239,7 @@ namespace ProtobufTestMessages.Proto2 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public UnknownToTestAllTypes(UnknownToTestAllTypes other) : this() {
+    public UnknownToTestAllTypes([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] UnknownToTestAllTypes other) : this() {
       _hasBits0 = other._hasBits0;
       optionalInt32_ = other.optionalInt32_;
       optionalString_ = other.optionalString_;
@@ -4945,14 +5251,18 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public UnknownToTestAllTypes Clone() {
       return new UnknownToTestAllTypes(this);
     }
 
     /// <summary>Field number for the "optional_int32" field.</summary>
     public const int OptionalInt32FieldNumber = 1001;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static int OptionalInt32DefaultValue = 0;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int optionalInt32_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OptionalInt32 {
@@ -4975,10 +5285,15 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_string" field.</summary>
     public const int OptionalStringFieldNumber = 1002;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static string OptionalStringDefaultValue = "";
 
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
     private string optionalString_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string OptionalString {
       get { return optionalString_ ?? OptionalStringDefaultValue; }
       set {
@@ -4998,8 +5313,12 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "nested_message" field.</summary>
     public const int NestedMessageFieldNumber = 1003;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::ProtobufTestMessages.Proto2.ForeignMessageProto2 nestedMessage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.ForeignMessageProto2 NestedMessage {
       get { return nestedMessage_; }
       set {
@@ -5019,8 +5338,12 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optionalgroup" field.</summary>
     public const int OptionalGroupFieldNumber = 1004;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::ProtobufTestMessages.Proto2.UnknownToTestAllTypes.Types.OptionalGroup optionalGroup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::ProtobufTestMessages.Proto2.UnknownToTestAllTypes.Types.OptionalGroup OptionalGroup {
       get { return optionalGroup_; }
       set {
@@ -5040,8 +5363,11 @@ namespace ProtobufTestMessages.Proto2 {
 
     /// <summary>Field number for the "optional_bool" field.</summary>
     public const int OptionalBoolFieldNumber = 1006;
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private readonly static bool OptionalBoolDefaultValue = false;
 
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool optionalBool_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool OptionalBool {
@@ -5068,17 +5394,18 @@ namespace ProtobufTestMessages.Proto2 {
         = pb::FieldCodec.ForInt32(8088);
     private readonly pbc::RepeatedField<int> repeatedInt32_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<int> RepeatedInt32 {
       get { return repeatedInt32_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as UnknownToTestAllTypes);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(UnknownToTestAllTypes other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] UnknownToTestAllTypes other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -5110,12 +5437,13 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (HasOptionalInt32) {
         output.WriteRawTag(200, 62);
         output.WriteInt32(OptionalInt32);
@@ -5169,7 +5497,7 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(UnknownToTestAllTypes other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] UnknownToTestAllTypes other) {
       if (other == null) {
         return;
       }
@@ -5199,7 +5527,7 @@ namespace ProtobufTestMessages.Proto2 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -5246,18 +5574,24 @@ namespace ProtobufTestMessages.Proto2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class OptionalGroup : pb::IMessage<OptionalGroup> {
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private static readonly pb::MessageParser<OptionalGroup> _parser = new pb::MessageParser<OptionalGroup>(() => new OptionalGroup());
+        [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
         private pb::UnknownFieldSet _unknownFields;
         private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pb::MessageParser<OptionalGroup> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::ProtobufTestMessages.Proto2.UnknownToTestAllTypes.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
@@ -5270,21 +5604,25 @@ namespace ProtobufTestMessages.Proto2 {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public OptionalGroup(OptionalGroup other) : this() {
+        public OptionalGroup([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] OptionalGroup other) : this() {
           _hasBits0 = other._hasBits0;
           a_ = other.a_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public OptionalGroup Clone() {
           return new OptionalGroup(this);
         }
 
         /// <summary>Field number for the "a" field.</summary>
         public const int AFieldNumber = 1;
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private readonly static int ADefaultValue = 0;
 
+        [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+        [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         private int a_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int A {
@@ -5306,12 +5644,12 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
+        public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
           return Equals(other as OptionalGroup);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(OptionalGroup other) {
+        public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] OptionalGroup other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
@@ -5333,12 +5671,13 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
+        public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
           if (HasA) {
             output.WriteRawTag(8);
             output.WriteInt32(A);
@@ -5361,7 +5700,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(OptionalGroup other) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] OptionalGroup other) {
           if (other == null) {
             return;
           }
@@ -5372,7 +5711,7 @@ namespace ProtobufTestMessages.Proto2 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
+        public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {

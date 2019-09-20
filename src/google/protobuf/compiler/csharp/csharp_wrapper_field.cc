@@ -73,6 +73,8 @@ void WrapperFieldGenerator::GenerateMembers(io::Printer* printer) {
     "private $type_name$ $name$_;\n");
   WritePropertyDocComment(printer, descriptor_);
   AddPublicMemberAttributes(printer);
+  WriteNullabilityAttribute(printer, MAYBE_NULL); // maybe null is applied to get
+  WriteNullabilityAttribute(printer, ALLOW_NULL); // allow null is applied to set
   printer->Print(
     variables_,
     "$access_level$ $type_name$ $property_name$ {\n"
@@ -210,6 +212,8 @@ void WrapperOneofFieldGenerator::GenerateMembers(io::Printer* printer) {
   printer->Print(";\n");
   WritePropertyDocComment(printer, descriptor_);
   AddPublicMemberAttributes(printer);
+  WriteNullabilityAttribute(printer, MAYBE_NULL);
+  WriteNullabilityAttribute(printer, ALLOW_NULL);
   printer->Print(
     variables_,
     "$access_level$ $type_name$ $property_name$ {\n"

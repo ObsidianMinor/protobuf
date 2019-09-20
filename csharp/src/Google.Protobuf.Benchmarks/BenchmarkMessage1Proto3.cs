@@ -16,6 +16,7 @@ namespace Benchmarks.Proto3 {
 
     #region Descriptor
     /// <summary>File descriptor for datasets/google_message1/proto3/benchmark_message1_proto3.proto</summary>
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -65,17 +66,23 @@ namespace Benchmarks.Proto3 {
   }
   #region Messages
   public sealed partial class GoogleMessage1 : pb::IMessage<GoogleMessage1> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<GoogleMessage1> _parser = new pb::MessageParser<GoogleMessage1>(() => new GoogleMessage1());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<GoogleMessage1> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Benchmarks.Proto3.BenchmarkMessage1Proto3Reflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -88,7 +95,7 @@ namespace Benchmarks.Proto3 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GoogleMessage1(GoogleMessage1 other) : this() {
+    public GoogleMessage1([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] GoogleMessage1 other) : this() {
       field1_ = other.field1_;
       field9_ = other.field9_;
       field18_ = other.field18_;
@@ -134,14 +141,19 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public GoogleMessage1 Clone() {
       return new GoogleMessage1(this);
     }
 
     /// <summary>Field number for the "field1" field.</summary>
     public const int Field1FieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field1_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field1 {
       get { return field1_; }
       set {
@@ -151,8 +163,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field9" field.</summary>
     public const int Field9FieldNumber = 9;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field9_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field9 {
       get { return field9_; }
       set {
@@ -162,8 +178,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field18" field.</summary>
     public const int Field18FieldNumber = 18;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field18_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field18 {
       get { return field18_; }
       set {
@@ -173,6 +193,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field80" field.</summary>
     public const int Field80FieldNumber = 80;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field80_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field80 {
@@ -184,6 +206,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field81" field.</summary>
     public const int Field81FieldNumber = 81;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field81_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field81 {
@@ -195,6 +219,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field2" field.</summary>
     public const int Field2FieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field2_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field2 {
@@ -206,6 +232,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field3" field.</summary>
     public const int Field3FieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field3_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field3 {
@@ -217,6 +245,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field280" field.</summary>
     public const int Field280FieldNumber = 280;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field280_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field280 {
@@ -228,6 +258,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field6" field.</summary>
     public const int Field6FieldNumber = 6;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field6_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field6 {
@@ -239,6 +271,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field22" field.</summary>
     public const int Field22FieldNumber = 22;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long field22_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Field22 {
@@ -250,8 +284,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field4" field.</summary>
     public const int Field4FieldNumber = 4;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field4_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field4 {
       get { return field4_; }
       set {
@@ -265,12 +303,15 @@ namespace Benchmarks.Proto3 {
         = pb::FieldCodec.ForFixed64(42);
     private readonly pbc::RepeatedField<ulong> field5_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public pbc::RepeatedField<ulong> Field5 {
       get { return field5_; }
     }
 
     /// <summary>Field number for the "field59" field.</summary>
     public const int Field59FieldNumber = 59;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field59_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field59 {
@@ -282,8 +323,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field7" field.</summary>
     public const int Field7FieldNumber = 7;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field7_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field7 {
       get { return field7_; }
       set {
@@ -293,6 +338,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field16" field.</summary>
     public const int Field16FieldNumber = 16;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field16_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field16 {
@@ -304,6 +351,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field130" field.</summary>
     public const int Field130FieldNumber = 130;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field130_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field130 {
@@ -315,6 +364,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field12" field.</summary>
     public const int Field12FieldNumber = 12;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field12_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field12 {
@@ -326,6 +377,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field17" field.</summary>
     public const int Field17FieldNumber = 17;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field17_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field17 {
@@ -337,6 +390,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field13" field.</summary>
     public const int Field13FieldNumber = 13;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field13_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field13 {
@@ -348,6 +403,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field14" field.</summary>
     public const int Field14FieldNumber = 14;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field14_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field14 {
@@ -359,6 +416,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field104" field.</summary>
     public const int Field104FieldNumber = 104;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field104_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field104 {
@@ -370,6 +429,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field100" field.</summary>
     public const int Field100FieldNumber = 100;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field100_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field100 {
@@ -381,6 +442,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field101" field.</summary>
     public const int Field101FieldNumber = 101;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field101_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field101 {
@@ -392,8 +455,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field102" field.</summary>
     public const int Field102FieldNumber = 102;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field102_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field102 {
       get { return field102_; }
       set {
@@ -403,8 +470,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field103" field.</summary>
     public const int Field103FieldNumber = 103;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field103_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field103 {
       get { return field103_; }
       set {
@@ -414,6 +485,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field29" field.</summary>
     public const int Field29FieldNumber = 29;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field29_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field29 {
@@ -425,6 +498,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field30" field.</summary>
     public const int Field30FieldNumber = 30;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field30_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field30 {
@@ -436,6 +511,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field60" field.</summary>
     public const int Field60FieldNumber = 60;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field60_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field60 {
@@ -447,6 +524,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field271" field.</summary>
     public const int Field271FieldNumber = 271;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field271_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field271 {
@@ -458,6 +537,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field272" field.</summary>
     public const int Field272FieldNumber = 272;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field272_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field272 {
@@ -469,6 +550,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field150" field.</summary>
     public const int Field150FieldNumber = 150;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field150_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field150 {
@@ -480,6 +563,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field23" field.</summary>
     public const int Field23FieldNumber = 23;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field23_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field23 {
@@ -491,6 +576,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field24" field.</summary>
     public const int Field24FieldNumber = 24;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field24_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field24 {
@@ -502,6 +589,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field25" field.</summary>
     public const int Field25FieldNumber = 25;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field25_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field25 {
@@ -513,8 +602,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field15" field.</summary>
     public const int Field15FieldNumber = 15;
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private global::Benchmarks.Proto3.GoogleMessage1SubMessage field15_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     public global::Benchmarks.Proto3.GoogleMessage1SubMessage Field15 {
       get { return field15_; }
       set {
@@ -524,6 +617,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field78" field.</summary>
     public const int Field78FieldNumber = 78;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field78_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field78 {
@@ -535,6 +630,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field67" field.</summary>
     public const int Field67FieldNumber = 67;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field67_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field67 {
@@ -546,6 +643,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field68" field.</summary>
     public const int Field68FieldNumber = 68;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field68_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field68 {
@@ -557,6 +656,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field128" field.</summary>
     public const int Field128FieldNumber = 128;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field128_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field128 {
@@ -568,8 +669,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field129" field.</summary>
     public const int Field129FieldNumber = 129;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field129_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field129 {
       get { return field129_; }
       set {
@@ -579,6 +684,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field131" field.</summary>
     public const int Field131FieldNumber = 131;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field131_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field131 {
@@ -589,12 +696,12 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as GoogleMessage1);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GoogleMessage1 other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] GoogleMessage1 other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -696,12 +803,13 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (Field1.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Field1);
@@ -999,7 +1107,7 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GoogleMessage1 other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] GoogleMessage1 other) {
       if (other == null) {
         return;
       }
@@ -1131,7 +1239,7 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1313,17 +1421,23 @@ namespace Benchmarks.Proto3 {
   }
 
   public sealed partial class GoogleMessage1SubMessage : pb::IMessage<GoogleMessage1SubMessage> {
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private static readonly pb::MessageParser<GoogleMessage1SubMessage> _parser = new pb::MessageParser<GoogleMessage1SubMessage>(() => new GoogleMessage1SubMessage());
+    [global::System.Diagnostics.CodeAnalysis.MaybeNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.AllowNullAttribute]
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pb::MessageParser<GoogleMessage1SubMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Benchmarks.Proto3.BenchmarkMessage1Proto3Reflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
@@ -1336,7 +1450,7 @@ namespace Benchmarks.Proto3 {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GoogleMessage1SubMessage(GoogleMessage1SubMessage other) : this() {
+    public GoogleMessage1SubMessage([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] GoogleMessage1SubMessage other) : this() {
       field1_ = other.field1_;
       field2_ = other.field2_;
       field3_ = other.field3_;
@@ -1361,12 +1475,15 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public GoogleMessage1SubMessage Clone() {
       return new GoogleMessage1SubMessage(this);
     }
 
     /// <summary>Field number for the "field1" field.</summary>
     public const int Field1FieldNumber = 1;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field1_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field1 {
@@ -1378,6 +1495,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field2" field.</summary>
     public const int Field2FieldNumber = 2;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field2_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field2 {
@@ -1389,6 +1508,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field3" field.</summary>
     public const int Field3FieldNumber = 3;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field3_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field3 {
@@ -1400,8 +1521,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field15" field.</summary>
     public const int Field15FieldNumber = 15;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field15_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field15 {
       get { return field15_; }
       set {
@@ -1411,6 +1536,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field12" field.</summary>
     public const int Field12FieldNumber = 12;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field12_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field12 {
@@ -1422,6 +1549,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field13" field.</summary>
     public const int Field13FieldNumber = 13;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long field13_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Field13 {
@@ -1433,6 +1562,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field14" field.</summary>
     public const int Field14FieldNumber = 14;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private long field14_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Field14 {
@@ -1444,6 +1575,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field16" field.</summary>
     public const int Field16FieldNumber = 16;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field16_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field16 {
@@ -1455,6 +1588,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field19" field.</summary>
     public const int Field19FieldNumber = 19;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field19_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field19 {
@@ -1466,6 +1601,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field20" field.</summary>
     public const int Field20FieldNumber = 20;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field20_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field20 {
@@ -1477,6 +1614,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field28" field.</summary>
     public const int Field28FieldNumber = 28;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field28_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field28 {
@@ -1488,6 +1627,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field21" field.</summary>
     public const int Field21FieldNumber = 21;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private ulong field21_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Field21 {
@@ -1499,6 +1640,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field22" field.</summary>
     public const int Field22FieldNumber = 22;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field22_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field22 {
@@ -1510,6 +1653,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field23" field.</summary>
     public const int Field23FieldNumber = 23;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field23_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field23 {
@@ -1521,6 +1666,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field206" field.</summary>
     public const int Field206FieldNumber = 206;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private bool field206_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Field206 {
@@ -1532,6 +1679,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field203" field.</summary>
     public const int Field203FieldNumber = 203;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private uint field203_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public uint Field203 {
@@ -1543,6 +1692,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field204" field.</summary>
     public const int Field204FieldNumber = 204;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private int field204_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Field204 {
@@ -1554,8 +1705,12 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field205" field.</summary>
     public const int Field205FieldNumber = 205;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private string field205_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
     public string Field205 {
       get { return field205_; }
       set {
@@ -1565,6 +1720,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field207" field.</summary>
     public const int Field207FieldNumber = 207;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private ulong field207_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Field207 {
@@ -1576,6 +1733,8 @@ namespace Benchmarks.Proto3 {
 
     /// <summary>Field number for the "field300" field.</summary>
     public const int Field300FieldNumber = 300;
+    [global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute]
+    [global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     private ulong field300_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Field300 {
@@ -1586,12 +1745,12 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
+    public override bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] object other) {
       return Equals(other as GoogleMessage1SubMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GoogleMessage1SubMessage other) {
+    public bool Equals([global::System.Diagnostics.CodeAnalysis.AllowNullAttribute] GoogleMessage1SubMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1651,12 +1810,13 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [return: global::System.Diagnostics.CodeAnalysis.NotNullAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
+    public void WriteTo([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedOutputStream output) {
       if (Field1 != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(Field1);
@@ -1812,7 +1972,7 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GoogleMessage1SubMessage other) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] GoogleMessage1SubMessage other) {
       if (other == null) {
         return;
       }
@@ -1880,7 +2040,7 @@ namespace Benchmarks.Proto3 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
+    public void MergeFrom([global::System.Diagnostics.CodeAnalysis.DisallowNullAttribute] pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {

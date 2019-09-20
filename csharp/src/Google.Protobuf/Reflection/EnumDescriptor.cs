@@ -33,6 +33,7 @@
 using Google.Protobuf.Collections;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -71,6 +72,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The brief name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public override string Name { get { return proto.Name; } }
 
         internal override IReadOnlyList<DescriptorBase> GetNestedDescriptorListForField(int fieldNumber)
@@ -87,11 +89,13 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The CLR type for this enum. For generated code, this will be a CLR enum type.
         /// </summary>
+        [NotNull]
         public Type ClrType { get { return clrType; } }
 
         /// <value>
         /// If this is a nested type, get the outer descriptor, otherwise null.
         /// </value>
+        [MaybeNull]
         public MessageDescriptor ContainingType
         {
             get { return containingType; }
@@ -100,6 +104,7 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// An unmodifiable list of defined value descriptors for this enum.
         /// </value>
+        [NotNull]
         public IList<EnumValueDescriptor> Values
         {
             get { return values; }
@@ -110,6 +115,7 @@ namespace Google.Protobuf.Reflection
         /// same number, this returns the first defined value with that number.
         /// If there is no value for the given number, this returns <c>null</c>.
         /// </summary>
+        [return: MaybeNull]
         public EnumValueDescriptor FindValueByNumber(int number)
         {
             return File.DescriptorPool.FindEnumValueByNumber(this, number);
@@ -120,6 +126,7 @@ namespace Google.Protobuf.Reflection
         /// </summary>
         /// <param name="name">The unqualified name of the value (e.g. "FOO").</param>
         /// <returns>The value's descriptor, or null if not found.</returns>
+        [return: MaybeNull]
         public EnumValueDescriptor FindValueByName(string name)
         {
             return File.DescriptorPool.FindSymbol<EnumValueDescriptor>(FullName + "." + name);
@@ -129,12 +136,14 @@ namespace Google.Protobuf.Reflection
         /// The (possibly empty) set of custom options for this enum.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<EnumOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<EnumOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -143,7 +152,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<EnumOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<EnumOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }

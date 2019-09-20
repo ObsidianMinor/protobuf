@@ -34,6 +34,7 @@ using Google.Protobuf.Reflection;
 using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -47,7 +48,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="data">The data to merge, which must be protobuf-encoded binary data.</param>
-        public static void MergeFrom(this IMessage message, byte[] data) =>
+        public static void MergeFrom([DisallowNull] this IMessage message, [DisallowNull] byte[] data) =>
             MergeFrom(message, data, false, null);
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Google.Protobuf
         /// <param name="data">The data containing the slice to merge, which must be protobuf-encoded binary data.</param>
         /// <param name="offset">The offset of the slice to merge.</param>
         /// <param name="length">The length of the slice to merge.</param>
-        public static void MergeFrom(this IMessage message, byte[] data, int offset, int length) =>
+        public static void MergeFrom([DisallowNull] this IMessage message, [DisallowNull] byte[] data, int offset, int length) =>
             MergeFrom(message, data, offset, length, false, null);
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="data">The data to merge, which must be protobuf-encoded binary data.</param>
-        public static void MergeFrom(this IMessage message, ByteString data) =>
+        public static void MergeFrom([DisallowNull] this IMessage message, [DisallowNull] ByteString data) =>
             MergeFrom(message, data, false, null);
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="input">Stream containing the data to merge, which must be protobuf-encoded binary data.</param>
-        public static void MergeFrom(this IMessage message, Stream input) =>
+        public static void MergeFrom([DisallowNull] this IMessage message, [DisallowNull] Stream input) =>
             MergeFrom(message, input, false, null);
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Google.Protobuf
         /// </remarks>
         /// <param name="message">The message to merge the data into.</param>
         /// <param name="input">Stream containing the data to merge, which must be protobuf-encoded binary data.</param>
-        public static void MergeDelimitedFrom(this IMessage message, Stream input) =>
+        public static void MergeDelimitedFrom([DisallowNull] this IMessage message, [DisallowNull] Stream input) =>
             MergeDelimitedFrom(message, input, false, null);
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to convert.</param>
         /// <returns>The message data as a byte array.</returns>
-        public static byte[] ToByteArray(this IMessage message)
+        public static byte[] ToByteArray([DisallowNull] this IMessage message)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             byte[] result = new byte[message.CalculateSize()];
@@ -108,7 +109,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to write to the stream.</param>
         /// <param name="output">The stream to write to.</param>
-        public static void WriteTo(this IMessage message, Stream output)
+        public static void WriteTo([DisallowNull] this IMessage message, [DisallowNull] Stream output)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(output, "output");
@@ -122,7 +123,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to write.</param>
         /// <param name="output">The output stream to write to.</param>
-        public static void WriteDelimitedTo(this IMessage message, Stream output)
+        public static void WriteDelimitedTo([DisallowNull] this IMessage message, [DisallowNull] Stream output)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             ProtoPreconditions.CheckNotNull(output, "output");
@@ -137,7 +138,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to convert.</param>
         /// <returns>The message data as a byte string.</returns>
-        public static ByteString ToByteString(this IMessage message)
+        public static ByteString ToByteString([DisallowNull] this IMessage message)
         {
             ProtoPreconditions.CheckNotNull(message, "message");
             return ByteString.AttachBytes(message.ToByteArray());
@@ -146,7 +147,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Checks if all required fields in a message have values set. For proto3 messages, this returns true
         /// </summary>
-        public static bool IsInitialized(this IMessage message)
+        public static bool IsInitialized([DisallowNull] this IMessage message)
         {
             if (message.Descriptor.File.Syntax == Syntax.Proto3)
             {

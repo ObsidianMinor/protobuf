@@ -34,6 +34,7 @@ using Google.Protobuf.Collections;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -121,14 +122,14 @@ namespace Google.Protobuf
         /// <summary>
         /// Creates a new CodedInputStream reading data from the given byte array.
         /// </summary>
-        public CodedInputStream(byte[] buffer) : this(null, ProtoPreconditions.CheckNotNull(buffer, "buffer"), 0, buffer.Length, true)
+        public CodedInputStream([DisallowNull] byte[] buffer) : this(null, ProtoPreconditions.CheckNotNull(buffer, "buffer"), 0, buffer.Length, true)
         {            
         }
 
         /// <summary>
         /// Creates a new <see cref="CodedInputStream"/> that reads from the given byte array slice.
         /// </summary>
-        public CodedInputStream(byte[] buffer, int offset, int length)
+        public CodedInputStream([DisallowNull] byte[] buffer, int offset, int length)
             : this(null, ProtoPreconditions.CheckNotNull(buffer, "buffer"), offset, offset + length, true)
         {            
             if (offset < 0 || offset > buffer.Length)
@@ -146,7 +147,7 @@ namespace Google.Protobuf
         /// when the returned object is disposed.
         /// </summary>
         /// <param name="input">The stream to read from.</param>
-        public CodedInputStream(Stream input) : this(input, false)
+        public CodedInputStream([DisallowNull] Stream input) : this(input, false)
         {
         }
 
@@ -157,7 +158,7 @@ namespace Google.Protobuf
         /// <param name="leaveOpen"><c>true</c> to leave <paramref name="input"/> open when the returned
         /// <c cref="CodedInputStream"/> is disposed; <c>false</c> to dispose of the given stream when the
         /// returned object is disposed.</param>
-        public CodedInputStream(Stream input, bool leaveOpen)
+        public CodedInputStream([DisallowNull] Stream input, bool leaveOpen)
             : this(ProtoPreconditions.CheckNotNull(input, "input"), new byte[BufferSize], 0, 0, leaveOpen)
         {
         }
@@ -215,7 +216,7 @@ namespace Google.Protobuf
         /// <param name="recursionLimit">The maximum recursion depth to allow while reading.</param>
         /// <returns>A <c>CodedInputStream</c> reading from <paramref name="input"/> with the specified size
         /// and recursion limits.</returns>
-        public static CodedInputStream CreateWithLimits(Stream input, int sizeLimit, int recursionLimit)
+        public static CodedInputStream CreateWithLimits([DisallowNull] Stream input, int sizeLimit, int recursionLimit)
         {
             // Note: we may want an overload accepting leaveOpen
             return new CodedInputStream(input, new byte[BufferSize], 0, 0, sizeLimit, recursionLimit, false);
@@ -557,6 +558,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Reads a string field from the stream.
         /// </summary>
+        [return: NotNull]
         public string ReadString()
         {
             int length = ReadLength();
@@ -580,7 +582,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Reads an embedded message field value from the stream.
         /// </summary>
-        public void ReadMessage(IMessage builder)
+        public void ReadMessage([DisallowNull] IMessage builder)
         {
             int length = ReadLength();
             if (recursionDepth >= recursionLimit)
@@ -603,7 +605,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Reads an embedded group field from the stream.
         /// </summary>
-        public void ReadGroup(IMessage builder)
+        public void ReadGroup([DisallowNull] IMessage builder)
         {
             if (recursionDepth >= recursionLimit)
             {
@@ -616,7 +618,8 @@ namespace Google.Protobuf
 
         /// <summary>
         /// Reads a bytes field value from the stream.
-        /// </summary>   
+        /// </summary> 
+        [return: NotNull]  
         public ByteString ReadBytes()
         {
             int length = ReadLength();

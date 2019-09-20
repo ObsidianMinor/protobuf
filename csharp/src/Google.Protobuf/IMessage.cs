@@ -32,6 +32,7 @@
 
 using System;
 using Google.Protobuf.Reflection;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -46,13 +47,13 @@ namespace Google.Protobuf
         /// </summary>
         /// <remarks>See the user guide for precise merge semantics.</remarks>
         /// <param name="input"></param>
-        void MergeFrom(CodedInputStream input);
+        void MergeFrom([DisallowNull] CodedInputStream input);
 
         /// <summary>
         /// Writes the data to the given coded output stream.
         /// </summary>
         /// <param name="output">Coded output stream to write the data to. Must not be null.</param>
-        void WriteTo(CodedOutputStream output);
+        void WriteTo([DisallowNull] CodedOutputStream output);
 
         /// <summary>
         /// Calculates the size of this message in Protocol Buffer wire format, in bytes.
@@ -66,6 +67,7 @@ namespace Google.Protobuf
         /// and for generated types this will be an explicitly-implemented member, returning the
         /// same value as the static property declared on the type.
         /// </summary>
+        [NotNull]
         MessageDescriptor Descriptor { get; }
     }
 
@@ -82,6 +84,6 @@ namespace Google.Protobuf
         /// </summary>
         /// <remarks>See the user guide for precise merge semantics.</remarks>
         /// <param name="message">The message to merge with this one. Must not be null.</param>
-        void MergeFrom(T message);
+        void MergeFrom([AllowNull] T message);
     }
 }

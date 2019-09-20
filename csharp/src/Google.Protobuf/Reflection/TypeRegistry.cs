@@ -31,6 +31,7 @@
 #endregion
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -42,6 +43,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// An empty type registry, containing no types.
         /// </summary>
+        [NotNull]
         public static TypeRegistry Empty { get; } = new TypeRegistry(new Dictionary<string, MessageDescriptor>());
 
         private readonly Dictionary<string, MessageDescriptor> fullNameToMessageMap;
@@ -58,7 +60,8 @@ namespace Google.Protobuf.Reflection
         /// combination of package, containing messages and message name</param>
         /// <returns>The message descriptor corresponding to <paramref name="fullName"/> or null
         /// if there is no such message descriptor.</returns>
-        public MessageDescriptor Find(string fullName)
+        [return: MaybeNull]
+        public MessageDescriptor Find([DisallowNull] string fullName)
         {
             MessageDescriptor ret;
             // Ignore the return value as ret will end up with the right value either way.
@@ -75,7 +78,8 @@ namespace Google.Protobuf.Reflection
         /// </remarks>
         /// <param name="fileDescriptors">The set of files to include in the registry. Must not contain null values.</param>
         /// <returns>A type registry for the given files.</returns>
-        public static TypeRegistry FromFiles(params FileDescriptor[] fileDescriptors)
+        [return: NotNull]
+        public static TypeRegistry FromFiles([DisallowNull] params FileDescriptor[] fileDescriptors)
         {
             return FromFiles((IEnumerable<FileDescriptor>) fileDescriptors);
         }
@@ -89,7 +93,8 @@ namespace Google.Protobuf.Reflection
         /// </remarks>
         /// <param name="fileDescriptors">The set of files to include in the registry. Must not contain null values.</param>
         /// <returns>A type registry for the given files.</returns>
-        public static TypeRegistry FromFiles(IEnumerable<FileDescriptor> fileDescriptors)
+        [return: NotNull]
+        public static TypeRegistry FromFiles([DisallowNull] IEnumerable<FileDescriptor> fileDescriptors)
         {
             ProtoPreconditions.CheckNotNull(fileDescriptors, nameof(fileDescriptors));
             var builder = new Builder();
@@ -110,7 +115,8 @@ namespace Google.Protobuf.Reflection
         /// <param name="messageDescriptors">The set of message descriptors to use to identify file descriptors to include in the registry.
         /// Must not contain null values.</param>
         /// <returns>A type registry for the given files.</returns>
-        public static TypeRegistry FromMessages(params MessageDescriptor[] messageDescriptors)
+        [return: NotNull]
+        public static TypeRegistry FromMessages([DisallowNull] params MessageDescriptor[] messageDescriptors)
         {
             return FromMessages((IEnumerable<MessageDescriptor>) messageDescriptors);
         }
@@ -126,7 +132,8 @@ namespace Google.Protobuf.Reflection
         /// <param name="messageDescriptors">The set of message descriptors to use to identify file descriptors to include in the registry.
         /// Must not contain null values.</param>
         /// <returns>A type registry for the given files.</returns>
-        public static TypeRegistry FromMessages(IEnumerable<MessageDescriptor> messageDescriptors)
+        [return: NotNull]
+        public static TypeRegistry FromMessages([DisallowNull] IEnumerable<MessageDescriptor> messageDescriptors)
         {
             ProtoPreconditions.CheckNotNull(messageDescriptors, nameof(messageDescriptors));
             return FromFiles(messageDescriptors.Select(md => md.File));

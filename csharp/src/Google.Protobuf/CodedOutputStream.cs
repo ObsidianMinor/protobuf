@@ -34,6 +34,7 @@ using Google.Protobuf.Collections;
 using System;
 using System.IO;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -77,7 +78,7 @@ namespace Google.Protobuf
         /// byte array. If more bytes are written than fit in the array,
         /// OutOfSpaceException will be thrown.
         /// </summary>
-        public CodedOutputStream(byte[] flatArray) : this(flatArray, 0, flatArray.Length)
+        public CodedOutputStream([DisallowNull] byte[] flatArray) : this(flatArray, 0, flatArray.Length)
         {
         }
 
@@ -109,7 +110,7 @@ namespace Google.Protobuf
         /// stream when the returned <c>CodedOutputStream</c> is disposed.
         /// </summary>
         /// <param name="output">The stream to write to. It will be disposed when the returned <c>CodedOutputStream is disposed.</c></param>
-        public CodedOutputStream(Stream output) : this(output, DefaultBufferSize, false)
+        public CodedOutputStream([DisallowNull] Stream output) : this(output, DefaultBufferSize, false)
         {
         }
 
@@ -119,7 +120,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="output">The stream to write to. It will be disposed when the returned <c>CodedOutputStream is disposed.</c></param>
         /// <param name="bufferSize">The size of buffer to use internally.</param>
-        public CodedOutputStream(Stream output, int bufferSize) : this(output, new byte[bufferSize], false)
+        public CodedOutputStream([DisallowNull] Stream output, int bufferSize) : this(output, new byte[bufferSize], false)
         {
         }
 
@@ -129,7 +130,7 @@ namespace Google.Protobuf
         /// <param name="output">The stream to write to.</param>
         /// <param name="leaveOpen">If <c>true</c>, <paramref name="output"/> is left open when the returned <c>CodedOutputStream</c> is disposed;
         /// if <c>false</c>, the provided stream is disposed as well.</param>
-        public CodedOutputStream(Stream output, bool leaveOpen) : this(output, DefaultBufferSize, leaveOpen)
+        public CodedOutputStream([DisallowNull] Stream output, bool leaveOpen) : this(output, DefaultBufferSize, leaveOpen)
         {
         }
 
@@ -141,7 +142,7 @@ namespace Google.Protobuf
         /// <param name="bufferSize">The size of buffer to use internally.</param>
         /// <param name="leaveOpen">If <c>true</c>, <paramref name="output"/> is left open when the returned <c>CodedOutputStream</c> is disposed;
         /// if <c>false</c>, the provided stream is disposed as well.</param>
-        public CodedOutputStream(Stream output, int bufferSize, bool leaveOpen) : this(output, new byte[bufferSize], leaveOpen)
+        public CodedOutputStream([DisallowNull] Stream output, int bufferSize, bool leaveOpen) : this(output, new byte[bufferSize], leaveOpen)
         {
         }
         #endregion
@@ -264,7 +265,7 @@ namespace Google.Protobuf
         /// The data is length-prefixed.
         /// </summary>
         /// <param name="value">The value to write</param>
-        public void WriteString(string value)
+        public void WriteString([DisallowNull] string value)
         {
             // Optimise the case where we have enough space to write
             // the string directly to the buffer, which should be common.
@@ -297,7 +298,7 @@ namespace Google.Protobuf
         /// The data is length-prefixed.
         /// </summary>
         /// <param name="value">The value to write</param>
-        public void WriteMessage(IMessage value)
+        public void WriteMessage([DisallowNull] IMessage value)
         {
             WriteLength(value.CalculateSize());
             value.WriteTo(this);
@@ -307,7 +308,7 @@ namespace Google.Protobuf
         /// Writes a group, without a tag, to the stream.
         /// </summary>
         /// <param name="value">The value to write</param>
-        public void WriteGroup(IMessage value)
+        public void WriteGroup([DisallowNull] IMessage value)
         {
             value.WriteTo(this);
         }
@@ -317,7 +318,7 @@ namespace Google.Protobuf
         /// The data is length-prefixed.
         /// </summary>
         /// <param name="value">The value to write</param>
-        public void WriteBytes(ByteString value)
+        public void WriteBytes([DisallowNull] ByteString value)
         {
             WriteLength(value.Length);
             value.WriteRawBytesTo(this);

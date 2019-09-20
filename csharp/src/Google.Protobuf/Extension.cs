@@ -70,7 +70,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Creates a new extension identifier with the specified field number and codec
         /// </summary>
-        public Extension(int fieldNumber, FieldCodec<TValue> codec) : base(fieldNumber)
+        public Extension(int fieldNumber, [System.Diagnostics.CodeAnalysis.DisallowNull] FieldCodec<TValue> codec) : base(fieldNumber)
         {
             this.codec = codec;
         }

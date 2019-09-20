@@ -44,6 +44,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The name of the element in the .proto file.
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.NotNull]
         public string Name { get; set; }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Google.Protobuf.Reflection
         /// Constructs a new attribute instance for the given name.
         /// </summary>
         /// <param name="name">The name of the element in the .proto file.</param>
-        public OriginalNameAttribute(string name)
+        public OriginalNameAttribute([System.Diagnostics.CodeAnalysis.DisallowNull] string name)
         {
             Name = ProtoPreconditions.CheckNotNull(name, nameof(name));
             PreferredAlias = true;

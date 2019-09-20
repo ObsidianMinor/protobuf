@@ -35,6 +35,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace Google.Protobuf.Reflection
@@ -187,7 +188,7 @@ namespace Google.Protobuf.Reflection
         /// <param name="field">The field to fetch the value for.</param>
         /// <param name="value">The output variable to populate.</param>
         /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetString(int field, out string value) => TryGetPrimitiveValue(field, out value);
+        public bool TryGetString(int field, [NotNullWhen(true)] out string value) => TryGetPrimitiveValue(field, out value);
 
         /// <summary>
         /// Retrieves a bytes value for the specified option field.
@@ -195,7 +196,7 @@ namespace Google.Protobuf.Reflection
         /// <param name="field">The field to fetch the value for.</param>
         /// <param name="value">The output variable to populate.</param>
         /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetBytes(int field, out ByteString value) => TryGetPrimitiveValue(field, out value);
+        public bool TryGetBytes(int field, [NotNullWhen(true)] out ByteString value) => TryGetPrimitiveValue(field, out value);
 
         /// <summary>
         /// Retrieves a message value for the specified option field.
@@ -203,7 +204,7 @@ namespace Google.Protobuf.Reflection
         /// <param name="field">The field to fetch the value for.</param>
         /// <param name="value">The output variable to populate.</param>
         /// <returns><c>true</c> if a suitable value for the field was found; <c>false</c> otherwise.</returns>
-        public bool TryGetMessage<T>(int field, out T value) where T : class, IMessage, new()
+        public bool TryGetMessage<T>(int field, [NotNullWhen(true)] out T value) where T : class, IMessage, new()
         {
             if (values == null)
             {

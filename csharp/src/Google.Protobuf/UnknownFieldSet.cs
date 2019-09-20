@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Google.Protobuf.Reflection;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -69,7 +70,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Serializes the set and writes it to <paramref name="output"/>.
         /// </summary>
-        public void WriteTo(CodedOutputStream output)
+        public void WriteTo([DisallowNull] CodedOutputStream output)
         {
             foreach (KeyValuePair<int, UnknownField> entry in fields)
             {
@@ -93,7 +94,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Checks if two unknown field sets are equal.
         /// </summary>
-        public override bool Equals(object other)
+        public override bool Equals([AllowNull] object other)
         {
             if (ReferenceEquals(this, other))
             {
@@ -242,8 +243,9 @@ namespace Google.Protobuf
         /// <param name="unknownFields">The UnknownFieldSet which need to be merged</param>
         /// <param name="input">The coded input stream containing the field</param>
         /// <returns>The merged UnknownFieldSet</returns>
-        public static UnknownFieldSet MergeFieldFrom(UnknownFieldSet unknownFields,
-                                                     CodedInputStream input)
+        [return: NotNull]
+        public static UnknownFieldSet MergeFieldFrom([AllowNull] UnknownFieldSet unknownFields,
+                                                     [DisallowNull] CodedInputStream input)
         {
             if (input.DiscardUnknownFields)
             {
@@ -284,8 +286,9 @@ namespace Google.Protobuf
         /// If a field number exists in both sets, the values in <paramref name="other"/>
         /// will be appended to the values in this set.
         /// </summary>
-        public static UnknownFieldSet MergeFrom(UnknownFieldSet unknownFields,
-                                                UnknownFieldSet other)
+        [return: MaybeNull]
+        public static UnknownFieldSet MergeFrom([AllowNull] UnknownFieldSet unknownFields,
+                                                [AllowNull] UnknownFieldSet other)
         {
             if (other == null)
             {
@@ -324,7 +327,8 @@ namespace Google.Protobuf
         /// <summary>
         /// Clone an unknown field set from <paramref name="other"/>.
         /// </summary>
-        public static UnknownFieldSet Clone(UnknownFieldSet other)
+        [return: NotNull]
+        public static UnknownFieldSet Clone([AllowNull] UnknownFieldSet other)
         {
             if (other == null)
             {

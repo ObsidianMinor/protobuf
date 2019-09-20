@@ -33,6 +33,7 @@
 using Google.Protobuf.Collections;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Collections.ObjectModel;
 
 namespace Google.Protobuf.Reflection
@@ -58,6 +59,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The brief name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public override string Name { get { return proto.Name; } }
 
         internal override IReadOnlyList<DescriptorBase> GetNestedDescriptorListForField(int fieldNumber)
@@ -76,6 +78,7 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// An unmodifiable list of methods in this service.
         /// </value>
+        [NotNull]
         public IList<MethodDescriptor> Methods
         {
             get { return methods; }
@@ -86,6 +89,7 @@ namespace Google.Protobuf.Reflection
         /// </summary>
         /// <param name="name">The unqualified name of the method (e.g. "Foo").</param>
         /// <returns>The method's decsriptor, or null if not found.</returns>
+        [return: MaybeNull]
         public MethodDescriptor FindMethodByName(String name)
         {
             return File.DescriptorPool.FindSymbol<MethodDescriptor>(FullName + "." + name);
@@ -95,12 +99,14 @@ namespace Google.Protobuf.Reflection
         /// The (possibly empty) set of custom options for this service.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<ServiceOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<ServiceOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -109,7 +115,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<ServiceOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<ServiceOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }

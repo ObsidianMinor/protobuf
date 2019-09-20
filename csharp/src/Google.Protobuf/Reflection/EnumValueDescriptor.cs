@@ -32,6 +32,7 @@
 
 using Google.Protobuf.Collections;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -58,6 +59,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Returns the name of the enum value described by this object.
         /// </summary>
+        [NotNull]
         public override string Name { get { return proto.Name; } }
 
         /// <summary>
@@ -68,18 +70,21 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Returns the enum descriptor that this value is part of.
         /// </summary>
+        [NotNull]
         public EnumDescriptor EnumDescriptor { get { return enumDescriptor; } }
 
         /// <summary>
         /// The (possibly empty) set of custom options for this enum value.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<EnumValueOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<EnumValueOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -88,7 +93,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<EnumValueOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<EnumValueOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }

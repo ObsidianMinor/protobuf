@@ -32,6 +32,7 @@
 
 using Google.Protobuf.Collections;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -48,16 +49,19 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The service this method belongs to.
         /// </value>
+        [NotNull]
         public ServiceDescriptor Service { get { return service; } }
 
         /// <value>
         /// The method's input type.
         /// </value>
+        [NotNull]
         public MessageDescriptor InputType { get { return inputType; } }
 
         /// <value>
         /// The method's input type.
         /// </value>
+        [NotNull]
         public MessageDescriptor OutputType { get { return outputType; } }
 
         /// <value>
@@ -74,12 +78,14 @@ namespace Google.Protobuf.Reflection
         /// The (possibly empty) set of custom options for this method.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<MethodOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<MethodOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -88,7 +94,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<MethodOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<MethodOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }
@@ -107,6 +114,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The brief name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public override string Name { get { return proto.Name; } }
 
         internal void CrossLink()

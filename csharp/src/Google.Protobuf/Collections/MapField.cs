@@ -37,6 +37,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Collections
 {
@@ -85,6 +86,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         /// A deep clone of this object.
         /// </returns>
+        [return: NotNull]
         public MapField<TKey, TValue> Clone()
         {
             var clone = new MapField<TKey, TValue>();
@@ -113,7 +115,7 @@ namespace Google.Protobuf.Collections
         /// <param name="key">The key to add</param>
         /// <param name="value">The value to add.</param>
         /// <exception cref="System.ArgumentException">The given key already exists in map.</exception>
-        public void Add(TKey key, TValue value)
+        public void Add([DisallowNull] TKey key, [DisallowNull] TValue value)
         {
             // Validation of arguments happens in ContainsKey and the indexer
             if (ContainsKey(key))
@@ -128,7 +130,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="key">The key to check.</param>
         /// <returns><c>true</c> if the map contains the given key; <c>false</c> otherwise.</returns>
-        public bool ContainsKey(TKey key)
+        public bool ContainsKey([DisallowNull] TKey key)
         {
             ProtoPreconditions.CheckNotNullUnconstrained(key, nameof(key));
             return map.ContainsKey(key);
@@ -142,7 +144,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="key">The key indicating the entry to remove from the map.</param>
         /// <returns><c>true</c> if the map contained the given key before the entry was removed; <c>false</c> otherwise.</returns>
-        public bool Remove(TKey key)
+        public bool Remove([DisallowNull] TKey key)
         {
             ProtoPreconditions.CheckNotNullUnconstrained(key, nameof(key));
             LinkedListNode<KeyValuePair<TKey, TValue>> node;
@@ -166,7 +168,7 @@ namespace Google.Protobuf.Collections
         /// otherwise, the default value for the type of the <paramref name="value"/> parameter.
         /// This parameter is passed uninitialized.</param>
         /// <returns><c>true</c> if the map contains an element with the specified key; otherwise, <c>false</c>.</returns>
-        public bool TryGetValue(TKey key, out TValue value)
+        public bool TryGetValue([DisallowNull] TKey key, [NotNullWhen(true)] out TValue value)
         {
             LinkedListNode<KeyValuePair<TKey, TValue>> node;
             if (map.TryGetValue(key, out node))
@@ -188,7 +190,9 @@ namespace Google.Protobuf.Collections
         /// <exception cref="KeyNotFoundException">The property is retrieved and key does not exist in the collection.</exception>
         /// <returns>The value associated with the specified key. If the specified key is not found,
         /// a get operation throws a <see cref="KeyNotFoundException"/>, and a set operation creates a new element with the specified key.</returns>
-        public TValue this[TKey key]
+        [DisallowNull]
+        [NotNull]
+        public TValue this[[DisallowNull] TKey key]
         {
             get
             {
@@ -225,18 +229,20 @@ namespace Google.Protobuf.Collections
         /// <summary>
         /// Gets a collection containing the keys in the map.
         /// </summary>
+        [NotNull]
         public ICollection<TKey> Keys { get { return new MapView<TKey>(this, pair => pair.Key, ContainsKey); } }
 
         /// <summary>
         /// Gets a collection containing the values in the map.
         /// </summary>
+        [NotNull]
         public ICollection<TValue> Values { get { return new MapView<TValue>(this, pair => pair.Value, ContainsValue); } }
 
         /// <summary>
         /// Adds the specified entries to the map. The keys and values are not automatically cloned.
         /// </summary>
         /// <param name="entries">The entries to add to the map.</param>
-        public void Add(IDictionary<TKey, TValue> entries)
+        public void Add([DisallowNull] IDictionary<TKey, TValue> entries)
         {
             ProtoPreconditions.CheckNotNull(entries, nameof(entries));
             foreach (var pair in entries)
@@ -251,6 +257,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         /// An enumerator that can be used to iterate through the collection.
         /// </returns>
+        [return: NotNull]
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
             return list.GetEnumerator();
@@ -262,6 +269,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         /// An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
         /// </returns>
+        [return: NotNull]
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -301,7 +309,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="array">The array to copy the entries into.</param>
         /// <param name="arrayIndex">The index of the array at which to start copying values.</param>
-        void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
+        void ICollection<KeyValuePair<TKey, TValue>>.CopyTo([DisallowNull] KeyValuePair<TKey, TValue>[] array, int arrayIndex)
         {
             list.CopyTo(array, arrayIndex);
         }
@@ -349,7 +357,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object other)
+        public override bool Equals([AllowNull] object other)
         {
             return Equals(other as MapField<TKey, TValue>);
         }
@@ -380,7 +388,7 @@ namespace Google.Protobuf.Collections
         /// </remarks>
         /// <param name="other">The map to compare this with.</param>
         /// <returns><c>true</c> if <paramref name="other"/> refers to an equal map; <c>false</c> otherwise.</returns>
-        public bool Equals(MapField<TKey, TValue> other)
+        public bool Equals([AllowNull] MapField<TKey, TValue> other)
         {
             if (other == null)
             {
@@ -420,7 +428,7 @@ namespace Google.Protobuf.Collections
         /// </remarks>
         /// <param name="input">Stream to read from</param>
         /// <param name="codec">Codec describing how the key/value pairs are encoded</param>
-        public void AddEntriesFrom(CodedInputStream input, Codec codec)
+        public void AddEntriesFrom([DisallowNull] CodedInputStream input, [DisallowNull] Codec codec)
         {
             var adapter = new Codec.MessageAdapter(codec);
             do
@@ -437,7 +445,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="output">The output stream to write to.</param>
         /// <param name="codec">The codec to use for each entry.</param>
-        public void WriteTo(CodedOutputStream output, Codec codec)
+        public void WriteTo([DisallowNull] CodedOutputStream output, [DisallowNull] Codec codec)
         {
             var message = new Codec.MessageAdapter(codec);
             foreach (var entry in list)
@@ -454,7 +462,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="codec">The codec to use to encode each entry.</param>
         /// <returns></returns>
-        public int CalculateSize(Codec codec)
+        public int CalculateSize([DisallowNull] Codec codec)
         {
             if (Count == 0)
             {
@@ -476,6 +484,7 @@ namespace Google.Protobuf.Collections
         /// Returns a string representation of this repeated field, in the same
         /// way as it would be represented by the default JSON formatter.
         /// </summary>
+        [return: NotNull]
         public override string ToString()
         {
             var writer = new StringWriter();
@@ -484,12 +493,12 @@ namespace Google.Protobuf.Collections
         }
 
         #region IDictionary explicit interface implementation
-        void IDictionary.Add(object key, object value)
+        void IDictionary.Add([DisallowNull] object key, [DisallowNull] object value)
         {
             Add((TKey)key, (TValue)value);
         }
 
-        bool IDictionary.Contains(object key)
+        bool IDictionary.Contains([DisallowNull] object key)
         {
             if (!(key is TKey))
             {
@@ -498,12 +507,13 @@ namespace Google.Protobuf.Collections
             return ContainsKey((TKey)key);
         }
 
+        [return: NotNull]
         IDictionaryEnumerator IDictionary.GetEnumerator()
         {
             return new DictionaryEnumerator(GetEnumerator());
         }
 
-        void IDictionary.Remove(object key)
+        void IDictionary.Remove([DisallowNull] object key)
         {
             ProtoPreconditions.CheckNotNull(key, nameof(key));
             if (!(key is TKey))
@@ -513,7 +523,7 @@ namespace Google.Protobuf.Collections
             Remove((TKey)key);
         }
 
-        void ICollection.CopyTo(Array array, int index)
+        void ICollection.CopyTo([DisallowNull] Array array, int index)
         {
             // This is ugly and slow as heck, but with any luck it will never be used anyway.
             ICollection temp = this.Select(pair => new DictionaryEntry(pair.Key, pair.Value)).ToList();
@@ -522,15 +532,17 @@ namespace Google.Protobuf.Collections
 
         bool IDictionary.IsFixedSize { get { return false; } }
 
-        ICollection IDictionary.Keys { get { return (ICollection)Keys; } }
+        ICollection IDictionary.Keys { [return: NotNull] get { return (ICollection)Keys; } }
 
-        ICollection IDictionary.Values { get { return (ICollection)Values; } }
+        ICollection IDictionary.Values { [return: NotNull] get { return (ICollection)Values; } }
 
         bool ICollection.IsSynchronized { get { return false; } }
 
         object ICollection.SyncRoot { get { return this; } }
 
-        object IDictionary.this[object key]
+        [DisallowNull]
+        [NotNull]
+        object IDictionary.this[[DisallowNull] object key]
         {
             get
             {
@@ -543,7 +555,6 @@ namespace Google.Protobuf.Collections
                 TryGetValue((TKey)key, out value);
                 return value;
             }
-
             set
             {
                 this[(TKey)key] = (TValue)value;
@@ -553,8 +564,10 @@ namespace Google.Protobuf.Collections
 
         #region IReadOnlyDictionary explicit interface implementation
 #if !NET35
+        [NotNull]
         IEnumerable<TKey> IReadOnlyDictionary<TKey, TValue>.Keys => Keys;
 
+        [NotNull]
         IEnumerable<TValue> IReadOnlyDictionary<TKey, TValue>.Values => Values;
 #endif
         #endregion
@@ -601,7 +614,7 @@ namespace Google.Protobuf.Collections
             /// <param name="keyCodec">The key codec.</param>
             /// <param name="valueCodec">The value codec.</param>
             /// <param name="mapTag">The map tag to use to introduce each map entry.</param>
-            public Codec(FieldCodec<TKey> keyCodec, FieldCodec<TValue> valueCodec, uint mapTag)
+            public Codec([DisallowNull] FieldCodec<TKey> keyCodec, [DisallowNull] FieldCodec<TValue> valueCodec, uint mapTag)
             {
                 this.keyCodec = keyCodec;
                 this.valueCodec = valueCodec;

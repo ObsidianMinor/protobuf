@@ -33,6 +33,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -62,13 +63,15 @@ namespace Google.Protobuf.Reflection
         /// Returns a readonly list of all the extensions defined in this type in 
         /// the order they were defined in the source .proto file
         /// </summary>
+        [NotNull]
         public IList<FieldDescriptor> UnorderedExtensions { get; }
 
         /// <summary>
         /// Returns a readonly list of all the extensions define in this type that extend 
         /// the provided descriptor type in the order they were defined in the source .proto file
         /// </summary>
-        public IList<FieldDescriptor> GetExtensionsInDeclarationOrder(MessageDescriptor descriptor)
+        [return: MaybeNull]
+        public IList<FieldDescriptor> GetExtensionsInDeclarationOrder([DisallowNull] MessageDescriptor descriptor)
         {
             return extensionsByTypeInDeclarationOrder[descriptor];
         }
@@ -77,7 +80,8 @@ namespace Google.Protobuf.Reflection
         /// Returns a readonly list of all the extensions define in this type that extend 
         /// the provided descriptor type in accending field order
         /// </summary>
-        public IList<FieldDescriptor> GetExtensionsInNumberOrder(MessageDescriptor descriptor)
+        [return: MaybeNull]
+        public IList<FieldDescriptor> GetExtensionsInNumberOrder([DisallowNull] MessageDescriptor descriptor)
         {
             return extensionsByTypeInNumberOrder[descriptor];
         }

@@ -34,6 +34,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -75,7 +76,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Adds the specified extension to the registry
         /// </summary>
-        public void Add(Extension extension)
+        public void Add([DisallowNull] Extension extension)
         {
             ProtoPreconditions.CheckNotNull(extension, nameof(extension));
 
@@ -85,7 +86,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Adds the specified extensions to the reigstry
         /// </summary>
-        public void AddRange(IEnumerable<Extension> extensions)
+        public void AddRange([DisallowNull] IEnumerable<Extension> extensions)
         {
             ProtoPreconditions.CheckNotNull(extensions, nameof(extensions));
 
@@ -104,7 +105,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Gets whether the extension registry contains the specified extension
         /// </summary>
-        public bool Contains(Extension item)
+        public bool Contains([DisallowNull] Extension item)
         {
             ProtoPreconditions.CheckNotNull(item, nameof(item));
 
@@ -116,7 +117,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="array">The array to copy to</param>
         /// <param name="arrayIndex">The array index to start at</param>
-        void ICollection<Extension>.CopyTo(Extension[] array, int arrayIndex)
+        void ICollection<Extension>.CopyTo([DisallowNull] Extension[] array, int arrayIndex)
         {
             ProtoPreconditions.CheckNotNull(array, nameof(array));
             if (arrayIndex < 0 || arrayIndex >= array.Length)
@@ -135,6 +136,7 @@ namespace Google.Protobuf
         /// Returns an enumerator to enumerate through the items in the registry
         /// </summary>
         /// <returns>Returns an enumerator for the extensions in this registry</returns>
+        [return: NotNull]
         public IEnumerator<Extension> GetEnumerator()
         {
             return extensions.Values.GetEnumerator();
@@ -145,18 +147,20 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="item">The extension</param>
         /// <returns><c>true</c> if the extension was removed, otherwise <c>false</c></returns>
-        public bool Remove(Extension item)
+        public bool Remove([DisallowNull] Extension item)
         {
             ProtoPreconditions.CheckNotNull(item, nameof(item));
 
             return extensions.Remove(new ObjectIntPair<Type>(item.TargetType, item.FieldNumber));
         }
 
+        [return: NotNull]
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
         /// Clones the registry into a new registry
         /// </summary>
+        [return: NotNull]
         public ExtensionRegistry Clone()
         {
             return new ExtensionRegistry(extensions);

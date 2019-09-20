@@ -34,6 +34,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Collections
 {
@@ -69,6 +70,7 @@ namespace Google.Protobuf.Collections
         /// equivalent to a deep clone.
         /// </remarks>
         /// <returns>A deep clone of this repeated field.</returns>
+        [return: NotNull]
         public RepeatedField<T> Clone()
         {
             RepeatedField<T> clone = new RepeatedField<T>();
@@ -93,7 +95,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="input">The input stream to read from.</param>
         /// <param name="codec">The codec to use in order to read each entry.</param>
-        public void AddEntriesFrom(CodedInputStream input, FieldCodec<T> codec)
+        public void AddEntriesFrom([DisallowNull] CodedInputStream input, [DisallowNull] FieldCodec<T> codec)
         {
             // TODO: Inline some of the Add code, so we can avoid checking the size on every
             // iteration.
@@ -130,7 +132,7 @@ namespace Google.Protobuf.Collections
         /// <param name="codec">The codec to use when encoding each field.</param>
         /// <returns>The number of bytes that would be written to a <see cref="CodedOutputStream"/> by <see cref="WriteTo"/>,
         /// using the same codec.</returns>
-        public int CalculateSize(FieldCodec<T> codec)
+        public int CalculateSize([DisallowNull] FieldCodec<T> codec)
         {
             if (count == 0)
             {
@@ -185,7 +187,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="output">The output stream to write to.</param>
         /// <param name="codec">The codec to use when encoding each value.</param>
-        public void WriteTo(CodedOutputStream output, FieldCodec<T> codec)
+        public void WriteTo([DisallowNull] CodedOutputStream output, [DisallowNull] FieldCodec<T> codec)
         {
             if (count == 0)
             {
@@ -236,7 +238,7 @@ namespace Google.Protobuf.Collections
         /// Adds the specified item to the collection.
         /// </summary>
         /// <param name="item">The item to add.</param>
-        public void Add(T item)
+        public void Add([DisallowNull] T item)
         {
             ProtoPreconditions.CheckNotNullUnconstrained(item, nameof(item));
             EnsureSize(count + 1);
@@ -257,7 +259,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="item">The item to find.</param>
         /// <returns><c>true</c> if this collection contains the given item; <c>false</c> otherwise.</returns>
-        public bool Contains(T item)
+        public bool Contains([DisallowNull] T item)
         {
             return IndexOf(item) != -1;
         }
@@ -267,7 +269,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="array">The array to copy to.</param>
         /// <param name="arrayIndex">The first index of the array to copy to.</param>
-        public void CopyTo(T[] array, int arrayIndex)
+        public void CopyTo([DisallowNull] T[] array, int arrayIndex)
         {
             Array.Copy(this.array, 0, array, arrayIndex, count);
         }
@@ -277,7 +279,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="item">The item to remove.</param>
         /// <returns><c>true</c> if the item was found and removed; <c>false</c> otherwise.</returns>
-        public bool Remove(T item)
+        public bool Remove([DisallowNull] T item)
         {
             int index = IndexOf(item);
             if (index == -1)
@@ -304,7 +306,7 @@ namespace Google.Protobuf.Collections
         /// Adds all of the specified values into this collection.
         /// </summary>
         /// <param name="values">The values to add to this collection.</param>
-        public void AddRange(IEnumerable<T> values)
+        public void AddRange([DisallowNull] IEnumerable<T> values)
         {
             ProtoPreconditions.CheckNotNull(values, nameof(values));
 
@@ -366,7 +368,7 @@ namespace Google.Protobuf.Collections
         /// method instead for clarity.
         /// </summary>
         /// <param name="values">The values to add to this collection.</param>
-        public void Add(IEnumerable<T> values)
+        public void Add([DisallowNull] IEnumerable<T> values)
         {
             AddRange(values);
         }
@@ -377,6 +379,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         /// An enumerator that can be used to iterate through the collection.
         /// </returns>
+        [return: NotNull]
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
@@ -392,7 +395,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         ///   <c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object obj)
+        public override bool Equals([AllowNull] object obj)
         {
             return Equals(obj as RepeatedField<T>);
         }
@@ -403,6 +406,7 @@ namespace Google.Protobuf.Collections
         /// <returns>
         /// An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
         /// </returns>
+        [return: NotNull]
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -429,7 +433,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="other">The repeated field to compare this with.</param>
         /// <returns><c>true</c> if <paramref name="other"/> refers to an equal repeated field; <c>false</c> otherwise.</returns>
-        public bool Equals(RepeatedField<T> other)
+        public bool Equals([AllowNull] RepeatedField<T> other)
         {
             if (ReferenceEquals(other, null))
             {
@@ -460,7 +464,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="item">The item to find in the collection.</param>
         /// <returns>The zero-based index of the item, or -1 if it is not found.</returns>
-        public int IndexOf(T item)
+        public int IndexOf([DisallowNull] T item)
         {
             ProtoPreconditions.CheckNotNullUnconstrained(item, nameof(item));
             EqualityComparer<T> comparer = EqualityComparer;
@@ -479,7 +483,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <param name="index">The index at which to insert the item.</param>
         /// <param name="item">The item to insert.</param>
-        public void Insert(int index, T item)
+        public void Insert(int index, [DisallowNull] T item)
         {
             ProtoPreconditions.CheckNotNullUnconstrained(item, nameof(item));
             if (index < 0 || index > count)
@@ -511,6 +515,7 @@ namespace Google.Protobuf.Collections
         /// Returns a string representation of this repeated field, in the same
         /// way as it would be represented by the default JSON formatter.
         /// </summary>
+        [return: NotNull]
         public override string ToString()
         {
             var writer = new StringWriter();
@@ -526,6 +531,8 @@ namespace Google.Protobuf.Collections
         /// </value>
         /// <param name="index">The zero-based index of the element to get or set.</param>
         /// <returns>The item at the specified index.</returns>
+        [DisallowNull]
+        [NotNull]
         public T this[int index]
         {
             get
@@ -550,7 +557,7 @@ namespace Google.Protobuf.Collections
         #region Explicit interface implementation for IList and ICollection.
         bool IList.IsFixedSize => false;
 
-        void ICollection.CopyTo(Array array, int index)
+        void ICollection.CopyTo([DisallowNull] Array array, int index)
         {
             Array.Copy(this.array, 0, array, index, count);
         }
@@ -559,24 +566,26 @@ namespace Google.Protobuf.Collections
 
         object ICollection.SyncRoot => this;
 
+        [DisallowNull]
+        [NotNull]
         object IList.this[int index]
         {
             get { return this[index]; }
             set { this[index] = (T)value; }
         }
 
-        int IList.Add(object value)
+        int IList.Add([DisallowNull] object value)
         {
             Add((T) value);
             return count - 1;
         }
 
-        bool IList.Contains(object value)
+        bool IList.Contains([DisallowNull] object value)
         {
             return (value is T && Contains((T)value));
         }
 
-        int IList.IndexOf(object value)
+        int IList.IndexOf([DisallowNull] object value)
         {
             if (!(value is T))
             {
@@ -585,12 +594,12 @@ namespace Google.Protobuf.Collections
             return IndexOf((T)value);
         }
 
-        void IList.Insert(int index, object value)
+        void IList.Insert(int index, [DisallowNull] object value)
         {
             Insert(index, (T) value);
         }
 
-        void IList.Remove(object value)
+        void IList.Remove([DisallowNull] object value)
         {
             if (!(value is T))
             {

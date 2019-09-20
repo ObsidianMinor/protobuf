@@ -31,6 +31,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -48,7 +49,8 @@ namespace Google.Protobuf
         /// Throws an ArgumentNullException if the given value is null, otherwise
         /// return the value to the caller.
         /// </summary>
-        public static T CheckNotNull<T>(T value, string name) where T : class
+        [return: NotNull]
+        public static T CheckNotNull<T>([AllowNull] T value, string name) where T : class
         {
             if (value == null)
             {
@@ -67,7 +69,8 @@ namespace Google.Protobuf
         /// with a value type - but it gets in the way if either you want to use it with a nullable
         /// value type, or you want to use it with an unconstrained type parameter.
         /// </remarks>
-        internal static T CheckNotNullUnconstrained<T>(T value, string name)
+        [return: NotNull]
+        internal static T CheckNotNullUnconstrained<T>([AllowNull] T value, string name)
         {
             if (value == null)
             {

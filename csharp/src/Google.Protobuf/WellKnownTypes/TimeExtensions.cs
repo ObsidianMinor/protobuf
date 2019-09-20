@@ -31,6 +31,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.WellKnownTypes
 {
@@ -45,6 +46,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="dateTime">The date and time to convert to a timestamp.</param>
         /// <exception cref="ArgumentException">The <paramref name="dateTime"/> value has a <see cref="DateTime.Kind"/>other than <c>Utc</c>.</exception>
         /// <returns>The converted timestamp.</returns>
+        [return: NotNull]
         public static Timestamp ToTimestamp(this DateTime dateTime)
         {
             return Timestamp.FromDateTime(dateTime);
@@ -58,6 +60,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// roundtrip operation to retrieve the original <c>DateTimeOffset</c>.</remarks>
         /// <param name="dateTimeOffset">The date and time (with UTC offset) to convert to a timestamp.</param>
         /// <returns>The converted timestamp.</returns>
+        [return: NotNull]
         public static Timestamp ToTimestamp(this DateTimeOffset dateTimeOffset)
         {
             return Timestamp.FromDateTimeOffset(dateTimeOffset);
@@ -68,6 +71,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="timeSpan">The time span to convert.</param>
         /// <returns>The converted duration.</returns>
+        [return: NotNull]
         public static Duration ToDuration(this TimeSpan timeSpan)
         {
             return Duration.FromTimeSpan(timeSpan);

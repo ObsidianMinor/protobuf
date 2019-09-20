@@ -39,6 +39,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -100,6 +101,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns a formatter using the default settings.
         /// </summary>
+        [NotNull]
         public static JsonParser Default { get { return defaultInstance; } }
 
         private readonly Settings settings;
@@ -108,7 +110,7 @@ namespace Google.Protobuf
         /// Creates a new formatted with the given settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        public JsonParser(Settings settings)
+        public JsonParser([DisallowNull] Settings settings)
         {
             this.settings = settings;
         }
@@ -378,7 +380,8 @@ namespace Google.Protobuf
         /// <param name="json">The JSON to parse.</param>
         /// <exception cref="InvalidJsonException">The JSON does not comply with RFC 7159</exception>
         /// <exception cref="InvalidProtocolBufferException">The JSON does not represent a Protocol Buffers message correctly</exception>
-        public T Parse<T>(string json) where T : IMessage, new()
+        [return: NotNull]
+        public T Parse<T>([DisallowNull] string json) where T : IMessage, new()
         {
             ProtoPreconditions.CheckNotNull(json, nameof(json));
             return Parse<T>(new StringReader(json));
@@ -391,7 +394,8 @@ namespace Google.Protobuf
         /// <param name="jsonReader">Reader providing the JSON to parse.</param>
         /// <exception cref="InvalidJsonException">The JSON does not comply with RFC 7159</exception>
         /// <exception cref="InvalidProtocolBufferException">The JSON does not represent a Protocol Buffers message correctly</exception>
-        public T Parse<T>(TextReader jsonReader) where T : IMessage, new()
+        [return: NotNull]
+        public T Parse<T>([DisallowNull] TextReader jsonReader) where T : IMessage, new()
         {
             ProtoPreconditions.CheckNotNull(jsonReader, nameof(jsonReader));
             T message = new T();
@@ -406,7 +410,8 @@ namespace Google.Protobuf
         /// <param name="descriptor">Descriptor of message type to parse.</param>
         /// <exception cref="InvalidJsonException">The JSON does not comply with RFC 7159</exception>
         /// <exception cref="InvalidProtocolBufferException">The JSON does not represent a Protocol Buffers message correctly</exception>
-        public IMessage Parse(string json, MessageDescriptor descriptor)
+        [return: NotNull]
+        public IMessage Parse([DisallowNull] string json, [DisallowNull] MessageDescriptor descriptor)
         {
             ProtoPreconditions.CheckNotNull(json, nameof(json));
             ProtoPreconditions.CheckNotNull(descriptor, nameof(descriptor));
@@ -420,7 +425,8 @@ namespace Google.Protobuf
         /// <param name="descriptor">Descriptor of message type to parse.</param>
         /// <exception cref="InvalidJsonException">The JSON does not comply with RFC 7159</exception>
         /// <exception cref="InvalidProtocolBufferException">The JSON does not represent a Protocol Buffers message correctly</exception>
-        public IMessage Parse(TextReader jsonReader, MessageDescriptor descriptor)
+        [return: NotNull]
+        public IMessage Parse([DisallowNull] TextReader jsonReader, [DisallowNull] MessageDescriptor descriptor)
         {
             ProtoPreconditions.CheckNotNull(jsonReader, nameof(jsonReader));
             ProtoPreconditions.CheckNotNull(descriptor, nameof(descriptor));
@@ -980,6 +986,7 @@ namespace Google.Protobuf
             /// Default settings, as used by <see cref="JsonParser.Default"/>. This has the same default
             /// recursion limit as <see cref="CodedInputStream"/>, and an empty type registry.
             /// </summary>
+            [NotNull]
             public static Settings Default { get; }
 
             // Workaround for the Mono compiler complaining about XML comments not being on
@@ -999,6 +1006,7 @@ namespace Google.Protobuf
             /// <summary>
             /// The type registry used to parse <see cref="Any"/> messages.
             /// </summary>
+            [NotNull]
             public TypeRegistry TypeRegistry { get; }
 
             /// <summary>
@@ -1027,7 +1035,7 @@ namespace Google.Protobuf
             /// </summary>
             /// <param name="recursionLimit">The maximum depth of messages to parse</param>
             /// <param name="typeRegistry">The type registry used to parse <see cref="Any"/> messages</param>
-            public Settings(int recursionLimit, TypeRegistry typeRegistry) : this(recursionLimit, typeRegistry, false)
+            public Settings(int recursionLimit, [DisallowNull] TypeRegistry typeRegistry) : this(recursionLimit, typeRegistry, false)
             {
             }
 
@@ -1036,6 +1044,7 @@ namespace Google.Protobuf
             /// when unknown fields are encountered.
             /// </summary>
             /// <param name="ignoreUnknownFields"><c>true</c> if unknown fields should be ignored when parsing; <c>false</c> to throw an exception.</param>
+            [return: NotNull]
             public Settings WithIgnoreUnknownFields(bool ignoreUnknownFields) =>
                 new Settings(RecursionLimit, TypeRegistry, ignoreUnknownFields);
 
@@ -1043,6 +1052,7 @@ namespace Google.Protobuf
             /// Creates a new <see cref="Settings"/> object based on this one, but with the specified recursion limit.
             /// </summary>
             /// <param name="recursionLimit">The new recursion limit.</param>
+            [return: NotNull]
             public Settings WithRecursionLimit(int recursionLimit) =>
                 new Settings(recursionLimit, TypeRegistry, IgnoreUnknownFields);
 
@@ -1050,7 +1060,8 @@ namespace Google.Protobuf
             /// Creates a new <see cref="Settings"/> object based on this one, but with the specified type registry.
             /// </summary>
             /// <param name="typeRegistry">The new type registry. Must not be null.</param>
-            public Settings WithTypeRegistry(TypeRegistry typeRegistry) =>
+            [return: NotNull]
+            public Settings WithTypeRegistry([DisallowNull] TypeRegistry typeRegistry) =>
                 new Settings(
                     RecursionLimit,
                     ProtoPreconditions.CheckNotNull(typeRegistry, nameof(typeRegistry)),

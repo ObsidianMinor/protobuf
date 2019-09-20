@@ -32,6 +32,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Collections
 {
@@ -44,7 +45,7 @@ namespace Google.Protobuf.Collections
         /// <summary>
         /// Checks if two lists are equal.
         /// </summary>
-        public static bool Equals<T>(List<T> left, List<T> right)
+        public static bool Equals<T>([AllowNull] List<T> left, [AllowNull] List<T> right)
         {
             if (left == right)
             {
@@ -72,7 +73,7 @@ namespace Google.Protobuf.Collections
         /// <summary>
         /// Gets the list's hash code.
         /// </summary>
-        public static int GetHashCode<T>(List<T> list)
+        public static int GetHashCode<T>([AllowNull] List<T> list)
         {
             if (list == null)
             {

@@ -30,6 +30,8 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Google.Protobuf.Reflection
 {
     /// <summary>
@@ -40,16 +42,19 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Returns the name of the entity (message, field etc) being described.
         /// </summary>
+        [NotNull]
         string Name { get; }
 
         /// <summary>
         /// Returns the fully-qualified name of the entity being described.
         /// </summary>
+        [NotNull]
         string FullName { get; }
 
         /// <summary>
         /// Returns the descriptor for the .proto file that this entity is part of.
         /// </summary>
+        [NotNull]
         FileDescriptor File { get; }
     }
 }

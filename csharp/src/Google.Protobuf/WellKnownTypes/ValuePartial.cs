@@ -30,6 +30,8 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Google.Protobuf.WellKnownTypes
 {
     public partial class Value
@@ -39,7 +41,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="value">Value to set for the StringValue property.</param>
         /// <returns>A newly-created Value message with the given value.</returns>
-        public static Value ForString(string value)
+        [return: NotNull]
+        public static Value ForString([DisallowNull] string value)
         {
             ProtoPreconditions.CheckNotNull(value, "value");
             return new Value { StringValue = value };
@@ -50,6 +53,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="value">Value to set for the NumberValue property.</param>
         /// <returns>A newly-created Value message with the given value.</returns>
+        [return: NotNull]
         public static Value ForNumber(double value)
         {
             return new Value { NumberValue = value };
@@ -60,6 +64,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="value">Value to set for the BoolValue property.</param>
         /// <returns>A newly-created Value message with the given value.</returns>
+        [return: NotNull]
         public static Value ForBool(bool value)
         {
             return new Value { BoolValue = value };
@@ -69,6 +74,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// Convenience method to create a Value message with a null initial value.
         /// </summary>
         /// <returns>A newly-created Value message a null initial value.</returns>
+        [return: NotNull]
         public static Value ForNull()
         {
             return new Value { NullValue = 0 };
@@ -79,7 +85,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <remarks>The values provided are not cloned; the references are copied directly.</remarks>
         /// <returns>A newly-created Value message an initial list value.</returns>
-        public static Value ForList(params Value[] values)
+        [return: NotNull]
+        public static Value ForList([DisallowNull] params Value[] values)
         {
             ProtoPreconditions.CheckNotNull(values, "values");
             return new Value { ListValue = new ListValue { Values = { values } } };
@@ -90,7 +97,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <remarks>The value provided is not cloned; the reference is copied directly.</remarks>
         /// <returns>A newly-created Value message an initial struct value.</returns>
-        public static Value ForStruct(Struct value)
+        [return: NotNull]
+        public static Value ForStruct([DisallowNull] Struct value)
         {
             ProtoPreconditions.CheckNotNull(value, "value");
             return new Value { StructValue = value };

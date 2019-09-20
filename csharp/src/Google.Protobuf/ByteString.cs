@@ -42,6 +42,7 @@ using System.Threading.Tasks;
 #if NET35
 using Google.Protobuf.Compatibility;
 #endif
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -89,6 +90,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns an empty ByteString.
         /// </summary>
+        [NotNull]
         public static ByteString Empty
         {
             get { return empty; }
@@ -123,6 +125,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <remarks>The data is copied - changes to the returned array will not be reflected in this <c>ByteString</c>.</remarks>
         /// <returns>A byte array with the same data as this <c>ByteString</c>.</returns>
+        [return: NotNull]
         public byte[] ToByteArray()
         {
             return (byte[]) bytes.Clone();
@@ -132,6 +135,7 @@ namespace Google.Protobuf
         /// Converts this <see cref="ByteString"/> into a standard base64 representation.
         /// </summary>
         /// <returns>A base64 representation of this <c>ByteString</c>.</returns>
+        [return: NotNull]
         public string ToBase64()
         {
             return Convert.ToBase64String(bytes);
@@ -140,6 +144,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Constructs a <see cref="ByteString" /> from the Base64 Encoded String.
         /// </summary>
+        [return: NotNull]
         public static ByteString FromBase64(string bytes)
         {
             // By handling the empty string explicitly, we not only optimize but we fix a
@@ -154,6 +159,7 @@ namespace Google.Protobuf
         /// at the start of the call.</remarks>
         /// <param name="stream">The stream to copy into a ByteString.</param>
         /// <returns>A ByteString with content read from the given stream.</returns>
+        [return: NotNull]
         public static ByteString FromStream(Stream stream)
         {
             ProtoPreconditions.CheckNotNull(stream, nameof(stream));
@@ -178,7 +184,8 @@ namespace Google.Protobuf
         /// <param name="stream">The stream to copy into a ByteString.</param>
         /// <param name="cancellationToken">The cancellation token to use when reading from the stream, if any.</param>
         /// <returns>A ByteString with content read from the given stream.</returns>
-        public async static Task<ByteString> FromStreamAsync(Stream stream, CancellationToken cancellationToken = default(CancellationToken))
+        [return: NotNull]
+        public async static Task<ByteString> FromStreamAsync([DisallowNull] Stream stream, CancellationToken cancellationToken = default(CancellationToken))
         {
             ProtoPreconditions.CheckNotNull(stream, nameof(stream));
             int capacity = stream.CanSeek ? checked((int) (stream.Length - stream.Position)) : 0;
@@ -203,7 +210,8 @@ namespace Google.Protobuf
         /// This method can also be invoked in <c>ByteString.CopyFrom(0xaa, 0xbb, ...)</c> form
         /// which is primarily useful for testing.
         /// </summary>
-        public static ByteString CopyFrom(params byte[] bytes)
+        [return: NotNull]
+        public static ByteString CopyFrom([DisallowNull] params byte[] bytes)
         {
             return new ByteString((byte[]) bytes.Clone());
         }
@@ -211,7 +219,8 @@ namespace Google.Protobuf
         /// <summary>
         /// Constructs a <see cref="ByteString" /> from a portion of a byte array.
         /// </summary>
-        public static ByteString CopyFrom(byte[] bytes, int offset, int count)
+        [return: NotNull]
+        public static ByteString CopyFrom([DisallowNull] byte[] bytes, int offset, int count)
         {
             byte[] portion = new byte[count];
             ByteArray.Copy(bytes, offset, portion, 0, count);
@@ -224,6 +233,7 @@ namespace Google.Protobuf
         /// are copied, so further modifications to the span will not
         /// be reflected in the returned <see cref="ByteString" />.
         /// </summary>
+        [return: NotNull]
         public static ByteString CopyFrom(ReadOnlySpan<byte> bytes)
         {
             return new ByteString(bytes.ToArray());
@@ -234,7 +244,8 @@ namespace Google.Protobuf
         /// Creates a new <see cref="ByteString" /> by encoding the specified text with
         /// the given encoding.
         /// </summary>
-        public static ByteString CopyFrom(string text, Encoding encoding)
+        [return: NotNull]
+        public static ByteString CopyFrom([DisallowNull] string text, [DisallowNull] Encoding encoding)
         {
             return new ByteString(encoding.GetBytes(text));
         }
@@ -242,7 +253,8 @@ namespace Google.Protobuf
         /// <summary>
         /// Creates a new <see cref="ByteString" /> by encoding the specified text in UTF-8.
         /// </summary>
-        public static ByteString CopyFromUtf8(string text)
+        [return: NotNull]
+        public static ByteString CopyFromUtf8([DisallowNull] string text)
         {
             return CopyFrom(text, Encoding.UTF8);
         }
@@ -264,7 +276,7 @@ namespace Google.Protobuf
         /// </remarks>
         /// <param name="encoding">The encoding to use to decode the binary data into text.</param>
         /// <returns>The result of decoding the binary data with the given decoding.</returns>
-        public string ToString(Encoding encoding)
+        public string ToString([DisallowNull] Encoding encoding)
         {
             return encoding.GetString(bytes, 0, bytes.Length);
         }
@@ -277,6 +289,7 @@ namespace Google.Protobuf
         /// text with UTF-8.
         /// </remarks>
         /// <returns>The result of decoding the binary data with the given decoding.</returns>
+        [return: NotNull]
         public string ToStringUtf8()
         {
             return ToString(Encoding.UTF8);
@@ -286,6 +299,7 @@ namespace Google.Protobuf
         /// Returns an iterator over the bytes in this <see cref="ByteString"/>.
         /// </summary>
         /// <returns>An iterator over the bytes in this object.</returns>
+        [return: NotNull]
         public IEnumerator<byte> GetEnumerator()
         {
             return ((IEnumerable<byte>) bytes).GetEnumerator();
@@ -295,6 +309,7 @@ namespace Google.Protobuf
         /// Returns an iterator over the bytes in this <see cref="ByteString"/>.
         /// </summary>
         /// <returns>An iterator over the bytes in this object.</returns>
+        [return: NotNull]
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -303,6 +318,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Creates a CodedInputStream from this ByteString's data.
         /// </summary>
+        [return: NotNull]
         public CodedInputStream CreateCodedInput()
         {
             // We trust CodedInputStream not to reveal the provided byte array or modify it
@@ -315,7 +331,7 @@ namespace Google.Protobuf
         /// <param name="lhs">The first byte string to compare.</param>
         /// <param name="rhs">The second byte string to compare.</param>
         /// <returns><c>true</c> if the byte strings are equal; false otherwise.</returns>
-        public static bool operator ==(ByteString lhs, ByteString rhs)
+        public static bool operator ==([AllowNull] ByteString lhs, [AllowNull] ByteString rhs)
         {
             if (ReferenceEquals(lhs, rhs))
             {
@@ -345,7 +361,7 @@ namespace Google.Protobuf
         /// <param name="lhs">The first byte string to compare.</param>
         /// <param name="rhs">The second byte string to compare.</param>
         /// <returns><c>false</c> if the byte strings are equal; true otherwise.</returns>
-        public static bool operator !=(ByteString lhs, ByteString rhs)
+        public static bool operator !=([AllowNull] ByteString lhs, [AllowNull] ByteString rhs)
         {
             return !(lhs == rhs);
         }
@@ -355,7 +371,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="obj">The object to compare this with.</param>
         /// <returns><c>true</c> if <paramref name="obj"/> refers to an equal <see cref="ByteString"/>; <c>false</c> otherwise.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals([AllowNull] object obj)
         {
             return this == (obj as ByteString);
         }
@@ -380,7 +396,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="other">The <see cref="ByteString"/> to compare this with.</param>
         /// <returns><c>true</c> if <paramref name="other"/> refers to an equal byte string; <c>false</c> otherwise.</returns>
-        public bool Equals(ByteString other)
+        public bool Equals([AllowNull] ByteString other)
         {
             return this == other;
         }
@@ -396,7 +412,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Copies the entire byte array to the destination array provided at the offset specified.
         /// </summary>
-        public void CopyTo(byte[] array, int position)
+        public void CopyTo([DisallowNull] byte[] array, int position)
         {
             ByteArray.Copy(bytes, 0, array, position, bytes.Length);
         }
@@ -404,7 +420,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Writes the entire byte array to the provided stream
         /// </summary>
-        public void WriteTo(Stream outputStream)
+        public void WriteTo([DisallowNull] Stream outputStream)
         {
             outputStream.Write(bytes, 0, bytes.Length);
         }

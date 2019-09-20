@@ -35,6 +35,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 using Google.Protobuf.Reflection;
 
 namespace Google.Protobuf.WellKnownTypes
@@ -98,6 +99,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// values.
         /// </remarks>
         /// <returns>A string representation of this value.</returns>
+        [return: NotNull]
         public string ToDiagnosticString()
         {
             return ToJson(Paths, true);
@@ -106,7 +108,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <summary>
         /// Parses from a string to a FieldMask.
         /// </summary>
-        public static FieldMask FromString(string value)
+        [return: NotNull]
+        public static FieldMask FromString([DisallowNull] string value)
         {
             return FromStringEnumerable<Empty>(new List<string>(value.Split(FIELD_PATH_SEPARATOR)));
         }
@@ -115,7 +118,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// Parses from a string to a FieldMask and validates all field paths.
         /// </summary>
         /// <typeparam name="T">The type to validate the field paths against.</typeparam>
-        public static FieldMask FromString<T>(string value) where T : IMessage
+        [return: NotNull]
+        public static FieldMask FromString<T>([DisallowNull] string value) where T : IMessage
         {
             return FromStringEnumerable<T>(new List<string>(value.Split(FIELD_PATH_SEPARATOR)));
         }
@@ -124,7 +128,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// Constructs a FieldMask for a list of field paths in a certain type.
         /// </summary>
         /// <typeparam name="T">The type to validate the field paths against.</typeparam>
-        public static FieldMask FromStringEnumerable<T>(IEnumerable<string> paths) where T : IMessage
+        [return: NotNull]
+        public static FieldMask FromStringEnumerable<T>([DisallowNull] IEnumerable<string> paths) where T : IMessage
         {
             var mask = new FieldMask();
             foreach (var path in paths)
@@ -151,7 +156,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// Constructs a FieldMask from the passed field numbers.
         /// </summary>
         /// <typeparam name="T">The type to validate the field paths against.</typeparam>
-        public static FieldMask FromFieldNumbers<T>(params int[] fieldNumbers) where T : IMessage
+        [return: NotNull]
+        public static FieldMask FromFieldNumbers<T>([DisallowNull] params int[] fieldNumbers) where T : IMessage
         {
             return FromFieldNumbers<T>((IEnumerable<int>)fieldNumbers);
         }
@@ -160,7 +166,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// Constructs a FieldMask from the passed field numbers.
         /// </summary>
         /// <typeparam name="T">The type to validate the field paths against.</typeparam>
-        public static FieldMask FromFieldNumbers<T>(IEnumerable<int> fieldNumbers) where T : IMessage
+        [return: NotNull]
+        public static FieldMask FromFieldNumbers<T>([DisallowNull] IEnumerable<int> fieldNumbers) where T : IMessage
         {
             var descriptor = Activator.CreateInstance<T>().Descriptor;
 
@@ -183,7 +190,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// Checks whether the given path is valid for a field mask.
         /// </summary>
         /// <returns>true if the path is valid; false otherwise</returns>
-        private static bool IsPathValid(string input)
+        private static bool IsPathValid([DisallowNull] string input)
         {
             for (int i = 0; i < input.Length; i++)
             {
@@ -208,7 +215,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// Checks whether paths in a given fields mask are valid.
         /// </summary>
         /// <typeparam name="T">The type to validate the field paths against.</typeparam>
-        public static bool IsValid<T>(FieldMask fieldMask) where T : IMessage
+        public static bool IsValid<T>([DisallowNull] FieldMask fieldMask) where T : IMessage
         {
             var descriptor = Activator.CreateInstance<T>().Descriptor;
 
@@ -218,7 +225,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <summary>
         /// Checks whether paths in a given fields mask are valid.
         /// </summary>
-        public static bool IsValid(MessageDescriptor descriptor, FieldMask fieldMask)
+        public static bool IsValid([DisallowNull] MessageDescriptor descriptor, [DisallowNull] FieldMask fieldMask)
         {
             foreach (var path in fieldMask.Paths)
             {
@@ -235,7 +242,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// Checks whether a given field path is valid.
         /// </summary>
         /// <typeparam name="T">The type to validate the field paths against.</typeparam>
-        public static bool IsValid<T>(string path) where T : IMessage
+        public static bool IsValid<T>([DisallowNull] string path) where T : IMessage
         {
             var descriptor = Activator.CreateInstance<T>().Descriptor;
 
@@ -245,7 +252,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <summary>
         /// Checks whether paths in a given fields mask are valid.
         /// </summary>
-        public static bool IsValid(MessageDescriptor descriptor, string path)
+        public static bool IsValid([DisallowNull] MessageDescriptor descriptor, [DisallowNull] string path)
         {
             var parts = path.Split(FIELD_SEPARATOR_REGEX);
             if (parts.Length == 0)
@@ -280,6 +287,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// FieldMask, all field paths are sorted alphabetically and redundant field
         /// paths are removed.
         /// </summary>
+        [return: NotNull]
         public FieldMask Normalize()
         {
             return new FieldMaskTree(this).ToFieldMask();
@@ -288,7 +296,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <summary>
         /// Creates a union of two or more FieldMasks.
         /// </summary>
-        public FieldMask Union(params FieldMask[] otherMasks)
+        [return: NotNull]
+        public FieldMask Union([DisallowNull] params FieldMask[] otherMasks)
         {
             var maskTree = new FieldMaskTree(this);
             foreach (var mask in otherMasks)
@@ -302,7 +311,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <summary>
         /// Calculates the intersection of two FieldMasks.
         /// </summary>
-        public FieldMask Intersection(FieldMask additionalMask)
+        [return: NotNull]
+        public FieldMask Intersection([DisallowNull] FieldMask additionalMask)
         {
             var tree = new FieldMaskTree(this);
             var result = new FieldMaskTree();
@@ -318,7 +328,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// Merges fields specified by this FieldMask from one message to another with the
         /// specified merge options.
         /// </summary>
-        public void Merge(IMessage source, IMessage destination, MergeOptions options)
+        [return: NotNull]
+        public void Merge([DisallowNull] IMessage source, [DisallowNull] IMessage destination, [DisallowNull] MergeOptions options)
         {
             new FieldMaskTree(this).Merge(source, destination, options);
         }
@@ -326,7 +337,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <summary>
         /// Merges fields specified by this FieldMask from one message to another.
         /// </summary>
-        public void Merge(IMessage source, IMessage destination)
+        [return: NotNull]
+        public void Merge([DisallowNull] IMessage source, [DisallowNull] IMessage destination)
         {
             Merge(source, destination, new MergeOptions());
         }

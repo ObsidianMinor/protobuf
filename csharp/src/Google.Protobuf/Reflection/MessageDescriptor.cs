@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
 #if NET35
 // Needed for ReadOnlyDictionary, which does not exist in .NET 3.5
 using Google.Protobuf.Collections;
@@ -117,6 +118,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The brief name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public override string Name => Proto.Name;
 
         internal override IReadOnlyList<DescriptorBase> GetNestedDescriptorListForField(int fieldNumber)
@@ -168,6 +170,7 @@ namespace Google.Protobuf.Reflection
         /// a wrapper type, and handle the result appropriately.
         /// </para>
         /// </remarks>
+        [MaybeNull]
         public Type ClrType { get; }
 
         /// <summary>
@@ -191,6 +194,7 @@ namespace Google.Protobuf.Reflection
         /// a wrapper type, and handle the result appropriately.
         /// </para>
         /// </remarks>
+        [MaybeNull]
         public MessageParser Parser { get; }
 
         /// <summary>
@@ -207,31 +211,37 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// If this is a nested type, get the outer descriptor, otherwise null.
         /// </value>
+        [MaybeNull]
         public MessageDescriptor ContainingType { get; }
 
         /// <value>
         /// A collection of fields, which can be retrieved by name or field number.
         /// </value>
+        [NotNull]
         public FieldCollection Fields { get; }
 
         /// <summary>
         /// An unmodifiable list of extensions defined in this message's scrope
         /// </summary>
+        [NotNull]
         public ExtensionCollection Extensions { get; }
 
         /// <value>
         /// An unmodifiable list of this message type's nested types.
         /// </value>
+        [NotNull]
         public IList<MessageDescriptor> NestedTypes { get; }
 
         /// <value>
         /// An unmodifiable list of this message type's enum types.
         /// </value>
+        [NotNull]
         public IList<EnumDescriptor> EnumTypes { get; }
 
         /// <value>
         /// An unmodifiable list of the "oneof" field collections in this message type.
         /// </value>
+        [NotNull]
         public IList<OneofDescriptor> Oneofs { get; }
 
         /// <summary>
@@ -239,13 +249,15 @@ namespace Google.Protobuf.Reflection
         /// </summary>
         /// <param name="name">The unqualified name of the field (e.g. "foo").</param>
         /// <returns>The field's descriptor, or null if not found.</returns>
-        public FieldDescriptor FindFieldByName(String name) => File.DescriptorPool.FindSymbol<FieldDescriptor>(FullName + "." + name);
+        [return: MaybeNull]
+        public FieldDescriptor FindFieldByName([DisallowNull] String name) => File.DescriptorPool.FindSymbol<FieldDescriptor>(FullName + "." + name);
 
         /// <summary>
         /// Finds a field by field number.
         /// </summary>
         /// <param name="number">The field number within this message type.</param>
         /// <returns>The field's descriptor, or null if not found.</returns>
+        [return: MaybeNull]
         public FieldDescriptor FindFieldByNumber(int number) => File.DescriptorPool.FindFieldByNumber(this, number);
 
         /// <summary>
@@ -254,19 +266,22 @@ namespace Google.Protobuf.Reflection
         /// </summary>
         /// <param name="name">The unqualified name of the descriptor, e.g. "Foo"</param>
         /// <returns>The descriptor, or null if not found.</returns>
-        public T FindDescriptor<T>(string name)  where T : class, IDescriptor =>
+        [return: MaybeNull]
+        public T FindDescriptor<T>([DisallowNull] string name)  where T : class, IDescriptor =>
             File.DescriptorPool.FindSymbol<T>(FullName + "." + name);
 
         /// <summary>
         /// The (possibly empty) set of custom options for this message.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<MessageOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<MessageOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -275,7 +290,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public Collections.RepeatedField<T> GetOption<T>(RepeatedExtension<MessageOptions, T> extension)
+        [return: MaybeNull]
+        public Collections.RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<MessageOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }
@@ -319,6 +335,7 @@ namespace Google.Protobuf.Reflection
             /// Returns the fields in the message as an immutable list, in the order in which they
             /// are declared in the source .proto file.
             /// </value>
+            [return: NotNull]
             public IList<FieldDescriptor> InDeclarationOrder() => messageDescriptor.fieldsInDeclarationOrder;
 
             /// <value>
@@ -327,6 +344,7 @@ namespace Google.Protobuf.Reflection
             /// index in the list to the field number; to retrieve a field by field number, it is better
             /// to use the <see cref="FieldCollection"/> indexer.
             /// </value>
+            [return: NotNull]
             public IList<FieldDescriptor> InFieldNumberOrder() => messageDescriptor.fieldsInNumberOrder;
 
             // TODO: consider making this public in the future. (Being conservative for now...)
@@ -346,6 +364,7 @@ namespace Google.Protobuf.Reflection
             /// <returns>The accessor for the given field</returns>
             /// <exception cref="KeyNotFoundException">The message descriptor does not contain a field
             /// with the given number</exception>
+            [NotNull]
             public FieldDescriptor this[int number]
             {
                 get
@@ -366,7 +385,8 @@ namespace Google.Protobuf.Reflection
             /// <returns>The descriptor for the given field</returns>
             /// <exception cref="KeyNotFoundException">The message descriptor does not contain a field
             /// with the given name</exception>
-            public FieldDescriptor this[string name]
+            [NotNull]
+            public FieldDescriptor this[[DisallowNull] string name]
             {
                 get
                 {

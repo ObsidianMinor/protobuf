@@ -40,6 +40,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf
 {
@@ -68,6 +69,7 @@ namespace Google.Protobuf
         /// <summary>
         /// Returns a formatter using the default settings.
         /// </summary>
+        [NotNull]
         public static JsonFormatter Default { get; } = new JsonFormatter(Settings.Default);
 
         // A JSON formatter which *only* exists
@@ -131,7 +133,7 @@ namespace Google.Protobuf
         /// Creates a new formatted with the given settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        public JsonFormatter(Settings settings)
+        public JsonFormatter([DisallowNull] Settings settings)
         {
             this.settings = settings;
         }
@@ -141,7 +143,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="message">The message to format.</param>
         /// <returns>The formatted message.</returns>
-        public string Format(IMessage message)
+        public string Format([DisallowNull] IMessage message)
         {
             var writer = new StringWriter();
             Format(message, writer);
@@ -154,7 +156,7 @@ namespace Google.Protobuf
         /// <param name="message">The message to format.</param>
         /// <param name="writer">The TextWriter to write the formatted message to.</param>
         /// <returns>The formatted message.</returns>
-        public void Format(IMessage message, TextWriter writer)
+        public void Format([DisallowNull] IMessage message, [DisallowNull] TextWriter writer)
         {
             ProtoPreconditions.CheckNotNull(message, nameof(message));
             ProtoPreconditions.CheckNotNull(writer, nameof(writer));
@@ -186,7 +188,8 @@ namespace Google.Protobuf
         /// </remarks>
         /// <param name="message">The message to format for diagnostic purposes.</param>
         /// <returns>The diagnostic-only JSON representation of the message</returns>
-        public static string ToDiagnosticString(IMessage message)
+        [return: NotNull]
+        public static string ToDiagnosticString([DisallowNull] IMessage message)
         {
             ProtoPreconditions.CheckNotNull(message, nameof(message));
             return diagnosticFormatter.Format(message);
@@ -350,7 +353,7 @@ namespace Google.Protobuf
         /// </summary>
         /// <param name="writer">The writer to write the value to. Must not be null.</param>
         /// <param name="value">The value to write. May be null.</param>
-        public void WriteValue(TextWriter writer, object value)
+        public void WriteValue([DisallowNull] TextWriter writer, [AllowNull] object value)
         {
             if (value == null)
             {
@@ -783,6 +786,7 @@ namespace Google.Protobuf
             /// <summary>
             /// Default settings, as used by <see cref="JsonFormatter.Default"/>
             /// </summary>
+            [NotNull]
             public static Settings Default { get; }
 
             // Workaround for the Mono compiler complaining about XML comments not being on
@@ -801,6 +805,7 @@ namespace Google.Protobuf
             /// <summary>
             /// The type registry used to format <see cref="Any"/> messages.
             /// </summary>
+            [NotNull]
             public TypeRegistry TypeRegistry { get; }
 
             /// <summary>
@@ -824,7 +829,7 @@ namespace Google.Protobuf
             /// </summary>
             /// <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc) should be formatted; <c>false</c> otherwise.</param>
             /// <param name="typeRegistry">The <see cref="TypeRegistry"/> to use when formatting <see cref="Any"/> messages.</param>
-            public Settings(bool formatDefaultValues, TypeRegistry typeRegistry) : this(formatDefaultValues, typeRegistry, false)
+            public Settings(bool formatDefaultValues, [AllowNull] TypeRegistry typeRegistry) : this(formatDefaultValues, typeRegistry, false)
             {
             }
 
@@ -847,18 +852,21 @@ namespace Google.Protobuf
             /// Creates a new <see cref="Settings"/> object with the specified formatting of default values and the current settings.
             /// </summary>
             /// <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc) should be formatted; <c>false</c> otherwise.</param>
+            [return: NotNull]
             public Settings WithFormatDefaultValues(bool formatDefaultValues) => new Settings(formatDefaultValues, TypeRegistry, FormatEnumsAsIntegers);
 
             /// <summary>
             /// Creates a new <see cref="Settings"/> object with the specified type registry and the current settings.
             /// </summary>
             /// <param name="typeRegistry">The <see cref="TypeRegistry"/> to use when formatting <see cref="Any"/> messages.</param>
-            public Settings WithTypeRegistry(TypeRegistry typeRegistry) => new Settings(FormatDefaultValues, typeRegistry, FormatEnumsAsIntegers);
+            [return: NotNull]
+            public Settings WithTypeRegistry([AllowNull] TypeRegistry typeRegistry) => new Settings(FormatDefaultValues, typeRegistry, FormatEnumsAsIntegers);
 
             /// <summary>
             /// Creates a new <see cref="Settings"/> object with the specified enums formatting option and the current settings.
             /// </summary>
             /// <param name="formatEnumsAsIntegers"><c>true</c> to format the enums as integers; <c>false</c> to format enums as enum names.</param>
+            [return: NotNull]
             public Settings WithFormatEnumsAsIntegers(bool formatEnumsAsIntegers) => new Settings(FormatDefaultValues, TypeRegistry, formatEnumsAsIntegers);
         }
 

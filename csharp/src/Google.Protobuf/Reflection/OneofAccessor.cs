@@ -32,6 +32,7 @@
 
 using System;
 using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
 using Google.Protobuf.Compatibility;
 
 namespace Google.Protobuf.Reflection
@@ -64,12 +65,13 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The descriptor of the oneof.
         /// </value>
+        [NotNull]
         public OneofDescriptor Descriptor { get { return descriptor; } }
 
         /// <summary>
         /// Clears the oneof in the specified message.
         /// </summary>
-        public void Clear(IMessage message)
+        public void Clear([DisallowNull] IMessage message)
         {
             clearDelegate(message);
         }
@@ -77,7 +79,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Indicates which field in the oneof is set for specified message
         /// </summary>
-        public FieldDescriptor GetCaseFieldDescriptor(IMessage message)
+        [return: MaybeNull]
+        public FieldDescriptor GetCaseFieldDescriptor([DisallowNull] IMessage message)
         {
             int fieldNumber = caseDelegate(message);
             if (fieldNumber > 0)

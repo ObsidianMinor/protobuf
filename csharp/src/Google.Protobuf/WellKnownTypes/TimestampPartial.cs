@@ -33,6 +33,7 @@
 using System;
 using System.Globalization;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.WellKnownTypes
 {
@@ -57,7 +58,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="lhs">The timestamp to subtract from. Must not be null.</param>
         /// <param name="rhs">The timestamp to subtract. Must not be null.</param>
         /// <returns>The difference between the two specified timestamps.</returns>
-        public static Duration operator -(Timestamp lhs, Timestamp rhs)
+        [return: NotNull]
+        public static Duration operator -([DisallowNull] Timestamp lhs, [DisallowNull] Timestamp rhs)
         {
             ProtoPreconditions.CheckNotNull(lhs, "lhs");
             ProtoPreconditions.CheckNotNull(rhs, "rhs");
@@ -73,7 +75,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="lhs">The timestamp to add the duration to. Must not be null.</param>
         /// <param name="rhs">The duration to add. Must not be null.</param>
         /// <returns>The result of adding the duration to the timestamp.</returns>
-        public static Timestamp operator +(Timestamp lhs, Duration rhs)
+        [return: NotNull]
+        public static Timestamp operator +([DisallowNull] Timestamp lhs, [DisallowNull] Duration rhs)
         {
             ProtoPreconditions.CheckNotNull(lhs, "lhs");
             ProtoPreconditions.CheckNotNull(rhs, "rhs");
@@ -89,7 +92,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="lhs">The timestamp to subtract the duration from. Must not be null.</param>
         /// <param name="rhs">The duration to subtract.</param>
         /// <returns>The result of subtracting the duration from the timestamp.</returns>
-        public static Timestamp operator -(Timestamp lhs, Duration rhs)
+        [return: NotNull]
+        public static Timestamp operator -([DisallowNull] Timestamp lhs, [DisallowNull] Duration rhs)
         {
             ProtoPreconditions.CheckNotNull(lhs, "lhs");
             ProtoPreconditions.CheckNotNull(rhs, "rhs");
@@ -143,6 +147,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="dateTime"></param>
         /// <exception cref="ArgumentException">The <c>Kind</c> of <paramref name="dateTime"/> is not <c>DateTimeKind.Utc</c>.</exception>
         /// <returns>The converted timestamp.</returns>
+        [return: NotNull]
         public static Timestamp FromDateTime(DateTime dateTime)
         {
             if (dateTime.Kind != DateTimeKind.Utc)
@@ -163,6 +168,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// roundtrip operation to retrieve the original <c>DateTimeOffset</c>.</remarks>
         /// <param name="dateTimeOffset">The date and time (with UTC offset) to convert to a timestamp.</param>
         /// <returns>The converted timestamp.</returns>
+        [return: NotNull]
         public static Timestamp FromDateTimeOffset(DateTimeOffset dateTimeOffset)
         {
             // We don't need to worry about this having negative ticks: DateTimeOffset is constrained to handle
@@ -230,7 +236,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </remarks>
         /// <param name="other">Timestamp to compare</param>
         /// <returns>an integer indicating whether this timestamp precedes or follows the other</returns>
-        public int CompareTo(Timestamp other)
+        public int CompareTo([AllowNull] Timestamp other)
         {
             return other == null ? 1
                 : Seconds < other.Seconds ? -1
@@ -249,7 +255,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>true if a precedes b</returns>
-        public static bool operator <(Timestamp a, Timestamp b)
+        public static bool operator <([AllowNull] Timestamp a, [AllowNull] Timestamp b)
         {
             return a.CompareTo(b) < 0;
         }
@@ -263,7 +269,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>true if a follows b</returns>
-        public static bool operator >(Timestamp a, Timestamp b)
+        public static bool operator >([AllowNull] Timestamp a, [AllowNull] Timestamp b)
         {
             return a.CompareTo(b) > 0;
         }
@@ -277,7 +283,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>true if a precedes b</returns>
-        public static bool operator <=(Timestamp a, Timestamp b)
+        public static bool operator <=([AllowNull] Timestamp a, [AllowNull] Timestamp b)
         {
             return a.CompareTo(b) <= 0;
         }
@@ -291,7 +297,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>true if a follows b</returns>
-        public static bool operator >=(Timestamp a, Timestamp b)
+        public static bool operator >=([AllowNull] Timestamp a, [AllowNull] Timestamp b)
         {
             return a.CompareTo(b) >= 0;
         }
@@ -306,7 +312,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>true if the two timestamps refer to the same nanosecond</returns>
-        public static bool operator ==(Timestamp a, Timestamp b)
+        public static bool operator ==([AllowNull] Timestamp a, [AllowNull] Timestamp b)
         {
             return ReferenceEquals(a, b) || (ReferenceEquals(a, null) ? (ReferenceEquals(b, null) ? true : false) : a.Equals(b));
         }
@@ -320,7 +326,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns>true if the two timestamps differ</returns>
-        public static bool operator !=(Timestamp a, Timestamp b)
+        public static bool operator !=([AllowNull] Timestamp a, [AllowNull] Timestamp b)
         {
             return !(a == b);
         }
@@ -336,6 +342,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// values.
         /// </remarks>
         /// <returns>A string representation of this value.</returns>
+        [return: NotNull]
         public string ToDiagnosticString()
         {
             return ToJson(Seconds, Nanos, true);

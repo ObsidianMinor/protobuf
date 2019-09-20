@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
 namespace Google.Protobuf.Reflection
@@ -48,6 +49,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The descriptor this declaration relates to.
         /// </summary>
+        [NotNull]
         public IDescriptor Descriptor { get; }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace Google.Protobuf.Reflection
         /// are represented as a newline-separated string. Leading whitespace and the comment marker ("//")
         /// are removed from each line.
         /// </summary>
+        [NotNull]
         public string LeadingComments { get; }
 
         /// <summary>
@@ -81,6 +84,7 @@ namespace Google.Protobuf.Reflection
         /// are represented as a newline-separated string. Leading whitespace and the comment marker ("//")
         /// are removed from each line.
         /// </summary>
+        [NotNull]
         public string TrailingComments { get; }
 
         /// <summary>
@@ -89,6 +93,7 @@ namespace Google.Protobuf.Reflection
         /// Leading whitespace and the comment marker ("//") are removed from each line.
         /// The list is never null, but may be empty. Likewise each element is never null, but may be empty.
         /// </summary>
+        [NotNull]
         public IReadOnlyList<string> LeadingDetachedComments { get; }
 
         private DescriptorDeclaration(IDescriptor descriptor, Location location)

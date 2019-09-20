@@ -33,6 +33,7 @@
 using Google.Protobuf.Collections;
 using Google.Protobuf.Compatibility;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -51,17 +52,20 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Get the field's containing message type, or <c>null</c> if it is a field defined at the top level of a file as an extension.
         /// </summary>
+        [MaybeNull]
         public MessageDescriptor ContainingType { get; }
 
         /// <summary>
         /// Returns the oneof containing this field, or <c>null</c> if it is not part of a oneof.
         /// </summary>
+        [MaybeNull]
         public OneofDescriptor ContainingOneof { get; }
 
         /// <summary>
         /// The effective JSON name for this field. This is usually the lower-camel-cased form of the field name,
         /// but can be overridden using the <c>json_name</c> option in the .proto file.
         /// </summary>
+        [NotNull]
         public string JsonName { get; }
 
         internal FieldDescriptorProto Proto { get; }
@@ -69,6 +73,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// An extension identifier for this field, or <c>null</c> if this field isn't an extension.
         /// </summary>
+        [MaybeNull]
         public Extension Extension { get; }
 
         internal FieldDescriptor(FieldDescriptorProto proto, FileDescriptor file,
@@ -111,6 +116,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The brief name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public override string Name => Proto.Name;
 
         /// <summary>
@@ -136,6 +142,7 @@ namespace Google.Protobuf.Reflection
         /// them.
         /// </para>
         /// </remarks>
+        [MaybeNull]
         public IFieldAccessor Accessor => accessor;
 
         /// <summary>
@@ -240,7 +247,7 @@ namespace Google.Protobuf.Reflection
         /// must be a field of the same type, i.e. the <see cref="ContainingType"/> of
         /// both fields must be the same.
         /// </summary>
-        public int CompareTo(FieldDescriptor other)
+        public int CompareTo([NotNull] FieldDescriptor other)
         {
             if (other.ContainingType != ContainingType)
             {
@@ -253,6 +260,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// For enum fields, returns the field's type.
         /// </summary>
+        [NotNull]
         public EnumDescriptor EnumType
         {
             get
@@ -268,6 +276,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// For embedded message and group fields, returns the field's type.
         /// </summary>
+        [NotNull]
         public MessageDescriptor MessageType
         {
             get
@@ -283,6 +292,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// For extension fields, returns the extended type
         /// </summary>
+        [NotNull]
         public MessageDescriptor ExtendeeType
         {
             get
@@ -299,12 +309,14 @@ namespace Google.Protobuf.Reflection
         /// The (possibly empty) set of custom options for this field.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<FieldOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<FieldOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -313,7 +325,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<FieldOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<FieldOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }

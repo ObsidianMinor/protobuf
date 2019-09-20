@@ -38,6 +38,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using System.Diagnostics.CodeAnalysis;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
 namespace Google.Protobuf.Reflection
@@ -257,57 +258,68 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The file name.
         /// </value>
+        [NotNull]
         public string Name => Proto.Name;
 
         /// <summary>
         /// The package as declared in the .proto file. This may or may not
         /// be equivalent to the .NET namespace of the generated classes.
         /// </summary>
+        [NotNull]
         public string Package => Proto.Package;
 
         /// <value>
         /// Unmodifiable list of top-level message types declared in this file.
         /// </value>
+        [NotNull]
         public IList<MessageDescriptor> MessageTypes { get; }
 
         /// <value>
         /// Unmodifiable list of top-level enum types declared in this file.
         /// </value>
+        [NotNull]
         public IList<EnumDescriptor> EnumTypes { get; }
 
         /// <value>
         /// Unmodifiable list of top-level services declared in this file.
         /// </value>
+        [NotNull]
         public IList<ServiceDescriptor> Services { get; }
 
         /// <summary>
         /// Unmodifiable list of top-level extensions declared in this file.
         /// </summary>
+        [NotNull]
         public ExtensionCollection Extensions { get; }
 
         /// <value>
         /// Unmodifiable list of this file's dependencies (imports).
         /// </value>
+        [NotNull]
         public IList<FileDescriptor> Dependencies { get; }
 
         /// <value>
         /// Unmodifiable list of this file's public dependencies (public imports).
         /// </value>
+        [NotNull]
         public IList<FileDescriptor> PublicDependencies { get; }
 
         /// <value>
         /// The original serialized binary form of this descriptor.
         /// </value>
+        [NotNull]
         public ByteString SerializedData { get; }
 
         /// <value>
         /// Implementation of IDescriptor.FullName - just returns the same as Name.
         /// </value>
+        [NotNull]
         string IDescriptor.FullName => Name;
 
         /// <value>
         /// Implementation of IDescriptor.File - just returns this descriptor.
         /// </value>
+        [NotNull]
         FileDescriptor IDescriptor.File => this;
 
         /// <value>
@@ -321,6 +333,7 @@ namespace Google.Protobuf.Reflection
         /// <param name="name">The unqualified type name to look for.</param>
         /// <typeparam name="T">The type of descriptor to look for</typeparam>
         /// <returns>The type's descriptor, or null if not found.</returns>
+        [return: MaybeNull]
         public T FindTypeByName<T>(String name)
             where T : class, IDescriptor
         {
@@ -413,10 +426,11 @@ namespace Google.Protobuf.Reflection
         /// which creates the appropriate dependencies etc. It has to be public because the generated
         /// code is "external", but should not be called directly by end users.
         /// </remarks>
+        [return: NotNull]
         public static FileDescriptor FromGeneratedCode(
-            byte[] descriptorData,
-            FileDescriptor[] dependencies,
-            GeneratedClrTypeInfo generatedCodeInfo)
+            [DisallowNull] byte[] descriptorData,
+            [DisallowNull] FileDescriptor[] dependencies,
+            [DisallowNull] GeneratedClrTypeInfo generatedCodeInfo)
         {
             ExtensionRegistry registry = new ExtensionRegistry();
             AddAllExtensions(dependencies, generatedCodeInfo, registry);
@@ -476,7 +490,8 @@ namespace Google.Protobuf.Reflection
         /// depends on C, then the descriptors must be presented in the order C, B, A.) This is compatible
         /// with the order in which protoc provides descriptors to plugins.</param>
         /// <returns>The file descriptors corresponding to <paramref name="descriptorData"/>.</returns>
-        public static IReadOnlyList<FileDescriptor> BuildFromByteStrings(IEnumerable<ByteString> descriptorData)
+        [return: NotNull]
+        public static IReadOnlyList<FileDescriptor> BuildFromByteStrings([DisallowNull] IEnumerable<ByteString> descriptorData)
         {
             ProtoPreconditions.CheckNotNull(descriptorData, nameof(descriptorData));
 
@@ -518,6 +533,7 @@ namespace Google.Protobuf.Reflection
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
+        [return: NotNull]
         public override string ToString()
         {
             return $"FileDescriptor for {Name}";
@@ -536,18 +552,21 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The file descriptor for <c>descriptor.proto</c>.
         /// </value>
+        [NotNull]
         public static FileDescriptor DescriptorProtoFileDescriptor { get { return DescriptorReflection.Descriptor; } }
 
         /// <summary>
         /// The (possibly empty) set of custom options for this file.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(Proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<FileOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<FileOptions, T> extension)
         {
             var value = Proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -556,7 +575,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<FileOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<FileOptions, T> extension)
         {
             return Proto.Options.GetExtension(extension).Clone();
         }

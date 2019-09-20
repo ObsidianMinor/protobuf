@@ -31,6 +31,7 @@
 #endregion
 
 using Google.Protobuf.Reflection;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.WellKnownTypes
 {
@@ -60,7 +61,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// </remarks>
         /// <param name="typeUrl">The URL to extract the type name from</param>
         /// <returns>The type name</returns>
-        public static string GetTypeName(string typeUrl)
+        [return: NotNull]
+        public static string GetTypeName([DisallowNull] string typeUrl)
         {
             ProtoPreconditions.CheckNotNull(typeUrl, nameof(typeUrl));
             int lastSlash = typeUrl.LastIndexOf('/');
@@ -72,7 +74,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="descriptor">The descriptor of the message type</param>
         /// <returns><c>true</c> if the type name matches the descriptor's full name or <c>false</c> otherwise</returns>
-        public bool Is(MessageDescriptor descriptor)
+        public bool Is([DisallowNull] MessageDescriptor descriptor)
         {
             ProtoPreconditions.CheckNotNull(descriptor, nameof(descriptor));
             return GetTypeName(TypeUrl) == descriptor.FullName;
@@ -85,6 +87,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// <typeparam name="T">The type of message to unpack the content into.</typeparam>
         /// <returns>The unpacked message.</returns>
         /// <exception cref="InvalidProtocolBufferException">The target message type doesn't match the type URL in this message</exception>
+        [return: NotNull]
         public T Unpack<T>() where T : IMessage, new()
         {
             // Note: this doesn't perform as well is it might. We could take a MessageParser<T> in an alternative overload,
@@ -105,7 +108,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <typeparam name="T">The type of message to attempt to unpack the content into.</typeparam>
         /// <returns><c>true</c> if the message was successfully unpacked; <c>false</c> if the type name didn't match</returns>
-        public bool TryUnpack<T>(out T result) where T : IMessage, new()
+        public bool TryUnpack<T>([NotNullWhen(true)] out T result) where T : IMessage, new()
         {
             // Note: deliberately avoid writing anything to result until the end, in case it's being
             // monitored by other threads. (That would be a bug in the calling code, but let's not make it worse.)
@@ -125,7 +128,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="message">The message to pack.</param>
         /// <returns>An Any message with the content and type URL of <paramref name="message"/>.</returns>
-        public static Any Pack(IMessage message) => Pack(message, DefaultPrefix);
+        [return: NotNull]
+        public static Any Pack([DisallowNull] IMessage message) => Pack(message, DefaultPrefix);
 
         /// <summary>
         /// Packs the specified message into an Any message using the specified type URL prefix.
@@ -133,7 +137,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="message">The message to pack.</param>
         /// <param name="typeUrlPrefix">The prefix for the type URL.</param>
         /// <returns>An Any message with the content and type URL of <paramref name="message"/>.</returns>
-        public static Any Pack(IMessage message, string typeUrlPrefix)
+        [return: NotNull]
+        public static Any Pack([DisallowNull] IMessage message, [DisallowNull] string typeUrlPrefix)
         {
             ProtoPreconditions.CheckNotNull(message, nameof(message));
             ProtoPreconditions.CheckNotNull(typeUrlPrefix, nameof(typeUrlPrefix));

@@ -33,6 +33,7 @@
 using System;
 using System.Globalization;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.WellKnownTypes
 {
@@ -100,6 +101,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="timeSpan">The <c>TimeSpan</c> to convert.</param>
         /// <returns>The value of the given <c>TimeSpan</c>, as a <c>Duration</c>.</returns>
+        [return: NotNull]
         public static Duration FromTimeSpan(TimeSpan timeSpan)
         {
             checked
@@ -116,7 +118,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// </summary>
         /// <param name="value">The duration to negate. Must not be null.</param>
         /// <returns>The negated value of this duration.</returns>
-        public static Duration operator -(Duration value)
+        [return: NotNull]
+        public static Duration operator -([DisallowNull] Duration value)
         {
             ProtoPreconditions.CheckNotNull(value, "value");
             checked
@@ -131,7 +134,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="lhs">The first value to add. Must not be null.</param>
         /// <param name="rhs">The second value to add. Must not be null.</param>
         /// <returns></returns>
-        public static Duration operator +(Duration lhs, Duration rhs)
+        [return: NotNull]
+        public static Duration operator +([DisallowNull] Duration lhs, [DisallowNull] Duration rhs)
         {
             ProtoPreconditions.CheckNotNull(lhs, "lhs");
             ProtoPreconditions.CheckNotNull(rhs, "rhs");
@@ -147,7 +151,8 @@ namespace Google.Protobuf.WellKnownTypes
         /// <param name="lhs">The duration to subtract from. Must not be null.</param>
         /// <param name="rhs">The duration to subtract. Must not be null.</param>
         /// <returns>The difference between the two specified durations.</returns>
-        public static Duration operator -(Duration lhs, Duration rhs)
+        [return: NotNull]
+        public static Duration operator -([DisallowNull] Duration lhs, [DisallowNull] Duration rhs)
         {
             ProtoPreconditions.CheckNotNull(lhs, "lhs");
             ProtoPreconditions.CheckNotNull(rhs, "rhs");
@@ -236,6 +241,7 @@ namespace Google.Protobuf.WellKnownTypes
         /// values.
         /// </remarks>
         /// <returns>A string representation of this value.</returns>
+        [return: NotNull]
         public string ToDiagnosticString()
         {
             return ToJson(Seconds, Nanos, true);

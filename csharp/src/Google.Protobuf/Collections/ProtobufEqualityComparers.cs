@@ -32,6 +32,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Collections
 {
@@ -47,6 +48,7 @@ namespace Google.Protobuf.Collections
         /// </summary>
         /// <typeparam name="T">The type of equality comparer to return.</typeparam>
         /// <returns>The equality comparer.</returns>
+        [return: NotNull] 
         public static EqualityComparer<T> GetEqualityComparer<T>()
         {
             return typeof(T) == typeof(double) ? (EqualityComparer<T>) (object) BitwiseDoubleEqualityComparer
@@ -60,24 +62,28 @@ namespace Google.Protobuf.Collections
         /// Returns an equality comparer suitable for comparing 64-bit floating point values, by bitwise comparison.
         /// (NaN values are considered equal, but only when they have the same representation.)
         /// </summary>
+        [NotNull]
         public static EqualityComparer<double> BitwiseDoubleEqualityComparer { get; } = new BitwiseDoubleEqualityComparerImpl();
 
         /// <summary>
         /// Returns an equality comparer suitable for comparing 32-bit floating point values, by bitwise comparison.
         /// (NaN values are considered equal, but only when they have the same representation.)
         /// </summary>
+        [NotNull]
         public static EqualityComparer<float> BitwiseSingleEqualityComparer { get; } = new BitwiseSingleEqualityComparerImpl();
 
         /// <summary>
         /// Returns an equality comparer suitable for comparing nullable 64-bit floating point values, by bitwise comparison.
         /// (NaN values are considered equal, but only when they have the same representation.)
         /// </summary>
+        [NotNull]
         public static EqualityComparer<double?> BitwiseNullableDoubleEqualityComparer { get; } = new BitwiseNullableDoubleEqualityComparerImpl();
 
         /// <summary>
         /// Returns an equality comparer suitable for comparing nullable 32-bit floating point values, by bitwise comparison.
         /// (NaN values are considered equal, but only when they have the same representation.)
         /// </summary>
+        [NotNull]
         public static EqualityComparer<float?> BitwiseNullableSingleEqualityComparer { get; } = new BitwiseNullableSingleEqualityComparerImpl();
 
         private class BitwiseDoubleEqualityComparerImpl : EqualityComparer<double>

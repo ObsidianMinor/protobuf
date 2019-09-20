@@ -49,6 +49,7 @@ namespace Google.Protobuf
         /// Creates a deep clone of this object.
         /// </summary>
         /// <returns>A deep clone of this object.</returns>
+        [return: System.Diagnostics.CodeAnalysis.NotNull]
         T Clone();
     }
 }

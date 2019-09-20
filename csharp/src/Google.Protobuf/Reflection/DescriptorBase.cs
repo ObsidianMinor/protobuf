@@ -31,6 +31,7 @@
 #endregion
 
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -59,16 +60,19 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Returns the name of the entity (field, message etc) being described.
         /// </summary>
+        [NotNull]
         public abstract string Name { get; }
 
         /// <summary>
         /// The fully qualified name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public string FullName { get; }
 
         /// <value>
         /// The file this descriptor was declared in.
         /// </value>
+        [NotNull]
         public FileDescriptor File { get; }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Google.Protobuf.Reflection
         /// for example within a protoc plugin where the full descriptors, including source info,
         /// are passed to the code by protoc.
         /// </remarks>
+        [NotNull]
         public DescriptorDeclaration Declaration => File.GetDeclaration(this);
 
         /// <summary>

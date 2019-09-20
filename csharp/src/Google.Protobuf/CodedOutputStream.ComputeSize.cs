@@ -130,7 +130,7 @@ namespace Google.Protobuf
         /// Computes the number of bytes that would be needed to encode a
         /// string field, including the tag.
         /// </summary>
-        public static int ComputeStringSize(String value)
+        public static int ComputeStringSize([System.Diagnostics.CodeAnalysis.DisallowNull] String value)
         {
             int byteArraySize = Utf8Encoding.GetByteCount(value);
             return ComputeLengthSize(byteArraySize) + byteArraySize;
@@ -140,7 +140,7 @@ namespace Google.Protobuf
         /// Computes the number of bytes that would be needed to encode a
         /// group field, including the tag.
         /// </summary>
-        public static int ComputeGroupSize(IMessage value)
+        public static int ComputeGroupSize([System.Diagnostics.CodeAnalysis.DisallowNull] IMessage value)
         {
             return value.CalculateSize();
         }
@@ -149,7 +149,7 @@ namespace Google.Protobuf
         /// Computes the number of bytes that would be needed to encode an
         /// embedded message field, including the tag.
         /// </summary>
-        public static int ComputeMessageSize(IMessage value)
+        public static int ComputeMessageSize([System.Diagnostics.CodeAnalysis.DisallowNull] IMessage value)
         {
             int size = value.CalculateSize();
             return ComputeLengthSize(size) + size;
@@ -159,7 +159,7 @@ namespace Google.Protobuf
         /// Computes the number of bytes that would be needed to encode a
         /// bytes field, including the tag.
         /// </summary>
-        public static int ComputeBytesSize(ByteString value)
+        public static int ComputeBytesSize([System.Diagnostics.CodeAnalysis.DisallowNull] ByteString value)
         {
             return ComputeLengthSize(value.Length) + value.Length;
         }

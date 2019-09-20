@@ -33,6 +33,7 @@
 #if NET35
 using System;
 using System.IO;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Compatibility
 {
@@ -48,7 +49,7 @@ namespace Google.Protobuf.Compatibility
         /// <summary>
         /// Write the contents of the current stream to the destination stream
         /// </summary>
-        public static void CopyTo(this Stream source, Stream destination)
+        public static void CopyTo([DisallowNull] this Stream source, [DisallowNull] Stream destination)
         {
             if (destination == null)
             {

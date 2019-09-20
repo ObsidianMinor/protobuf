@@ -33,6 +33,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using Google.Protobuf.Collections;
 using Google.Protobuf.Compatibility;
 
@@ -62,6 +63,7 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// The brief name of the descriptor's target.
         /// </summary>
+        [NotNull]
         public override string Name { get { return proto.Name; } }
 
         /// <summary>
@@ -70,6 +72,7 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The message type containing this oneof.
         /// </value>
+        [NotNull]
         public MessageDescriptor ContainingType
         {
             get { return containingType; }
@@ -81,6 +84,7 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The fields within this oneof, in declaration order.
         /// </value>
+        [NotNull]
         public IList<FieldDescriptor> Fields { get { return fields; } }
 
         /// <summary>
@@ -100,18 +104,21 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The accessor used for reflective access.
         /// </value>
+        [MaybeNull]
         public OneofAccessor Accessor { get { return accessor; } }
 
         /// <summary>
         /// The (possibly empty) set of custom options for this oneof.
         /// </summary>
         [Obsolete("CustomOptions are obsolete. Use GetOption")]
+        [NotNull]
         public CustomOptions CustomOptions => new CustomOptions(proto.Options._extensions?.ValuesByNumber);
 
         /// <summary>
         /// Gets a single value enum option for this descriptor
         /// </summary>
-        public T GetOption<T>(Extension<OneofOptions, T> extension)
+        [return: MaybeNull]
+        public T GetOption<T>([DisallowNull] Extension<OneofOptions, T> extension)
         {
             var value = proto.Options.GetExtension(extension);
             return value is IDeepCloneable<T> ? (value as IDeepCloneable<T>).Clone() : value;
@@ -120,7 +127,8 @@ namespace Google.Protobuf.Reflection
         /// <summary>
         /// Gets a repeated value enum option for this descriptor
         /// </summary>
-        public RepeatedField<T> GetOption<T>(RepeatedExtension<OneofOptions, T> extension)
+        [return: MaybeNull]
+        public RepeatedField<T> GetOption<T>([DisallowNull] RepeatedExtension<OneofOptions, T> extension)
         {
             return proto.Options.GetExtension(extension).Clone();
         }

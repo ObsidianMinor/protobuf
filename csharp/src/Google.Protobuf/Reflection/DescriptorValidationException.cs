@@ -31,6 +31,7 @@
 #endregion
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Protobuf.Reflection
 {
@@ -46,6 +47,7 @@ namespace Google.Protobuf.Reflection
         /// <value>
         /// The full name of the descriptor where the error occurred.
         /// </value>
+        [NotNull]
         public String ProblemSymbolName
         {
             get { return name; }
@@ -55,6 +57,7 @@ namespace Google.Protobuf.Reflection
         /// A human-readable description of the error. (The Message property
         /// is made up of the descriptor's name and this description.)
         /// </value>
+        [NotNull]
         public string Description
         {
             get { return description; }
